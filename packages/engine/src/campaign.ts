@@ -302,6 +302,8 @@ export function loadCampaign(raw: CampaignFile): LoadResult {
     lastStart = w.start;
     chapters.push({ id: ch.id, index: i, start: w.start, end: w.end, camera: ch.camera ?? null, focus: ch.focus ?? [], raw: ch });
   });
+  // The schema says minItems 1, but runtime validation is the core's job (contract §8): playback starts at chapter 0.
+  if (!raw.chapters?.length) err('E018', '/chapters', 'A campaign needs at least one chapter');
 
   for (let k = 1; k < chapters.length; k++) {
     const prev = chapters[k - 1], cur = chapters[k];

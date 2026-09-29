@@ -101,6 +101,7 @@ impl ChronoMapCore {
     ///
     /// `t` crosses the boundary as a JS number; ticks are integral by contract, so
     /// round rather than truncate and keep the sign behaviour of `Math.round`.
+    /// NaN and ±Infinity are rejected, as the reference `resolveFrame` does.
     /// `bbox` is `[west, south, east, north]` or `null`.
     pub fn query(
         &self,
@@ -112,6 +113,9 @@ impl ChronoMapCore {
         let Some(campaign) = self.campaign.as_ref() else {
             return Err(JsValue::from_str("query before load"));
         };
+        if !t.is_finite() {
+            return Err(JsValue::from_str("tick must be a finite number"));
+        }
         let bbox = match bbox.as_deref() {
             Some([w, s, e, n]) => Some([*w, *s, *e, *n]),
             Some(other) => {

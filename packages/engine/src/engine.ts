@@ -53,10 +53,12 @@ export class ChronoMapEngine {
   get time(): Ticks { return this.t; }
   get frame(): FrameState | null { return this.lastFrame; }
 
+  /** Throws a RangeError for a non-finite tick and keeps the current time and frame. */
   setTime(t: Ticks): void {
     if (!this.campaign) return;
-    this.t = Math.round(t);
-    this.lastFrame = resolveFrame(this.campaign, this.t, { includeTrail: this.includeTrail });
+    const tick = Math.round(t);
+    this.lastFrame = resolveFrame(this.campaign, tick, { includeTrail: this.includeTrail });
+    this.t = tick;
     this.emit('frame', this.lastFrame);
   }
 

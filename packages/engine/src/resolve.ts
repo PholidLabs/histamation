@@ -128,7 +128,9 @@ const inBbox = (coord: [number, number] | null | undefined, bbox: [number, numbe
 
 export interface ResolveOptions { bbox?: [number, number, number, number] | null; includeTrail?: boolean }
 
+/** Throws a RangeError for a non-finite tick: NaN or ±Infinity would otherwise come back as a garbage frame. */
 export function resolveFrame(campaign: NormalizedCampaign, t: Ticks, opts: ResolveOptions = {}): FrameState {
+  if (!Number.isFinite(t)) throw new RangeError('tick must be a finite number');
   const { bbox = null, includeTrail = true } = opts;
   const frame: FrameState = { t, iso: ticksToIso(t), entities: [], events: [] };
 
@@ -168,9 +170,9 @@ export function resolveFrame(campaign: NormalizedCampaign, t: Ticks, opts: Resol
   return frame;
 }
 
-/** Tick for scroll progress p (0..1) through a chapter. The window is [start, end). */
+/** Tick for scroll progress p (0..1) through a chapter. The window is [start, end); NaN reads as 0. */
 export function chapterTime(chapter: NormChapter, p: number): Ticks {
-  const clamped = Math.min(1, Math.max(0, p));
+  const clamped = Number.isNaN(p) ? 0 : Math.min(1, Math.max(0, p));
   return chapter.start + Math.floor(clamped * (chapter.end - chapter.start - 1));
 }
 

@@ -1107,6 +1107,14 @@ pub fn load_campaign(raw: &Value) -> LoadResult {
             raw: ch.clone(),
         });
     }
+    // The schema says minItems 1, but runtime validation is the core's job (contract §8): playback starts at chapter 0.
+    if file.chapters.is_empty() {
+        cx.err(
+            "E018",
+            "/chapters",
+            "A campaign needs at least one chapter".to_string(),
+        );
+    }
 
     for k in 1..chapters.len() {
         let (prev_start, prev_end, prev_id) = {

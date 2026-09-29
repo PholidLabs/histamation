@@ -27,6 +27,8 @@ test('the loader catches contract violations', () => {
   assert.ok(mutate((c) => { c.chapters[1].body.en = 'Click [here](javascript:alert(1))'; }).includes('E015'), 'unsafe url');
   assert.ok(mutate((c) => { c.chapters[1].body.en = '<img src=x onerror=alert(1)>'; }).includes('E017'), 'raw html');
   assert.ok(mutate((c) => { delete c.entities[4].at; }).includes('E016'), 'custom kind without geometry');
+  assert.ok(mutate((c) => { c.chapters = []; }).includes('E018'), 'no chapters');
+  assert.ok(mutate((c) => { delete c.chapters; }).includes('E018'), 'chapters missing');
   assert.ok(mutate((c) => { c.places[2].coordinates = [50, 0.4]; }).includes('W102'), 'outside map bounds');
 });
 

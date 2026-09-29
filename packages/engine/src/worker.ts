@@ -27,7 +27,8 @@ export function handleRequest(msg: WorkerRequest): Exclude<WorkerResponse, { typ
     };
   }
   if (!campaign) throw new Error('query before load');
-  return { type: 'frame', id: msg.id, frame: resolveFrame(campaign, msg.t, { bbox: msg.bbox ?? null, includeTrail: msg.includeTrail ?? false }) };
+  // Ticks are integral by contract; round like the Rust core does at its boundary. Non-finite t throws.
+  return { type: 'frame', id: msg.id, frame: resolveFrame(campaign, Math.round(msg.t), { bbox: msg.bbox ?? null, includeTrail: msg.includeTrail ?? false }) };
 }
 
 // Runs only inside a real worker; importing this module elsewhere is harmless.

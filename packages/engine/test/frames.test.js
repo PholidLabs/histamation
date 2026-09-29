@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { loadCampaign, resolveFrame } from '../dist/index.js';
+import { ChronoMapEngine, chapterTime, loadCampaign, resolveFrame } from '../dist/index.js';
+import { handleRequest } from '../dist/worker.js';
 
 const CASES = [
   ['../../../test-vectors/null-island.frames.json', '../../../data/campaigns/fixtures/null-island.json', true],
@@ -33,3 +34,20 @@ for (const [vectorPath, campaignPath, includeTrail] of CASES) {
     }
   });
 }
+
+test('non-finite ticks are rejected instead of resolving a garbage frame', async () => {
+  const raw = read(CASES[0][1]);
+  const engine = new ChronoMapEngine();
+  await engine.load(raw);
+  const { time, frame } = engine;
+  handleRequest({ type: 'load', id: 1, campaign: raw });
+  for (const t of [NaN, Infinity, -Infinity]) {
+    assert.throws(() => resolveFrame(engine.campaign, t), RangeError, `resolveFrame(${t})`);
+    assert.throws(() => engine.setTime(t), RangeError, `setTime(${t})`);
+    assert.equal(engine.time, time, `setTime(${t}) moved the clock`);
+    assert.equal(engine.frame, frame, `setTime(${t}) replaced the frame`);
+    assert.throws(() => handleRequest({ type: 'query', id: 2, t }), RangeError, `worker query(${t})`);
+  }
+  const ch = engine.campaign.chapters[1];
+  assert.equal(chapterTime(ch, NaN), ch.start, 'NaN progress reads as the chapter start');
+});

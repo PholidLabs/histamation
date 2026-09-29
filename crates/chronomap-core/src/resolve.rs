@@ -365,7 +365,12 @@ pub fn resolve_frame(campaign: &NormalizedCampaign, t: Ticks, opts: &ResolveOpti
 /// hence the `-1`: `p = 1` lands on the last tick inside the chapter, not on the first
 /// tick of the next one.
 pub fn chapter_time(chapter: &NormChapter, p: f64) -> Ticks {
-    let clamped = js_min(1.0, js_max(0.0, p));
+    // NaN reads as 0, as in the reference; the float-to-int cast must not decide it.
+    let clamped = if p.is_nan() {
+        0.0
+    } else {
+        js_min(1.0, js_max(0.0, p))
+    };
     chapter.start + (clamped * (chapter.end - chapter.start - 1) as f64).floor() as i64
 }
 

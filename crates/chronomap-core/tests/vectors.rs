@@ -354,11 +354,30 @@ fn non_numeric_coordinates_are_rejected() {
 }
 
 #[test]
+fn a_campaign_without_chapters_is_rejected() {
+    let base = read_json("data/campaigns/fixtures/null-island.json");
+    let mut empty = base.clone();
+    empty["chapters"] = serde_json::json!([]);
+    let mut missing = base;
+    missing.as_object_mut().unwrap().remove("chapters");
+    for raw in [empty, missing] {
+        let result = load_campaign(&raw);
+        assert!(
+            result.campaign.is_none()
+                && result
+                    .errors()
+                    .any(|d| d.code == "E018" && d.path == "/chapters"),
+            "a campaign with no chapters was accepted"
+        );
+    }
+}
+
+#[test]
 fn chapter_progress_stays_inside_the_window() {
     let raw = read_json("data/campaigns/fixtures/null-island.json");
     let campaign = load_campaign(&raw).campaign.expect("fixture loads");
     for ch in &campaign.chapters {
-        for p in [0.0, 0.25, 0.5, 0.75, 1.0, -3.0, 7.0] {
+        for p in [0.0, 0.25, 0.5, 0.75, 1.0, -3.0, 7.0, f64::NAN] {
             let t = chapter_time(ch, p);
             assert!(
                 t >= ch.start && t < ch.end,
@@ -368,5 +387,10 @@ fn chapter_progress_stays_inside_the_window() {
                 ch.end
             );
         }
+        assert_eq!(
+            chapter_time(ch, f64::NAN),
+            ch.start,
+            "NaN progress reads as the start"
+        );
     }
 }
