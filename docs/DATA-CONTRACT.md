@@ -1,7 +1,7 @@
 # ChronoMap Data Contract v1.0
 
 **Status:** draft for implementation · **Applies to:** `chronomap: "1.x"` campaign files
-**Normative artifacts:** [`schema/campaign.schema.json`](../schema/campaign.schema.json) (structure), [`reference/`](../reference) (semantics), [`test-vectors/`](../test-vectors) (expected outputs)
+**Normative artifacts:** [`schema/campaign.schema.json`](../schema/campaign.schema.json) (structure), [`packages/engine/src/`](../packages/engine/src) (semantics), [`test-vectors/`](../test-vectors) (expected outputs)
 
 This document defines how a campaign file (the plug-in data) is written, and how the ChronoMap engine loads it, checks it and plays it. Any file that passes validation must play in any conforming engine with no code changes. The Java War and Napoleon 1812 examples use exactly the same format.
 
@@ -104,7 +104,7 @@ Every date covers a **half-open range `[start, end)`** set by its precision:
 - **Qualifiers never change the range.** They are display and styling hints (for example "c. 1827", or dashed outlines).
 - `meta.timeline.extent` must be closed, and every *timeline* date in the file must fall inside it (error `E005`). Metadata dates (`media.date`, `source.accessed`, `meta.updated`) are validated but not bounded.
 
-Implementations must convert with integer calendar math: days-from-civil (Hinnant) × 86400 + time of day. See `reference/time.mjs` (60 lines) and `test-vectors/time.json`.
+Implementations must convert with integer calendar math: days-from-civil (Hinnant) × 86400 + time of day. See `packages/engine/src/time.ts` and `test-vectors/time.json`.
 
 ### 3.3 Calendars
 
@@ -214,6 +214,8 @@ A chapter's window is the resolved range of its `when`. Scroll progress `p ∈ [
 t = start + floor(p × (end − start − 1))
 ```
 
+`p` is clamped to `[0, 1]`, and `NaN` reads as `0`, so the result always lies in `[start, end)`.
+
 One rule covers every case:
 
 - A **day** chapter barely moves the clock.
@@ -309,8 +311,8 @@ interface ChronoMap {
   setLanguage(lang: string): void;
 
   // clock
-  setTime(t: Ticks): void;                              // free-explore
-  setStoryProgress(chapterId: string, p: number): void; // story mode, p ∈ [0,1]
+  setTime(t: Ticks): void;                              // free-explore; throws RangeError for NaN/±Infinity
+  setStoryProgress(chapterId: string, p: number): void; // story mode, p ∈ [0,1] (§6.1)
   readonly time: Ticks;
 
   // events
@@ -331,6 +333,8 @@ Worker messages:
 - worker → main: `{type:"loaded", diagnostics, static}`, `{type:"frame", seq, t, buffers}`
 
 Drop stale `seq` replies. While scrolling fast, keep only the latest query outstanding.
+
+The reference `packages/engine/src/worker.ts` and the Rust `wasm.rs` currently speak a simpler form of this protocol: `{type:"load", id, campaign}` → `{type:"loaded", id, ok, diagnostics, summary?}`, `{type:"query", id, t, bbox?, includeTrail?}` → `{type:"frame", id, frame}`, and `{type:"error", id, message}` for a bad request. `id` plays the role of `seq`, and `worker-client.ts` coalesces queries so only the latest is outstanding. `t` is rounded to an integer tick; a non-finite `t` is an error, never a frame.
 
 ### 7.4 Renderer binding
 
@@ -365,7 +369,7 @@ Campaign files come from anywhere, so treat them as hostile:
 Validation has two layers, and both report **JSON Pointer paths**.
 
 1. **Structural.** The JSON Schema, via `ajv` in authoring and CI. In the Rust core the serde types encode the same rules. Code `S001`.
-2. **Semantic.** Rules the schema can't express, implemented in `reference/campaign.mjs`. The Rust core must emit the same codes and paths.
+2. **Semantic.** Rules the schema can't express, implemented in `packages/engine/src/campaign.ts`. The Rust core must emit the same codes and paths.
 
 | Code | Level | Rule |
 |---|---|---|
@@ -386,6 +390,7 @@ Validation has two layers, and both report **JSON Pointer paths**.
 | E015 | error | unsafe URL scheme |
 | E016 | error | custom `x-` entity kind without geometry |
 | E017 | error | raw HTML in a chapter body |
+| E018 | error | no chapters (playback starts at the first chapter) |
 | W101 | warning | missing translation |
 | W102 | warning | coordinate outside `meta.map.bounds` (flags a likely lng/lat swap) |
 | W103 | warning | chapter has neither camera nor focus |
@@ -416,7 +421,7 @@ Validation has two layers, and both report **JSON Pointer paths**.
 3. Give every event at least one source (`W114`).
 4. Use neutral terminology for factions. The Java War file avoids the colonial term "rebels".
 5. Write `alt` text for every image and check its license.
-6. Run `node reference/check.mjs your-campaign.json --frames` and read the playback dry-run. It shows where each unit is at the start, middle and end of each chapter, which catches most date mistakes.
+6. Run `node packages/engine/dist/cli.js your-campaign.json --frames` (after `npm run build`) and read the playback dry-run. It shows where each unit is at the start, middle and end of each chapter, which catches most date mistakes.
 
 ---
 
@@ -449,7 +454,7 @@ These came up while designing the contract. They are worth deciding before Phase
 4. **Don't stream geometry every frame** (§7.2). The PRD's "WASM pushes lightweight vector geometries" per frame would force re-tiling. Send static geometry once and per-frame state as typed arrays.
 5. **Be honest about where WASM pays off.** The Java War file has 9 entities and 43 events, and `resolveFrame` in plain JS takes microseconds. The worker round-trip adds about one frame of latency. The Rust core earns its place at the NFR scale (50,000 features), in the R-tree, and as a reference architecture. Keep a same-thread JS path (the reference implementation already is one), and let a benchmark decide the default.
 6. **Runtime validation belongs in the core, not in `ajv`.** Measured with esbuild, `ajv` + `ajv-formats` + this schema come to about 48 KB gzipped (164 KB minified), half the 100 KB JS budget. The whole reference semantic validator plus resolver is about 7 KB gzipped. The Rust core already has to deserialize the file, and serde plus the semantic rules give the same guarantees. Keep the JSON Schema for editors and CI.
-7. **Crates.** The `edtf` crate hasn't had a release since 2021. The `When` subset is small, so hand-write the parser (mirror `reference/time.mjs`) and test it against `test-vectors/time.json`. `rstar` 0.13 supports `AABB<[f64; 3]>` if you index time as a third axis. Scale ticks to a magnitude comparable to degrees, and use finite sentinels for open intervals.
+7. **Crates.** The `edtf` crate hasn't had a release since 2021. The `When` subset is small, so hand-write the parser (mirror `packages/engine/src/time.ts`, as `crates/chronomap-core/src/time.rs` does) and test it against `test-vectors/time.json`. `rstar` 0.13 supports `AABB<[f64; 3]>` if you index time as a third axis. Scale ticks to a magnitude comparable to degrees, and use finite sentinels for open intervals.
 8. **Scroll progress needs more than IntersectionObserver.** Observers fire at thresholds, which is fine for chapter entry. Continuous `p` (§6.1) needs a `requestAnimationFrame` read of the step element's bounding box.
 
 ---
@@ -457,12 +462,16 @@ These came up while designing the contract. They are worth deciding before Phase
 ## 13. Reference implementation and test vectors
 
 ```
-reference/time.mjs       When parsing, ticks, calendar math
-reference/campaign.mjs   semantic validation + normalization (diagnostic codes, §8)
-reference/resolve.mjs    resolveFrame(campaign, t), chapterTime(chapter, p)
-reference/check.mjs      CLI: schema + semantic validation, --frames dry-run
-reference/vectors.mjs    regenerates test-vectors/
-reference/format.mjs     canonical formatting for campaign files
+packages/engine/src/time.ts      When parsing, ticks, calendar math
+packages/engine/src/campaign.ts  semantic validation + normalization (diagnostic codes, §8)
+packages/engine/src/resolve.ts   resolveFrame(campaign, t), chapterTime(chapter, p)
+packages/engine/src/engine.ts    stateful playback façade (§7.3)
+packages/engine/src/worker.ts    worker protocol (§7.1) the Rust/WASM core plugs into
+packages/engine/src/cli.ts       chronomap-check: schema + semantic validation, --frames dry-run, --vectors
+packages/engine/src/vectors.ts   builds the golden vectors written by `npm run vectors`
+packages/engine/src/format.ts    localized text and precision-aware date formatting for display
+
+crates/chronomap-core/          the Rust port, tested against the vectors below
 
 test-vectors/time.json                        When → ticks, including invalid inputs
 test-vectors/null-island.frames.json          synthetic fixture: every feature, BCE dates, p = 0, .25, .5, .75, 1
@@ -470,4 +479,4 @@ test-vectors/java-war-1825.frames.json        one frame per line, p = 0, .5, 1 p
 test-vectors/napoleon-russia-1812.frames.json
 ```
 
-A conforming core must reproduce `time.json` exactly, and every frame field within an absolute tolerance of 1e-6. When the contract changes, update `reference/` first, regenerate the vectors, then port.
+A conforming core must reproduce `time.json` exactly, and every frame field within an absolute tolerance of 1e-6. When the contract changes, update `packages/engine/src/` first, regenerate the vectors with `npm run vectors`, then port to `crates/chronomap-core`.

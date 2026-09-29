@@ -11,7 +11,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" />
   <img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg" alt="Node >= 20" />
-  <img src="https://img.shields.io/badge/local--first-offline%20ready-success.svg" alt="Offline Ready" />
+  <img src="https://img.shields.io/badge/basemap-bundled-success.svg" alt="Bundled basemap" />
   <img src="https://img.shields.io/badge/dependencies-0%20API%20keys-orange.svg" alt="0 API Keys" />
   <img src="https://img.shields.io/badge/parity-TS%20%2B%20Rust%2FWASM-purple.svg" alt="Dual Core Parity" />
 </p>
@@ -47,7 +47,7 @@ Write a single declarative JSON file describing a historical campaign — places
 
 ## 🌟 Key Features
 
-- 🔒 **Local-First & Offline**: Built on local Natural Earth GeoJSON layers (`data/basemap/`). No Mapbox token, no external tile server, no telemetry, and no accounts. Runs completely disconnected.
+- 🔒 **Local-First Basemap**: Built on local Natural Earth GeoJSON layers (`data/basemap/`). No Mapbox token, no API keys, no telemetry, and no accounts. The packages only fetch what you point them at on your own host: the basemap path and, if `load()` is given a URL, the campaign file. The demo app adds online extras on top: web fonts from Google Fonts, and hillshade/3D terrain from the public AWS Terrain Tiles bucket (on by default, toggled with the **3D terrain** button). The landing page (`/`) also loads Tailwind from its CDN.
 - 📜 **Single Declarative JSON Contract**: One file encapsulates gazetteer data, temporal tracks, narrative chapters, citations, and multilingual copy.
 - ⏳ **Honest Historical Time**: Built on an EDTF (ISO 8601-2) subset supporting date qualifiers (`?` uncertain, `~` approximate), date intervals, negative astronomical years (BCE), and sub-day precision.
 - 🎯 **Rigorous Spatial Certainty**: Locations carry explicit certainty markers (`exact`, `approximate`, `conjectural`). Conjectural points render with grounded visual uncertainty circles.
@@ -67,8 +67,8 @@ Write a single declarative JSON file describing a historical campaign — places
 
 ```bash
 # 1. Clone and install dependencies
-git clone https://github.com/PholidLabs/ChronoMaps-Engine.git
-cd ChronoMaps-Engine
+git clone https://github.com/PholidLabs/chronomaps.git
+cd chronomaps
 npm install
 
 # 2. Build the TypeScript packages
@@ -85,7 +85,7 @@ Open the Vite URL printed in your terminal (typically `http://localhost:5173/`):
 ### Run Tests & Validation
 
 ```bash
-# Run engine unit tests and golden vector assertions (8 tests)
+# Run engine unit tests and golden vector assertions
 npm test
 
 # Validate all shipped campaign JSON files against the schema and contract
@@ -103,9 +103,9 @@ CI (`.github/workflows/ci.yml`) runs all of the above plus the Rust suite on eve
 
 | Campaign | File | Key Highlights |
 |---|---|---|
-| **The Java War** *(1825–1830)* | [`data/campaigns/java-war-1825.json`](file:///Users/mac/Pholid/ChronoMaps-Engine/data/campaigns/java-war-1825.json) | 5 factions, 34 places, 9 dynamic entities, 43 events, 38 chapters. Bilingual Indonesian/English narrative based on Peter Carey's research. Demonstrates guerrilla warfare, ambushes, negotiations, and the colonial Dutch *Benteng Stelsel* fort lines. |
-| **Napoleon's Invasion of Russia** *(1812)* | [`data/campaigns/napoleon-russia-1812.json`](file:///Users/mac/Pholid/ChronoMaps-Engine/data/campaigns/napoleon-russia-1812.json) | Classic campaign showing the Grande Armée's advance to Moscow and grueling winter retreat with Minard-style force strength counters. |
-| **Null Island Fixture** | [`data/campaigns/fixtures/null-island.json`](file:///Users/mac/Pholid/ChronoMaps-Engine/data/campaigns/fixtures/null-island.json) | Synthetic test dataset designed to exercise edge cases, track interpolation, and diagnostic warnings (`W115`). |
+| **The Java War** *(1825–1830)* | [`data/campaigns/java-war-1825.json`](data/campaigns/java-war-1825.json) | 5 factions, 34 places, 9 dynamic entities, 43 events, 38 chapters. Bilingual Indonesian/English narrative based on Peter Carey's research. Demonstrates guerrilla warfare, ambushes, negotiations, and the colonial Dutch *Benteng Stelsel* fort lines. |
+| **Napoleon's Invasion of Russia** *(1812)* | [`data/campaigns/napoleon-russia-1812.json`](data/campaigns/napoleon-russia-1812.json) | Classic campaign showing the Grande Armée's advance to Moscow and grueling winter retreat with Minard-style force strength counters. |
+| **Null Island Fixture** | [`data/campaigns/fixtures/null-island.json`](data/campaigns/fixtures/null-island.json) | Synthetic test dataset designed to exercise edge cases, track interpolation, and diagnostic warnings (`W115`). |
 
 ---
 
@@ -114,7 +114,7 @@ CI (`.github/workflows/ci.yml`) runs all of the above plus the Rust suite on eve
 This repository is organized as an npm workspace with accompanying Rust crates:
 
 ```
-ChronoMaps-Engine/
+chronomaps/
 ├── packages/
 │   ├── engine/              # Headless TypeScript engine (pure logic, 0 DOM/map dependencies)
 │   │   ├── src/time.ts      # EDTF parser, civil calendars, Gregorian tick conversions
@@ -215,7 +215,7 @@ Create `my-campaign.json` and reference the JSON Schema for instant autocomplete
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/PholidLabs/ChronoMaps-Engine/main/schema/campaign.schema.json",
+  "$schema": "https://raw.githubusercontent.com/PholidLabs/chronomaps/main/schema/campaign.schema.json",
   "chronomap": "1.0",
   "meta": {
     "id": "my-campaign",
@@ -386,7 +386,8 @@ node packages/engine/dist/cli.js <campaign.json>... [options]
 
 | Command | Action |
 |---|---|
-| `npm run build` | Builds `packages/engine` and `packages/maplibre` and copies CSS assets. |
+| `npm run build` | Builds `packages/engine` and `packages/maplibre`, copying the JSON Schema and CSS into their `dist/`. |
+| `npm run build:engine` | Builds `packages/engine` only (used by `test` and `vectors`). |
 | `npm run build:demo` | Runs full package build and builds the production web app in `apps/demo/dist`. |
 | `npm run dev` | Launches the local Vite dev server with hot module reloading. |
 | `npm test` | Builds the engine and runs its tests, including the golden-vector checks. |
@@ -397,6 +398,6 @@ node packages/engine/dist/cli.js <campaign.json>... [options]
 
 ## 📄 License & Attribution
 
-- **Code**: Licensed under the [MIT License](file:///Users/mac/Pholid/ChronoMaps-Engine/LICENSE).
+- **Code**: Licensed under the [MIT License](LICENSE).
 - **The Java War Dataset**: Licensed under [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/). Historical research based on the work of Peter Carey (*The Power of Prophecy: Prince Diponegoro and the End of an Old Order in Java, 1785–1855*).
 - **Basemap Data**: Derived from [Natural Earth](https://www.naturalearthdata.com/) vector datasets (Public Domain).
