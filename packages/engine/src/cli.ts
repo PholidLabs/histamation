@@ -42,7 +42,8 @@ async function compileSchema() {
   const [{ default: Ajv }, { default: addFormats }] = mods;
   const ajv = new Ajv({ allErrors: true, strict: false });
   addFormats(ajv);
-  return ajv.compile(JSON.parse(readFileSync(resolvePath(here, '../../../schema/campaign.schema.json'), 'utf8')));
+  // The build copies the schema next to this file (scripts/copy-schema.mjs), so the path holds once published.
+  return ajv.compile(JSON.parse(readFileSync(resolvePath(here, 'campaign.schema.json'), 'utf8')));
 }
 const validateSchema = await compileSchema();
 
