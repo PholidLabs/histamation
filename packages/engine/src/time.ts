@@ -127,6 +127,10 @@ export function resolveWhen(when: string | ParsedWhen, extent: Span): ParsedWhen
   return { ...w, start: w.start ?? extent.start, end: w.end ?? extent.end };
 }
 
+const pad2 = (n: number): string => (n < 10 ? '0' + n : '' + n);
+const pad4 = (n: number): string => (n < 10 ? '000' + n : n < 100 ? '00' + n : n < 1000 ? '0' + n : '' + n);
+const pad6 = (n: number): string => String(n).padStart(6, '0');
+
 /** Ticks → ISO-like string (expanded years outside 0000-9999), used by test vectors. */
 export function ticksToIso(ticks: Ticks): string {
   const days = Math.floor(ticks / SECONDS_PER_DAY);
@@ -134,7 +138,6 @@ export function ticksToIso(ticks: Ticks): string {
   const { year, month, day } = civilFromDays(days);
   const hh = Math.floor(rem / 3600); rem -= hh * 3600;
   const mm = Math.floor(rem / 60); const ss = rem - mm * 60;
-  const pad = (n: number, w = 2) => String(n).padStart(w, '0');
-  const y = year >= 0 && year <= 9999 ? pad(year, 4) : (year < 0 ? '-' : '+') + pad(Math.abs(year), 6);
-  return `${y}-${pad(month)}-${pad(day)}T${pad(hh)}:${pad(mm)}:${pad(ss)}`;
+  const y = year >= 0 && year <= 9999 ? pad4(year) : (year < 0 ? '-' : '+') + pad6(Math.abs(year));
+  return `${y}-${pad2(month)}-${pad2(day)}T${pad2(hh)}:${pad2(mm)}:${pad2(ss)}`;
 }

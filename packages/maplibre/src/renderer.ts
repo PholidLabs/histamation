@@ -7,7 +7,7 @@
  */
 import { Marker, Popup, type GeoJSONSource, type Map as MapLibreMap } from 'maplibre-gl';
 import type { Feature, FeatureCollection, Position } from 'geojson';
-import type { FrameState, NormEntity, NormalizedCampaign, Ticks } from '@chronomap/engine';
+import type { FrameState, NormEntity, NormEvent, NormalizedCampaign, Ticks } from '@chronomap/engine';
 import { alongPath, pickText } from '@chronomap/engine';
 import { factionColor, parchmentLight, withAlpha, type ChronoTheme } from './theme.js';
 import { DEFAULT_BASEMAP_PATH, graticuleFor } from './style.js';
@@ -16,6 +16,7 @@ import { renderMountainSvg, renderForestSvg, renderFortressSvg, renderEmbellishm
 const EMPTY: FeatureCollection = { type: 'FeatureCollection', features: [] };
 const DAY = 86400;
 const BATTLE_KINDS = new Set(['battle', 'siege', 'skirmish', 'raid', 'massacre']);
+const HOLLOW_STATUSES: Record<string, true> = { captive: true, exiled: true, surrendered: true, disbanded: true, dead: true };
 
 type PictorialKind = 'volcano' | 'range' | 'peak' | 'forest' | 'ornament';
 /** Kind line of a pictorial basemap popup; languages without an entry read English. */
@@ -33,6 +34,30 @@ export interface RendererOptions {
 }
 
 interface LabelMarker { marker: Marker; el: HTMLElement }
+interface UnitMarkerEntry {
+  marker: Marker;
+  el: HTMLElement;
+  icon: HTMLElement;
+  text: HTMLElement;
+  nameEl: HTMLElement;
+  strengthEl: HTMLElement;
+}
+interface FortMarkerEntry {
+  marker: Marker;
+  el: HTMLElement;
+  art: HTMLElement;
+  label: HTMLElement;
+}
+interface PeakMarkerEntry {
+  marker: Marker;
+  el: HTMLElement;
+  caption: HTMLElement;
+}
+interface ForestMarkerEntry {
+  marker: Marker;
+  el: HTMLElement;
+  caption: HTMLElement;
+}
 interface Box { left: number; right: number; top: number; bottom: number }
 interface Blocker { box: Box; owner: Element | null; symbol: boolean }
 function pushBox(into: Blocker[], el: Element | null, owner: Element | null, symbol: boolean): void {
@@ -53,19 +78,23 @@ export class ChronoMapRenderer {
   private campaign: NormalizedCampaign | null = null;
   /** Entities by id, built once per campaign: setFrame looks every frame entity up. */
   private entities = new Map<string, NormEntity>();
+  private events = new Map<string, NormEvent>();
+  private factionColors = new Map<string, string>();
+  private numberFormat: Intl.NumberFormat;
   private theme: ChronoTheme;
   private language: string;
   private bandMeters: number;
   private avoidSelector: string;
+  private avoidEls: Element[] | null = null;
   private basemapPath: string;
   private reduceMotion: boolean;
   private maxStrength = 0;
-  private unitMarkers = new Map<string, LabelMarker>();
-  private fortMarkers = new Map<string, LabelMarker>();
+  private unitMarkers = new Map<string, UnitMarkerEntry>();
+  private fortMarkers = new Map<string, FortMarkerEntry>();
   private placeLabels = new Map<string, LabelMarker>();
   private eventLabels = new Map<string, LabelMarker>();
-  private peakLabels = new Map<string, LabelMarker>();
-  private forestLabels = new Map<string, LabelMarker>();
+  private peakLabels = new Map<string, PeakMarkerEntry>();
+  private forestLabels = new Map<string, ForestMarkerEntry>();
   private embellishmentMarkers = new Map<string, LabelMarker>();
   private basemapPlaceLabels = new Map<string, LabelMarker>();
   private basemapPopup: Popup | null = null;
@@ -78,12 +107,13 @@ export class ChronoMapRenderer {
   private lastAnimTime = 0;
   private onZoom = () => this.applyLabelVisibility();
   private onMove = () => this.scheduleDeclutter();
+  private onResize = () => { this.avoidEls = null; };
   private installHandler = () => this.install();
   private lastFrame: { frame: FrameState; focus: string[] } | null = null;
-
   constructor(private map: MapLibreMap, opts: RendererOptions = {}) {
     this.theme = opts.theme ?? parchmentLight;
     this.language = opts.language ?? 'en';
+    this.numberFormat = new Intl.NumberFormat(this.language);
     this.bandMeters = opts.maxStrengthBandMeters ?? 18000;
     this.avoidSelector = opts.avoidSelector ?? '[data-cm-avoid]';
     this.basemapPath = opts.basemapPath ?? DEFAULT_BASEMAP_PATH;
@@ -100,6 +130,7 @@ export class ChronoMapRenderer {
     }
     this.map.on('zoom', this.onZoom);
     this.map.on('move', this.onMove);
+    this.map.on('resize', this.onResize);
   }
 
   private install(): void {
@@ -146,7 +177,7 @@ export class ChronoMapRenderer {
       el.append(caption);
       this.bindPictorialPopup(el, coord, p.type === 'volcano' ? 'volcano' : p.type === 'range' ? 'range' : 'peak', p);
       const marker = new Marker({ element: el, anchor: 'bottom', offset: [0, 4] }).setLngLat(coord).addTo(this.map);
-      this.peakLabels.set(p.id, { marker, el });
+      this.peakLabels.set(p.id, { marker, el, caption });
     }
     this.applyLabelVisibility();
   }
@@ -164,7 +195,7 @@ export class ChronoMapRenderer {
       el.append(caption);
       this.bindPictorialPopup(el, coord, 'forest', p);
       const marker = new Marker({ element: el, anchor: 'bottom', offset: [0, 2] }).setLngLat(coord).addTo(this.map);
-      this.forestLabels.set(p.id, { marker, el });
+      this.forestLabels.set(p.id, { marker, el, caption });
     }
     this.applyLabelVisibility();
   }
@@ -344,6 +375,11 @@ export class ChronoMapRenderer {
   setCampaign(campaign: NormalizedCampaign): void {
     this.campaign = campaign;
     this.entities = new Map(campaign.entities.map((e) => [e.id, e]));
+    this.events = new Map(campaign.events.map((e) => [e.id, e]));
+    this.factionColors.clear();
+    for (const [id, f] of campaign.factions) {
+      this.factionColors.set(id, factionColor(f.color ?? '#7a6a58', this.theme));
+    }
     this.maxStrength = 0;
     for (const e of campaign.entities) for (const w of e.track ?? []) if (w.strength) this.maxStrength = Math.max(this.maxStrength, w.strength);
     this.clearCampaignMarkers();
@@ -402,7 +438,7 @@ export class ChronoMapRenderer {
     for (const fe of frame.entities) {
       const ne = this.entities.get(fe.id);
       if (!ne) continue;
-      const color = factionColor(c.factions.get(fe.faction)?.color ?? '#7a6a58', this.theme);
+      const color = this.factionColors.get(fe.faction) ?? factionColor(c.factions.get(fe.faction)?.color ?? '#7a6a58', this.theme);
       if (ne.polygons) {
         for (const poly of ne.polygons) {
           territories.push({ type: 'Feature', properties: { color, id: fe.id }, geometry: { type: 'Polygon', coordinates: poly as Position[][] } });
@@ -443,7 +479,7 @@ export class ChronoMapRenderer {
       });
       if (ev.phase === 'active') {
         liveEventLabels.add(ev.id);
-        const raw = c.events.find((e) => e.id === ev.id)?.raw;
+        const raw = this.events.get(ev.id)?.raw;
         if (raw) this.ensureEventLabel(ev.id, ev.position, pickText(raw.name, this.language, c.defaultLanguage));
       }
     }
@@ -528,23 +564,33 @@ export class ChronoMapRenderer {
     if (!entry) {
       const el = document.createElement('div');
       el.className = 'cm-unit';
-      el.innerHTML = '<span class="cm-unit-icon"></span><span class="cm-unit-text"><span class="cm-unit-name"></span><span class="cm-unit-strength"></span></span>';
+      const icon = document.createElement('span');
+      icon.className = 'cm-unit-icon';
+      const text = document.createElement('span');
+      text.className = 'cm-unit-text';
+      const nameEl = document.createElement('span');
+      nameEl.className = 'cm-unit-name';
+      const strengthEl = document.createElement('span');
+      strengthEl.className = 'cm-unit-strength';
+      text.append(nameEl, strengthEl);
+      el.append(icon, text);
       // Anchored on the icon, not the row: hiding the name must not move the dot.
-      entry = { marker: new Marker({ element: el, anchor: 'left', offset: [-6.5, 0] }).setLngLat(fe.position).addTo(this.map), el };
+      entry = {
+        marker: new Marker({ element: el, anchor: 'left', offset: [-6.5, 0] }).setLngLat(fe.position).addTo(this.map),
+        el, icon, text, nameEl, strengthEl,
+      };
       this.unitMarkers.set(ne.id, entry);
     }
     entry.marker.setLngLat(fe.position);
-    const icon = entry.el.querySelector('.cm-unit-icon') as HTMLElement;
-    const hollow = ['captive', 'exiled', 'surrendered', 'disbanded', 'dead'].includes(fe.status);
-    icon.style.setProperty('--cm-colour', color);
-    icon.className = `cm-unit-icon${hollow ? ' is-hollow' : ''}${fe.moving ? ' is-moving' : ''}`;
-    icon.style.setProperty('--cm-rotate', `${(fe.bearing ?? 0) - this.map.getBearing()}deg`);
+    const hollow = Boolean(HOLLOW_STATUSES[fe.status]);
+    entry.icon.style.setProperty('--cm-colour', color);
+    entry.icon.className = `cm-unit-icon${hollow ? ' is-hollow' : ''}${fe.moving ? ' is-moving' : ''}`;
+    entry.icon.style.setProperty('--cm-rotate', `${(fe.bearing ?? 0) - this.map.getBearing()}deg`);
     const raw = ne.raw;
     const wpLabel = fe.waypoint != null ? raw.track?.[fe.waypoint]?.label : null;
     const lang = this.language, fallback = this.campaign?.defaultLanguage;
-    (entry.el.querySelector('.cm-unit-name') as HTMLElement).textContent = wpLabel ? pickText(wpLabel, lang, fallback) : pickText(raw.name, lang, fallback);
-    const strengthEl = entry.el.querySelector('.cm-unit-strength') as HTMLElement;
-    strengthEl.textContent = fe.strength ? new Intl.NumberFormat(lang).format(Math.round(fe.strength)) : '';
+    entry.nameEl.textContent = wpLabel ? pickText(wpLabel, lang, fallback) : pickText(raw.name, lang, fallback);
+    entry.strengthEl.textContent = fe.strength ? this.numberFormat.format(Math.round(fe.strength)) : '';
     entry.el.classList.toggle('is-focus', this.focus.has(ne.id));
   }
 
@@ -554,15 +600,20 @@ export class ChronoMapRenderer {
     if (!entry) {
       const el = document.createElement('div');
       el.className = 'cm-fort';
-      el.innerHTML = `<span class="cm-fort-art">${renderFortressSvg(color)}</span><span class="cm-fort-label"></span>`;
-      entry = { marker: new Marker({ element: el, anchor: 'center' }).setLngLat(ne.coord).addTo(this.map), el };
+      const art = document.createElement('span');
+      art.className = 'cm-fort-art';
+      art.innerHTML = renderFortressSvg(color);
+      const label = document.createElement('span');
+      label.className = 'cm-fort-label';
+      label.textContent = pickText(ne.raw.name, this.language, this.campaign?.defaultLanguage);
+      el.append(art, label);
+      entry = { marker: new Marker({ element: el, anchor: 'center' }).setLngLat(ne.coord).addTo(this.map), el, art, label };
       this.fortMarkers.set(ne.id, entry);
     }
     entry.el.style.setProperty('--cm-colour', color);
     entry.el.classList.toggle('is-besieged', fe.status === 'besieged');
     entry.el.classList.toggle('is-lost', fe.status === 'destroyed' || fe.status === 'abandoned');
     entry.el.classList.toggle('is-focus', this.focus.has(ne.id));
-    (entry.el.querySelector('.cm-fort-label') as HTMLElement).textContent = pickText(ne.raw.name, this.language, this.campaign?.defaultLanguage);
   }
 
   private ensurePlaceLabel(id: string, coord: [number, number], text: string): void {
@@ -650,22 +701,20 @@ export class ChronoMapRenderer {
     const c = this.campaign;
     type Cand = { el: HTMLElement; pri: number; owner: Element | null };
     const cands: Cand[] = [];
-    // Priority is by kind first — the moving protagonist outranks a fort, a fort
-    // outranks a town — and being in the chapter's focus is only a tie-break
-    // inside a kind. A focus bonus large enough to cross kinds would silence the
-    // unit the chapter is actually about in favour of the scenery around it.
     const FOCUS_BONUS = 5;
-    const clear = (el: Element | null): void => { if (el instanceof HTMLElement) el.classList.remove('is-crowded'); };
-    const push = (el: Element | null, pri: number, focused: boolean, owner: Element | null): void => {
-      if (!(el instanceof HTMLElement)) return;
-      el.classList.remove('is-crowded');
+    const clear = (el: HTMLElement | null): void => {
+      if (el && el.classList.contains('is-crowded')) el.classList.remove('is-crowded');
+    };
+    const push = (el: HTMLElement | null, pri: number, focused: boolean, owner: Element | null): void => {
+      if (!el) return;
+      if (el.classList.contains('is-crowded')) el.classList.remove('is-crowded');
       cands.push({ el, pri: focused ? pri - FOCUS_BONUS : pri, owner });
     };
-    for (const [id, e] of this.unitMarkers) push(e.el.querySelector('.cm-unit-text'), 10, this.focus.has(id), e.el);
+    for (const [id, e] of this.unitMarkers) push(e.text, 10, this.focus.has(id), e.el);
     for (const [id, e] of this.eventLabels) push(e.el, 20, this.focus.has(id), e.el);
     for (const [id, e] of this.fortMarkers) {
-      if (!e.el.classList.contains('show-label')) { clear(e.el.querySelector('.cm-fort-label')); continue; }
-      push(e.el.querySelector('.cm-fort-label'), 30, this.focus.has(id), e.el);
+      if (!e.el.classList.contains('show-label')) { clear(e.label); continue; }
+      push(e.label, 30, this.focus.has(id), e.el);
     }
     for (const [id, e] of this.placeLabels) {
       if (e.el.classList.contains('is-hidden')) { clear(e.el); continue; }
@@ -676,14 +725,12 @@ export class ChronoMapRenderer {
       push(e.el, 50, false, e.el);
     }
     for (const [, e] of this.peakLabels) {
-      const cap = e.el.querySelector('.cm-peak-caption');
-      if (e.el.classList.contains('is-hidden')) { clear(cap); continue; }
-      push(cap ?? e.el, 60, false, e.el);
+      if (e.el.classList.contains('is-hidden')) { clear(e.caption); continue; }
+      push(e.caption, 60, false, e.el);
     }
     for (const [, e] of this.forestLabels) {
-      const cap = e.el.querySelector('.cm-forest-caption');
-      if (e.el.classList.contains('is-hidden')) { clear(cap); continue; }
-      push(cap ?? e.el, 65, false, e.el);
+      if (e.el.classList.contains('is-hidden')) { clear(e.caption); continue; }
+      push(e.caption, 65, false, e.el);
     }
     if (cands.length === 0) return;
     // One read pass after the one write pass above, so the browser lays out once.
@@ -692,9 +739,12 @@ export class ChronoMapRenderer {
     // Symbols and page chrome are reserved first: a name gives way to them, never
     // the reverse. A marker's own symbol does not block its own label.
     const blockers: Blocker[] = [];
-    for (const [, e] of this.unitMarkers) pushBox(blockers, e.el.querySelector('.cm-unit-icon'), e.el, true);
-    for (const [, e] of this.fortMarkers) pushBox(blockers, e.el.querySelector('.cm-fort-art') ?? e.el.querySelector('svg'), e.el, true);
-    for (const el of Array.from(document.querySelectorAll(this.avoidSelector))) pushBox(blockers, el, null, false);
+    for (const [, e] of this.unitMarkers) pushBox(blockers, e.icon, e.el, true);
+    for (const [, e] of this.fortMarkers) pushBox(blockers, e.art, e.el, true);
+    if (!this.avoidEls || this.avoidEls.length === 0) {
+      this.avoidEls = Array.from(document.querySelectorAll(this.avoidSelector));
+    }
+    for (const el of this.avoidEls) pushBox(blockers, el, null, false);
 
     const view = this.map.getContainer().getBoundingClientRect();
     const order = cands.map((_, i) => i).sort((a, b) => cands[a].pri - cands[b].pri || boxes[a].top - boxes[b].top);
@@ -709,8 +759,11 @@ export class ChronoMapRenderer {
       // a unit's own name is worth more than the star it happens to cross.
       const minor = cands[i].pri >= 40;
       const clash = outside || blockers.some((b) => b.owner !== cands[i].owner && (minor || !b.symbol) && hits(r, b.box));
-      if (clash) cands[i].el.classList.add('is-crowded');
-      else blockers.push({ box: r, owner: cands[i].owner, symbol: false });
+      if (clash) {
+        if (!cands[i].el.classList.contains('is-crowded')) cands[i].el.classList.add('is-crowded');
+      } else {
+        blockers.push({ box: r, owner: cands[i].owner, symbol: false });
+      }
     }
   }
   private declutterQueued = false;
@@ -718,7 +771,15 @@ export class ChronoMapRenderer {
   /* ---------------------------------------------------------------- misc */
   setLanguage(lang: string): void {
     this.language = lang;
-    if (this.campaign) this.buildStatic();
+    this.numberFormat = new Intl.NumberFormat(lang);
+    if (this.campaign) {
+      this.buildStatic();
+      const defaultLang = this.campaign.defaultLanguage;
+      for (const [id, entry] of this.fortMarkers) {
+        const ne = this.entities.get(id);
+        if (ne) entry.label.textContent = pickText(ne.raw.name, lang, defaultLang);
+      }
+    }
   }
   private setSource(id: string, data: FeatureCollection): void {
     const src = this.map.getSource(id) as GeoJSONSource | undefined;

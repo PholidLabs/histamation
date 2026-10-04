@@ -45,8 +45,16 @@ const ui = (): UIStrings => (UI[state.lang as keyof typeof UI] ?? UI.en);
 const tour = new CoachmarkTour(() => ui());
 const campaign = (): NormalizedCampaign => engine.campaign!;
 const tx = (t: unknown): string => pickText(t as never, state.lang, engine.campaign?.defaultLanguage);
-const nf = () => new Intl.NumberFormat(state.lang);
-const qty = (q: unknown): string => (q == null ? '' : typeof q === 'number' ? nf().format(q) : `${nf().format((q as any).min)}–${nf().format((q as any).max)}`);
+let cachedNf: Intl.NumberFormat | null = null;
+let cachedNfLang = '';
+const nf = (): Intl.NumberFormat => {
+  if (!cachedNf || cachedNfLang !== state.lang) {
+    cachedNf = new Intl.NumberFormat(state.lang);
+    cachedNfLang = state.lang;
+  }
+  return cachedNf;
+};
+const qty = (q: unknown): string => (q == null ? '' : typeof q === 'number' ? nf().format(q) : (typeof q === 'object' && 'min' in q && 'max' in q) ? `${nf().format(Number(q.min))}–${nf().format(Number(q.max))}` : '');
 const isDark = () => document.documentElement.dataset.theme === 'dark'
   || (document.documentElement.dataset.theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
 const theme = () => (isDark() ? parchmentDark : parchmentLight);
@@ -228,9 +236,11 @@ function eventDetails(ch: NormChapter): HTMLElement | null {
   }
   return d;
 }
+let storySteps: HTMLElement[] = [];
 function buildStory(): void {
   const c = campaign(), meta = c.meta, host = $('story');
   host.replaceChildren();
+  storySteps = [];
   const diag = engine.diagnostics;
   const count = (level: Diagnostic['level']) => diag.filter((d) => d.level === level).length;
 
@@ -278,6 +288,7 @@ function buildStory(): void {
     const ev = eventDetails(ch); if (ev) inner.append(ev);
     const src = sourcesDetails(ch.raw.sources); if (src) inner.append(src);
     step.append(inner);
+    storySteps.push(step);
     host.append(step);
   });
 
@@ -587,7 +598,7 @@ const anchorY = (): number => {
 let scrollDirty = true;
 function updateScroll(): void {
   if (state.mode !== 'story' || !engine.campaign) return;
-  const steps = [...document.querySelectorAll<HTMLElement>('.step')];
+  const steps = storySteps.length ? storySteps : [...document.querySelectorAll<HTMLElement>('.step')];
   if (!steps.length) return;
   const anchor = anchorY();
   let index = -1, p = 0;
@@ -682,7 +693,7 @@ function setThemeMode(mode: ThemeMode): void {
 }
 function setLang(lang: string): void {
   if (lang === state.lang) return;
-  const steps = [...document.querySelectorAll<HTMLElement>('.step')];
+  const steps = storySteps.length ? storySteps : [...document.querySelectorAll<HTMLElement>('.step')];
   const i = state.activeIndex ?? -1;
   const r = i >= 0 && steps[i] ? steps[i].getBoundingClientRect() : null;
   const p = r ? clamp((anchorY() - r.top) / r.height, 0, 1) : 0;

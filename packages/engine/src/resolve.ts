@@ -30,6 +30,12 @@ function measure(path: [number, number][]): { lengths: number[]; total: number }
 /** Point at fraction f of a polyline's haversine length; linear lng/lat within a segment. */
 export function alongPath(path: [number, number][], f: number): { position: [number, number]; segment: number; travelled: [number, number][] } {
   if (path.length === 1 || f <= 0) return { position: path[0], segment: 0, travelled: [path[0]] };
+  if (path.length === 2) {
+    const a = path[0], b = path[1];
+    if (f >= 1 || (a[0] === b[0] && a[1] === b[1])) return { position: b, segment: 0, travelled: [a, b] };
+    const position: [number, number] = [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+    return { position, segment: 0, travelled: [a, position] };
+  }
   const { lengths, total } = measure(path);
   if (total === 0 || f >= 1) return { position: path[path.length - 1], segment: path.length - 2, travelled: path.slice() };
   let target = f * total;

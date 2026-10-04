@@ -45,8 +45,37 @@ pub fn along_path(path: &[[f64; 2]], f: f64) -> PathPoint {
             travelled: vec![path[0]],
         };
     }
-    let lengths: Vec<f64> = path.windows(2).map(|p| haversine(p[0], p[1])).collect();
-    let total: f64 = lengths.iter().fold(0.0, |a, b| a + b);
+    if path.len() == 2 {
+        let (a, b) = (path[0], path[1]);
+        if f >= 1.0 || (a[0] == b[0] && a[1] == b[1]) {
+            return PathPoint {
+                position: b,
+                segment: 0,
+                travelled: path.to_vec(),
+            };
+        }
+        let position = [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+        return PathPoint {
+            position,
+            segment: 0,
+            travelled: vec![a, position],
+        };
+    }
+    let n = path.len() - 1;
+    let mut stack_buf = [0.0; 32];
+    let mut heap_buf: Vec<f64>;
+    let lengths: &mut [f64] = if n <= 32 {
+        &mut stack_buf[..n]
+    } else {
+        heap_buf = vec![0.0; n];
+        &mut heap_buf[..]
+    };
+    let mut total = 0.0;
+    for i in 0..n {
+        let l = haversine(path[i], path[i + 1]);
+        lengths[i] = l;
+        total += l;
+    }
     let last = path[path.len() - 1];
     if total == 0.0 || f >= 1.0 {
         return PathPoint {
@@ -107,29 +136,34 @@ pub fn state_at(states: &[NormState], t: Ticks) -> Option<&NormState> {
 
 /// Constant during a stay, linear between knots, clamped outside them (§4.1).
 fn strength_at(track: &[NormWaypoint], t: Ticks) -> Option<f64> {
-    let mut knots: Vec<(Ticks, f64)> = Vec::new();
+    let mut prev_knot: Option<(Ticks, f64)> = None;
     for w in track {
         if let Some(s) = w.strength {
-            knots.push((w.arrive, s));
-            knots.push((w.depart, s));
+            let arrive_knot = (w.arrive, s);
+            let depart_knot = (w.depart, s);
+            for knot in [arrive_knot, depart_knot] {
+                match prev_knot {
+                    None => {
+                        if t <= knot.0 {
+                            return Some(knot.1);
+                        }
+                    }
+                    Some((t0, v0)) => {
+                        if t <= knot.0 {
+                            let (t1, v1) = knot;
+                            return Some(if t1 == t0 {
+                                v1
+                            } else {
+                                js_round(v0 + ((v1 - v0) * (t - t0) as f64) / (t1 - t0) as f64)
+                            });
+                        }
+                    }
+                }
+                prev_knot = Some(knot);
+            }
         }
     }
-    let first = *knots.first()?;
-    if t <= first.0 {
-        return Some(first.1);
-    }
-    for i in 1..knots.len() {
-        let (t1, v1) = knots[i];
-        if t <= t1 {
-            let (t0, v0) = knots[i - 1];
-            return Some(if t1 == t0 {
-                v1
-            } else {
-                js_round(v0 + ((v1 - v0) * (t - t0) as f64) / (t1 - t0) as f64)
-            });
-        }
-    }
-    knots.last().map(|k| k.1)
+    prev_knot.map(|k| k.1)
 }
 
 struct UnitPose {
@@ -140,7 +174,8 @@ struct UnitPose {
     leg: Option<usize>,
     leg_progress: Option<f64>,
     certainty: Option<Certainty>,
-    trail: Vec<[f64; 2]>,
+    trail: Option<Vec<[f64; 2]>>,
+    trail_length: usize,
 }
 
 /// Bearing of the final segment of a leg. Legs always have ≥ 2 points (they are built
@@ -152,7 +187,7 @@ fn leg_end_bearing(leg: &[[f64; 2]]) -> Option<f64> {
     Some(initial_bearing(leg[leg.len() - 2], leg[leg.len() - 1]))
 }
 
-fn unit_at(ne: &NormEntity, t: Ticks) -> UnitPose {
+fn unit_at(ne: &NormEntity, t: Ticks, want_trail: bool) -> UnitPose {
     // Only called for entities that normalisation gave a non-empty track.
     let tr = ne.track.as_deref().unwrap_or_default();
     if tr.is_empty() {
@@ -164,11 +199,17 @@ fn unit_at(ne: &NormEntity, t: Ticks) -> UnitPose {
             leg: None,
             leg_progress: None,
             certainty: ne.certainty.clone(),
-            trail: Vec::new(),
+            trail: if want_trail { Some(Vec::new()) } else { None },
+            trail_length: 0,
         };
     }
 
-    let mut trail = vec![tr[0].coord];
+    let mut trail = if want_trail {
+        Some(vec![tr[0].coord])
+    } else {
+        None
+    };
+    let mut trail_length = 1;
     if t < tr[0].arrive {
         return UnitPose {
             position: tr[0].coord,
@@ -179,6 +220,7 @@ fn unit_at(ne: &NormEntity, t: Ticks) -> UnitPose {
             leg_progress: None,
             certainty: tr[0].certainty.clone(),
             trail,
+            trail_length,
         };
     }
 
@@ -194,6 +236,7 @@ fn unit_at(ne: &NormEntity, t: Ticks) -> UnitPose {
                 leg_progress: None,
                 certainty: w.certainty.clone(),
                 trail,
+                trail_length,
             };
         }
         let Some(next) = tr.get(i + 1) else { break };
@@ -209,7 +252,10 @@ fn unit_at(ne: &NormEntity, t: Ticks) -> UnitPose {
             } else {
                 None
             };
-            trail.extend_from_slice(&hit.travelled[1.min(hit.travelled.len())..]);
+            if let Some(tr) = &mut trail {
+                tr.extend_from_slice(&hit.travelled[1.min(hit.travelled.len())..]);
+            }
+            trail_length += hit.travelled.len().saturating_sub(1);
             return UnitPose {
                 position: hit.position,
                 bearing,
@@ -219,9 +265,13 @@ fn unit_at(ne: &NormEntity, t: Ticks) -> UnitPose {
                 leg_progress: Some(f),
                 certainty: next.certainty.clone(),
                 trail,
+                trail_length,
             };
         }
-        trail.extend_from_slice(&next_leg[1.min(next_leg.len())..]);
+        if let Some(tr) = &mut trail {
+            tr.extend_from_slice(&next_leg[1.min(next_leg.len())..]);
+        }
+        trail_length += next_leg.len().saturating_sub(1);
     }
 
     let last = &tr[tr.len() - 1];
@@ -234,6 +284,7 @@ fn unit_at(ne: &NormEntity, t: Ticks) -> UnitPose {
         leg_progress: None,
         certainty: last.certainty.clone(),
         trail,
+        trail_length,
     }
 }
 
@@ -300,8 +351,12 @@ pub fn resolve_frame(campaign: &NormalizedCampaign, t: Ticks, opts: &ResolveOpti
         };
 
         if let Some(track) = &ne.track {
-            let u = unit_at(ne, t);
-            if !in_bbox(Some(u.position), bbox) && !u.trail.iter().any(|c| in_bbox(Some(*c), bbox))
+            let u = unit_at(ne, t, opts.include_trail || bbox.is_some());
+            if !in_bbox(Some(u.position), bbox)
+                && !u
+                    .trail
+                    .as_ref()
+                    .is_some_and(|tr| tr.iter().any(|c| in_bbox(Some(*c), bbox)))
             {
                 continue;
             }
@@ -317,9 +372,9 @@ pub fn resolve_frame(campaign: &NormalizedCampaign, t: Ticks, opts: &ResolveOpti
             base.strength = Some(strength);
             base.certainty = Some(u.certainty.or_else(|| ne.certainty.clone()));
             if opts.include_trail {
-                base.trail = Some(u.trail);
+                base.trail = u.trail;
             } else {
-                base.trail_length = Some(u.trail.len());
+                base.trail_length = Some(u.trail_length);
             }
             frame.entities.push(base);
         } else if let Some(coord) = ne.coord {
