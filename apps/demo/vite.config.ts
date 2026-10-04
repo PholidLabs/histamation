@@ -2,6 +2,8 @@ import { defineConfig, type Plugin } from 'vite';
 import { createRequire } from 'node:module';
 import { createReadStream, readFileSync, readdirSync } from 'node:fs';
 import { extname, resolve } from 'node:path';
+import { DOC_LANGS } from './src/docs/copy.js';
+import { buildSite, isWatched, renderIndex, renderPage, searchIndex, WATCHED, type DocsSite } from './docs/site.js';
 
 const root = resolve(import.meta.dirname, '../..');
 const require = createRequire(import.meta.url);
@@ -62,10 +64,83 @@ function siteIcons(): Plugin {
   };
 }
 
+/**
+ * The docs: Markdown in docs/content/<lang>/ (plus the data contract) rendered to one static HTML page
+ * per language and slug, at /docs/<lang>/<slug>/. docs/index.html is a normal Vite input, so its script
+ * and styles are bundled as usual; this plugin then stamps each page into the processed template.
+ * A broken internal link fails the build (see docs/site.ts). In dev the same pages are rendered per
+ * request, with any link errors shown in a banner instead.
+ */
+function docsSite(): Plugin {
+  const templateFile = resolve(import.meta.dirname, 'docs/index.html');
+  let cache: Promise<DocsSite> | null = null;
+  return {
+    name: 'docs-site',
+    enforce: 'post',
+    configureServer(server) {
+      server.watcher.add(WATCHED);
+      server.watcher.on('all', (_event, file) => {
+        if (!isWatched(file)) return;
+        cache = null;
+        server.ws.send({ type: 'full-reload' });
+      });
+      server.middlewares.use(async (req, res, next) => {
+        const url = (req.url ?? '').split('?')[0];
+        if (/^\/docs(\/(en|id)(\/[a-z0-9-]+)?)?$/.test(url)) {
+          res.statusCode = 301;
+          res.setHeader('Location', `${url}/`);
+          res.end();
+          return;
+        }
+        const search = /^\/docs\/search-(en|id)\.json$/.exec(url);
+        const page = /^\/docs\/(?:(en|id)\/(?:([a-z0-9-]+)\/)?)?$/.exec(url);
+        if (!search && !page) return next();
+        try {
+          const site = await (cache ??= buildSite());
+          if (search) {
+            res.setHeader('Content-Type', 'application/json; charset=utf-8');
+            res.end(searchIndex(site, search[1] as (typeof DOC_LANGS)[number]));
+            return;
+          }
+          const lang = page![1] as (typeof DOC_LANGS)[number] | undefined;
+          const slug = page![2];
+          const found = slug ? site.pages.find((p) => p.lang === lang && p.slug === slug) : null;
+          if (slug && !found) return next();
+          const template = await server.transformIndexHtml(url, readFileSync(templateFile, 'utf8'));
+          let html = found ? renderPage(site, found, template) : renderIndex(site, template, lang ?? null);
+          if (site.errors.length) {
+            const list = site.errors.map((e) => `<li>${e.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</li>`).join('');
+            html = html.replace(/<body[^>]*>/, (m) => `${m}<div class="dev-errors" role="alert"><strong>Docs build errors — the production build will fail:</strong><ul>${list}</ul></div>`);
+          }
+          res.setHeader('Content-Type', 'text/html; charset=utf-8');
+          res.end(html);
+        } catch (err) {
+          next(err);
+        }
+      });
+    },
+    async generateBundle(_options, bundle) {
+      const template = bundle['docs/index.html'];
+      if (!template || template.type !== 'asset') return this.error('docs/index.html is missing from the bundle');
+      const site = await buildSite();
+      if (site.errors.length) return this.error(`Docs build errors:\n  ${site.errors.join('\n  ')}`);
+      const source = String(template.source);
+      template.source = renderIndex(site, source, null);
+      for (const lang of DOC_LANGS) {
+        this.emitFile({ type: 'asset', fileName: `docs/${lang}/index.html`, source: renderIndex(site, source, lang) });
+        this.emitFile({ type: 'asset', fileName: `docs/search-${lang}.json`, source: searchIndex(site, lang) });
+      }
+      for (const p of site.pages) {
+        this.emitFile({ type: 'asset', fileName: `docs/${p.lang}/${p.slug}/index.html`, source: renderPage(site, p, source) });
+      }
+    },
+  };
+}
+
 export default defineConfig({
   // The repo's data folder is the demo's static root: /campaigns/*.json and /basemap/*.geojson
   publicDir: resolve(root, 'data'),
-  plugins: [maplibreWorkerAssets(), siteIcons()],
+  plugins: [maplibreWorkerAssets(), siteIcons(), docsSite()],
   optimizeDeps: { exclude: ['maplibre-gl'] },
   resolve: {
     // most specific first: Vite matches aliases in order
@@ -78,13 +153,14 @@ export default defineConfig({
   build: {
     target: 'es2022',
     chunkSizeWarningLimit: 1400,
-    // Two pages: the landing explainer at / and the map app at /app/. Both entries'
-    // chunks still land in assets/, so the hand-emitted MapLibre worker above stays
-    // a sibling of the app chunk that asks for it by relative URL.
+    // Three pages: the landing explainer at /, the map app at /app/ and the docs template at /docs/,
+    // which the docsSite plugin stamps into one page per language and slug. All entries' chunks land
+    // in assets/, so the hand-emitted MapLibre worker above stays a sibling of the app chunk.
     rollupOptions: {
       input: {
         landing: resolve(import.meta.dirname, 'index.html'),
         app: resolve(import.meta.dirname, 'app/index.html'),
+        docs: resolve(import.meta.dirname, 'docs/index.html'),
       },
     },
   },

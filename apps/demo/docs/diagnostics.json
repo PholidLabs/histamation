@@ -1,0 +1,641 @@
+[
+  {
+    "code": "S001",
+    "level": "error",
+    "title": {
+      "en": "Schema violation",
+      "id": "Pelanggaran skema"
+    },
+    "trigger": {
+      "en": "The file fails one or more rules in `campaign.schema.json` — a required property is missing, a value has the wrong type, an `enum` field holds a value it doesn't allow, or the object has a property the schema doesn't recognize. `chronomap-check` only runs this check when `ajv` is installed; without it, only the semantic checks (`E000`–`E018`, `W1xx`, `I201`) run.",
+      "id": "Berkas melanggar satu atau lebih aturan di `campaign.schema.json` — properti wajib tidak ada, nilai bertipe salah, sebuah field `enum` diisi nilai yang tidak diizinkan, atau objek memiliki properti yang tidak dikenali skema. `chronomap-check` hanya menjalankan pemeriksaan ini bila `ajv` terpasang; tanpanya, hanya pemeriksaan semantik (`E000`–`E018`, `W1xx`, `I201`) yang berjalan."
+    },
+    "fix": {
+      "en": "Open the file at the reported JSON Pointer `path` and match the shape the schema expects: add the missing property, fix the value's type, pick an allowed `enum` value, or rename a custom field to start with `x-`. `npm install` (which pulls in the `ajv` devDependency) makes `S001` checks run locally the same way CI runs them.",
+      "id": "Buka berkas pada `path` (JSON Pointer) yang dilaporkan dan sesuaikan bentuknya dengan yang diharapkan skema: tambahkan properti yang hilang, perbaiki tipe nilainya, pilih nilai `enum` yang diizinkan, atau ganti nama field kustom agar diawali `x-`. `npm install` (yang menarik devDependency `ajv`) membuat pemeriksaan `S001` berjalan secara lokal sama seperti di CI."
+    },
+    "example": {
+      "bad": "{\n  \"id\": \"diponegoro-hq\",\n  \"kind\": \"unit\",\n  \"colour\": \"#7a2e2e\"\n}",
+      "good": "{\n  \"id\": \"diponegoro-hq\",\n  \"kind\": \"unit\",\n  \"x-colour\": \"#7a2e2e\"\n}"
+    }
+  },
+  {
+    "code": "E000",
+    "level": "error",
+    "title": {
+      "en": "Not a JSON object",
+      "id": "Bukan objek JSON"
+    },
+    "trigger": {
+      "en": "The parsed input isn't an object at all — `null`, an array, a string, a number, or (from the CLI) a file that isn't even valid JSON. This is the one diagnostic emitted before any other check can run, so `path` is empty (`\"\"`).",
+      "id": "Input yang diparsing sama sekali bukan objek — `null`, array, string, angka, atau (dari CLI) berkas yang bahkan bukan JSON valid. Ini satu-satunya diagnosis yang muncul sebelum pemeriksaan lain sempat berjalan, sehingga `path`-nya kosong (`\"\"`)."
+    },
+    "fix": {
+      "en": "Make sure the file's top level is a single JSON object with the fields described in [Campaign file](campaign-file.md) — `{ \"chronomap\": \"1.0\", \"meta\": { … }, … }` — not an array or a bare value, and that it parses as JSON at all.",
+      "id": "Pastikan level teratas berkas adalah satu objek JSON dengan field-field yang dijelaskan di [Berkas kampanye](campaign-file.md) — `{ \"chronomap\": \"1.0\", \"meta\": { … }, … }` — bukan array atau nilai polos, dan bahwa berkas itu memang berhasil diparsing sebagai JSON."
+    },
+    "example": {
+      "bad": "[\n  { \"chronomap\": \"1.0\" }\n]",
+      "good": "{\n  \"chronomap\": \"1.0\",\n  \"meta\": { … },\n  …\n}"
+    }
+  },
+  {
+    "code": "E001",
+    "level": "error",
+    "title": {
+      "en": "Duplicate ID",
+      "id": "ID ganda"
+    },
+    "trigger": {
+      "en": "Two objects anywhere in the file — across `factions`, `parts`, `places`, `entities`, `events`, `chapters`, `sources` and `media` — share the same `id`. IDs are one flat namespace ([§2](contract.md#sec-2)), so a place and an event can't both be called `gawok`; the error names the second occurrence and where the first one was.",
+      "id": "Dua objek di mana pun dalam berkas — lintas `factions`, `parts`, `places`, `entities`, `events`, `chapters`, `sources`, dan `media` — memakai `id` yang sama. Semua ID berbagi satu namespace datar ([§2](contract.md#sec-2)), jadi sebuah tempat dan peristiwa tidak boleh sama-sama bernama `gawok`; galat ini menyebutkan kemunculan kedua dan lokasi kemunculan pertamanya."
+    },
+    "fix": {
+      "en": "Rename one of the two objects to a unique kebab-case ID. Check every collection, not just the one you're editing — the clash is often a place and an entity or event named after the same location.",
+      "id": "Ganti nama salah satu dari kedua objek itu menjadi ID kebab-case yang unik. Periksa semua koleksi, bukan hanya yang sedang Anda edit — benturan ini sering terjadi antara tempat dan entitas atau peristiwa yang dinamai berdasarkan lokasi yang sama."
+    },
+    "example": {
+      "bad": "{ \"places\": [{ \"id\": \"gawok\", … }], \"events\": [{ \"id\": \"gawok\", … }] }",
+      "good": "{ \"places\": [{ \"id\": \"gawok\", … }], \"events\": [{ \"id\": \"battle-of-gawok\", … }] }"
+    }
+  },
+  {
+    "code": "E002",
+    "level": "error",
+    "title": {
+      "en": "Unknown ID reference",
+      "id": "Rujukan ID tidak dikenal"
+    },
+    "trigger": {
+      "en": "A field that references another object by ID — `entity.faction`, `waypoint.at`, `chapter.focus`, `event.outcome.victor`, and similar — names an ID that doesn't exist anywhere in the file's one ID namespace.",
+      "id": "Sebuah field yang merujuk objek lain lewat ID — `entity.faction`, `waypoint.at`, `chapter.focus`, `event.outcome.victor`, dan sejenisnya — menyebut ID yang tidak ada di mana pun dalam satu namespace ID berkas."
+    },
+    "fix": {
+      "en": "Fix the typo, or add the missing object (a faction, place, entity, event or part) with that exact `id`.",
+      "id": "Perbaiki salah ketiknya, atau tambahkan objek yang hilang (faction, tempat, entitas, peristiwa, atau part) dengan `id` yang persis sama."
+    },
+    "example": {
+      "bad": "\"faction\": \"diponegro\"",
+      "good": "\"faction\": \"diponegoro\""
+    }
+  },
+  {
+    "code": "E003",
+    "level": "error",
+    "title": {
+      "en": "Reference is the wrong type",
+      "id": "Rujukan bertipe salah"
+    },
+    "trigger": {
+      "en": "A reference resolves to a real ID, but that object is the wrong kind for the field — for example `chapter.focus` naming a faction ID, or `waypoint.at` naming a source ID. The message names the type actually found and the type(s) expected.",
+      "id": "Sebuah rujukan menunjuk ke ID yang benar-benar ada, tetapi objek itu bertipe salah untuk field tersebut — misalnya `chapter.focus` menyebut ID faction, atau `waypoint.at` menyebut ID source. Pesannya menyebutkan tipe sebenarnya yang ditemukan dan tipe yang diharapkan."
+    },
+    "fix": {
+      "en": "Point the field at an ID of the expected type instead — `chapter.focus` accepts places, entities and events; `waypoint.at` accepts places; `entity.faction` and `event.participants[].faction` accept factions.",
+      "id": "Arahkan field itu ke ID bertipe yang sesuai — `chapter.focus` menerima place, entity, dan event; `waypoint.at` menerima place; `entity.faction` dan `event.participants[].faction` menerima faction."
+    },
+    "example": {
+      "bad": "\"focus\": [\"diponegoro\"]  // diponegoro is a faction id",
+      "good": "\"focus\": [\"diponegoro-hq\"]  // an entity id"
+    }
+  },
+  {
+    "code": "E004",
+    "level": "error",
+    "title": {
+      "en": "Invalid time value",
+      "id": "Nilai waktu tidak valid"
+    },
+    "trigger": {
+      "en": "Covers every way a `When` string or `meta.timeline.extent` can be malformed: bad syntax (not `YYYY`, `YYYY-MM`, `YYYY-MM-DD` or `YYYY-MM-DDTHH:MM[:SS]`, each with an optional `? ~ %` suffix — see [Time](time.md)), an out-of-range month, day, hour, minute or second, `-0000` (year zero is written `0000`), more than one `/`, an interval with both ends open (`../..`) or an empty end (`1825/`), an interval whose end is before its start, or a `meta.timeline.extent` that is missing or has an open end.",
+      "id": "Mencakup semua cara sebuah string `When` atau `meta.timeline.extent` bisa cacat: sintaksis salah (bukan `YYYY`, `YYYY-MM`, `YYYY-MM-DD`, atau `YYYY-MM-DDTHH:MM[:SS]`, masing-masing dengan akhiran opsional `? ~ %` — lihat [Waktu](time.md)), bulan/tanggal/jam/menit/detik di luar jangkauan, `-0000` (tahun nol ditulis `0000`), lebih dari satu `/`, interval dengan kedua ujung terbuka (`../..`) atau ujung kosong (`1825/`), interval yang berakhir sebelum ia mulai, atau `meta.timeline.extent` yang tidak ada atau berujung terbuka."
+    },
+    "fix": {
+      "en": "Rewrite the `When` string to match the grammar in [Time](time.md); for `meta.timeline.extent` specifically, give it two closed dates (no `..`) that bracket every date used elsewhere in the file.",
+      "id": "Tulis ulang string `When` agar sesuai gramatika di [Waktu](time.md); khusus untuk `meta.timeline.extent`, beri dua tanggal tertutup (tanpa `..`) yang membatasi setiap tanggal lain yang dipakai di berkas."
+    },
+    "example": {
+      "bad": "\"when\": \"1825-13-02\"  // month 13",
+      "good": "\"when\": \"1826-01-02\""
+    }
+  },
+  {
+    "code": "E005",
+    "level": "error",
+    "title": {
+      "en": "Date outside timeline.extent",
+      "id": "Tanggal di luar timeline.extent"
+    },
+    "trigger": {
+      "en": "A resolved `When` — on an entity, waypoint, state, event or chapter — falls partly or wholly outside `meta.timeline.extent`. This is checked after open ends (`..`) are resolved against the extent, so it can fire even on a date that looks fine unresolved.",
+      "id": "Sebuah `When` yang telah diresolusi — pada entitas, waypoint, state, peristiwa, atau bab — jatuh sebagian atau seluruhnya di luar `meta.timeline.extent`. Ini diperiksa setelah ujung terbuka (`..`) diresolusi terhadap extent, sehingga bisa muncul juga pada tanggal yang tampak baik-baik saja sebelum diresolusi."
+    },
+    "fix": {
+      "en": "Either correct the date, or widen `meta.timeline.extent` to cover it — the extent must bracket every timeline date in the file ([§3.2](contract.md#sec-3-2)).",
+      "id": "Perbaiki tanggalnya, atau lebarkan `meta.timeline.extent` agar mencakupnya — extent wajib membatasi setiap tanggal linimasa dalam berkas ([§3.2](contract.md#sec-3-2))."
+    },
+    "example": {
+      "bad": "\"timeline\": { \"extent\": \"1825-01-01/1826-01-01\" }  //  … \"when\": \"1827-05-10\"",
+      "good": "\"timeline\": { \"extent\": \"1825-01-01/1831-01-01\" }"
+    }
+  },
+  {
+    "code": "E006",
+    "level": "error",
+    "title": {
+      "en": "Track waypoints out of order, or empty",
+      "id": "Waypoint track tidak berurutan, atau kosong"
+    },
+    "trigger": {
+      "en": "Either a `unit` waypoint arrives before the previous one departs — `arrive[i] < depart[i-1]` ([§4.1](contract.md#sec-4-1)) — or the entity's `track` produced zero usable waypoints at all (every waypoint failed its own `when`/`at` validation, or the array was empty).",
+      "id": "Salah satu dari dua hal: sebuah waypoint `unit` tiba sebelum waypoint sebelumnya berangkat — `arrive[i] < depart[i-1]` ([§4.1](contract.md#sec-4-1)) — atau `track` entitas tersebut sama sekali tidak menghasilkan waypoint yang bisa dipakai (setiap waypoint gagal validasi `when`/`at`-nya sendiri, atau array-nya kosong)."
+    },
+    "fix": {
+      "en": "Reorder or retime the waypoints so each arrival is at or after the previous departure, and make sure at least one waypoint has both a valid `when` and a valid `at`.",
+      "id": "Urutkan ulang atau ubah waktu waypoint sehingga setiap kedatangan terjadi pada atau setelah keberangkatan sebelumnya, dan pastikan setidaknya satu waypoint punya `when` dan `at` yang sama-sama valid."
+    },
+    "example": {
+      "bad": "\"track\": [\n  { \"when\": \"1826-08-09/1826-08-28\", \"at\": \"kejiwan\" },\n  { \"when\": \"1826-08-15\", \"at\": \"delanggu\" }\n]",
+      "good": "\"track\": [\n  { \"when\": \"1826-08-09/1826-08-28\", \"at\": \"kejiwan\" },\n  { \"when\": \"1826-08-28\", \"at\": \"delanggu\" }\n]"
+    }
+  },
+  {
+    "code": "E007",
+    "level": "error",
+    "title": {
+      "en": "States not sorted by start",
+      "id": "states tidak terurut berdasarkan start"
+    },
+    "trigger": {
+      "en": "An entity's `states[]` array has an entry whose `when` starts earlier than the previous entry's start. `states` must already be in chronological order ([§4.2](contract.md#sec-4-2)) — the loader doesn't sort it for you.",
+      "id": "Array `states[]` sebuah entitas punya entri yang `when`-nya mulai lebih awal daripada start entri sebelumnya. `states` wajib sudah terurut kronologis ([§4.2](contract.md#sec-4-2)) — loader tidak mengurutkannya untuk Anda."
+    },
+    "fix": {
+      "en": "Reorder the `states` array so each entry's start time is at or after the one before it.",
+      "id": "Urutkan ulang array `states` sehingga waktu mulai tiap entri berada pada atau setelah entri sebelumnya."
+    },
+    "example": {
+      "bad": "\"states\": [\n  { \"when\": \"1825-09-25\", \"status\": \"active\" },\n  { \"when\": \"1825-07-28/1825-09-25\", \"status\": \"besieged\" }\n]",
+      "good": "\"states\": [\n  { \"when\": \"1825-07-28/1825-09-25\", \"status\": \"besieged\" },\n  { \"when\": \"1825-09-25\", \"status\": \"active\" }\n]"
+    }
+  },
+  {
+    "code": "E008",
+    "level": "error",
+    "title": {
+      "en": "Missing default language",
+      "id": "Bahasa default tidak ada"
+    },
+    "trigger": {
+      "en": "A language-map text field (`title`, `name`, `body`, and the other keys listed in [Languages](languages.md)) doesn't include a key for `meta.defaultLanguage`.",
+      "id": "Sebuah field teks berupa peta bahasa (`title`, `name`, `body`, dan key teks lain yang terdaftar di [Bahasa](languages.md)) tidak memuat key untuk `meta.defaultLanguage`."
+    },
+    "fix": {
+      "en": "Add the `meta.defaultLanguage` key to that text object — every language map must at least cover the default language.",
+      "id": "Tambahkan key `meta.defaultLanguage` pada objek teks itu — setiap peta bahasa wajib setidaknya mencakup bahasa default."
+    },
+    "example": {
+      "bad": "\"title\": { \"id\": \"Perang Jawa\" }  // defaultLanguage is \"en\"",
+      "good": "\"title\": { \"en\": \"The Java War\", \"id\": \"Perang Jawa\" }"
+    }
+  },
+  {
+    "code": "E009",
+    "level": "error",
+    "title": {
+      "en": "Language not declared",
+      "id": "Bahasa tidak dideklarasikan"
+    },
+    "trigger": {
+      "en": "A language-map text field has a key that isn't in `meta.languages` — for example a stray `\"fr\"` key when `languages` only lists `[\"en\", \"id\"]`.",
+      "id": "Sebuah field teks peta bahasa punya key yang tidak terdaftar di `meta.languages` — misalnya key `\"fr\"` yang nyasar padahal `languages` cuma berisi `[\"en\", \"id\"]`."
+    },
+    "fix": {
+      "en": "Either add the language to `meta.languages`, or remove the stray key from the text object.",
+      "id": "Tambahkan bahasa itu ke `meta.languages`, atau hapus key yang nyasar tersebut dari objek teks."
+    },
+    "example": {
+      "bad": "\"languages\": [\"en\", \"id\"]  //  … \"title\": { \"en\": \"…\", \"fr\": \"…\" }",
+      "good": "\"languages\": [\"en\", \"id\", \"fr\"]  //  … \"title\": { \"en\": \"…\", \"fr\": \"…\" }"
+    }
+  },
+  {
+    "code": "E010",
+    "level": "error",
+    "title": {
+      "en": "Polygon ring not closed",
+      "id": "Ring poligon tidak tertutup"
+    },
+    "trigger": {
+      "en": "A `territory` entity's `geometry` (or an `x-` kind's) has a ring whose first and last coordinate pairs aren't identical.",
+      "id": "`geometry` sebuah entitas `territory` (atau kind `x-`) punya ring yang pasangan koordinat pertama dan terakhirnya tidak sama."
+    },
+    "fix": {
+      "en": "Repeat the ring's first coordinate as its last, per the GeoJSON `Polygon`/`MultiPolygon` convention ([§4](contract.md#sec-4)).",
+      "id": "Ulangi koordinat pertama ring itu sebagai koordinat terakhirnya, mengikuti konvensi GeoJSON `Polygon`/`MultiPolygon` ([§4](contract.md#sec-4))."
+    },
+    "example": {
+      "bad": "\"geometry\": { \"type\": \"Polygon\", \"coordinates\": [[[110.30,-7.85],[110.40,-7.85],[110.40,-7.75]]] }",
+      "good": "\"geometry\": { \"type\": \"Polygon\", \"coordinates\": [[[110.30,-7.85],[110.40,-7.85],[110.40,-7.75],[110.30,-7.85]]] }"
+    }
+  },
+  {
+    "code": "E011",
+    "level": "error",
+    "title": {
+      "en": "Malformed or out-of-range coordinate",
+      "id": "Koordinat cacat atau di luar jangkauan"
+    },
+    "trigger": {
+      "en": "A coordinate isn't a `[lng, lat]` array of two finite numbers, or the values are out of range (`|lng| > 180` or `|lat| > 90`). This covers `place.coordinates`, `waypoint.at`/`via`, `chapter.camera.center`, and every point in a `territory` `geometry` or `route` `path`.",
+      "id": "Sebuah koordinat bukan array `[lng, lat]` berisi dua angka finite, atau nilainya di luar jangkauan (`|lng| > 180` atau `|lat| > 90`). Ini mencakup `place.coordinates`, `waypoint.at`/`via`, `chapter.camera.center`, dan setiap titik dalam `geometry` territory atau `path` route."
+    },
+    "fix": {
+      "en": "Give a two-element `[longitude, latitude]` array with `longitude` in `[-180, 180]` and `latitude` in `[-90, 90]` — check you haven't swapped the two.",
+      "id": "Berikan array dua elemen `[longitude, latitude]` dengan `longitude` dalam `[-180, 180]` dan `latitude` dalam `[-90, 90]` — periksa apakah keduanya tidak tertukar."
+    },
+    "example": {
+      "bad": "\"coordinates\": [-7.80569, 110.36406]  // swapped",
+      "good": "\"coordinates\": [110.36406, -7.80569]"
+    }
+  },
+  {
+    "code": "E012",
+    "level": "error",
+    "title": {
+      "en": "Quantity min greater than max",
+      "id": "min kuantitas lebih besar dari max"
+    },
+    "trigger": {
+      "en": "A `{ min, max }` quantity — `entity.states[].strength`, `waypoint.strength`, `event.participants[].strength` or `.losses` — has `min` greater than `max`.",
+      "id": "Sebuah kuantitas `{ min, max }` — `entity.states[].strength`, `waypoint.strength`, `event.participants[].strength`, atau `.losses` — punya `min` lebih besar dari `max`."
+    },
+    "fix": {
+      "en": "Swap the two values, or use a single number instead of a range if the count isn't actually disputed.",
+      "id": "Tukar kedua nilainya, atau pakai satu angka saja sebagai ganti rentang jika jumlahnya sebenarnya tidak diperdebatkan."
+    },
+    "example": {
+      "bad": "\"strength\": { \"min\": 8000, \"max\": 3000 }",
+      "good": "\"strength\": { \"min\": 3000, \"max\": 8000 }"
+    }
+  },
+  {
+    "code": "E013",
+    "level": "error",
+    "title": {
+      "en": "Unsupported contract version",
+      "id": "Versi contract tidak didukung"
+    },
+    "trigger": {
+      "en": "The top-level `chronomap` field's major version doesn't match the engine's ([§9](contract.md#sec-9)) — this build reads `1.x` only. A missing or unparsable `chronomap` field also lands here, since it can't be read as a number.",
+      "id": "Versi mayor pada field `chronomap` di level teratas tidak cocok dengan versi engine ([§9](contract.md#sec-9)) — build ini hanya membaca `1.x`. Field `chronomap` yang hilang atau tidak bisa diparsing juga masuk ke sini, karena tidak bisa dibaca sebagai angka."
+    },
+    "fix": {
+      "en": "Set `\"chronomap\": \"1.0\"` (or another `1.x`), and if the file genuinely needs a newer major version, use an engine build that supports it.",
+      "id": "Set `\"chronomap\": \"1.0\"` (atau `1.x` lain), dan jika berkas itu memang butuh versi mayor yang lebih baru, gunakan build engine yang mendukungnya."
+    },
+    "example": {
+      "bad": "\"chronomap\": \"2.0\"",
+      "good": "\"chronomap\": \"1.0\""
+    }
+  },
+  {
+    "code": "E014",
+    "level": "error",
+    "title": {
+      "en": "defaultLanguage not in languages",
+      "id": "defaultLanguage tidak ada di languages"
+    },
+    "trigger": {
+      "en": "`meta.defaultLanguage` is set to a code that isn't listed in `meta.languages`.",
+      "id": "`meta.defaultLanguage` diisi kode yang tidak terdaftar di `meta.languages`."
+    },
+    "fix": {
+      "en": "Add the code to `meta.languages`, or point `defaultLanguage` at one that's already listed.",
+      "id": "Tambahkan kode itu ke `meta.languages`, atau arahkan `defaultLanguage` ke kode yang sudah terdaftar."
+    },
+    "example": {
+      "bad": "\"languages\": [\"en\", \"id\"], \"defaultLanguage\": \"nl\"",
+      "good": "\"languages\": [\"en\", \"id\", \"nl\"], \"defaultLanguage\": \"nl\""
+    }
+  },
+  {
+    "code": "E015",
+    "level": "error",
+    "title": {
+      "en": "Unsafe URL scheme",
+      "id": "Skema URL tidak aman"
+    },
+    "trigger": {
+      "en": "A URL — `source.url`, `media.url`, `media.thumbnailUrl`, or a Markdown link in a chapter `body` — starts with `javascript:`, `data:`, `vbscript:` or `file:` ([§7.5](contract.md#sec-7-5)).",
+      "id": "Sebuah URL — `source.url`, `media.url`, `media.thumbnailUrl`, atau tautan Markdown di `body` bab — diawali `javascript:`, `data:`, `vbscript:`, atau `file:` ([§7.5](contract.md#sec-7-5))."
+    },
+    "fix": {
+      "en": "Use an `https://` URL (or a site-relative path). Chapter bodies are untrusted Markdown rendered by an allow-list renderer, so these schemes are rejected outright rather than sanitized.",
+      "id": "Gunakan URL `https://` (atau path relatif situs). Isi bab adalah Markdown tak tepercaya yang dirender lewat allow-list renderer, jadi skema-skema ini langsung ditolak, bukan disanitasi."
+    },
+    "example": {
+      "bad": "\"url\": \"javascript:alert(1)\"",
+      "good": "\"url\": \"https://id.wikipedia.org/wiki/Perang_Diponegoro\""
+    }
+  },
+  {
+    "code": "E016",
+    "level": "error",
+    "title": {
+      "en": "Custom kind missing geometry",
+      "id": "Kind kustom tanpa geometri"
+    },
+    "trigger": {
+      "en": "An entity with a custom `x-…` `kind` has none of `at`, `geometry` or `path` — the loader can't tell what to draw it as.",
+      "id": "Sebuah entitas dengan `kind` kustom `x-…` tidak punya satu pun dari `at`, `geometry`, atau `path` — loader tidak bisa menentukan bentuk gambarnya."
+    },
+    "fix": {
+      "en": "Add one of `at` (point, like `fortification`), `geometry` (polygon, like `territory`) or `path` (line, like `route`) to the entity, matching how you want it rendered.",
+      "id": "Tambahkan salah satu dari `at` (titik, seperti `fortification`), `geometry` (poligon, seperti `territory`), atau `path` (garis, seperti `route`) ke entitas itu, sesuai bentuk yang Anda inginkan."
+    },
+    "example": {
+      "bad": "{ \"id\": \"x-garrison-1\", \"kind\": \"x-outpost\" }",
+      "good": "{ \"id\": \"x-garrison-1\", \"kind\": \"x-outpost\", \"at\": \"kedung-kebo-fort\" }"
+    }
+  },
+  {
+    "code": "E017",
+    "level": "error",
+    "title": {
+      "en": "Raw HTML in chapter body",
+      "id": "HTML mentah dalam body bab"
+    },
+    "trigger": {
+      "en": "A chapter's `body` contains something that looks like an HTML tag (a `<` followed by a letter, `!` or `/`). Chapter bodies are untrusted Markdown; the demo renders them with an allow-list renderer that never assigns a raw string to `innerHTML` ([§7.5](contract.md#sec-7-5)).",
+      "id": "`body` sebuah bab berisi sesuatu yang tampak seperti tag HTML (`<` diikuti huruf, `!`, atau `/`). Isi bab adalah Markdown tak tepercaya; demo merendernya lewat allow-list renderer yang tidak pernah menaruh string mentah ke `innerHTML` ([§7.5](contract.md#sec-7-5))."
+    },
+    "fix": {
+      "en": "Rewrite the markup in plain Markdown — `*em*`, `**strong**`, `[text](https://…)` and paragraphs are supported; there is no HTML escape hatch.",
+      "id": "Tulis ulang markup-nya dalam Markdown polos — `*em*`, `**strong**`, `[text](https://…)`, dan paragraf didukung; tidak ada jalan pintas HTML."
+    },
+    "example": {
+      "bad": "\"body\": \"Diponegoro fled <br>westward.\"",
+      "good": "\"body\": \"Diponegoro fled westward.\""
+    }
+  },
+  {
+    "code": "E018",
+    "level": "error",
+    "title": {
+      "en": "No chapters",
+      "id": "Tidak ada bab"
+    },
+    "trigger": {
+      "en": "`chapters` is empty or missing. Playback always starts at chapter 0, so a campaign with no chapters has nothing to play.",
+      "id": "`chapters` kosong atau tidak ada. Pemutaran selalu dimulai dari bab ke-0, jadi kampanye tanpa bab tidak punya apa pun untuk diputar."
+    },
+    "fix": {
+      "en": "Add at least one chapter with a `when`, `title` and `body`.",
+      "id": "Tambahkan setidaknya satu bab dengan `when`, `title`, dan `body`."
+    },
+    "example": {
+      "bad": "\"chapters\": []",
+      "good": "\"chapters\": [\n  { \"id\": \"opening\", \"when\": \"1825-07-20\", \"title\": { \"en\": \"…\", \"id\": \"…\" }, \"body\": { \"en\": \"…\", \"id\": \"…\" } }\n]"
+    }
+  },
+  {
+    "code": "W101",
+    "level": "warning",
+    "title": {
+      "en": "Missing translation",
+      "id": "Terjemahan hilang"
+    },
+    "trigger": {
+      "en": "A language-map text field has the default language but is missing a key for another language listed in `meta.languages`.",
+      "id": "Sebuah field teks peta bahasa sudah punya bahasa default tetapi kehilangan key untuk bahasa lain yang terdaftar di `meta.languages`."
+    },
+    "fix": {
+      "en": "Add the missing language's key, or leave it for now — this is a warning, not a load-blocking error, so authoring tools can flag it for translators without breaking the file. [Languages](languages.md) covers the fallback order a missing key resolves to.",
+      "id": "Tambahkan key bahasa yang hilang, atau biarkan dulu — ini peringatan, bukan galat yang menghentikan pemuatan, sehingga alat authoring bisa menandainya untuk penerjemah tanpa merusak berkas. [Bahasa](languages.md) menjelaskan urutan fallback saat sebuah key hilang."
+    },
+    "example": {
+      "bad": "\"languages\": [\"en\", \"id\"]  //  … \"name\": { \"en\": \"Fort Vredeburg\" }",
+      "good": "\"name\": { \"en\": \"Fort Vredeburg\", \"id\": \"Benteng Vredeburg\" }"
+    }
+  },
+  {
+    "code": "W102",
+    "level": "warning",
+    "title": {
+      "en": "Coordinate outside map bounds",
+      "id": "Koordinat di luar bounds peta"
+    },
+    "trigger": {
+      "en": "A coordinate — in `places`, a waypoint, a camera center, or any other point field — falls outside `meta.map.bounds` (only checked when `bounds` is set). When swapping its longitude and latitude would put it back inside the bounds, the message adds a hint that they're probably swapped.",
+      "id": "Sebuah koordinat — di `places`, waypoint, pusat kamera, atau field titik lainnya — jatuh di luar `meta.map.bounds` (hanya diperiksa bila `bounds` diisi). Jika menukar longitude dan latitude-nya akan membuatnya kembali berada di dalam bounds, pesannya menambahkan petunjuk bahwa keduanya kemungkinan tertukar."
+    },
+    "fix": {
+      "en": "Check the coordinate against the source — if `meta.map.bounds` is correct, the point is probably wrong (or `lng`/`lat` are swapped); if the point is correct and just outside the initial view, widen `meta.map.bounds`.",
+      "id": "Cocokkan koordinat itu dengan sumbernya — jika `meta.map.bounds` sudah benar, kemungkinan titiknya yang salah (atau `lng`/`lat` tertukar); jika titiknya benar dan hanya berada di luar tampilan awal, lebarkan `meta.map.bounds`."
+    },
+    "example": {
+      "bad": "\"bounds\": [104, -9.5, 126.5, 3]  //  … \"coordinates\": [-1.8, 110.3]  // swapped",
+      "good": "\"coordinates\": [110.3, -1.8]"
+    }
+  },
+  {
+    "code": "W103",
+    "level": "warning",
+    "title": {
+      "en": "Chapter has no camera or focus",
+      "id": "Bab tanpa camera atau focus"
+    },
+    "trigger": {
+      "en": "A chapter has neither `camera` nor a non-empty `focus`, so the camera stays wherever the previous chapter left it ([§6.2](contract.md#sec-6-2)).",
+      "id": "Sebuah bab tidak punya `camera` maupun `focus` yang tidak kosong, sehingga kamera tetap berada di posisi terakhir bab sebelumnya ([§6.2](contract.md#sec-6-2))."
+    },
+    "fix": {
+      "en": "Add a `camera` (`center`, `zoom`, and optionally `pitch`/`bearing`/`transition`), or list one or more place/entity/event IDs in `focus` so the engine can fit the view to them.",
+      "id": "Tambahkan `camera` (`center`, `zoom`, dan opsional `pitch`/`bearing`/`transition`), atau daftar satu atau lebih ID place/entity/event di `focus` agar engine bisa menyesuaikan tampilan ke sana."
+    },
+    "example": {
+      "bad": "{ \"id\": \"aftermath\", \"when\": \"1830-10\", \"body\": { … } }",
+      "good": "{ \"id\": \"aftermath\", \"when\": \"1830-10\", \"focus\": [\"klaten-treaty\"], \"body\": { … } }"
+    }
+  },
+  {
+    "code": "W104",
+    "level": "warning",
+    "title": {
+      "en": "Chapter starts before the previous one",
+      "id": "Bab mulai sebelum bab sebelumnya"
+    },
+    "trigger": {
+      "en": "A chapter's `when` starts earlier than the previous chapter's start. This is allowed (a flashback), but it's flagged since it's usually a date typo.",
+      "id": "`when` sebuah bab mulai lebih awal daripada start bab sebelumnya. Ini diperbolehkan (kilas balik), tapi ditandai karena biasanya merupakan salah ketik tanggal."
+    },
+    "fix": {
+      "en": "If it's a deliberate flashback, no change is needed. Otherwise fix the `when` so chapters read in order, or reorder the `chapters` array.",
+      "id": "Jika memang kilas balik yang disengaja, tidak perlu diubah. Jika tidak, perbaiki `when`-nya agar bab-bab terbaca urut, atau urutkan ulang array `chapters`."
+    },
+    "example": {
+      "bad": "[{ \"id\": \"siege\", \"when\": \"1825-09\" }, { \"id\": \"attack\", \"when\": \"1825-07\" }]",
+      "good": "[{ \"id\": \"attack\", \"when\": \"1825-07\" }, { \"id\": \"siege\", \"when\": \"1825-09\" }]"
+    }
+  },
+  {
+    "code": "W105",
+    "level": "warning",
+    "title": {
+      "en": "Unreferenced object",
+      "id": "Objek tidak dirujuk"
+    },
+    "trigger": {
+      "en": "A `source`, `media`, `place` or `part` is never referenced from anywhere else in the file — no entity, event, chapter or other object's `sources`, `media`, location or `part` field names its ID.",
+      "id": "Sebuah `source`, `media`, `place`, atau `part` tidak pernah dirujuk dari mana pun di berkas — tidak ada entity, event, chapter, atau objek lain yang field `sources`, `media`, lokasi, atau `part`-nya menyebut ID itu."
+    },
+    "fix": {
+      "en": "Reference it from where it belongs (add its ID to a `sources`/`media` list, use the place as a location, or assign the part to a chapter), or remove it if it's leftover.",
+      "id": "Rujuk objek itu dari tempat yang sesuai (tambahkan ID-nya ke daftar `sources`/`media`, pakai place itu sebagai lokasi, atau tetapkan part itu ke sebuah bab), atau hapus jika memang sisa yang tidak terpakai."
+    },
+    "example": {
+      "bad": "\"sources\": [{ \"id\": \"unused-source\", \"type\": \"book\", \"citation\": \"…\" }]  // never listed anywhere",
+      "good": "\"sources\": [\"unused-source\"]  // added to the event or place that cites it"
+    }
+  },
+  {
+    "code": "W107",
+    "level": "warning",
+    "title": {
+      "en": "Zero-duration leg over 1 km",
+      "id": "Leg berdurasi nol lebih dari 1 km"
+    },
+    "trigger": {
+      "en": "A unit's `depart` from one waypoint equals its `arrive` at the next (no travel time — a point `when` right after a point or interval end), but the leg between them is longer than 1 km, so the unit will visibly jump ([§3.4](contract.md#sec-3-4)).",
+      "id": "`depart` sebuah unit dari satu waypoint sama persis dengan `arrive`-nya di waypoint berikutnya (tanpa waktu tempuh — `when` titik tepat setelah titik atau akhir interval), tapi leg di antara keduanya lebih dari 1 km, sehingga unit itu akan terlihat 'melompat' ([§3.4](contract.md#sec-3-4))."
+    },
+    "fix": {
+      "en": "Give the leg some travel time: end the earlier waypoint's stay sooner, or move the next waypoint's arrival later, so `depart[i-1] < arrive[i]`.",
+      "id": "Beri leg itu waktu tempuh: akhiri masa tinggal di waypoint sebelumnya lebih cepat, atau majukan kedatangan waypoint berikutnya, sehingga `depart[i-1] < arrive[i]`."
+    },
+    "example": {
+      "bad": "[{ \"when\": \"1826-11~/1827-08~\", \"at\": \"dekso\" }, { \"when\": \"1827-08\", \"at\": \"kejiwan\" }]",
+      "good": "[{ \"when\": \"1826-11~/1827-08~\", \"at\": \"dekso\" }, { \"when\": \"1827-08-09\", \"at\": \"kejiwan\" }]"
+    }
+  },
+  {
+    "code": "W109",
+    "level": "warning",
+    "title": {
+      "en": "Leg crosses the antimeridian",
+      "id": "Leg melintasi antimeridian"
+    },
+    "trigger": {
+      "en": "A leg between two track waypoints (through its `via` points) has a longitude jump greater than 180° between consecutive points, meaning it silently wraps around the ±180° line instead of drawing the short way.",
+      "id": "Sebuah leg antara dua waypoint track (melalui titik `via`-nya) punya lompatan longitude lebih dari 180° antar titik berurutan, artinya leg itu diam-diam melingkar melewati garis ±180° alih-alih digambar lewat jalur pendek."
+    },
+    "fix": {
+      "en": "Split the leg with a `via` point on the correct side of ±180°, so each segment stays under a 180° longitude jump.",
+      "id": "Pecah leg itu dengan titik `via` di sisi ±180° yang benar, sehingga tiap segmen tetap di bawah lompatan longitude 180°."
+    },
+    "example": {
+      "bad": "\"track\": [{ \"when\": \"1827-01\", \"at\": [179, 0] }, { \"when\": \"1827-02\", \"at\": [-179, 0] }]",
+      "good": "\"track\": [{ \"when\": \"1827-01\", \"at\": [179, 0] }, { \"when\": \"1827-02\", \"at\": [-179, 0], \"via\": [[180, 0]] }]"
+    }
+  },
+  {
+    "code": "W112",
+    "level": "warning",
+    "title": {
+      "en": "Focused item not present in the chapter",
+      "id": "Item focus tidak ada di bab"
+    },
+    "trigger": {
+      "en": "A chapter's `focus` names an event that hasn't started by the chapter's end, or an entity that doesn't exist during the chapter's window ([§6.2](contract.md#sec-6-2)) — the camera would try to fit a view around something not yet on the map.",
+      "id": "`focus` sebuah bab menyebut peristiwa yang belum mulai sampai akhir bab itu, atau entitas yang tidak ada selama rentang waktu bab tersebut ([§6.2](contract.md#sec-6-2)) — kamera akan mencoba menyesuaikan tampilan ke sesuatu yang belum ada di peta."
+    },
+    "fix": {
+      "en": "Check the referenced item's `when`/existence interval against the chapter's `when` — usually one of the two dates needs correcting.",
+      "id": "Cocokkan `when`/rentang keberadaan item yang dirujuk dengan `when` bab itu — biasanya salah satu dari kedua tanggal perlu diperbaiki."
+    },
+    "example": {
+      "bad": "{ \"id\": \"arrest\", \"when\": \"1828-01\", \"focus\": [\"arrest-at-magelang\"] }  // event is in 1830",
+      "good": "{ \"id\": \"arrest\", \"when\": \"1830-03\", \"focus\": [\"arrest-at-magelang\"] }"
+    }
+  },
+  {
+    "code": "W113",
+    "level": "warning",
+    "title": {
+      "en": "Track extends outside existence interval",
+      "id": "Track melampaui rentang keberadaan"
+    },
+    "trigger": {
+      "en": "An entity has an explicit `when` (its existence interval) as well as a `track`, and the track's first arrival or last departure falls outside that `when`.",
+      "id": "Sebuah entitas punya `when` eksplisit (rentang keberadaannya) sekaligus `track`, dan kedatangan pertama atau keberangkatan terakhir track itu jatuh di luar `when` tersebut."
+    },
+    "fix": {
+      "en": "Widen the entity's `when` to cover the whole track, or narrow the track so it stays inside the stated existence interval — whichever reflects the history correctly.",
+      "id": "Lebarkan `when` entitas agar mencakup seluruh track, atau persempit track agar tetap dalam rentang keberadaan yang dinyatakan — mana pun yang sesuai dengan sejarahnya."
+    },
+    "example": {
+      "bad": "{ \"when\": \"1825-07-20/1826-01-01\", \"track\": [ …, { \"when\": \"1826-08-09\", \"at\": \"kejiwan\" } ] }",
+      "good": "{ \"when\": \"1825-07-20/1827-01-01\", \"track\": [ …, { \"when\": \"1826-08-09\", \"at\": \"kejiwan\" } ] }"
+    }
+  },
+  {
+    "code": "W114",
+    "level": "warning",
+    "title": {
+      "en": "Event cites no sources",
+      "id": "Peristiwa tanpa sumber"
+    },
+    "trigger": {
+      "en": "An event has an empty or missing `sources` list ([§10](contract.md#sec-10) recommends at least one).",
+      "id": "Sebuah peristiwa punya daftar `sources` yang kosong atau tidak ada ([§10](contract.md#sec-10) menganjurkan setidaknya satu)."
+    },
+    "fix": {
+      "en": "Add at least one entry to `sources`, referencing a `source` object's ID.",
+      "id": "Tambahkan setidaknya satu entri ke `sources`, merujuk ID sebuah objek `source`."
+    },
+    "example": {
+      "bad": "{ \"id\": \"battle-of-gawok\", \"kind\": \"battle\", … }",
+      "good": "{ \"id\": \"battle-of-gawok\", \"kind\": \"battle\", \"sources\": [\"wp-gawok\"], … }"
+    }
+  },
+  {
+    "code": "W115",
+    "level": "warning",
+    "title": {
+      "en": "Chapter window overlaps the next one",
+      "id": "Rentang bab tumpang tindih dengan berikutnya"
+    },
+    "trigger": {
+      "en": "A chapter starts at or after the previous chapter's start, but before the previous chapter's `when` ends — so scrolling from one into the other would jump the clock backwards. Distinct from [W104](diagnostics.md#w104): this is a partial overlap, not a chapter that starts earlier than the one before it.",
+      "id": "Sebuah bab mulai pada atau setelah start bab sebelumnya, tetapi sebelum `when` bab sebelumnya berakhir — sehingga scroll dari bab itu ke berikutnya akan membuat jam mundur. Berbeda dari [W104](diagnostics.md#w104): ini tumpang tindih sebagian, bukan bab yang mulai lebih awal dari bab sebelumnya."
+    },
+    "fix": {
+      "en": "Trim the earlier chapter's `when` to end where the next one begins, or move the later chapter's start to on or after the earlier one's end.",
+      "id": "Persingkat `when` bab yang lebih awal agar berakhir tepat saat bab berikutnya mulai, atau majukan start bab berikutnya ke tepat atau setelah akhir bab sebelumnya."
+    },
+    "example": {
+      "bad": "[{ \"id\": \"a\", \"when\": \"1825-07/1825-10\" }, { \"id\": \"b\", \"when\": \"1825-09/1825-11\" }]",
+      "good": "[{ \"id\": \"a\", \"when\": \"1825-07/1825-09\" }, { \"id\": \"b\", \"when\": \"1825-09/1825-11\" }]"
+    }
+  },
+  {
+    "code": "I201",
+    "level": "info",
+    "title": {
+      "en": "Event without location",
+      "id": "Peristiwa tanpa lokasi"
+    },
+    "trigger": {
+      "en": "An event has no `at` field at all (not merely a falsy one) — a decree or appointment with no map position.",
+      "id": "Sebuah peristiwa sama sekali tidak punya field `at` (bukan sekadar bernilai falsy) — misalnya sebuah dekrit atau pengangkatan yang tidak punya posisi di peta."
+    },
+    "fix": {
+      "en": "No fix needed if the event genuinely has no place — it still appears on the timeline and in the context panel, just not on the map ([§5](contract.md#sec-5)). Add `at` (a place ID or `[lng, lat]`) if it should be located.",
+      "id": "Tidak perlu diperbaiki jika peristiwa itu memang tidak punya tempat — ia tetap muncul di linimasa dan panel konteks, hanya tidak di peta ([§5](contract.md#sec-5)). Tambahkan `at` (ID place atau `[lng, lat]`) jika seharusnya punya lokasi."
+    },
+    "example": {
+      "bad": "{ \"id\": \"klaten-treaty\", \"kind\": \"treaty\", \"when\": \"1830-10-06\" }  // no \"at\""
+    }
+  }
+]

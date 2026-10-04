@@ -17,7 +17,7 @@
     "build:engine": "tsc -p packages/engine/tsconfig.json && node packages/engine/scripts/copy-schema.mjs",
     "build:demo": "npm run build && vite build apps/demo",
     "dev": "vite apps/demo",
-    "test": "npm run build:engine && node --test packages/engine/test/*.test.js",
+    "test": "npm run build:engine && node --test packages/engine/test/*.test.js apps/demo/test/*.test.js",
     "check": "node packages/engine/dist/cli.js data/campaigns/*.json data/campaigns/fixtures/*.json",
     "vectors": "npm run build:engine && node packages/engine/dist/cli.js --vectors test-vectors data/campaigns/*.json data/campaigns/fixtures/*.json"
   },

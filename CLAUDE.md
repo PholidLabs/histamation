@@ -16,7 +16,7 @@
 ## Before you commit
 
 ```
-npm run build && npm test          # engine tests, golden vectors included
+npm run build && npm test          # engine tests, golden vectors, docs invariants included
 npm run check                      # every campaign: 0 errors
 npx tsc --noEmit -p apps/demo/tsconfig.json   # Vite strips types; nothing else checks the demo
 cd crates/chronomap-core && cargo test --all-features   # without the flag, wasm.rs and spatial.rs never compile
@@ -37,10 +37,13 @@ packages/engine      time.ts · campaign.ts (loader + diagnostics) · resolve.ts
                      the client coalesces queries (a replaced one resolves null, never sent)
 packages/maplibre    style.ts (basemap) · camera.ts · renderer.ts · theme.ts · chronomap.css
 apps/demo            index.html (landing) + app/index.html (the map app, served at /app/)
+                     + docs/index.html (template for the docs at /docs/<lang>/<slug>/)
                      icons/ — favicon.svg, apple-touch, PWA icons, og.png, manifest
                      main.ts (app wiring) · landing.ts + landing-copy.ts (bilingual prose)
-                     prefs.ts (theme + language, shared by both pages) · icons.ts
+                     prefs.ts (theme + language, shared by all pages) · icons.ts · tokens.css (palette)
                      dom.ts (safe Markdown, popups, svgEl) · i18n.ts
+                     docs/site.ts (Node: Markdown → HTML, link check) · docs/content/{en,id}/*.md
+                     docs/diagnostics.json · src/docs/ (docs client, validator, date tester)
 crates/chronomap-core  time.rs · campaign.rs · resolve.rs · model.rs · wasm.rs · spatial.rs
 ```
 
@@ -75,10 +78,21 @@ the demo picks up edits without a package rebuild. `npm run check` uses the buil
   vanish. `icons/favicon.svg` redraws the same idea at tab-legible weights (2x2 grid,
   heavier route). The raster icons *are* the real logo, cropped to drop its dead margin.
   Change one and change the other to match.
-- **Two pages, two Vite inputs.** `apps/demo` is a multi-page build: the landing at `/`
-  and the map app at `/app/`. Both are declared in `build.rollupOptions.input` in
-  `apps/demo/vite.config.ts`. Add a page without adding it there and it will work in
-  `dev` but silently vanish from `dist`.
+- **Three pages, three Vite inputs.** `apps/demo` is a multi-page build: the landing at `/`,
+  the map app at `/app/` and the docs template at `/docs/`. All are declared in
+  `build.rollupOptions.input` in `apps/demo/vite.config.ts`. Add a page without adding it
+  there and it will work in `dev` but silently vanish from `dist`.
+- **Docs pages are stamped, not inputs.** `docsSite()` in `vite.config.ts` renders every
+  `docs/content/<lang>/<slug>.md` (plus `docs/DATA-CONTRACT.md` and its Indonesian
+  translation `docs/id/DATA-CONTRACT.md`) into the processed `docs/index.html` at build
+  time, and per request in dev. A new page needs no wiring, but it must exist in both
+  languages with the same `{#id}` heading anchors, and a broken internal link, `gh:` repo
+  path or heading anchor fails the build (dev shows the list in a red banner). Link
+  conventions are in the header of `docs/site.ts`.
+- **Docs follow the code.** A new diagnostic code needs an entry in
+  `apps/demo/docs/diagnostics.json`, and a contract change needs the same section in
+  `docs/id/DATA-CONTRACT.md`; `apps/demo/test/docs.test.js` fails otherwise. English is
+  the normative contract; the Indonesian file is an informative translation.
 - **Per-frame updates only.** Static geometry is installed once in `setCampaign`;
   `setFrame` touches only the small dynamic sources. Never stream GeoJSON every frame.
 - **Style readiness after `setStyle`.** `map.setStyle()` can fire `style.load` *before it

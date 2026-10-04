@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!--docs-head-->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#141210" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Theme before first paint, mirroring applyThemeMode() in src/prefs.ts (same key, same default). -->
+    <script>
+      (function () {
+        var mode = 'dark';
+        try { mode = localStorage.getItem('cm-theme') || 'dark'; } catch (e) {}
+        var root = document.documentElement;
+        var dark = mode === 'dark' || (mode === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+        if (mode !== 'auto') root.dataset.theme = mode;
+        root.classList.toggle('dark', dark);
+        root.classList.toggle('light', !dark);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <script type="module" src="/src/docs/main.ts"></script>
+  </head>
+  <body>
+    <!--docs-body-->
+  </body>
+</html>

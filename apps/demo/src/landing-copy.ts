@@ -22,6 +22,7 @@ export interface LandingStrings {
   brandSub: string;
   navHome: string;
   navStudio: string;
+  navDocs: string;
   navPipeline: string;
   navSchema: string;
   engineStatus: string;
@@ -115,6 +116,7 @@ export const LANDING: Record<string, LandingStrings> = {
     brandSub: 'Machina Historica & Tabula Geographica',
     navHome: 'Beranda & Pengenalan',
     navStudio: 'Studio Peta Interaktif',
+    navDocs: 'Dokumentasi',
     navPipeline: 'Arsitektur Pipeline',
     navSchema: 'Skema JSON & Spesifikasi',
     engineStatus: 'Engine: Siap (WASM/MapLibre)',
@@ -237,6 +239,7 @@ export const LANDING: Record<string, LandingStrings> = {
     brandSub: 'Machina Historica & Tabula Geographica',
     navHome: 'Home & Introduction',
     navStudio: 'Interactive Map Studio',
+    navDocs: 'Documentation',
     navPipeline: 'Pipeline Architecture',
     navSchema: 'JSON Schema & Specification',
     engineStatus: 'Engine: Ready (WASM/MapLibre)',

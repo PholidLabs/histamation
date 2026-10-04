@@ -28,6 +28,8 @@ Write a single declarative JSON file describing a historical campaign — places
 1. **The Java War (Perang Diponegoro, 1825–1830)** — our flagship bilingual dataset featuring guerrilla troop maneuvers, shifting frontlines, and the Dutch *Benteng Stelsel* fort network.
 2. **Napoleon's 1812 Russian Campaign** — Minard-style visualization tracking troop attrition and movement during the march on and retreat from Moscow.
 
+**Full documentation** (English and Indonesian) ships with the web app at `/docs/`: getting started, a guide to writing campaigns, the data contract, every diagnostic code, the API reference, and an in-browser campaign validator. Run `npm run dev` and open `http://localhost:5173/docs/`.
+
 ---
 
 ## Table of Contents
@@ -81,6 +83,7 @@ npm run dev
 Open the Vite URL printed in your terminal (typically `http://localhost:5173/`):
 - **Landing Page (`/`)**: Explains the engine architecture, features, and historical context.
 - **Interactive Scrollytelling App (`/app/`)**: Full-screen interactive map with chapter narrative, time slider, explore mode, language toggle (EN/ID), and theme selector.
+- **Documentation (`/docs/`)**: Guides, reference and API docs in English and Indonesian, with search, an in-browser campaign validator, and a date tester.
 
 ### Run Tests & Validation
 
@@ -130,7 +133,8 @@ chronomaps/
 ├── apps/
 │   └── demo/                # Multi-page Vite web application
 │       ├── index.html       # Landing page (served at /)
-│       └── app/index.html   # Full scrollytelling application (served at /app/)
+│       ├── app/index.html   # Full scrollytelling application (served at /app/)
+│       └── docs/            # Documentation site: Markdown content, rendered at build time (served at /docs/)
 ├── crates/
 │   └── chronomap-core/      # Port of the engine in pure Rust (compiled to WASM)
 ├── data/
@@ -140,7 +144,8 @@ chronomaps/
 │   └── campaign.schema.json # JSON Schema (Draft 2020-12) for validation and IDE autocomplete
 ├── test-vectors/            # Golden output vectors enforcing TS/Rust parity
 └── docs/
-    └── DATA-CONTRACT.md     # Normative specification of the ChronoMap data contract
+    ├── DATA-CONTRACT.md     # Normative specification of the ChronoMap data contract
+    └── id/DATA-CONTRACT.md  # Indonesian translation (informative)
 ```
 
 ---
@@ -390,7 +395,7 @@ node packages/engine/dist/cli.js <campaign.json>... [options]
 | `npm run build:engine` | Builds `packages/engine` only (used by `test` and `vectors`). |
 | `npm run build:demo` | Runs full package build and builds the production web app in `apps/demo/dist`. |
 | `npm run dev` | Launches the local Vite dev server with hot module reloading. |
-| `npm test` | Builds the engine and runs its tests, including the golden-vector checks. |
+| `npm test` | Builds the engine and runs its tests, including the golden-vector checks and the docs invariants (every diagnostic documented, translation in step). |
 | `npm run check` | Validates all campaigns in `data/campaigns/` using the CLI. |
 | `npm run vectors` | Rebuilds the engine and regenerates `test-vectors/` from every campaign and fixture. |
 
