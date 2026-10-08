@@ -8,6 +8,7 @@ const CASES = [
   ['../../../test-vectors/null-island.frames.json', '../../../data/campaigns/fixtures/null-island.json', true],
   ['../../../test-vectors/java-war-1825.frames.json', '../../../data/campaigns/java-war-1825.json', false],
   ['../../../test-vectors/napoleon-russia-1812.frames.json', '../../../data/campaigns/napoleon-russia-1812.json', false],
+  ['../../../test-vectors/waterloo-1815.frames.json', '../../../data/campaigns/waterloo-1815.json', false],
 ];
 const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
 const close = (a, b, path) => {

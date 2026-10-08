@@ -1,0 +1,1957 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "chronomap": "1.0",
+  "meta": {
+    "id": "waterloo-1815",
+    "version": "0.1.0",
+    "title": {
+      "en": "The Waterloo Campaign",
+      "id": "Kampanye Waterloo"
+    },
+    "subtitle": {
+      "en": "Napoleon's final bid for empire in Belgium, June 1815",
+      "id": "Pertaruhan terakhir Napoleon di Belgia, Juni 1815"
+    },
+    "description": {
+      "en": "The climactic four-day campaign of June 1815 in present-day Belgium. Napoleon's Armée du Nord struck north across the Sambre, driving a wedge between the Anglo-Allied army under the Duke of Wellington and the Prussian army under Field Marshal Blücher. After battles at Quatre-Bras and Ligny, the campaign culminated in the decisive clash on the ridge of Mont-Saint-Jean south of Waterloo on 18 June 1815.",
+      "id": "Kampanye empat hari yang menentukan pada Juni 1815 di wilayah Belgia saat ini. Armée du Nord pimpinan Napoleon menyerang ke utara melintasi Sungai Sambre, membelah pasukan Sekutu Anglo di bawah Adipati Wellington dan tentara Prusia di bawah Marsekal Lapangan Blücher. Setelah pertempuran di Quatre-Bras dan Ligny, kampanye ini memuncak dalam bentrokan penentu di punggung bukit Mont-Saint-Jean di selatan Waterloo pada 18 Juni 1815."
+    },
+    "contentWarning": {
+      "en": "Describes warfare, heavy artillery bombardments, mass cavalry charges, and extensive military casualties.",
+      "id": "Memuat kisah peperangan, pengeboman artileri berat, serbuan kavaleri massal, dan jatuhnya banyak korban militer."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "updated": "2026-10-07",
+    "timeline": {
+      "extent": "1815-06-15/1815-06-22",
+      "focus": "1815-06-15/1815-06-19"
+    },
+    "map": {
+      "center": [
+        4.415,
+        50.635
+      ],
+      "zoom": 9.8,
+      "pitch": 35,
+      "bearing": 0,
+      "bounds": [
+        4,
+        50.3,
+        4.9,
+        50.9
+      ],
+      "terrain": {
+        "exaggeration": 1.2
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "french-empire",
+      "name": {
+        "en": "French Empire (Armée du Nord)",
+        "id": "Kekaisaran Prancis (Armée du Nord)"
+      },
+      "shortName": {
+        "en": "French",
+        "id": "Prancis"
+      },
+      "color": "#1F4E79",
+      "description": {
+        "en": "Napoleon's army of veteran French soldiers raised during the Hundred Days, organized into five infantry corps, the Imperial Guard, and four reserve cavalry corps.",
+        "id": "Tentara veteran Prancis pimpinan Napoleon yang dibentuk kembali selama Seratus Hari, terbagi menjadi lima korps infanteri, Garda Kekaisaran, dan empat korps kavaleri cadangan."
+      },
+      "sources": [
+        "chandler-1966",
+        "wp-waterloo"
+      ]
+    },
+    {
+      "id": "anglo-allied",
+      "name": {
+        "en": "Anglo-Allied Army",
+        "id": "Tentara Sekutu Anglo"
+      },
+      "shortName": {
+        "en": "Allies",
+        "id": "Sekutu"
+      },
+      "color": "#A62B2B",
+      "description": {
+        "en": "A coalition army commanded by Arthur Wellesley, 1st Duke of Wellington, comprising British regulars, the King's German Legion, Dutch-Belgian forces, and troops from Hanover, Brunswick, and Nassau.",
+        "id": "Tentara koalisi yang dipimpin Arthur Wellesley, Adipati Pertama Wellington, terdiri atas pasukan reguler Inggris, King's German Legion, pasukan Belanda-Belgia, serta kontingen dari Hanover, Brunswick, dan Nassau."
+      },
+      "sources": [
+        "adkin-2001",
+        "wellington-dispatches"
+      ]
+    },
+    {
+      "id": "prussian-army",
+      "name": {
+        "en": "Prussian Army",
+        "id": "Tentara Kerajaan Prusia"
+      },
+      "shortName": {
+        "en": "Prussia",
+        "id": "Prusia"
+      },
+      "color": "#2C3E50",
+      "description": {
+        "en": "The Royal Prussian Army of the Lower Rhine under Field Marshal Gebhard Leberecht von Blücher and Chief of Staff August Neidhardt von Gneisenau, organized into four army corps.",
+        "id": "Tentara Kerajaan Prusia Rhine Hilir di bawah pimpinan Marsekal Lapangan Gebhard Leberecht von Blücher dan Kepala Staf August Neidhardt von Gneisenau, terorganisasi dalam empat korps tentara."
+      },
+      "sources": [
+        "hofschroer-1999",
+        "clausewitz-1815"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "charleroi",
+      "name": {
+        "en": "Charleroi",
+        "id": "Charleroi"
+      },
+      "modernName": {
+        "en": "Charleroi, Hainaut, Belgium",
+        "id": "Charleroi, Hainaut, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.4448,
+        50.4114
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Strategic bridges over the Sambre river where Napoleon crossed the frontier on 15 June 1815.",
+        "id": "Jembatan strategis di atas Sungai Sambre tempat Napoleon melintasi perbatasan pada 15 Juni 1815."
+      },
+      "sources": [
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "fleurus",
+      "name": {
+        "en": "Fleurus",
+        "id": "Fleurus"
+      },
+      "modernName": {
+        "en": "Fleurus, Hainaut, Belgium",
+        "id": "Fleurus, Hainaut, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.5492,
+        50.4828
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Staging area for French forces immediately prior to the Battle of Ligny.",
+        "id": "Area konsentrasi pasukan Prancis menjelang Pertempuran Ligny."
+      },
+      "sources": [
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "ligny",
+      "name": {
+        "en": "Ligny",
+        "id": "Ligny"
+      },
+      "modernName": {
+        "en": "Ligny, Sombreffe, Namur, Belgium",
+        "id": "Ligny, Sombreffe, Namur, Belgia"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        4.5772,
+        50.5122
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Village and brook where Napoleon defeated Blücher's Prussian army on 16 June 1815.",
+        "id": "Desa dan anak sungai tempat Napoleon mengalahkan tentara Prusia pimpinan Blücher pada 16 Juni 1815."
+      },
+      "sources": [
+        "wp-ligny",
+        "hofschroer-1999"
+      ]
+    },
+    {
+      "id": "sombreffe",
+      "name": {
+        "en": "Sombreffe",
+        "id": "Sombreffe"
+      },
+      "modernName": {
+        "en": "Sombreffe, Namur, Belgium",
+        "id": "Sombreffe, Namur, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.5986,
+        50.5303
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Crossroads town behind the Prussian lines at Ligny, anchor of Thielmann's III Corps.",
+        "id": "Kota persimpangan jalan di belakang garis Prusia di Ligny, tumpuan Korps III Thielmann."
+      },
+      "sources": [
+        "clausewitz-1815"
+      ]
+    },
+    {
+      "id": "quatre-bras",
+      "name": {
+        "en": "Quatre-Bras",
+        "id": "Quatre-Bras"
+      },
+      "modernName": {
+        "en": "Quatre-Bras, Baisy-Thy, Genappe, Walloon Brabant, Belgium",
+        "id": "Quatre-Bras, Baisy-Thy, Genappe, Brabant Walonia, Belgia"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        4.4533,
+        50.5714
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Crucial crossroads of the Charleroi-Brussels and Nivelles-Namur highways held by Wellington against Ney on 16 June 1815.",
+        "id": "Persimpangan penting jalan raya Charleroi-Brussels dan Nivelles-Namur yang dipertahankan Wellington dari serangan Ney pada 16 Juni 1815."
+      },
+      "sources": [
+        "wp-quatre-bras",
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "genappe",
+      "name": {
+        "en": "Genappe",
+        "id": "Genappe"
+      },
+      "modernName": {
+        "en": "Genappe, Walloon Brabant, Belgium",
+        "id": "Genappe, Brabant Walonia, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.4503,
+        50.6125
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Town and narrow bridge over the Dyle where allied cavalry clashed with French pursuers on 17 June 1815.",
+        "id": "Kota dan jembatan sempit di atas Sungai Dyle tempat kavaleri sekutu bertempur melawan pengejar Prancis pada 17 Juni 1815."
+      },
+      "sources": [
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "gembloux",
+      "name": {
+        "en": "Gembloux",
+        "id": "Gembloux"
+      },
+      "modernName": {
+        "en": "Gembloux, Namur, Belgium",
+        "id": "Gembloux, Namur, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.6833,
+        50.567
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Town where Marshal Grouchy halted and billeted his troops on the night of 17 June 1815 during the pursuit of the Prussians.",
+        "id": "Kota tempat Marsekal Grouchy berhenti dan menginapkan pasukannya pada malam 17 Juni 1815 saat mengejar tentara Prusia."
+      },
+      "sources": [
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "wavre",
+      "name": {
+        "en": "Wavre",
+        "id": "Wavre"
+      },
+      "modernName": {
+        "en": "Wavre, Walloon Brabant, Belgium",
+        "id": "Wavre, Brabant Walonia, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.6139,
+        50.7172
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Town on the Dyle river where Blücher concentrated his army after Ligny and from which he marched to Wellington's aid on 18 June 1815.",
+        "id": "Kota di tepi Sungai Dyle tempat Blücher menghimpun pasukannya setelah Ligny dan menjadi titik tolak gerak maju membantu Wellington pada 18 Juni 1815."
+      },
+      "sources": [
+        "wp-wavre",
+        "clausewitz-1815"
+      ]
+    },
+    {
+      "id": "waterloo",
+      "name": {
+        "en": "Waterloo",
+        "id": "Waterloo"
+      },
+      "modernName": {
+        "en": "Waterloo, Walloon Brabant, Belgium",
+        "id": "Waterloo, Brabant Walonia, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.3991,
+        50.7147
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Town where Wellington established his headquarters at the Auberge Bodenghien and wrote his victory dispatch on 19 June 1815.",
+        "id": "Kota tempat Wellington mendirikan markas besarnya di Auberge Bodenghien dan menulis laporan kemenangannya pada 19 Juni 1815."
+      },
+      "sources": [
+        "wellington-dispatches"
+      ]
+    },
+    {
+      "id": "mont-saint-jean",
+      "name": {
+        "en": "Mont-Saint-Jean",
+        "id": "Mont-Saint-Jean"
+      },
+      "modernName": {
+        "en": "Mont-Saint-Jean, Waterloo, Belgium",
+        "id": "Mont-Saint-Jean, Waterloo, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.4105,
+        50.6845
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Hamlet and low ridge where Wellington deployed his main defensive battle line along the Ohain road.",
+        "id": "Dusun dan punggung bukit rendah tempat Wellington menggelar garis pertahanan utamanya di sepanjang jalan Ohain."
+      },
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "hougoumont",
+      "name": {
+        "en": "Château d'Hougoumont",
+        "id": "Château d'Hougoumont"
+      },
+      "modernName": {
+        "en": "Goumont Farm, Braine-l'Alleud, Walloon Brabant, Belgium",
+        "id": "Pertanian Goumont, Braine-l'Alleud, Brabant Walonia, Belgia"
+      },
+      "kind": "fort",
+      "coordinates": [
+        4.3948,
+        50.6706
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Walled farm and chateau complex anchoring Wellington's right flank, defended through brutal fighting by the Coldstream and Scots Guards.",
+        "id": "Kompleks pertanian dan kastel bertembok yang menjadi tumpuan sayap kanan Wellington, dipertahankan dalam pertempuran sengit oleh Coldstream dan Scots Guards."
+      },
+      "media": [
+        "closing-gates-hougoumont"
+      ],
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "la-haye-sainte",
+      "name": {
+        "en": "La Haye Sainte",
+        "id": "La Haye Sainte"
+      },
+      "modernName": {
+        "en": "La Haye Sainte, Lasne / Plancenoit, Walloon Brabant, Belgium",
+        "id": "La Haye Sainte, Lasne / Plancenoit, Brabant Walonia, Belgia"
+      },
+      "kind": "fort",
+      "coordinates": [
+        4.4119,
+        50.6781
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Fortified farmhouse on the Charleroi-Brussels road in front of Wellington's centre, held by the 2nd Light Battalion King's German Legion under Major Baring.",
+        "id": "Rumah pertanian berbenteng di jalan raya Charleroi-Brussels di depan pusat pertahanan Wellington, dipertahankan oleh Batalion Ringan ke-2 King's German Legion di bawah Mayor Baring."
+      },
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "papelotte",
+      "name": {
+        "en": "Papelotte Farm",
+        "id": "Pertanian Papelotte"
+      },
+      "modernName": {
+        "en": "Ferme de la Papelotte, Braine-l'Alleud / Waterloo, Belgium",
+        "id": "Ferme de la Papelotte, Braine-l'Alleud / Waterloo, Belgia"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        4.4339,
+        50.6803
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Farm complex anchoring Wellington's extreme left, held by Nassau troops under the Duke of Saxe-Weimar and linking with Prussian arrivals.",
+        "id": "Kompleks pertanian di ujung sayap kiri Wellington, dipertahankan oleh pasukan Nassau di bawah Adipati Saxe-Weimar yang kemudian terhubung dengan kedatangan pasukan Prusia."
+      },
+      "sources": [
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "plancenoit",
+      "name": {
+        "en": "Plancenoit",
+        "id": "Plancenoit"
+      },
+      "modernName": {
+        "en": "Plancenoit, Lasne, Walloon Brabant, Belgium",
+        "id": "Plancenoit, Lasne, Brabant Walonia, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.4295,
+        50.6607
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Village on the French right rear, site of ferocious house-to-house fighting between Bülow's Prussian IV Corps and Napoleon's Young and Old Guard.",
+        "id": "Desa di sisi kanan belakang pasukan Prancis, lokasi pertempuran jarak dekat dari rumah ke rumah antara Korps IV Prusia pimpinan Bülow dan Garda Muda serta Garda Tua Napoleon."
+      },
+      "sources": [
+        "hofschroer-1999",
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "la-belle-alliance",
+      "name": {
+        "en": "La Belle Alliance",
+        "id": "La Belle Alliance"
+      },
+      "modernName": {
+        "en": "La Belle Alliance inn, Plancenoit, Lasne, Belgium",
+        "id": "Penginapan La Belle Alliance, Plancenoit, Lasne, Belgia"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        4.4136,
+        50.6683
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Inn along the main road where Napoleon established his tactical command post and where Wellington and Blücher met following the victory on the evening of 18 June 1815.",
+        "id": "Penginapan di pinggir jalan utama tempat Napoleon mendirikan pos komando taktisnya dan tempat Wellington serta Blücher bertemu setelah kemenangan pada malam 18 Juni 1815."
+      },
+      "sources": [
+        "wp-waterloo",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "brussels",
+      "name": {
+        "en": "Brussels",
+        "id": "Brusel"
+      },
+      "modernName": {
+        "en": "Brussels, Belgium",
+        "id": "Brusel, Belgia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        4.3517,
+        50.8503
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Capital of the southern Netherlands and Allied logistical base, where Wellington attended the Duchess of Richmond's ball on the eve of the campaign.",
+        "id": "Ibu kota Belanda bagian selatan dan pangkalan logistik Sekutu, tempat Wellington menghadiri pesta dansa Duchess of Richmond menjelang pembukaan kampanye."
+      },
+      "sources": [
+        "wellington-dispatches",
+        "adkin-2001"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "napoleon-main",
+      "kind": "unit",
+      "name": {
+        "en": "Armée du Nord (Napoleon)",
+        "id": "Armée du Nord (Napoleon)"
+      },
+      "faction": "french-empire",
+      "commanders": [
+        "Napoleon I",
+        "Michel Ney",
+        "Jean-de-Dieu Soult"
+      ],
+      "description": {
+        "en": "The main army commanded by Napoleon, including the Imperial Guard, I Corps (D'Erlon), II Corps (Reille), VI Corps (Lobau), and reserve cavalry under Kellermann and Milhaud.",
+        "id": "Pasukan utama yang dipimpin langsung oleh Napoleon, mencakup Garda Kekaisaran, Korps I (D'Erlon), Korps II (Reille), Korps VI (Lobau), dan kavaleri cadangan di bawah Kellermann dan Milhaud."
+      },
+      "track": [
+        {
+          "when": "1815-06-15",
+          "at": "charleroi",
+          "strength": 124000,
+          "certainty": "exact",
+          "label": {
+            "en": "Crossing the Sambre",
+            "id": "Menyeberangi Sungai Sambre"
+          }
+        },
+        {
+          "when": "1815-06-16",
+          "at": "ligny",
+          "strength": 68000,
+          "certainty": "exact",
+          "label": {
+            "en": "Victory at Ligny",
+            "id": "Kemenangan di Ligny"
+          }
+        },
+        {
+          "when": "1815-06-17",
+          "at": "genappe",
+          "strength": 73000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Pursuit through the rain",
+            "id": "Pengejaran di tengah hujan"
+          }
+        },
+        {
+          "when": "1815-06-17T20:00/1815-06-18T21:00",
+          "at": "la-belle-alliance",
+          "strength": 72000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Waterloo",
+            "id": "Pertempuran Waterloo"
+          }
+        },
+        {
+          "when": "1815-06-19",
+          "at": "charleroi",
+          "strength": 41000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Rout across the Sambre",
+            "id": "Pelarian melintasi Sungai Sambre"
+          }
+        }
+      ],
+      "sources": [
+        "chandler-1966",
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "grouchy-wing",
+      "kind": "unit",
+      "name": {
+        "en": "French Right Wing (Grouchy)",
+        "id": "Sayap Kanan Prancis (Grouchy)"
+      },
+      "faction": "french-empire",
+      "commanders": [
+        "Emmanuel de Grouchy",
+        "Dominique Vandamme",
+        "Maurice Gérard"
+      ],
+      "description": {
+        "en": "Detached right wing of the French army comprising III Corps (Vandamme), IV Corps (Gérard), and Pajol's cavalry, ordered by Napoleon to pursue the retreating Prussians.",
+        "id": "Sayap kanan tentara Prancis yang dipisahkan, terdiri atas Korps III (Vandamme), Korps IV (Gérard), dan kavaleri Pajol, diperintahkan oleh Napoleon untuk mengejar tentara Prusia yang mundur."
+      },
+      "track": [
+        {
+          "when": "1815-06-15",
+          "at": "charleroi",
+          "strength": 33000,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1815-06-16",
+          "at": "ligny",
+          "strength": 33000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1815-06-17",
+          "at": "gembloux",
+          "strength": 33000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Billeted at Gembloux",
+            "id": "Bermalam di Gembloux"
+          }
+        },
+        {
+          "when": "1815-06-18T15:00/1815-06-19T12:00",
+          "at": "wavre",
+          "strength": 32000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Wavre",
+            "id": "Pertempuran Wavre"
+          }
+        }
+      ],
+      "sources": [
+        "chandler-1966",
+        "wp-wavre"
+      ]
+    },
+    {
+      "id": "wellington-army",
+      "kind": "unit",
+      "name": {
+        "en": "Anglo-Allied Army (Wellington)",
+        "id": "Tentara Sekutu Anglo (Wellington)"
+      },
+      "faction": "anglo-allied",
+      "commanders": [
+        "Arthur Wellesley, 1st Duke of Wellington",
+        "William, Prince of Orange",
+        "Henry Paget, Earl of Uxbridge"
+      ],
+      "description": {
+        "en": "Wellington's multinational army assembled south of Brussels, holding Quatre-Bras on 16 June and forming defensive squares on the ridge of Mont-Saint-Jean on 18 June.",
+        "id": "Tentara multinasional Wellington yang berkumpul di selatan Brusel, mempertahankan Quatre-Bras pada 16 Juni dan membentuk formasi kotak bertahan di punggung bukit Mont-Saint-Jean pada 18 Juni."
+      },
+      "track": [
+        {
+          "when": "1815-06-15",
+          "at": "brussels",
+          "strength": 68000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Assembly in Brussels",
+            "id": "Konsentrasi di Brusel"
+          }
+        },
+        {
+          "when": "1815-06-16",
+          "at": "quatre-bras",
+          "strength": 36000,
+          "certainty": "exact",
+          "label": {
+            "en": "Stand at Quatre-Bras",
+            "id": "Bertahan di Quatre-Bras"
+          }
+        },
+        {
+          "when": "1815-06-17T18:00/1815-06-18T21:00",
+          "at": "mont-saint-jean",
+          "strength": 68000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defense of Mont-Saint-Jean",
+            "id": "Pertahanan Mont-Saint-Jean"
+          }
+        },
+        {
+          "when": "1815-06-19",
+          "at": "genappe",
+          "strength": 53000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Pursuit south to Genappe",
+            "id": "Pengejaran ke selatan ke Genappe"
+          }
+        }
+      ],
+      "sources": [
+        "adkin-2001",
+        "wellington-dispatches"
+      ]
+    },
+    {
+      "id": "prussian-army-main",
+      "kind": "unit",
+      "name": {
+        "en": "Prussian Army (Blücher)",
+        "id": "Tentara Kerajaan Prusia (Blücher)"
+      },
+      "faction": "prussian-army",
+      "commanders": [
+        "Gebhard Leberecht von Blücher",
+        "August Neidhardt von Gneisenau",
+        "Friedrich Wilhelm von Bülow",
+        "Hans Ernst Karl von Zieten"
+      ],
+      "description": {
+        "en": "Field Marshal Blücher's army (I, II, and IV Corps). After being battered at Ligny, Blücher made the crucial strategic decision to retreat north to Wavre, keeping his promise to march to Wellington's flank at Waterloo.",
+        "id": "Tentara Marsekal Lapangan Blücher (Korps I, II, dan IV). Setelah terpukul keras di Ligny, Blücher mengambil keputusan strategis penting untuk mundur ke utara ke Wavre, menepati janjinya untuk bergerak membantu sayap Wellington di Waterloo."
+      },
+      "track": [
+        {
+          "when": "1815-06-15",
+          "at": "fleurus",
+          "strength": 84000,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1815-06-16",
+          "at": "ligny",
+          "strength": 84000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Ligny",
+            "id": "Pertempuran Ligny"
+          }
+        },
+        {
+          "when": "1815-06-17/1815-06-18T08:00",
+          "at": "wavre",
+          "strength": 88000,
+          "certainty": "exact",
+          "label": {
+            "en": "Regrouping at Wavre",
+            "id": "Konsolidasi di Wavre"
+          }
+        },
+        {
+          "when": "1815-06-18T16:30/1815-06-18T22:00",
+          "at": "plancenoit",
+          "strength": 49000,
+          "certainty": "exact",
+          "label": {
+            "en": "Assault on Plancenoit",
+            "id": "Serbuan ke Plancenoit"
+          }
+        },
+        {
+          "when": "1815-06-19",
+          "at": "genappe",
+          "strength": 46000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Night pursuit of the French",
+            "id": "Pengejaran malam terhadap pasukan Prancis"
+          }
+        }
+      ],
+      "sources": [
+        "hofschroer-1999",
+        "clausewitz-1815"
+      ]
+    },
+    {
+      "id": "prussian-thielmann",
+      "kind": "unit",
+      "name": {
+        "en": "Prussian III Corps (Thielmann)",
+        "id": "Korps III Prusia (Thielmann)"
+      },
+      "faction": "prussian-army",
+      "commanders": [
+        "Johann von Thielmann"
+      ],
+      "description": {
+        "en": "The Prussian rear guard under General Thielmann, tasked with holding the bridges of the Dyle at Wavre to screen the main army's march to Waterloo against Grouchy's entire wing.",
+        "id": "Pasukan barisan belakang Prusia di bawah Jenderal Thielmann, bertugas mempertahankan jembatan Sungai Dyle di Wavre guna melindungi gerak maju pasukan utama ke Waterloo dari hadangan seluruh sayap pasukan Grouchy."
+      },
+      "track": [
+        {
+          "when": "1815-06-16",
+          "at": "sombreffe",
+          "strength": 24000,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1815-06-17/1815-06-19T12:00",
+          "at": "wavre",
+          "strength": 20000,
+          "certainty": "exact",
+          "label": {
+            "en": "Holding the Dyle at Wavre",
+            "id": "Mempertahankan Sungai Dyle di Wavre"
+          }
+        }
+      ],
+      "sources": [
+        "hofschroer-1999",
+        "wp-wavre"
+      ]
+    },
+    {
+      "id": "hougoumont-post",
+      "kind": "fortification",
+      "at": "hougoumont",
+      "faction": "anglo-allied",
+      "name": {
+        "en": "Château d'Hougoumont Strongpoint",
+        "id": "Kubu Pertahanan Château d'Hougoumont"
+      },
+      "description": {
+        "en": "Fortified farmhouse and brick-walled chateau garrisoned by British Foot Guards and Nassau jägers, successfully defended against repeated French assaults throughout 18 June 1815.",
+        "id": "Pertanian berbenteng dan kastel bertembok bata yang dijaga oleh British Foot Guards dan pemburu Nassau, berhasil dipertahankan dari serbuan berulang Prancis sepanjang 18 Juni 1815."
+      },
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "la-haye-sainte-post",
+      "kind": "fortification",
+      "at": "la-haye-sainte",
+      "faction": "anglo-allied",
+      "name": {
+        "en": "La Haye Sainte Strongpoint",
+        "id": "Kubu Pertahanan La Haye Sainte"
+      },
+      "description": {
+        "en": "Vital stone farmhouse forward of Wellington's centre. Heroically defended by Major George Baring's King's German Legion until overwhelmed at around 18:30 on 18 June 1815 when their rifle ammunition was exhausted.",
+        "id": "Pertanian batu penting di depan garis tengah Wellington. Dipertahankan dengan gagah berani oleh King's German Legion pimpinan Mayor George Baring hingga akhirnya direbut sekitar pukul 18.30 pada 18 Juni 1815 ketika amunisi senapan mereka habis."
+      },
+      "states": [
+        {
+          "when": "1815-06-18T00:00/1815-06-18T18:30",
+          "status": "active",
+          "faction": "anglo-allied"
+        },
+        {
+          "when": "1815-06-18T18:31/1815-06-18T20:30",
+          "status": "active",
+          "faction": "french-empire"
+        },
+        {
+          "when": "1815-06-18T20:31/1815-06-22",
+          "status": "active",
+          "faction": "anglo-allied"
+        }
+      ],
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "sambre-crossing",
+      "kind": "other",
+      "when": "1815-06-15",
+      "at": "charleroi",
+      "importance": 1,
+      "name": {
+        "en": "Napoleon crosses the Sambre",
+        "id": "Napoleon Menyeberangi Sungai Sambre"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Napoleon I"
+          ],
+          "strength": 124000
+        },
+        {
+          "faction": "prussian-army",
+          "role": "defender",
+          "commanders": [
+            "Hans Ernst Karl von Zieten"
+          ],
+          "strength": 30000
+        }
+      ],
+      "summary": {
+        "en": "The French Armée du Nord stormed across the Sambre at Charleroi, seizing the strategic bridges and driving a wedge between Wellington and Blücher.",
+        "id": "Armée du Nord Prancis menyerbu melintasi Sungai Sambre di Charleroi, merebut jembatan-jembatan strategis dan membelah posisi Wellington serta Blücher."
+      },
+      "sources": [
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "richmond-ball",
+      "kind": "other",
+      "when": "1815-06-15",
+      "at": "brussels",
+      "importance": 3,
+      "name": {
+        "en": "Duchess of Richmond's Ball",
+        "id": "Pesta Dansa Duchess of Richmond"
+      },
+      "participants": [
+        {
+          "faction": "anglo-allied",
+          "role": "party",
+          "commanders": [
+            "Arthur Wellesley, 1st Duke of Wellington",
+            "William, Prince of Orange"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "During a society ball in Brussels, Wellington received confirmation of Napoleon's advance across the Sambre and ordered his army to concentrate southward toward Quatre-Bras.",
+        "id": "Dalam pesta dansa kalangan bangsawan di Brusel, Wellington menerima kepastian gerak maju Napoleon melintasi Sambre dan segera memerintahkan pasukannya berkonsentrasi ke selatan menuju Quatre-Bras."
+      },
+      "sources": [
+        "adkin-2001",
+        "wellington-dispatches"
+      ]
+    },
+    {
+      "id": "battle-of-quatre-bras",
+      "kind": "battle",
+      "when": "1815-06-16",
+      "at": "quatre-bras",
+      "importance": 1,
+      "name": {
+        "en": "Battle of Quatre-Bras",
+        "id": "Pertempuran Quatre-Bras"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Michel Ney",
+            "Honoré Reille"
+          ],
+          "strength": 24000,
+          "losses": 4100
+        },
+        {
+          "faction": "anglo-allied",
+          "role": "defender",
+          "commanders": [
+            "Arthur Wellesley, 1st Duke of Wellington",
+            "William, Prince of Orange"
+          ],
+          "strength": 36000,
+          "losses": 4800
+        }
+      ],
+      "outcome": {
+        "victor": "anglo-allied",
+        "summary": {
+          "en": "Marshal Ney repeatedly assaulted the vital crossroads but was held by Wellington's reinforcements, securing the Allied lateral communication route.",
+          "id": "Marsekal Ney berulang kali menyerbu persimpangan penting itu namun berhasil ditahan oleh bala bantuan Wellington, mengamankan jalur komunikasi lateral Sekutu."
+        }
+      },
+      "sources": [
+        "wp-quatre-bras",
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "battle-of-ligny",
+      "kind": "battle",
+      "when": "1815-06-16",
+      "at": "ligny",
+      "importance": 1,
+      "name": {
+        "en": "Battle of Ligny",
+        "id": "Pertempuran Ligny"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Napoleon I",
+            "Maurice Gérard",
+            "Dominique Vandamme"
+          ],
+          "strength": 68000,
+          "losses": 6500
+        },
+        {
+          "faction": "prussian-army",
+          "role": "defender",
+          "commanders": [
+            "Gebhard Leberecht von Blücher",
+            "August Neidhardt von Gneisenau"
+          ],
+          "strength": 84000,
+          "losses": 16000
+        }
+      ],
+      "outcome": {
+        "victor": "french-empire",
+        "summary": {
+          "en": "Napoleon defeated Blücher's Prussian army in fierce village fighting; Blücher was wounded and trapped under his horse, but the Prussian army managed an orderly withdrawal north toward Wavre.",
+          "id": "Napoleon mengalahkan tentara Prusia pimpinan Blücher dalam pertempuran desa yang sengit; Blücher terluka dan tertindih kudanya, namun tentara Prusia berhasil mundur secara teratur ke arah utara menuju Wavre."
+        }
+      },
+      "sources": [
+        "wp-ligny",
+        "hofschroer-1999"
+      ]
+    },
+    {
+      "id": "skirmish-genappe",
+      "kind": "skirmish",
+      "when": "1815-06-17",
+      "at": "genappe",
+      "importance": 2,
+      "name": {
+        "en": "Cavalry clash at Genappe",
+        "id": "Bentrokan Kavaleri di Genappe"
+      },
+      "participants": [
+        {
+          "faction": "anglo-allied",
+          "role": "defender",
+          "commanders": [
+            "Henry Paget, Earl of Uxbridge"
+          ],
+          "strength": 6000
+        },
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Pierre Soult"
+          ],
+          "strength": 8000
+        }
+      ],
+      "summary": {
+        "en": "Lord Uxbridge's cavalry covered Wellington's withdrawal through torrential thunderstorms, staging an effective counter-charge through the bottleneck of Genappe against French lancers.",
+        "id": "Kavaleri Lord Uxbridge melindungi mundurnya pasukan Wellington di tengah badai petir lebat, melancarkan serangan balasan efektif melalui celah sempit Genappe terhadap penunggang tombak Prancis."
+      },
+      "sources": [
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "prussian-march-wavre",
+      "kind": "other",
+      "when": "1815-06-17",
+      "at": "wavre",
+      "importance": 2,
+      "name": {
+        "en": "Gneisenau orders the retreat to Wavre",
+        "id": "Gneisenau Memerintahkan Mundur ke Wavre"
+      },
+      "participants": [
+        {
+          "faction": "prussian-army",
+          "role": "party",
+          "commanders": [
+            "August Neidhardt von Gneisenau",
+            "Gebhard Leberecht von Blücher"
+          ],
+          "strength": 85000
+        }
+      ],
+      "summary": {
+        "en": "Rather than retreating eastward along his line of communications toward Prussia, Gneisenau made the audacious decision to pull back northward to Wavre, keeping his army within supporting distance of Wellington.",
+        "id": "Alih-alih mundur ke timur sepanjang jalur komunikasi ke Prusia, Gneisenau mengambil keputusan berani untuk mundur ke utara menuju Wavre, menjaga pasukannya tetap dalam jangkauan bantuan untuk Wellington."
+      },
+      "sources": [
+        "clausewitz-1815",
+        "hofschroer-1999"
+      ]
+    },
+    {
+      "id": "waterloo-hougoumont",
+      "kind": "battle",
+      "when": "1815-06-18T11:30/1815-06-18T19:00",
+      "at": "hougoumont",
+      "importance": 1,
+      "name": {
+        "en": "Assault on Hougoumont",
+        "id": "Penyerbuan ke Hougoumont"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Honoré Reille",
+            "Jérôme Bonaparte"
+          ],
+          "strength": 14000
+        },
+        {
+          "faction": "anglo-allied",
+          "role": "defender",
+          "commanders": [
+            "James Macdonell",
+            "Lord Saltoun"
+          ],
+          "strength": 2600
+        }
+      ],
+      "summary": {
+        "en": "Intended by Napoleon as a diversionary assault, the attack on Hougoumont turned into an all-day meat grinder that absorbed nearly the entire French II Corps without capturing the chateau.",
+        "id": "Awalnya dimaksudkan oleh Napoleon sebagai serangan pengalihan, penyerbuan Hougoumont berubah menjadi pusaran pertempuran sepanjang hari yang menelan hampir seluruh Korps II Prancis tanpa berhasil merebut kastel itu."
+      },
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "waterloo-derlon-attack",
+      "kind": "battle",
+      "when": "1815-06-18T13:00/1815-06-18T15:30",
+      "at": "mont-saint-jean",
+      "importance": 1,
+      "name": {
+        "en": "D'Erlon's Attack and Scots Greys Charge",
+        "id": "Serangan D'Erlon dan Serbuan Kavaleri Scots Greys"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Jean-Baptiste Drouet d'Erlon"
+          ],
+          "strength": 16000,
+          "losses": 5000
+        },
+        {
+          "faction": "anglo-allied",
+          "role": "defender",
+          "commanders": [
+            "Sir Thomas Picton",
+            "William Ponsonby",
+            "Henry Paget, Earl of Uxbridge"
+          ],
+          "strength": 12000,
+          "losses": 3000
+        }
+      ],
+      "outcome": {
+        "victor": "anglo-allied",
+        "summary": {
+          "en": "D'Erlon's massive infantry assault up the ridge was halted by Picton's division (in which Picton was killed) and shattered by Uxbridge's heavy cavalry charge, capturing two French Imperial eagles.",
+          "id": "Serangan infanteri besar-besaran D'Erlon ke atas bukit ditahan oleh divisi Picton (di mana Picton gugur) dan dihancurkan oleh serbuan kavaleri berat Uxbridge yang berhasil merebut dua elang kekaisaran Prancis."
+        }
+      },
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "waterloo-ney-cavalry",
+      "kind": "battle",
+      "when": "1815-06-18T15:30/1815-06-18T17:30",
+      "at": "mont-saint-jean",
+      "importance": 1,
+      "name": {
+        "en": "Ney's Massed Cavalry Charges",
+        "id": "Serbuan Kavaleri Massal Ney"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Michel Ney",
+            "François Étienne de Kellermann",
+            "Édouard Jean Baptiste Milhaud"
+          ],
+          "strength": 9000
+        },
+        {
+          "faction": "anglo-allied",
+          "role": "defender",
+          "commanders": [
+            "Arthur Wellesley, 1st Duke of Wellington"
+          ],
+          "strength": 15000
+        }
+      ],
+      "summary": {
+        "en": "Mistaking Allied wounded moving to the rear for a retreat, Ney led waves of heavy cavalry (cuirassiers, dragoons, and lancers) against Wellington's infantry squares, which stood resolute and unbroken.",
+        "id": "Mengira pergerakan prajurit Sekutu yang terluka ke belakang sebagai tanda mundur, Ney memimpin gelombang kavaleri berat (cuirassier, dragoon, dan lancer) menyerbu formasi kotak infanteri Wellington yang tetap kokoh tak tergoyahkan."
+      },
+      "sources": [
+        "adkin-2001",
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "waterloo-plancenoit",
+      "kind": "battle",
+      "when": "1815-06-18T16:30/1815-06-18T20:30",
+      "at": "plancenoit",
+      "importance": 1,
+      "name": {
+        "en": "Prussian Assault on Plancenoit",
+        "id": "Serbuan Pasukan Prusia ke Plancenoit"
+      },
+      "participants": [
+        {
+          "faction": "prussian-army",
+          "role": "attacker",
+          "commanders": [
+            "Friedrich Wilhelm von Bülow",
+            "Gebhard Leberecht von Blücher"
+          ],
+          "strength": 30000,
+          "losses": 6500
+        },
+        {
+          "faction": "french-empire",
+          "role": "defender",
+          "commanders": [
+            "Georges Mouton (Lobau)",
+            "Charles Duhesme"
+          ],
+          "strength": 14000,
+          "losses": 5000
+        }
+      ],
+      "summary": {
+        "en": "Bülow's Prussian IV Corps arrived from the east through the Bois de Paris and struck Plancenoit on Napoleon's flank, forcing the Emperor to divert Lobau's VI Corps and the Young Guard to secure his retreat.",
+        "id": "Korps IV Prusia pimpinan Bülow tiba dari timur melalui Bois de Paris dan menghantam Plancenoit di sayap Napoleon, memaksa sang Kaisar mengerahkan Korps VI Lobau dan Garda Muda untuk mengamankan jalur mundurnya."
+      },
+      "sources": [
+        "hofschroer-1999",
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "waterloo-haye-sainte-falls",
+      "kind": "capture",
+      "when": "1815-06-18T18:00/1815-06-18T19:00",
+      "at": "la-haye-sainte",
+      "importance": 2,
+      "name": {
+        "en": "Fall of La Haye Sainte",
+        "id": "Jatuhnya La Haye Sainte"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Michel Ney",
+            "François-Xavier Donzelot"
+          ]
+        },
+        {
+          "faction": "anglo-allied",
+          "role": "defender",
+          "commanders": [
+            "George Baring"
+          ],
+          "strength": 400
+        }
+      ],
+      "outcome": {
+        "victor": "french-empire",
+        "summary": {
+          "en": "After running out of rifle ammunition, the surviving King's German Legion riflemen were forced out of La Haye Sainte, allowing French horse artillery to deploy within deadly canister range of Wellington's centre.",
+          "id": "Setelah kehabisan amunisi senapan, prajurit King's German Legion yang tersisa terpaksa meninggalkan La Haye Sainte, memungkinkan artileri berkuda Prancis menembakkan peluru gotri dari jarak mematikan ke pusat garis Wellington."
+        }
+      },
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "waterloo-guard-attack",
+      "kind": "battle",
+      "when": "1815-06-18T19:15/1815-06-18T20:15",
+      "at": "mont-saint-jean",
+      "importance": 1,
+      "name": {
+        "en": "Defeat of the Imperial Guard",
+        "id": "Kekalahan Garda Kekaisaran"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Napoleon I",
+            "Michel Ney",
+            "Antoine Drouot"
+          ],
+          "strength": 5000,
+          "losses": 2500
+        },
+        {
+          "faction": "anglo-allied",
+          "role": "defender",
+          "commanders": [
+            "Peregrine Maitland",
+            "John Colborne",
+            "Arthur Wellesley, 1st Duke of Wellington"
+          ],
+          "strength": 7000,
+          "losses": 1000
+        }
+      ],
+      "outcome": {
+        "victor": "anglo-allied",
+        "summary": {
+          "en": "Napoleon committed five battalions of the Middle Guard in a final bid to break Wellington's line. Maitland's Foot Guards and Colborne's 52nd Light Infantry poured devastating flanking volleys into them, provoking the cry: 'La Garde recule!'",
+          "id": "Napoleon mengerahkan lima batalion Garda Menengah dalam upaya terakhir menjebol garis Wellington. Maitland's Foot Guards dan Resimen Infanteri Ringan ke-52 pimpinan Colborne menghujani mereka dengan tembakan beruntun mematikan dari sayap, memicu seruan kepanikan: 'La Garde recule!'"
+        }
+      },
+      "sources": [
+        "adkin-2001",
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "waterloo-french-rout",
+      "kind": "other",
+      "when": "1815-06-18T20:15/1815-06-18T22:00",
+      "at": "la-belle-alliance",
+      "importance": 1,
+      "name": {
+        "en": "General Allied Advance and French Rout",
+        "id": "Gerak Maju Umum Sekutu dan Pelarian Prancis"
+      },
+      "participants": [
+        {
+          "faction": "anglo-allied",
+          "role": "attacker",
+          "commanders": [
+            "Arthur Wellesley, 1st Duke of Wellington"
+          ]
+        },
+        {
+          "faction": "prussian-army",
+          "role": "attacker",
+          "commanders": [
+            "Hans Ernst Karl von Zieten",
+            "Gebhard Leberecht von Blücher"
+          ]
+        },
+        {
+          "faction": "french-empire",
+          "role": "defender",
+          "commanders": [
+            "Napoleon I"
+          ]
+        }
+      ],
+      "outcome": {
+        "victor": "anglo-allied",
+        "summary": {
+          "en": "Wellington rode to the crest and signaled a general advance with his hat. As Prussian troops collapsed Plancenoit, the French army disintegrated into full-scale rout; only squares of the Old Guard maintained discipline.",
+          "id": "Wellington menunggang kudanya ke puncak bukit dan mengacungkan topinya memberi tanda gerak maju umum. Saat pasukan Prusia merebut Plancenoit, tentara Prancis hancur berantakan dalam pelarian massal; hanya formasi kotak Garda Tua yang mempertahankan disiplin."
+        }
+      },
+      "sources": [
+        "wp-waterloo",
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "meeting-la-belle-alliance",
+      "kind": "other",
+      "when": "1815-06-18T21:00/1815-06-18T22:00",
+      "at": "la-belle-alliance",
+      "importance": 1,
+      "name": {
+        "en": "Meeting of Wellington and Blücher",
+        "id": "Pertemuan Wellington dan Blücher"
+      },
+      "participants": [
+        {
+          "faction": "anglo-allied",
+          "role": "party",
+          "commanders": [
+            "Arthur Wellesley, 1st Duke of Wellington"
+          ]
+        },
+        {
+          "faction": "prussian-army",
+          "role": "party",
+          "commanders": [
+            "Gebhard Leberecht von Blücher"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Wellington and Blücher met outside the inn of La Belle Alliance on the darkened battlefield, mutually celebrating victory. Blücher agreed that the Prussian army would conduct the night pursuit of the fleeing French.",
+        "id": "Wellington dan Blücher bertemu di luar penginapan La Belle Alliance di medan tempur yang mulai gelap, saling merayakan kemenangan. Blücher menyetujari bahwa tentara Prusia akan memimpin pengejaran malam terhadap pasukan Prancis yang melarikan diri."
+      },
+      "media": [
+        "meeting-wellington-blucher"
+      ],
+      "sources": [
+        "wp-waterloo",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "battle-of-wavre",
+      "kind": "battle",
+      "when": "1815-06-18T16:00/1815-06-19T12:00",
+      "at": "wavre",
+      "importance": 2,
+      "name": {
+        "en": "Battle of Wavre",
+        "id": "Pertempuran Wavre"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "attacker",
+          "commanders": [
+            "Emmanuel de Grouchy",
+            "Dominique Vandamme"
+          ],
+          "strength": 33000,
+          "losses": 2500
+        },
+        {
+          "faction": "prussian-army",
+          "role": "defender",
+          "commanders": [
+            "Johann von Thielmann"
+          ],
+          "strength": 20000,
+          "losses": 2400
+        }
+      ],
+      "outcome": {
+        "victor": "french-empire",
+        "summary": {
+          "en": "Marshal Grouchy attacked Thielmann's Prussian III Corps at Wavre, winning a hollow tactical victory on 19 June while Napoleon's main army was annihilated only 15 km to the west.",
+          "id": "Marsekal Grouchy menyerang Korps III Prusia pimpinan Thielmann di Wavre, meraih kemenangan taktis semu pada 19 Juni sementara tentara utama Napoleon telah dihancurkan hanya 15 km di sebelah barat."
+        }
+      },
+      "sources": [
+        "wp-wavre",
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "napoleon-abdication",
+      "kind": "other",
+      "when": "1815-06-22",
+      "at": "brussels",
+      "importance": 1,
+      "name": {
+        "en": "Napoleon's Second Abdication",
+        "id": "Turun Takhta Kedua Napoleon"
+      },
+      "participants": [
+        {
+          "faction": "french-empire",
+          "role": "party",
+          "commanders": [
+            "Napoleon I"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Recognizing the total destruction of his army and facing political revolt in Paris, Napoleon signed his second and final instrument of abdication, ending the Hundred Days.",
+        "id": "Menyadari kehancuran total pasukannya dan menghadapi perlawanan politik di Paris, Napoleon menandatangani piagam pelepasan takhta kedua dan terakhirnya, mengakhiri era Seratus Hari."
+      },
+      "sources": [
+        "chandler-1966"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-sambre",
+      "when": "1815-06-15",
+      "dateLabel": {
+        "en": "15 June 1815",
+        "id": "15 Juni 1815"
+      },
+      "title": {
+        "en": "Crossing the Sambre",
+        "id": "Menyeberangi Sungai Sambre"
+      },
+      "body": {
+        "en": "At dawn on 15 June 1815, Napoleon launched his Armée du Nord across the Belgian frontier at Charleroi. His strategy was classic Napoleonic maneuver: insert his forces into the seam between Wellington's Anglo-Allied army to the west and Blücher's Prussian army to the east, intending to defeat them in detail before they could unite.\n\nIn Brussels that evening, the Duke of Wellington was attending the Duchess of Richmond's famous ball when confirmation arrived that the French had captured the Sambre crossings. Recognizing that Napoleon had stolen a march on him, Wellington calmly gave orders for his army to concentrate southward toward the strategic crossroads of Quatre-Bras.",
+        "id": "Pada fajar 15 Juni 1815, Napoleon mengerahkan Armée du Nord melintasi perbatasan Belgia di Charleroi. Strateginya adalah manuver klasik Napoleon: menyusupkan pasukannya ke celah antara tentara Sekutu Anglo pimpinan Wellington di barat dan tentara Prusia pimpinan Blücher di timur, dengan maksud mengalahkan mereka satu per satu sebelum bersatu.\n\nDi Brusel malam itu, Adipati Wellington sedang menghadiri pesta dansa terkenal Duchess of Richmond saat menerima kabar pasti bahwa pasukan Prancis telah merebut penyeberangan Sambre. Menyadari Napoleon telah mendahuluinya, Wellington dengan tenang memberi perintah agar pasukannya segera berkonsentrasi ke arah selatan menuju persimpangan jalan strategis Quatre-Bras."
+      },
+      "camera": {
+        "center": [
+          4.45,
+          50.48
+        ],
+        "zoom": 9.5,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "sambre-crossing",
+        "richmond-ball",
+        "charleroi",
+        "fleurus",
+        "napoleon-main",
+        "wellington-army"
+      ],
+      "sources": [
+        "chandler-1966",
+        "adkin-2001"
+      ]
+    },
+    {
+      "id": "ch-2-double-battle",
+      "when": "1815-06-16",
+      "dateLabel": {
+        "en": "16 June 1815",
+        "id": "16 Juni 1815"
+      },
+      "title": {
+        "en": "The Double Battle: Quatre-Bras and Ligny",
+        "id": "Dua Pertempuran: Quatre-Bras dan Ligny"
+      },
+      "body": {
+        "en": "On 16 June, the campaign split into two intense simultaneous battles. At Quatre-Bras, Marshal Michel Ney assaulted the Allied crossroads, but Wellington's arriving reinforcements repeatedly held off the French attacks, maintaining control of the lateral road to the Prussians.\n\nSix miles to the southeast at Ligny, Napoleon personally attacked Blücher's concentrated Prussian army. In vicious village fighting around the Ligny brook, the French broke the Prussian center late in the evening. Blücher was badly injured during a cavalry charge and trapped under his dead horse, but the Prussians avoided encirclement.",
+        "id": "Pada 16 Juni, kampanye ini terpecah menjadi dua pertempuran serentak yang sengit. Di Quatre-Bras, Marsekal Michel Ney menyerbu persimpangan Sekutu, tetapi bala bantuan Wellington yang terus berdatangan berhasil menahan gempuran Prancis dan mempertahankan jalur penghubung ke pasukan Prusia.\n\nEnam mil di tenggara di Ligny, Napoleon sendiri menyerang pasukan Prusia yang dihimpun Blücher. Dalam pertempuran desa yang berdarah di sekitar anak sungai Ligny, Prancis berhasil menjebol pusat pertahanan Prusia menjelang malam. Blücher terluka parah saat memimpin serbuan kavaleri dan tertindih kudanya yang mati, namun pasukan Prusia lolos dari kepungan."
+      },
+      "camera": {
+        "center": [
+          4.52,
+          50.54
+        ],
+        "zoom": 9.8,
+        "pitch": 35,
+        "bearing": 15,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-quatre-bras",
+        "battle-of-ligny",
+        "sombreffe",
+        "napoleon-main",
+        "prussian-army-main",
+        "wellington-army"
+      ],
+      "sources": [
+        "wp-ligny",
+        "wp-quatre-bras",
+        "hofschroer-1999"
+      ]
+    },
+    {
+      "id": "ch-3-muddy-retreat",
+      "when": "1815-06-17",
+      "dateLabel": {
+        "en": "17 June 1815",
+        "id": "17 Juni 1815"
+      },
+      "title": {
+        "en": "The Retreat in Torrential Rain",
+        "id": "Mundur di Bawah Guyuran Hujan Lebat"
+      },
+      "body": {
+        "en": "Following Blücher's defeat at Ligny, Prussian Chief of Staff Gneisenau made the war-winning decision to retreat northward to Wavre rather than eastward toward Germany, keeping the Prussian army aligned with Wellington's flank.\n\nLearning of the Prussian movement, Wellington conducted a textbook orderly retreat from Quatre-Bras up the Brussels road to the ridge of Mont-Saint-Jean. As torrential thunderstorms drenched the countryside, turning roads and cornfields into thick mud, Uxbridge's cavalry screened the retreat with a sharp clash at Genappe. Meanwhile, Napoleon dispatched Marshal Grouchy with 33,000 men to pursue the Prussians toward Gembloux.",
+        "id": "Menyusul kekalahan Blücher di Ligny, Kepala Staf Prusia Gneisenau mengambil keputusan penentu kemenangan untuk mundur ke utara menuju Wavre alih-alih ke timur ke Jerman, menjaga pasukan Prusia tetap sejalan dengan sayap Wellington.\n\nMengetahui pergerakan Prusia tersebut, Wellington melakukan penarikan pasukan teratur dari Quatre-Bras ke arah utara jalan Brusel menuju punggung bukit Mont-Saint-Jean. Di tengah badai petir dahsyat yang mengubah jalan dan ladang jagung menjadi lumpur pekat, kavaleri Uxbridge melindungi gerak mundur dengan bentrokan sengit di Genappe. Sementara itu, Napoleon menugaskan Marsekal Grouchy membawa 33.000 prajurit mengejar pasukan Prusia ke arah Gembloux."
+      },
+      "camera": {
+        "center": [
+          4.55,
+          50.64
+        ],
+        "zoom": 9.2,
+        "pitch": 35,
+        "bearing": 5,
+        "durationMs": 3500
+      },
+      "focus": [
+        "skirmish-genappe",
+        "prussian-march-wavre",
+        "gembloux",
+        "grouchy-wing",
+        "wellington-army",
+        "prussian-army-main"
+      ],
+      "sources": [
+        "adkin-2001",
+        "clausewitz-1815"
+      ]
+    },
+    {
+      "id": "ch-4-waterloo-opening",
+      "when": "1815-06-18T00:00/1815-06-18T14:30",
+      "dateLabel": {
+        "en": "18 June 1815 (Morning & Midday)",
+        "id": "18 Juni 1815 (Pagi & Siang)"
+      },
+      "title": {
+        "en": "Waterloo: Hougoumont and D'Erlon's Assault",
+        "id": "Waterloo: Hougoumont dan Serbuan D'Erlon"
+      },
+      "body": {
+        "en": "Wellington deployed his army along the low crest of Mont-Saint-Jean, anchoring his flanks on fortified outposts: the chateau-farm of Hougoumont on the right and Papelotte on the left. Napoleon delayed his opening bombardment until 11:30 to allow the muddy ground to dry.\n\nThe battle opened with a diversionary French attack on Hougoumont by Prince Jérôme's division. Inside the courtyard, British Foot Guards desperately slammed the gates shut against French soldiers who had burst inside. Around 13:30, D'Erlon's entire I Corps advanced in massive infantry columns against Wellington's centre-left, only to be counter-attacked by Picton's division and broken by a thundering charge of the British Union Brigade, including the famous Scots Greys.",
+        "id": "Wellington menggelar pasukannya di sepanjang punggung bukit rendah Mont-Saint-Jean, memperkuat sayapnya dengan pos-pos terdepan berbenteng: pertanian kastel Hougoumont di kanan dan Papelotte di kiri. Napoleon menunda pengeboman pembukanya hingga pukul 11.30 demi menunggu tanah berlumpur mengering.\n\nPertempuran dibuka dengan serangan pengalihan Prancis ke Hougoumont oleh divisi Pangeran Jérôme. Di dalam halaman, para pengawal Foot Guards Inggris bersusah payah membanting pintu gerbang hingga tertutup rapat dari prajurit Prancis yang sempat menerobos masuk. Sekitar pukul 13.30, seluruh Korps I D'Erlon maju dalam kolom-kolom infanteri raksasa menyerbu bagian tengah-kiri Wellington, tetapi dihantam serangan balasan divisi Picton dan dihancurkan oleh serbuan dahsyat Union Brigade kavaleri Inggris, termasuk resimen terkenal Scots Greys."
+      },
+      "camera": {
+        "center": [
+          4.41,
+          50.675
+        ],
+        "zoom": 12.8,
+        "pitch": 45,
+        "bearing": 10,
+        "durationMs": 4000
+      },
+      "focus": [
+        "waterloo-hougoumont",
+        "waterloo-derlon-attack",
+        "hougoumont",
+        "mont-saint-jean",
+        "papelotte",
+        "waterloo"
+      ],
+      "media": [
+        "closing-gates-hougoumont",
+        "scotland-forever",
+        "wellington-waterloo"
+      ],
+      "sources": [
+        "adkin-2001",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "ch-5-cavalry-plancenoit",
+      "when": "1815-06-18T14:31/1815-06-18T18:30",
+      "dateLabel": {
+        "en": "18 June 1815 (Afternoon)",
+        "id": "18 Juni 1815 (Sore)"
+      },
+      "title": {
+        "en": "Cavalry Charges and the Prussian Flank",
+        "id": "Serbuan Kavaleri dan Sayap Prusia"
+      },
+      "body": {
+        "en": "Around 15:30, Marshal Ney mistook Allied movements behind the crest for a general withdrawal and ordered unsupported cavalry forward. Over the next two hours, some 9,000 French cavalry swept repeatedly across the ridge in massive waves, swirling around Allied infantry formed into impenetrable bristling squares of bayonets.\n\nMeanwhile, the strategic balance shifted irrevocably. Emerging from the woods to the east, Bülow's Prussian IV Corps assaulted the village of Plancenoit on Napoleon's right flank. The Emperor was forced to divert his strategic reserve—Lobau's VI Corps and elements of the Young Guard—into a bloody struggle for the village church and cemetery.",
+        "id": "Sekitar pukul 15.30, Marsekal Ney salah mengira pergerakan Sekutu di balik bukit sebagai tanda mundur dan memerintahkan kavaleri maju tanpa dukungan infanteri. Selama dua jam berikutnya, sekitar 9.000 kavaleri Prancis berulang kali menyapu punggung bukit dalam gelombang besar, mengepung formasi kotak infanteri Sekutu yang berdiri teguh dengan barisan bayonet.\n\nSementara itu, perimbangan strategis bergeser secara telak. Muncul dari hutan di sebelah timur, Korps IV Prusia pimpinan Bülow menyerbu desa Plancenoit di sayap kanan Napoleon. Sang Kaisar terpaksa mengalihkan pasukan cadangan strategisnya—Korps VI Lobau dan bagian dari Garda Muda—ke dalam pertempuran berdarah memperebutkan gereja dan pemakaman desa tersebut."
+      },
+      "camera": {
+        "center": [
+          4.42,
+          50.67
+        ],
+        "zoom": 12.2,
+        "pitch": 45,
+        "bearing": 45,
+        "durationMs": 4000
+      },
+      "focus": [
+        "waterloo-ney-cavalry",
+        "waterloo-plancenoit",
+        "plancenoit",
+        "prussian-army-main",
+        "napoleon-main"
+      ],
+      "sources": [
+        "adkin-2001",
+        "hofschroer-1999"
+      ]
+    },
+    {
+      "id": "ch-6-imperial-guard",
+      "when": "1815-06-18T18:31/1815-06-18T20:30",
+      "dateLabel": {
+        "en": "18 June 1815 (Evening)",
+        "id": "18 Juni 1815 (Petang)"
+      },
+      "title": {
+        "en": "The Fall of La Haye Sainte and the Imperial Guard",
+        "id": "Jatuhnya La Haye Sainte dan Garda Kekaisaran"
+      },
+      "body": {
+        "en": "At around 18:30, the battered King's German Legion garrison at La Haye Sainte exhausted their ammunition and was overwhelmed. Ney quickly brought forward horse artillery to blast canister into Wellington's center at point-blank range, opening a dangerous crisis for the Allies.\n\nWith Plancenoit temporarily stabilized, Napoleon launched his legendary Imperial Guard up the ridge in a final bid for victory. As the veteran grenadiers neared the crest, Wellington ordered Maitland's Foot Guards to rise and fire, followed by a devastating flanking maneuver by Sir John Colborne's 52nd Light Infantry. For the first time in Napoleonic history, the cry arose from the ranks: 'La Garde recule!'",
+        "id": "Sekitar pukul 18.30, garnisun King's German Legion di La Haye Sainte kehabisan amunisi dan akhirnya kewalahan. Ney segera memajukan artileri berkuda untuk menembakkan peluru gotri ke pusat garis Wellington dari jarak dekat, memicu krisis berbahaya bagi Sekutu.\n\nSetelah Plancenoit untuk sementara diamankan, Napoleon mengerahkan Garda Kekaisaran legendarisnya menaiki punggung bukit dalam upaya pamungkas meraih kemenangan. Ketika para grenadier veteran itu mendekati puncak bukit, Wellington memerintahkan Maitland's Foot Guards bangkit dan menembak, disusul manuver sayap mematikan dari Resimen Infanteri Ringan ke-52 pimpinan Sir John Colborne. Untuk pertama kalinya dalam sejarah era Napoleon, terdengar seruan panik dari barisan Prancis: 'La Garde recule!'"
+      },
+      "camera": {
+        "center": [
+          4.412,
+          50.678
+        ],
+        "zoom": 13.2,
+        "pitch": 50,
+        "bearing": 0,
+        "durationMs": 4000
+      },
+      "focus": [
+        "waterloo-haye-sainte-falls",
+        "waterloo-guard-attack",
+        "la-haye-sainte",
+        "la-haye-sainte-post",
+        "hougoumont-post"
+      ],
+      "sources": [
+        "adkin-2001",
+        "chandler-1966"
+      ]
+    },
+    {
+      "id": "ch-7-rout-and-meeting",
+      "when": "1815-06-18T20:31/1815-06-18T23:59",
+      "dateLabel": {
+        "en": "18 June 1815 (Night)",
+        "id": "18 Juni 1815 (Malam)"
+      },
+      "title": {
+        "en": "The Rout and Meeting at La Belle Alliance",
+        "id": "Pelarian Massal dan Pertemuan di La Belle Alliance"
+      },
+      "body": {
+        "en": "Seeing the Imperial Guard recoil, Wellington rode forward on Copenhagen, lifted his cocked hat in the air, and ordered his entire army forward in a general advance. Simultaneously, Zieten's Prussian I Corps linked up on Wellington's left and Prussian forces stormed through Plancenoit, collapsing the French flank.\n\nThe Armée du Nord broke into complete panic and fled down the Genappe road in total disarray. Around 21:00, Wellington and Blücher met outside the inn of La Belle Alliance amidst the debris of battle. The commanders embraced, and Blücher promised that his fresh Prussian cavalry would maintain an unrelenting night pursuit.",
+        "id": "Melihat Garda Kekaisaran terpukul mundur, Wellington menunggangi kudanya Copenhagen, mengacungkan topinya ke udara, dan memerintahkan seluruh pasukannya maju dalam serangan umum. Bersamaan dengan itu, Korps I Prusia pimpinan Zieten terhubung di sayap kiri Wellington dan pasukan Prusia mendobrak masuk merebut Plancenoit, meruntuhkan sayap Prancis.\n\nArmée du Nord pecah dalam kepanikan massal dan melarikan diri ke jalan raya Genappe dalam kekacauan total. Sekitar pukul 21.00, Wellington dan Blücher bertemu di luar penginapan La Belle Alliance di antara puing-puing medan perang. Kedua panglima saling berpelukan, dan Blücher berjanji bahwa kavaleri Prusianya akan melanjutkan pengejaran tanpa henti sepanjang malam."
+      },
+      "camera": {
+        "center": [
+          4.415,
+          50.668
+        ],
+        "zoom": 12,
+        "pitch": 40,
+        "bearing": -15,
+        "durationMs": 3500
+      },
+      "focus": [
+        "waterloo-french-rout",
+        "meeting-la-belle-alliance",
+        "la-belle-alliance",
+        "waterloo"
+      ],
+      "media": [
+        "meeting-wellington-blucher"
+      ],
+      "sources": [
+        "wp-waterloo",
+        "siborne-1848"
+      ]
+    },
+    {
+      "id": "ch-8-aftermath",
+      "when": "1815-06-19/1815-06-22",
+      "dateLabel": {
+        "en": "19–22 June 1815",
+        "id": "19–22 Juni 1815"
+      },
+      "title": {
+        "en": "The Fall of the Empire",
+        "id": "Runtuhnya Kekaisaran"
+      },
+      "body": {
+        "en": "On 19 June, Marshal Grouchy defeated Thielmann's Prussian corps at the Battle of Wavre, only to discover that Napoleon's main army had ceased to exist the day before. Grouchy skillfully conducted a fighting retreat back into France, but the strategic outcome was sealed.\n\nNapoleon returned to Paris defeated and politically isolated. On 22 June 1815, he abdicated the imperial throne for the second and final time, bringing an end to the Hundred Days and the Napoleonic Wars. He was subsequently exiled to the remote South Atlantic island of Saint Helena, where he died in 1821.",
+        "id": "Pada 19 Juni, Marsekal Grouchy mengalahkan korps Prusia pimpinan Thielmann dalam Pertempuran Wavre, hanya untuk mendapati kenyataan bahwa tentara utama Napoleon telah binasa sehari sebelumnya. Grouchy dengan terampil memimpin gerak mundur pasukannya kembali ke Prancis, tetapi takdir strategis sudah tak terelakkan.\n\nNapoleon kembali ke Paris dalam keadaan kalah dan terisolasi secara politik. Pada 22 Juni 1815, ia melepaskan takhta kekaisaran untuk kedua dan terakhir kalinya, mengakhiri masa Seratus Hari dan Perang Napoleon. Ia kemudian diasingkan ke pulau terpencil Saint Helena di Samudra Atlantik Selatan, tempat ia wafat pada tahun 1821."
+      },
+      "camera": {
+        "center": [
+          4.5,
+          50.65
+        ],
+        "zoom": 9.2,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-wavre",
+        "napoleon-abdication",
+        "wavre",
+        "brussels"
+      ],
+      "sources": [
+        "chandler-1966",
+        "wp-wavre"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "chandler-1966",
+      "type": "book",
+      "citation": "Chandler, David G. The Campaigns of Napoleon. New York: Macmillan, 1966."
+    },
+    {
+      "id": "adkin-2001",
+      "type": "book",
+      "citation": "Adkin, Mark. The Waterloo Companion: The Complete Guide to History's Most Famous Land Battle. London: Aurum Press, 2001."
+    },
+    {
+      "id": "siborne-1848",
+      "type": "book",
+      "citation": "Siborne, William. History of the War in France and Belgium, in 1815. London: T. & W. Boone, 1848."
+    },
+    {
+      "id": "clausewitz-1815",
+      "type": "book",
+      "citation": "Clausewitz, Carl von. The Campaign of 1815 in France. Translated by Peter Paret and Daniel Moran. London: Greenhill Books, 1993."
+    },
+    {
+      "id": "hofschroer-1999",
+      "type": "book",
+      "citation": "Hofschröer, Peter. 1815: The Waterloo Campaign: The German Victory. London: Greenhill Books, 1999."
+    },
+    {
+      "id": "wellington-dispatches",
+      "type": "primary",
+      "citation": "Wellesley, Arthur, Duke of Wellington. The Dispatches of Field Marshal the Duke of Wellington, Vol. XII. London: John Murray, 1838."
+    },
+    {
+      "id": "wp-waterloo",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Waterloo.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-ligny",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Ligny.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ligny",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-quatre-bras",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Quatre Bras.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Quatre_Bras",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-wavre",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Wavre.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Wavre",
+      "accessed": "2026-10"
+    }
+  ],
+  "media": [
+    {
+      "id": "wellington-waterloo",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wellington_at_Waterloo_Hillingford.jpg",
+      "alt": {
+        "en": "The Duke of Wellington on horseback watching the Battle of Waterloo, painting by Robert Alexander Hillingford.",
+        "id": "Adipati Wellington menunggang kuda menyaksikan Pertempuran Waterloo, lukisan karya Robert Alexander Hillingford."
+      },
+      "caption": {
+        "en": "The Duke of Wellington at Waterloo by Robert Alexander Hillingford.",
+        "id": "Adipati Wellington di Waterloo karya Robert Alexander Hillingford."
+      },
+      "creator": "Robert Alexander Hillingford",
+      "date": "1890~",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wellington_at_Waterloo_Hillingford.jpg"
+    },
+    {
+      "id": "closing-gates-hougoumont",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Robert_Gibb._Closing_the_Gates_at_Hougoumont_1815.jpg",
+      "alt": {
+        "en": "British Guardsmen straining to close the wooden gates of Hougoumont against French attackers, painting by Robert Gibb.",
+        "id": "Prajurit Pengawal Inggris bersusah payah menutup pintu gerbang kayu Hougoumont dari serbuan Prancis, lukisan karya Robert Gibb."
+      },
+      "caption": {
+        "en": "Closing the Gates at Hougoumont 1815 by Robert Gibb (1903).",
+        "id": "Menutup Pintu Gerbang di Hougoumont 1815 karya Robert Gibb (1903)."
+      },
+      "creator": "Robert Gibb",
+      "date": "1903",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Gibb._Closing_the_Gates_at_Hougoumont_1815.jpg"
+    },
+    {
+      "id": "scotland-forever",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Scotland_Forever!.jpg",
+      "alt": {
+        "en": "The Royal Scots Greys charging in a line of grey horses at the Battle of Waterloo, painting by Lady Butler.",
+        "id": "Resimen Royal Scots Greys menyerbu dalam barisan kuda abu-abu di Pertempuran Waterloo, lukisan karya Lady Butler."
+      },
+      "caption": {
+        "en": "Scotland Forever! depicting the charge of the Scots Greys at Waterloo, by Lady Butler (1881).",
+        "id": "Scotland Forever! menggambarkan serbuan Scots Greys di Waterloo, karya Lady Butler (1881)."
+      },
+      "creator": "Elizabeth Thompson (Lady Butler)",
+      "date": "1881",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scotland_Forever!.jpg"
+    },
+    {
+      "id": "meeting-wellington-blucher",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Meeting_of_Wellington_and_Bl%C3%BCcher_after_the_Battle_of_Waterloo,1861.jpg",
+      "alt": {
+        "en": "Wellington and Blücher on horseback shaking hands outside La Belle Alliance on the night of Waterloo, painting by Daniel Maclise.",
+        "id": "Wellington dan Blücher di atas kuda berjabat tangan di luar La Belle Alliance pada malam Pertempuran Waterloo, lukisan karya Daniel Maclise."
+      },
+      "caption": {
+        "en": "The Meeting of Wellington and Blücher after the Battle of Waterloo (1861) by Daniel Maclise.",
+        "id": "Pertemuan Wellington dan Blücher setelah Pertempuran Waterloo (1861) karya Daniel Maclise."
+      },
+      "creator": "Daniel Maclise",
+      "date": "1861",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Meeting_of_Wellington_and_Bl%C3%BCcher_after_the_Battle_of_Waterloo,1861.jpg"
+    }
+  ]
+}

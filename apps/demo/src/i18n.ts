@@ -9,7 +9,7 @@ export interface UIStrings {
   strongholds: string; engine: string; loadYours: string; loadHelp: string; loadFailed: string; dismiss: string;
   nothing: string; moving: string; men: string; sides: string; lines: string; routeDoc: string; routeConj: string;
   routeSea: string; uncertainty: string; basemap: string; terrain: string;
-  week: string; month: string; year: string; fiveyear: string;
+  day: string; week: string; month: string;
   exact: string; approximate: string; conjectural: string; legend: string; aboutPreview: string; aboutText: string;
   theme: string; themeAuto: string; themeLight: string; themeDark: string; dropHere: string;
   mountains: string; rivers: string; cities: string; forests: string; marchActive: string;
@@ -34,7 +34,7 @@ export const UI: Record<string, UIStrings> = {
     loadFailed: 'That file could not be loaded', dismiss: 'Dismiss', nothing: 'nothing', moving: 'on the move',
     men: 'men', sides: 'Sides', lines: 'Lines', routeDoc: 'documented route', routeConj: 'conjectural route',
     routeSea: 'by sea', uncertainty: 'location uncertainty', basemap: 'Basemap: Natural Earth, self-hosted.',
-    terrain: '3D terrain', week: '1 week/s', month: '1 month/s', year: '1 year/s', fiveyear: '5 years/s',
+    terrain: '3D terrain', day: '1 day/s', week: '1 week/s', month: '1 month/s',
     exact: 'exact site', approximate: 'approximate', conjectural: 'conjectural', legend: 'Legend',
     aboutPreview: 'About this demo',
     aboutText: 'MapLibre GL renders the map; @chronomap/engine parses, validates and resolves every frame. Same code the Rust core must match, and the same JSON any other campaign would use.',
@@ -63,7 +63,7 @@ export const UI: Record<string, UIStrings> = {
     loadFailed: 'Berkas itu tidak dapat dimuat', dismiss: 'Tutup', nothing: 'tidak ada', moving: 'sedang bergerak',
     men: 'orang', sides: 'Pihak', lines: 'Garis', routeDoc: 'rute terdokumentasi', routeConj: 'rute dugaan',
     routeSea: 'lewat laut', uncertainty: 'ketidakpastian lokasi', basemap: 'Peta dasar: Natural Earth, dihosting sendiri.',
-    terrain: 'Relief 3D', week: '1 minggu/dtk', month: '1 bulan/dtk', year: '1 tahun/dtk', fiveyear: '5 tahun/dtk',
+    terrain: 'Relief 3D', day: '1 hari/dtk', week: '1 minggu/dtk', month: '1 bulan/dtk',
     exact: 'lokasi pasti', approximate: 'perkiraan', conjectural: 'dugaan', legend: 'Legenda',
     aboutPreview: 'Tentang demo ini',
     aboutText: 'MapLibre GL menggambar peta; @chronomap/engine mengurai, memvalidasi, dan menghitung setiap frame. Kode yang sama yang harus disamai inti Rust, dan JSON yang sama untuk kampanye mana pun.',

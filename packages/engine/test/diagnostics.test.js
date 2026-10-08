@@ -56,7 +56,7 @@ test('the loader warns about suspicious data without rejecting it', () => {
 });
 
 test('the shipped campaigns load without errors', () => {
-  for (const p of ['java-war-1825.json', 'napoleon-russia-1812.json']) {
+  for (const p of ['java-war-1825.json', 'napoleon-russia-1812.json', 'waterloo-1815.json']) {
     const raw = JSON.parse(readFileSync(new URL(`../../../data/campaigns/${p}`, import.meta.url), 'utf8'));
     const { campaign, diagnostics } = loadCampaign(raw);
     assert.ok(campaign, p);

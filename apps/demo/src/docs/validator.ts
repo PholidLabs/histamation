@@ -13,6 +13,7 @@ type Validate = ((data: unknown) => boolean) & { errors?: { keyword: string; ins
 const EXAMPLES: [string, string][] = [
   ['Java War 1825', '/campaigns/java-war-1825.json'],
   ['Napoleon 1812', '/campaigns/napoleon-russia-1812.json'],
+  ['Waterloo 1815', '/campaigns/waterloo-1815.json'],
   ['Null Island (fixture)', '/campaigns/fixtures/null-island.json'],
 ];
 const FIX: Record<string, Record<DocLang, string>> = Object.fromEntries(catalogue.map((d) => [d.code, d.fix]));

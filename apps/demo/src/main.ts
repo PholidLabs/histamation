@@ -17,21 +17,26 @@ import { CoachmarkTour } from './coachmark.js';
 import { pauseIcon, playIcon } from './icons.js';
 
 const DAY = 86400;
+/** Playback speeds: [UI label key, campaign seconds per wall-clock second]. */
+const SPEEDS = [['day', DAY], ['week', 7 * DAY], ['month', 30.44 * DAY]] as const;
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 const clamp = (v: number, a: number, b: number) => (v < a ? a : v > b ? b : v);
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const CAMPAIGNS: Record<string, string> = {
-  java: '/campaigns/java-war-1825.json',
-  napoleon: '/campaigns/napoleon-russia-1812.json',
+/** `label` shows in the picker until the campaign loads; its localized meta.title takes over after. */
+const CAMPAIGNS: Record<string, { url: string; label: string }> = {
+  java: { url: '/campaigns/java-war-1825.json', label: 'The Java War, 1825–1830' },
+  waterloo: { url: '/campaigns/waterloo-1815.json', label: 'The Waterloo Campaign' },
 };
+/** `/app/?campaign=waterloo` opens that campaign first; the landing page links there. */
+const requested = new URLSearchParams(location.search).get('campaign') ?? '';
 
 const engine = new ChronoMapEngine({ language: 'id', includeTrail: false });
 const state = {
   lang: 'id',
   themeMode: savedThemeMode(),
   mode: 'story' as 'story' | 'explore',
-  key: 'java',
+  key: Object.hasOwn(CAMPAIGNS, requested) ? requested : 'java',
   custom: null as CampaignFile | null,
   activeIndex: null as number | null,
   playing: false,
@@ -347,8 +352,8 @@ function buildExplore(): void {
     onclick: togglePlay,
   }, state.playing ? pauseIcon() : playIcon(), el('span', { text: state.playing ? ui().pause : ui().play }));
   const speed = el('select', { id: 'speed', onchange: (e: Event) => { state.rate = Number((e.target as HTMLSelectElement).value); } });
-  for (const [label, secs] of [[ui().week, 7 * DAY], [ui().month, 30.44 * DAY], [ui().year, 365.25 * DAY], [ui().fiveyear, 5 * 365.25 * DAY]] as [string, number][]) {
-    speed.append(el('option', { value: secs, selected: Math.abs(secs - state.rate) < 1 }, label));
+  for (const [key, secs] of SPEEDS) {
+    speed.append(el('option', { value: secs, selected: Math.abs(secs - state.rate) < 1 }, ui()[key]));
   }
   const jump = el('select', {
     id: 'jump',
@@ -757,7 +762,7 @@ async function useCampaign(source: CampaignFile | string, label?: string): Promi
   state.playing = false;
   if (typeof source === 'string') state.titles[state.key] = tx(c.meta.title);
   const span = c.focus.end - c.focus.start;
-  state.rate = [7 * DAY, 30.44 * DAY, 365.25 * DAY, 5 * 365.25 * DAY]
+  state.rate = SPEEDS.map(([, r]) => r as number)
     .reduce((best, r) => (Math.abs(span / r - 45) < Math.abs(span / best - 45) ? r : best));
   renderer.setCampaign(c);
   renderer.setLanguage(state.lang);
@@ -793,12 +798,12 @@ function readFile(file: File): void {
 /* ------------------------------------------------------------------ chrome wiring */
 function setupChrome(): void {
   const sel = $<HTMLSelectElement>('dataset');
-  for (const key of Object.keys(CAMPAIGNS)) sel.append(el('option', { value: key }, key));
+  for (const [key, { label }] of Object.entries(CAMPAIGNS)) sel.append(el('option', { value: key }, label));
   sel.value = state.key;
   sel.addEventListener('change', async () => {
     state.key = sel.value;
     if (sel.value === 'custom' && state.custom) await useCampaign(state.custom, 'custom');
-    else await useCampaign(CAMPAIGNS[sel.value], sel.value);
+    else await useCampaign(CAMPAIGNS[sel.value].url, sel.value);
   });
   buildThemeButtons();
   $('mode-story').addEventListener('click', () => setMode('story'));
@@ -867,7 +872,7 @@ map.on('load', () => {
   attachMapInteractions();
   if (state.terrain) setTerrainEnabled(true);
 });
-await useCampaign(CAMPAIGNS[state.key], 'java');
+await useCampaign(CAMPAIGNS[state.key].url, state.key);
 setMode('story');
 requestAnimationFrame(loop);
 setTimeout(() => { tour.start(false); }, 700);
