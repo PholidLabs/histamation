@@ -1,0 +1,190 @@
+/* Landing page. One accent for actions (--teal, which is gold in the dark theme),
+   rubric for ornament, the app's three typefaces, and hairlines instead of boxes. */
+@import './tokens.css';
+
+* { box-sizing: border-box; }
+html { overflow-x: clip; scroll-behavior: smooth; }
+body.lp {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font: 400 16px/1.6 var(--ff-body); -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%;
+}
+.lp a { color: inherit; text-decoration: none; }
+.lp :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+.lp img { display: block; }
+
+.lp main, .lp-bar, .lp-foot { max-width: 1240px; margin-inline: auto; padding-inline: clamp(20px, 4vw, 48px); }
+
+/* ---------- top bar ---------- */
+.lp-bar {
+  position: sticky; top: 0; z-index: 10; height: 64px; max-width: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: color-mix(in srgb, var(--ground) 86%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
+}
+.lp-brand { display: inline-flex; align-items: center; gap: 10px; font: 400 21px/1 var(--ff-display); letter-spacing: .01em; }
+.lp-brand img { width: 28px; height: 28px; border-radius: 7px; object-fit: cover; }
+.lp-brand.small { font-size: 17px; gap: 8px; }
+.lp-brand.small img { width: 20px; height: 20px; border-radius: 5px; }
+.lp-nav { display: flex; align-items: center; gap: 6px; }
+.lp-link { font-size: 14px; color: var(--ink-2); padding: 6px 10px; border-radius: 999px; transition: color .2s; }
+.lp-link:hover { color: var(--ink); }
+
+.lp .seg { display: inline-flex; gap: 2px; padding: 2px; border: 1px solid var(--rule); border-radius: 999px; }
+.lp .seg button {
+  font: 500 11.5px/1 var(--ff-mono); letter-spacing: .04em; color: var(--ink-3);
+  background: none; border: 0; border-radius: 999px; padding: 6px 9px; cursor: pointer;
+  display: inline-flex; align-items: center; transition: color .2s, background-color .2s;
+}
+.lp .seg button:hover { color: var(--ink); }
+.lp .seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); }
+.lp .seg button.icon svg { width: 13px; height: 13px; display: block; }
+
+.lp-btn {
+  display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; white-space: nowrap;
+  font: 500 14px/1 var(--ff-body); padding: 10px 16px; border: 1px solid transparent;
+  transition: transform .2s cubic-bezier(.16, 1, .3, 1), filter .2s, border-color .2s, color .2s;
+}
+.lp-btn:active { transform: translateY(1px) scale(.98); }
+.lp-btn.primary { background: var(--teal); color: var(--on-teal); margin-left: 6px; }
+.lp-btn.primary:hover { filter: brightness(1.08); }
+.lp-btn.ghost { border-color: var(--rule); color: var(--ink); }
+.lp-btn.ghost:hover { border-color: var(--ink-3); }
+.lp-btn.lg { font-size: 15.5px; padding: 14px 22px; }
+.lp-btn.lg.primary { margin-left: 0; }
+
+/* ---------- hero ---------- */
+.lp-hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 30rem); gap: clamp(32px, 6vw, 88px);
+  align-items: center; min-height: calc(100dvh - 64px); padding-block: clamp(40px, 7vh, 80px);
+}
+.lp-kicker {
+  margin: 0 0 22px; font: 500 11.5px/1 var(--ff-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3);
+}
+.lp h1 {
+  margin: 0; font: 400 clamp(2.6rem, 5.4vw, 4.6rem)/1.02 var(--ff-display); letter-spacing: -.012em; text-wrap: balance;
+}
+.lp h1 span, .lp h1 em { display: block; }
+.lp h1 em { color: var(--rubric); }
+.lp-lede { margin: 28px 0 0; max-width: 34rem; font-size: 17.5px; line-height: 1.65; color: var(--ink-2); text-wrap: pretty; }
+.lp-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+
+/* The plate: a single live figure, so it gets the only frame on the page. */
+.lp-plate { margin: 0; display: grid; gap: 12px; }
+.lp-plate-map {
+  position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden;
+  background: var(--land); border: 1px solid var(--rule);
+  box-shadow: 0 30px 60px -30px var(--shadow);
+}
+.lp-plate-map svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lp-plate-status {
+  position: absolute; inset: 0; margin: 0; display: grid; place-items: center;
+  font: italic 400 15px/1.4 var(--ff-body); color: var(--ink-3);
+}
+.lp-plate[aria-busy="false"] .lp-plate-status { display: none; }
+.lp-plate.failed .lp-plate-status { display: grid; }
+
+.lp-plate-bar { display: flex; align-items: center; gap: 12px; min-height: 36px; }
+.lp-play {
+  flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rule);
+  background: none; color: var(--ink); display: grid; place-items: center; cursor: pointer;
+  transition: border-color .2s, transform .2s cubic-bezier(.16, 1, .3, 1);
+}
+.lp-play:hover { border-color: var(--ink-3); }
+.lp-play:active { transform: scale(.94); }
+.lp-play svg { width: 14px; height: 14px; display: block; }
+.lp-plate-readout { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.lp-plate-readout time { font: 500 12.5px/1.2 var(--ff-mono); color: var(--ink); font-variant-numeric: tabular-nums; }
+.lp-plate-readout span {
+  font: italic 400 13.5px/1.3 var(--ff-body); color: var(--rubric);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 1.3em;
+}
+
+.lp-scrub { -webkit-appearance: none; appearance: none; width: 100%; height: 18px; background: none; margin: 0; cursor: pointer; }
+.lp-scrub::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(var(--ink-2), var(--ink-2)) 0 / var(--p, 0%) 100% no-repeat, var(--rule); border-radius: 2px; }
+.lp-scrub::-moz-range-track { height: 2px; background: var(--rule); border-radius: 2px; }
+.lp-scrub::-moz-range-progress { height: 2px; background: var(--ink-2); }
+.lp-scrub::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; margin-top: -5px; border-radius: 50%; background: var(--ink); border: 2px solid var(--ground); }
+.lp-scrub::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); border: 2px solid var(--ground); }
+
+.lp-plate figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.lp-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--ink-2); }
+.lp-legend li { display: inline-flex; align-items: center; gap: 7px; }
+.lp-legend i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1px var(--ground), 0 0 0 2px var(--ink-3); }
+.lp-link-arrow { font-size: 14px; color: var(--teal) !important; white-space: nowrap; }
+.lp-link-arrow span[aria-hidden] { display: inline-block; transition: transform .2s cubic-bezier(.16, 1, .3, 1); }
+.lp-link-arrow:hover span[aria-hidden] { transform: translateX(3px); }
+.lp-plate-note { margin: 0; font: 400 11.5px/1.5 var(--ff-mono); color: var(--ink-3); }
+
+/* Plate drawing. Faction colours come from the data as --c; in the dark theme they are
+   lifted toward the ink so a navy army still reads on a near-black ground. */
+.pl-grat { stroke: var(--rule); stroke-width: .6; fill: none; }
+.pl-grat-label { font: 400 8.5px var(--ff-mono); fill: var(--ink-3); }
+.pl-place { fill: var(--ink-3); }
+.pl-place-label { font: italic 400 11.5px var(--ff-body); fill: var(--ink-2); paint-order: stroke; stroke: var(--land); stroke-width: 3px; stroke-linejoin: round; }
+.pl-place-label.major { font-size: 13px; fill: var(--ink); }
+.pl-route, .pl-trail, .pl-unit, .pl-fort { --cc: color-mix(in srgb, var(--c), var(--ink) calc(var(--is-dark) * 45%)); }
+.pl-route { fill: none; stroke: var(--cc); stroke-width: 1.2; stroke-dasharray: 2 3; opacity: .45; }
+.pl-trail { fill: none; stroke: var(--cc); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
+.pl-unit circle { fill: var(--cc); stroke: var(--land); stroke-width: 2; }
+.pl-unit text { font: 600 11px var(--ff-body); fill: var(--ink); paint-order: stroke; stroke: var(--land); stroke-width: 3px; stroke-linejoin: round; }
+.pl-fort { fill: var(--cc); stroke: var(--land); stroke-width: 1.5; }
+.pl-event { fill: none; stroke: var(--rubric); stroke-width: 1.4; transform-box: fill-box; transform-origin: center; animation: pl-ping 1.8s cubic-bezier(.2, .8, .2, 1) infinite; }
+.pl-event-dot { fill: var(--rubric); }
+@keyframes pl-ping { from { transform: scale(.4); opacity: .95; } to { transform: scale(1.6); opacity: 0; } }
+
+/* ---------- how it works ---------- */
+.lp-how {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 88px);
+  align-items: start; padding-block: clamp(64px, 10vw, 128px); border-top: 1px solid var(--rule);
+}
+.lp h2 { margin: 0; font: 400 clamp(1.9rem, 3.2vw, 2.6rem)/1.1 var(--ff-display); letter-spacing: -.005em; text-wrap: balance; }
+.lp-steps { list-style: none; margin: 40px 0 0; padding: 0; counter-reset: s; display: grid; gap: 28px; }
+.lp-steps li { counter-increment: s; display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); column-gap: 8px; }
+.lp-steps li::before { content: counter(s, upper-roman) '.'; grid-row: span 2; font: 400 18px/1.35 var(--ff-sc); color: var(--rubric); }
+.lp-steps h3, .lp-principles h3 { margin: 0 0 4px; font: 600 16px/1.35 var(--ff-body); }
+.lp-steps p, .lp-principles p { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.6; max-width: 34rem; }
+
+.lp-code { border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--surface) 55%, var(--ground)); }
+.lp-code-head { padding: 10px 16px; font: 400 11.5px/1 var(--ff-mono); color: var(--ink-3); border-bottom: 1px solid var(--rule); }
+.lp-code-head.term { border-top: 1px solid var(--rule); }
+.lp-code pre { margin: 0; padding: 16px; overflow-x: auto; font: 400 12.5px/1.7 var(--ff-mono); color: var(--ink-2); }
+.lp-code .k { color: var(--ink); }
+.lp-code .s { color: var(--rubric); }
+.lp-code .n { color: var(--teal); }
+.lp-code .ok { color: var(--teal); }
+
+/* ---------- principles: four hairline columns, no boxes ---------- */
+.lp-principles {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px;
+  padding-block: 0 clamp(64px, 10vw, 128px);
+}
+.lp-principles > div { border-top: 1px solid var(--ink-3); padding-top: 18px; }
+
+/* ---------- footer ---------- */
+.lp-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap;
+  padding-block: 28px 40px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-3);
+}
+.lp-foot nav { display: flex; gap: 20px; }
+.lp-foot nav a:hover { color: var(--ink); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1000px) {
+  .lp-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .lp-plate { max-width: 30rem; width: 100%; }
+  .lp-how { grid-template-columns: minmax(0, 1fr); }
+  .lp-principles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .lp-link { display: none; }
+  .lp-nav .lp-btn.primary { display: none; }
+}
+@media (max-width: 560px) {
+  .lp-principles { grid-template-columns: minmax(0, 1fr); }
+  .lp-code pre { font-size: 11.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lp *, .lp *::before { transition: none !important; animation: none !important; }
+}

@@ -1,628 +1,343 @@
 /**
- * ChronoMap Landing Page.
- * Implements the scholarly Stitch codex design with:
- * - Living parchment WebGL shader
- * - Real-time Tabula Cartographica simulation & timeline scrubber
- * - Dynamic bilingual switching (ID / EN)
- * - Theme mode switching (Light / Dark) synchronized with the Map app
- * - Smooth anchor navigation and app launch actions
+ * Landing page: bilingual copy, theme and language switches shared with the app, and the
+ * hero plate — a real campaign resolved by @chronomap/engine every frame and drawn as SVG.
+ * No map library here on purpose: the plate shows the engine on its own.
  */
-import './style.css';
-import { LANDING, type LandingStrings } from './landing-copy.js';
+import './landing.css';
 import {
-  applyThemeMode, savedLang, savedThemeMode, storeLang, storeThemeMode,
+  DEFAULT_RADIUS, chapterAt, formatTicks, loadCampaign, pickText, resolveFrame,
+  type CampaignFile, type FrameState, type NormalizedCampaign, type Ticks,
+} from '@chronomap/engine';
+import { LANDING, type LandingStrings } from './landing-copy.js';
+import { UI } from './i18n.js';
+import { svgEl } from './dom.js';
+import { pauseIcon, playIcon } from './icons.js';
+import {
+  applyThemeMode, buildLangSeg, buildThemeSeg, savedLang, savedThemeMode, storeLang, storeThemeMode,
   type ThemeMode,
 } from './prefs.js';
 
-const state = {
-  lang: savedLang('id'),
-  themeMode: savedThemeMode(),
-};
+const LANGS = Object.keys(LANDING);
+const state = { lang: savedLang('id'), theme: savedThemeMode() };
+if (!LANGS.includes(state.lang)) state.lang = 'id';
+applyThemeMode(state.theme);
 
-// Apply initial theme mode before painting
-applyThemeMode(state.themeMode);
+const copy = (): LandingStrings => LANDING[state.lang];
+const $ = <T extends Element = HTMLElement>(id: string) => document.getElementById(id) as unknown as T;
 
-const copy = (): LandingStrings => LANDING[state.lang] ?? LANDING.id;
+/* ---------- copy, language and theme ---------- */
 
-/** ----------------------------------------------------------------
- *  1. Bilingual DOM Updates
- *  ---------------------------------------------------------------- */
-function updateLanguage(): void {
+/** `data-i18n` holds a dotted path into LandingStrings, e.g. `steps.1.body`. */
+function lookup(path: string): unknown {
+  return path.split('.').reduce<unknown>((o, k) => (o == null ? o : (o as Record<string, unknown>)[k]), copy());
+}
+
+function applyCopy(): void {
   const c = copy();
   document.documentElement.lang = state.lang;
   document.title = c.docTitle;
-
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.setAttribute('content', c.docDesc);
-
-  // Update text-only nodes with [data-i18n]
-  document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
-    const key = el.dataset.i18n as keyof LandingStrings;
-    const val = c[key];
-    if (typeof val === 'string') {
-      el.textContent = val;
-    }
-  });
-
-  // Update HTML-allowed nodes with [data-i18n-html]
-  document.querySelectorAll<HTMLElement>('[data-i18n-html]').forEach((el) => {
-    const key = el.dataset.i18nHtml as keyof LandingStrings;
-    const val = c[key];
-    if (typeof val === 'string') {
-      el.innerHTML = val;
-    }
-  });
-
-  // Update pipeline stages
-  const stageNodes = document.querySelectorAll<HTMLElement>('[data-stage-idx]');
-  stageNodes.forEach((node) => {
-    const idx = Number(node.dataset.stageIdx);
-    const stage = c.pipelineStages[idx];
-    if (!stage) return;
-    const titleEl = node.querySelector<HTMLElement>('.stage-title');
-    const descEl = node.querySelector<HTMLElement>('.stage-desc');
-    const metaEl = node.querySelector<HTMLElement>('.stage-meta');
-    const metricEl = node.querySelector<HTMLElement>('.stage-metric');
-    if (titleEl) titleEl.textContent = stage.title;
-    if (descEl) descEl.textContent = stage.desc;
-    if (metaEl) metaEl.textContent = stage.meta;
-    if (metricEl) metricEl.textContent = stage.metric;
-  });
-
-  // Update scholarly section steps (I, II, III, IV)
-  const stepNodes = document.querySelectorAll<HTMLElement>('[data-step-idx]');
-  stepNodes.forEach((node) => {
-    const idx = Number(node.dataset.stepIdx);
-    const step = c.sectionSteps[idx];
-    if (!step) return;
-    const numEl = node.querySelector<HTMLElement>('.step-num');
-    const titleEl = node.querySelector<HTMLElement>('.step-title');
-    const bodyEl = node.querySelector<HTMLElement>('.step-body');
-    const noteEl = node.querySelector<HTMLElement>('.step-note');
-    if (numEl) numEl.textContent = step.num + '.';
-    if (titleEl) titleEl.textContent = step.title;
-    if (bodyEl) bodyEl.textContent = step.body;
-    if (noteEl) noteEl.textContent = step.note;
-  });
-
-  // Update language buttons active state
-  const btnEn = document.getElementById('lang-en');
-  const btnId = document.getElementById('lang-id');
-  if (btnEn && btnId) {
-    if (state.lang === 'en') {
-      btnEn.className = 'px-2.5 py-0.5 font-label-sm text-label-sm bg-secondary text-on-secondary rounded-full font-semibold';
-      btnId.className = 'px-2.5 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface rounded-full';
-    } else {
-      btnEn.className = 'px-2.5 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface rounded-full';
-      btnId.className = 'px-2.5 py-0.5 font-label-sm text-label-sm bg-secondary text-on-secondary rounded-full font-semibold';
-    }
+  document.querySelector('meta[name="description"]')?.setAttribute('content', c.docDesc);
+  for (const node of document.querySelectorAll<HTMLElement>('[data-i18n]')) {
+    const v = lookup(node.dataset.i18n!);
+    if (typeof v === 'string') node.textContent = v;
   }
+  $('plate-scrub').setAttribute('aria-label', c.scrub);
+  buildLangSeg($('lang-seg'), LANGS, state.lang, (l) => {
+    state.lang = l;
+    storeLang(l);
+    applyCopy();
+  });
+  const ui = UI[state.lang];
+  buildThemeSeg($('theme-seg'), ui, state.theme, (m: ThemeMode) => {
+    state.theme = m;
+    storeThemeMode(m);
+    applyThemeMode(m);
+    applyCopy();
+  });
+  plate?.relabel();
 }
 
-function setLanguage(lang: string): void {
-  if (lang === state.lang) return;
-  state.lang = lang;
-  storeLang(lang);
-  updateLanguage();
-}
+/* ---------- the plate ---------- */
 
-/** ----------------------------------------------------------------
- *  2. Theme Toggling
- *  ---------------------------------------------------------------- */
-function initThemeToggle(): void {
-  const themeBtn = document.getElementById('theme-toggle-btn');
-  const themeIcon = document.getElementById('theme-toggle-icon');
+const W = 400, H = 500, PAD = 30;
+const DAY = 86400;
+/** Campaign seconds per wall-clock second: brisk between battles, slow while a same-day battle is on. */
+const SLOW_RATE = 45 * 60;
+const LOOP_SECONDS = 18;
+const HOLD_MS = 2200;
+const HEX = /^#[0-9a-f]{3,8}$/i;
 
-  function updateIcon(): void {
-    if (!themeIcon) return;
-    const isDark = document.documentElement.classList.contains('dark');
-    themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
-  }
+interface UnitNodes { g: SVGGElement; trail: SVGPolylineElement; ring: SVGCircleElement; dot: SVGCircleElement; label: SVGTextElement }
+/** Label bounding box in plate units: [left, top, right, bottom]. */
+type Box = [number, number, number, number];
+const overlaps = (a: Box, b: Box): boolean => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
 
-  updateIcon();
+class Plate {
+  private readonly svg = $<SVGSVGElement>('plate-svg');
+  private readonly scrub = $<HTMLInputElement>('plate-scrub');
+  private readonly play = $<HTMLButtonElement>('plate-play');
+  private readonly units = new Map<string, UnitNodes>();
+  private readonly forts = new Map<string, SVGRectElement>();
+  private readonly labels: SVGGElement;
+  private readonly events: SVGGElement;
+  private readonly kx: number;
+  private readonly scale: number;
+  private readonly ox: number;
+  private readonly oy: number;
+  private readonly start: Ticks;
+  private readonly end: Ticks;
+  private readonly fast: number;
+  private t: Ticks;
+  private rate: number;
+  private playing: boolean;
+  private visible = true;
+  private holdUntil = 0;
+  private last = 0;
+  private drawn: Ticks | null = null;
 
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const isCurrentlyDark = document.documentElement.classList.contains('dark');
-      const nextMode: ThemeMode = isCurrentlyDark ? 'light' : 'dark';
-      state.themeMode = nextMode;
-      storeThemeMode(nextMode);
-      applyThemeMode(nextMode);
-      updateIcon();
-    });
-  }
-}
+  constructor(private readonly c: NormalizedCampaign) {
+    this.start = c.focus.start;
+    this.end = c.focus.end;
+    this.fast = (this.end - this.start) / LOOP_SECONDS;
+    this.rate = this.fast;
 
-/** ----------------------------------------------------------------
- *  3. Living Parchment WebGL Shader
- *  ---------------------------------------------------------------- */
-function initParchmentShader(): void {
-  const canvas = document.getElementById('shader-canvas-ANIMATION_3') as HTMLCanvasElement | null;
-  if (!canvas) return;
+    // Fit every place and every route into the plate, keeping ground distances true at mid-latitude.
+    const pts: [number, number][] = [...[...c.places.values()].map((p) => p.coord), ...c.entities.flatMap((e) => routeOf(e.track) ?? (e.coord ? [e.coord] : []))];
+    const lons = pts.map((p) => p[0]), lats = pts.map((p) => p[1]);
+    const [w, e, s, n] = [Math.min(...lons), Math.max(...lons), Math.min(...lats), Math.max(...lats)];
+    this.kx = Math.cos((((s + n) / 2) * Math.PI) / 180);
+    this.scale = Math.min((W - 2 * PAD) / ((e - w) * this.kx), (H - 2 * PAD) / (n - s));
+    this.ox = W / 2 - (((w + e) / 2) * this.kx) * this.scale;
+    this.oy = H / 2 + ((s + n) / 2) * this.scale;
 
-  function syncSize(): void {
-    const w = canvas?.clientWidth || window.innerWidth || 1280;
-    const h = canvas?.clientHeight || window.innerHeight || 720;
-    if (canvas && (canvas.width !== w || canvas.height !== h)) {
-      canvas.width = w;
-      canvas.height = h;
+    this.svg.append(this.graticule());
+    const routes = svgEl('g') as SVGGElement;
+    const trails = svgEl('g') as SVGGElement;
+    const places = svgEl('g') as SVGGElement;
+    for (const p of c.places.values()) {
+      if (p.raw.kind === 'fort') continue; // forts are drawn by their fortification entities
+      const [x, y] = this.xy(p.coord);
+      places.append(svgEl('circle', { class: 'pl-place', cx: x, cy: y, r: p.raw.rank === 1 ? 2.2 : 1.6 }));
     }
-  }
+    this.labels = svgEl('g') as SVGGElement;
+    this.events = svgEl('g') as SVGGElement;
+    const markers = svgEl('g') as SVGGElement;
 
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(syncSize).observe(canvas);
-  }
-  syncSize();
-
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl') as WebGLRenderingContext | null;
-  if (!gl) return;
-
-  const vs = `attribute vec2 a_position;
-varying vec2 v_texCoord;
-void main() {
-  v_texCoord = a_position * 0.5 + 0.5;
-  gl_Position = vec4(a_position, 0.0, 1.0);
-}`;
-
-  const fs = `precision highp float;
-uniform float u_time;
-uniform vec2 u_resolution;
-uniform vec2 u_mouse;
-uniform float u_dark;
-varying vec2 v_texCoord;
-
-vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
-
-float snoise(vec2 v) {
-    const vec4 C = vec4(0.211324865405187,
-                        0.366025403784439,
-                       -0.577350269189626,
-                        0.024390243902439);
-    vec2 i  = floor(v + dot(v, C.yy) );
-    vec2 x0 = v -   i + dot(i, C.xx);
-    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-    vec4 x12 = x0.xyxy + C.xxzz;
-    x12.xy -= i1;
-    i = mod289(i);
-    vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
-        + i.x + vec3(0.0, i1.x, 1.0 ));
-    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
-    m = m*m;
-    m = m*m;
-    vec3 x = 2.0 * fract(p * C.www) - 1.0;
-    vec3 h = abs(x) - 0.5;
-    vec3 ox = floor(x + 0.5);
-    vec3 a0 = x - ox;
-    m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
-    vec3 g;
-    g.x  = a0.x  * x0.x  + h.x  * x0.y;
-    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-    return 130.0 * dot(m, g);
-}
-
-void main() {
-    vec2 st = gl_FragCoord.xy / u_resolution.xy;
-    st.x *= u_resolution.x / u_resolution.y;
-
-    float t = u_time * 0.06;
-
-    float n1 = snoise(st * 2.2 + vec2(t * 0.2, t * 0.15));
-    float n2 = snoise(st * 5.0 - vec2(t * 0.35, t * 0.2));
-    float n3 = snoise(st * 12.0 + vec2(n1 * 0.8, n2 * 0.8));
-
-    vec2 center = vec2(0.5 * (u_resolution.x / u_resolution.y), 0.5);
-    float d = distance(st, center);
-    float rings = sin(d * 24.0 - u_time * 0.3) * 0.5 + 0.5;
-    rings *= smoothstep(1.5, 0.2, d) * 0.15;
-
-    float blend = n1 * 0.5 + n2 * 0.3 + n3 * 0.2;
-
-    // Light Mode: Yellow Sand Parchment matched to logo.jpeg (#F2EBD9 / #ECE1C3)
-    vec3 lightBase = vec3(0.949, 0.922, 0.851);
-    vec3 lightShadow = vec3(0.902, 0.863, 0.776);
-    vec3 lightGold = vec3(0.79, 0.64, 0.35);
-
-    // Dark Mode: Obsidian Charcoal with subtle warm gold dust
-    vec3 darkBase = vec3(0.078, 0.071, 0.063);
-    vec3 darkShadow = vec3(0.110, 0.094, 0.082);
-    vec3 darkGold = vec3(0.788, 0.635, 0.353);
-
-    vec3 parchmentBase = mix(lightBase, darkBase, u_dark);
-    vec3 parchmentShadow = mix(lightShadow, darkShadow, u_dark);
-    vec3 goldDust = mix(lightGold, darkGold, u_dark);
-
-    vec3 col = mix(parchmentBase, parchmentShadow, smoothstep(-0.4, 0.6, blend));
-
-    col += goldDust * pow(max(0.0, n2 * rings * 3.0), 2.0) * (0.25 + u_dark * 0.15);
-    col -= vec3(0.08, 0.06, 0.05) * (1.0 - smoothstep(0.0, 1.2, distance(gl_FragCoord.xy / u_resolution.xy, vec2(0.5)))) * 0.12;
-
-    gl_FragColor = vec4(col, 1.0);
-}`;
-
-  const glContext = gl;
-  function compileShader(type: number, src: string): WebGLShader | null {
-    const s = glContext.createShader(type);
-    if (!s) return null;
-    glContext.shaderSource(s, src);
-    glContext.compileShader(s);
-    return s;
-  }
-
-  const vShader = compileShader(glContext.VERTEX_SHADER, vs);
-  const fShader = compileShader(glContext.FRAGMENT_SHADER, fs);
-  if (!vShader || !fShader) return;
-
-  const prog = gl.createProgram();
-  if (!prog) return;
-  gl.attachShader(prog, vShader);
-  gl.attachShader(prog, fShader);
-  gl.linkProgram(prog);
-  gl.useProgram(prog);
-
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-
-  const pos = gl.getAttribLocation(prog, 'a_position');
-  gl.enableVertexAttribArray(pos);
-  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-
-  const uTime = gl.getUniformLocation(prog, 'u_time');
-  const uRes = gl.getUniformLocation(prog, 'u_resolution');
-  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-  const uDark = gl.getUniformLocation(prog, 'u_dark');
-
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  window.addEventListener('mousemove', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width && rect.height) {
-      const nx = (event.clientX - rect.left) / rect.width;
-      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
-      mouse.x = nx * canvas.width;
-      mouse.y = ny * canvas.height;
-    }
-  });
-
-  function render(t: number): void {
-    if (!gl || !canvas) return;
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    const isDark = document.documentElement.classList.contains('dark') ? 1.0 : 0.0;
-    if (uTime) gl.uniform1f(uTime, t * 0.001);
-    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
-    if (uDark) gl.uniform1f(uDark, isDark);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    requestAnimationFrame(render);
-  }
-  requestAnimationFrame(render);
-}
-
-/** ----------------------------------------------------------------
- *  4. Real-time Map Simulation & Scrubber
- *  ---------------------------------------------------------------- */
-function initMapPlayground(): void {
-  const playBtn = document.getElementById('play-pause-btn');
-  const timeSlider = document.getElementById('time-slider') as HTMLInputElement | null;
-  const clockTimestamp = document.getElementById('clock-timestamp');
-  const subutaiMarker = document.getElementById('marker-subutai');
-  const tickCounter = document.getElementById('tick-counter');
-
-  let isPlaying = false;
-  let animInterval: number | null = null;
-  let speedMultiplier = 1.0;
-
-  function updateMapState(val: number): void {
-    // Interpolate Subutai troop marker along march corridor
-    if (subutaiMarker) {
-      const posX = 40 + (val * 0.35);
-      const posY = 58 - (val * 0.22);
-      subutaiMarker.style.left = `${posX}%`;
-      subutaiMarker.style.top = `${posY}%`;
-    }
-
-    if (clockTimestamp) {
-      const hour = Math.floor((val / 100) * 18) + 4;
-      const min = (val * 7) % 60;
-      const padH = hour < 10 ? '0' + hour : String(hour);
-      const padM = min < 10 ? '0' + min : String(min);
-      clockTimestamp.textContent = `1241-04-09 ${padH}:${padM}:00 UTC`;
-    }
-
-    if (tickCounter) {
-      const tick = 1842000 + Math.floor(val * 14.5);
-      tickCounter.textContent = `#${tick.toLocaleString()}`;
-    }
-
-    // Update active chapter button highlight based on slider progress
-    const ch1 = document.getElementById('btn-ch-1');
-    const ch2 = document.getElementById('btn-ch-2');
-    const ch3 = document.getElementById('btn-ch-3');
-    const activeClass = 'chapter-btn px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-[11px] font-semibold border border-outline-variant/50 transition-colors cursor-pointer';
-    const inactiveClass = 'chapter-btn px-3 py-1 rounded-full bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container font-label-sm text-[11px] text-on-surface border border-outline-variant/50 transition-colors cursor-pointer';
-
-    if (ch1 && ch2 && ch3) {
-      if (val < 30) {
-        ch1.className = activeClass;
-        ch2.className = inactiveClass;
-        ch3.className = inactiveClass;
-      } else if (val < 65) {
-        ch1.className = inactiveClass;
-        ch2.className = activeClass;
-        ch3.className = inactiveClass;
-      } else {
-        ch1.className = inactiveClass;
-        ch2.className = inactiveClass;
-        ch3.className = activeClass;
+    for (const ent of c.entities) {
+      const style = `--c:${colorOf(c, ent.faction)}`;
+      if (ent.track) {
+        routes.append(svgEl('polyline', { class: 'pl-route', style, points: this.points(routeOf(ent.track)!) }));
+        const nodes: UnitNodes = {
+          trail: svgEl('polyline', { class: 'pl-trail', style }) as SVGPolylineElement,
+          g: svgEl('g', { class: 'pl-unit', style }) as SVGGElement,
+          ring: svgEl('circle', { fill: 'none', stroke: 'currentColor', 'stroke-dasharray': '2 3', opacity: '.55' }) as SVGCircleElement,
+          dot: svgEl('circle', { r: 5.5 }) as SVGCircleElement,
+          label: svgEl('text') as SVGTextElement,
+        };
+        nodes.g.append(nodes.ring, nodes.dot, nodes.label);
+        trails.append(nodes.trail);
+        markers.append(nodes.g);
+        this.units.set(ent.id, nodes);
+      } else if (ent.coord) {
+        const [x, y] = this.xy(ent.coord);
+        const r = svgEl('rect', { class: 'pl-fort', x: x - 3.5, y: y - 3.5, width: 7, height: 7, transform: `rotate(45 ${x} ${y})` }) as SVGRectElement;
+        markers.append(r);
+        this.forts.set(ent.id, r);
       }
     }
+    this.svg.append(routes, places, trails, this.labels, this.events, markers);
+
+    // Reduced motion: no autoplay; open on the last same-day battle, when the armies have met.
+    const climax = c.events.filter((ev) => ev.importance === 1 && ev.end - ev.start < DAY && ev.start >= this.start && ev.start < this.end).at(-1);
+    this.playing = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.t = this.playing || !climax ? this.start : climax.start;
+
+    this.play.addEventListener('click', () => this.toggle(!this.playing));
+    this.scrub.addEventListener('input', () => {
+      this.toggle(false);
+      this.t = this.start + (Number(this.scrub.value) / 1000) * (this.end - this.start - 1);
+      this.draw();
+    });
+    new IntersectionObserver(([entry]) => { this.visible = entry.isIntersecting; }).observe(this.svg);
+
+    this.relabel();
+    this.toggle(this.playing);
+    requestAnimationFrame((now) => this.tick(now));
   }
 
-  function startAnimation(): void {
-    if (animInterval) clearInterval(animInterval);
-    const baseDelay = 120 / speedMultiplier;
-    animInterval = window.setInterval(() => {
-      if (!timeSlider) return;
-      let cur = parseInt(timeSlider.value, 10);
-      cur = (cur + 1) % 101;
-      timeSlider.value = String(cur);
-      updateMapState(cur);
-    }, baseDelay);
+  private xy([lon, lat]: [number, number]): [number, number] {
+    return [+(this.ox + lon * this.kx * this.scale).toFixed(1), +(this.oy - lat * this.scale).toFixed(1)];
+  }
+  private points(coords: [number, number][]): string {
+    return coords.map((p) => this.xy(p).join(',')).join(' ');
   }
 
-  if (playBtn && timeSlider) {
-    playBtn.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      const icon = playBtn.querySelector<HTMLElement>('.material-symbols-outlined');
-      if (isPlaying) {
-        if (icon) icon.textContent = 'pause';
-        startAnimation();
-      } else {
-        if (icon) icon.textContent = 'play_arrow';
-        if (animInterval) clearInterval(animInterval);
-      }
-    });
+  private graticule(): SVGGElement {
+    const g = svgEl('g') as SVGGElement;
+    const lon = (x: number) => (x - this.ox) / (this.kx * this.scale);
+    const lat = (y: number) => (this.oy - y) / this.scale;
+    const step = 0.1;
+    for (let v = Math.ceil(lon(0) / step) * step; v < lon(W); v += step) {
+      const x = this.xy([v, 0])[0];
+      g.append(svgEl('line', { class: 'pl-grat', x1: x, x2: x, y1: 0, y2: H }));
+      g.append(svgEl('text', { class: 'pl-grat-label', x: x + 3, y: H - 6 }, document.createTextNode(`${v.toFixed(1)}°E`)));
+    }
+    for (let v = Math.ceil(lat(H) / step) * step; v < lat(0); v += step) {
+      const y = this.xy([0, v])[1];
+      g.append(svgEl('line', { class: 'pl-grat', x1: 0, x2: W, y1: y, y2: y }));
+      g.append(svgEl('text', { class: 'pl-grat-label', x: 6, y: y - 3 }, document.createTextNode(`${v.toFixed(1)}°N`)));
+    }
+    return g;
+  }
 
-    timeSlider.addEventListener('input', (e) => {
-      const target = e.target as HTMLInputElement;
-      updateMapState(parseInt(target.value, 10));
-    });
-
-    // Speed multiplier buttons
-    document.querySelectorAll<HTMLButtonElement>('[data-speed]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('[data-speed]').forEach((b) => {
-          b.className = 'px-2.5 py-0.5 rounded-full font-label-sm text-[11px] text-on-surface-variant hover:text-on-surface';
-        });
-        btn.className = 'px-2.5 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary text-on-secondary font-semibold';
-        speedMultiplier = parseFloat(btn.dataset.speed || '1.0');
-        if (isPlaying) {
-          startAnimation();
-        }
-      });
-    });
-
-    // Chapter Quick Jumps
-    const chapterJumps: Record<string, number> = {
-      'btn-ch-1': 15,
-      'btn-ch-2': 44,
-      'btn-ch-3': 85,
+  /** Place names and the legend, in the current language. Labels are placed greedily, settlements first. */
+  relabel(): void {
+    const lang = state.lang, fallback = this.c.defaultLanguage;
+    this.labels.replaceChildren();
+    // Regional anchor towns with an explicit anchor side so they don't fight unit labels.
+    const SIDES: Record<string, 'start' | 'end'> = {
+      brussels: 'start', waterloo: 'end', wavre: 'end',
+      'quatre-bras': 'start', ligny: 'start', charleroi: 'start',
     };
+    const candidates = [...this.c.places.values()].filter((p) => SIDES[p.id]);
+    for (const p of candidates) {
+      const name = pickText(p.raw.name, lang, fallback);
+      const side = SIDES[p.id];
+      const [x, y] = this.xy(p.coord);
+      const bx = side === 'start' ? x + 6 : x - 6;
+      this.labels.append(svgEl('text', { class: 'pl-place-label major', x: bx, y: y + 4, 'text-anchor': side }, document.createTextNode(name)));
+    }
 
-    Object.entries(chapterJumps).forEach(([btnId, targetVal]) => {
-      document.getElementById(btnId)?.addEventListener('click', () => {
-        if (timeSlider) {
-          timeSlider.value = String(targetVal);
-          updateMapState(targetVal);
-        }
-      });
-    });
+    const legend = $('plate-legend');
+    legend.replaceChildren();
+    for (const f of this.c.factions.values()) {
+      const dot = document.createElement('i');
+      dot.style.setProperty('--c', colorOf(this.c, f.id));
+      const li = document.createElement('li');
+      li.append(dot, pickText(f.shortName ?? f.name, lang, fallback));
+      legend.append(li);
+    }
+    for (const ent of this.c.entities) {
+      const nodes = this.units.get(ent.id);
+      if (nodes) nodes.label.textContent = shortName(pickText(ent.raw.name, lang, fallback));
+    }
+    this.toggle(this.playing);
+    this.drawn = null;
+    this.draw();
+  }
+
+  private toggle(on: boolean): void {
+    this.playing = on;
+    this.holdUntil = 0;
+    this.play.replaceChildren(on ? pauseIcon() : playIcon());
+    this.play.setAttribute('aria-label', on ? copy().pause : copy().play);
+  }
+
+  private tick(now: number): void {
+    const dt = this.last ? Math.min(0.1, (now - this.last) / 1000) : 0;
+    this.last = now;
+    if (this.playing && this.visible && now >= this.holdUntil) {
+      if (this.holdUntil) { this.holdUntil = 0; this.t = this.start; }
+      const battle = this.c.events.some((ev) => ev.importance === 1 && ev.end - ev.start < DAY && this.t >= ev.start && this.t < ev.end);
+      const target = battle ? SLOW_RATE : this.fast;
+      this.rate += (target - this.rate) * Math.min(1, dt * 3);
+      this.t += this.rate * dt;
+      if (this.t >= this.end - 1) { this.t = this.end - 1; this.holdUntil = now + HOLD_MS; }
+      this.draw();
+    }
+    requestAnimationFrame((n) => this.tick(n));
+  }
+
+  private draw(): void {
+    const t = Math.floor(this.t);
+    if (t === this.drawn) return;
+    this.drawn = t;
+    const frame: FrameState = resolveFrame(this.c, t);
+    const lang = state.lang, fallback = this.c.defaultLanguage;
+    const metresToPx = this.scale / 111320;
+
+    const seen = new Set<string>();
+    const unitLabels: Box[] = [];
+    for (const fe of frame.entities) {
+      seen.add(fe.id);
+      const fort = this.forts.get(fe.id);
+      if (fort) { fort.style.setProperty('--c', colorOf(this.c, fe.faction)); continue; }
+      const u = this.units.get(fe.id);
+      if (!u || !fe.position) continue;
+      const [x, y] = this.xy(fe.position);
+      u.g.style.display = '';
+      u.trail.style.display = '';
+      u.trail.setAttribute('points', this.points(fe.trail ?? [fe.position]));
+      u.dot.setAttribute('cx', String(x));
+      u.dot.setAttribute('cy', String(y));
+      const unsure = fe.certainty === 'approximate' || fe.certainty === 'conjectural';
+      u.ring.setAttribute('cx', String(x));
+      u.ring.setAttribute('cy', String(y));
+      u.ring.setAttribute('r', unsure ? (DEFAULT_RADIUS[fe.certainty!] * metresToPx).toFixed(1) : '0');
+      const w = (u.label.textContent?.length ?? 0) * 6.3;
+      const right: Box = [x + 9, y - 9, x + 9 + w, y + 5];
+      const clash = right[2] > W - 4 || unitLabels.some((o) => overlaps(right, o));
+      const box: Box = clash ? [x - 9 - w, y - 9, x - 9, y + 5] : right;
+      unitLabels.push(box);
+      u.label.setAttribute('x', String(clash ? x - 9 : x + 9));
+      u.label.setAttribute('y', String(y + 4));
+      u.label.setAttribute('text-anchor', clash ? 'end' : 'start');
+    }
+    for (const [id, u] of this.units) if (!seen.has(id)) { u.g.style.display = 'none'; u.trail.style.display = 'none'; }
+    for (const [id, r] of this.forts) r.style.display = seen.has(id) ? '' : 'none';
+
+    this.events.replaceChildren();
+    let headline: { importance: number; name: string } | null = null;
+    for (const fev of frame.events) {
+      if (fev.phase !== 'active' || !fev.position || fev.importance > 2) continue;
+      const [x, y] = this.xy(fev.position);
+      this.events.append(svgEl('circle', { class: 'pl-event', cx: x, cy: y, r: 14 }), svgEl('circle', { class: 'pl-event-dot', cx: x, cy: y, r: 2.5 }));
+      const ev = this.c.events.find((e) => e.id === fev.id)!;
+      if (!headline || fev.importance < headline.importance) headline = { importance: fev.importance, name: pickText(ev.raw.name, lang, fallback) };
+    }
+    const chapter = chapterAt(this.c, t);
+    $('plate-date').textContent = formatTicks(t, lang, 'minute');
+    $('plate-event').textContent = headline?.name ?? (chapter ? pickText(chapter.raw.title, lang, fallback) : '');
+
+    const p = (t - this.start) / (this.end - this.start - 1);
+    this.scrub.value = String(Math.round(p * 1000));
+    this.scrub.style.setProperty('--p', `${(p * 100).toFixed(2)}%`);
   }
 }
 
-/** ----------------------------------------------------------------
- *  5. Hero Living Chronicle & Radar Route Motion
- *  ---------------------------------------------------------------- */
-function initHeroRadar(): void {
-  const drawnPath = document.getElementById('hero-drawn-path') as SVGGeometryElement | null;
-  const troopMarker = document.getElementById('hero-troop-marker');
-  const odometerKm = document.getElementById('odometer-km');
-  if (!drawnPath || !troopMarker) return;
+/** The whole planned route of a track: the first waypoint, then every leg after it. */
+function routeOf(track: NormalizedCampaign['entities'][number]['track']): [number, number][] | null {
+  if (!track?.length) return null;
+  return [track[0].coord, ...track.slice(1).flatMap((w) => (w.leg ?? [w.coord]).slice(w.leg ? 1 : 0))];
+}
+function colorOf(c: NormalizedCampaign, faction: string): string {
+  const color = c.factions.get(faction)?.color ?? '';
+  return HEX.test(color) ? color : 'var(--ink-2)';
+}
+/** "Anglo-Allied Army (Wellington)" → "Wellington": the commander reads better at plate scale. */
+function shortName(name: string): string {
+  return /\(([^)]+)\)\s*$/.exec(name)?.[1] ?? name;
+}
 
-  let pathLength = 0;
+let plate: Plate | null = null;
+
+async function initPlate(): Promise<void> {
+  const figure = $('plate');
   try {
-    pathLength = drawnPath.getTotalLength();
-  } catch {
-    pathLength = 520;
+    const res = await fetch('/campaigns/waterloo-1815.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const { campaign } = loadCampaign((await res.json()) as CampaignFile);
+    if (!campaign) throw new Error('campaign failed to load');
+    plate = new Plate(campaign);
+    figure.setAttribute('aria-busy', 'false');
+  } catch (e) {
+    figure.classList.add('failed');
+    figure.setAttribute('aria-busy', 'false');
+    $('plate-status').dataset.i18n = 'plateFailed';
+    $('plate-status').textContent = copy().plateFailed;
+    console.error('ChronoMap landing preview:', e);
   }
-
-  drawnPath.style.strokeDasharray = `${pathLength}`;
-  drawnPath.style.strokeDashoffset = `${pathLength}`;
-
-  const LOOP_DURATION = 9000; // 9-second continuous loop
-  let startTimestamp: number | null = null;
-
-  function step(ts: number): void {
-    if (!drawnPath || !troopMarker) return;
-    if (startTimestamp === null) startTimestamp = ts;
-    const elapsed = (ts - startTimestamp) % LOOP_DURATION;
-    const progress = elapsed / LOOP_DURATION; // 0..1
-
-    // Draw active stroke smoothly along the trail
-    drawnPath.style.strokeDashoffset = `${pathLength * (1 - progress)}`;
-
-    // Convert SVG geometry coordinate to percentage (viewBox: 400 x 200)
-    try {
-      const pt = drawnPath.getPointAtLength(progress * pathLength);
-      const pctX = (pt.x / 400) * 100;
-      const pctY = (pt.y / 200) * 100;
-      troopMarker.style.left = `${pctX}%`;
-      troopMarker.style.top = `${pctY}%`;
-    } catch {
-      // SVG not yet rendered fallback
-    }
-
-    // Dynamic Odometer increment
-    if (odometerKm) {
-      const currentKm = Math.round(progress * 14820);
-      odometerKm.textContent = `${currentKm.toLocaleString()} km`;
-    }
-
-    requestAnimationFrame(step);
-  }
-
-  requestAnimationFrame(step);
 }
 
-/** ----------------------------------------------------------------
- *  6. 4-Stage Pipeline Conduit Pulse & Interactive Sequence
- *  ---------------------------------------------------------------- */
-function initPipelineConduit(): void {
-  const runBtn = document.getElementById('btn-run-pipeline');
-  const btnLabel = document.getElementById('pipeline-btn-label');
-  const stageNodes = document.querySelectorAll<HTMLElement>('.pipeline-node');
-  const conduitLine = document.getElementById('pipeline-conduit-line');
-
-  let isRunning = false;
-
-  function runCircuit(): void {
-    if (isRunning) return;
-    isRunning = true;
-    if (btnLabel) btnLabel.textContent = copy().pipelineSimRunning;
-    if (conduitLine) {
-      conduitLine.classList.add('anim-conduit-active');
-      conduitLine.setAttribute('stroke', 'var(--color-primary)');
-    }
-
-    stageNodes.forEach((node, idx) => {
-      setTimeout(() => {
-        stageNodes.forEach((n) => n.classList.remove('is-active'));
-        node.classList.add('is-active');
-      }, idx * 420);
-    });
-
-    setTimeout(() => {
-      stageNodes.forEach((n) => n.classList.remove('is-active'));
-      if (conduitLine) {
-        conduitLine.setAttribute('stroke', 'var(--color-outline-variant)');
-      }
-      if (btnLabel) btnLabel.textContent = copy().pipelineSimBtn;
-      isRunning = false;
-    }, stageNodes.length * 420 + 600);
-  }
-
-  runBtn?.addEventListener('click', runCircuit);
-
-  // Periodic ambient pulse every 9 seconds if user is idle
-  setInterval(() => {
-    if (!isRunning && document.visibilityState === 'visible') {
-      runCircuit();
-    }
-  }, 9500);
-}
-
-/** ----------------------------------------------------------------
- *  7. Diagnostics Scanner & Schema Spec Interactions
- *  ---------------------------------------------------------------- */
-function initDiagnosticsAndSchema(): void {
-  const runDiagBtn = document.getElementById('btn-run-diag');
-  const diagBtnText = document.getElementById('diag-btn-text');
-  const scanIndicator = document.getElementById('diag-scan-indicator');
-  const diagLogContainer = document.getElementById('diag-log-container');
-
-  let isScanning = false;
-  runDiagBtn?.addEventListener('click', () => {
-    if (isScanning) return;
-    isScanning = true;
-    if (diagBtnText) diagBtnText.textContent = copy().diagScanning;
-
-    // Trigger visual scan bar
-    if (scanIndicator) {
-      scanIndicator.style.width = '100%';
-      scanIndicator.style.opacity = '1';
-    }
-    if (diagLogContainer) {
-      diagLogContainer.style.opacity = '0.5';
-    }
-
-    setTimeout(() => {
-      if (diagLogContainer) diagLogContainer.style.opacity = '1';
-      if (scanIndicator) {
-        scanIndicator.style.width = '0%';
-        scanIndicator.style.opacity = '0';
-      }
-      if (diagBtnText) diagBtnText.textContent = copy().diagPassed;
-
-      setTimeout(() => {
-        if (diagBtnText) diagBtnText.textContent = copy().diagRunBtn;
-        isScanning = false;
-      }, 2500);
-    }, 600);
-  });
-
-  const copySpecBtn = document.getElementById('btn-copy-spec');
-  const specCopyText = document.getElementById('spec-copy-text');
-  copySpecBtn?.addEventListener('click', () => {
-    const code = `interface HistoricalTroopTrack {
-  entityId: string;            // eg. "diponegoro_squadron"
-  path: [number, number][];     // [[lon, lat], ...]
-  timestamps: number[];       // Epoch seconds strictly monotonic
-  uncertaintyRadiusKm?: number;
-  primaryChronicleRef: string;  // eg. "Babad Diponegoro §IV"
-}`;
-    if (navigator?.clipboard?.writeText) {
-      navigator.clipboard.writeText(code).then(() => {
-        if (specCopyText) specCopyText.textContent = copy().specCopied;
-        setTimeout(() => {
-          if (specCopyText) specCopyText.textContent = copy().specCopyBtn;
-        }, 2000);
-      }).catch(() => {
-        if (specCopyText) specCopyText.textContent = copy().specCopied;
-      });
-    } else {
-      if (specCopyText) specCopyText.textContent = copy().specCopied;
-    }
-  });
-}
-
-/** ----------------------------------------------------------------
- *  8. App Launch & Navigation Wiring
- *  ---------------------------------------------------------------- */
-function initActions(): void {
-  // Direct launch buttons to /app/
-  const launchSelectors = ['#btn-open-map', '#btn-start-nav', '#btn-studio-cta'];
-  launchSelectors.forEach((sel) => {
-    document.querySelector(sel)?.addEventListener('click', () => {
-      window.location.href = '/app/';
-    });
-  });
-
-  // Example file button launches the map with Java War campaign
-  document.getElementById('btn-load-demo')?.addEventListener('click', () => {
-    window.location.href = '/app/';
-  });
-
-  // Schema doc button smoothly scrolls to specification section
-  document.getElementById('btn-schema-doc')?.addEventListener('click', () => {
-    document.getElementById('schema')?.scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // Language selectors
-  document.getElementById('lang-en')?.addEventListener('click', () => setLanguage('en'));
-  document.getElementById('lang-id')?.addEventListener('click', () => setLanguage('id'));
-}
-
-/** ----------------------------------------------------------------
- *  Main Initialization
- *  ---------------------------------------------------------------- */
-window.addEventListener('DOMContentLoaded', () => {
-  updateLanguage();
-  initThemeToggle();
-  initParchmentShader();
-  initMapPlayground();
-  initHeroRadar();
-  initPipelineConduit();
-  initDiagnosticsAndSchema();
-  initActions();
-});
+applyCopy();
+void initPlate();
