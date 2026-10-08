@@ -1,4 +1,4 @@
-# @chronomap/engine
+# @pholidlabs/chronomap-engine
 
 Headless engine for [ChronoMap](https://github.com/PholidLabs/chronomaps) campaign files: parse, validate and resolve historical campaigns into per-instant frames. No DOM, no map library, no dependencies.
 
@@ -9,7 +9,7 @@ This package is the executable reference for the [data contract](https://github.
 Time is a **tick**: an integer count of seconds since 1970-01-01T00:00:00 in the proleptic Gregorian calendar, with no time zone. Every historical date is negative. Parse `When` strings with the engine's own helpers, never with `Date`:
 
 ```ts
-import { parseWhen, ticksToIso, formatTicks } from '@chronomap/engine';
+import { parseWhen, ticksToIso, formatTicks } from '@pholidlabs/chronomap-engine';
 
 const w = parseWhen('1825-07-20');   // { start, end, from, to, isInterval, … }; the day is [start, end)
 ticksToIso(w.start!);                // '1825-07-20T00:00:00'
@@ -19,7 +19,7 @@ formatTicks(w.start!, 'id');         // '20 Juli 1825'
 ## Load and resolve
 
 ```ts
-import { loadCampaign, resolveFrame, chapterTime } from '@chronomap/engine';
+import { loadCampaign, resolveFrame, chapterTime } from '@pholidlabs/chronomap-engine';
 
 const { campaign, diagnostics } = loadCampaign(json);
 if (!campaign) throw new Error(diagnostics.filter((d) => d.level === 'error').map((d) => d.message).join('\n'));
@@ -36,7 +36,7 @@ const frame = resolveFrame(campaign, t);    // { t, iso, entities, events }
 ## Stateful playback
 
 ```ts
-import { ChronoMapEngine } from '@chronomap/engine';
+import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
 
 const engine = new ChronoMapEngine({ language: 'en' });
 engine.on('frame', (f) => render(f));
@@ -55,10 +55,10 @@ engine.setTime(-4545036000);                          // free exploration
 
 ```ts
 // my-worker.ts
-import '@chronomap/engine/worker';
+import '@pholidlabs/chronomap-engine/worker';
 
 // main.ts
-import { ChronoMapWorkerClient } from '@chronomap/engine';
+import { ChronoMapWorkerClient } from '@pholidlabs/chronomap-engine';
 
 const client = new ChronoMapWorkerClient(new Worker(new URL('./my-worker.ts', import.meta.url), { type: 'module' }));
 const { ok, diagnostics } = await client.load(json);

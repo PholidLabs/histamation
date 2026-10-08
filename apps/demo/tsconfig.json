@@ -4,8 +4,8 @@
     "noEmit": true,
     "types": ["vite/client"],
     "paths": {
-      "@chronomap/engine": ["../../packages/engine/src/index.ts"],
-      "@chronomap/maplibre": ["../../packages/maplibre/src/index.ts"]
+      "@pholidlabs/chronomap-engine": ["../../packages/engine/src/index.ts"],
+      "@pholidlabs/chronomap-maplibre": ["../../packages/maplibre/src/index.ts"]
     }
   },
   "include": ["src", "docs", "vite.config.ts"]

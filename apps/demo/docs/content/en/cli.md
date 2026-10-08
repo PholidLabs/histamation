@@ -8,7 +8,7 @@ order: 3
 `chronomap-check` is the campaign validator: it runs [`loadCampaign`](engine.md#load-campaign-fn)
 against one or more files, optionally checks them against the JSON Schema, and can dry-run
 playback or write [conformance vectors](rust-wasm.md#parity). It ships as the `bin` of
-[`@chronomap/engine`](engine.md), built to `packages/engine/dist/cli.js`.
+[`@pholidlabs/chronomap-engine`](engine.md), built to `packages/engine/dist/cli.js`.
 
 ```bash
 npx chronomap-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]

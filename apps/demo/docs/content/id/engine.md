@@ -1,18 +1,18 @@
 ---
-title: "@chronomap/engine"
+title: "@pholidlabs/chronomap-engine"
 description: API engine tanpa antarmuka — tick, pemuatan, resolusi frame, pemutaran, klien worker, serta pemformatan waktu dan teks.
 group: api
 order: 1
 ---
 
-`@chronomap/engine` mem-parsing, memvalidasi, dan me-resolve berkas kampanye ChronoMap menjadi
-frame per-instan. Paket ini tidak menyentuh DOM maupun pustaka peta; [`@chronomap/maplibre`](renderer.md)
+`@pholidlabs/chronomap-engine` mem-parsing, memvalidasi, dan me-resolve berkas kampanye ChronoMap menjadi
+frame per-instan. Paket ini tidak menyentuh DOM maupun pustaka peta; [`@pholidlabs/chronomap-maplibre`](renderer.md)
 membaca keluarannya. Paket ini adalah referensi eksekutabel untuk [kontrak data](contract.md) —
 port Rust di `crates/chronomap-core` diuji terhadap vektor yang dihasilkan paket ini (lihat
 [chronomap-core](rust-wasm.md)).
 
 ```bash
-npm install @chronomap/engine
+npm install @pholidlabs/chronomap-engine
 ```
 
 ## Ticks {#ticks}
@@ -49,7 +49,7 @@ termuat menghasilkan posisi basi. Bangun kampanye baru (panggil `loadCampaign` l
 mengubah kampanye yang ada di tempat.
 
 ```ts
-import { loadCampaign } from '@chronomap/engine';
+import { loadCampaign } from '@pholidlabs/chronomap-engine';
 
 const { campaign, diagnostics } = loadCampaign(json);
 if (!campaign) {
@@ -86,7 +86,7 @@ mikrodetik untuk data seukuran kampanye, jadi pemakaian pada thread yang sama ad
 lihat [di luar thread utama](#off-main-thread) untuk kapan memindahkannya ke worker.
 
 ```ts
-import { resolveFrame } from '@chronomap/engine';
+import { resolveFrame } from '@pholidlabs/chronomap-engine';
 
 const frame = resolveFrame(campaign, -4558464000);
 // { t: -4558464000, iso: '1825-07-20T00:00:00', entities: [...], events: [...] }
@@ -128,7 +128,7 @@ pernah dibiarkan menentukan sendiri. Pengurangan `− 1` menjaga `p = 1` tetap d
 setengah-terbuka, tepat di tick terakhir bab tersebut, bukan tick pertama bab berikutnya.
 
 ```ts
-import { chapterTime } from '@chronomap/engine';
+import { chapterTime } from '@pholidlabs/chronomap-engine';
 
 const chapter = campaign.chapters.find((c) => c.id === 'ch-01-birth')!; // when: "1785-11-11"
 chapterTime(chapter, 0);   // -5810832000  → 1785-11-11T00:00:00
@@ -179,7 +179,7 @@ adalah indeks leg tempat posisi tersebut berada; `travelled` adalah polyline sam
 `position` — begitulah cara `resolveFrame` membangun jejak sebuah pasukan.
 
 ```ts
-import { alongPath } from '@chronomap/engine';
+import { alongPath } from '@pholidlabs/chronomap-engine';
 
 const leg: [number, number][] = [[110.364, -7.801], [110.358, -7.796], [110.35, -7.79]];
 alongPath(leg, 0.5);
@@ -261,7 +261,7 @@ dipancarkan (bukan `'chapter'`: mode cerita belum dimulai). Jika `languages` mil
 tidak memuat `language` engine saat ini, engine jatuh kembali ke `defaultLanguage` kampanye.
 
 ```ts
-import { ChronoMapEngine } from '@chronomap/engine';
+import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
 
 const engine = new ChronoMapEngine({ language: 'en' });
 await engine.load('/campaigns/java-war-1825.json'); // atau objek CampaignFile yang sudah di-parsing
@@ -359,17 +359,17 @@ dengannya lewat `ChronoMapWorkerClient` (kontrak [§7.1](contract.md#sec-7-1)).
 ### Entry worker {#worker-entry}
 
 ```ts
-import '@chronomap/engine/worker';
+import '@pholidlabs/chronomap-engine/worker';
 ```
 
-Meng-import `@chronomap/engine/worker` memasang listener `message` saat berjalan di dalam Worker
+Meng-import `@pholidlabs/chronomap-engine/worker` memasang listener `message` saat berjalan di dalam Worker
 sungguhan (dideteksi dengan memeriksa keberadaan `postMessage` dan ketiadaan `document`;
 meng-import-nya di thread utama tidak berbahaya dan tidak memasang apa pun). Buat modul worker
 sendiri yang isinya cuma import ini:
 
 ```ts
 // my-worker.ts
-import '@chronomap/engine/worker';
+import '@pholidlabs/chronomap-engine/worker';
 ```
 
 Modul ini juga mengekspor `handleRequest`, penangan request murni yang dibungkus listener di
@@ -409,7 +409,7 @@ yang bisa dijawab worker.
   dengan `Error('ChronoMapWorkerClient disposed')`, dan panggilan berikutnya langsung reject.
 
 ```ts
-import { ChronoMapWorkerClient } from '@chronomap/engine';
+import { ChronoMapWorkerClient } from '@pholidlabs/chronomap-engine';
 
 const worker = new Worker(new URL('./my-worker.ts', import.meta.url), { type: 'module' });
 const client = new ChronoMapWorkerClient(worker);
@@ -467,7 +467,7 @@ ujung terbuka, ujung kosong, interval yang berakhir sebelum mulai, atau tanggal 
 `parseDate` sendiri.
 
 ```ts
-import { parseWhen } from '@chronomap/engine';
+import { parseWhen } from '@pholidlabs/chronomap-engine';
 
 parseWhen('1825-07-20');
 // { text: '1825-07-20', isInterval: false, from: {…}, to: {…}, start: -4558464000, end: -4558377600 }
@@ -497,7 +497,7 @@ string yang cacat, bulan/hari/jam/menit/detik di luar jangkauan, hari yang tidak
 tahun/bulan tersebut (termasuk tahun kabisat), atau `-0000`.
 
 ```ts
-import { parseDate, WhenError } from '@chronomap/engine';
+import { parseDate, WhenError } from '@pholidlabs/chronomap-engine';
 
 parseDate('1825-07-20').precision; // 'day'
 try { parseDate('1825-13'); } catch (e) { (e as WhenError).message; } // '"1825-13": month 13 out of range'
@@ -514,7 +514,7 @@ sebuah timeline, sehingga hasilnya selalu punya tick konkret. Menerima string `W
 maupun `ParsedWhen` yang sudah di-parsing.
 
 ```ts
-import { resolveWhen } from '@chronomap/engine';
+import { resolveWhen } from '@pholidlabs/chronomap-engine';
 
 resolveWhen('1827/..', campaign.extent); // { …, start: -4512672000, end: campaign.extent.end }
 ```
@@ -551,7 +551,7 @@ aturan Gregorian biasa (habis dibagi 4, tidak habis dibagi 100 kecuali juga habi
 `daysInMonth` memakainya untuk Februari.
 
 ```ts
-import { daysFromCivil, civilFromDays, isLeapYear, daysInMonth } from '@chronomap/engine';
+import { daysFromCivil, civilFromDays, isLeapYear, daysInMonth } from '@pholidlabs/chronomap-engine';
 
 daysFromCivil(1825, 7, 20) * 86400; // -4558464000, tick awal dari 1825-07-20
 civilFromDays(-52760); // { year: 1825, month: 7, day: 20 }
@@ -589,7 +589,7 @@ lalu ke bahasa mana pun yang kebetulan pertama di objek tersebut, lalu `''` untu
 `null`/`undefined`.
 
 ```ts
-import { pickText } from '@chronomap/engine';
+import { pickText } from '@pholidlabs/chronomap-engine';
 
 const title = { en: 'A prince of Yogyakarta', id: 'Seorang pangeran Yogyakarta' };
 pickText(title, 'id'); // 'Seorang pangeran Yogyakarta'
@@ -648,7 +648,7 @@ function formatTicks(t: Ticks, lang: string, precision?: Precision): string;
 `tickParts` + `formatDateParts` dalam satu panggilan; `precision` default ke `'day'`.
 
 ```ts
-import { formatTicks } from '@chronomap/engine';
+import { formatTicks } from '@pholidlabs/chronomap-engine';
 
 formatTicks(-4558464000, 'id'); // '20 Juli 1825'
 formatTicks(-4558464000, 'en'); // '20 July 1825'

@@ -5,7 +5,7 @@ group: api
 order: 4
 ---
 
-`crates/chronomap-core` adalah port Rust dari [`@chronomap/engine`](engine.md): parsing `When`
+`crates/chronomap-core` adalah port Rust dari [`@pholidlabs/chronomap-engine`](engine.md): parsing `When`
 subset-EDTF yang sama, validasi semantik yang sama, dan resolusi frame yang sama, sebagai crate
 native atau, dengan fitur `wasm`, sebagai permukaan `wasm-bindgen` yang bisa dimuat worker
 menggantikan engine JS.

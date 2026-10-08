@@ -145,9 +145,9 @@ export default defineConfig({
   resolve: {
     // most specific first: Vite matches aliases in order
     alias: [
-      { find: '@chronomap/maplibre/style.css', replacement: resolve(root, 'packages/maplibre/src/chronomap.css') },
-      { find: '@chronomap/maplibre', replacement: resolve(root, 'packages/maplibre/src/index.ts') },
-      { find: '@chronomap/engine', replacement: resolve(root, 'packages/engine/src/index.ts') },
+      { find: '@pholidlabs/chronomap-maplibre/style.css', replacement: resolve(root, 'packages/maplibre/src/chronomap.css') },
+      { find: '@pholidlabs/chronomap-maplibre', replacement: resolve(root, 'packages/maplibre/src/index.ts') },
+      { find: '@pholidlabs/chronomap-engine', replacement: resolve(root, 'packages/engine/src/index.ts') },
     ],
   },
   build: {

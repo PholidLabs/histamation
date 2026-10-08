@@ -5,7 +5,7 @@ group: api
 order: 4
 ---
 
-`crates/chronomap-core` is a Rust port of [`@chronomap/engine`](engine.md): the same EDTF-subset
+`crates/chronomap-core` is a Rust port of [`@pholidlabs/chronomap-engine`](engine.md): the same EDTF-subset
 `When` parsing, semantic validation, and frame resolution, as a native crate or, with the `wasm`
 feature, a `wasm-bindgen` surface a worker can load instead of the JS engine.
 

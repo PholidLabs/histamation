@@ -8,7 +8,7 @@ order: 3
 `chronomap-check` adalah validator kampanye: menjalankan [`loadCampaign`](engine.md#load-campaign-fn)
 terhadap satu atau lebih berkas, opsional memeriksanya terhadap JSON Schema, dan bisa dry-run
 pemutaran atau menulis [vektor konformansi](rust-wasm.md#parity). CLI ini adalah `bin` dari
-[`@chronomap/engine`](engine.md), dibangun ke `packages/engine/dist/cli.js`.
+[`@pholidlabs/chronomap-engine`](engine.md), dibangun ke `packages/engine/dist/cli.js`.
 
 ```bash
 npx chronomap-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]

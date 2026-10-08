@@ -1,5 +1,5 @@
 /** Live When-string tester: runs the engine's own parser, so what it shows is what a campaign file gets. */
-import { formatWhen, parseWhen, ticksToIso, WhenError, type ParsedDate } from '@chronomap/engine';
+import { formatWhen, parseWhen, ticksToIso, WhenError, type ParsedDate } from '@pholidlabs/chronomap-engine';
 import { el } from '../dom.js';
 import { DOCS_COPY, DOC_LANGS, type DocLang } from './copy.js';
 

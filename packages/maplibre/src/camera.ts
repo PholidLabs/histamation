@@ -1,6 +1,6 @@
 /** Chapter cameras → MapLibre. flyTo/easeTo/jumpTo is all the contract needs (no free-camera API). */
 import type { LngLatBoundsLike, Map as MapLibreMap } from 'maplibre-gl';
-import type { Camera, NormChapter, NormalizedCampaign, FrameState } from '@chronomap/engine';
+import type { Camera, NormChapter, NormalizedCampaign, FrameState } from '@pholidlabs/chronomap-engine';
 
 export interface CameraOptions { reduceMotion?: boolean; padding?: number }
 

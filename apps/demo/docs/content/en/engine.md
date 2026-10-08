@@ -1,18 +1,18 @@
 ---
-title: "@chronomap/engine"
+title: "@pholidlabs/chronomap-engine"
 description: The headless engine API — ticks, loading, frame resolution, playback, the worker client, and time and text formatting.
 group: api
 order: 1
 ---
 
-`@chronomap/engine` parses, validates and resolves ChronoMap campaign files into per-instant
-frames. It has no DOM and no map library dependency; [`@chronomap/maplibre`](renderer.md) reads
+`@pholidlabs/chronomap-engine` parses, validates and resolves ChronoMap campaign files into per-instant
+frames. It has no DOM and no map library dependency; [`@pholidlabs/chronomap-maplibre`](renderer.md) reads
 its output. The package is the executable reference for the [data contract](contract.md) — the
 Rust port in `crates/chronomap-core` is tested against vectors this package generates (see
 [chronomap-core](rust-wasm.md)).
 
 ```bash
-npm install @chronomap/engine
+npm install @pholidlabs/chronomap-engine
 ```
 
 ## Ticks {#ticks}
@@ -47,7 +47,7 @@ per-track geometry keyed by its arrays, so mutating a loaded campaign produces s
 Build a new campaign (call `loadCampaign` again) instead of editing one in place.
 
 ```ts
-import { loadCampaign } from '@chronomap/engine';
+import { loadCampaign } from '@pholidlabs/chronomap-engine';
 
 const { campaign, diagnostics } = loadCampaign(json);
 if (!campaign) {
@@ -84,7 +84,7 @@ campaign-sized data, so same-thread use is the default — see [off the main thr
 for when to move it to a worker.
 
 ```ts
-import { resolveFrame } from '@chronomap/engine';
+import { resolveFrame } from '@pholidlabs/chronomap-engine';
 
 const frame = resolveFrame(campaign, -4558464000);
 // { t: -4558464000, iso: '1825-07-20T00:00:00', entities: [...], events: [...] }
@@ -125,7 +125,7 @@ decide. The `− 1` keeps `p = 1` inside the half-open window, on the chapter's 
 than the first tick of the next one.
 
 ```ts
-import { chapterTime } from '@chronomap/engine';
+import { chapterTime } from '@pholidlabs/chronomap-engine';
 
 const chapter = campaign.chapters.find((c) => c.id === 'ch-01-birth')!; // when: "1785-11-11"
 chapterTime(chapter, 0);   // -5810832000  → 1785-11-11T00:00:00
@@ -175,7 +175,7 @@ of the leg the position sits on; `travelled` is the polyline up to and including
 this is how `resolveFrame` builds a unit's trail.
 
 ```ts
-import { alongPath } from '@chronomap/engine';
+import { alongPath } from '@pholidlabs/chronomap-engine';
 
 const leg: [number, number][] = [[110.364, -7.801], [110.358, -7.796], [110.35, -7.79]];
 alongPath(leg, 0.5);
@@ -257,7 +257,7 @@ story mode has not started yet). If the campaign's `languages` does not include 
 current `language`, the engine falls back to the campaign's `defaultLanguage`.
 
 ```ts
-import { ChronoMapEngine } from '@chronomap/engine';
+import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
 
 const engine = new ChronoMapEngine({ language: 'en' });
 await engine.load('/campaigns/java-war-1825.json'); // or a parsed CampaignFile object
@@ -355,17 +355,17 @@ off the main thread, run the worker entry and talk to it with `ChronoMapWorkerCl
 ### The worker entry {#worker-entry}
 
 ```ts
-import '@chronomap/engine/worker';
+import '@pholidlabs/chronomap-engine/worker';
 ```
 
-Importing `@chronomap/engine/worker` installs a `message` listener when it runs inside an
+Importing `@pholidlabs/chronomap-engine/worker` installs a `message` listener when it runs inside an
 actual Worker (it detects this by checking for `postMessage` and the absence of `document`;
 importing it on the main thread is harmless and installs nothing). Build your own worker module
 that does nothing but this import:
 
 ```ts
 // my-worker.ts
-import '@chronomap/engine/worker';
+import '@pholidlabs/chronomap-engine/worker';
 ```
 
 The module also exports `handleRequest`, the pure request handler the listener wraps, for
@@ -402,7 +402,7 @@ newest the worker could answer.
   `Error('ChronoMapWorkerClient disposed')`, and further calls reject immediately.
 
 ```ts
-import { ChronoMapWorkerClient } from '@chronomap/engine';
+import { ChronoMapWorkerClient } from '@pholidlabs/chronomap-engine';
 
 const worker = new Worker(new URL('./my-worker.ts', import.meta.url), { type: 'module' });
 const client = new ChronoMapWorkerClient(worker);
@@ -458,7 +458,7 @@ anything outside the grammar — a bad separator count, both ends open, an empty
 interval that ends before it starts, or a date `parseDate` itself rejects.
 
 ```ts
-import { parseWhen } from '@chronomap/engine';
+import { parseWhen } from '@pholidlabs/chronomap-engine';
 
 parseWhen('1825-07-20');
 // { text: '1825-07-20', isInterval: false, from: {…}, to: {…}, start: -4558464000, end: -4558377600 }
@@ -488,7 +488,7 @@ string, an out-of-range month/day/hour/minute/second, a day that does not exist 
 year/month (leap years included), or `-0000`.
 
 ```ts
-import { parseDate, WhenError } from '@chronomap/engine';
+import { parseDate, WhenError } from '@pholidlabs/chronomap-engine';
 
 parseDate('1825-07-20').precision; // 'day'
 try { parseDate('1825-13'); } catch (e) { (e as WhenError).message; } // '"1825-13": month 13 out of range'
@@ -505,7 +505,7 @@ the result always has concrete ticks. Accepts either a raw `When` string or an a
 `ParsedWhen`.
 
 ```ts
-import { resolveWhen } from '@chronomap/engine';
+import { resolveWhen } from '@pholidlabs/chronomap-engine';
 
 resolveWhen('1827/..', campaign.extent); // { …, start: -4512672000, end: campaign.extent.end }
 ```
@@ -540,7 +540,7 @@ never JS `Date`. `isLeapYear` follows the usual Gregorian rule (divisible by 4, 
 unless also by 400); `daysInMonth` uses it for February.
 
 ```ts
-import { daysFromCivil, civilFromDays, isLeapYear, daysInMonth } from '@chronomap/engine';
+import { daysFromCivil, civilFromDays, isLeapYear, daysInMonth } from '@pholidlabs/chronomap-engine';
 
 daysFromCivil(1825, 7, 20) * 86400; // -4558464000, the start tick of 1825-07-20
 civilFromDays(-52760); // { year: 1825, month: 7, day: 20 }
@@ -576,7 +576,7 @@ string for `lang`: falls back to `fallback` (normally the campaign's `defaultLan
 whichever language happens to be first in the object, then `''` for `null`/`undefined`.
 
 ```ts
-import { pickText } from '@chronomap/engine';
+import { pickText } from '@pholidlabs/chronomap-engine';
 
 const title = { en: 'A prince of Yogyakarta', id: 'Seorang pangeran Yogyakarta' };
 pickText(title, 'id'); // 'Seorang pangeran Yogyakarta'
@@ -633,7 +633,7 @@ function formatTicks(t: Ticks, lang: string, precision?: Precision): string;
 `tickParts` + `formatDateParts` in one call; `precision` defaults to `'day'`.
 
 ```ts
-import { formatTicks } from '@chronomap/engine';
+import { formatTicks } from '@pholidlabs/chronomap-engine';
 
 formatTicks(-4558464000, 'id'); // '20 Juli 1825'
 formatTicks(-4558464000, 'en'); // '20 July 1825'

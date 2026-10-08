@@ -1,8 +1,22 @@
 {
-  "name": "@chronomap/maplibre",
+  "name": "@pholidlabs/chronomap-maplibre",
   "version": "0.1.0",
   "description": "MapLibre GL renderer for ChronoMap campaigns: parchment basemap, campaign layers, chapter cameras",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PholidLabs/chronomaps.git",
+    "directory": "packages/maplibre"
+  },
+  "homepage": "https://github.com/PholidLabs/chronomaps/tree/main/packages/maplibre#readme",
+  "bugs": "https://github.com/PholidLabs/chronomaps/issues",
+  "keywords": [
+    "chronomap",
+    "maplibre",
+    "historical-maps",
+    "timeline",
+    "storytelling"
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,16 +30,20 @@
   "files": [
     "dist",
     "README.md",
-    "scripts"
+    "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.json && node scripts/copy-css.mjs"
+    "build": "tsc -p tsconfig.json && node scripts/copy-css.mjs",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "maplibre-gl": "^6.0.0"
   },
   "dependencies": {
-    "@chronomap/engine": "0.1.0"
+    "@pholidlabs/chronomap-engine": "0.1.0"
   },
   "devDependencies": {
     "@types/geojson": "^7946.0.16",

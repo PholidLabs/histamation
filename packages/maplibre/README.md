@@ -1,6 +1,6 @@
-# @chronomap/maplibre
+# @pholidlabs/chronomap-maplibre
 
-[MapLibre GL](https://maplibre.org/) renderer for [ChronoMap](https://github.com/PholidLabs/chronomaps) campaigns: a parchment-style offline basemap, campaign layers driven by [`@chronomap/engine`](https://github.com/PholidLabs/chronomaps/tree/main/packages/engine) frames, and chapter cameras.
+[MapLibre GL](https://maplibre.org/) renderer for [ChronoMap](https://github.com/PholidLabs/chronomaps) campaigns: a parchment-style offline basemap, campaign layers driven by [`@pholidlabs/chronomap-engine`](https://github.com/PholidLabs/chronomaps/tree/main/packages/engine) frames, and chapter cameras.
 
 Requires `maplibre-gl` 6 as a peer dependency.
 
@@ -8,10 +8,10 @@ Requires `maplibre-gl` 6 as a peer dependency.
 
 ```ts
 import { Map } from 'maplibre-gl';
-import { ChronoMapEngine } from '@chronomap/engine';
-import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@chronomap/maplibre';
+import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
+import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@pholidlabs/chronomap-maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '@chronomap/maplibre/style.css';
+import '@pholidlabs/chronomap-maplibre/style.css';
 
 const map = new Map({
   container: 'map',

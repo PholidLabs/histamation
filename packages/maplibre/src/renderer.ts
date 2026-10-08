@@ -7,8 +7,8 @@
  */
 import { Marker, Popup, type GeoJSONSource, type Map as MapLibreMap } from 'maplibre-gl';
 import type { Feature, FeatureCollection, Position } from 'geojson';
-import type { FrameState, NormEntity, NormEvent, NormalizedCampaign, Ticks } from '@chronomap/engine';
-import { alongPath, pickText } from '@chronomap/engine';
+import type { FrameState, NormEntity, NormEvent, NormalizedCampaign, Ticks } from '@pholidlabs/chronomap-engine';
+import { alongPath, pickText } from '@pholidlabs/chronomap-engine';
 import { factionColor, parchmentLight, withAlpha, type ChronoTheme } from './theme.js';
 import { DEFAULT_BASEMAP_PATH, graticuleFor } from './style.js';
 import { renderMountainSvg, renderForestSvg, renderFortressSvg, renderEmbellishmentSvg } from './pictorial.js';

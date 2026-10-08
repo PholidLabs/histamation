@@ -1,4 +1,4 @@
-/* Markers and labels for @chronomap/maplibre. Colours come from the host page's tokens. */
+/* Markers and labels for @pholidlabs/chronomap-maplibre. Colours come from the host page's tokens. */
 :root {
   --cm-mountain-stroke: #221C16;
   --cm-mountain-hatch: rgba(34, 28, 22, 0.65);

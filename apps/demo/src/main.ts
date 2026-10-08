@@ -1,12 +1,12 @@
 import { Map as MapLibreMap, NavigationControl, Popup, ScaleControl } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '@chronomap/maplibre/style.css';
+import '@pholidlabs/chronomap-maplibre/style.css';
 import './style.css';
 import {
   ChronoMapEngine, chapterTime, civilFromDays, daysFromCivil, formatTicks, formatWhen, pickText, yearText,
   type CampaignFile, type Diagnostic, type FrameState, type NormChapter, type NormalizedCampaign, type Ticks,
-} from '@chronomap/engine';
-import { CameraController, ChronoMapRenderer, createBasemapStyle, factionColor, parchmentDark, parchmentLight } from '@chronomap/maplibre';
+} from '@pholidlabs/chronomap-engine';
+import { CameraController, ChronoMapRenderer, createBasemapStyle, factionColor, parchmentDark, parchmentLight } from '@pholidlabs/chronomap-maplibre';
 import { KINDS, ROLES, STATUS, UI, type UIStrings } from './i18n.js';
 import { el, renderBody } from './dom.js';
 import {

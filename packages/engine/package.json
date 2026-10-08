@@ -1,8 +1,25 @@
 {
-  "name": "@chronomap/engine",
+  "name": "@pholidlabs/chronomap-engine",
   "version": "0.1.0",
   "description": "ChronoMap contract engine: parse, validate and resolve campaign files (reference implementation for the Rust/WASM core)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PholidLabs/chronomaps.git",
+    "directory": "packages/engine"
+  },
+  "homepage": "https://github.com/PholidLabs/chronomaps/tree/main/packages/engine#readme",
+  "bugs": "https://github.com/PholidLabs/chronomaps/issues",
+  "keywords": [
+    "chronomap",
+    "historical-maps",
+    "timeline",
+    "campaign",
+    "edtf"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,14 +34,19 @@
     }
   },
   "bin": {
-    "chronomap-check": "./dist/cli.js"
+    "chronomap-check": "dist/cli.js"
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json && node scripts/copy-schema.mjs",
+    "prepublishOnly": "npm run build",
     "test": "node --test test/*.test.js"
   },
   "devDependencies": {

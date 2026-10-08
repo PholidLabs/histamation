@@ -1,26 +1,26 @@
 ---
-title: "@chronomap/maplibre"
+title: "@pholidlabs/chronomap-maplibre"
 description: The MapLibre GL renderer — ChronoMapRenderer, CameraController, the parchment basemap, and themes.
 group: api
 order: 2
 ---
 
-`@chronomap/maplibre` draws [`@chronomap/engine`](engine.md) frames on a [MapLibre GL](https://maplibre.org/)
+`@pholidlabs/chronomap-maplibre` draws [`@pholidlabs/chronomap-engine`](engine.md) frames on a [MapLibre GL](https://maplibre.org/)
 map: a self-hosted parchment-style basemap, campaign layers driven by `FrameState`, and chapter
 cameras. It requires `maplibre-gl` **6** as a peer dependency.
 
 ```bash
-npm install @chronomap/maplibre maplibre-gl
+npm install @pholidlabs/chronomap-maplibre maplibre-gl
 ```
 
 ## Quick start {#quick-start}
 
 ```ts
 import { Map } from 'maplibre-gl';
-import { ChronoMapEngine } from '@chronomap/engine';
-import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@chronomap/maplibre';
+import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
+import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@pholidlabs/chronomap-maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '@chronomap/maplibre/style.css';
+import '@pholidlabs/chronomap-maplibre/style.css';
 
 const map = new Map({
   container: 'map',
@@ -209,7 +209,7 @@ declares no glyphs or sprite — every label in this renderer is a DOM element, 
 layer, so the style needs no binary font or icon assets to load.
 
 ```ts
-import { createBasemapStyle, parchmentDark } from '@chronomap/maplibre';
+import { createBasemapStyle, parchmentDark } from '@pholidlabs/chronomap-maplibre';
 
 const style = createBasemapStyle({ theme: parchmentDark, basemapPath: '/basemap' });
 ```
@@ -311,7 +311,7 @@ dark ground; on a light theme the color passes through unchanged. `withAlpha` tu
 string into `rgba(…, a)` for halos, fills and faded "past" styling.
 
 ```ts
-import { factionColor, withAlpha, parchmentDark } from '@chronomap/maplibre';
+import { factionColor, withAlpha, parchmentDark } from '@pholidlabs/chronomap-maplibre';
 
 const color = factionColor(faction.color, parchmentDark); // e.g. 'rgb(198, 168, 122)'
 const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 122, 0.35)'
@@ -320,7 +320,7 @@ const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 1
 ## Stylesheet {#stylesheet}
 
 ```ts
-import '@chronomap/maplibre/style.css';
+import '@pholidlabs/chronomap-maplibre/style.css';
 ```
 
 CSS for the renderer's DOM markers and labels (`packages/maplibre/src/chronomap.css`, exported

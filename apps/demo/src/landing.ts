@@ -1,13 +1,13 @@
 /**
  * Landing page: bilingual copy, theme and language switches shared with the app, and the
- * hero plate — a real campaign resolved by @chronomap/engine every frame and drawn as SVG.
+ * hero plate — a real campaign resolved by @pholidlabs/chronomap-engine every frame and drawn as SVG.
  * No map library here on purpose: the plate shows the engine on its own.
  */
 import './landing.css';
 import {
   DEFAULT_RADIUS, chapterAt, formatTicks, loadCampaign, pickText, resolveFrame,
   type CampaignFile, type FrameState, type NormalizedCampaign, type Ticks,
-} from '@chronomap/engine';
+} from '@pholidlabs/chronomap-engine';
 import { LANDING, type LandingStrings } from './landing-copy.js';
 import { UI } from './i18n.js';
 import { svgEl } from './dom.js';

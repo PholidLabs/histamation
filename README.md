@@ -281,12 +281,12 @@ Start the development server (`npm run dev`) and navigate to `http://localhost:5
 
 ## 💻 Programmatic API
 
-You can embed `@chronomap/engine` and `@chronomap/maplibre` into your own web applications.
+You can embed `@pholidlabs/chronomap-engine` and `@pholidlabs/chronomap-maplibre` into your own web applications.
 
-### 1. Headless Engine (`@chronomap/engine`)
+### 1. Headless Engine (`@pholidlabs/chronomap-engine`)
 
 ```typescript
-import { loadCampaign, resolveFrame, ChronoMapEngine } from '@chronomap/engine';
+import { loadCampaign, resolveFrame, ChronoMapEngine } from '@pholidlabs/chronomap-engine';
 
 // Load and validate campaign data
 const rawData = await fetch('/campaigns/my-campaign.json').then(r => r.json());
@@ -315,12 +315,12 @@ engine.setStoryProgress('ch-01', 0.5); // 50% of the way through chapter ch-01
 engine.setTime(tick);
 ```
 
-### 2. MapLibre Renderer (`@chronomap/maplibre`)
+### 2. MapLibre Renderer (`@pholidlabs/chronomap-maplibre`)
 
 ```typescript
 import { Map } from 'maplibre-gl';
-import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@chronomap/maplibre';
-import '@chronomap/maplibre/style.css';
+import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@pholidlabs/chronomap-maplibre';
+import '@pholidlabs/chronomap-maplibre/style.css';
 
 const map = new Map({
   container: 'map-container',

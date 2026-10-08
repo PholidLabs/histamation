@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chronomap/engine": "0.1.0",
-    "@chronomap/maplibre": "0.1.0",
+    "@pholidlabs/chronomap-engine": "0.1.0",
+    "@pholidlabs/chronomap-maplibre": "0.1.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "maplibre-gl": "^6.10.0"

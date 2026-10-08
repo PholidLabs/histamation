@@ -1,27 +1,27 @@
 ---
-title: "@chronomap/maplibre"
+title: "@pholidlabs/chronomap-maplibre"
 description: Renderer MapLibre GL — ChronoMapRenderer, CameraController, peta dasar parchment, dan tema.
 group: api
 order: 2
 ---
 
-`@chronomap/maplibre` menggambar frame [`@chronomap/engine`](engine.md) di atas peta
+`@pholidlabs/chronomap-maplibre` menggambar frame [`@pholidlabs/chronomap-engine`](engine.md) di atas peta
 [MapLibre GL](https://maplibre.org/): peta dasar bergaya parchment yang di-host sendiri, layer
 kampanye yang digerakkan oleh `FrameState`, dan kamera bab. Paket ini membutuhkan `maplibre-gl`
 **6** sebagai peer dependency.
 
 ```bash
-npm install @chronomap/maplibre maplibre-gl
+npm install @pholidlabs/chronomap-maplibre maplibre-gl
 ```
 
 ## Mulai cepat {#quick-start}
 
 ```ts
 import { Map } from 'maplibre-gl';
-import { ChronoMapEngine } from '@chronomap/engine';
-import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@chronomap/maplibre';
+import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
+import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@pholidlabs/chronomap-maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '@chronomap/maplibre/style.css';
+import '@pholidlabs/chronomap-maplibre/style.css';
 
 const map = new Map({
   container: 'map',
@@ -215,7 +215,7 @@ elemen DOM, bukan layer simbol peta, sehingga style tidak perlu memuat aset font
 apa pun.
 
 ```ts
-import { createBasemapStyle, parchmentDark } from '@chronomap/maplibre';
+import { createBasemapStyle, parchmentDark } from '@pholidlabs/chronomap-maplibre';
 
 const style = createBasemapStyle({ theme: parchmentDark, basemapPath: '/basemap' });
 ```
@@ -320,7 +320,7 @@ tetap terbaca di atas dasar gelap; pada tema terang, warna diteruskan tanpa peru
 "past" yang memudar.
 
 ```ts
-import { factionColor, withAlpha, parchmentDark } from '@chronomap/maplibre';
+import { factionColor, withAlpha, parchmentDark } from '@pholidlabs/chronomap-maplibre';
 
 const color = factionColor(faction.color, parchmentDark); // mis. 'rgb(198, 168, 122)'
 const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 122, 0.35)'
@@ -329,7 +329,7 @@ const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 1
 ## Stylesheet {#stylesheet}
 
 ```ts
-import '@chronomap/maplibre/style.css';
+import '@pholidlabs/chronomap-maplibre/style.css';
 ```
 
 CSS untuk marker dan label DOM milik renderer (`packages/maplibre/src/chronomap.css`, diekspor

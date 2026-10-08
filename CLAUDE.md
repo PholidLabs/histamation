@@ -47,7 +47,7 @@ apps/demo            index.html (landing) + app/index.html (the map app, served 
 crates/chronomap-core  time.rs · campaign.rs · resolve.rs · model.rs · wasm.rs · spatial.rs
 ```
 
-Vite aliases `@chronomap/engine` and `@chronomap/maplibre` to the packages' **source**, so
+Vite aliases `@pholidlabs/chronomap-engine` and `@pholidlabs/chronomap-maplibre` to the packages' **source**, so
 the demo picks up edits without a package rebuild. `npm run check` uses the built
 `packages/engine/dist`, so run `npm run build` after touching the engine.
 
