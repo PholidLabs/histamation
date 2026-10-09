@@ -7,6 +7,7 @@ import { handleRequest } from '../dist/worker.js';
 const CASES = [
   ['../../../test-vectors/null-island.frames.json', '../../../data/campaigns/fixtures/null-island.json', true],
   ['../../../test-vectors/austro-prussian-1866.frames.json', '../../../data/campaigns/austro-prussian-1866.json', false],
+  ['../../../test-vectors/batavia-siege-1628.frames.json', '../../../data/campaigns/batavia-siege-1628.json', false],
   ['../../../test-vectors/geger-pacinan-1740.frames.json', '../../../data/campaigns/geger-pacinan-1740.json', false],
   ['../../../test-vectors/giyanti-1755.frames.json', '../../../data/campaigns/giyanti-1755.json', false],
   ['../../../test-vectors/java-war-1825.frames.json', '../../../data/campaigns/java-war-1825.json', false],

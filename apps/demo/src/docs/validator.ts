@@ -12,6 +12,7 @@ type Validate = ((data: unknown) => boolean) & { errors?: { keyword: string; ins
 
 const EXAMPLES: [string, string][] = [
   ['Java War 1825', '/campaigns/java-war-1825.json'],
+  ['Siege of Batavia 1628', '/campaigns/batavia-siege-1628.json'],
   ['Geger Pacinan 1740', '/campaigns/geger-pacinan-1740.json'],
   ['Treaty of Giyanti 1755', '/campaigns/giyanti-1755.json'],
   ['Austro-Prussian 1866', '/campaigns/austro-prussian-1866.json'],

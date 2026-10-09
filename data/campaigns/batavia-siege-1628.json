@@ -1,0 +1,1637 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "batavia-siege-1628",
+    "version": "0.1.0",
+    "title": {
+      "en": "The Siege of Batavia (1628–1629)",
+      "id": "Pengepungan Batavia oleh Sultan Agung (1628–1629)"
+    },
+    "subtitle": {
+      "en": "Sultan Agung's grand campaigns to expel the VOC from Java",
+      "id": "Serangan akbar Sultan Agung Mataram mengusir VOC dari Pulau Jawa"
+    },
+    "description": {
+      "en": "The epic two-year struggle between the Sultanate of Mataram and the Dutch East India Company (VOC) for supremacy over Java. Having subjugated East Java, Sultan Agung mobilized tens of thousands of warriors by land and sea in 1628 and 1629 to besiege Batavia. Despite meticulous logistics with rice granaries along the northern coast, VOC naval sabotage incinerated the food supplies at Tegal, Cirebon, and Karawang. Starving Mataram forces dammed and contaminated the Ciliwung River, unleashing a cholera epidemic that claimed Governor-General Jan Pieterszoon Coen before the siege collapsed.",
+      "id": "Pertarungan akbar dua tahun antara Kesultanan Mataram dan VOC demi hegemoni atas Pulau Jawa. Setelah menaklukkan Jawa bagian timur, Sultan Agung mengerahkan puluhan ribu prajurit melalui darat dan laut pada 1628 dan 1629 untuk mengepung Batavia. Kendati Mataram menyiapkan logistik matang dengan lumbung-lumbung beras di sepanjang Pantura, sabotase armada VOC membumihanguskan persediaan di Tegal, Cirebon, dan Karawang. Pasukan Mataram yang kelaparan membendung dan mencemari Sungai Ciliwung, memicu wabah kolera dahsyat yang menewaskan Gubernur Jenderal J.P. Coen sebelum pengepungan berakhir."
+    },
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "defaultLanguage": "id",
+    "languages": [
+      "en",
+      "id"
+    ],
+    "timeline": {
+      "extent": "1628-04-01/1629-12-31",
+      "focus": "1628-08-22/1629-10-02"
+    },
+    "map": {
+      "center": [
+        108.41,
+        -6.95
+      ],
+      "zoom": 7.2,
+      "pitch": 25,
+      "bearing": 0,
+      "bounds": [
+        105.5,
+        -8.5,
+        111.5,
+        -5.5
+      ],
+      "terrain": {
+        "exaggeration": 1.5
+      },
+      "theme": "parchment-sepia"
+    },
+    "updated": "2026-10-09"
+  },
+  "factions": [
+    {
+      "id": "mataram-sultanate",
+      "name": {
+        "en": "Sultanate of Mataram",
+        "id": "Kesultanan Mataram"
+      },
+      "shortName": {
+        "en": "Mataram",
+        "id": "Mataram"
+      },
+      "color": "#C0392B",
+      "description": {
+        "en": "The dominant Islamic empire in central and eastern Java under Susuhunan Sultan Agung Anyokrokusumo, fielding vast armies of infantry, archers, cavalry, and regional coastal levies.",
+        "id": "Kemaharajaan Islam terkuat di Jawa bagian tengah dan timur di bawah pimpinan Sultan Agung Anyokrokusumo, yang mengerahkan puluhan ribu infanteri, pemanah, kavaleri, dan barisan prajurit pesisir."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "voc",
+      "name": {
+        "en": "Dutch East India Company (VOC)",
+        "id": "Vereenigde Oostindische Compagnie (VOC)"
+      },
+      "shortName": {
+        "en": "VOC",
+        "id": "VOC"
+      },
+      "color": "#1A365D",
+      "description": {
+        "en": "The chartered Dutch mercantile and military corporation headquartered at Kasteel Batavia, relying on fortified brick bastions, naval firepower, and multinational garrisons.",
+        "id": "Kongsi dagang dan militer Belanda yang bermarkas di Kasteel Batavia, mengandalkan benteng batu bata modern, meriam artileri, keunggulan armada laut, dan serdadu multinasional."
+      },
+      "sources": [
+        "coen-bescheiden",
+        "vlekke-1943"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "karta",
+      "name": {
+        "en": "Karta (Mataram Royal Capital)",
+        "id": "Keraton Karta (Ibu Kota Mataram)"
+      },
+      "modernName": {
+        "en": "Pleret, Bantul, Yogyakarta, Indonesia",
+        "id": "Pleret, Bantul, D.I. Yogyakarta, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.395,
+        -7.87
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The grand wooden palace capital of Sultan Agung, from where imperial decrees and war expeditions were launched.",
+        "id": "Keraton megah Sultan Agung tempat titah perang dan puluhan ribu ekspedisi militer diberangkatkan."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "kendal",
+      "name": {
+        "en": "Kendal",
+        "id": "Kendal"
+      },
+      "modernName": {
+        "en": "Kendal, Central Java, Indonesia",
+        "id": "Kendal, Jawa Tengah, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.2036,
+        -6.9238
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "The coastal regency governed by Tumenggung Bahureksa, serving as the primary maritime muster base for the 1628 fleet.",
+        "id": "Kadipaten pesisir pimpinan Tumenggung Bahureksa, pangkalan utama perakitan armada laut Mataram 1628."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "tegal",
+      "name": {
+        "en": "Tegal",
+        "id": "Tegal"
+      },
+      "modernName": {
+        "en": "Tegal, Central Java, Indonesia",
+        "id": "Tegal, Jawa Tengah, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        109.1256,
+        -6.8694
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Strategic port governed by Kyai Rangga Tapa, later transformed into a massive rice depot with over 200 warehouses for the 1629 campaign.",
+        "id": "Pelabuhan strategis pimpinan Kyai Rangga Tapa, sentra lumbung padi akbar dengan ratusan gudang logistik untuk ekspedisi 1629."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "cirebon",
+      "name": {
+        "en": "Cirebon",
+        "id": "Cirebon"
+      },
+      "modernName": {
+        "en": "Cirebon, West Java, Indonesia",
+        "id": "Cirebon, Jawa Barat, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        108.556,
+        -6.7063
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Vassal sultanate providing shelter and maritime grain depots for Mataram forces advancing west.",
+        "id": "Kesultanan vasal Mataram yang menyediakan lumbung beras dan dermaga perbekalan bagi pasukan yang bergerak ke barat."
+      },
+      "sources": [
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "karawang",
+      "name": {
+        "en": "Karawang",
+        "id": "Karawang"
+      },
+      "modernName": {
+        "en": "Karawang, West Java, Indonesia",
+        "id": "Karawang, Jawa Barat, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        107.306,
+        -6.307
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Pioneered agrarian basin on the Citarum river where Mataram farmers cultivated thousands of hectares of rice in 1629.",
+        "id": "Lembah pertanian di tepi Sungai Citarum tempat ribuan petani Mataram membuka sawah lumbung logistik pada 1629."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "priangan",
+      "name": {
+        "en": "Priangan Highlands (Bandung)",
+        "id": "Priangan (Tatar Sunda)"
+      },
+      "modernName": {
+        "en": "Bandung Regency, West Java, Indonesia",
+        "id": "Kabupaten Bandung, Jawa Barat, Indonesia"
+      },
+      "kind": "region",
+      "coordinates": [
+        107.6191,
+        -6.9175
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Highland domain of Dipati Ukur, commander of the Sundanese vanguard in the 1629 expedition.",
+        "id": "Wilayah pegunungan kekuasaan Dipati Ukur, panglima barisan pelopor Sunda dalam ekspedisi 1629."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "batavia-kasteel",
+      "name": {
+        "en": "Batavia Castle (Kasteel Batavia)",
+        "id": "Kasteel Batavia"
+      },
+      "modernName": {
+        "en": "Kota Tua Jakarta, Indonesia",
+        "id": "Kota Tua Jakarta, Indonesia"
+      },
+      "kind": "fort",
+      "coordinates": [
+        106.8133,
+        -6.1352
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Four-bastioned stone fortress at the mouth of the Ciliwung River, headquarters of Governor-General Jan Pieterszoon Coen.",
+        "id": "Benteng batu empat selebor di muara Sungai Ciliwung, markas pusat VOC pimpinan Jan Pieterszoon Coen."
+      },
+      "sources": [
+        "coen-bescheiden",
+        "vlekke-1943"
+      ]
+    },
+    {
+      "id": "redoubt-hollandia",
+      "name": {
+        "en": "Redoubt Hollandia",
+        "id": "Benteng Pertahanan Hollandia"
+      },
+      "modernName": {
+        "en": "Pinangsia, West Jakarta, Indonesia",
+        "id": "Pinangsia, Jakarta Barat, Indonesia"
+      },
+      "kind": "fort",
+      "coordinates": [
+        106.82,
+        -6.142
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Southeastern brick redoubt fiercely defended by Lieutenant Jacob van der Plaetten against Mataram assault columns in 1628.",
+        "id": "Kubu pertahanan tenggara yang dipertahankan habis-habisan oleh Letnan Jacob van der Plaetten menghadapi serbuan Mataram 1628."
+      },
+      "sources": [
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "redoubt-bommel",
+      "name": {
+        "en": "Redoubt Bommel",
+        "id": "Benteng Pertahanan Bommel"
+      },
+      "modernName": {
+        "en": "Pasar Ikan, North Jakarta, Indonesia",
+        "id": "Pasar Ikan, Jakarta Utara, Indonesia"
+      },
+      "kind": "fort",
+      "coordinates": [
+        106.812,
+        -6.1385
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Western redoubt guarding the estuary canals, subjected to intensive trench assaults in 1629.",
+        "id": "Kubu pertahanan barat yang melindungi terusan muara, sasaran gempuran parit Mataram pada 1629."
+      },
+      "sources": [
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "matraman",
+      "name": {
+        "en": "Matraman (Mataram Encampment)",
+        "id": "Matraman (Pesanggrahan Mataram)"
+      },
+      "modernName": {
+        "en": "Matraman, East Jakarta, Indonesia",
+        "id": "Matraman, Jakarta Timur, Indonesia"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        106.858,
+        -6.205
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "The sprawling main southern camp of the Mataram army in 1628 and 1629, giving the modern district its name.",
+        "id": "Pangkalan perkemahan akbar pasukan Mataram di selatan Batavia pada 1628 dan 1629, asal mula nama kawasan Matraman."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "ciliwung",
+      "name": {
+        "en": "Ciliwung River Bend",
+        "id": "Sungai Ciliwung"
+      },
+      "modernName": {
+        "en": "Ciliwung River, Central Jakarta, Indonesia",
+        "id": "Sungai Ciliwung, Jakarta Pusat, Indonesia"
+      },
+      "kind": "river",
+      "coordinates": [
+        106.825,
+        -6.155
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "The lifeline of Batavia where Mataram built timber dams and deliberately dumped dead bodies and animal carcasses to poison the water supply.",
+        "id": "Urat nadi air tawar Batavia tempat Mataram membendung air dan membuang bangkai untuk mencemari pasokan air kota."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "pulau-onrust",
+      "name": {
+        "en": "Onrust Island",
+        "id": "Pulau Onrust"
+      },
+      "modernName": {
+        "en": "Kepulauan Seribu, Jakarta, Indonesia",
+        "id": "Kepulauan Seribu, D.K.I. Jakarta, Indonesia"
+      },
+      "kind": "port",
+      "coordinates": [
+        106.729,
+        -6.033
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "VOC naval station and repair shipyard in Batavia Bay that reinforced the garrison during the sieges.",
+        "id": "Pangkalan galangan kapal VOC di Teluk Batavia yang mengirim bala bantuan dan mengamankan teluk."
+      },
+      "sources": [
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "banten",
+      "name": {
+        "en": "Banten",
+        "id": "Kesultanan Banten"
+      },
+      "modernName": {
+        "en": "Banten Lama, Serang, Indonesia",
+        "id": "Banten Lama, Serang, Banten, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        106.155,
+        -6.035
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Rival western sultanate; Sultan Agung viewed taking Batavia as a necessary preliminary step to subduing Banten.",
+        "id": "Kesultanan tetangga di barat; Sultan Agung memandang penaklukan Batavia sebagai batu loncatan sebelum menundukkan Banten."
+      },
+      "sources": [
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "jepara",
+      "name": {
+        "en": "Jepara",
+        "id": "Jepara"
+      },
+      "modernName": {
+        "en": "Jepara, Central Java, Indonesia",
+        "id": "Jepara, Jawa Tengah, Indonesia"
+      },
+      "kind": "port",
+      "coordinates": [
+        110.668,
+        -6.588
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Northern port where the Dutch loji had been sacked in 1618, serving as a shipwright center for Mataram naval prahus.",
+        "id": "Pelabuhan utara pusat galangan kapal perahu perang Mataram dan lokasi loji VOC yang pernah dibakar pada 1618."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "demak",
+      "name": {
+        "en": "Demak",
+        "id": "Demak"
+      },
+      "modernName": {
+        "en": "Demak, Central Java, Indonesia",
+        "id": "Demak, Jawa Tengah, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.638,
+        -6.894
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Ancient sultanate capital and muster point for coastal infantry heading west along the Pantura.",
+        "id": "Pusat kesultanan bersejarah dan titik kumpul pasukan infanteri pesisir sebelum bergerak ke barat."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "bahureksa-navy",
+      "kind": "unit",
+      "name": {
+        "en": "Mataram Naval Armada (Bahureksa)",
+        "id": "Armada Laut Mataram (Bahureksa)"
+      },
+      "faction": "mataram-sultanate",
+      "commanders": [
+        "Tumenggung Bahureksa"
+      ],
+      "description": {
+        "en": "A maritime flotilla of 59 transport and war prahus carrying 900 elite troops, 150 cattle, and thousands of sacks of provisions, later reinforced by 27 more vessels.",
+        "id": "Armada 59 perahu tempur dan angkut berpenumpang 900 prajurit pilihan, 150 ekor sapi, dan ribuan karung perbekalan, kemudian diperkuat 27 kapal tambahan."
+      },
+      "track": [
+        {
+          "when": "1628-05-01",
+          "at": "kendal",
+          "strength": 900,
+          "certainty": "exact",
+          "label": {
+            "en": "Mustering flotilla at Kendal",
+            "id": "Menghimpun armada di Kendal"
+          }
+        },
+        {
+          "when": "1628-07-15",
+          "at": "tegal",
+          "strength": 1200,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1628-08-22",
+          "at": "batavia-kasteel",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Arrival under guise of trade",
+            "id": "Tiba dengan dalih berdagang"
+          }
+        },
+        {
+          "when": "1628-08-29",
+          "at": "redoubt-hollandia",
+          "strength": 1000,
+          "certainty": "exact",
+          "label": {
+            "en": "Assault on Hollandia Redoubt",
+            "id": "Serbuan ke Benteng Hollandia"
+          }
+        },
+        {
+          "when": "1628-10-15",
+          "at": "matraman",
+          "strength": 800,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1628-12-02",
+          "at": "matraman",
+          "strength": 500,
+          "certainty": "exact",
+          "label": {
+            "en": "Execution of Bahureksa",
+            "id": "Eksekusi mati Bahureksa"
+          }
+        }
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "mandurareja-army",
+      "kind": "unit",
+      "name": {
+        "en": "Mataram Overland Army 1628 (Mandurareja)",
+        "id": "Pasukan Darat Mataram 1628 (Mandurareja)"
+      },
+      "faction": "mataram-sultanate",
+      "commanders": [
+        "Pangeran Mandurareja"
+      ],
+      "description": {
+        "en": "A massive overland force of 10,000 warriors marching west from Karta through Cirebon to invest Batavia from the southern interior.",
+        "id": "Laskar darat berkekuatan 10.000 prajurit yang berderap dari Keraton Karta melalui Cirebon untuk mengepung Batavia dari pedalaman selatan."
+      },
+      "track": [
+        {
+          "when": "1628-06-15",
+          "at": "karta",
+          "strength": 10000,
+          "certainty": "exact",
+          "label": {
+            "en": "March from Keraton Karta",
+            "id": "Berangkat dari Keraton Karta"
+          }
+        },
+        {
+          "when": "1628-08-15",
+          "at": "cirebon",
+          "strength": 10000,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1628-10-01",
+          "at": "matraman",
+          "strength": 10000,
+          "certainty": "exact",
+          "label": {
+            "en": "Encampment at Matraman",
+            "id": "Berkemah di Matraman"
+          }
+        },
+        {
+          "when": "1628-10-25",
+          "at": "ciliwung",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Damming the Ciliwung",
+            "id": "Membendung Sungai Ciliwung"
+          }
+        },
+        {
+          "when": "1628-12-03",
+          "at": "matraman",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Retreat leaving 744 dead",
+            "id": "Mundur meninggalkan 744 jenazah"
+          }
+        },
+        {
+          "when": "1628-12-25",
+          "at": "karta",
+          "strength": 3000,
+          "certainty": "approximate"
+        }
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "juminah-royal-army",
+      "kind": "unit",
+      "name": {
+        "en": "Mataram Royal Army 1629 (Juminah & Purbaya)",
+        "id": "Tentara Induk Mataram 1629 (Juminah & Purbaya)"
+      },
+      "faction": "mataram-sultanate",
+      "commanders": [
+        "Kyai Adipati Juminah",
+        "Pangeran Purbaya",
+        "Tumenggung Singaranu"
+      ],
+      "description": {
+        "en": "The main royal army of 14,000 veteran warriors deployed for the second campaign, reliant on pre-positioned coastal granaries.",
+        "id": "Tentara kerajaan berkekuatan 14.000 prajurit veteran untuk penyerbuan kedua, yang mengandalkan rantai lumbung beras Pantura."
+      },
+      "track": [
+        {
+          "when": "1629-05-15",
+          "at": "karta",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Royal departure from Karta",
+            "id": "Keberangkatan agung dari Karta"
+          }
+        },
+        {
+          "when": "1629-06-20",
+          "at": "tegal",
+          "strength": 14000,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1629-07-25",
+          "at": "cirebon",
+          "strength": 13000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1629-08-01",
+          "at": "matraman",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Investment of Batavia",
+            "id": "Pengepungan ketat Batavia"
+          }
+        },
+        {
+          "when": "1629-09-10",
+          "at": "ciliwung",
+          "strength": 9000,
+          "certainty": "exact",
+          "label": {
+            "en": "River contamination tactics",
+            "id": "Pencemaran aliran Ciliwung"
+          }
+        },
+        {
+          "when": "1629-10-02",
+          "at": "tegal",
+          "strength": 5000,
+          "certainty": "approximate",
+          "label": {
+            "en": "General retreat eastward",
+            "id": "Penarikan mundur ke timur"
+          }
+        }
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "dipati-ukur-corps",
+      "kind": "unit",
+      "name": {
+        "en": "Priangan Vanguard 1629 (Dipati Ukur)",
+        "id": "Laskar Sunda Priangan 1629 (Dipati Ukur)"
+      },
+      "faction": "mataram-sultanate",
+      "commanders": [
+        "Dipati Ukur"
+      ],
+      "description": {
+        "en": "The Sundanese contingent raised in the Priangan highlands, marching ahead to secure forward depots at Karawang before besieging Batavia.",
+        "id": "Barisan pasukan Sunda dari dataran tinggi Priangan, bergerak mendahului pasukan utama untuk mengamankan Karawang dan mengepung Batavia."
+      },
+      "track": [
+        {
+          "when": "1629-05-01",
+          "at": "priangan",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Mobilization in Tatar Sunda",
+            "id": "Mobilisasi di Tatar Sunda"
+          }
+        },
+        {
+          "when": "1629-06-15",
+          "at": "karawang",
+          "strength": 6000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Securing Karawang depot",
+            "id": "Mengamankan lumbung Karawang"
+          }
+        },
+        {
+          "when": "1629-07-20",
+          "at": "matraman",
+          "strength": 5500,
+          "certainty": "exact"
+        },
+        {
+          "when": "1629-08-10",
+          "at": "redoubt-bommel",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Assault on Redoubt Bommel",
+            "id": "Gempuran ke Benteng Bommel"
+          }
+        },
+        {
+          "when": "1629-08-25",
+          "at": "priangan",
+          "strength": 4000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Withdrawal to Mount Pongpok",
+            "id": "Penarikan ke Gunung Pongpok"
+          }
+        }
+      ],
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "voc-batavia-garrison",
+      "kind": "unit",
+      "name": {
+        "en": "VOC Batavia Garrison & Naval Squadrons",
+        "id": "Garnisun Kasteel Batavia & Armada VOC"
+      },
+      "faction": "voc",
+      "commanders": [
+        "Jan Pieterszoon Coen",
+        "Jacques Specx",
+        "Jacob van der Plaetten",
+        "Antonio van Diemen"
+      ],
+      "description": {
+        "en": "The fortified defenders of Batavia Castle, auxiliary redoubts Hollandia and Bommel, supported by warships in Batavia Bay.",
+        "id": "Pasukan garnisun Kasteel Batavia, benteng luar Hollandia dan Bommel, serta kapal-kapal perang pengawal Teluk Batavia."
+      },
+      "track": [
+        {
+          "when": "1628-08-22",
+          "at": "batavia-kasteel",
+          "strength": 530,
+          "certainty": "exact",
+          "label": {
+            "en": "Garrison alerted at Kasteel",
+            "id": "Garnisun bersiaga di Kasteel"
+          }
+        },
+        {
+          "when": "1628-08-29",
+          "at": "redoubt-hollandia",
+          "strength": 730,
+          "certainty": "exact",
+          "label": {
+            "en": "Defense of Hollandia",
+            "id": "Pertahanan Benteng Hollandia"
+          }
+        },
+        {
+          "when": "1629-06-25",
+          "at": "pulau-onrust",
+          "strength": 900,
+          "certainty": "exact"
+        },
+        {
+          "when": "1629-07-10",
+          "at": "tegal",
+          "strength": 500,
+          "certainty": "exact",
+          "label": {
+            "en": "Naval raid torches Tegal granaries",
+            "id": "Operasi pembakaran lumbung Tegal"
+          }
+        },
+        {
+          "when": "1629-08-15",
+          "at": "batavia-kasteel",
+          "strength": 1200,
+          "certainty": "exact"
+        },
+        {
+          "when": "1629-09-21",
+          "at": "batavia-kasteel",
+          "strength": 1000,
+          "certainty": "exact",
+          "label": {
+            "en": "Coen succumbs to cholera",
+            "id": "Kematian J.P. Coen akibat kolera"
+          }
+        },
+        {
+          "when": "1629-10-15",
+          "at": "batavia-kasteel",
+          "strength": 1100,
+          "certainty": "exact",
+          "label": {
+            "en": "Siege successfully endured",
+            "id": "Pengepungan berhasil dipatahkan"
+          }
+        }
+      ],
+      "sources": [
+        "coen-bescheiden",
+        "vlekke-1943"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "embassy-rejection-1628",
+      "kind": "negotiation",
+      "when": "1628-04",
+      "at": "batavia-kasteel",
+      "importance": 2,
+      "name": {
+        "en": "Rejection of Sultan Agung's Peace Embassy",
+        "id": "Penolakan Utusan Damai Sultan Agung"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "party",
+          "commanders": [
+            "Kyai Rangga Tapa"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Jan Pieterszoon Coen"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Kyai Rangga Tapa of Tegal arrives in Batavia presenting Sultan Agung's peace terms; Coen refuses to accept Mataram suzerainty, triggering the declaration of war.",
+        "id": "Kyai Rangga Tapa dari Tegal tiba di Batavia membawa syarat perdamaian Sultan Agung; Coen menolak tunduk pada Mataram, menyulut genderang perang."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "bahureksa-fleet-arrival",
+      "kind": "other",
+      "when": "1628-08-22",
+      "at": "batavia-kasteel",
+      "importance": 1,
+      "name": {
+        "en": "Arrival of Bahureksa's Fleet off Batavia",
+        "id": "Kedatangan Armada Bahureksa di Teluk Batavia"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "commanders": [
+            "Tumenggung Bahureksa"
+          ],
+          "strength": 900
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Jan Pieterszoon Coen"
+          ],
+          "strength": 530
+        }
+      ],
+      "summary": {
+        "en": "59 Mataram prahus arrive at Batavia bay requesting permission to trade cattle and sugar; Dutch suspicions prompt defensive artillery movements.",
+        "id": "59 kapal Mataram bersandar di Teluk Batavia dengan dalih berdagang ternak dan gula; kecurigaan VOC memicu penyiagaan meriam pertahanan."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "assault-hollandia-1628",
+      "kind": "battle",
+      "when": "1628-08-29",
+      "at": "redoubt-hollandia",
+      "importance": 1,
+      "name": {
+        "en": "First Assault on Redoubt Hollandia",
+        "id": "Serangan Pertama ke Benteng Hollandia"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "commanders": [
+            "Tumenggung Bahureksa"
+          ],
+          "strength": 1000
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Jacob van der Plaetten"
+          ],
+          "strength": 120
+        }
+      ],
+      "summary": {
+        "en": "Mataram troops launch a fierce assault against Redoubt Hollandia southeast of the city; Lieutenant Van der Plaetten repulses the wave with heavy Javanese casualties.",
+        "id": "Pasukan Mataram melancarkan serangan dahsyat ke Benteng Hollandia; Letnan Van der Plaetten berhasil memukul mundur serbuan dengan korban jiwa besar di pihak Mataram."
+      },
+      "sources": [
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "mandurareja-arrival",
+      "kind": "other",
+      "when": "1628-10-01",
+      "at": "matraman",
+      "importance": 1,
+      "name": {
+        "en": "Arrival of Mandurareja's Overland Host",
+        "id": "Kedatangan Pasukan Darat Mandurareja"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "commanders": [
+            "Pangeran Mandurareja"
+          ],
+          "strength": 10000
+        }
+      ],
+      "summary": {
+        "en": "Pangeran Mandurareja arrives with 10,000 overland soldiers, establishing a comprehensive siege perimeter around the southern approaches of Batavia.",
+        "id": "Pangeran Mandurareja tiba memimpin 10.000 prajurit darat, membangun perkemahan kepung di sisi selatan Batavia."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "ciliwung-dam-1628",
+      "kind": "other",
+      "when": "1628-10-25",
+      "at": "ciliwung",
+      "importance": 2,
+      "name": {
+        "en": "First Damming of the Ciliwung River",
+        "id": "Pembendungan Pertama Sungai Ciliwung"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "commanders": [
+            "Pangeran Mandurareja"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Jan Pieterszoon Coen"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Mataram forces build timber and earth dams across the Ciliwung to choke off Batavia's water supply, though seasonal rainfall mitigates Dutch thirst.",
+        "id": "Pasukan Mataram membangun bendungan kayu dan tanah di Sungai Ciliwung untuk memutus suplai air bersih Batavia."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "vlekke-1943"
+      ]
+    },
+    {
+      "id": "mataram-retreat-1628",
+      "kind": "other",
+      "when": "1628-12-03",
+      "at": "matraman",
+      "importance": 1,
+      "name": {
+        "en": "Failure and Retreat of the 1628 Siege",
+        "id": "Kegagalan dan Penarikan Mundur Pengepungan 1628"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "commanders": [
+            "Tumenggung Bahureksa",
+            "Pangeran Mandurareja"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "attacker",
+          "commanders": [
+            "Jan Pieterszoon Coen"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Exhausted by famine and lack of artillery, Mataram commanders are executed by imperial order; the army retreats leaving 744 dead behind.",
+        "id": "Kehabisan perbekalan dan digerogoti penyakit, para panglima Mataram dieksekusi atas perintah Sultan Agung; pasukan mundur meninggalkan 744 jenazah."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "pantura-granaries-established",
+      "kind": "other",
+      "when": "1629-02-15",
+      "at": "tegal",
+      "importance": 2,
+      "name": {
+        "en": "Establishment of the Pantura Granary Belt",
+        "id": "Pembangunan Sabuk Lumbung Beras Pantura"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "party"
+        }
+      ],
+      "summary": {
+        "en": "Sultan Agung orders thousands of Javanese farmers to establish rice paddies and secret coastal storehouses at Tegal, Cirebon, and Karawang.",
+        "id": "Sultan Agung memerintahkan ribuan petani membuka sawah dan mendirikan lumbung-lumbung perbekalan rahasia di Tegal, Cirebon, dan Karawang."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "voc-granary-raid-tegal",
+      "kind": "battle",
+      "when": "1629-07-04",
+      "at": "tegal",
+      "importance": 1,
+      "name": {
+        "en": "VOC Torches the Granaries at Tegal and Cirebon",
+        "id": "VOC Membakar Lumbung Beras Tegal dan Cirebon"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "attacker",
+          "commanders": [
+            "Antonio van Diemen"
+          ],
+          "strength": 500
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender"
+        }
+      ],
+      "summary": {
+        "en": "Guided by native spies, Dutch naval squadrons storm Tegal and Cirebon harbors, burning over 200 rice storehouses and dozens of transport vessels.",
+        "id": "Berdasarkan info mata-mata, armada VOC menyerbu pelabuhan Tegal dan Cirebon, membakar lebih dari 200 gudang beras dan puluhan perahu perbekalan."
+      },
+      "sources": [
+        "coen-bescheiden",
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "karawang-depot-destruction",
+      "kind": "other",
+      "when": "1629-07-28",
+      "at": "karawang",
+      "importance": 2,
+      "name": {
+        "en": "Destruction of the Karawang Forward Depots",
+        "id": "Pemusnahan Lumbung Depan Karawang"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "attacker"
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "commanders": [
+            "Dipati Ukur"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "VOC search parties penetrate the Citarum basin and burn Mataram's forward harvest at Karawang, leaving the invading armies with critical shortages.",
+        "id": "Pasukan VOC menyisir lembah Sungai Citarum dan membakar lumbung hasil panen Mataram di Karawang, memicu krisis pangan akut bagi pasukan penyerbu."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "second-siege-begins",
+      "kind": "other",
+      "when": "1629-08-01",
+      "at": "matraman",
+      "importance": 1,
+      "name": {
+        "en": "Arrival of the Second Mataram Invasion Host",
+        "id": "Kedatangan Pasukan Akbar Penyerbuan Kedua"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "commanders": [
+            "Kyai Adipati Juminah",
+            "Pangeran Purbaya"
+          ],
+          "strength": 14000
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Jan Pieterszoon Coen"
+          ],
+          "strength": 1200
+        }
+      ],
+      "summary": {
+        "en": "14,000 royal troops arrive at Batavia already on short rations due to the torched depots, setting up extensive trench lines around the fortress.",
+        "id": "14.000 prajurit kerajaan tiba di Batavia dengan perbekalan menipis akibat sabotase lumbung, membangun garis parit pengepungan di sekeliling benteng."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "dipati-ukur-rift",
+      "kind": "political",
+      "when": "1629-08-25",
+      "at": "priangan",
+      "importance": 2,
+      "name": {
+        "en": "Dispute and Withdrawal of Dipati Ukur",
+        "id": "Perselisihan dan Penarikan Mundur Dipati Ukur"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "party",
+          "commanders": [
+            "Dipati Ukur",
+            "Kyai Adipati Juminah"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Bitter accusations of insubordination and friction with royal commanders lead Dipati Ukur to pull his Sundanese troops back to Priangan in rebellion.",
+        "id": "Tuduhan pembangkangan dan gesekan dengan panglima Mataram mendorong Dipati Ukur menarik laskar Sundanya kembali ke pegunungan Priangan dalam pemberontakan."
+      },
+      "sources": [
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "ciliwung-biological-warfare",
+      "kind": "other",
+      "when": "1629-09-10",
+      "at": "ciliwung",
+      "importance": 1,
+      "name": {
+        "en": "Deliberate Contamination of the Ciliwung River",
+        "id": "Pencemaran Sengaja Aliran Sungai Ciliwung"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "commanders": [
+            "Kyai Adipati Juminah"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Jan Pieterszoon Coen"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Mataram forces dam the Ciliwung River and dump animal and human carcasses into the waters, triggering a lethal waterborne cholera epidemic in Batavia.",
+        "id": "Pasukan Mataram membendung Ciliwung dan membuang bangkai ternak serta jenazah ke aliran air, menyebarkan wabah kolera mematikan ke dalam kota Batavia."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "death-of-coen",
+      "kind": "other",
+      "when": "1629-09-21",
+      "at": "batavia-kasteel",
+      "importance": 1,
+      "name": {
+        "en": "Death of Governor-General Jan Pieterszoon Coen",
+        "id": "Kematian Gubernur Jenderal Jan Pieterszoon Coen"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Jan Pieterszoon Coen",
+            "Jacques Specx"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Governor-General Jan Pieterszoon Coen suddenly dies inside Kasteel Batavia from virulent cholera contracted from the contaminated river; Jacques Specx assumes command.",
+        "id": "Gubernur Jenderal Jan Pieterszoon Coen wafat mendadak di dalam Kasteel Batavia akibat wabah kolera dari sungai; Jacques Specx mengambil alih komando."
+      },
+      "sources": [
+        "coen-bescheiden",
+        "vlekke-1943"
+      ]
+    },
+    {
+      "id": "second-siege-lifted",
+      "kind": "other",
+      "when": "1629-10-02",
+      "at": "matraman",
+      "importance": 1,
+      "name": {
+        "en": "Mataram Lifts the Siege and Retreats",
+        "id": "Penghentian Pengepungan dan Penarikan Mundur Mataram"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "commanders": [
+            "Kyai Adipati Juminah",
+            "Pangeran Purbaya"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "attacker",
+          "commanders": [
+            "Jacques Specx"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Decimated by cholera, malaria, and starvation from the incinerated granaries, Mataram forces burn their siege works and begin a grueling retreat eastward.",
+        "id": "Digerogoti wabah kolera, malaria, dan kelaparan hebat akibat lumbung yang terbakar, pasukan Mataram membakar kubu kepung dan mundur ke timur."
+      },
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-utusan-damai-dan-mobilisasi",
+      "when": "1628-04/1628-08-20",
+      "dateLabel": {
+        "en": "April – August 1628",
+        "id": "April – Agustus 1628"
+      },
+      "title": {
+        "en": "Diplomatic Ultimatum and Mobilization",
+        "id": "Utusan Damai dan Mobilisasi Perang"
+      },
+      "body": {
+        "en": "In April 1628, Kyai Rangga Tapa, the Regent of Tegal, arrived in Batavia bearing an ultimatum from Susuhunan Sultan Agung of Mataram. Having unified Central and East Java after the bloody subjugation of Surabaya in 1625, Sultan Agung demanded that the Dutch East India Company recognize his imperial suzerainty. Governor-General Jan Pieterszoon Coen flatly rejected the demand, unwilling to subordinate the Company's Asian fortress to an indigenous monarch.\n\nFaced with Dutch intransigence, Sultan Agung issued imperial decrees across Java for a coordinated two-pronged invasion of Batavia. In the royal capital of Karta, Pangeran Mandurareja assembled a massive overland army of 10,000 warriors, while in the coastal shipyards of Kendal and Jepara, Tumenggung Bahureksa prepared a grand naval flotilla disguised under the pretext of an official trading mission.",
+        "id": "Pada April 1628, Kyai Rangga Tapa, Bupati Tegal, tiba di Batavia membawa ultimatum dari Susuhunan Sultan Agung Mataram. Setelah menyatukan Jawa Tengah dan Jawa Timur lewat penaklukan Surabaya pada 1625, Sultan Agung menuntut agar VOC mengakui kedaulatan Mataram. Gubernur Jenderal Jan Pieterszoon Coen menolak mentah-mentah tuntutan tersebut, menolak tunduknya markas dagang Belanda di bawah penguasa pribumi.\n\nMenghadapi penolakan VOC, Sultan Agung mengeluarkan titah perang untuk melancarkan serangan serempak melalui dua jalur. Di Keraton Karta, Pangeran Mandurareja menghimpun 10.000 laskar darat, sementara di galangan kapal Kendal dan Jepara, Tumenggung Bahureksa menyiapkan armada laut akbar yang disamarkan sebagai misi dagang resmi."
+      },
+      "focus": [
+        "karta",
+        "kendal",
+        "tegal",
+        "jepara",
+        "batavia-kasteel"
+      ],
+      "media": [
+        "javanese-fleet-print"
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "ch-2-armada-bahureksa-dan-hollandia",
+      "when": "1628-08-22/1628-09-30",
+      "dateLabel": {
+        "en": "August – September 1628",
+        "id": "Agustus – September 1628"
+      },
+      "title": {
+        "en": "Bahureksa's Naval Landing and Assault on Hollandia",
+        "id": "Pendaratan Bahureksa dan Gempuran Benteng Hollandia"
+      },
+      "body": {
+        "en": "On 22 August 1628, the vanguard of the Mataram fleet—59 heavily laden prahus under Tumenggung Bahureksa—entered Batavia bay. The Javanese claimed they had arrived to trade 150 cattle, sugar, coconuts, and 12,000 sacks of rice, and requested travel passes to Malacca. Suspecting a stratagem, Coen permitted only one vessel to dock at a time under heavy armed guard.\n\nWithin days, dozens more Mataram prahus sailed into the roadstead and began rapidly disembarking warriors north of the castle. Coen ordered the bamboo settlements surrounding Batavia torched to deny cover to the invaders. On 29 August, Mataram troops launched an escalade assault against Redoubt Hollandia southeast of the city. Lieutenant Jacob van der Plaetten and 120 Dutch defenders held the walls with relentless cannon and musket fire, inflicting severe casualties before Company reinforcements arrived from Onrust Island and Banten.",
+        "id": "Pada 22 Agustus 1628, armada pelopor Mataram berkekuatan 59 perahu di bawah pimpinan Tumenggung Bahureksa memasuki Teluk Batavia. Pihak Mataram mengaku datang untuk berdagang 150 ekor sapi, gula, kelapa, dan 12.000 karung beras, serta meminta surat jalan ke Melaka. Curiga akan muslihat ini, Coen hanya mengizinkan kapal merapat satu demi satu di bawah kawalan ketat serdadu bersenjata.\n\nBeberapa hari berselang, puluhan perahu Mataram lainnya merapat dan menurunkan ribuan prajurit di utara benteng. Coen segera memerintahkan pemukiman gubuk bambu di luar benteng dibakar habis agar musuh kehilangan perlindungan. Pada 29 Agustus, pasukan Mataram menyerbu Benteng Pertahanan Hollandia di tenggara kota. Letnan Jacob van der Plaetten bersama 120 serdadu bertahan gigih dengan tembakan meriam dan senapan, memukul mundur serbuan dengan korban jiwa besar sebelum bala bantuan VOC tiba dari Pulau Onrust dan Banten."
+      },
+      "focus": [
+        "batavia-kasteel",
+        "redoubt-hollandia",
+        "pulau-onrust",
+        "banten"
+      ],
+      "media": [
+        "siege-of-batavia-engraving"
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "ch-3-pasukan-mandurareja-dan-kegagalan-1628",
+      "when": "1628-10-01/1628-12-05",
+      "dateLabel": {
+        "en": "October – December 1628",
+        "id": "Oktober – Desember 1628"
+      },
+      "title": {
+        "en": "The Overland Siege and the Execution of Commanders",
+        "id": "Pengepungan Darat dan Hukuman Mati Para Panglima"
+      },
+      "body": {
+        "en": "In October 1628, Pangeran Mandurareja's overland army of 10,000 men arrived outside Batavia, pitching camp at the southern site that became known as Matraman. The Mataram host cut off all roads leading into the settlement and attempted to dam the Ciliwung River to deprive the garrison of drinking water. However, the besiegers lacked heavy battering artillery capable of breaching European brick ramparts.\n\nAs the siege dragged into November, tropical rains turned trenches into quagmires, and dysentery spread rapidly through the Mataram camp. Having brought insufficient supplies for a prolonged encirclement, the army ran out of food. Enraged by the stalemate and failure to take the castle, Sultan Agung sent royal executioners on 2 December to behead Tumenggung Bahureksa and Pangeran Mandurareja. The next morning, Dutch patrols found the Mataram camp abandoned, discovering 744 dead warriors left upon the field.",
+        "id": "Pada Oktober 1628, tentara darat Pangeran Mandurareja berkekuatan 10.000 prajurit tiba di luar Batavia, mendirikan pesanggrahan akbar di sisi selatan yang kini dikenal sebagai Matraman. Pasukan Mataram memblokade semua jalan akses menuju kota dan berupaya membendung Sungai Ciliwung demi memutus pasokan air minum musuh. Kendati demikian, pasukan Mataram tidak memiliki meriam pengepung berat yang sanggup merobohkan tembok benteng Eropa.\n\nMemasuki November, hujan tropis mengubah parit menjadi kubangan lumpur, dan wabah disentri menyebar cepat di perkemahan Mataram. Akibat tidak memperhitungkan logistik pengepungan panjang, persediaan pangan habis total. Murka atas kebuntuan ini, Sultan Agung mengirim algojo kerajaan pada 2 Desember untuk menghukum mati Tumenggung Bahureksa dan Pangeran Mandurareja. Keesokan harinya, patroli Belanda mendapati kubu Mataram telah ditinggalkan, menyisakan 744 jenazah prajurit di medan laga."
+      },
+      "focus": [
+        "matraman",
+        "ciliwung",
+        "batavia-kasteel",
+        "karta"
+      ],
+      "media": [
+        "siege-of-batavia-engraving"
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "ch-4-lumbung-padi-pantura-1629",
+      "when": "1629-01-01/1629-05-31",
+      "dateLabel": {
+        "en": "January – May 1629",
+        "id": "Januari – Mei 1629"
+      },
+      "title": {
+        "en": "Logistical Renaissance: The Pantura Granaries",
+        "id": "Revolusi Logistik: Lumbung Padi Pantura"
+      },
+      "body": {
+        "en": "Sultan Agung recognized that the disaster of 1628 was primarily logistical: marching an army 500 kilometers across Java without local supply lines was fatal. For the second invasion, the Sultan orchestrated a massive agrarian mobilization. Thousands of Javanese farming families were ordered to migrate west to establish extensive wet-rice paddies and supply depots along the northern coastal road (Pantura).\n\nHuge grain storehouses and transport depots were constructed at Tegal, Cirebon, and the fertile Citarum river basin in Karawang. These forward granaries were stocked with hundreds of thousands of bushels of rice, meant to sustain an invading army of 20,000 men throughout a long siege. This vast agrarian migration permanently altered the demographics and landscape of northern West Java, creating thriving agricultural settlements that endure to this day.",
+        "id": "Sultan Agung menyadari bahwa petaka tahun 1628 terutama berpangkal pada persoalan logistik: mengerahkan puluhan ribu prajurit menempuh jarak 500 kilometer tanpa rantai pasokan lokal terbukti fatal. Untuk serangan kedua, sang Sultan merancang mobilisasi agraria besar-besaran. Ribuan keluarga petani Jawa diperintahkan bermigrasi ke barat untuk mencetak sawah dan membangun depo perbekalan di sepanjang Pantai Utara (Pantura).\n\nLumbung-lumbung raksasa dan gudang beras didirikan di Tegal, Cirebon, serta lembah subur Sungai Citarum di Karawang. Lumbung depan ini diisi ratusan ribu gantang beras untuk menjamin logistik 20.000 prajurit selama pengepungan berbulan-bulan. Gelombang migrasi ini secara permanen mengubah demografi dan lanskap pertanian Jawa Barat bagian utara hingga masa kini."
+      },
+      "focus": [
+        "tegal",
+        "cirebon",
+        "karawang",
+        "demak"
+      ],
+      "media": [
+        "javanese-fleet-print"
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    },
+    {
+      "id": "ch-5-sabotase-lumbung-oleh-voc",
+      "when": "1629-06-01/1629-07-31",
+      "dateLabel": {
+        "en": "June – July 1629",
+        "id": "Juni – Juli 1629"
+      },
+      "title": {
+        "en": "VOC Naval Sabotage: The Torching of the Granaries",
+        "id": "Sabotase Armada VOC: Pembumihangusan Lumbung Beras"
+      },
+      "body": {
+        "en": "Through native informants and commercial spies, the Dutch Council of the Indies in Batavia uncovered Sultan Agung's logistical blueprint. Realizing that the garrison could never withstand a well-fed army of 20,000 men, Coen and Antonio van Diemen dispatched heavily armed VOC naval squadrons along the coast to strike at the supply chain.\n\nIn early July 1629, Dutch warships raided Tegal harbor, landing marine landing parties that systematically torched over 200 rice storehouses and burned dozens of grain-carrying prahus down to the waterline. Similar raids devastated the depots at Cirebon and Karawang. Millions of kilograms of rice were consumed by flames, sending plumes of smoke across the Java Sea. Before the main Mataram armies even reached the outskirts of Batavia, their supply lifeline had been completely severed.",
+        "id": "Melalui jaringan mata-mata pribumi dan pedagang perantara, Dewan Hindia VOC di Batavia berhasil membongkar rencana rantai logistik Sultan Agung. Menyadari bahwa benteng mereka tidak akan sanggup menahan 20.000 tentara yang berkecukupan pangan, Coen dan Antonio van Diemen mengerahkan skuadron kapal perang bersenjata lengkap menyusuri pesisir utara.\n\nPada awal Juli 1629, kapal-kapal perang Belanda menyerbu pelabuhan Tegal, mendaratkan serdadu yang secara sistematis membumihanguskan lebih dari 200 gudang beras dan puluhan perahu perbekalan hingga ke lunas kapal. Operasi serupa menghancurkan depo di Cirebon dan Karawang. Jutaan kilogram beras musnah dilalap api, membubungkan asap pekat di atas Laut Jawa. Sebelum tentara Mataram sempat mengepung Batavia, urat nadi logistik mereka telah diputus tuntas."
+      },
+      "focus": [
+        "tegal",
+        "cirebon",
+        "karawang",
+        "pulau-onrust"
+      ],
+      "media": [
+        "coen-portrait"
+      ],
+      "sources": [
+        "coen-bescheiden",
+        "de-graaf-1958"
+      ]
+    },
+    {
+      "id": "ch-6-serangan-kedua-dan-perpecahan-priangan",
+      "when": "1629-08-01/1629-08-31",
+      "dateLabel": {
+        "en": "August 1629",
+        "id": "Agustus 1629"
+      },
+      "title": {
+        "en": "The Second Invasion and the Priangan Rift",
+        "id": "Penyerbuan Kedua dan Perpecahan Pasukan Priangan"
+      },
+      "body": {
+        "en": "In August 1629, the second invasion army converged on Batavia in two columns: the Sundanese vanguard under Dipati Ukur from Priangan, and the 14,000-strong royal army led by Adipati Juminah, Pangeran Purbaya, and Tumenggung Singaranu. Arriving to find the Karawang depots in ashes, the soldiers were forced onto starvation rations from the outset. Nevertheless, they invested Batavia with renewed fury, throwing up extensive breastworks around Redoubt Bommel and Hollandia.\n\nOperational friction soon crippled the besiegers. Dipati Ukur, having engaged the Dutch ahead of schedule due to food shortages, was bitterly reprimanded by Adipati Juminah upon the main army's arrival. Resentful of central Mataram dominance and fearful of execution following the precedent of Bahureksa, Dipati Ukur withdrew his Sundanese contingent to the Priangan highlands, sparking an open rebellion against Sultan Agung that diverted thousands of warriors.",
+        "id": "Pada Agustus 1629, gelombang kedua tentara Mataram memusatkan kekuatan di Batavia melalui dua sayap: laskar Sunda pelopor pimpinan Dipati Ukur dari Priangan, serta 14.000 laskar inti kerajaan pimpinan Adipati Juminah, Pangeran Purbaya, dan Tumenggung Singaranu. Menemukan lumbung Karawang telah menjadi abu, prajurit terpaksa bertahan dengan jatah pangan darurat sejak hari pertama. Namun demikian, mereka mengepung Batavia dengan gencar, menggali parit pengepungan di sekitar Benteng Bommel dan Hollandia.\n\nGesekan kepemimpinan segera melumpuhkan barisan penyerbu. Dipati Ukur, yang menyerang lebih awal akibat desakan krisis pangan, menerima dampratan keras dari Adipati Juminah saat pasukan utama tiba. Muak atas perlakuan bangsawan Mataram dan cemas akan bernasib sama seperti Bahureksa, Dipati Ukur menarik mundur laskar Sundanya ke pegunungan Priangan, menyulut pemberontakan terbuka melawan Sultan Agung."
+      },
+      "focus": [
+        "matraman",
+        "redoubt-bommel",
+        "priangan",
+        "batavia-kasteel"
+      ],
+      "media": [
+        "siege-of-batavia-engraving"
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "coen-bescheiden"
+      ]
+    },
+    {
+      "id": "ch-7-pencemaran-ciliwung-dan-kematian-coen",
+      "when": "1629-09-01/1629-09-30",
+      "dateLabel": {
+        "en": "September 1629",
+        "id": "September 1629"
+      },
+      "title": {
+        "en": "Biological Warfare on the Ciliwung and the Death of Coen",
+        "id": "Perang Biologis di Ciliwung dan Kematian J.P. Coen"
+      },
+      "body": {
+        "en": "Trapped between fortified stone walls and imminent starvation, Adipati Juminah turned to asymmetric warfare. The Mataram army dammed the Ciliwung River upstream and threw hundreds of rotting cattle carcasses and deceased soldiers into the stagnant waters, deliberately poisoning Batavia's sole freshwater supply. Within days, a catastrophic outbreak of cholera and dysentery swept through both the besiegers' encampments and the Dutch fortress.\n\nThe epidemic struck at the very heart of the Company's command. On the night of 21 September 1629, Governor-General Jan Pieterszoon Coen suddenly collapsed and died inside Kasteel Batavia, a victim of the virulent cholera. The death of the iron-willed founder sent shockwaves through the colony, but Jacques Specx immediately assumed leadership, maintaining iron discipline and continuous artillery fire from the bastions.",
+        "id": "Terjepit di antara tembok benteng batu dan ancaman kelaparan, Adipati Juminah menempuh strategi perang asimetris. Pasukan Mataram membendung Sungai Ciliwung di hulu dan melemparkan ratusan bangkai sapi serta jenazah prajurit ke dalam aliran air, dengan sengaja mencemari pasokan air minum utama Batavia. Dalam hitungan hari, wabah kolera dan disentri dahsyat menjalar cepat, baik di kubu pengepung maupun di dalam benteng VOC.\n\nWabah maut ini menghantam pucuk pimpinan kompeni. Pada malam 21 September 1629, Gubernur Jenderal Jan Pieterszoon Coen mendadak tumbang dan wafat di dalam Kasteel Batavia akibat infeksi kolera. Kematian sang pendiri Batavia mengguncang koloni Belanda, namun Jacques Specx segera mengambil alih kendali, mempertahankan disiplin baja dan terus memuntahkan meriam dari selebor benteng."
+      },
+      "focus": [
+        "ciliwung",
+        "batavia-kasteel",
+        "matraman"
+      ],
+      "media": [
+        "coen-portrait"
+      ],
+      "sources": [
+        "coen-bescheiden",
+        "de-graaf-1958",
+        "vlekke-1943"
+      ]
+    },
+    {
+      "id": "ch-8-penarikan-mundur-dan-warisan-sejarah",
+      "when": "1629-10-01/1629-12-15",
+      "dateLabel": {
+        "en": "October – December 1629",
+        "id": "Oktober – Desember 1629"
+      },
+      "title": {
+        "en": "Lifting the Siege and Long-Term Legacy",
+        "id": "Penghentian Pengepungan dan Warisan Sejarah"
+      },
+      "body": {
+        "en": "By October 1629, the Mataram army was physically broken. Thousands of warriors had succumbed to cholera and starvation, and the remaining forces lacked the strength to storm the ramparts. On 2 October, Juminah and Purbaya ordered the siege works burned and initiated a general retreat across Java. Thousands of sick soldiers died along the overland march through the wilderness of West Java.\n\nWhile Sultan Agung failed to conquer Batavia and subsequently redirected his conquests eastward against Blambangan, the sieges profoundly shaped Java's history. Fearing royal punishment, thousands of Mataram veterans refused to return home, settling permanently in the Ommelanden and northern coastal towns. They formed the agrarian backbone of the Pantura and contributed to the distinctive culture and dialect of the emerging Betawi community, leaving historic toponyms like Matraman, Paseban, and Kampung Jawa across modern Jakarta.",
+        "id": "Memasuki Oktober 1629, kekuatan tentara Mataram telah lumpuh total. Ribuan prajurit tewas akibat kolera dan kelaparan hebat, sementara sisa pasukan tidak lagi bertenaga untuk mendaki tembok benteng. Pada 2 Oktober, Juminah dan Purbaya memerintahkan kubu kepung dibakar dan menggelar penarikan mundur umum. Ribuan prajurit yang sakit gugur di sepanjang jalan penarikan melintasi belantara Jawa Barat.\n\nKendati Sultan Agung gagal menaklukkan Batavia dan kemudian mengalihkan ambisi ekspansinya ke timur menuju Blambangan, dua kali pengepungan ini menorehkan jejak sejarah yang mendalam. Takut akan hukuman mati istana, ribuan prajurit Mataram memilih tidak kembali ke Karta dan menetap permanen di Ommelanden serta pesisir Pantura. Mereka menjadi perintis desa-desa pertanian Pantura dan menyumbang unsur penting bagi lahirnya budaya serta dialek masyarakat Betawi, meninggalkan toponim bersejarah seperti Matraman, Paseban, dan Kampung Jawa di Jakarta."
+      },
+      "focus": [
+        "batavia-kasteel",
+        "matraman",
+        "tegal",
+        "karta"
+      ],
+      "media": [
+        "siege-of-batavia-engraving"
+      ],
+      "sources": [
+        "de-graaf-1958",
+        "ricklefs-2008"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "de-graaf-1958",
+      "type": "book",
+      "citation": "De Graaf, H.J. De Regering van Sultan Agung, Vorst van Mataram 1613–1645, en die van zijn Voorganger Panembahan Séda-ing-Krapjak 1601–1613. Verhandelingen van het Koninklijk Instituut voor Taal-, Land- en Volkenkunde (VKI) 23. 's-Gravenhage: Martinus Nijhoff, 1958."
+    },
+    {
+      "id": "ricklefs-2008",
+      "type": "book",
+      "citation": "Ricklefs, M.C. A History of Modern Indonesia since c. 1200. 4th ed. Stanford: Stanford University Press, 2008."
+    },
+    {
+      "id": "vlekke-1943",
+      "type": "book",
+      "citation": "Vlekke, Bernard H.M. Nusantara: A History of the East Indian Archipelago. Cambridge, Mass.: Harvard University Press, 1943."
+    },
+    {
+      "id": "coen-bescheiden",
+      "type": "book",
+      "citation": "Coen, Jan Pieterszoon. Jan Pietersz. Coen: Bescheiden omtrent zijn bedrijf in Indië. Ed. H.T. Colenbrander. 7 vols. 's-Gravenhage: Martinus Nijhoff, 1919–1923."
+    },
+    {
+      "id": "babad-tanah-jawi",
+      "type": "book",
+      "citation": "Olthof, W.L., ed. Babad Tanah Jawi: Javaansche Rijkskroniek. 's-Gravenhage: M. Nijhoff, 1941."
+    }
+  ],
+  "media": [
+    {
+      "id": "siege-of-batavia-engraving",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/AMH-6775-KB_Siege_of_Batavia_by_the_sultan_of_Mataram.jpg",
+      "alt": {
+        "en": "Contemporary Dutch copper engraving depicting the Siege of Batavia in 1628-1629 by Sultan Agung of Mataram",
+        "id": "Ukiran tembaga Belanda kontemporer yang menggambarkan Pengepungan Batavia 1628-1629 oleh Sultan Agung Mataram"
+      },
+      "caption": {
+        "en": "Belegering van Batavia: Contemporary engraving depicting the siege lines, artillery emplacements, and fleet during Sultan Agung's campaign (Atlas van der Hagen, Koninklijke Bibliotheek).",
+        "id": "Belegering van Batavia: Ukiran kontemporer yang memperlihatkan parit kepung, kubu artileri, dan armada kapal pada masa pengepungan Sultan Agung (Atlas van der Hagen, Koninklijke Bibliotheek)."
+      },
+      "creator": "Atlas van der Hagen / Koninklijke Bibliotheek",
+      "date": "1629",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:AMH-6775-KB_Siege_of_Batavia_by_the_sultan_of_Mataram.jpg"
+    },
+    {
+      "id": "coen-portrait",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Pieterszoon_Coen_by_Jacob_Waben.jpg",
+      "alt": {
+        "en": "Portrait of Governor-General Jan Pieterszoon Coen by Jacob Waben",
+        "id": "Lukisan potret Gubernur Jenderal Jan Pieterszoon Coen karya Jacob Waben"
+      },
+      "caption": {
+        "en": "Jan Pieterszoon Coen (1587–1629), 4th Governor-General of the VOC, who founded Batavia and died inside the fortress during the second siege on 21 September 1629.",
+        "id": "Jan Pieterszoon Coen (1587–1629), Gubernur Jenderal ke-4 VOC yang mendirikan Batavia dan wafat di dalam benteng saat pengepungan kedua pada 21 September 1629."
+      },
+      "creator": "Jacob Waben",
+      "date": "1628",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_Pieterszoon_Coen_by_Jacob_Waben.jpg"
+    },
+    {
+      "id": "javanese-fleet-print",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Javanse_vloot_bij_het_beleg_van_Batavia.jpg",
+      "alt": {
+        "en": "Javanese prahu flotilla approaching Batavia bay during the 1628 expedition",
+        "id": "Iring-iringan perahu armada Mataram mendekati Teluk Batavia pada ekspedisi 1628"
+      },
+      "caption": {
+        "en": "Mataram fleet under Tumenggung Bahureksa approaching Batavia under the pretext of an official trade mission.",
+        "id": "Armada laut Mataram di bawah pimpinan Tumenggung Bahureksa mendekati Batavia dengan dalih misi dagang resmi."
+      },
+      "creator": "Anonymous (17th Century)",
+      "date": "1628",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Javanse_vloot_bij_het_beleg_van_Batavia.jpg"
+    }
+  ]
+}
