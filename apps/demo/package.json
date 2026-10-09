@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@pholidlabs/histamation-engine": "0.1.0",
-    "@pholidlabs/histamation-maplibre": "0.1.0",
+    "@pholidlabs/histamation-maplibre": "0.1.1",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "maplibre-gl": "^6.10.0"
