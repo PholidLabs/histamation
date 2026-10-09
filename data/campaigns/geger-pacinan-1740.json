@@ -1,0 +1,1810 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "geger-pacinan-1740",
+    "version": "0.1.0",
+    "title": {
+      "en": "Geger Pacinan: The Chinese War of Java, 1740–1743",
+      "id": "Geger Pacinan: Perang Sepanjang & Koalisi Tionghoa-Jawa, 1740–1743"
+    },
+    "subtitle": {
+      "en": "From the Batavia massacre to the Chinese-Javanese alliance and the fall of Kartasura",
+      "id": "Dari pembantaian Batavia hingga persekutuan Tionghoa-Jawa dan kejatuhan Kartasura"
+    },
+    "description": {
+      "en": "The catastrophic conflict ignited by the October 1740 pogrom in Batavia, where the VOC slaughtered over 10,000 Chinese residents. Surviving laborers led by Khe Pandjang (Kapitan Sepanjang) escaped eastward along Java's northern coast, forming a historic military coalition with Javanese bupatis and Sunan Pakubuwana II. The allied forces besieged Semarang, crowned Raden Mas Garendi as Sunan Kuning, and captured the royal capital of Kartasura on 30 June 1742, before a devastating VOC and Madurese counter-offensive crushed the rebellion and forced the partition of coastal Java.",
+      "id": "Konflik bersenjata terbesar VOC di abad ke-18 yang dipicu oleh pembantaian lebih dari 10.000 warga Tionghoa di Batavia pada Oktober 1740. Para buruh dan penyintas di bawah pimpinan Khe Pandjang (Kapitan Sepanjang) melarikan diri ke pesisir timur Jawa, menjalin persekutuan militer bersejarah dengan para bupati pesisir dan Sunan Pakubuwana II. Pasukan gabungan mengepung Semarang, menobatkan Raden Mas Garendi sebagai Sunan Kuning, dan merebut Keraton Kartasura pada 30 Juni 1742, sebelum serangan balik VOC dan laskar Madura meruntuhkan perlawanan dan memaksa penyerahan pesisir Jawa."
+    },
+    "contentWarning": {
+      "en": "Describes mass civilian massacres (Chinezenmoord), ethnic pogroms, religious executions, and the violent sack of imperial palaces.",
+      "id": "Menggambarkan pembantaian massal warga sipil (Chinezenmoord), pogrom etnis, eksekusi pembalasan, dan penjarahan istana kerajaan."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "updated": "2026-10-09",
+    "timeline": {
+      "extent": "1740-07-01/1743-12-31",
+      "focus": "1740-09-15/1743-02-28"
+    },
+    "map": {
+      "center": [
+        110.0,
+        -6.9
+      ],
+      "zoom": 7.8,
+      "pitch": 40,
+      "bearing": 0,
+      "bounds": [
+        106.0,
+        -8.5,
+        113.5,
+        -5.8
+      ],
+      "terrain": {
+        "exaggeration": 1.5
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "chinese-rebels",
+      "name": {
+        "en": "Chinese Rebel Forces (Sepanjang & Singseh)",
+        "id": "Laskar Tionghoa (Sepanjang & Singseh)"
+      },
+      "shortName": {
+        "en": "Chinese Rebels",
+        "id": "Laskar Tionghoa"
+      },
+      "color": "#C53030",
+      "description": {
+        "en": "Chinese sugar mill workers, merchants, and militia veterans who escaped the Batavia massacre. Commanded by Khe Pandjang (Kapitan Sepanjang) and Tan Sin Jin (Singseh), they waged a mobile war across Java.",
+        "id": "Buruh pabrik gula, pedagang, dan milisi Tionghoa yang selamat dari pembantaian Batavia. Dipimpin oleh Khe Pandjang (Kapitan Sepanjang) dan Tan Sin Jin (Singseh), mereka melancarkan perang manuver di sekeliling Jawa."
+      },
+      "sources": [
+        "vermeulen-1938",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "javanese-allies",
+      "name": {
+        "en": "Javanese Rebel Forces & Sunan Kuning",
+        "id": "Laskar Jawa & Sunan Kuning"
+      },
+      "shortName": {
+        "en": "Javanese Rebels",
+        "id": "Laskar Jawa"
+      },
+      "color": "#D69E2E",
+      "description": {
+        "en": "Javanese regional armies and court dissidents who joined the Chinese rebellion against VOC imperialism. Led by Tumenggung Martapura of Grobogan, Kyai Mas Yudanagara, and the rebel monarch Sunan Kuning.",
+        "id": "Pasukan bupati daerah dan bangsawan Mataram yang bersekutu dengan laskar Tionghoa menentang VOC. Dipimpin oleh Tumenggung Martapura dari Grobogan, Kyai Mas Yudanagara, serta raja perlawanan Sunan Kuning."
+      },
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "voc",
+      "name": {
+        "en": "Dutch East India Company (VOC)",
+        "id": "Kongsi Dagang Hindia Timur Belanda (VOC)"
+      },
+      "shortName": {
+        "en": "VOC",
+        "id": "VOC"
+      },
+      "color": "#1A365D",
+      "description": {
+        "en": "The military administration of the VOC under Governor-General Adriaan Valckenier, Bartholomew Visscher in Semarang, and subsequent relief commanders who utilized naval power and indigenous auxiliaries.",
+        "id": "Kekuatan militer VOC di bawah Gubernur Jenderal Adriaan Valckenier, komandan Semarang Bartholomeus Visscher, serta perwira ekspedisi yang memanfaatkan keunggulan armada laut dan pasukan sewaan."
+      },
+      "sources": [
+        "vermeulen-1938",
+        "ricklefs-1998"
+      ]
+    },
+    {
+      "id": "mataram-madura-royalists",
+      "name": {
+        "en": "Mataram Royalists & Madura Auxiliaries",
+        "id": "Prajurit Mataram & Laskar Madura"
+      },
+      "shortName": {
+        "en": "Royalists & Madura",
+        "id": "Mataram & Madura"
+      },
+      "color": "#2B6CB0",
+      "description": {
+        "en": "Sunan Pakubuwana II's loyalist faction after his reconciliation with the Dutch, supported decisively by the anti-Chinese warlord Pangeran Cakraningrat IV of Madura.",
+        "id": "Faksi pendukung Sunan Pakubuwana II setelah kembali bersekutu dengan VOC, didukung penuh oleh laskar tempur Pangeran Cakraningrat IV dari Madura yang anti-Tionghoa."
+      },
+      "sources": [
+        "remmelink-1994",
+        "ricklefs-1998"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "batavia",
+      "name": {
+        "en": "Batavia",
+        "id": "Batavia"
+      },
+      "modernName": {
+        "en": "Kota Tua, Jakarta",
+        "id": "Kota Tua, Jakarta"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        106.8133,
+        -6.1352
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Seat of the VOC Governor-General and Castle of Batavia; epicenter of the October 1740 pogrom.",
+        "id": "Pusat kekuasaan Gubernur Jenderal VOC dan Kasteel Batavia; episentrum pembantaian Oktober 1740."
+      },
+      "sources": [
+        "vermeulen-1938"
+      ]
+    },
+    {
+      "id": "kali-angke",
+      "name": {
+        "en": "Kali Angke",
+        "id": "Kali Angke"
+      },
+      "modernName": {
+        "en": "Kali Angke, West Jakarta",
+        "id": "Kali Angke, Jakarta Barat"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        106.778,
+        -6.141
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "River and wetlands west of Batavia where thousands of fleeing Chinese were trapped and slaughtered, staining the waters red.",
+        "id": "Aliran sungai dan rawa di barat Batavia tempat ribuan warga Tionghoa terpojok dan dibantai hingga airnya memerah."
+      },
+      "sources": [
+        "vermeulen-1938"
+      ]
+    },
+    {
+      "id": "tanah-abang",
+      "name": {
+        "en": "Tanah Abang",
+        "id": "Tanah Abang"
+      },
+      "modernName": {
+        "en": "Tanah Abang, Central Jakarta",
+        "id": "Tanah Abang, Jakarta Pusat"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        106.815,
+        -6.187
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Outer Ommelanden sugar district where Chinese mill workers initially gathered and attacked Dutch outposts on 7 October 1740.",
+        "id": "Kawasan pabrik gula Ommelanden tempat para buruh Tionghoa berkumpul dan menyerang pos Belanda pada 7 Oktober 1740."
+      },
+      "sources": [
+        "vermeulen-1938"
+      ]
+    },
+    {
+      "id": "bekasi",
+      "name": {
+        "en": "Bekasi",
+        "id": "Bekasi"
+      },
+      "modernName": {
+        "en": "Bekasi, West Java",
+        "id": "Bekasi, Jawa Barat"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        106.998,
+        -6.2383
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "First major eastern rally point for Chinese refugees escaping Dutch cavalry pursuits.",
+        "id": "Titik konsolidasi pertama para pengungsi Tionghoa ke arah timur untuk menghindari kejaran kavaleri Belanda."
+      },
+      "sources": [
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "cirebon",
+      "name": {
+        "en": "Cirebon",
+        "id": "Cirebon"
+      },
+      "modernName": {
+        "en": "Cirebon, West Java",
+        "id": "Cirebon, Jawa Barat"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        108.556,
+        -6.7063
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Sultanate port passed by Khe Pandjang's columns during their march toward Central Java.",
+        "id": "Pelabuhan kesultanan yang dilintasi iring-iringan laskar Khe Pandjang menuju Jawa Tengah."
+      },
+      "sources": [
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "tegal",
+      "name": {
+        "en": "Tegal",
+        "id": "Tegal"
+      },
+      "modernName": {
+        "en": "Tegal, Central Java",
+        "id": "Tegal, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        109.1256,
+        -6.8694
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Coastal stronghold captured in mid-1741 by Khe Pandjang and allied Javanese forces under Kapten Ismail.",
+        "id": "Benteng pesisir yang direbut pada pertengahan 1741 oleh Khe Pandjang dan laskar Jawa pimpinan Kapten Ismail."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "pekalongan",
+      "name": {
+        "en": "Pekalongan",
+        "id": "Pekalongan"
+      },
+      "modernName": {
+        "en": "Pekalongan, Central Java",
+        "id": "Pekalongan, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        109.6753,
+        -6.8886
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Coastal regency governed by Adipati Jayaningrat, a prominent peranakan aristocrat who supported the anti-VOC uprising.",
+        "id": "Kadipaten pesisir di bawah Adipati Jayaningrat, bangsawan peranakan yang bersimpati dan mendukung perlawanan terhadap VOC."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "semarang",
+      "name": {
+        "en": "Semarang",
+        "id": "Semarang"
+      },
+      "modernName": {
+        "en": "Semarang, Central Java",
+        "id": "Semarang, Jawa Tengah"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        110.4208,
+        -6.9667
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "VOC's northeastern military capital, subjected to a massive five-month siege by 23,000 allied Chinese-Javanese troops in 1741.",
+        "id": "Pusat militer VOC pesisir timur yang dikepung sengit selama lima bulan oleh 23.000 prajurit gabungan Tionghoa-Jawa pada 1741."
+      },
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "demak",
+      "name": {
+        "en": "Demak",
+        "id": "Demak"
+      },
+      "modernName": {
+        "en": "Demak, Central Java",
+        "id": "Demak, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.64,
+        -6.8944
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Historic bastion where Chinese and Javanese commanders coordinated eastern operations.",
+        "id": "Benteng bersejarah tempat panglima Tionghoa dan Jawa mengoordinasikan operasi militer pesisir timur."
+      },
+      "sources": [
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "kudus",
+      "name": {
+        "en": "Kudus",
+        "id": "Kudus"
+      },
+      "modernName": {
+        "en": "Kudus, Central Java",
+        "id": "Kudus, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.8444,
+        -6.8048
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Commercial crossroads held by 2,000 Chinese fighters awaiting reinforcements from Kartasura.",
+        "id": "Kota transit perniagaan yang dipertahankan oleh 2.000 serdadu Tionghoa saat menunggu bala bantuan Kartasura."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "rembang",
+      "name": {
+        "en": "Rembang",
+        "id": "Rembang"
+      },
+      "modernName": {
+        "en": "Rembang, Central Java",
+        "id": "Rembang, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.34,
+        -6.7083
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Strategic VOC seaport and shipyard captured by Chinese insurgent columns on 27 July 1741.",
+        "id": "Pangkalan laut dan galangan kapal VOC yang direbut laskar Tionghoa pada 27 Juli 1741."
+      },
+      "sources": [
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "lasem",
+      "name": {
+        "en": "Lasem",
+        "id": "Lasem"
+      },
+      "modernName": {
+        "en": "Lasem, Rembang, Central Java",
+        "id": "Lasem, Rembang, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.4533,
+        -6.6917
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Thriving Chinese commercial hub ('Tiongkok Kecil') and unyielding bastion of naval resistance under Oei Ing Kiat.",
+        "id": "Pusat perniagaan Tionghoa terkemuka ('Tiongkok Kecil') dan benteng perlawanan maritim gigih di bawah Oei Ing Kiat."
+      },
+      "sources": [
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "jepara",
+      "name": {
+        "en": "Jepara",
+        "id": "Jepara"
+      },
+      "modernName": {
+        "en": "Jepara, Central Java",
+        "id": "Jepara, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.6689,
+        -6.5911
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "VOC northern fort besieged and captured by rebels on 31 July 1741.",
+        "id": "Benteng utara VOC yang dikepung dan direbut oleh pasukan pemberontak pada 31 Juli 1741."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "grobogan",
+      "name": {
+        "en": "Grobogan",
+        "id": "Grobogan"
+      },
+      "modernName": {
+        "en": "Purwodadi, Grobogan, Central Java",
+        "id": "Purwodadi, Grobogan, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.9167,
+        -7.0333
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Inland command base of Tumenggung Martapura and site of Raden Mas Garendi's coronation as Sunan Kuning on 6 April 1742.",
+        "id": "Pangkalan komando pedalaman Tumenggung Martapura dan lokasi penobatan Raden Mas Garendi sebagai Sunan Kuning pada 6 April 1742."
+      },
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "kartasura",
+      "name": {
+        "en": "Keraton Kartasura",
+        "id": "Keraton Kartasura"
+      },
+      "modernName": {
+        "en": "Kartasura, Sukoharjo, Central Java",
+        "id": "Kartasura, Sukoharjo, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.7431,
+        -7.5542
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Capital of the Mataram Empire; stormed and sacked by the allied Chinese-Javanese army on 30 June 1742.",
+        "id": "Ibu kota Kesultanan Mataram; diserbu, diduduki, dan dihancurkan oleh laskar gabungan Tionghoa-Jawa pada 30 Juni 1742."
+      },
+      "sources": [
+        "remmelink-1994",
+        "ricklefs-1998"
+      ]
+    },
+    {
+      "id": "ponorogo",
+      "name": {
+        "en": "Ponorogo",
+        "id": "Ponorogo"
+      },
+      "modernName": {
+        "en": "Ponorogo, East Java",
+        "id": "Ponorogo, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.4678,
+        -7.8689
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Refuge in eastern mancanagara where Sunan Pakubuwana II and Captain Von Hohendorff fled after the fall of Kartasura.",
+        "id": "Tempat pengungsian di mancanagara timur tempat Sunan Pakubuwana II dan Kapten Von Hohendorff menyelamatkan diri."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "madura-bangkalan",
+      "name": {
+        "en": "Madura (Bangkalan)",
+        "id": "Madura (Bangkalan)"
+      },
+      "modernName": {
+        "en": "Bangkalan, Madura, East Java",
+        "id": "Bangkalan, Madura, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.7483,
+        -7.0456
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Seat of Pangeran Cakraningrat IV, who allied with the VOC and mobilized fierce Madurese warriors to crush the rebellion.",
+        "id": "Pusat kekuasaan Pangeran Cakraningrat IV yang bersekutu dengan VOC dan mengerahkan prajurit Madura untuk memadamkan pemberontakan."
+      },
+      "sources": [
+        "ricklefs-1998"
+      ]
+    },
+    {
+      "id": "surabaya",
+      "name": {
+        "en": "Surabaya",
+        "id": "Surabaya"
+      },
+      "modernName": {
+        "en": "Surabaya, East Java",
+        "id": "Surabaya, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.7521,
+        -7.2575
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Eastern port city where Tan Sin Jin (Singseh) ultimately surrendered to VOC authorities in 1743.",
+        "id": "Kota pelabuhan timur tempat Tan Sin Jin (Singseh) akhirnya menyerah kepada VOC pada 1743."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "sepanjang-column",
+      "kind": "unit",
+      "name": {
+        "en": "Khe Pandjang's Chinese Army",
+        "id": "Laskar Tionghoa Khe Pandjang"
+      },
+      "faction": "chinese-rebels",
+      "commanders": [
+        "Khe Pandjang (Kapitan Sepanjang)",
+        "Tan Sin Jin (Singseh)"
+      ],
+      "description": {
+        "en": "The main army of Chinese insurgent fighters who broke out of Batavia, marched 500 kilometers across Java's north coast, and captured the royal capital of Kartasura.",
+        "id": "Pasukan utama perlawanan Tionghoa yang menerobos kepungan Batavia, berbaris sejauh 500 km melintasi pesisir utara Jawa, dan merebut Keraton Kartasura."
+      },
+      "track": [
+        {
+          "when": "1740-09-20/1740-10-06",
+          "at": "tanah-abang",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Mustering of sugar mill workers in Ommelanden",
+            "id": "Konsentrasi buruh pabrik gula di Ommelanden"
+          }
+        },
+        {
+          "when": "1740-10-09/1740-10-22",
+          "at": "kali-angke",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Survivors rally during the Batavia pogrom",
+            "id": "Penyintas berkonsolidasi di tengah pogrom Batavia"
+          }
+        },
+        {
+          "when": "1740-10-28/1740-11-10",
+          "at": "bekasi",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Breaks through Dutch cavalry encirclement at Bekasi",
+            "id": "Menerobos kepungan kavaleri Belanda di Bekasi"
+          }
+        },
+        {
+          "when": "1740-12-01/1740-12-20",
+          "at": "cirebon",
+          "strength": 3200,
+          "certainty": "approximate",
+          "label": {
+            "en": "Exodus columns march past Cirebon territory",
+            "id": "Iring-iringan eksodus melintasi wilayah Cirebon"
+          }
+        },
+        {
+          "when": "1741-02-01/1741-03-15",
+          "at": "tegal",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Storms Tegal in alliance with Javanese fighters",
+            "id": "Merebut Tegal bersama pejuang Jawa"
+          }
+        },
+        {
+          "when": "1741-04-15/1741-05-30",
+          "at": "grobogan",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Forms grand alliance with Tumenggung Martapura",
+            "id": "Membentuk persekutuan agung dengan Tumenggung Martapura"
+          }
+        },
+        {
+          "when": "1741-06-15/1741-11-15",
+          "at": "semarang",
+          "strength": 4500,
+          "certainty": "exact",
+          "label": {
+            "en": "Besieges Dutch colonial headquarters at Semarang",
+            "id": "Mengepung markas besar VOC di Semarang"
+          }
+        },
+        {
+          "when": "1742-04-06/1742-06-15",
+          "at": "grobogan",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Proclaims Raden Mas Garendi as Sunan Kuning",
+            "id": "Menobatkan Raden Mas Garendi sebagai Sunan Kuning"
+          }
+        },
+        {
+          "when": "1742-06-30/1742-11-20",
+          "at": "kartasura",
+          "strength": 5500,
+          "certainty": "exact",
+          "label": {
+            "en": "Captures and garrisons Keraton Kartasura",
+            "id": "Merebut dan menduduki Keraton Kartasura"
+          }
+        },
+        {
+          "when": "1743-01-15/1743-06-01",
+          "at": "lasem",
+          "strength": 2000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Final maritime resistance from Lasem",
+            "id": "Perlawanan maritim terakhir dari Lasem"
+          }
+        }
+      ],
+      "sources": [
+        "vermeulen-1938",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "sunan-kuning-host",
+      "kind": "unit",
+      "name": {
+        "en": "Sunan Kuning's Javanese Host",
+        "id": "Laskar Jawa Sunan Kuning"
+      },
+      "faction": "javanese-allies",
+      "commanders": [
+        "Raden Mas Garendi (Sunan Kuning)",
+        "Tumenggung Martapura",
+        "Kyai Mas Yudanagara"
+      ],
+      "description": {
+        "en": "The Javanese rebel forces who rejected Pakubuwana II's subservience to the Dutch and elevated young prince Raden Mas Garendi to the throne.",
+        "id": "Laskar perlawanan Jawa yang menolak ketundukan Pakubuwana II kepada VOC dan menobatkan pangeran muda Raden Mas Garendi ke takhta Mataram."
+      },
+      "track": [
+        {
+          "when": "1741-04-01/1741-06-01",
+          "at": "grobogan",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Martapura mobilizes inland Javanese levies",
+            "id": "Martapura memobilisasi laskar pedalaman Jawa"
+          }
+        },
+        {
+          "when": "1741-06-15/1741-11-15",
+          "at": "semarang",
+          "strength": 18000,
+          "certainty": "exact",
+          "label": {
+            "en": "Massive Javanese force encircles Bergota hills at Semarang",
+            "id": "Pasukan besar Jawa mengepung perbukitan Bergota di Semarang"
+          }
+        },
+        {
+          "when": "1742-04-06",
+          "at": "grobogan",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Sunan Kuning crowned monarch of rebel Mataram",
+            "id": "Penobatan Sunan Kuning sebagai raja Mataram perlawanan"
+          }
+        },
+        {
+          "when": "1742-06-30/1742-11-20",
+          "at": "kartasura",
+          "strength": 10000,
+          "certainty": "exact",
+          "label": {
+            "en": "Occupies Keraton Kartasura as sovereign",
+            "id": "Menduduki Keraton Kartasura sebagai penguasa"
+          }
+        },
+        {
+          "when": "1743-02-15/1743-08-15",
+          "at": "surabaya",
+          "strength": 3000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Retreats to East Java before eventual capture",
+            "id": "Mundur ke Jawa Timur sebelum akhirnya tertawan"
+          }
+        }
+      ],
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "voc-expeditionary",
+      "kind": "unit",
+      "name": {
+        "en": "VOC Main Forces",
+        "id": "Pasukan Utama VOC"
+      },
+      "faction": "voc",
+      "commanders": [
+        "Governor-General Adriaan Valckenier",
+        "Bartholomeus Visscher",
+        "Hugo Verijsel",
+        "Baron van Hohendorff"
+      ],
+      "description": {
+        "en": "VOC garrisons, naval infantry, and European field battalions operating from Batavia and Semarang.",
+        "id": "Garnisun VOC, infanteri laut, dan batalion serdadu Eropa yang beroperasi dari Batavia dan Semarang."
+      },
+      "track": [
+        {
+          "when": "1740-09-15/1740-11-15",
+          "at": "batavia",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Deploys artillery during the Batavia pogrom",
+            "id": "Mengerahkan artileri selama pembantaian Batavia"
+          }
+        },
+        {
+          "when": "1741-05-01/1741-11-30",
+          "at": "semarang",
+          "strength": 3400,
+          "certainty": "exact",
+          "label": {
+            "en": "Endures siege; relieves Semarang with maritime reinforcements",
+            "id": "Bertahan dari kepungan; membebaskan Semarang dengan bala bantuan laut"
+          }
+        },
+        {
+          "when": "1742-03-15/1742-06-30",
+          "at": "kartasura",
+          "strength": 800,
+          "certainty": "exact",
+          "label": {
+            "en": "Hohendorff negotiates with Sunan and flees rebel storm",
+            "id": "Hohendorff merundingkan syarat dan lolos dari serbuan pemberontak"
+          }
+        },
+        {
+          "when": "1742-07-15/1742-10-31",
+          "at": "ponorogo",
+          "strength": 600,
+          "certainty": "exact",
+          "label": {
+            "en": "Guards Pakubuwana II in eastern exile",
+            "id": "Mengawal Pakubuwana II dalam pengungsian timur"
+          }
+        },
+        {
+          "when": "1742-11-25/1743-02-15",
+          "at": "kartasura",
+          "strength": 2000,
+          "certainty": "exact",
+          "label": {
+            "en": "Reinstalls Sunan and secures humiliating 1743 treaty",
+            "id": "Mendudukkan kembali Sunan dan memaksakan perjanjian 1743"
+          }
+        }
+      ],
+      "sources": [
+        "vermeulen-1938",
+        "ricklefs-1998"
+      ]
+    },
+    {
+      "id": "pakubuwana-forces",
+      "kind": "unit",
+      "name": {
+        "en": "Pakubuwana II's Court Guard",
+        "id": "Prajurit Keraton Pakubuwana II"
+      },
+      "faction": "mataram-madura-royalists",
+      "commanders": [
+        "Sunan Pakubuwana II",
+        "Patih Pringgalaya"
+      ],
+      "description": {
+        "en": "The royal retinue of Sunan Pakubuwana II, alternating between secret rebel sympathy and desperate dependence on the Dutch.",
+        "id": "Prajurit pengawal Sunan Pakubuwana II yang terombang-ambing antara simpati rahasia pada pemberontak dan ketergantungan pada VOC."
+      },
+      "track": [
+        {
+          "when": "1740-10-01/1741-05-10",
+          "at": "kartasura",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Secretly sends funds to anti-VOC insurgents",
+            "id": "Secara rahasia mengirim dana kepada laskar perlawanan"
+          }
+        },
+        {
+          "when": "1741-07-20/1741-08-10",
+          "at": "kartasura",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Overwhelms Dutch garrison at Kartasura",
+            "id": "Menaklukkan garnisun Belanda di Kartasura"
+          }
+        },
+        {
+          "when": "1742-03-15/1742-06-30",
+          "at": "kartasura",
+          "strength": 2000,
+          "certainty": "exact",
+          "label": {
+            "en": "Reconciles with VOC; palace stormed by rebels",
+            "id": "Berdamai dengan VOC; keraton diserbu laskar pemberontak"
+          }
+        },
+        {
+          "when": "1742-07-05/1742-10-31",
+          "at": "ponorogo",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Exiled in Ponorogo seeking Dutch rescue",
+            "id": "Mengungsi di Ponorogo menanti bantuan Belanda"
+          }
+        },
+        {
+          "when": "1742-11-25/1743-11-01",
+          "at": "kartasura",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Returns to devastated capital; surrenders coastal Java",
+            "id": "Kembali ke keraton yang hancur; menyerahkan pesisir Jawa"
+          }
+        }
+      ],
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "cakraningrat-corps",
+      "kind": "unit",
+      "name": {
+        "en": "Cakraningrat IV's Madurese Warriors",
+        "id": "Laskar Madura Cakraningrat IV"
+      },
+      "faction": "mataram-madura-royalists",
+      "commanders": [
+        "Pangeran Cakraningrat IV"
+      ],
+      "description": {
+        "en": "Fierce warlord levies from Madura who fought ruthlessly against the Chinese rebels and recaptured Kartasura.",
+        "id": "Laskar tempur tangguh dari Madura yang menyerang laskar Tionghoa di Jawa Timur dan merebut kembali Kartasura."
+      },
+      "track": [
+        {
+          "when": "1741-06-01/1741-06-25",
+          "at": "madura-bangkalan",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Mobilizes Madurese warriors and offers alliance to VOC",
+            "id": "Mengerahkan prajurit Madura dan menawarkan persekutuan ke VOC"
+          }
+        },
+        {
+          "when": "1741-07-12/1741-08-30",
+          "at": "surabaya",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Purges Chinese populations across eastern ports",
+            "id": "Menghabisi perlawanan Tionghoa di pelabuhan timur"
+          }
+        },
+        {
+          "when": "1742-10-15/1742-11-25",
+          "at": "kartasura",
+          "strength": 4500,
+          "certainty": "exact",
+          "label": {
+            "en": "Storms Keraton Kartasura and expels Sunan Kuning",
+            "id": "Menyerbu Keraton Kartasura dan mengusir Sunan Kuning"
+          }
+        },
+        {
+          "when": "1743-02-01/1743-08-01",
+          "at": "madura-bangkalan",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Returns to Madura feeling betrayed by Dutch promises",
+            "id": "Kembali ke Madura dengan rasa kecewa atas ingkar janji Belanda"
+          }
+        }
+      ],
+      "sources": [
+        "ricklefs-1998"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "sugar-crisis-batavia",
+      "kind": "political",
+      "when": "1740-07-25",
+      "at": "batavia",
+      "importance": 1,
+      "name": {
+        "en": "Valckenier's Deportation Decree",
+        "id": "Maklumat Deportasi Valckenier"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "belligerent",
+          "commanders": [
+            "Adriaan Valckenier"
+          ]
+        },
+        {
+          "faction": "chinese-rebels",
+          "role": "victim",
+          "commanders": [
+            "Ni Hoe Kong"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Following the collapse of world sugar prices, Governor-General Valckenier orders the forced deportation of unemployed Chinese laborers to Ceylon, sparking panic and rumors of drownings at sea.",
+        "id": "Menyusul jatuhnya harga gula dunia, Gubernur Jenderal Valckenier memerintahkan deportasi paksa buruh Tionghoa ke Ceylon, memicu kepanikan dan desas-desus pembunuhan di laut."
+      },
+      "sources": [
+        "vermeulen-1938"
+      ]
+    },
+    {
+      "id": "ommelanden-uprising",
+      "kind": "battle",
+      "when": "1740-10-07",
+      "at": "tanah-abang",
+      "importance": 1,
+      "name": {
+        "en": "The Ommelanden Mill Attacks",
+        "id": "Pemberontakan Buruh Pabrik Gula Ommelanden"
+      },
+      "participants": [
+        {
+          "faction": "chinese-rebels",
+          "role": "attacker",
+          "commanders": [
+            "Khe Pandjang"
+          ],
+          "strength": 5000
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Adriaan Valckenier"
+          ],
+          "strength": 1800
+        }
+      ],
+      "summary": {
+        "en": "Armed Chinese sugar mill laborers attack Dutch military outposts at Meester Cornelis and Tanah Abang, killing 50 soldiers and triggering emergency martial law.",
+        "id": "Para buruh pabrik gula Tionghoa bersenjata menyerang pos militer Belanda di Meester Cornelis dan Tanah Abang, menewaskan 50 serdadu dan memicu darurat militer."
+      },
+      "sources": [
+        "vermeulen-1938"
+      ]
+    },
+    {
+      "id": "batavia-massacre",
+      "kind": "other",
+      "when": "1740-10-09",
+      "at": "batavia",
+      "importance": 1,
+      "name": {
+        "en": "The Batavia Massacre (Chinezenmoord)",
+        "id": "Pembantaian Batavia (Tragedi Angke)"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "perpetrator",
+          "commanders": [
+            "Adriaan Valckenier",
+            "Hermanus van Suchtelen"
+          ]
+        },
+        {
+          "faction": "chinese-rebels",
+          "role": "victim",
+          "commanders": [
+            "Ni Hoe Kong"
+          ],
+          "strength": 10000
+        }
+      ],
+      "summary": {
+        "en": "VOC troops and mobs bombard and torch Batavia's Chinese quarter. Over 10,000 Chinese inhabitants are systematically slaughtered over two weeks, turning the Angke river red.",
+        "id": "Serdadu VOC dan massa meriamkan serta membakar kawasan pecinan Batavia. Lebih dari 10.000 warga Tionghoa dibantai secara sistematis selama dua pekan, mengubah Sungai Angke menjadi merah."
+      },
+      "sources": [
+        "vermeulen-1938",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "bekasi-breakout",
+      "kind": "battle",
+      "when": "1740-10-28",
+      "at": "bekasi",
+      "importance": 2,
+      "name": {
+        "en": "Breakout at Bekasi",
+        "id": "Penerobosan di Bekasi"
+      },
+      "participants": [
+        {
+          "faction": "chinese-rebels",
+          "role": "attacker",
+          "commanders": [
+            "Khe Pandjang"
+          ],
+          "strength": 3000
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Christoffel Moll"
+          ],
+          "strength": 1600
+        }
+      ],
+      "summary": {
+        "en": "Khe Pandjang rallies survivors, shatters a Dutch cavalry blockade east of Batavia, and begins the long march toward Central Java.",
+        "id": "Khe Pandjang menggalang para penyintas, mendobrak blokade kavaleri Belanda di timur Batavia, dan memulai long march menuju Jawa Tengah."
+      },
+      "sources": [
+        "vermeulen-1938",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "fall-of-tegal",
+      "kind": "battle",
+      "when": "1741-03-01",
+      "at": "tegal",
+      "importance": 2,
+      "name": {
+        "en": "Capture of Tegal",
+        "id": "Perebutan Benteng Tegal"
+      },
+      "participants": [
+        {
+          "faction": "chinese-rebels",
+          "role": "attacker",
+          "commanders": [
+            "Khe Pandjang"
+          ],
+          "strength": 4000
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Bartholomeus Visscher"
+          ],
+          "strength": 200
+        }
+      ],
+      "summary": {
+        "en": "Allied Chinese and Javanese guerrillas storm the Dutch coastal post at Tegal, establishing their first firm base on the central coast.",
+        "id": "Laskar gabungan Tionghoa dan Jawa menyerbu pos pesisir Belanda di Tegal, mengamankan pangkalan pertama mereka di pantai utara Jawa Tengah."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "grobogan-pact",
+      "kind": "treaty",
+      "when": "1741-05-01",
+      "at": "grobogan",
+      "importance": 1,
+      "name": {
+        "en": "The Grobogan Alliance Pact",
+        "id": "Persekutuan Tionghoa-Jawa Grobogan"
+      },
+      "participants": [
+        {
+          "faction": "chinese-rebels",
+          "role": "party",
+          "commanders": [
+            "Tan Sin Jin (Singseh)"
+          ]
+        },
+        {
+          "faction": "javanese-allies",
+          "role": "party",
+          "commanders": [
+            "Tumenggung Martapura"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Tan Sin Jin (Singseh) and Tumenggung Martapura formalize a joint Chinese-Javanese military pact to expel the Dutch Company from Java.",
+        "id": "Tan Sin Jin (Singseh) dan Tumenggung Martapura meresmikan pakta militer gabungan Tionghoa-Jawa untuk mengusir VOC dari tanah Jawa."
+      },
+      "sources": [
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "capture-of-rembang-jepara",
+      "kind": "battle",
+      "when": "1741-07-27",
+      "at": "rembang",
+      "importance": 1,
+      "name": {
+        "en": "Fall of Rembang and Jepara",
+        "id": "Jatuhnya Rembang dan Jepara"
+      },
+      "participants": [
+        {
+          "faction": "chinese-rebels",
+          "role": "attacker",
+          "commanders": [
+            "Khe Pandjang",
+            "Singseh"
+          ],
+          "strength": 5000
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Bartholomeus Visscher"
+          ],
+          "strength": 400
+        }
+      ],
+      "summary": {
+        "en": "Allied forces capture the strategic Dutch naval shipyards at Rembang and storm the garrison of Jepara, seizing cannons and supplies.",
+        "id": "Pasukan gabungan merebut galangan kapal strategis VOC di Rembang dan menaklukkan garnisun Jepara, merampas meriam dan perbekalan."
+      },
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "kartasura-garrison-destroyed",
+      "kind": "battle",
+      "when": "1741-07-20",
+      "at": "kartasura",
+      "importance": 1,
+      "name": {
+        "en": "Destruction of the Kartasura Dutch Garrison",
+        "id": "Penghancuran Garnisun Belanda di Kartasura"
+      },
+      "participants": [
+        {
+          "faction": "mataram-madura-royalists",
+          "role": "attacker",
+          "commanders": [
+            "Sunan Pakubuwana II"
+          ],
+          "strength": 3500
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Johannes van Velsen"
+          ],
+          "strength": 100
+        }
+      ],
+      "summary": {
+        "en": "Pakubuwana II openly sides with the rebellion; royal troops storm the Dutch fortress in Kartasura, executing commander Van Velsen.",
+        "id": "Pakubuwana II secara terbuka memihak pemberontakan; prajurit keraton menyerbu benteng Belanda di Kartasura dan menghukum mati komandan Van Velsen."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "siege-of-semarang",
+      "kind": "battle",
+      "when": "1741-08-15",
+      "at": "semarang",
+      "importance": 1,
+      "name": {
+        "en": "The Siege of Semarang",
+        "id": "Pengepungan Besar Semarang"
+      },
+      "participants": [
+        {
+          "faction": "javanese-allies",
+          "role": "attacker",
+          "commanders": [
+            "Tumenggung Martapura"
+          ],
+          "strength": 20000
+        },
+        {
+          "faction": "chinese-rebels",
+          "role": "attacker",
+          "commanders": [
+            "Khe Pandjang",
+            "Singseh"
+          ],
+          "strength": 3500
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Bartholomeus Visscher",
+            "Abraham Roos"
+          ],
+          "strength": 3400
+        }
+      ],
+      "summary": {
+        "en": "Over 23,000 allied troops surround Semarang with 30 cannons. The desperate siege lasts months until maritime Dutch reinforcements break the blockade.",
+        "id": "Lebih dari 23.000 prajurit gabungan mengepung Semarang dengan 30 meriam. Pengepungan berlangsung berbulan-bulan hingga bala bantuan armada VOC mendobrak kepungan."
+      },
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "pakubuwana-defection",
+      "kind": "political",
+      "when": "1742-03-15",
+      "at": "kartasura",
+      "importance": 1,
+      "name": {
+        "en": "Pakubuwana II's Reversal",
+        "id": "Pembalikan Sikap Pakubuwana II"
+      },
+      "participants": [
+        {
+          "faction": "mataram-madura-royalists",
+          "role": "party",
+          "commanders": [
+            "Sunan Pakubuwana II"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Baron van Hohendorff"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Alarmed by Dutch naval victories, Pakubuwana II betrays his rebel allies and negotiates reconciliation with Captain Baron van Hohendorff.",
+        "id": "Terguncang oleh kemenangan laut Belanda, Pakubuwana II mengkhianati sekutu pemberontak dan berdamai dengan Kapten Baron van Hohendorff."
+      },
+      "sources": [
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "coronation-sunan-kuning",
+      "kind": "political",
+      "when": "1742-04-06",
+      "at": "grobogan",
+      "importance": 1,
+      "name": {
+        "en": "Coronation of Sunan Kuning",
+        "id": "Penobatan Sunan Kuning di Grobogan"
+      },
+      "participants": [
+        {
+          "faction": "chinese-rebels",
+          "role": "party",
+          "commanders": [
+            "Khe Pandjang",
+            "Singseh"
+          ]
+        },
+        {
+          "faction": "javanese-allies",
+          "role": "party",
+          "commanders": [
+            "Raden Mas Garendi",
+            "Tumenggung Martapura"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Denouncing Pakubuwana II's treason, the joint rebels crown 12-year-old Raden Mas Garendi as Sunan Kuning, legitimate monarch of Mataram.",
+        "id": "Mengecam pengkhianatan Pakubuwana II, laskar gabungan menobatkan pangeran berusia 12 tahun Raden Mas Garendi sebagai Sunan Kuning, penguasa sah Mataram."
+      },
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "sack-of-kartasura",
+      "kind": "battle",
+      "when": "1742-06-30",
+      "at": "kartasura",
+      "importance": 1,
+      "name": {
+        "en": "Fall and Sack of Keraton Kartasura",
+        "id": "Kejatuhan dan Pendudukan Keraton Kartasura"
+      },
+      "participants": [
+        {
+          "faction": "chinese-rebels",
+          "role": "attacker",
+          "commanders": [
+            "Khe Pandjang"
+          ],
+          "strength": 5500
+        },
+        {
+          "faction": "javanese-allies",
+          "role": "attacker",
+          "commanders": [
+            "Raden Mas Garendi",
+            "Kyai Mas Yudanagara"
+          ],
+          "strength": 10000
+        },
+        {
+          "faction": "mataram-madura-royalists",
+          "role": "defender",
+          "commanders": [
+            "Sunan Pakubuwana II"
+          ],
+          "strength": 2000
+        }
+      ],
+      "summary": {
+        "en": "Rebel forces storm Kartasura. Pakubuwana II and Hohendorff flee across the Bengawan Solo to Ponorogo, while Sunan Kuning takes the throne inside the palace.",
+        "id": "Pasukan pemberontak menyerbu Kartasura. Pakubuwana II dan Hohendorff melarikan diri melintasi Bengawan Solo ke Ponorogo, sementara Sunan Kuning menduduki takhta istana."
+      },
+      "sources": [
+        "remmelink-1994",
+        "ricklefs-1998"
+      ]
+    },
+    {
+      "id": "madurese-recapture-kartasura",
+      "kind": "battle",
+      "when": "1742-11-25",
+      "at": "kartasura",
+      "importance": 1,
+      "name": {
+        "en": "Madurese Recapture of Kartasura",
+        "id": "Penyerbuan Balasan Laskar Madura di Kartasura"
+      },
+      "participants": [
+        {
+          "faction": "mataram-madura-royalists",
+          "role": "attacker",
+          "commanders": [
+            "Pangeran Cakraningrat IV"
+          ],
+          "strength": 4500
+        },
+        {
+          "faction": "chinese-rebels",
+          "role": "defender",
+          "commanders": [
+            "Khe Pandjang"
+          ],
+          "strength": 3000
+        },
+        {
+          "faction": "javanese-allies",
+          "role": "defender",
+          "commanders": [
+            "Sunan Kuning"
+          ],
+          "strength": 4000
+        }
+      ],
+      "summary": {
+        "en": "Pangeran Cakraningrat IV storms Kartasura with his Madurese warriors, expelling Sunan Kuning and handing the gutted capital back to VOC control.",
+        "id": "Pangeran Cakraningrat IV menyerbu Kartasura dengan prajurit Madura, mengusir Sunan Kuning dan menyerahkan kembali keraton yang luluh lantak kepada VOC."
+      },
+      "sources": [
+        "ricklefs-1998",
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "punitive-treaty-1743",
+      "kind": "treaty",
+      "when": "1743-11-01",
+      "at": "kartasura",
+      "importance": 1,
+      "name": {
+        "en": "The Punitive Treaty of 1743",
+        "id": "Perjanjian Pasca-Perang 1743"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Hugo Verijsel"
+          ]
+        },
+        {
+          "faction": "mataram-madura-royalists",
+          "role": "party",
+          "commanders": [
+            "Sunan Pakubuwana II"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Restored to a ruined throne, Pakubuwana II signs a catastrophic treaty ceding the entirety of Java's north coast, Madura, and eastern territories to the VOC.",
+        "id": "Didudukkan kembali di atas takhta yang porak-poranda, Pakubuwana II menandatangani perjanjian yang menyerahkan seluruh pesisir utara Jawa, Madura, dan Jawa bagian timur kepada VOC."
+      },
+      "sources": [
+        "ricklefs-1998",
+        "remmelink-1994"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-ketegangan-gula-batavia",
+      "when": "1740-07-01/1740-09-30",
+      "dateLabel": {
+        "en": "July – September 1740",
+        "id": "Juli – September 1740"
+      },
+      "title": {
+        "en": "Phase 1: Early Tensions & Escalation in Batavia",
+        "id": "Fase 1: Ketegangan Awal & Eskalasi di Batavia"
+      },
+      "body": {
+        "en": "By mid-1740, the collapse of global sugar prices plunged Batavia's sugar plantations into catastrophic depression. Over 10,000 Chinese laborers in the surrounding Ommelanden faced starvation and unemployment. Anxious about civil unrest, Governor-General Adriaan Valckenier enacted harsh decrees on 25 July 1740, ordering the deportation of unemployed Chinese to cinnamon plantations in Ceylon (Sri Lanka).\n\nTens of thousands panicked as rumors spread that deportees were being cast overboard into the Java Sea. Outside the city walls, armed laborers formed clandestine brotherhoods under leaders like Khe Pandjang. In Batavia Castle on 26 September, Valckenier overrode Baron van Imhoff's moderate faction and decreed that any Chinese disorder would be met with exterminating force.",
+        "id": "Pada pertengahan 1740, jatuhnya harga gula di pasar global menjerumuskan perkebunan dan pabrik gula Batavia ke dalam krisis hebat. Lebih dari 10.000 buruh Tionghoa di kawasan pedalaman Ommelanden menghadapi ancaman kelaparan dan pengangguran. Cemas akan keresahan sosial, Gubernur Jenderal Adriaan Valckenier mengeluarkan maklumat keras pada 25 Juli 1740 untuk mendeportasi warga Tionghoa yang mencurigakan ke perkebunan kayu manis di Ceylon (Sri Lanka).\n\nKepanikan massal merebak seiring beredarnya desas-desus bahwa para tahanan yang diangkut ke kapal dibuang ke laut lepas. Di luar benteng kota, para buruh mulai mempersenjatai diri dan membentuk barisan perlawanan di bawah pimpinan tokoh seperti Khe Pandjang. Di Kasteel Batavia pada 26 September, Valckenier mengabaikan usulan moderat faksi Baron van Imhoff dan mengesahkan perintah penumpasan dengan kekerasan mematikan."
+      },
+      "focus": [
+        "batavia",
+        "tanah-abang"
+      ],
+      "media": [
+        "map-batavia-1740"
+      ],
+      "sources": [
+        "vermeulen-1938",
+        "blusse-1986"
+      ]
+    },
+    {
+      "id": "ch-2-tragedi-kali-angke",
+      "when": "1740-10-01/1740-10-31",
+      "dateLabel": {
+        "en": "October 1740",
+        "id": "Oktober 1740"
+      },
+      "title": {
+        "en": "Phase 2: The Batavia Massacre (Chinezenmoord)",
+        "id": "Fase 2: Puncak Pembantaian di Batavia"
+      },
+      "body": {
+        "en": "On 7 October 1740, rebel mill workers attacked Dutch military posts at Meester Cornelis and Tanah Abang, killing 50 soldiers. The next night, nearly 10,000 insurgents assailed the city walls but were repelled by heavy cannonades. Inside Batavia, terror and anti-Chinese hysteria consumed the colonial administration.\n\nOn 9 October, European soldiers under Captain Van Oosten and Lieutenant Van Suchtelen, aided by sailors and native auxiliary levies, began firing cannons into the Chinese quarter along Kali Besar. For two weeks, an unfettered pogrom raged: homes were torched, hospital patients slaughtered, and prisoners murdered in their cells. Over 10,000 Chinese perished; the waters of the Angke river were choked with bodies and stained crimson, earning it the enduring name Kali Angke (Red River).",
+        "id": "Pada 7 Oktober 1740, buruh pabrik gula menyerbu pos militer Belanda di Meester Cornelis dan Tanah Abang, menewaskan 50 serdadu. Malam berikutnya, hampir 10.000 pejuang mengepung gerbang kota tetapi dipukul mundur oleh dentuman meriam benteng. Di dalam tembok Batavia, kecurigaan dan histeria massa memuncak.\n\nPada 9 Oktober, serdadu VOC di bawah Kapten Van Oosten dan Letnan Van Suchtelen, dibantu para pelaut dan milisi pribumi, menembakkan meriam ke perkampungan Tionghoa di sepanjang Kali Besar. Selama dua pekan, pembantaian brutal berkecamuk: rumah-rumah dibakar, pasien rumah sakit dieksekusi, dan tahanan dibantai di sel mereka. Lebih dari 10.000 jiwa etnis Tionghoa tewas; aliran sungai dipenuhi mayat dan memerah oleh darah, melahirkan nama legendaris Kali Angke."
+      },
+      "focus": [
+        "batavia",
+        "kali-angke",
+        "tanah-abang"
+      ],
+      "media": [
+        "massacre-batavia-1740"
+      ],
+      "sources": [
+        "vermeulen-1938",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "ch-3-eksodus-ke-pesisir-timur",
+      "when": "1740-11-01/1741-03-31",
+      "dateLabel": {
+        "en": "November 1740 – March 1741",
+        "id": "November 1740 – Maret 1741"
+      },
+      "title": {
+        "en": "Phase 3: Exodus Along the North Coast",
+        "id": "Fase 3: Eksodus ke Pesisir Timur Jawa"
+      },
+      "body": {
+        "en": "Trapped between Bantenese border patrols and Dutch cavalry sweeps, thousands of surviving Chinese fighters led by Khe Pandjang broke through the encirclement at Bekasi and began an epic 500-kilometer march eastward along Java's northern coast (Pasisir).\n\nThe refugees received shelter and solidarity from peranakan communities in Cirebon, Tegal, and Pekalongan. In early 1741, Khe Pandjang and allied Javanese guerrillas under Kapten Ismail stormed the VOC fortress at Tegal. The local Javanese population, long resentful of Company trade monopolies and forced deliveries, welcomed the Chinese fighters as natural allies against colonial subjugation.",
+        "id": "Terkepung di antara patroli perbatasan Kesultanan Banten dan serbuan kavaleri Belanda, ribuan pejuang Tionghoa yang selamat di bawah pimpinan Khe Pandjang mendobrak kepungan di Bekasi dan memulai eksodus sejauh 500 kilometer ke arah timur menyusuri pesisir utara Jawa.\n\nIring-iringan pengungsi dan kombatan ini disambut hangat oleh komunitas peranakan di Cirebon, Tegal, dan Pekalongan. Pada awal 1741, Khe Pandjang bersama laskar Jawa pimpinan Kapten Ismail berhasil merebut benteng VOC di Tegal. Rakyat Jawa pesisir yang telah lama menderita akibat monopoli dagang VOC menyambut laskar Tionghoa sebagai sekutu sejati untuk menumbangkan kekuasaan kolonial."
+      },
+      "focus": [
+        "bekasi",
+        "cirebon",
+        "tegal",
+        "pekalongan"
+      ],
+      "sources": [
+        "daradjadi-2013",
+        "remmelink-1994"
+      ]
+    },
+    {
+      "id": "ch-4-lahirnya-koalisi-tionghoa-jawa",
+      "when": "1741-04-01/1741-06-15",
+      "dateLabel": {
+        "en": "April – June 1741",
+        "id": "April – Juni 1741"
+      },
+      "title": {
+        "en": "Phase 3: Formation of the Chinese-Javanese Coalition",
+        "id": "Fase 3: Terbentuknya Koalisi Tionghoa-Jawa"
+      },
+      "body": {
+        "en": "In the fertile plains of Grobogan and Demak, Chinese rebel leaders joined hands with powerful Javanese regents, choosing Tan Sin Jin (Singseh) as supreme military leader alongside Tumenggung Martapura of Grobogan. In the royal capital of Kartasura, Sunan Pakubuwana II secretly backed the uprising, providing 2,000 Spanish reals to finance anti-VOC operations.\n\nIn July 1741, the allied army struck with overwhelming fury. They captured Juwana, stormed the VOC naval shipyard at Rembang, and overran the Dutch fortress at Jepara. Across the Pasisir, VOC outposts collapsed like dominoes, isolating the Company's northern headquarters at Semarang.",
+        "id": "Di dataran subur Grobogan dan Demak, para pemimpin Tionghoa bersatu padu dengan para bupati berpengaruh Jawa, memilih Tan Sin Jin (Singseh) sebagai panglima tertinggi berdampingan dengan Tumenggung Martapura dari Grobogan. Di Keraton Kartasura, Sunan Pakubuwana II secara diam-diam mendukung perlawanan dan mengirimkan dana 2.000 real Spanyol untuk membiayai perang.\n\nPada Juli 1741, laskar gabungan melancarkan serangan serentak yang meluluhlantakkan pos-pos kolonial. Mereka merebut Juwana, membumihanguskan galangan kapal VOC di Rembang, dan menduduki benteng kompeni di Jepara. Pos-pos dagang Belanda runtuh beruntun, mengisolasi pusat kekuasaan VOC di Semarang."
+      },
+      "focus": [
+        "grobogan",
+        "demak",
+        "rembang",
+        "jepara",
+        "lasem"
+      ],
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "ch-5-pengepungan-semarang",
+      "when": "1741-06-16/1741-11-30",
+      "dateLabel": {
+        "en": "June – November 1741",
+        "id": "Juni – November 1741"
+      },
+      "title": {
+        "en": "Phase 3: The Great Siege of Semarang",
+        "id": "Fase 3: Pengepungan Besar Semarang"
+      },
+      "body": {
+        "en": "By July 1741, over 20,000 Javanese warriors and 3,500 Chinese fighters armed with 30 artillery pieces completely encircled Semarang. Inside the fortifications, Dutch commander Bartholomeus Visscher suffered a complete mental collapse, frantically running through the streets shouting that the city was lost.\n\nSimultaneously in Kartasura on 20 July, Pakubuwana II dropped his neutral facade: royal troops stormed the Dutch fort and massacred Captain Johannes van Velsen's garrison. However, in eastern Java, Pangeran Cakraningrat IV of Madura allied with the VOC and attacked Chinese towns. In November 1741, heavily armed Dutch naval convoys under Abraham Roos arrived from Batavia, deploying superior grape-shot artillery that broke the siege of Semarang.",
+        "id": "Menjelang akhir Juli 1741, lebih dari 20.000 prajurit Jawa dan 3.500 laskar Tionghoa bersenjatakan 30 meriam mengepung rapat kota benteng Semarang. Di dalam benteng, komandan VOC Bartholomeus Visscher mengalami gangguan kejiwaan dan histeris berteriak di jalanan bahwa kota telah jatuh.\n\nPada saat bersamaan di Kartasura pada 20 Juli, Pakubuwana II membuka topengnya: prajurit keraton menyerbu benteng Belanda dan menghabisi garnisun Kapten Van Velsen. Namun di timur, Pangeran Cakraningrat IV dari Madura memilih bersekutu dengan VOC dan menyerang pemukiman Tionghoa. Pada November 1741, armada bala bantuan VOC di bawah Abraham Roos tiba dari Batavia dengan artileri modern yang akhirnya mematahkan pengepungan Semarang."
+      },
+      "focus": [
+        "semarang",
+        "kartasura",
+        "madura-bangkalan"
+      ],
+      "sources": [
+        "remmelink-1994",
+        "ricklefs-1998"
+      ]
+    },
+    {
+      "id": "ch-6-pembalikan-pakubuwana-dan-sunan-kuning",
+      "when": "1741-12-01/1742-05-31",
+      "dateLabel": {
+        "en": "December 1741 – May 1742",
+        "id": "Desember 1741 – Mei 1742"
+      },
+      "title": {
+        "en": "Phase 4: The Royal Reversal and Rise of Sunan Kuning",
+        "id": "Fase 4: Pembalikan Sikap Sunan & Penobatan Sunan Kuning"
+      },
+      "body": {
+        "en": "Terrified by Dutch counter-offensives and Cakraningrat IV's advances, Sunan Pakubuwana II abruptly reversed course in early 1742, seeking forgiveness from the Company. In March 1742, Captain Baron van Hohendorff arrived at Kartasura to negotiate the Sunan's complete submission.\n\nOutraged by the monarch's betrayal, the allied Chinese and Javanese commanders renounced their allegiance to Pakubuwana II. On 6 April 1742 at Grobogan, they proclaimed Raden Mas Garendi—the 12-year-old grandson of King Amangkurat III—as the new sovereign of Mataram, styled Sunan Kuning ('The Yellow Sunan', signifying his Chinese and Javanese support). The rebel army now prepared to march on Kartasura itself.",
+        "id": "Gemetar melihat pembalasan militer Belanda dan pergerakan pasukan Cakraningrat IV, Sunan Pakubuwana II secara mendadak berbalik haluan pada awal 1742 dan memohon pengampunan kepada VOC. Pada Maret 1742, Kapten Baron van Hohendorff tiba di Kartasura untuk mendiktekan syarat ketundukan Sunan.\n\nMurka atas pengkhianatan raja tersebut, para panglima gabungan Tionghoa dan Jawa mencabut kesetiaan mereka. Pada 6 April 1742 di Grobogan, mereka menobatkan pangeran berusia 12 tahun Raden Mas Garendi—cucu Amangkurat III—sebagai penguasa baru Mataram bergelar Sunan Kuning (merujuk pada kulit kuning laskar Tionghoa pendukungnya). Laskar gabungan kini bersiap menyerbu Keraton Kartasura."
+      },
+      "focus": [
+        "kartasura",
+        "grobogan"
+      ],
+      "sources": [
+        "remmelink-1994",
+        "daradjadi-2013"
+      ]
+    },
+    {
+      "id": "ch-7-kejatuhan-keraton-kartasura",
+      "when": "1742-06-01/1742-12-31",
+      "dateLabel": {
+        "en": "June – December 1742",
+        "id": "Juni – Desember 1742"
+      },
+      "title": {
+        "en": "Phase 4: The Fall of Kartasura and Madurese Counter-Stroke",
+        "id": "Fase 4: Kejatuhan Keraton Kartasura & Serbuan Madura"
+      },
+      "body": {
+        "en": "On 30 June 1742, the allied army of Khe Pandjang and Sunan Kuning launched a ferocious assault on the walls of Keraton Kartasura. The palace defenses collapsed in hours. In panic, Sunan Pakubuwana II and Captain Von Hohendorff escaped on horseback through the rear gate, fleeing across the Bengawan Solo river into exile at Ponorogo.\n\nSunan Kuning was carried in triumph into the royal audience hall and enthroned as master of Mataram. However, his reign in the palace lasted barely five months. In November 1742, Pangeran Cakraningrat IV unleashed his seasoned Madurese warrior host upon Kartasura, storming the palace, expelling Sunan Kuning's forces toward Prambanan, and leaving the royal compound in blackened ruins.",
+        "id": "Pada 30 Juni 1742, laskar gabungan Khe Pandjang dan Sunan Kuning melancarkan serbuan umum ke tembok Keraton Kartasura. Pertahanan istana runtuh dalam hitungan jam. Dalam kepanikan luar biasa, Sunan Pakubuwana II bersama Kapten Von Hohendorff melarikan diri menunggang kuda melalui pintu belakang, menyeberangi Bengawan Solo menuju pengasingan di Ponorogo.\n\nSunan Kuning diarak penuh kemenangan ke bangsal keraton dan dinobatkan di atas singgasana Mataram. Namun, kekuasaannya di keraton hanya bertahan lima bulan. Pada November 1742, Pangeran Cakraningrat IV mengerahkan prajurit Madura menyerbu Kartasura, mengusir laskar Sunan Kuning ke arah Prambanan, dan meninggalkan kompleks keraton luluh lantak dalam abu reruntuhan."
+      },
+      "focus": [
+        "kartasura",
+        "ponorogo",
+        "madura-bangkalan"
+      ],
+      "sources": [
+        "remmelink-1994",
+        "ricklefs-1998"
+      ]
+    },
+    {
+      "id": "ch-8-akhir-perlawanan-dan-perjanjian-1743",
+      "when": "1743-01-01/1743-11-30",
+      "dateLabel": {
+        "en": "January – November 1743",
+        "id": "Januari – November 1743"
+      },
+      "title": {
+        "en": "Phase 4: The End of Resistance and the 1743 Treaty",
+        "id": "Fase 4: Akhir Perlawanan & Perjanjian 1743"
+      },
+      "body": {
+        "en": "Throughout 1743, coordinated Dutch and Madurese columns systematically hunted down remaining rebel strongholds across Central and East Java. Tan Sin Jin (Singseh) surrendered at Surabaya, while young Sunan Kuning was captured in late 1743 and permanently exiled to Ceylon. Khe Pandjang slipped through colonial lines into Bali, disappearing from history as a legendary folk hero.\n\nIn November 1743, the VOC restored Pakubuwana II to his devastated throne in Kartasura, but extracted a devastating price: the Sunan signed a treaty ceding the entire northern coast of Java, Madura, and eastern domains to Company sovereignty. Deemed spiritually defiled and cursed by the war, the ruined palace of Kartasura was abandoned in 1745 when Pakubuwana II relocated his court east to Surakarta, setting the stage for the subsequent Java succession conflicts.",
+        "id": "Sepanjang 1743, operasi gabungan VOC dan laskar Madura menyisir dan memadamkan kantong-kantong perlawanan terakhir di Jawa Tengah dan Jawa Timur. Tan Sin Jin (Singseh) menyerah di Surabaya, sementara Sunan Kuning tertawan pada akhir 1743 dan diasingkan selamanya ke Ceylon. Khe Pandjang berhasil meloloskan diri ke Bali, mengakhiri kisahnya sebagai pahlawan rakyat legendaris.\n\nPada November 1743, VOC mendudukkan kembali Pakubuwana II di atas takhtanya yang hancur, namun dengan bayaran yang sangat mahal: Sunan dipaksa menandatangani perjanjian yang menyerahkan seluruh pesisir utara Jawa, Madura, dan wilayah timur kepada VOC. Dianggap telah hilang tuahnya akibat perang saudara berdarah, Keraton Kartasura ditinggalkan pada 1745 saat Pakubuwana II memindahkan ibu kotanya ke Surakarta—membuka babak baru perseteruan takhta yang kelak bermuara pada Perjanjian Giyanti."
+      },
+      "focus": [
+        "kartasura",
+        "surabaya",
+        "kudus",
+        "lasem"
+      ],
+      "sources": [
+        "ricklefs-1998",
+        "remmelink-1994"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "vermeulen-1938",
+      "type": "book",
+      "citation": "Vermeulen, Johannes Theodorus. De Chineezen te Batavia en de troebelen van 1740. Leiden: Eduard IJdo, 1938 (Indonesian ed. Kaum Tionghoa di Batavia dan Huru-Hara 1740. Jakarta: Komunitas Bambu, 2010)."
+    },
+    {
+      "id": "daradjadi-2013",
+      "type": "book",
+      "citation": "Daradjadi. Geger Pacinan 1740–1743: Persekutuan Tionghoa-Jawa Melawan VOC. Jakarta: Penerbit Buku Kompas, 2013."
+    },
+    {
+      "id": "remmelink-1994",
+      "type": "book",
+      "citation": "Remmelink, Willem. The Chinese War and the Collapse of the Javanese State, 1725–1743. Leiden: KITLV Press, 1994."
+    },
+    {
+      "id": "ricklefs-1998",
+      "type": "book",
+      "citation": "Ricklefs, M.C. The Seen and Unseen Worlds in Java, 1726–1749: History, Literature and Islam in the Court of Pakubuwana II. Honolulu: University of Hawai'i Press, 1998."
+    },
+    {
+      "id": "blusse-1986",
+      "type": "book",
+      "citation": "Blussé, Leonard. Strange Company: Chinese Settlers, Mestizo Women and the Dutch in VOC Batavia. Dordrecht: Foris Publications, 1986."
+    }
+  ],
+  "media": [
+    {
+      "id": "massacre-batavia-1740",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1740_Batavia_massacre.jpg",
+      "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1740_Batavia_massacre.jpg?width=400",
+      "alt": {
+        "en": "Contemporary 18th-century Dutch engraving depicting the bombardment and massacre of Chinese residents in Batavia in October 1740.",
+        "id": "Lukisan cukil tembaga Belanda abad ke-18 yang menggambarkan penembakan meriam dan pembantaian warga Tionghoa di Batavia pada Oktober 1740."
+      },
+      "caption": {
+        "en": "Contemporary engraving depicting the 1740 Batavia massacre (Chinezenmoord) along the canals of the city.",
+        "id": "Cukilan tembaga kontemporer yang menggambarkan pembantaian Batavia 1740 (Chinezenmoord) di sepanjang kanal kota."
+      },
+      "date": "1740",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1740_Batavia_massacre.jpg"
+    },
+    {
+      "id": "map-batavia-1740",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tableau_de_la_Partie_de_Batavia,_ou_s%27est_fait_proprement_le_terrible_Massacre_des_Chinois,_le_9_Octob._1740.jpg",
+      "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tableau_de_la_Partie_de_Batavia,_ou_s%27est_fait_proprement_le_terrible_Massacre_des_Chinois,_le_9_Octob._1740.jpg?width=400",
+      "alt": {
+        "en": "Historical map of Batavia showing the sections of the city where the October 1740 massacre took place.",
+        "id": "Peta historis kota Batavia yang memperlihatkan bagian-bagian kota tempat terjadinya pembantaian Oktober 1740."
+      },
+      "caption": {
+        "en": "Plan of the city of Batavia marking the sites of the Chinese quarters and the massacre of 9 October 1740.",
+        "id": "Denah kota Batavia yang menandai lokasi perkampungan Tionghoa dan pembantaian 9 Oktober 1740."
+      },
+      "date": "1740",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tableau_de_la_Partie_de_Batavia,_ou_s%27est_fait_proprement_le_terrible_Massacre_des_Chinois,_le_9_Octob._1740.jpg"
+    }
+  ]
+}
