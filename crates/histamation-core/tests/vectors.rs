@@ -124,10 +124,14 @@ fn time_vectors() {
 /* *.frames.json                                                               */
 /* -------------------------------------------------------------------------- */
 
-const FRAME_VECTORS: [(&str, &str); 5] = [
+const FRAME_VECTORS: [(&str, &str); 6] = [
     (
         "test-vectors/austro-prussian-1866.frames.json",
         "data/campaigns/austro-prussian-1866.json",
+    ),
+    (
+        "test-vectors/giyanti-1755.frames.json",
+        "data/campaigns/giyanti-1755.json",
     ),
     (
         "test-vectors/java-war-1825.frames.json",

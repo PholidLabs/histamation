@@ -109,11 +109,11 @@ CI (`.github/workflows/ci.yml`) runs all of the above plus the Rust suite on eve
 | Campaign | File | Key Highlights |
 |---|---|---|
 | **The Java War** *(1825–1830)* | [`data/campaigns/java-war-1825.json`](data/campaigns/java-war-1825.json) | 5 factions, 34 places, 9 dynamic entities, 43 events, 38 chapters. Bilingual Indonesian/English narrative based on Peter Carey's research. Demonstrates guerrilla warfare, ambushes, negotiations, and the colonial Dutch *Benteng Stelsel* fort lines. |
+| **The Treaty of Giyanti** *(1755)* | [`data/campaigns/giyanti-1755.json`](data/campaigns/giyanti-1755.json) | 4 factions, 20 places, 4 entities, 12 events, 8 chapters. Bilingual English/Indonesian narrative covering the Third Javanese War of Succession: Van Imhoff's insult, the alliance with Raden Mas Said, the VOC catastrophe at the Bogowonto River, Hartingh's secret summit at Pedagangan, the partition of Mataram at Giyanti, the cultural accord at Jatisari, and the founding of the Keraton Yogyakarta. |
 | **Napoleon's Invasion of Russia** *(1812)* | [`data/campaigns/napoleon-russia-1812.json`](data/campaigns/napoleon-russia-1812.json) | Classic campaign showing the Grande Armée's advance to Moscow and grueling winter retreat with Minard-style force strength counters. |
 | **The Waterloo Campaign** *(1815)* | [`data/campaigns/waterloo-1815.json`](data/campaigns/waterloo-1815.json) | 3 factions, 16 places, 7 entities, 16 events, 8 chapters. Bilingual English/Indonesian narrative covering the Sambre crossing, Quatre-Bras, Ligny, the retreat in the mud, Hougoumont, Plancenoit, the defeat of the Imperial Guard, and Napoleon's final fall. |
 | **The Austro-Prussian War** *(1866)* | [`data/campaigns/austro-prussian-1866.json`](data/campaigns/austro-prussian-1866.json) | 3 factions, 28 places, 8 entities, 16 events, 10 chapters. Bilingual English/Indonesian narrative covering the Seven Weeks' War: Moltke's railway mobilization, Trautenau, Náchod, the decisive clash of 450,000 men at Königgrätz (Sadowa), the race to the Danube, and Bismarck's peace of Nikolsburg. |
 | **Null Island Fixture** | [`data/campaigns/fixtures/null-island.json`](data/campaigns/fixtures/null-island.json) | Synthetic test dataset designed to exercise edge cases, track interpolation, and diagnostic warnings (`W115`). |
-
 ---
 
 ## 📂 Repository Architecture

@@ -1,0 +1,1788 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "giyanti-1755",
+    "version": "0.1.0",
+    "title": {
+      "en": "The Treaty of Giyanti, 1755",
+      "id": "Perjanjian Giyanti, 1755"
+    },
+    "subtitle": {
+      "en": "The partition of the Mataram Sultanate and the birth of Yogyakarta, 1746–1755",
+      "id": "Pembagian Kerajaan Mataram dan lahirnya Kasultanan Yogyakarta, 1746–1755"
+    },
+    "description": {
+      "en": "The Third Javanese War of Succession (1746–1757) and the landmark diplomatic treaty that partitioned the Mataram Sultanate (*palihan nagari*). Following Governor-General van Imhoff's humiliation of Prince Mangkubumi over land in Sukawati, Mangkubumi launched an eight-year insurrection against the Dutch East India Company (VOC) and the compliant court in Surakarta. After the destruction of a VOC column at the Bogowonto River in 1751 and a bitter rift between Mangkubumi and Raden Mas Said, VOC Governor Nicolaas Hartingh pursued secret back-channel diplomacy. On 13 February 1755 at Desa Giyanti, the treaty was signed: Mangkubumi became Sultan Hamengkubuwana I of the newly created Kasultanan Ngayogyakarta Hadiningrat, while Pakubuwana III retained the Kasunanan Surakarta Hadiningrat.",
+      "id": "Perang Takhta Jawa Ketiga (1746–1757) dan perjanjian diplomatik bersejarah yang membelah Kesultanan Mataram (*palihan nagari*). Menyusul penghinaan Gubernur Jenderal Van Imhoff terhadap Pangeran Mangkubumi terkait tanah lungguh di Sukawati, Mangkubumi melancarkan perlawanan gerilya selama delapan tahun melawan VOC dan keraton Surakarta. Setelah kehancuran pasukan VOC di Sungai Bogowonto pada 1751 dan perpecahan antara Mangkubumi dengan Raden Mas Said, Gubernur VOC Nicolaas Hartingh menempuh jalur diplomasi rahasia. Pada 13 Februari 1755 di Desa Giyanti, perjanjian ditandatangani: Mangkubumi dinobatkan sebagai Sultan Hamengkubuwana I dari Kasultanan Ngayogyakarta Hadiningrat, sementara Pakubuwana III memimpin Kasunanan Surakarta Hadiningrat."
+    },
+    "contentWarning": {
+      "en": "Describes 18th-century warfare, ambushes, decapitations of combatants, dynastic fratricide, and colonial partition.",
+      "id": "Menggambarkan peperangan abad ke-18, sergapan gerilya, pemenggalan korban tempur, perselisihan keluarga istana, dan pemecahan wilayah oleh kekuasaan kolonial."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "updated": "2026-10-09",
+    "timeline": {
+      "extent": "1746-05-01/1756-10-31",
+      "focus": "1746-05-15/1755-03-31"
+    },
+    "map": {
+      "center": [
+        110.5,
+        -7.5
+      ],
+      "zoom": 8.5,
+      "pitch": 40,
+      "bearing": 0,
+      "bounds": [
+        108.5,
+        -8.5,
+        112.5,
+        -6.5
+      ],
+      "terrain": {
+        "exaggeration": 1.5
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "mangkubumi",
+      "name": {
+        "en": "Forces of Prince Mangkubumi",
+        "id": "Pasukan Pangeran Mangkubumi"
+      },
+      "shortName": {
+        "en": "Mangkubumi",
+        "id": "Mangkubumi"
+      },
+      "color": "#8B1E1E",
+      "description": {
+        "en": "The rebel army of Prince Mangkubumi (later Sultan Hamengkubuwana I), comprising loyal princes, regional bupatis from Sukawati and Grobogan, Islamic clerics, and local levies who rejected VOC dominance.",
+        "id": "Laskar perlawanan Pangeran Mangkubumi (kelak Sultan Hamengkubuwana I), terdiri atas para pangeran setia, bupati daerah Sukawati dan Grobogan, kalangan ulama santri, serta laskar rakyat yang menolak dominasi VOC."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "babad-giyanti"
+      ]
+    },
+    {
+      "id": "sambernyawa",
+      "name": {
+        "en": "Guerrillas of Raden Mas Said (Sambernyawa)",
+        "id": "Laskar Raden Mas Said (Pangeran Sambernyawa)"
+      },
+      "shortName": {
+        "en": "Sambernyawa",
+        "id": "Sambernyawa"
+      },
+      "color": "#C0392B",
+      "description": {
+        "en": "The fierce, mobile cavalry and infantry guerrillas under Prince Sambernyawa ('Reaper of Souls', later Mangkunegara I). Initially allied with Mangkubumi, he broke away in 1752 and fought all parties until the 1757 Treaty of Salatiga.",
+        "id": "Laskar kavaleri dan infanteri gerilya pimpinan Raden Mas Said ('Pangeran Sambernyawa', kelak Adipati Mangkunegara I). Awalnya bersekutu dengan Mangkubumi, ia memisahkan diri pada 1752 dan bertempur mandiri hingga Perjanjian Salatiga 1757."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "carey-2008"
+      ]
+    },
+    {
+      "id": "voc",
+      "name": {
+        "en": "Dutch East India Company (VOC)",
+        "id": "Kongsi Dagang Hindia Timur Belanda (VOC)"
+      },
+      "shortName": {
+        "en": "VOC",
+        "id": "VOC"
+      },
+      "color": "#1F3A5F",
+      "description": {
+        "en": "The armed forces and administration of the Dutch East India Company on Java's northeast coast, fielding European troops, naval artillery, and indigenous auxiliaries from Madura, Bugis, and Maluku.",
+        "id": "Kekuatan militer dan administrasi VOC di Pesisir Timur Laut Jawa, mengerahkan serdadu Eropa, artileri laut, serta laskar bantu pribumi dari Madura, Bugis, dan Maluku."
+      },
+      "sources": [
+        "hartingh-memorie",
+        "louw-1889"
+      ]
+    },
+    {
+      "id": "surakarta-court",
+      "name": {
+        "en": "Sunanate of Surakarta (Mataram)",
+        "id": "Kasunanan Surakarta Hadiningrat"
+      },
+      "shortName": {
+        "en": "Surakarta",
+        "id": "Surakarta"
+      },
+      "color": "#B08D2E",
+      "description": {
+        "en": "The royal court of Mataram at Surakarta under Susuhunan Pakubuwana II and subsequently Pakubuwana III, heavily indebted to and diplomatically constrained by the VOC.",
+        "id": "Pemerintahan keraton Mataram di Surakarta di bawah Susuhunan Pakubuwana II dan selanjutnya Pakubuwana III, yang terikat utang politik dan perjanjian protektorat dengan VOC."
+      },
+      "sources": [
+        "soekanto-1952",
+        "poerwokoesoemo-1985"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "surakarta",
+      "name": {
+        "en": "Surakarta",
+        "id": "Surakarta"
+      },
+      "modernName": {
+        "en": "Surakarta (Solo), Central Java",
+        "id": "Surakarta (Solo), Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.8277,
+        -7.5778
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Keraton Surakarta Hadiningrat, established by Pakubuwana II in 1745 after the sack of Kartasura.",
+        "id": "Keraton Surakarta Hadiningrat, didirikan oleh Pakubuwana II pada 1745 setelah keruntuhan Kartasura."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "kartasura",
+      "name": {
+        "en": "Kartasura",
+        "id": "Kartasura"
+      },
+      "modernName": {
+        "en": "Kartasura, Sukoharjo, Central Java",
+        "id": "Kartasura, Sukoharjo, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.7431,
+        -7.5542
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "The ruined capital of the Mataram Empire, abandoned after the Chinese War (Geger Pacinan) of 1742.",
+        "id": "Bekas ibu kota Kesultanan Mataram yang runtuh dan ditinggalkan akibat Geger Pacinan tahun 1742."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "sukawati",
+      "name": {
+        "en": "Sukawati (Sragen)",
+        "id": "Sukawati (Sragen)"
+      },
+      "modernName": {
+        "en": "Sragen, Central Java",
+        "id": "Sragen, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.0219,
+        -7.4283
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Contested apanage land of 3,000 cacah promised to Prince Mangkubumi, triggering his rebellion when cancelled.",
+        "id": "Tanah lungguh 3.000 cacah yang dijanjikan kepada Pangeran Mangkubumi, memicu perlawanan saat dibatalkan."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "babad-giyanti"
+      ]
+    },
+    {
+      "id": "semarang",
+      "name": {
+        "en": "Semarang",
+        "id": "Semarang"
+      },
+      "modernName": {
+        "en": "Semarang, Central Java",
+        "id": "Semarang, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.4208,
+        -6.9667
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Headquarters of the VOC Governor of Java's Northeast Coast (Gouvernement van Java's Noordoostkust).",
+        "id": "Pusat pemerintahan Gubernur VOC untuk Pesisir Timur Laut Jawa."
+      },
+      "sources": [
+        "hartingh-memorie"
+      ]
+    },
+    {
+      "id": "giyanti",
+      "name": {
+        "en": "Desa Giyanti",
+        "id": "Desa Giyanti"
+      },
+      "modernName": {
+        "en": "Dusun Kerten, Jantiharjo, Karanganyar, Central Java",
+        "id": "Dusun Kerten, Kelurahan Jantiharjo, Karanganyar, Jawa Tengah"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        110.9708,
+        -7.62
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Village east of Surakarta where the historic Treaty of Giyanti was signed on 13 February 1755.",
+        "id": "Desa di tenggara Karanganyar tempat ditandatanganinya Perjanjian Giyanti pada 13 Februari 1755."
+      },
+      "sources": [
+        "soekanto-1952",
+        "poerwokoesoemo-1985"
+      ]
+    },
+    {
+      "id": "pedagangan",
+      "name": {
+        "en": "Pedagangan",
+        "id": "Pedagangan"
+      },
+      "modernName": {
+        "en": "Desa Pedagangan, Grobogan, Central Java",
+        "id": "Desa Pedagangan, Grobogan, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.92,
+        -7.085
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Location in Grobogan where Nicolaas Hartingh and Prince Mangkubumi held secret summit negotiations in September 1754.",
+        "id": "Desa di Grobogan tempat pertemuan rahasia antara Nicolaas Hartingh dan Pangeran Mangkubumi pada September 1754."
+      },
+      "sources": [
+        "hartingh-memorie",
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "kabanaran",
+      "name": {
+        "en": "Kabanaran",
+        "id": "Kabanaran"
+      },
+      "modernName": {
+        "en": "Bantul / Sewon, Special Region of Yogyakarta",
+        "id": "Bantul / Sewon, D.I. Yogyakarta"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.355,
+        -7.868
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Mangkubumi's southern rebel headquarters where he was proclaimed Susuhunan (Sunan Kabanaran) in December 1749.",
+        "id": "Pusat pertahanan Mangkubumi di selatan tempat ia dinobatkan sebagai Susuhunan (Sunan Kabanaran) pada Desember 1749."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "babad-giyanti"
+      ]
+    },
+    {
+      "id": "jenar",
+      "name": {
+        "en": "Jenar (Bogowonto River)",
+        "id": "Jenar (Sungai Bogowonto)"
+      },
+      "modernName": {
+        "en": "Jenar, Purworejo, Central Java",
+        "id": "Jenar, Purworejo, Jawa Tengah"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        109.985,
+        -7.785
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Site of the Battle of Jenar (October 1751) where Mangkubumi's forces annihilated Captain de Clerck's VOC column.",
+        "id": "Lokasi Pertempuran Jenar (Oktober 1751) di mana pasukan Mangkubumi membinasakan pasukan VOC pimpinan Kapten De Clerck."
+      },
+      "sources": [
+        "louw-1889",
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "yogyakarta",
+      "name": {
+        "en": "Keraton Yogyakarta",
+        "id": "Keraton Yogyakarta"
+      },
+      "modernName": {
+        "en": "Kraton Ngayogyakarta Hadiningrat, Special Region of Yogyakarta",
+        "id": "Kraton Ngayogyakarta Hadiningrat, D.I. Yogyakarta"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.3644,
+        -7.8053
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Palace of Sultan Hamengkubuwana I founded in the forest of Beringan in 1755 and occupied in October 1756.",
+        "id": "Istana Sultan Hamengkubuwana I yang didirikan di Hutan Beringan pada 1755 dan resmi ditempati pada Oktober 1756."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "poerwokoesoemo-1985"
+      ]
+    },
+    {
+      "id": "jatisari",
+      "name": {
+        "en": "Jatisari",
+        "id": "Jatisari"
+      },
+      "modernName": {
+        "en": "Jatisari, Jatingaleh / Lebak, Central Java",
+        "id": "Jatisari / Lebak, Jawa Tengah"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        110.985,
+        -7.635
+      ],
+      "certainty": "approximate",
+      "rank": 2,
+      "notes": {
+        "en": "Site where Pakubuwana III and Sultan Hamengkubuwana I met on 15 February 1755 to divide cultural customs and court dress.",
+        "id": "Tempat pertemuan Pakubuwana III dan Hamengkubuwana I pada 15 Februari 1755 untuk membagi tata cara adat dan busana keraton."
+      },
+      "sources": [
+        "babad-giyanti",
+        "soekanto-1952"
+      ]
+    },
+    {
+      "id": "demak",
+      "name": {
+        "en": "Demak",
+        "id": "Demak"
+      },
+      "modernName": {
+        "en": "Demak, Central Java",
+        "id": "Demak, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.64,
+        -6.8944
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Ancient spiritual sultanate seat; major theater of fighting between Mangkubumi and VOC in 1748–1749.",
+        "id": "Bekas pusat kesultanan Islam tertua; medan pertempuran sengit antara Mangkubumi dan VOC pada 1748–1749."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "grobogan",
+      "name": {
+        "en": "Grobogan",
+        "id": "Grobogan"
+      },
+      "modernName": {
+        "en": "Purwodadi, Grobogan, Central Java",
+        "id": "Purwodadi, Grobogan, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.9167,
+        -7.0333
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Fertile inland district and strong bastion of Mangkubumi's rebel network under Tumenggung Martapura.",
+        "id": "Daerah pedalaman subur dan basis pertahanan gerilya Mangkubumi di bawah Tumenggung Martapura."
+      },
+      "sources": [
+        "babad-giyanti"
+      ]
+    },
+    {
+      "id": "madiun",
+      "name": {
+        "en": "Madiun",
+        "id": "Madiun"
+      },
+      "modernName": {
+        "en": "Madiun, East Java",
+        "id": "Madiun, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.5239,
+        -7.6298
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Important eastern mancanagara regency that rallied early to Prince Mangkubumi and Raden Mas Said.",
+        "id": "Wilayah mancanagara timur penting yang sejak awal mendukung perlawanan Pangeran Mangkubumi dan Raden Mas Said."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "ponorogo",
+      "name": {
+        "en": "Ponorogo",
+        "id": "Ponorogo"
+      },
+      "modernName": {
+        "en": "Ponorogo, East Java",
+        "id": "Ponorogo, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.4678,
+        -7.8689
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Site near Kasatriyan where Mangkubumi and Raden Mas Said had their ideological and military rupture in 1752.",
+        "id": "Daerah dekat Kasatriyan tempat terjadinya perpecahan kepemimpinan antara Mangkubumi dan Raden Mas Said pada 1752."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "carey-2008"
+      ]
+    },
+    {
+      "id": "banyumas",
+      "name": {
+        "en": "Banyumas",
+        "id": "Banyumas"
+      },
+      "modernName": {
+        "en": "Banyumas, Central Java",
+        "id": "Banyumas, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        109.2944,
+        -7.5186
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Western mancanagara center under Tumenggung Yudanegara, who served as primary mediator between Mangkubumi and Hartingh.",
+        "id": "Pusat mancanagara barat di bawah Tumenggung Yudanegara, yang bertindak sebagai perantara diplomatik Mangkubumi dan Hartingh."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "hartingh-memorie"
+      ]
+    },
+    {
+      "id": "salatiga",
+      "name": {
+        "en": "Salatiga",
+        "id": "Salatiga"
+      },
+      "modernName": {
+        "en": "Salatiga, Central Java",
+        "id": "Salatiga, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.5084,
+        -7.3305
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Strategic pass town between Semarang and Surakarta; later site of the 1757 peace settlement with Raden Mas Said.",
+        "id": "Kota persinggahan strategis antara Semarang dan Surakarta; kelak menjadi tempat Perjanjian Salatiga 1757."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "kudus",
+      "name": {
+        "en": "Kudus",
+        "id": "Kudus"
+      },
+      "modernName": {
+        "en": "Kudus, Central Java",
+        "id": "Kudus, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.8444,
+        -6.8048
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Coastal commercial town on the northern highway connecting Semarang to eastern ports.",
+        "id": "Kota dagang pesisir utara yang menghubungkan Semarang ke pelabuhan-pelabuhan timur."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "rembang",
+      "name": {
+        "en": "Rembang",
+        "id": "Rembang"
+      },
+      "modernName": {
+        "en": "Rembang, Central Java",
+        "id": "Rembang, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.34,
+        -6.7083
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "VOC coastal naval dockyard and supply depot for northern operations.",
+        "id": "Pangkalan galangan kapal VOC dan pusat logistik maritim pesisir utara."
+      },
+      "sources": [
+        "hartingh-memorie"
+      ]
+    },
+    {
+      "id": "pekalongan",
+      "name": {
+        "en": "Pekalongan",
+        "id": "Pekalongan"
+      },
+      "modernName": {
+        "en": "Pekalongan, Central Java",
+        "id": "Pekalongan, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        109.6753,
+        -6.8886
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Western coastal road post linking Batavia supplies to Semarang.",
+        "id": "Pos jalan pesisir barat yang menghubungkan pasokan Batavia ke Semarang."
+      },
+      "sources": [
+        "hartingh-memorie"
+      ]
+    },
+    {
+      "id": "mataram-kotagede",
+      "name": {
+        "en": "Kotagede (Mataram)",
+        "id": "Kotagede (Mataram)"
+      },
+      "modernName": {
+        "en": "Kotagede, Special Region of Yogyakarta",
+        "id": "Kotagede, D.I. Yogyakarta"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        110.3998,
+        -7.8281
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Cradle of the Mataram dynasty housing royal ancestor tombs of Panembahan Senapati and Ki Ageng Pemanahan.",
+        "id": "Cikal bakal dinasti Mataram yang memuat makam leluhur pendiri kerajaan, Panembahan Senapati dan Ki Ageng Pemanahan."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "carey-2008"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "mangkubumi-army",
+      "kind": "unit",
+      "name": {
+        "en": "Prince Mangkubumi's Army",
+        "id": "Laskar Pangeran Mangkubumi"
+      },
+      "faction": "mangkubumi",
+      "commanders": [
+        "Pangeran Mangkubumi (Sultan Hamengkubuwana I)",
+        "Tumenggung Suranegara",
+        "Pangeran Natakusuma"
+      ],
+      "description": {
+        "en": "The main army commanded by Prince Mangkubumi. Elite cavalry, crack musketeers, and devoted partisans who maintained mobile operations across central Java.",
+        "id": "Pasukan utama pimpinan Pangeran Mangkubumi. Kavaleri terlatih, penembak jitu, dan laskar setia yang melancarkan perang manuver di Jawa Tengah."
+      },
+      "track": [
+        {
+          "when": "1746-05-19",
+          "at": "surakarta",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Departs Surakarta palace after dispute",
+            "id": "Meninggalkan istana Surakarta usai perselisihan"
+          }
+        },
+        {
+          "when": "1746-05-25/1746-06-15",
+          "at": "sukawati",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Allies with Raden Mas Said at Sukawati",
+            "id": "Bersekutu dengan Raden Mas Said di Sukawati"
+          }
+        },
+        {
+          "when": "1748-06-10/1748-08-20",
+          "at": "demak",
+          "strength": 7000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Campaigns in Demak and coastal plains",
+            "id": "Operasi militer di Demak dan dataran pesisir"
+          }
+        },
+        {
+          "when": "1749-12-12/1750-02-15",
+          "at": "kabanaran",
+          "strength": 10000,
+          "certainty": "exact",
+          "label": {
+            "en": "Proclaimed Susuhunan (Sunan Kabanaran)",
+            "id": "Dinobatkan sebagai Susuhunan (Sunan Kabanaran)"
+          }
+        },
+        {
+          "when": "1751-10-25",
+          "at": "jenar",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Crushes VOC forces at Battle of Jenar",
+            "id": "Menghancurkan pasukan VOC di Pertempuran Jenar"
+          }
+        },
+        {
+          "when": "1752-08-15/1752-09-01",
+          "at": "ponorogo",
+          "strength": 6500,
+          "certainty": "approximate",
+          "label": {
+            "en": "Rupture with Raden Mas Said at Kasatriyan",
+            "id": "Perpecahan dengan Raden Mas Said di Kasatriyan"
+          }
+        },
+        {
+          "when": "1754-09-22/1754-09-24",
+          "at": "pedagangan",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Secret summit with Nicolaas Hartingh",
+            "id": "Perundingan rahasia dengan Nicolaas Hartingh"
+          }
+        },
+        {
+          "when": "1755-02-13",
+          "at": "giyanti",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Signs Treaty of Giyanti as Sultan",
+            "id": "Menandatangani Perjanjian Giyanti sebagai Sultan"
+          }
+        },
+        {
+          "when": "1755-02-15",
+          "at": "jatisari",
+          "strength": 4500,
+          "certainty": "exact",
+          "label": {
+            "en": "Cultural division accord with Pakubuwana III",
+            "id": "Pertemuan pembagian kebudayaan dengan Pakubuwana III"
+          }
+        },
+        {
+          "when": "1755-03-13",
+          "at": "kabanaran",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Proclaims Hadeging Nagari Ngayogyakarta",
+            "id": "Deklarasi Hadeging Nagari Ngayogyakarta"
+          }
+        },
+        {
+          "when": "1756-10-07",
+          "at": "yogyakarta",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Enters newly built Keraton Yogyakarta",
+            "id": "Memasuki Keraton Ngayogyakarta yang baru selesai"
+          }
+        }
+      ],
+      "sources": [
+        "ricklefs-1974",
+        "babad-giyanti"
+      ]
+    },
+    {
+      "id": "sambernyawa-forces",
+      "kind": "unit",
+      "name": {
+        "en": "Raden Mas Said's Guerrillas (Sambernyawa)",
+        "id": "Laskar Raden Mas Said (Pangeran Sambernyawa)"
+      },
+      "faction": "sambernyawa",
+      "commanders": [
+        "Raden Mas Said (Pangeran Sambernyawa)",
+        "Kudanawarsa"
+      ],
+      "description": {
+        "en": "Mobile strike force renowned for lightning ambushes and cavalry skirmishing. Operates independently after breaking with Mangkubumi in 1752.",
+        "id": "Laskar gerilya lincah yang terkenal dengan sergapan kilat dan pertempuran kavaleri. Bertempur mandiri usai berpisah dengan Mangkubumi pada 1752."
+      },
+      "track": [
+        {
+          "when": "1746-05-25/1746-06-15",
+          "at": "sukawati",
+          "strength": 1500,
+          "certainty": "exact",
+          "label": {
+            "en": "Allies with Mangkubumi; married to Ratu Bendara",
+            "id": "Bersekutu dengan Mangkubumi; dinikahkan dengan Ratu Bendara"
+          }
+        },
+        {
+          "when": "1748-06-10/1748-08-20",
+          "at": "grobogan",
+          "strength": 2500,
+          "certainty": "approximate",
+          "label": {
+            "en": "Raids Dutch supply routes in Grobogan",
+            "id": "Menyerang jalur perbekalan VOC di Grobogan"
+          }
+        },
+        {
+          "when": "1749-12-12/1750-02-15",
+          "at": "madiun",
+          "strength": 3500,
+          "certainty": "approximate",
+          "label": {
+            "en": "Serves as Patih and commander for Sunan Kabanaran",
+            "id": "Menjabat Patih dan panglima perang Sunan Kabanaran"
+          }
+        },
+        {
+          "when": "1752-08-15/1752-09-01",
+          "at": "ponorogo",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Breaks with Mangkubumi over supreme leadership",
+            "id": "Pecah kongsi dengan Mangkubumi memperebutkan kepemimpinan"
+          }
+        },
+        {
+          "when": "1755-02-13",
+          "at": "sukawati",
+          "strength": 3500,
+          "certainty": "approximate",
+          "label": {
+            "en": "Rejects Giyanti treaty; continues three-way war",
+            "id": "Menolak Perjanjian Giyanti; meneruskan perlawanan segitiga"
+          }
+        },
+        {
+          "when": "1756-10-07",
+          "at": "salatiga",
+          "strength": 3000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Pressures VOC lines until 1757 settlement",
+            "id": "Terus menekan garis VOC hingga perdamaian 1757"
+          }
+        }
+      ],
+      "sources": [
+        "ricklefs-1974",
+        "carey-2008"
+      ]
+    },
+    {
+      "id": "voc-expeditionary",
+      "kind": "unit",
+      "name": {
+        "en": "VOC Northeast Coast Forces",
+        "id": "Pasukan Ekspedisi VOC Pesisir"
+      },
+      "faction": "voc",
+      "commanders": [
+        "Governor Nicolaas Hartingh",
+        "Baron van Hohendorff",
+        "Captain J.J. de Clerck"
+      ],
+      "description": {
+        "en": "VOC garrisons and field columns operating from Semarang. Transitioned from brute military suppression under Van Imhoff to diplomatic partition under Nicolaas Hartingh.",
+        "id": "Garnisun dan detasemen lapangan VOC yang beroperasi dari Semarang. Beralih dari penumpasan militer keras di era Van Imhoff ke diplomasi pembagian wilayah di era Nicolaas Hartingh."
+      },
+      "track": [
+        {
+          "when": "1746-05-19/1746-06-01",
+          "at": "semarang",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Van Imhoff tours Java coast",
+            "id": "Van Imhoff menginspeksi pesisir Jawa"
+          }
+        },
+        {
+          "when": "1749-12-11/1749-12-15",
+          "at": "surakarta",
+          "strength": 1800,
+          "certainty": "exact",
+          "label": {
+            "en": "Hohendorff secures cession of Mataram from dying Sunan",
+            "id": "Hohendorff mengamankan penyerahan kedaulatan Mataram"
+          }
+        },
+        {
+          "when": "1751-10-25",
+          "at": "jenar",
+          "strength": 2200,
+          "certainty": "exact",
+          "label": {
+            "en": "De Clerck column destroyed at Bogowonto River",
+            "id": "Pasukan Kapten De Clerck dihancurkan di Sungai Bogowonto"
+          }
+        },
+        {
+          "when": "1754-09-22/1754-09-24",
+          "at": "pedagangan",
+          "strength": 800,
+          "certainty": "exact",
+          "label": {
+            "en": "Hartingh negotiates secret partition pact",
+            "id": "Hartingh merundingkan draf pembagian kerajaan"
+          }
+        },
+        {
+          "when": "1755-02-13",
+          "at": "giyanti",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Hartingh signs Treaty of Giyanti as VOC plenipotentiary",
+            "id": "Hartingh menandatangani Perjanjian Giyanti mewakili VOC"
+          }
+        },
+        {
+          "when": "1755-03-13",
+          "at": "semarang",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Returns to coastal headquarters after diplomatic triumph",
+            "id": "Kembali ke markas Semarang usai keberhasilan diplomasi"
+          }
+        }
+      ],
+      "sources": [
+        "hartingh-memorie",
+        "louw-1889"
+      ]
+    },
+    {
+      "id": "surakarta-court-guard",
+      "kind": "unit",
+      "name": {
+        "en": "Surakarta Royal Guard",
+        "id": "Prajurit Kasunanan Surakarta"
+      },
+      "faction": "surakarta-court",
+      "commanders": [
+        "Sunan Pakubuwana II",
+        "Sunan Pakubuwana III",
+        "Patih Pringgalaya"
+      ],
+      "description": {
+        "en": "Regiments of the Kraton Surakarta. Weakened by internal palace factions, they relied on VOC bayonets for survival until the Giyanti compromise.",
+        "id": "Prajurit Keraton Surakarta Hadiningrat. Melemah akibat faksi-faksi internal istana, sangat bergantung pada bantuan VOC hingga kompromi Giyanti tercapai."
+      },
+      "track": [
+        {
+          "when": "1746-05-19/1749-12-11",
+          "at": "surakarta",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Pakubuwana II cedes empire to VOC on deathbed",
+            "id": "Pakubuwana II menyerahkan takhta kepada VOC menjelang wafat"
+          }
+        },
+        {
+          "when": "1749-12-15/1754-11-04",
+          "at": "surakarta",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Pakubuwana III assents to Hartingh's partition terms",
+            "id": "Pakubuwana III menyetujui draf pembagian Hartingh"
+          }
+        },
+        {
+          "when": "1755-02-13",
+          "at": "giyanti",
+          "strength": 2000,
+          "certainty": "exact",
+          "label": {
+            "en": "Royal delegation ratifies Treaty of Giyanti",
+            "id": "Delegasi kerajaan meratifikasi Perjanjian Giyanti"
+          }
+        },
+        {
+          "when": "1755-02-15",
+          "at": "jatisari",
+          "strength": 2200,
+          "certainty": "exact",
+          "label": {
+            "en": "Pakubuwana III embraces Hamengkubuwana I at Jatisari",
+            "id": "Pakubuwana III bertemu Sultan Hamengkubuwana I di Jatisari"
+          }
+        },
+        {
+          "when": "1756-10-07",
+          "at": "surakarta",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Peace established in Kasunanan Surakarta",
+            "id": "Perdamaian ditegakkan di Kasunanan Surakarta"
+          }
+        }
+      ],
+      "sources": [
+        "soekanto-1952",
+        "babad-giyanti"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "van-imhoff-dispute",
+      "kind": "political",
+      "when": "1746-05-19",
+      "at": "surakarta",
+      "importance": 1,
+      "name": {
+        "en": "Van Imhoff's Dispute with Mangkubumi",
+        "id": "Perselisihan Van Imhoff dengan Pangeran Mangkubumi"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "belligerent",
+          "commanders": [
+            "Gustaaf Willem van Imhoff"
+          ]
+        },
+        {
+          "faction": "mangkubumi",
+          "role": "belligerent",
+          "commanders": [
+            "Pangeran Mangkubumi"
+          ]
+        },
+        {
+          "faction": "surakarta-court",
+          "role": "party",
+          "commanders": [
+            "Sunan Pakubuwana II",
+            "Patih Pringgalaya"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "VOC Governor-General Van Imhoff publicly insults Prince Mangkubumi at Surakarta and revokes his promised fief in Sukawati, prompting Mangkubumi to leave the court in revolt.",
+        "id": "Gubernur Jenderal VOC Van Imhoff menghina Pangeran Mangkubumi di Surakarta dan mencabut hak tanah lungguh Sukawati yang dijanjikan, mendorong Mangkubumi angkat senjata."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "babad-giyanti"
+      ]
+    },
+    {
+      "id": "sukawati-compact",
+      "kind": "treaty",
+      "when": "1746-06-01",
+      "at": "sukawati",
+      "importance": 2,
+      "name": {
+        "en": "The Sukawati Rebel Compact",
+        "id": "Persekutuan Perlawanan Sukawati"
+      },
+      "participants": [
+        {
+          "faction": "mangkubumi",
+          "role": "party",
+          "commanders": [
+            "Pangeran Mangkubumi"
+          ]
+        },
+        {
+          "faction": "sambernyawa",
+          "role": "party",
+          "commanders": [
+            "Raden Mas Said"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Mangkubumi unites with Raden Mas Said at Sukawati, sealing the rebel alliance with the marriage of his daughter Ratu Bendara to Said.",
+        "id": "Pangeran Mangkubumi bergabung dengan Raden Mas Said di Sukawati, mempererat persekutuan dengan menikahkan putrinya, Ratu Bendara, kepada Raden Mas Said."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "cession-of-mataram",
+      "kind": "treaty",
+      "when": "1749-12-11",
+      "at": "surakarta",
+      "importance": 1,
+      "name": {
+        "en": "Treaty of Cession of Mataram",
+        "id": "Penyerahan Kedaulatan Mataram kepada VOC"
+      },
+      "participants": [
+        {
+          "faction": "surakarta-court",
+          "role": "party",
+          "commanders": [
+            "Sunan Pakubuwana II"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Baron van Hohendorff"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "On his deathbed, a despairing Sunan Pakubuwana II signs a contract ceding full sovereignty of the Mataram Empire to the Dutch East India Company.",
+        "id": "Dalam keadaan sakit parah, Sunan Pakubuwana II menandatangani perjanjian penyerahan kedaulatan penuh Kesultanan Mataram kepada VOC."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "soekanto-1952"
+      ]
+    },
+    {
+      "id": "coronation-pakubuwana-iii",
+      "kind": "political",
+      "when": "1749-12-15",
+      "at": "surakarta",
+      "importance": 1,
+      "name": {
+        "en": "Coronation of Pakubuwana III",
+        "id": "Penobatan Sunan Pakubuwana III"
+      },
+      "participants": [
+        {
+          "faction": "surakarta-court",
+          "role": "party",
+          "commanders": [
+            "Sunan Pakubuwana III"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Baron van Hohendorff"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Baron van Hohendorff installs the 17-year-old Raden Mas Suryadi as Susuhunan Pakubuwana III of Surakarta under strict VOC vassalage.",
+        "id": "Baron van Hohendorff melantik Raden Mas Suryadi yang berusia 17 tahun menjadi Susuhunan Pakubuwana III di Surakarta di bawah naungan protektorat VOC."
+      },
+      "sources": [
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "proclamation-sunan-kabanaran",
+      "kind": "political",
+      "when": "1749-12-12",
+      "at": "kabanaran",
+      "importance": 1,
+      "name": {
+        "en": "Proclamation of Sunan Kabanaran",
+        "id": "Penobatan Susuhunan Kabanaran"
+      },
+      "participants": [
+        {
+          "faction": "mangkubumi",
+          "role": "party",
+          "commanders": [
+            "Pangeran Mangkubumi"
+          ]
+        },
+        {
+          "faction": "sambernyawa",
+          "role": "party",
+          "commanders": [
+            "Raden Mas Said"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "At Kabanaran in southern Mataram, rebel chiefs, princes, and Muslim clerics acclaim Pangeran Mangkubumi as the rightful Susuhunan of Mataram.",
+        "id": "Di Kabanaran, para bangsawan perlawanan dan ulama memproklamasikan Pangeran Mangkubumi sebagai Susuhunan Mataram yang sah (Sunan Kabanaran)."
+      },
+      "sources": [
+        "babad-giyanti",
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "battle-of-jenar",
+      "kind": "battle",
+      "when": "1751-10-25",
+      "at": "jenar",
+      "importance": 1,
+      "name": {
+        "en": "Battle of Jenar (Bogowonto River)",
+        "id": "Pertempuran Jenar (Sungai Bogowonto)"
+      },
+      "participants": [
+        {
+          "faction": "mangkubumi",
+          "role": "attacker",
+          "commanders": [
+            "Pangeran Mangkubumi",
+            "Tumenggung Suranegara"
+          ],
+          "strength": 8000
+        },
+        {
+          "faction": "voc",
+          "role": "defender",
+          "commanders": [
+            "Captain J.J. de Clerck"
+          ],
+          "strength": 2200
+        }
+      ],
+      "summary": {
+        "en": "Mangkubumi ambushes and completely destroys a premier VOC field column at the Bogowonto River. Captain De Clerck is slain, forcing VOC leadership to reconsider military victory.",
+        "id": "Pasukan Mangkubumi menyergap dan membinasakan kolom ekspedisi VOC di tepi Sungai Bogowonto. Kapten De Clerck tewas, memaksa VOC mengakui ketidakmungkinan menang secara militer."
+      },
+      "sources": [
+        "louw-1889",
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "kasatriyan-rupture",
+      "kind": "political",
+      "when": "1752-08-20",
+      "at": "ponorogo",
+      "importance": 2,
+      "name": {
+        "en": "The Rebel Rupture at Kasatriyan",
+        "id": "Perpecahan Laskar di Kasatriyan"
+      },
+      "participants": [
+        {
+          "faction": "mangkubumi",
+          "role": "belligerent",
+          "commanders": [
+            "Pangeran Mangkubumi"
+          ]
+        },
+        {
+          "faction": "sambernyawa",
+          "role": "belligerent",
+          "commanders": [
+            "Raden Mas Said"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Raden Mas Said demands co-sovereignty and paramount military authority. Mangkubumi refuses, shattering the rebel coalition into rival camps.",
+        "id": "Raden Mas Said menuntut kekuasaan setara dan otoritas militer tertinggi. Mangkubumi menolak, memecah persekutuan perlawanan menjadi kubu yang saling bersaing."
+      },
+      "sources": [
+        "carey-2008",
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "hartingh-diplomacy-opens",
+      "kind": "political",
+      "when": "1754-03-15",
+      "at": "semarang",
+      "importance": 2,
+      "name": {
+        "en": "Hartingh's Diplomatic Initiative",
+        "id": "Prakarsa Diplomasi Nicolaas Hartingh"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "negotiator",
+          "commanders": [
+            "Nicolaas Hartingh"
+          ]
+        },
+        {
+          "faction": "mangkubumi",
+          "role": "negotiator",
+          "commanders": [
+            "Tumenggung Yudanegara"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Newly installed VOC Governor Nicolaas Hartingh abandons war in favor of secret negotiations with Mangkubumi through Tumenggung Yudanegara of Banyumas.",
+        "id": "Gubernur VOC Nicolaas Hartingh yang baru dilantik menghentikan upaya militer dan membuka perundingan rahasia dengan Mangkubumi melalui Bupati Banyumas Tumenggung Yudanegara."
+      },
+      "sources": [
+        "hartingh-memorie"
+      ]
+    },
+    {
+      "id": "pedagangan-summit",
+      "kind": "treaty",
+      "when": "1754-09-23",
+      "at": "pedagangan",
+      "importance": 1,
+      "name": {
+        "en": "Secret Summit of Pedagangan",
+        "id": "Perundingan Rahasia Pedagangan"
+      },
+      "participants": [
+        {
+          "faction": "voc",
+          "role": "negotiator",
+          "commanders": [
+            "Nicolaas Hartingh"
+          ]
+        },
+        {
+          "faction": "mangkubumi",
+          "role": "negotiator",
+          "commanders": [
+            "Pangeran Mangkubumi",
+            "Pangeran Natakusuma"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Hartingh and Mangkubumi meet in a tent at Pedagangan (Grobogan). Mangkubumi agrees to take the title of Sultan, partition Mataram into two realms, and share court regalia.",
+        "id": "Hartingh dan Mangkubumi bertemu di tenda perundingan di Pedagangan. Mangkubumi bersedia memakai gelar Sultan, membagi Mataram menjadi dua kerajaan, dan membagi pusaka keraton."
+      },
+      "sources": [
+        "hartingh-memorie",
+        "ricklefs-1974"
+      ]
+    },
+    {
+      "id": "signing-treaty-of-giyanti",
+      "kind": "treaty",
+      "when": "1755-02-13",
+      "at": "giyanti",
+      "importance": 1,
+      "name": {
+        "en": "Signing of the Treaty of Giyanti",
+        "id": "Penandatanganan Perjanjian Giyanti"
+      },
+      "participants": [
+        {
+          "faction": "mangkubumi",
+          "role": "party",
+          "commanders": [
+            "Sultan Hamengkubuwana I"
+          ]
+        },
+        {
+          "faction": "voc",
+          "role": "party",
+          "commanders": [
+            "Nicolaas Hartingh"
+          ]
+        },
+        {
+          "faction": "surakarta-court",
+          "role": "party",
+          "commanders": [
+            "Sunan Pakubuwana III"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "The historic Treaty of Giyanti is ratified at Desa Giyanti. The Mataram Empire is officially divided: Hamengkubuwana I takes the western half (Yogyakarta), and Pakubuwana III the eastern half (Surakarta).",
+        "id": "Perjanjian bersejarah Giyanti diratifikasi di Desa Giyanti. Mataram resmi dibelah dua (*palihan nagari*): Hamengkubuwana I memerintah bagian barat (Yogyakarta), dan Pakubuwana III bagian timur (Surakarta)."
+      },
+      "sources": [
+        "soekanto-1952",
+        "poerwokoesoemo-1985"
+      ]
+    },
+    {
+      "id": "jatisari-cultural-division",
+      "kind": "treaty",
+      "when": "1755-02-15",
+      "at": "jatisari",
+      "importance": 1,
+      "name": {
+        "en": "The Cultural Partition at Jatisari",
+        "id": "Perjanjian Pembagian Kebudayaan Jatisari"
+      },
+      "participants": [
+        {
+          "faction": "mangkubumi",
+          "role": "party",
+          "commanders": [
+            "Sultan Hamengkubuwana I"
+          ]
+        },
+        {
+          "faction": "surakarta-court",
+          "role": "party",
+          "commanders": [
+            "Sunan Pakubuwana III"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Pakubuwana III and Hamengkubuwana I meet in reconciliation at Jatisari. They divide Javanese royal regalia, court attire, keris styles, gamelan tunes, and classical dance forms.",
+        "id": "Pakubuwana III dan Hamengkubuwana I bertemu di Jatisari untuk membagi pusaka, gaya busana adat, corak keris, gending gamelan, dan tari keraton antara Surakarta dan Yogyakarta."
+      },
+      "sources": [
+        "babad-giyanti",
+        "soekanto-1952"
+      ]
+    },
+    {
+      "id": "proclamation-hadeging-nagari",
+      "kind": "political",
+      "when": "1755-03-13",
+      "at": "kabanaran",
+      "importance": 1,
+      "name": {
+        "en": "Proclamation of Hadeging Nagari Ngayogyakarta",
+        "id": "Proklamasi Hadeging Nagari Ngayogyakarta"
+      },
+      "participants": [
+        {
+          "faction": "mangkubumi",
+          "role": "party",
+          "commanders": [
+            "Sultan Hamengkubuwana I"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Sultan Hamengkubuwana I officially proclaims the birth of Kasultanan Ngayogyakarta Hadiningrat, selecting the forest of Beringan as the site of his permanent capital.",
+        "id": "Sultan Hamengkubuwana I memproklamasikan berdirinya Kasultanan Ngayogyakarta Hadiningrat dan menetapkan Hutan Beringan sebagai lokasi ibu kota istananya."
+      },
+      "sources": [
+        "poerwokoesoemo-1985",
+        "ricklefs-1974"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-the-insult-at-surakarta",
+      "when": "1746-05/1746-06",
+      "dateLabel": {
+        "en": "May – June 1746",
+        "id": "Mei – Juni 1746"
+      },
+      "title": {
+        "en": "The Insult at Surakarta",
+        "id": "Penghinaan di Surakarta"
+      },
+      "body": {
+        "en": "In May 1746, Governor-General Gustaaf Willem van Imhoff arrived at the newly established Keraton Surakarta. The Mataram Empire was exhausted following the Chinese War, and Sunan Pakubuwana II had promised his capable half-brother, Prince Mangkubumi, an apanage fief of 3,000 peasant households in Sukawati (Sragen) for quelling Raden Mas Said's rebellion.\n\nVan Imhoff harshly intervened, demanding the direct lease of Java's north coast and berating Pakubuwana II for his generosity. At the urging of Chief Minister Patih Pringgalaya, the grant was revoked. Publicly humiliated before the assembled court, Prince Mangkubumi quietly walked out of Surakarta on 19 May 1746, rode east to Sukawati, and formed a fighting alliance with his nephew Raden Mas Said.",
+        "id": "Pada Mei 1746, Gubernur Jenderal Gustaaf Willem van Imhoff tiba di Keraton Surakarta yang baru didirikan. Mataram sedang lunglai usai Geger Pacinan, dan Sunan Pakubuwana II telah menjanjikan tanah lungguh 3.000 cacah di Sukawati (Sragen) kepada adiknya yang cakap, Pangeran Mangkubumi, atas jasanya meredam pemberontakan Raden Mas Said.\n\nVan Imhoff campur tangan secara kasar, menuntut sewa pesisir utara dan mencela Pakubuwana II di depan umum karena terlalu bermurah hati. Atas hasutan Patih Pringgalaya, janji tanah lungguh dibatalkan. Merasa dihina martabatnya di depan para bangsawan, Pangeran Mangkubumi meninggalkan istana pada 19 Mei 1746, bergerak ke timur menuju Sukawati, dan bersumpah angkat senjata bersama keponakannya, Raden Mas Said."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "babad-giyanti"
+      ],
+      "focus": [
+        "surakarta",
+        "kartasura",
+        "sukawati"
+      ],
+      "media": [
+        "babad-giyanti-manuscript"
+      ]
+    },
+    {
+      "id": "ch-2-rebellion-and-cession",
+      "when": "1749-11/1749-12",
+      "dateLabel": {
+        "en": "November – December 1749",
+        "id": "November – Desember 1749"
+      },
+      "title": {
+        "en": "Cession and Dual Accessions",
+        "id": "Penyerahan Kedaulatan dan Dua Penobatan"
+      },
+      "body": {
+        "en": "By late 1749, Mangkubumi and Raden Mas Said commanded immense popular support across Grobogan, Demak, Madiun, and Sukawati. In Surakarta, Sunan Pakubuwana II fell mortally ill. Fearing the imminent collapse of his dynasty, the dying monarch placed his kingdom into the hands of the VOC. On 11 December 1749, Baron van Hohendorff obtained the Sunan's signature on a treaty transferring the supreme sovereignty of Mataram to the Dutch East India Company.\n\nFour days later, Pakubuwana II died. The VOC crowned his 17-year-old son as Sunan Pakubuwana III in Surakarta. However, three days earlier at his rebel camp in Kabanaran, southern Mataram, Mangkubumi had already been proclaimed legitimate Susuhunan by royal relatives and prominent Islamic clerics, setting up two rival monarchs claiming the Mataram throne.",
+        "id": "Menjelang akhir 1749, perlawanan Mangkubumi dan Raden Mas Said telah meluas dari Grobogan, Demak, Madiun hingga Sukawati. Di Surakarta, Sunan Pakubuwana II jatuh sakit parah. Dicekam kekhawatiran akan keruntuhan kerajaannya, sang Sunan menyerahkan nasib takhta kepada Kompeni. Pada 11 Desember 1749, Baron van Hohendorff memperoleh tanda tangan perjanjian penyerahan kedaulatan Mataram kepada VOC.\n\nEmpat hari berselang, Pakubuwana II wafat. VOC menobatkan putranya yang masih belia sebagai Sunan Pakubuwana III di Surakarta. Namun, tiga hari sebelumnya di perkemahan Kabanaran (selatan Yogyakarta), Pangeran Mangkubumi telah diangkat oleh para pangeran dan ulama sebagai Susuhunan Mataram yang sah (Sunan Kabanaran). Dua matahari kini terbit di langit tanah Jawa."
+      },
+      "sources": [
+        "ricklefs-1974",
+        "soekanto-1952"
+      ],
+      "focus": [
+        "surakarta",
+        "kabanaran",
+        "demak",
+        "grobogan",
+        "madiun"
+      ]
+    },
+    {
+      "id": "ch-3-the-clash-at-bogowonto",
+      "when": "1751-10/1751-11",
+      "dateLabel": {
+        "en": "October – November 1751",
+        "id": "Oktober – November 1751"
+      },
+      "title": {
+        "en": "Disaster at the Bogowonto River",
+        "id": "Kehancuran VOC di Sungai Bogowonto"
+      },
+      "body": {
+        "en": "Determined to crush the rebellion once and for all, the VOC mobilized a formidable field force under Captain J.J. de Clerck, reinforced by auxiliary troops and court levies under Patih Pringgalaya. In late October 1751, the Dutch expedition pushed into Bagelen toward the Bogowonto River near Jenar.\n\nMangkubumi's commander, Tumenggung Suranegara, lured the Dutch column into marshy terrain along the swollen river before springing a devastating ambush. In hours of intense hand-to-hand combat, Mangkubumi's warriors broke the Dutch defensive squares. Captain De Clerck was decapitated on the battlefield, his officers slaughtered, and his artillery captured. The catastrophic defeat convinced the VOC Council in Batavia that Mangkubumi could never be eliminated by military force alone.",
+        "id": "Bertekad menumpas perlawanan secara tuntas, VOC mengerahkan ekspedisi militer besar di bawah Kapten J.J. de Clerck, diperkuat pasukan bantu dan prajurit keraton pimpinan Patih Pringgalaya. Pada akhir Oktober 1751, pasukan Belanda merangsek ke Bagelen mendekati Sungai Bogowonto di wilayah Jenar.\n\nPanglima Mangkubumi, Tumenggung Suranegara, memancing kolom Belanda ke medan berlumpur di tepi sungai yang meluap sebelum melancarkan sergapan dahsyat. Dalam pertempuran jarak dekat yang sengit, laskar Mangkubumi meremukkan formasi bertahan Belanda. Kapten De Clerck tewas terpenggal di medan tempur, para perwiranya binasa, dan meriam-meriam VOC dirampas. Kehancuran telak ini menyadarkan Batavia bahwa Mangkubumi mustahil ditundukkan dengan kekuatan senjata semata."
+      },
+      "sources": [
+        "louw-1889",
+        "ricklefs-1974"
+      ],
+      "focus": [
+        "jenar",
+        "kabanaran",
+        "semarang"
+      ]
+    },
+    {
+      "id": "ch-4-the-rebel-rift",
+      "when": "1752-05/1752-09",
+      "dateLabel": {
+        "en": "May – September 1752",
+        "id": "Mei – September 1752"
+      },
+      "title": {
+        "en": "The Rupture at Kasatriyan",
+        "id": "Perpecahan di Kasatriyan"
+      },
+      "body": {
+        "en": "Despite their military triumphs, discord erupted within the rebel coalition. Raden Mas Said, renowned as Pangeran Sambernyawa ('Reaper of Souls') for his audacious cavalry tactics, grew resentful of playing second fiddle to his uncle. Said demanded equal status as an independent ruler and paramount commander of the armed forces.\n\nIn mid-1752 at Kasatriyan near Ponorogo, a heated council ended in complete fracture. Mangkubumi insisted on undivided royal authority. Said withdrew his seasoned veteran fighters, divorced Mangkubumi's daughter Ratu Bendara, and waged a ferocious independent war against the VOC, Surakarta, and Mangkubumi simultaneously. The split fundamentally altered the strategic balance of Java.",
+        "id": "Di tengah rentetan kemenangan militer, keretakan hebat membayangi kubu perlawanan. Raden Mas Said, yang berjuluk Pangeran Sambernyawa karena keberanian dan ketangkasannya memimpin kavaleri gerilya, menolak terus berada di bawah bayang-bayang pamannya. Said menuntut status sederajat sebagai penguasa berdaulat dan panglima perang tertinggi.\n\nPada pertengahan 1752 di Kasatriyan dekat Ponorogo, musyawarah berakhir dengan perpecahan total. Mangkubumi mempertahankan prinsip kekuasaan tunggal monarki. Raden Mas Said menarik pasukannya, menceraikan Ratu Bendara (putri Mangkubumi), dan melancarkan perang mandiri melawan VOC, Surakarta, maupun Mangkubumi sekaligus. Perpecahan ini mengubah peta kekuatan secara mendasar di Pulau Jawa."
+      },
+      "sources": [
+        "carey-2008",
+        "ricklefs-1974"
+      ],
+      "focus": [
+        "ponorogo",
+        "sukawati",
+        "madiun"
+      ]
+    },
+    {
+      "id": "ch-5-secret-diplomacy",
+      "when": "1754-01/1754-08",
+      "dateLabel": {
+        "en": "January – August 1754",
+        "id": "Januari – Agustus 1754"
+      },
+      "title": {
+        "en": "Hartingh's Back-Channel Diplomacy",
+        "id": "Diplomasi Rahasia Nicolaas Hartingh"
+      },
+      "body": {
+        "en": "In early 1754, Nicolaas Hartingh assumed office as the VOC Governor of Java's Northeast Coast in Semarang. Fluent in Javanese, deeply attuned to local customs, and pragmatically opposed to endless war expenditures, Hartingh recognized that Mangkubumi was exhausted by war and threatened by Raden Mas Said's rogue forces.\n\nHartingh initiated secret correspondence through Tumenggung Yudanegara, the Bupati of Banyumas, and a respected Muslim trader named Seh Ibrahim. Messages dispatched through back-channels assured Mangkubumi that the Company was prepared to recognize his royal dignity and territory if he would agree to a lasting partition and peace.",
+        "id": "Pada awal 1754, Nicolaas Hartingh memangku jabatan Gubernur VOC untuk Pesisir Timur Laut Jawa di Semarang. Menguasai bahasa Jawa secara fasih, memahami adat istiadat setempat, dan enggan memboroskan kas VOC untuk perang berkepanjangan, Hartingh menyadari bahwa Mangkubumi telah letih berperang dan kini terancam oleh laskar liar Raden Mas Said.\n\nHartingh membuka saluran diplomasi rahasia melalui Bupati Banyumas Tumenggung Yudanegara dan saudagar muslim terpercaya Seh Ibrahim. Surat-menyurat rahasia itu meyakinkan Mangkubumi bahwa Kompeni bersedia mengakui kedaulatannya atas separuh wilayah Mataram asalkan tercipta perdamaian yang abadi."
+      },
+      "sources": [
+        "hartingh-memorie",
+        "ricklefs-1974"
+      ],
+      "focus": [
+        "semarang",
+        "banyumas",
+        "pekalongan",
+        "kudus",
+        "rembang"
+      ]
+    },
+    {
+      "id": "ch-6-the-pedagangan-summit",
+      "when": "1754-09/1754-11",
+      "dateLabel": {
+        "en": "September – November 1754",
+        "id": "September – November 1754"
+      },
+      "title": {
+        "en": "The Summit of Pedagangan",
+        "id": "Perundingan di Pedagangan"
+      },
+      "body": {
+        "en": "On 22 September 1754, Governor Hartingh and Prince Mangkubumi met face-to-face inside a pavilion tent at Desa Pedagangan in Grobogan. The talks were tense: Mangkubumi initially refused to surrender the title of Susuhunan, pointing to Cirebon as precedent for multiple sultans in one realm, while Hartingh insisted that two Sunans in Mataram would invite perpetual civil war.\n\nThe next day, a breakthrough was forged. Mangkubumi agreed to assume the royal title of Sultan rather than Susuhunan. In return, the Mataram realm would be partitioned equally (*palihan nagari*), the VOC would pay annual compensation for coastal leases, and half of the sacred court pusakas would be transferred to Mangkubumi. In November 1754, Sunan Pakubuwana III formally gave his assent from Surakarta.",
+        "id": "Pada 22 September 1754, Gubernur Hartingh dan Pangeran Mangkubumi bertemu langsung di tenda perundingan Desa Pedagangan, Grobogan. Suasana sempat tegang: Mangkubumi menolak melepas gelar Susuhunan dengan mencontohkan Kesultanan Cirebon yang memiliki lebih dari satu sultan, sedangkan Hartingh menegaskan bahwa dua Sunan di Mataram hanya akan melahirkan perang abadi.\n\nKeesokan harinya, tercapai titik temu. Mangkubumi sepakat memakai gelar Sultan alih-alih Susuhunan. Sebagai imbalan, wilayah Mataram dibagi dua sama rata (*palihan nagari*), VOC membayar kompensasi tahunan atas sewa pesisir, dan separuh pusaka keraton diserahkan kepada Mangkubumi. Pada November 1754, Sunan Pakubuwana III dari Surakarta mengirimkan surat persetujuan resmi."
+      },
+      "sources": [
+        "hartingh-memorie",
+        "ricklefs-1974"
+      ],
+      "focus": [
+        "pedagangan",
+        "grobogan",
+        "surakarta"
+      ]
+    },
+    {
+      "id": "ch-7-the-treaty-of-giyanti",
+      "when": "1755-01/1755-02",
+      "dateLabel": {
+        "en": "January – February 1755",
+        "id": "Januari – Februari 1755"
+      },
+      "title": {
+        "en": "The Treaty of Giyanti",
+        "id": "Perjanjian Giyanti"
+      },
+      "body": {
+        "en": "On 13 February 1755 (Kemis Kliwon, 29 Rabingulakir 1680 Anno Javanico), the delegations assembled at Desa Giyanti, southeast of Karanganyar. There, Nicolaas Hartingh as plenipotentiary of the VOC and Prince Mangkubumi signed the Treaty of Giyanti, witnessed by representatives of Sunan Pakubuwana III.\n\nThe treaty formally dissolved the unified empire of Mataram. Pakubuwana III retained the eastern half as Kasunanan Surakarta Hadiningrat, while Mangkubumi took the western half under the regal name Sri Sultan Hamengkubuwana I Senapati ing Ngalaga Sayidin Panatagama Kalifatullah.\n\nTwo days later, on 15 February 1755 at Jatisari (Lebak), Pakubuwana III and Sultan Hamengkubuwana I met in person. Embracing with tears of reconciliation, they concluded the cultural partition: Surakarta preserved the established court customs, while Yogyakarta adopted the classic Demak-Mataram styles for palace attire, keris sheaths, gamelan compositions, and court dance.",
+        "id": "Pada 13 Februari 1755 (Kemis Kliwon, 29 Rabingulakir 1680 Tahun Jawa), para delegasi berkumpul di Desa Giyanti, tenggara Karanganyar. Di tempat itu, Nicolaas Hartingh selaku komisioner VOC dan Pangeran Mangkubumi menandatangani naskah Perjanjian Giyanti, disaksikan oleh perwakilan Sunan Pakubuwana III.\n\nPerjanjian ini secara resmi membagi wilayah Kesultanan Mataram (*palihan nagari*). Pakubuwana III memerintah separuh wilayah timur sebagai Kasunanan Surakarta Hadiningrat, sementara Mangkubumi memerintah separuh barat dengan gelar Sri Sultan Hamengkubuwana I Senapati ing Ngalaga Sayidin Panatagama Kalifatullah.\n\nDua hari berselang, pada 15 Februari 1755 di Jatisari (Lebak), Pakubuwana III dan Sultan Hamengkubuwana I bertemu secara langsung. Dalam pertemuan penuh haru itu, disepakati pembagian budaya: Surakarta mempertahankan tata cara keraton yang ada, sedangkan Yogyakarta melestarikan corak klasik warisan Demak-Mataram dalam hal busana istana, warangka keris, gending gamelan, dan tari bedhaya."
+      },
+      "sources": [
+        "soekanto-1952",
+        "poerwokoesoemo-1985",
+        "babad-giyanti"
+      ],
+      "focus": [
+        "giyanti",
+        "jatisari",
+        "surakarta"
+      ],
+      "media": [
+        "monument-giyanti",
+        "map-central-java-1757"
+      ]
+    },
+    {
+      "id": "ch-8-the-birth-of-yogyakarta",
+      "when": "1755-03/1756-10",
+      "dateLabel": {
+        "en": "March 1755 – October 1756",
+        "id": "Maret 1755 – Oktober 1756"
+      },
+      "title": {
+        "en": "The Birth of Yogyakarta",
+        "id": "Lahirnya Kasultanan Yogyakarta"
+      },
+      "body": {
+        "en": "On 13 March 1755 (Kemis Pon, 29 Jumadilawal 1680 AJ), Sultan Hamengkubuwana I issued the royal declaration of Hadeging Nagari Ngayogyakarta Hadiningrat. For his permanent capital, he chose the sacred forest of Beringan between the Code and Winongo rivers, a strategic location nestled between Mount Merapi to the north and the Indian Ocean to the south.\n\nOver the following eighteen months, thousands of craftsmen and laborers cleared the forest and constructed the sprawling pavilions, fortifications, mosques, and water palaces of the Kraton. On 7 October 1756 (Kemis Pahing, 13 Sura 1682 AJ), Sultan Hamengkubuwana I and his court processed in grand state into the new Keraton Ngayogyakarta Hadiningrat, establishing the enduring cultural and spiritual capital of Yogyakarta.",
+        "id": "Pada 13 Maret 1755 (Kemis Pon, 29 Jumadilawal 1680 AJ), Sultan Hamengkubuwana I mengumumkan proklamasi Hadeging Nagari Ngayogyakarta Hadiningrat. Sebagai pusat pemerintahan abadi, Sultan memilih Hutan Beringan di antara Sungai Code dan Sungai Winongo—posisi kosmologis strategis di antara Gunung Merapi di utara dan Laut Selatan.\n\nSelama delapan belas bulan berikutnya, ribuan perajin dan prajurit membabat hutan dan membangun kompleks keraton, benteng baluwarti, masjid agung, dan taman air Tamansari. Pada 7 Oktober 1756 (Kemis Pahing, 13 Sura 1682 AJ), Sultan Hamengkubuwana I bersama keluarga istana secara resmi boyongan memasuki Keraton Ngayogyakarta Hadiningrat, menandai berdirinya pusat peradaban dan kebudayaan Jawa yang lestari hingga hari ini."
+      },
+      "sources": [
+        "poerwokoesoemo-1985",
+        "ricklefs-1974"
+      ],
+      "focus": [
+        "yogyakarta",
+        "mataram-kotagede",
+        "kabanaran"
+      ],
+      "media": [
+        "kraton-yogyakarta-pagelaran"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ricklefs-1974",
+      "type": "book",
+      "citation": "Ricklefs, M.C. Jogjakarta Under Sultan Mangkubumi 1749–1792: A History of the Division of Java. London: Oxford University Press, 1974."
+    },
+    {
+      "id": "soekanto-1952",
+      "type": "book",
+      "citation": "Soekanto, Dr. Sekitar Jogjakarta 1755–1825: Perjanjian Gianti - Perang Dipanagara. Djakarta: Mahabarata, 1952."
+    },
+    {
+      "id": "babad-giyanti",
+      "type": "book",
+      "citation": "Yasadipura I, Raden Ngabehi. Babad Giyanti. Surakarta, c. 1757–1803 (ed. Batavia: Balai Pustaka, 1937–1939)."
+    },
+    {
+      "id": "hartingh-memorie",
+      "type": "book",
+      "citation": "Hartingh, Nicolaas. Memorie van Overgave van den Gouverneur van Java's Noordoostkust Nicolaas Hartingh (1761). In J.K.J. de Jonge, De Opkomst van het Nederlandsch Gezag in Oost-Indie, vol. X. The Hague: Martinus Nijhoff, 1878."
+    },
+    {
+      "id": "carey-2008",
+      "type": "book",
+      "citation": "Carey, Peter. The Power of Prophecy: Prince Dipanagara and the End of an Old Order in Java, 1785–1855. Leiden: KITLV Press, 2008."
+    },
+    {
+      "id": "poerwokoesoemo-1985",
+      "type": "book",
+      "citation": "Poerwokoesoemo, Soedarisman. Kadipaten Pakualaman. Yogyakarta: Gadjah Mada University Press, 1985."
+    },
+    {
+      "id": "louw-1889",
+      "type": "book",
+      "citation": "Louw, P.J.F. De Derde Javaansche Successie-Oorlog (1749–1757). Batavia: Landsdrukkerij, 1889."
+    }
+  ],
+  "media": [
+    {
+      "id": "map-central-java-1757",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Central_Java_1757_after_Treaty_of_Giyanti.png",
+      "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Central_Java_1757_after_Treaty_of_Giyanti.png?width=400",
+      "alt": {
+        "en": "Map of Central Java in 1757 showing the territorial partition between Surakarta and Yogyakarta.",
+        "id": "Peta Jawa Bagian Tengah tahun 1757 yang menunjukkan pembagian wilayah antara Surakarta dan Yogyakarta."
+      },
+      "caption": {
+        "en": "Map of Central Java showing the partition of Mataram into Surakarta and Yogyakarta following the Treaty of Giyanti.",
+        "id": "Peta Jawa Bagian Tengah yang menunjukkan pembagian Mataram menjadi Surakarta dan Yogyakarta pasca-Perjanjian Giyanti."
+      },
+      "date": "1757",
+      "license": "CC-BY-SA-3.0",
+      "holder": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Central_Java_1757_after_Treaty_of_Giyanti.png"
+    },
+    {
+      "id": "monument-giyanti",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Karanganyar_Situs_Perjanjian_Giyanti_Bennylin_1.jpg",
+      "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Karanganyar_Situs_Perjanjian_Giyanti_Bennylin_1.jpg?width=400",
+      "alt": {
+        "en": "Stone monument with Javanese inscription commemorating the Treaty of Giyanti at Dusun Kerten, Karanganyar.",
+        "id": "Monumen batu berprasasti aksara Jawa memperingati Perjanjian Giyanti di Dusun Kerten, Karanganyar."
+      },
+      "caption": {
+        "en": "The historical monument at the site of the Treaty of Giyanti in Dusun Kerten, Karanganyar, Central Java.",
+        "id": "Monumen bersejarah di situs Perjanjian Giyanti di Dusun Kerten, Karanganyar, Jawa Tengah."
+      },
+      "date": "2013",
+      "license": "CC-BY-SA-3.0",
+      "creator": "Bennylin",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Karanganyar_Situs_Perjanjian_Giyanti_Bennylin_1.jpg"
+    },
+    {
+      "id": "babad-giyanti-manuscript",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/MsGiyanti.jpg",
+      "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MsGiyanti.jpg?width=400",
+      "alt": {
+        "en": "Illuminated frontispiece page of the classical Javanese historical chronicle Babad Giyanti.",
+        "id": "Halaman pembuka naskah klasik tembang macapat Babad Giyanti beraksara Jawa."
+      },
+      "caption": {
+        "en": "Page from the classical Javanese manuscript of Babad Giyanti composed in poetic macapat verse by Yasadipura I.",
+        "id": "Halaman naskah klasik Babad Giyanti yang digubah dalam tembang macapat oleh Yasadipura I."
+      },
+      "date": "1800~",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:MsGiyanti.jpg"
+    },
+    {
+      "id": "kraton-yogyakarta-pagelaran",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jogja.kraton.jpg",
+      "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jogja.kraton.jpg?width=400",
+      "alt": {
+        "en": "The grand open pavilion of Pagelaran at the northern entrance of the Kraton of Yogyakarta.",
+        "id": "Bangsal Pagelaran agung di bagian utara kompleks Keraton Ngayogyakarta Hadiningrat."
+      },
+      "caption": {
+        "en": "The Pagelaran pavilion of Keraton Ngayogyakarta Hadiningrat, established by Sultan Hamengkubuwana I.",
+        "id": "Bangsal Pagelaran Keraton Ngayogyakarta Hadiningrat, didirikan oleh Sultan Hamengkubuwana I."
+      },
+      "date": "2008",
+      "license": "CC-BY-SA-3.0",
+      "holder": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jogja.kraton.jpg"
+    }
+  ]
+}
