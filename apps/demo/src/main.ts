@@ -27,6 +27,7 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const CAMPAIGNS: Record<string, { url: string; label: string }> = {
   java: { url: '/campaigns/java-war-1825.json', label: 'The Java War, 1825–1830' },
   waterloo: { url: '/campaigns/waterloo-1815.json', label: 'The Waterloo Campaign' },
+  austroPrussian: { url: '/campaigns/austro-prussian-1866.json', label: 'The Austro-Prussian War of 1866' },
 };
 /** `/app/?campaign=waterloo` opens that campaign first; the landing page links there. */
 const requested = new URLSearchParams(location.search).get('campaign') ?? '';

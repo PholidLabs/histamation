@@ -1,0 +1,2723 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "austro-prussian-1866",
+    "version": "0.1.0",
+    "title": {
+      "en": "The Austro-Prussian War of 1866",
+      "id": "Perang Austria-Prusia 1866"
+    },
+    "subtitle": {
+      "en": "The Seven Weeks' War for leadership over the German states",
+      "id": "Perang Tujuh Pekan demi kepemimpinan atas negara-negara Jerman"
+    },
+    "description": {
+      "en": "The Austro-Prussian War of 1866, also known as the Seven Weeks' War or the German War (Deutscher Krieg), was the climactic confrontation between the Kingdom of Prussia and the Austrian Empire for dominance over the German states. Engineered diplomatically by Prussian Minister-President Otto von Bismarck and directed militarily by Chief of the General Staff Helmuth von Moltke, Prussian armies exploited modern mobilization via railway networks, telegraphic coordination, and the deadly firepower of the breechloading Dreyse needle-gun. Across Bohemia, western Germany, and the Venetian front, Prussia and its allies confronted Austria and the German Confederation. The conflict culminated in the massive clash at Königgrätz (Sadowa) on 3 July 1866, decisively shifting European power and securing Prussian leadership in the unification of Germany.",
+      "id": "Perang Austria-Prusia 1866, yang juga dikenal sebagai Perang Tujuh Pekan atau Perang Saudara Jerman (Deutscher Krieg), adalah konfrontasi puncak antara Kerajaan Prusia dan Kekaisaran Austria demi hegemoni atas negara-negara Jerman. Dirancang secara diplomatik oleh Perdana Menteri Prusia Otto von Bismarck dan dipimpin secara militer oleh Kepala Staf Umum Helmuth von Moltke, pasukan Prusia memanfaatkan mobilisasi modern melalui jaringan kereta api, koordinasi telegraf, dan keunggulan daya tembak senapan jarum sungsang Dreyse. Melintasi Bohemia, Jerman barat, dan front Venesia, Prusia beserta sekutunya menghadapi Austria dan Konfederasi Jerman. Konflik ini mencapai puncaknya dalam pertempuran akbar di Königgrätz (Sadowa) pada 3 Juli 1866, mengubah perimbangan kekuatan Eropa dan mengukuhkan kepemimpinan Prusia menuju penyatuan Jerman."
+    },
+    "contentWarning": {
+      "en": "Describes 19th-century industrial warfare, rapid rifle fire, massed artillery bombardments, cavalry melees, and extensive battlefield casualties.",
+      "id": "Menggambarkan peperangan industri abad ke-19, tembakan senapan beruntun, pengeboman artileri massal, bentrokan kavaleri, dan banyaknya korban di medan perang."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "updated": "2026-10-09",
+    "timeline": {
+      "extent": "1866-06-14/1866-08-25",
+      "focus": "1866-06-15/1866-07-26"
+    },
+    "map": {
+      "center": [
+        15.35,
+        50.32
+      ],
+      "zoom": 7.4,
+      "pitch": 30,
+      "bearing": 0,
+      "bounds": [
+        7.5,
+        45.0,
+        18.5,
+        53.0
+      ],
+      "terrain": {
+        "exaggeration": 1.2
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "prussian-kingdom",
+      "name": {
+        "en": "Kingdom of Prussia",
+        "id": "Kerajaan Prusia"
+      },
+      "shortName": {
+        "en": "Prussia",
+        "id": "Prusia"
+      },
+      "color": "#1A365D",
+      "description": {
+        "en": "The Hohenzollern monarchy under King Wilhelm I and Minister-President Otto von Bismarck, fielding a technologically advanced, conscript army led by Helmuth von Moltke's Prussian General Staff. Armed with the Dreyse needle-gun breechloading rifle.",
+        "id": "Monarki Hohenzollern di bawah Raja Wilhelm I dan Perdana Menteri Otto von Bismarck, mengerahkan tentara wajib militer modern berteknologi tinggi di bawah pimpinan Staf Umum Prusia arahan Helmuth von Moltke. Dipersenjatai senapan jarum sungsang Dreyse."
+      },
+      "sources": [
+        "wawro-1996",
+        "clark-2006"
+      ]
+    },
+    {
+      "id": "austrian-empire",
+      "name": {
+        "en": "Austrian Empire",
+        "id": "Kekaisaran Austria"
+      },
+      "shortName": {
+        "en": "Austria",
+        "id": "Austria"
+      },
+      "color": "#B87326",
+      "description": {
+        "en": "The Habsburg Empire under Emperor Franz Joseph I, defending its traditional leadership of the German Confederation. Possessing superior rifled artillery and aggressive shock-infantry doctrine (Stoßtaktik), but burdened with muzzle-loading Lorenz rifles.",
+        "id": "Kekaisaran Habsburg di bawah Kaisar Franz Joseph I, mempertahankan kepemimpinan tradisionalnya atas Konfederasi Jerman. Memiliki artileri berulir yang unggul dan doktrin serbu bayonet (Stoßtaktik), tetapi terkendala senapan isi moncong Lorenz."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "german-confederation",
+      "name": {
+        "en": "German Confederation Allies",
+        "id": "Sekutu Konfederasi Jerman"
+      },
+      "shortName": {
+        "en": "Allies",
+        "id": "Sekutu"
+      },
+      "color": "#2E6B4E",
+      "description": {
+        "en": "Allied member states of the German Confederation supporting Austria against Prussia, notably the Kingdom of Saxony, Kingdom of Hanover, Kingdom of Bavaria, and the Federal Corps in western Germany.",
+        "id": "Negara-negara anggota Konfederasi Jerman yang bersekutu dengan Austria menentang Prusia, terutama Kerajaan Sachsen, Kerajaan Hannover, Kerajaan Bayern, dan Korps Federal di Jerman barat."
+      },
+      "sources": [
+        "wawro-1996",
+        "showalter-2004"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "berlin",
+      "name": {
+        "en": "Berlin",
+        "id": "Berlin"
+      },
+      "modernName": {
+        "en": "Berlin, Germany",
+        "id": "Berlin, Jerman"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        13.405,
+        52.52
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "description": {
+        "en": "Capital of the Kingdom of Prussia and operational headquarters of King Wilhelm I, Otto von Bismarck, and General Helmuth von Moltke.",
+        "id": "Ibu kota Kerajaan Prusia dan markas besar operasional Raja Wilhelm I, Otto von Bismarck, serta Jenderal Helmuth von Moltke."
+      },
+      "sources": [
+        "clark-2006"
+      ]
+    },
+    {
+      "id": "vienna",
+      "name": {
+        "en": "Vienna",
+        "id": "Wina"
+      },
+      "modernName": {
+        "en": "Vienna, Austria",
+        "id": "Wina, Austria"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        16.3738,
+        48.2082
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "description": {
+        "en": "Imperial capital of the Austrian Empire and seat of Emperor Franz Joseph I.",
+        "id": "Ibu kota kekaisaran Austria dan takhta Kaisar Franz Joseph I."
+      },
+      "sources": [
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "frankfurt",
+      "name": {
+        "en": "Frankfurt am Main",
+        "id": "Frankfurt am Main"
+      },
+      "modernName": {
+        "en": "Frankfurt, Hesse, Germany",
+        "id": "Frankfurt, Hessen, Jerman"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        8.6821,
+        50.1109
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Seat of the Federal Diet (Bundestag) of the German Confederation, where the fateful vote on Austrian mobilization took place on 14 June 1866.",
+        "id": "Pusat Majelis Federal (Bundestag) Konfederasi Jerman, tempat pemungutan suara bersejarah mengenai mobilisasi Austria berlangsung pada 14 Juni 1866."
+      },
+      "sources": [
+        "wawro-1996",
+        "showalter-2004"
+      ]
+    },
+    {
+      "id": "dresden",
+      "name": {
+        "en": "Dresden",
+        "id": "Dresden"
+      },
+      "modernName": {
+        "en": "Dresden, Saxony, Germany",
+        "id": "Dresden, Sachsen, Jerman"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        13.7373,
+        51.0504
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Capital of the Kingdom of Saxony, evacuated by the Saxon Army under Crown Prince Albert and occupied by Prussia on 18 June 1866.",
+        "id": "Ibu kota Kerajaan Sachsen, dikosongkan oleh tentara Sachsen di bawah Putra Mahkota Albert dan diduduki Prusia pada 18 Juni 1866."
+      },
+      "sources": [
+        "wawro-1996",
+        "hozier-1867"
+      ]
+    },
+    {
+      "id": "torgau",
+      "name": {
+        "en": "Torgau",
+        "id": "Torgau"
+      },
+      "modernName": {
+        "en": "Torgau, Saxony, Germany",
+        "id": "Torgau, Sachsen, Jerman"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        13.0076,
+        51.5583
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Prussian fortress on the Elbe and assembly point of General Herwarth von Bittenfeld's Army of the Elbe.",
+        "id": "Benteng Prusia di tepi Sungai Elbe dan titik pemusatan Pasukan Elbe pimpinan Jenderal Herwarth von Bittenfeld."
+      },
+      "sources": [
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "gorlitz",
+      "name": {
+        "en": "Görlitz",
+        "id": "Görlitz"
+      },
+      "modernName": {
+        "en": "Görlitz, Saxony, Germany",
+        "id": "Görlitz, Sachsen, Jerman"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        14.9872,
+        51.1528
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Staging area for Prince Friedrich Karl's Prussian First Army prior to advancing into northern Bohemia.",
+        "id": "Area konsentrasi Pasukan Pertama Prusia pimpinan Pangeran Friedrich Karl sebelum bergerak ke Bohemia utara."
+      },
+      "sources": [
+        "craig-1964",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "breslau",
+      "name": {
+        "en": "Breslau",
+        "id": "Breslau"
+      },
+      "modernName": {
+        "en": "Wrocław, Lower Silesia, Poland",
+        "id": "Wrocław, Silesia Hilir, Polandia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        17.0385,
+        51.1079
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Capital of Prussian Silesia and primary railhead and concentration center for Crown Prince Friedrich Wilhelm's Prussian Second Army.",
+        "id": "Ibu kota Silesia Prusia serta pangkalan kereta api dan pusat konsentrasi utama Pasukan Kedua Prusia pimpinan Putra Mahkota Friedrich Wilhelm."
+      },
+      "sources": [
+        "craig-1964",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "prague",
+      "name": {
+        "en": "Prague",
+        "id": "Praha"
+      },
+      "modernName": {
+        "en": "Prague, Czech Republic",
+        "id": "Praha, Republik Ceko"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        14.4378,
+        50.0755
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "description": {
+        "en": "Historic capital of Bohemia, occupied by Prussian forces on 8 July 1866; site of the signing of the Treaty of Prague on 23 August 1866.",
+        "id": "Ibu kota bersejarah Bohemia, diduduki pasukan Prusia pada 8 Juli 1866; tempat penandatanganan Perjanjian Praha pada 23 Agustus 1866."
+      },
+      "sources": [
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "olmutz",
+      "name": {
+        "en": "Olmütz",
+        "id": "Olmütz"
+      },
+      "modernName": {
+        "en": "Olomouc, Moravia, Czech Republic",
+        "id": "Olomouc, Moravia, Republik Ceko"
+      },
+      "kind": "fort",
+      "coordinates": [
+        17.2517,
+        49.5955
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Key Austrian fortress in Moravia where Feldzeugmeister Ludwig von Benedek gathered the Austrian Northern Army in early June 1866 and retreated after Königgrätz.",
+        "id": "Benteng kunci Austria di Moravia tempat Feldzeugmeister Ludwig von Benedek menghimpun Tentara Utara Austria pada awal Juni 1866 dan mundur setelah kekalahan di Königgrätz."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "pardubitz",
+      "name": {
+        "en": "Pardubitz",
+        "id": "Pardubice"
+      },
+      "modernName": {
+        "en": "Pardubice, Bohemia, Czech Republic",
+        "id": "Pardubice, Bohemia, Republik Ceko"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        15.7792,
+        50.0343
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Strategic railway junction on the upper Elbe and forward headquarters of the Austrian Northern Army prior to late June operations.",
+        "id": "Persimpangan rel kereta api strategis di hulu Sungai Elbe dan markas depan Tentara Utara Austria menjelang operasi akhir Juni."
+      },
+      "sources": [
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "josefstadt",
+      "name": {
+        "en": "Josefstadt",
+        "id": "Josefov"
+      },
+      "modernName": {
+        "en": "Jaroměř-Josefov, Bohemia, Czech Republic",
+        "id": "Jaroměř-Josefov, Bohemia, Republik Ceko"
+      },
+      "kind": "fort",
+      "coordinates": [
+        15.9292,
+        50.3542
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Formidable 18th-century Austrian fortress anchoring the Austrian defensive line along the upper Elbe river.",
+        "id": "Benteng tangguh Austria abad ke-18 yang menjadi jangkar garis pertahanan Austria di sepanjang hulu Sungai Elbe."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "trautenau",
+      "name": {
+        "en": "Trautenau",
+        "id": "Trutnov"
+      },
+      "modernName": {
+        "en": "Trutnov, Hradec Králové Region, Czech Republic",
+        "id": "Trutnov, Wilayah Hradec Králové, Republik Ceko"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        15.9128,
+        50.5611
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Mountain pass where Gablenz's Austrian X Corps repulsed Bonin's Prussian I Corps on 27 June 1866, scoring Austria's only tactical victory in the north.",
+        "id": "Celah pegunungan tempat Korps X Austria pimpinan Gablenz memukul mundur Korps I Prusia pimpinan Bonin pada 27 Juni 1866, satu-satunya kemenangan taktis Austria di utara."
+      },
+      "sources": [
+        "wp-trautenau",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "nachod",
+      "name": {
+        "en": "Náchod",
+        "id": "Náchod"
+      },
+      "modernName": {
+        "en": "Náchod, Hradec Králové Region, Czech Republic",
+        "id": "Náchod, Wilayah Hradec Králové, Republik Ceko"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        16.1629,
+        50.4167
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Defile in the Giant Mountains where Steinmetz's Prussian V Corps defeated Ramming's Austrian VI Corps on 27 June 1866, opening the gateway into Bohemia.",
+        "id": "Celah sempit di Pegunungan Raksasa tempat Korps V Prusia pimpinan Steinmetz mengalahkan Korps VI Austria pimpinan Ramming pada 27 Juni 1866, membuka pintu gerbang menuju Bohemia."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "skalitz",
+      "name": {
+        "en": "Skalitz",
+        "id": "Česká Skalice"
+      },
+      "modernName": {
+        "en": "Česká Skalice, Hradec Králové Region, Czech Republic",
+        "id": "Česká Skalice, Wilayah Hradec Králové, Republik Ceko"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        16.0417,
+        50.3958
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Scene of fierce fighting on 28 June 1866, where Steinmetz's Prussian V Corps defeated Archduke Leopold's Austrian VIII Corps.",
+        "id": "Lokasi pertempuran sengit pada 28 Juni 1866, tempat Korps V Prusia pimpinan Steinmetz menundukkan Korps VIII Austria pimpinan Adipati Agung Leopold."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "munchengratz",
+      "name": {
+        "en": "Münchengrätz",
+        "id": "Mnichovo Hradiště"
+      },
+      "modernName": {
+        "en": "Mnichovo Hradiště, Central Bohemia, Czech Republic",
+        "id": "Mnichovo Hradiště, Bohemia Tengah, Republik Ceko"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        14.9789,
+        50.5217
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Town on the Iser river where the Prussian First Army and Army of the Elbe forced the retreat of Clam-Gallas's Austrian-Saxon corps on 28 June 1866.",
+        "id": "Kota di tepi Sungai Iser tempat Pasukan Pertama Prusia dan Pasukan Elbe memaksa mundur korps Austria-Sachsen pimpinan Clam-Gallas pada 28 Juni 1866."
+      },
+      "sources": [
+        "craig-1964",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "podol",
+      "name": {
+        "en": "Podol",
+        "id": "Podolí"
+      },
+      "modernName": {
+        "en": "Svijany-Podolí, Liberec Region, Czech Republic",
+        "id": "Svijany-Podolí, Wilayah Liberec, Republik Ceko"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        15.0567,
+        50.5892
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Vital bridge over the Iser river seized in a night assault by Prussian advance elements on 26–27 June 1866.",
+        "id": "Jembatan krusial di atas Sungai Iser yang direbut dalam serbuan malam oleh barisan terdepan Prusia pada 26–27 Juni 1866."
+      },
+      "sources": [
+        "moltke-1867",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "gitschin",
+      "name": {
+        "en": "Gitschin",
+        "id": "Jičín"
+      },
+      "modernName": {
+        "en": "Jičín, Hradec Králové Region, Czech Republic",
+        "id": "Jičín, Wilayah Hradec Králové, Republik Ceko"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        15.3564,
+        50.4372
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Strategic road hub captured on 29 June 1866 by Prussian forces, uniting the First Army and Army of the Elbe and compelling Benedek to order a general retreat.",
+        "id": "Pusat persimpangan jalan strategis yang direbut pada 29 Juni 1866 oleh pasukan Prusia, menyatukan Pasukan Pertama dan Pasukan Elbe serta memaksa Benedek memerintahkan mundur umum."
+      },
+      "sources": [
+        "wp-gitschin",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "sadowa",
+      "name": {
+        "en": "Sadowa",
+        "id": "Sadová"
+      },
+      "modernName": {
+        "en": "Sadová, Hradec Králové Region, Czech Republic",
+        "id": "Sadová, Wilayah Hradec Králové, Republik Ceko"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        15.6983,
+        50.2981
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "description": {
+        "en": "Village on the Bistritz river where Prince Friedrich Karl's Prussian First Army crossed under heavy Austrian fire on the morning of 3 July 1866.",
+        "id": "Desa di tepi Sungai Bistritz tempat Pasukan Pertama Prusia pimpinan Pangeran Friedrich Karl menyeberang di bawah tembakan gencar artileri Austria pada pagi 3 Juli 1866."
+      },
+      "sources": [
+        "craig-1964",
+        "wp-koniggratz"
+      ]
+    },
+    {
+      "id": "swiepwald",
+      "name": {
+        "en": "Swiepwald",
+        "id": "Hutan Swiep (Svíb)"
+      },
+      "modernName": {
+        "en": "Svíb Forest, Čistěves, Czech Republic",
+        "id": "Hutan Svíb, Čistěves, Republik Ceko"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        15.7267,
+        50.2961
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Dense beech forest north of Sadowa, site of brutal combat where the Prussian 7th Division under General von Fransecky tied down two entire Austrian corps (IV and II).",
+        "id": "Hutan lebat di utara Sadowa, lokasi pertempuran sengit berdarah tempat Divisi ke-7 Prusia pimpinan Jenderal von Fransecky menahan gempuran dua korps penuh Austria (IV dan II)."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "chlum",
+      "name": {
+        "en": "Chlum Heights",
+        "id": "Punggung Bukit Chlum"
+      },
+      "modernName": {
+        "en": "Chlum, Všestary, Hradec Králové Region, Czech Republic",
+        "id": "Chlum, Všestary, Wilayah Hradec Králové, Republik Ceko"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        15.7408,
+        50.2783
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "description": {
+        "en": "Key heights crowned with church and village, stormed by the Prussian 1st Guards Division at 14:30 on 3 July 1866, shattering the Austrian defensive center.",
+        "id": "Punggung bukit strategis berpuncak gereja dan desa, diserbu oleh Divisi Pengawal ke-1 Prusia pada pukul 14.30 tanggal 3 Juli 1866, menghancurkan pusat pertahanan Austria."
+      },
+      "sources": [
+        "craig-1964",
+        "wp-koniggratz"
+      ]
+    },
+    {
+      "id": "koniggratz",
+      "name": {
+        "en": "Königgrätz",
+        "id": "Königgrätz (Hradec Králové)"
+      },
+      "modernName": {
+        "en": "Hradec Králové, Czech Republic",
+        "id": "Hradec Králové, Republik Ceko"
+      },
+      "kind": "fort",
+      "coordinates": [
+        15.8328,
+        50.2092
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "description": {
+        "en": "Fortified Austrian city at the confluence of the Elbe and Adler rivers, giving its name to the decisive battle of 3 July 1866.",
+        "id": "Kota benteng Austria di pertemuan Sungai Elbe dan Adler, yang menjadi nama bagi pertempuran menentukan pada 3 Juli 1866."
+      },
+      "sources": [
+        "wp-koniggratz",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "brunn",
+      "name": {
+        "en": "Brünn",
+        "id": "Brno"
+      },
+      "modernName": {
+        "en": "Brno, Moravia, Czech Republic",
+        "id": "Brno, Moravia, Republik Ceko"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        16.6068,
+        49.1951
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Capital of Moravia, occupied by Prussian forces on 12 July 1866 during their rapid southward advance toward Vienna.",
+        "id": "Ibu kota Moravia, diduduki pasukan Prusia pada 12 Juli 1866 dalam gerak maju pesat ke arah selatan menuju Wina."
+      },
+      "sources": [
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "nikolsburg",
+      "name": {
+        "en": "Nikolsburg",
+        "id": "Mikulov"
+      },
+      "modernName": {
+        "en": "Mikulov, South Moravian Region, Czech Republic",
+        "id": "Mikulov, Moravia Selatan, Republik Ceko"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        16.6378,
+        48.8056
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Château where Otto von Bismarck formulated the preliminary peace terms with Austrian envoys, signed on 26 July 1866.",
+        "id": "Kastel tempat Otto von Bismarck merumuskan syarat perdamaian pendahuluan bersama utusan Austria, ditandatangani pada 26 Juli 1866."
+      },
+      "sources": [
+        "wawro-1996",
+        "clark-2006"
+      ]
+    },
+    {
+      "id": "blumenau",
+      "name": {
+        "en": "Blumenau",
+        "id": "Lamač (Blumenau)"
+      },
+      "modernName": {
+        "en": "Lamač, Bratislava, Slovakia",
+        "id": "Lamač, Bratislava, Slowakia"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        17.0544,
+        48.1917
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Site of the last armed engagement of the war on 22 July 1866 outside Pressburg (Bratislava), halted mid-action by the arrival of the ceasefire order.",
+        "id": "Lokasi pertempuran senjata terakhir dalam perang pada 22 Juli 1866 di luar Pressburg (Bratislava), dihentikan saat sedang berlangsung oleh sampainya perintah gencatan senjata."
+      },
+      "sources": [
+        "wawro-1996",
+        "hozier-1867"
+      ]
+    },
+    {
+      "id": "hanover",
+      "name": {
+        "en": "Hanover",
+        "id": "Hannover"
+      },
+      "modernName": {
+        "en": "Hanover, Lower Saxony, Germany",
+        "id": "Hannover, Sachsen Hilir, Jerman"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        9.732,
+        52.3759
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Capital of the Kingdom of Hanover, whose army mobilized under King George V in mid-June 1866 to oppose Prussia.",
+        "id": "Ibu kota Kerajaan Hannover, yang tentaranya dimobilisasi di bawah Raja George V pada pertengahan Juni 1866 untuk menentang Prusia."
+      },
+      "sources": [
+        "showalter-2004"
+      ]
+    },
+    {
+      "id": "langensalza",
+      "name": {
+        "en": "Langensalza",
+        "id": "Bad Langensalza"
+      },
+      "modernName": {
+        "en": "Bad Langensalza, Thuringia, Germany",
+        "id": "Bad Langensalza, Thüringen, Jerman"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        10.6472,
+        51.1083
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Battlefield where the Hanoverian Army defeated an initial Prussian attack on 27 June 1866 but was encircled and forced to capitulate on 29 June.",
+        "id": "Medan pertempuran tempat tentara Hannover mengalahkan serangan awal Prusia pada 27 Juni 1866 tetapi kemudian dikepung dan dipaksa menyerah pada 29 Juni."
+      },
+      "sources": [
+        "wp-langensalza",
+        "showalter-2004"
+      ]
+    },
+    {
+      "id": "kissingen",
+      "name": {
+        "en": "Bad Kissingen",
+        "id": "Bad Kissingen"
+      },
+      "modernName": {
+        "en": "Bad Kissingen, Bavaria, Germany",
+        "id": "Bad Kissingen, Bayern, Jerman"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        10.0761,
+        50.2006
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "description": {
+        "en": "Town where the Prussian Army of the Main defeated Bavarian forces on 10 July 1866 during the Campaign of the Main.",
+        "id": "Kota tempat Pasukan Main Prusia mengalahkan tentara Bayern pada 10 Juli 1866 selama Kampanye Main."
+      },
+      "sources": [
+        "showalter-2004",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "custoza",
+      "name": {
+        "en": "Custoza",
+        "id": "Custoza"
+      },
+      "modernName": {
+        "en": "Custoza, Sommacampagna, Verona, Italy",
+        "id": "Custoza, Sommacampagna, Verona, Italia"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        10.7936,
+        45.3789
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "description": {
+        "en": "Battlefield in Venetia where the Austrian Southern Army under Archduke Albrecht defeated the Italian army under General La Marmora on 24 June 1866.",
+        "id": "Medan pertempuran di Venetia tempat Tentara Selatan Austria di bawah Adipati Agung Albrecht mengalahkan tentara Italia pimpinan Jenderal La Marmora pada 24 Juni 1866."
+      },
+      "sources": [
+        "wp-custoza",
+        "wawro-1996"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "prussian-first-army",
+      "kind": "unit",
+      "name": {
+        "en": "Prussian First Army (Prince Friedrich Karl)",
+        "id": "Pasukan Pertama Prusia (Pangeran Friedrich Karl)"
+      },
+      "faction": "prussian-kingdom",
+      "commanders": [
+        "Prince Friedrich Karl of Prussia",
+        "Hans von Schlotheim"
+      ],
+      "description": {
+        "en": "Comprising II, III, and IV Corps, gathering around Görlitz, spearheading the advance across the Iser river into northern Bohemia, and pinning the Austrian center at Sadowa.",
+        "id": "Terdiri atas Korps II, III, dan IV, berhimpun di sekitar Görlitz, memelopori gerak maju melintasi Sungai Iser ke Bohemia utara, dan menahan pusat pertahanan Austria di Sadowa."
+      },
+      "track": [
+        {
+          "when": "1866-06-15",
+          "at": "gorlitz",
+          "strength": 93000,
+          "certainty": "exact",
+          "label": {
+            "en": "Concentration at Görlitz",
+            "id": "Pemusatan di Görlitz"
+          }
+        },
+        {
+          "when": "1866-06-26",
+          "at": "podol",
+          "strength": 90000,
+          "certainty": "exact",
+          "label": {
+            "en": "Forcing the Iser at Podol",
+            "id": "Menembus Sungai Iser di Podol"
+          }
+        },
+        {
+          "when": "1866-06-28",
+          "at": "munchengratz",
+          "strength": 88000,
+          "certainty": "exact",
+          "label": {
+            "en": "Clash at Münchengrätz",
+            "id": "Bentrokan di Münchengrätz"
+          }
+        },
+        {
+          "when": "1866-06-29",
+          "at": "gitschin",
+          "strength": 86000,
+          "certainty": "exact",
+          "label": {
+            "en": "Capture of Gitschin",
+            "id": "Perebutan Gitschin"
+          }
+        },
+        {
+          "when": "1866-07-03T06:00/1866-07-03T18:00",
+          "at": "sadowa",
+          "strength": 85000,
+          "certainty": "exact",
+          "label": {
+            "en": "Crossing the Bistritz at Sadowa",
+            "id": "Menyeberangi Sungai Bistritz di Sadowa"
+          }
+        },
+        {
+          "when": "1866-07-12",
+          "at": "brunn",
+          "strength": 80000,
+          "certainty": "exact",
+          "label": {
+            "en": "Occupation of Brünn",
+            "id": "Pendudukan Brünn"
+          }
+        },
+        {
+          "when": "1866-07-26",
+          "at": "nikolsburg",
+          "strength": 78000,
+          "certainty": "exact",
+          "label": {
+            "en": "Headquarters at Nikolsburg",
+            "id": "Markas di Nikolsburg"
+          }
+        }
+      ],
+      "sources": [
+        "craig-1964",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "prussian-second-army",
+      "kind": "unit",
+      "name": {
+        "en": "Prussian Second Army (Crown Prince)",
+        "id": "Pasukan Kedua Prusia (Putra Mahkota)"
+      },
+      "faction": "prussian-kingdom",
+      "commanders": [
+        "Crown Prince Friedrich Wilhelm of Prussia",
+        "Leonhard von Blumenthal"
+      ],
+      "description": {
+        "en": "Silesian army comprising the Guards Corps, I, V, and VI Corps. Marched across the difficult passes of the Giant Mountains, overcoming Austrian resistance at Náchod and Skalitz, and delivering the decisive flank blow at Königgrätz.",
+        "id": "Pasukan Silesia yang terdiri atas Korps Pengawal, Korps I, V, dan VI. Berbaris melintasi celah terjal Pegunungan Raksasa, menaklukkan perlawanan Austria di Náchod dan Skalitz, serta melancarkan serangan sayap penentu di Königgrätz."
+      },
+      "track": [
+        {
+          "when": "1866-06-15",
+          "at": "breslau",
+          "strength": 115000,
+          "certainty": "exact",
+          "label": {
+            "en": "Assembly in Silesia",
+            "id": "Pemusatan di Silesia"
+          }
+        },
+        {
+          "when": "1866-06-27",
+          "at": "nachod",
+          "strength": 112000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Náchod",
+            "id": "Pertempuran Náchod"
+          }
+        },
+        {
+          "when": "1866-06-28",
+          "at": "skalitz",
+          "strength": 110000,
+          "certainty": "exact",
+          "label": {
+            "en": "Victory at Skalitz",
+            "id": "Kemenangan di Skalitz"
+          }
+        },
+        {
+          "when": "1866-07-03T11:00/1866-07-03T18:00",
+          "at": "chlum",
+          "strength": 105000,
+          "certainty": "exact",
+          "label": {
+            "en": "Assault on Chlum Heights",
+            "id": "Serbuan ke Bukit Chlum"
+          }
+        },
+        {
+          "when": "1866-07-13",
+          "at": "brunn",
+          "strength": 100000,
+          "certainty": "exact",
+          "label": {
+            "en": "March through Moravia",
+            "id": "Gerak maju melintasi Moravia"
+          }
+        },
+        {
+          "when": "1866-07-26",
+          "at": "nikolsburg",
+          "strength": 98000,
+          "certainty": "exact",
+          "label": {
+            "en": "Encampment at Nikolsburg",
+            "id": "Perkemahan di Nikolsburg"
+          }
+        }
+      ],
+      "sources": [
+        "craig-1964",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "prussian-elbe-army",
+      "kind": "unit",
+      "name": {
+        "en": "Prussian Army of the Elbe (Herwarth)",
+        "id": "Pasukan Elbe Prusia (Herwarth)"
+      },
+      "faction": "prussian-kingdom",
+      "commanders": [
+        "Karl Eberhard Herwarth von Bittenfeld"
+      ],
+      "description": {
+        "en": "Western wing composed of VII and VIII Corps elements and cavalry, occupying Saxony without resistance before advancing into Bohemia to form the Prussian right flank at Königgrätz.",
+        "id": "Sayap barat yang terdiri atas unsur Korps VII dan VIII serta kavaleri, menduduki Sachsen tanpa perlawanan sebelum bergerak ke Bohemia untuk membentuk sayap kanan Prusia di Königgrätz."
+      },
+      "track": [
+        {
+          "when": "1866-06-15",
+          "at": "torgau",
+          "strength": 46000,
+          "certainty": "exact",
+          "label": {
+            "en": "Assembly at Torgau",
+            "id": "Pemusatan di Torgau"
+          }
+        },
+        {
+          "when": "1866-06-18",
+          "at": "dresden",
+          "strength": 46000,
+          "certainty": "exact",
+          "label": {
+            "en": "Occupation of Dresden",
+            "id": "Pendudukan Dresden"
+          }
+        },
+        {
+          "when": "1866-06-28",
+          "at": "munchengratz",
+          "strength": 45000,
+          "certainty": "exact",
+          "label": {
+            "en": "Support at Münchengrätz",
+            "id": "Bantuan di Münchengrätz"
+          }
+        },
+        {
+          "when": "1866-06-29",
+          "at": "gitschin",
+          "strength": 45000,
+          "certainty": "exact",
+          "label": {
+            "en": "Link-up at Gitschin",
+            "id": "Penyatuan di Gitschin"
+          }
+        },
+        {
+          "when": "1866-07-03T07:00/1866-07-03T18:00",
+          "at": "sadowa",
+          "strength": 44000,
+          "certainty": "exact",
+          "label": {
+            "en": "Attack on the Saxon flank",
+            "id": "Serangan terhadap sayap Sachsen"
+          }
+        },
+        {
+          "when": "1866-07-15",
+          "at": "brunn",
+          "strength": 42000,
+          "certainty": "exact",
+          "label": {
+            "en": "Advance through Moravia",
+            "id": "Gerak maju melintasi Moravia"
+          }
+        },
+        {
+          "when": "1866-07-22",
+          "at": "blumenau",
+          "strength": 40000,
+          "certainty": "exact",
+          "label": {
+            "en": "Action at Blumenau",
+            "id": "Aksi di Blumenau"
+          }
+        }
+      ],
+      "sources": [
+        "hozier-1867",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "prussian-army-of-the-main",
+      "kind": "unit",
+      "name": {
+        "en": "Prussian Army of the Main",
+        "id": "Pasukan Main Prusia"
+      },
+      "faction": "prussian-kingdom",
+      "commanders": [
+        "Eduard Vogel von Falckenstein",
+        "Edwin von Manteuffel"
+      ],
+      "description": {
+        "en": "Field army tasked with subduing Austria's North German allies. Encircled the Hanoverian Army at Langensalza, defeated the Bavarians and Federal Corps, and captured Frankfurt.",
+        "id": "Pasukan lapangan yang bertugas menundukkan sekutu Jerman Utara Austria. Mengepung tentara Hannover di Langensalza, mengalahkan pasukan Bayern dan Korps Federal, serta merebut Frankfurt."
+      },
+      "track": [
+        {
+          "when": "1866-06-15",
+          "at": "berlin",
+          "strength": 48000,
+          "certainty": "exact",
+          "label": {
+            "en": "Deployment westward",
+            "id": "Pengerahan ke barat"
+          }
+        },
+        {
+          "when": "1866-06-27/1866-06-29T12:00",
+          "at": "langensalza",
+          "strength": 48000,
+          "certainty": "exact",
+          "label": {
+            "en": "Encirclement at Langensalza",
+            "id": "Pengepungan di Langensalza"
+          }
+        },
+        {
+          "when": "1866-07-10",
+          "at": "kissingen",
+          "strength": 45000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Kissingen",
+            "id": "Pertempuran Kissingen"
+          }
+        },
+        {
+          "when": "1866-07-16/1866-07-26",
+          "at": "frankfurt",
+          "strength": 45000,
+          "certainty": "exact",
+          "label": {
+            "en": "Capture of Frankfurt am Main",
+            "id": "Perebutan Frankfurt am Main"
+          }
+        }
+      ],
+      "sources": [
+        "showalter-2004",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "austrian-northern-army",
+      "kind": "unit",
+      "name": {
+        "en": "Austrian Northern Army (Benedek)",
+        "id": "Tentara Utara Austria (Benedek)"
+      },
+      "faction": "austrian-empire",
+      "commanders": [
+        "Ludwig von Benedek",
+        "Gideon von Krismanic"
+      ],
+      "description": {
+        "en": "Austria's primary field army of seven corps, concentrated in Moravia and Bohemia to defend against Prussian invasion. Anchored its positions along the Bistritz river before suffering catastrophe at Königgrätz.",
+        "id": "Tentara lapangan utama Austria beranggotakan tujuh korps, dipusatkan di Moravia dan Bohemia untuk membendung invasi Prusia. Mengambil posisi pertahanan di sepanjang Sungai Bistritz sebelum hancur dalam malapetaka di Königgrätz."
+      },
+      "track": [
+        {
+          "when": "1866-06-15",
+          "at": "olmutz",
+          "strength": 240000,
+          "certainty": "exact",
+          "label": {
+            "en": "Assembly in Moravia",
+            "id": "Pemusatan di Moravia"
+          }
+        },
+        {
+          "when": "1866-06-25",
+          "at": "pardubitz",
+          "strength": 235000,
+          "certainty": "exact",
+          "label": {
+            "en": "Advance to the Elbe",
+            "id": "Gerak maju ke Sungai Elbe"
+          }
+        },
+        {
+          "when": "1866-06-28",
+          "at": "josefstadt",
+          "strength": 230000,
+          "certainty": "exact",
+          "label": {
+            "en": "Concentration at Josefstadt",
+            "id": "Konsentrasi di Josefstadt"
+          }
+        },
+        {
+          "when": "1866-07-01/1866-07-03T16:00",
+          "at": "chlum",
+          "strength": 215000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Königgrätz",
+            "id": "Pertempuran Königgrätz"
+          }
+        },
+        {
+          "when": "1866-07-04",
+          "at": "koniggratz",
+          "strength": 170000,
+          "certainty": "exact",
+          "label": {
+            "en": "Retreat across the Elbe",
+            "id": "Mundur melintasi Sungai Elbe"
+          }
+        },
+        {
+          "when": "1866-07-10",
+          "at": "olmutz",
+          "strength": 150000,
+          "certainty": "exact",
+          "label": {
+            "en": "Reorganization at Olmütz",
+            "id": "Reorganisasi di Olmütz"
+          }
+        },
+        {
+          "when": "1866-07-25",
+          "at": "vienna",
+          "strength": 140000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defense of Vienna",
+            "id": "Pertahanan Wina"
+          }
+        }
+      ],
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "austrian-saxon-corps",
+      "kind": "unit",
+      "name": {
+        "en": "Austrian-Saxon Corps (Albert & Clam-Gallas)",
+        "id": "Korps Austria-Sachsen (Albert & Clam-Gallas)"
+      },
+      "faction": "german-confederation",
+      "commanders": [
+        "Crown Prince Albert of Saxony",
+        "Eduard Clam-Gallas"
+      ],
+      "description": {
+        "en": "Combined force comprising the Royal Saxon Army and Austrian I Corps, falling back from Saxony to hold the Iser river line, fighting delaying actions at Münchengrätz and Gitschin.",
+        "id": "Pasukan gabungan yang terdiri atas Tentara Kerajaan Sachsen dan Korps I Austria, mundur dari Sachsen untuk mempertahankan jalur Sungai Iser, bertempur memperlambat musuh di Münchengrätz dan Gitschin."
+      },
+      "track": [
+        {
+          "when": "1866-06-15",
+          "at": "dresden",
+          "strength": 57000,
+          "certainty": "exact",
+          "label": {
+            "en": "Evacuation of Saxony",
+            "id": "Evakuasi dari Sachsen"
+          }
+        },
+        {
+          "when": "1866-06-28",
+          "at": "munchengratz",
+          "strength": 55000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defense of Münchengrätz",
+            "id": "Pertahanan Münchengrätz"
+          }
+        },
+        {
+          "when": "1866-06-29",
+          "at": "gitschin",
+          "strength": 52000,
+          "certainty": "exact",
+          "label": {
+            "en": "Holding action at Gitschin",
+            "id": "Aksi pertahanan di Gitschin"
+          }
+        },
+        {
+          "when": "1866-07-01/1866-07-03T17:00",
+          "at": "sadowa",
+          "strength": 46000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defense of the left wing at Problus",
+            "id": "Pertahanan sayap kiri di Problus"
+          }
+        },
+        {
+          "when": "1866-07-04",
+          "at": "koniggratz",
+          "strength": 40000,
+          "certainty": "exact",
+          "label": {
+            "en": "Orderly retreat",
+            "id": "Mundur secara teratur"
+          }
+        },
+        {
+          "when": "1866-07-24",
+          "at": "vienna",
+          "strength": 38000,
+          "certainty": "exact",
+          "label": {
+            "en": "Arrival at the Danube",
+            "id": "Tiba di Sungai Donau"
+          }
+        }
+      ],
+      "sources": [
+        "wawro-1996",
+        "hozier-1867"
+      ]
+    },
+    {
+      "id": "hanoverian-army",
+      "kind": "unit",
+      "name": {
+        "en": "Royal Hanoverian Army",
+        "id": "Tentara Kerajaan Hannover"
+      },
+      "faction": "german-confederation",
+      "commanders": [
+        "King George V of Hanover",
+        "Alexander von Arentschildt"
+      ],
+      "description": {
+        "en": "Hanoverian army attempting to march south to link up with Bavarian forces. Won a tactical victory at Langensalza on 27 June but surrendered on 29 June when encircled by overwhelming Prussian forces.",
+        "id": "Tentara Hannover yang berusaha bergerak ke selatan untuk bergabung dengan pasukan Bayern. Meraih kemenangan taktis di Langensalza pada 27 Juni tetapi menyerah pada 29 Juni setelah dikepung pasukan Prusia yang jauh lebih besar."
+      },
+      "track": [
+        {
+          "when": "1866-06-15",
+          "at": "hanover",
+          "strength": 19000,
+          "certainty": "exact",
+          "label": {
+            "en": "Mobilization at Hanover",
+            "id": "Mobilisasi di Hannover"
+          }
+        },
+        {
+          "when": "1866-06-27/1866-06-29T12:00",
+          "at": "langensalza",
+          "strength": 19000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle and capitulation at Langensalza",
+            "id": "Pertempuran dan kapitulasi di Langensalza"
+          }
+        }
+      ],
+      "states": [
+        {
+          "when": "1866-06-29T12:00",
+          "status": "surrendered",
+          "label": {
+            "en": "Capitulation of the Hanoverian Army",
+            "id": "Kapitulasi Tentara Hannover"
+          }
+        }
+      ],
+      "sources": [
+        "wp-langensalza",
+        "showalter-2004"
+      ]
+    },
+    {
+      "id": "austrian-southern-army",
+      "kind": "unit",
+      "name": {
+        "en": "Austrian Southern Army (Archduke Albrecht)",
+        "id": "Tentara Selatan Austria (Adipati Agung Albrecht)"
+      },
+      "faction": "austrian-empire",
+      "commanders": [
+        "Archduke Albrecht, Duke of Teschen",
+        "Franz von John"
+      ],
+      "description": {
+        "en": "Austrian army defending the Italian front in Venetia. Inflicted a decisive defeat on the Italian army at Custoza on 24 June before being recalled northward by rail to defend Vienna after the catastrophe of Königgrätz.",
+        "id": "Tentara Austria yang mempertahankan front Italia di Venetia. Menimpakan kekalahan telak pada tentara Italia di Custoza pada 24 Juni sebelum ditarik ke utara menggunakan kereta api untuk mempertahankan Wina menyusul bencana di Königgrätz."
+      },
+      "track": [
+        {
+          "when": "1866-06-15/1866-06-25",
+          "at": "custoza",
+          "strength": 75000,
+          "certainty": "exact",
+          "label": {
+            "en": "Victory at Custoza",
+            "id": "Kemenangan di Custoza"
+          }
+        },
+        {
+          "when": "1866-07-10/1866-07-26",
+          "at": "vienna",
+          "strength": 70000,
+          "certainty": "exact",
+          "label": {
+            "en": "Garrisoning Vienna lines",
+            "id": "Menjaga garis pertahanan Wina"
+          }
+        }
+      ],
+      "sources": [
+        "wp-custoza",
+        "wawro-1996"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "diet-mobilization",
+      "kind": "political",
+      "name": {
+        "en": "Federal Diet Mobilization Vote",
+        "id": "Pemungutan Suara Mobilisasi Majelis Federal"
+      },
+      "when": "1866-06-14",
+      "at": "frankfurt",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "austrian-empire",
+          "role": "attacker",
+          "commanders": [
+            "Count Alois Károlyi"
+          ]
+        },
+        {
+          "faction": "prussian-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Karl Friedrich von Savigny"
+          ]
+        }
+      ],
+      "outcome": {
+        "victor": "austrian-empire",
+        "summary": {
+          "en": "The Federal Diet voted 9 to 6 in favor of Austria's motion to mobilize federal troops against Prussia; Prussia declared the Confederation dissolved.",
+          "id": "Majelis Federal memutuskan 9 banding 6 mendukung usulan Austria untuk memobilisasi pasukan federal melawan Prusia; Prusia menyatakan Konfederasi bubar."
+        }
+      },
+      "summary": {
+        "en": "Austria introduced a motion in the Frankfurt Diet to mobilize federal forces against Prussia over the Schleswig-Holstein dispute. When the motion carried, Prussian envoy Savigny declared the German Confederation dissolved, triggering the outbreak of war.",
+        "id": "Austria mengajukan mosi di Majelis Frankfurt untuk memobilisasi pasukan federal melawan Prusia terkait sengketa Schleswig-Holstein. Saat mosi disetujui, utusan Prusia Savigny menyatakan Konfederasi Jerman bubar, memicu pecahnya perang."
+      },
+      "sources": [
+        "wawro-1996",
+        "clark-2006"
+      ]
+    },
+    {
+      "id": "invasion-of-saxony",
+      "kind": "other",
+      "name": {
+        "en": "Prussian Occupation of Saxony",
+        "id": "Pendudukan Sachsen oleh Prusia"
+      },
+      "when": "1866-06-16/1866-06-18",
+      "at": "dresden",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "Karl Eberhard Herwarth von Bittenfeld"
+          ],
+          "strength": 46000
+        },
+        {
+          "faction": "german-confederation",
+          "role": "defender",
+          "commanders": [
+            "Crown Prince Albert of Saxony"
+          ],
+          "strength": 24000
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Prussian forces occupied Dresden unopposed as the Saxon army conducted an orderly retreat into Bohemia to unite with Benedek.",
+          "id": "Pasukan Prusia menduduki Dresden tanpa perlawanan karena tentara Sachsen mundur secara teratur ke Bohemia untuk bergabung dengan Benedek."
+        }
+      },
+      "summary": {
+        "en": "The Prussian Army of the Elbe crossed the Saxon frontier and entered Dresden without resistance, securing key railway lines while the Saxon army withdrew south into Bohemia.",
+        "id": "Pasukan Elbe Prusia melintasi perbatasan Sachsen dan memasuki Dresden tanpa perlawanan, mengamankan jalur kereta api penting saat tentara Sachsen mundur ke selatan ke Bohemia."
+      },
+      "sources": [
+        "hozier-1867",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "battle-of-custoza",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Custoza",
+        "id": "Pertempuran Custoza"
+      },
+      "when": "1866-06-24",
+      "at": "custoza",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "austrian-empire",
+          "role": "attacker",
+          "commanders": [
+            "Archduke Albrecht, Duke of Teschen"
+          ],
+          "strength": 75000,
+          "losses": 5650
+        },
+        {
+          "faction": "prussian-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Alfonso Ferrero La Marmora"
+          ],
+          "strength": 84000,
+          "losses": 8140
+        }
+      ],
+      "outcome": {
+        "victor": "austrian-empire",
+        "summary": {
+          "en": "Decisive Austrian tactical victory over the Italian army in Venetia.",
+          "id": "Kemenangan taktis mutlak Austria atas tentara Italia di Venetia."
+        }
+      },
+      "summary": {
+        "en": "On the Italian front, Archduke Albrecht's Austrian Southern Army repelled and fractured the attacking Italian royal army under King Victor Emmanuel II and General La Marmora across the hills of Custoza.",
+        "id": "Di front Italia, Tentara Selatan Austria di bawah Adipati Agung Albrecht memukul mundur dan mencerai-beraikan serangan tentara kerajaan Italia di bawah Raja Victor Emmanuel II dan Jenderal La Marmora di perbukitan Custoza."
+      },
+      "sources": [
+        "wp-custoza",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "battle-of-podol",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Podol",
+        "id": "Pertempuran Podol"
+      },
+      "when": "1866-06-26/1866-06-27",
+      "at": "podol",
+      "importance": 3,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "Julius von Bose"
+          ],
+          "strength": 10000,
+          "losses": 130
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "defender",
+          "commanders": [
+            "Ferdinand Poschacher von Poschach"
+          ],
+          "strength": 12000,
+          "losses": 1050
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Prussian forces captured the crucial bridge over the Iser in a night battle.",
+          "id": "Pasukan Prusia merebut jembatan penting di atas Sungai Iser dalam pertempuran malam."
+        }
+      },
+      "summary": {
+        "en": "In a savage nighttime skirmish, Prussian infantry armed with rapid-firing Dreyse needle-guns forced the passage of the Iser river at Podol, inflicting heavy casualties on the defending Austrian brigade.",
+        "id": "Dalam bentrokan malam yang sengit, infanteri Prusia yang bersenjatakan senapan jarum Dreyse bereaksi cepat merebut perlintasan Sungai Iser di Podol, menimpakan korban berat pada brigade Austria."
+      },
+      "sources": [
+        "craig-1964",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "battle-of-trautenau",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Trautenau",
+        "id": "Pertempuran Trautenau"
+      },
+      "when": "1866-06-27",
+      "at": "trautenau",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "austrian-empire",
+          "role": "attacker",
+          "commanders": [
+            "Ludwig von Gablenz"
+          ],
+          "strength": 31000,
+          "losses": 4780
+        },
+        {
+          "faction": "prussian-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Adolf von Bonin"
+          ],
+          "strength": 21000,
+          "losses": 1340
+        }
+      ],
+      "outcome": {
+        "victor": "austrian-empire",
+        "summary": {
+          "en": "Austrian X Corps forced the retreat of Prussian I Corps, but suffered more than triple the Prussian casualties.",
+          "id": "Korps X Austria memaksa Korps I Prusia mundur, tetapi menderita korban lebih dari tiga kali lipat korban Prusia."
+        }
+      },
+      "summary": {
+        "en": "General Gablenz's Austrian X Corps launched aggressive bayonet charges to dislodge Bonin's Prussian I Corps from the heights of Trautenau. While tactically victorious, Austrian casualties were staggering due to Prussian breechloaders.",
+        "id": "Korps X Austria pimpinan Jenderal Gablenz melancarkan serbuan bayonet agresif untuk mengusir Korps I Prusia dari bukit-bukit Trautenau. Kendati menang secara taktis, korban di pihak Austria luar biasa besar akibat tembakan senapan sungsang Prusia."
+      },
+      "sources": [
+        "wp-trautenau",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "battle-of-nachod",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Náchod",
+        "id": "Pertempuran Náchod"
+      },
+      "when": "1866-06-27",
+      "at": "nachod",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Karl Friedrich von Steinmetz"
+          ],
+          "strength": 28000,
+          "losses": 1120
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "attacker",
+          "commanders": [
+            "Wilhelm von Ramming"
+          ],
+          "strength": 29000,
+          "losses": 5710
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Steinmetz's V Corps routed Ramming's Austrian VI Corps, securing the eastern gateway into Bohemia.",
+          "id": "Korps V pimpinan Steinmetz memorak-porandakan Korps VI Austria pimpinan Ramming, mengamankan gerbang timur menuju Bohemia."
+        }
+      },
+      "summary": {
+        "en": "Emerging from the mountain defile at Náchod, Steinmetz's advance guard withstood repeated Austrian assaults and counterattacked, decimating Ramming's corps and securing the debouchment of the Prussian Second Army.",
+        "id": "Keluar dari celah pegunungan di Náchod, barisan depan Steinmetz menahan gelombang serangan Austria berulang kali dan membalas, menghancurkan korps Ramming serta mengamankan jalur keluar Pasukan Kedua Prusia."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "battle-of-langensalza",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Langensalza",
+        "id": "Pertempuran Langensalza"
+      },
+      "when": "1866-06-27/1866-06-29T12:00",
+      "at": "langensalza",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "german-confederation",
+          "role": "attacker",
+          "commanders": [
+            "King George V of Hanover",
+            "Alexander von Arentschildt"
+          ],
+          "strength": 19000,
+          "losses": 1430
+        },
+        {
+          "faction": "prussian-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Eduard Moritz von Flies"
+          ],
+          "strength": 9000,
+          "losses": 820
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Hanoverian tactical victory on 27 June ended in encirclement and total capitulation on 29 June.",
+          "id": "Kemenangan taktis Hannover pada 27 Juni berakhir dengan pengepungan dan kapitulasi total pada 29 Juni."
+        }
+      },
+      "summary": {
+        "en": "The Hanoverian Army repulsed an isolated Prussian detachment under General Flies on 27 June, but found its retreat cut off by converging Prussian columns under Falckenstein, forcing King George V to capitulate on 29 June.",
+        "id": "Tentara Hannover memukul mundur detasemen terisolasi Prusia di bawah Jenderal Flies pada 27 Juni, tetapi jalur mundurnya terpotong oleh lajur-lajur pasukan Prusia yang mengepung di bawah Falckenstein, memaksa Raja George V menyerah pada 29 Juni."
+      },
+      "sources": [
+        "wp-langensalza",
+        "showalter-2004"
+      ]
+    },
+    {
+      "id": "battle-of-skalitz",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Skalitz",
+        "id": "Pertempuran Skalitz"
+      },
+      "when": "1866-06-28",
+      "at": "skalitz",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "Karl Friedrich von Steinmetz"
+          ],
+          "strength": 25000,
+          "losses": 1360
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "defender",
+          "commanders": [
+            "Archduke Leopold of Austria"
+          ],
+          "strength": 27000,
+          "losses": 5570
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Steinmetz defeated Austrian VIII Corps, capturing thousands of prisoners.",
+          "id": "Steinmetz mengalahkan Korps VIII Austria, menawan ribuan prajurit musuh."
+        }
+      },
+      "summary": {
+        "en": "Steinmetz followed up his victory at Náchod by storming the Austrian defensive positions at Skalitz, shattering Archduke Leopold's VIII Corps and opening the route toward the upper Elbe.",
+        "id": "Steinmetz melanjutkan kemenangannya di Náchod dengan menyerbu posisi pertahanan Austria di Skalitz, menghancurkan Korps VIII pimpinan Adipati Agung Leopold dan membuka jalan menuju hulu Sungai Elbe."
+      },
+      "sources": [
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "battle-of-munchengratz",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Münchengrätz",
+        "id": "Pertempuran Münchengrätz"
+      },
+      "when": "1866-06-28",
+      "at": "munchengratz",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "Prince Friedrich Karl of Prussia",
+            "Herwarth von Bittenfeld"
+          ],
+          "strength": 40000,
+          "losses": 340
+        },
+        {
+          "faction": "german-confederation",
+          "role": "defender",
+          "commanders": [
+            "Eduard Clam-Gallas",
+            "Crown Prince Albert of Saxony"
+          ],
+          "strength": 30000,
+          "losses": 2000
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Prussian First Army and Army of the Elbe outflanked the Austrian-Saxon positions along the Iser.",
+          "id": "Pasukan Pertama Prusia dan Pasukan Elbe mengepung posisi pertahanan Austria-Sachsen di sepanjang Sungai Iser."
+        }
+      },
+      "summary": {
+        "en": "Converging Prussian forces under Prince Friedrich Karl and Herwarth von Bittenfeld pressed Clam-Gallas and Crown Prince Albert out of their fortified positions at Münchengrätz, forcing them into a hasty retreat toward Gitschin.",
+        "id": "Pemusatan pasukan Prusia di bawah Pangeran Friedrich Karl dan Herwarth von Bittenfeld mendesak Clam-Gallas dan Putra Mahkota Albert keluar dari posisi pertahanan di Münchengrätz, memaksa mereka mundur tergesa-gesa ke Gitschin."
+      },
+      "sources": [
+        "craig-1964",
+        "moltke-1867"
+      ]
+    },
+    {
+      "id": "battle-of-gitschin",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Gitschin",
+        "id": "Pertempuran Gitschin"
+      },
+      "when": "1866-06-29",
+      "at": "gitschin",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "August von Werder",
+            "August von Tumpling"
+          ],
+          "strength": 42000,
+          "losses": 1550
+        },
+        {
+          "faction": "german-confederation",
+          "role": "defender",
+          "commanders": [
+            "Crown Prince Albert of Saxony",
+            "Eduard Clam-Gallas"
+          ],
+          "strength": 46000,
+          "losses": 5300
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Prussian victory linked the western and northern wings and prompted Benedek's general retreat.",
+          "id": "Kemenangan Prusia menghubungkan sayap barat dan utara serta memicu mundurnya pasukan Benedek secara menyeluruh."
+        }
+      },
+      "summary": {
+        "en": "In a hard-fought evening assault, Prussian divisions stormed the heights around Gitschin, driving out the Saxon and Austrian defenders. The loss of this vital junction convinced Benedek that his Bohemian position was untenable.",
+        "id": "Dalam serbuan malam yang sengit, divisi-divisi Prusia merebut perbukitan di sekitar Gitschin, mengusir pasukan bertahan Sachsen dan Austria. Jatuhnya persimpangan vital ini meyakinkan Benedek bahwa posisinya di Bohemia tidak lagi dapat dipertahankan."
+      },
+      "sources": [
+        "wp-gitschin",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "battle-of-koniggratz",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Königgrätz (Sadowa)",
+        "id": "Pertempuran Königgrätz (Sadowa)"
+      },
+      "when": "1866-07-03",
+      "at": "sadowa",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "King Wilhelm I of Prussia",
+            "Helmuth von Moltke",
+            "Prince Friedrich Karl",
+            "Crown Prince Friedrich Wilhelm"
+          ],
+          "strength": 221000,
+          "losses": 9170
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "defender",
+          "commanders": [
+            "Ludwig von Benedek",
+            "Crown Prince Albert of Saxony"
+          ],
+          "strength": 215000,
+          "losses": 44300
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Decisive Prussian triumph; the Austrian Northern Army was shattered, losing nearly a fifth of its strength as prisoners.",
+          "id": "Kemenangan mutlak Prusia; Tentara Utara Austria dihancurkan, kehilangan hampir seperlima pasukannya sebagai tawanan."
+        }
+      },
+      "summary": {
+        "en": "The climactic battle of the war, engaging nearly 450,000 men. Prussian First Army held against ferocious Austrian artillery and infantry counterattacks along the Bistritz river until Crown Prince Friedrich Wilhelm's Second Army arrived on the Austrian right flank, storming Chlum and sealing victory.",
+        "id": "Pertempuran klimaks dari seluruh perang, melibatkan hampir 450.000 prajurit. Pasukan Pertama Prusia bertahan menghadapi gempuran artileri dan serangan balik infanteri Austria di sepanjang Sungai Bistritz hingga Pasukan Kedua pimpinan Putra Mahkota Friedrich Wilhelm tiba di sayap kanan Austria, menyerbu Chlum dan memastikan kemenangan mutlak."
+      },
+      "sources": [
+        "wp-koniggratz",
+        "craig-1964",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "fall-of-chlum",
+      "kind": "battle",
+      "name": {
+        "en": "Storming of Chlum Heights",
+        "id": "Penyerbuan Punggung Bukit Chlum"
+      },
+      "when": "1866-07-03T14:30/1866-07-03T16:00",
+      "at": "chlum",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "August von Württemberg",
+            "Alexander von Pape"
+          ],
+          "strength": 25000,
+          "losses": 1800
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "defender",
+          "commanders": [
+            "Ludwig von Benedek",
+            "Count Festetics"
+          ],
+          "strength": 35000,
+          "losses": 8500
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Prussian 1st Guards Division seized the key church and heights of Chlum, breaking Benedek's defensive position.",
+          "id": "Divisi Pengawal ke-1 Prusia merebut gereja dan perbukitan kunci Chlum, meruntuhkan seluruh garis pertahanan Benedek."
+        }
+      },
+      "summary": {
+        "en": "Advancing through mist and smoke from the north, the Prussian 1st Guards Division burst into the undefended village of Chlum on the Austrian right flank. Desperate Austrian counterattacks by I Corps and reserve artillery were cut down by rapid Dreyse rifle fire.",
+        "id": "Maju menembus kabut dan asap dari utara, Divisi Pengawal ke-1 Prusia mendadak menyerbu desa Chlum yang tidak terjaga di sayap kanan Austria. Serangan balik putus asa Austria oleh Korps I dan artileri cadangan dibabat habis oleh tembakan cepat senapan jarum Dreyse."
+      },
+      "sources": [
+        "craig-1964",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "capture-of-frankfurt",
+      "kind": "capture",
+      "name": {
+        "en": "Prussian Capture of Frankfurt",
+        "id": "Pendudukan Frankfurt oleh Prusia"
+      },
+      "when": "1866-07-16",
+      "at": "frankfurt",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "Eduard Vogel von Falckenstein"
+          ],
+          "strength": 45000
+        },
+        {
+          "faction": "german-confederation",
+          "role": "defender",
+          "commanders": [
+            "Prince Alexander of Hesse"
+          ],
+          "strength": 30000
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Prussian Army of the Main occupied Frankfurt am Main, ending the seat of the German Confederation.",
+          "id": "Pasukan Main Prusia menduduki Frankfurt am Main, mengakhiri kedudukan Konfederasi Jerman."
+        }
+      },
+      "summary": {
+        "en": "Following victories over Federal and Bavarian forces in the Campaign of the Main, General Vogel von Falckenstein marched into Frankfurt am Main, dissolving the remnants of the Federal Diet and placing the city under heavy military levy.",
+        "id": "Menyusul kemenangan atas pasukan Federal dan Bayern dalam Kampanye Main, Jenderal Vogel von Falckenstein berbaris memasuki Frankfurt am Main, membubarkan sisa-sisa Majelis Federal dan mengenakan denda militer berat pada kota tersebut."
+      },
+      "sources": [
+        "showalter-2004",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "battle-of-blumenau",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Blumenau",
+        "id": "Pertempuran Blumenau"
+      },
+      "when": "1866-07-22",
+      "at": "blumenau",
+      "importance": 3,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "Eduard von Fransecky"
+          ],
+          "strength": 20000,
+          "losses": 220
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "defender",
+          "commanders": [
+            "Archduke Ernst of Austria"
+          ],
+          "strength": 18000,
+          "losses": 490
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "The battle was halted mid-combat by the official declaration of a preliminary ceasefire at noon.",
+          "id": "Pertempuran dihentikan di tengah baku tembak oleh pernyataan resmi gencatan senjata pendahuluan tepat tengah hari."
+        }
+      },
+      "summary": {
+        "en": "The final combat of the Bohemian campaign took place on the road to Pressburg (Bratislava). As Prussian forces enveloped the Austrian positions, dispatch riders arrived at noon with news of an agreed armistice, ending hostilities.",
+        "id": "Bentrokan senjata terakhir dalam kampanye Bohemia berlangsung di jalan menuju Pressburg (Bratislava). Saat pasukan Prusia mengepung posisi Austria, kurir berkuda tiba tepat tengah hari membawa kabar tercapainya gencatan senjata, menghentikan permusuhan."
+      },
+      "sources": [
+        "hozier-1867",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "armistice-of-nikolsburg",
+      "kind": "negotiation",
+      "name": {
+        "en": "Preliminary Peace of Nikolsburg",
+        "id": "Perdamaian Pendahuluan Nikolsburg"
+      },
+      "when": "1866-07-26",
+      "at": "nikolsburg",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "negotiator",
+          "commanders": [
+            "Otto von Bismarck",
+            "King Wilhelm I of Prussia"
+          ]
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "negotiator",
+          "commanders": [
+            "Count Alois Károlyi",
+            "Baron Adolph von Brenner-Felsach"
+          ]
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "Bismarck secured preliminary terms dissolving the German Confederation and excluding Austria from Germany.",
+          "id": "Bismarck memastikan syarat-syarat pendahuluan pembubaran Konfederasi Jerman dan pengeluaran Austria dari Jerman."
+        }
+      },
+      "summary": {
+        "en": "At Nikolsburg Château, Bismarck fiercely resisted King Wilhelm's desire to march into Vienna and annex Austrian territory. Recognizing that a humiliated Austria would seek future revenge, Bismarck insisted on a moderate peace that achieved Prussia's true war aim: complete Austrian withdrawal from German affairs.",
+        "id": "Di Kastel Nikolsburg, Bismarck bersikukuh menentang keinginan Raja Wilhelm untuk berbaris memasuki Wina dan mencaplok wilayah Austria. Menyadari bahwa Austria yang terhina akan membalas dendam di masa depan, Bismarck menegaskan perdamaian lunak yang menggapai tujuan sejati perang: penarikan penuh Austria dari urusan Jerman."
+      },
+      "sources": [
+        "clark-2006",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "treaty-of-prague",
+      "kind": "treaty",
+      "name": {
+        "en": "Peace of Prague",
+        "id": "Perjanjian Damai Praha"
+      },
+      "when": "1866-08-23",
+      "at": "prague",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "prussian-kingdom",
+          "role": "party",
+          "commanders": [
+            "Otto von Bismarck"
+          ]
+        },
+        {
+          "faction": "austrian-empire",
+          "role": "party",
+          "commanders": [
+            "Baron Adolph von Brenner-Felsach"
+          ]
+        }
+      ],
+      "outcome": {
+        "victor": "prussian-kingdom",
+        "summary": {
+          "en": "The German Confederation was formally dissolved; Prussia formed the North German Confederation and annexed Schleswig, Holstein, Hanover, Hesse-Kassel, Nassau, and Frankfurt.",
+          "id": "Konfederasi Jerman secara resmi dibubarkan; Prusia membentuk Konfederasi Jerman Utara dan mencaplok Schleswig, Holstein, Hannover, Hessen-Kassel, Nassau, serta Frankfurt."
+        }
+      },
+      "summary": {
+        "en": "Signed on 23 August 1866, the Treaty of Prague definitively dissolved the 51-year-old German Confederation. Austria accepted its permanent exclusion from Germany, ceded Venetia to Italy, and paid a modest indemnity. Prussia annexed several northern German states and established the North German Confederation under its direct hegemony.",
+        "id": "Ditandatangani pada 23 Agustus 1866, Perjanjian Praha secara definitif membubarkan Konfederasi Jerman yang telah berusia 51 tahun. Austria menerima pengeluarannya secara permanen dari Jerman, menyerahkan Venetia ke Italia, dan membayar ganti rugi ringan. Prusia mencaplok beberapa negara bagian Jerman utara dan mendirikan Konfederasi Jerman Utara di bawah hegemoni langsungnya."
+      },
+      "sources": [
+        "wawro-1996",
+        "clark-2006",
+        "wp-austro-prussian"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-fractured-confederation",
+      "when": "1866-06-14/1866-06-18",
+      "dateLabel": {
+        "en": "14–18 June 1866",
+        "id": "14–18 Juni 1866"
+      },
+      "title": {
+        "en": "The Fractured Confederation",
+        "id": "Konfederasi yang Terbelah"
+      },
+      "body": {
+        "en": "On 14 June 1866, the simmering rivalry between Prussia and Austria over the duchies of Schleswig and Holstein exploded into open rupture. Meeting in Frankfurt, the Federal Diet voted to mobilize federal troops against Prussia. In response, Prussian envoy Karl Friedrich von Savigny rose to declare that the fifty-one-year-old German Confederation was dissolved, and that Prussia would treat any state complying with the decree as an enemy.\n\nPrussian mobilization proceeded with clockwork precision under Chief of the General Staff Helmuth von Moltke. Mobilizing through five trunk railways, Prussian troops crossed into Saxony, Hanover, and Hesse-Kassel on 15 June. The Royal Saxon Army under Crown Prince Albert evacuated Dresden without a fight, marching south into Bohemia to unite with Feldzeugmeister Ludwig von Benedek's Austrian Northern Army.",
+        "id": "Pada 14 Juni 1866, persaingan panas antara Prusia dan Austria atas wilayah kadipaten Schleswig dan Holstein meledak menjadi perpecahan terbuka. Bertempat di Frankfurt, Majelis Federal menyetujui usulan untuk memobilisasi pasukan federal melawan Prusia. Menanggapi hal itu, utusan Prusia Karl Friedrich von Savigny bangkit menyatakan bahwa Konfederasi Jerman yang berusia lima puluh satu tahun telah bubar, dan Prusia akan memperlakukan negara mana pun yang mematuhi maklumat tersebut sebagai musuh.\n\nMobilisasi Prusia bergulir dengan ketepatan jam kerja di bawah Kepala Staf Umum Helmuth von Moltke. Menggunakan lima jalur kereta api utama, tentara Prusia bergerak memasuki Sachsen, Hannover, dan Hessen-Kassel pada 15 Juni. Tentara Kerajaan Sachsen di bawah Putra Mahkota Albert mengosongkan Dresden tanpa perlawanan, berbaris ke selatan menuju Bohemia untuk bergabung dengan Tentara Utara Austria pimpinan Feldzeugmeister Ludwig von Benedek."
+      },
+      "camera": {
+        "center": [
+          11.5,
+          51.5
+        ],
+        "zoom": 7.0,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "diet-mobilization",
+        "invasion-of-saxony",
+        "frankfurt",
+        "dresden",
+        "prussian-elbe-army",
+        "austrian-saxon-corps"
+      ],
+      "sources": [
+        "wawro-1996",
+        "clark-2006",
+        "wp-austro-prussian"
+      ]
+    },
+    {
+      "id": "ch-2-two-front-gamble",
+      "when": "1866-06-19/1866-06-25",
+      "dateLabel": {
+        "en": "19–25 June 1866",
+        "id": "19–25 Juni 1866"
+      },
+      "title": {
+        "en": "A Two-Front Gamble",
+        "id": "Pertaruhan Dua Front"
+      },
+      "body": {
+        "en": "Moltke faced a daring operational challenge: Austria commanded interior lines and had assembled over 240,000 men in Moravia, while Prussia was forced to divide its forces across an arc of over two hundred miles from Saxony to Silesia. Moltke embraced this dispersion, articulating his revolutionary operational maxim: *\"March divided, strike united\"* (*Getrennt marschieren, vereint schlagen*).\n\nMeanwhile, on the southern front in Venetia, Prussia's Italian ally struck across the Mincio river. On 24 June at Custoza, Archduke Albrecht's Austrian Southern Army won a smashing tactical victory over General La Marmora's Italian army. Yet Austria's triumph in Italy could not divert Prussian divisions now massing along the Bohemian frontier.",
+        "id": "Moltke menghadapi tantangan operasional yang berani: Austria menguasai jalur dalam (*interior lines*) dan telah menghimpun lebih dari 240.000 prajurit di Moravia, sementara Prusia terpaksa membagi kekuatannya di sepanjang lengkungan lebih dari dua ratus mil dari Sachsen hingga Silesia. Moltke menerima pemisahan ini, merumuskan doktrin operasionalnya yang revolusioner: *\"Berbaris terpisah, menyerang bersama\"* (*Getrennt marschieren, vereint schlagen*).\n\nSementara itu, di front selatan di Venetia, sekutu Italia Prusia menyerang melintasi Sungai Mincio. Pada 24 Juni di Custoza, Tentara Selatan Austria di bawah Adipati Agung Albrecht meraih kemenangan taktis telak atas tentara Italia pimpinan Jenderal La Marmora. Namun kejayaan Austria di Italia tidak dapat menghentikan divisi-divisi Prusia yang kini memusat di sepanjang perbatasan Bohemia."
+      },
+      "camera": {
+        "center": [
+          13.5,
+          48.0
+        ],
+        "zoom": 6.2,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "battle-of-custoza",
+        "custoza",
+        "olmutz",
+        "austrian-southern-army",
+        "austrian-northern-army"
+      ],
+      "media": [
+        "moltke-portrait"
+      ],
+      "sources": [
+        "wp-custoza",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "ch-3-mountain-passes",
+      "when": "1866-06-26/1866-06-27",
+      "dateLabel": {
+        "en": "26–27 June 1866",
+        "id": "26–27 Juni 1866"
+      },
+      "title": {
+        "en": "Piercing the Giant Mountains",
+        "id": "Menembus Pegunungan Raksasa"
+      },
+      "body": {
+        "en": "On 26 June, Prussian armies entered Bohemia from two directions. In the north, Prince Friedrich Karl's First Army forced the crossing of the Iser river at Podol in a sharp night action. To the east, Crown Prince Friedrich Wilhelm's Second Army wound its way through the narrow defiles of the Giant Mountains (Riesengebirge) from Silesia.\n\nOn 27 June, Austrian corps attempted to block the exits from the mountain passes. At Trautenau, General Gablenz's Austrian X Corps repulsed the Prussian I Corps in furious bayonet assaults—Austria's sole victory in Bohemia, but bought at the horrifying cost of nearly 5,000 casualties. Ten miles south at Náchod, Steinmetz's Prussian V Corps pulverized Ramming's Austrian VI Corps, demonstrating the overwhelming tactical superiority of the breechloading Dreyse needle-gun, which allowed Prussian soldiers to fire five rounds per minute from a prone position.",
+        "id": "Pada 26 Juni, pasukan Prusia memasuki Bohemia dari dua arah. Di utara, Pasukan Pertama pimpinan Pangeran Friedrich Karl memaksakan penyeberangan Sungai Iser di Podol dalam pertempuran malam yang sengit. Di timur, Pasukan Kedua pimpinan Putra Mahkota Friedrich Wilhelm bergerak melintasi celah-celah sempit Pegunungan Raksasa (Riesengebirge) dari Silesia.\n\nPada 27 Juni, korps Austria berupaya memblokade pintu keluar celah pegunungan tersebut. Di Trautenau, Korps X Austria pimpinan Jenderal Gablenz memukul mundur Korps I Prusia melalui serbuan bayonet yang ganas—satu-satunya kemenangan Austria di Bohemia, tetapi dibayar sangat mahal dengan hampir 5.000 korban. Sepuluh mil di selatan di Náchod, Korps V Prusia pimpinan Steinmetz meluluhlantakkan Korps VI Austria pimpinan Ramming, membuktikan keunggulan taktis mutlak senapan jarum sungsang Dreyse, yang memungkinkan prajurit Prusia menembakkan lima butir peluru per menit sambil bertiarap."
+      },
+      "camera": {
+        "center": [
+          15.6,
+          50.5
+        ],
+        "zoom": 9.2,
+        "pitch": 35,
+        "bearing": 10,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-podol",
+        "battle-of-trautenau",
+        "battle-of-nachod",
+        "podol",
+        "trautenau",
+        "nachod",
+        "prussian-second-army"
+      ],
+      "sources": [
+        "wp-trautenau",
+        "wawro-1996",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "ch-4-the-jaws-close",
+      "when": "1866-06-28/1866-06-29",
+      "dateLabel": {
+        "en": "28–29 June 1866",
+        "id": "28–29 Juni 1866"
+      },
+      "title": {
+        "en": "The Jaws of the Pincers Close",
+        "id": "Rahang Capit Menutup"
+      },
+      "body": {
+        "en": "Moltke's strategic pincers tightened relentlessly across Bohemia. On 28 June, General Steinmetz attacked again at Skalitz, routing Archduke Leopold's VIII Corps. Simultaneously on the Iser, the Prussian First Army and Army of the Elbe overwhelmed Clam-Gallas's Austrian-Saxon defenders at Münchengrätz.\n\nOn the evening of 29 June, the two western Prussian armies converged upon Gitschin (Jičín). In heavy street and orchard fighting, Prussian divisions stormed the town, shattering the Austrian I Corps and forcing Crown Prince Albert's Saxons to withdraw. In western Germany that same morning, the Hanoverian Army, encircled at Langensalza, laid down its arms. With his front cracked on both flanks, Benedek telegraphed Emperor Franz Joseph: *\"Beg Your Majesty urgently to make peace at any price. Catastrophe for the army is unavoidable.\"*",
+        "id": "Capit strategis Moltke mencengkeram kian erat di seantero Bohemia. Pada 28 Juni, Jenderal Steinmetz menyerang kembali di Skalitz, mengobrak-abrik Korps VIII pimpinan Adipati Agung Leopold. Pada saat yang sama di Sungai Iser, Pasukan Pertama Prusia dan Pasukan Elbe mendesak mundur pasukan Austria-Sachsen pimpinan Clam-Gallas di Münchengrätz.\n\nPada malam 29 Juni, kedua pasukan barat Prusia memusat di Gitschin (Jičín). Dalam pertempuran sengit di jalanan dan kebun buah, divisi-divisi Prusia menyerbu kota tersebut, melumpuhkan Korps I Austria dan memaksa tentara Sachsen pimpinan Putra Mahkota Albert mundur. Di Jerman barat pada pagi yang sama, tentara Hannover yang terkepung di Langensalza meletakkan senjata. Dengan runtuhnya kedua sayap pasukannya, Benedek mengirim telegram mendesak kepada Kaisar Franz Joseph: *\"Mohon Yang Mulia segera mengadakan perdamaian dengan syarat apa pun. Bencana bagi tentara tidak dapat dihindari lagi.\"*"
+      },
+      "camera": {
+        "center": [
+          15.4,
+          50.45
+        ],
+        "zoom": 9.0,
+        "pitch": 35,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-skalitz",
+        "battle-of-munchengratz",
+        "battle-of-gitschin",
+        "battle-of-langensalza",
+        "gitschin",
+        "skalitz",
+        "munchengratz"
+      ],
+      "media": [
+        "benedek-portrait"
+      ],
+      "sources": [
+        "wp-gitschin",
+        "craig-1964",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "ch-5-eve-of-decision",
+      "when": "1866-06-30/1866-07-02",
+      "dateLabel": {
+        "en": "30 June – 2 July 1866",
+        "id": "30 Juni – 2 Juli 1866"
+      },
+      "title": {
+        "en": "Eve of Decision along the Bistritz",
+        "id": "Menjelang Penentuan di Sungai Bistritz"
+      },
+      "body": {
+        "en": "Emperor Franz Joseph curtly refused Benedek's plea for peace: *\"Has a battle been fought? I forbid any retreat.\"* Bound by imperial command, Benedek drew up the Austrian Northern Army and the Saxon corps—over 215,000 men and 770 rifled guns—in an eight-mile horseshoe position northwest of the fortress of Königgrätz, along the rolling heights east of the Bistritz river.\n\nPrussian reconnaissance discovered the Austrian concentration on the afternoon of 2 July. In the castle of Gitschin, Moltke and King Wilhelm I made their momentous decision: Prince Friedrich Karl's First Army and the Army of the Elbe would attack across the Bistritz at dawn, pinning the Austrian army in place, while urgent riders galloped through the night carrying orders for the Crown Prince's Second Army to march ten miles south and crash into the Austrian right flank.",
+        "id": "Kaisar Franz Joseph menolak mentah-mentah permohonan damai Benedek: *\"Apakah pertempuran sudah terjadi? Saya melarang segala bentuk penarikan mundur.\"* Terikat oleh titah kaisar, Benedek menyusun Tentara Utara Austria dan korps Sachsen—lebih dari 215.000 prajurit dan 770 meriam berulir—dalam posisi tapal kuda sepanjang delapan mil di barat laut benteng Königgrätz, di sepanjang perbukitan di timur Sungai Bistritz.\n\nPengintaian Prusia menemukan lokasi pemusatan Austria tersebut pada sore hari 2 Juli. Di kastel Gitschin, Moltke dan Raja Wilhelm I mengambil keputusan bersejarah: Pasukan Pertama pimpinan Pangeran Friedrich Karl dan Pasukan Elbe akan menyerang menyeberangi Sungai Bistritz saat fajar, mengikat posisi tentara Austria di tempat, sementara kurir-kurir berkuda memacu kuda di kegelapan malam membawa perintah mendesak bagi Pasukan Kedua Putra Mahkota untuk berbaris sepuluh mil ke selatan dan menghantam sayap kanan Austria."
+      },
+      "camera": {
+        "center": [
+          15.75,
+          50.3
+        ],
+        "zoom": 9.5,
+        "pitch": 35,
+        "bearing": 15,
+        "durationMs": 3500
+      },
+      "focus": [
+        "koniggratz",
+        "pardubitz",
+        "josefstadt",
+        "austrian-northern-army",
+        "prussian-first-army"
+      ],
+      "sources": [
+        "craig-1964",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "ch-6-clash-at-the-bistritz",
+      "when": "1866-07-03T00:00/1866-07-03T11:30",
+      "dateLabel": {
+        "en": "3 July 1866 (Morning)",
+        "id": "3 Juli 1866 (Pagi)"
+      },
+      "title": {
+        "en": "The Inferno of the Swiepwald",
+        "id": "Api Neraka di Hutan Swiep"
+      },
+      "body": {
+        "en": "At 07:00 on 3 July 1866, through driving drizzle and dense fog, Prussian artillery opened fire across the swollen Bistritz river. Prince Friedrich Karl sent his infantry forward to seize the village of Sadowa, but Austrian massed batteries—commanding the high ground with superior rifled guns—blasted the Prussian columns, stalling their advance in the boggy valley.\n\nTo the north, General von Fransecky's Prussian 7th Division thrust boldly into the dense beech groves of the Swiepwald (Svíb Forest). Realizing the danger to their flank, two entire Austrian corps (IV and II), disregarding Benedek's explicit orders, turned aside to crush the isolated Prussian division. For five agonizing hours in the dripping woods, Fransecky's men held off more than forty thousand Austrian infantry with rapid needle-gun fire, losing nearly half their numbers. Critically, this Austrian fixation emptied the vital heights of Chlum just as the Prussian Second Army approached.",
+        "id": "Pada pukul 07.00 tanggal 3 Juli 1866, di tengah gerimis lebat dan kabut tebal, artileri Prusia membuka tembakan melintasi luapan Sungai Bistritz. Pangeran Friedrich Karl mengerahkan infanterinya maju merebut desa Sadowa, namun baterai meriam massal Austria—yang menguasai dataran tinggi dengan meriam berulir unggul—menghujani lajur-lajur Prusia, menghentikan gerak maju mereka di lembah berlumpur.\n\nDi utara, Divisi ke-7 Prusia pimpinan Jenderal von Fransecky merangsek berani ke dalam lebatnya pepohonan Hutan Swiep (Svíb). Menyadari ancaman terhadap sayap mereka, dua korps penuh Austria (IV dan II), mengabaikan perintah tegas Benedek, berbelok untuk menghancurkan divisi Prusia yang terisolasi tersebut. Selama lima jam penuh penderitaan di hutan yang basah, pasukan Fransecky menahan lebih dari empat puluh ribu prajurit infanteri Austria dengan tembakan cepat senapan jarum, kehilangan hampir separuh anggotanya. Yang paling krusial, tersedotnya perhatian Austria ini mengosongkan perbukitan penting Chlum tepat saat Pasukan Kedua Prusia mendekat."
+      },
+      "camera": {
+        "center": [
+          15.72,
+          50.295
+        ],
+        "zoom": 11.2,
+        "pitch": 40,
+        "bearing": 20,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-koniggratz",
+        "sadowa",
+        "swiepwald",
+        "prussian-first-army",
+        "austrian-northern-army"
+      ],
+      "media": [
+        "bleibtreu-koniggratz"
+      ],
+      "sources": [
+        "wp-koniggratz",
+        "craig-1964"
+      ]
+    },
+    {
+      "id": "ch-7-the-crown-prince-arrives",
+      "when": "1866-07-03T11:31/1866-07-03T16:00",
+      "dateLabel": {
+        "en": "3 July 1866 (Afternoon)",
+        "id": "3 Juli 1866 (Siang)"
+      },
+      "title": {
+        "en": "The Storming of Chlum Heights",
+        "id": "Penyerbuan Bukit Chlum"
+      },
+      "body": {
+        "en": "By midday, Prince Friedrich Karl's army was pinned and exhausted along the Bistritz, its ammunition running low. King Wilhelm I grew anxious, watching through binoculars alongside Moltke. Then, just before 14:00, dark columns of infantry emerged from the northern hills: Crown Prince Friedrich Wilhelm's Second Army had arrived.\n\nLed by the Prussian 1st Guards Division, the Crown Prince's vanguard swept straight into the vacant, fortified heights of Chlum. Within half an hour, Prussian infantry held the churchyard and the Austrian center was unhinged. Benedek, refusing to believe his right flank had fallen until he rode forward and was greeted by a hail of Prussian bullets, launched desperate counterattacks with his reserve I Corps. Column after column of white-coated Austrian infantry charged uphill, only to be slaughtered by the rapid fire of the needle-gun.",
+        "id": "Menjelang tengah hari, tentara Pangeran Friedrich Karl terpaku dan kelelahan di sepanjang Sungai Bistritz, kehabisan amunisi. Raja Wilhelm I mulai cemas, mengamati medan tempur dengan teropong di samping Moltke. Kemudian, sesaat sebelum pukul 14.00, lajur-lajur gelap infanteri muncul dari perbukitan utara: Pasukan Kedua pimpinan Putra Mahkota Friedrich Wilhelm telah tiba.\n\nDipimpin oleh Divisi Pengawal ke-1 Prusia, barisan depan Putra Mahkota langsung menyapu perbukitan Chlum yang berbenteng namun kosong. Dalam waktu setengah jam, infanteri Prusia telah menguasai pelataran gereja dan membongkar pusat pertahanan Austria. Benedek, yang menolak percaya sayap kanannya telah runtuh hingga ia berkuda maju dan dihujani peluru Prusia, mengerahkan serangan balik putus asa dengan Korps I cadangannya. Lajur demi lajur infanteri Austria berseragam putih menerjang mendaki bukit, hanya untuk dibantai oleh berondongan cepat senapan jarum."
+      },
+      "camera": {
+        "center": [
+          15.74,
+          50.28
+        ],
+        "zoom": 11.5,
+        "pitch": 45,
+        "bearing": 15,
+        "durationMs": 3500
+      },
+      "focus": [
+        "fall-of-chlum",
+        "chlum",
+        "prussian-second-army",
+        "austrian-northern-army"
+      ],
+      "media": [
+        "sell-koniggratz"
+      ],
+      "sources": [
+        "craig-1964",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "ch-8-rout-and-pursuit",
+      "when": "1866-07-03T16:01/1866-07-04T23:59",
+      "dateLabel": {
+        "en": "3–4 July 1866",
+        "id": "3–4 Juli 1866"
+      },
+      "title": {
+        "en": "Rout across the Elbe",
+        "id": "Pelarian Melintasi Sungai Elbe"
+      },
+      "body": {
+        "en": "At 16:30, Benedek ordered a general retreat. The Austrian withdrawal rapidly degenerated into panic as Prussian artillery unlimbered on the Chlum heights to rake the fleeing masses. Only the magnificent courage of the Austrian reserve cavalry—launching heroic, self-sacrificing charges against Prussian infantry—and the stubborn fire of the rear-guard artillery batteries prevented complete annihilation.\n\nTens of thousands of Austrian soldiers bottlenecked at the narrow bridges of Königgrätz, where garrison gates were closed in panic, driving hundreds to drown in the Elbe. Austrian losses were catastrophic: 44,000 men killed, wounded, or captured, along with 187 artillery pieces. Prussian losses stood at roughly 9,000. In Berlin, church bells rang out in triumph, and Bismarck's domestic opposition dissolved overnight.",
+        "id": "Pada pukul 16.30, Benedek memerintahkan penarikan mundur umum. Gerak mundur Austria dengan cepat berubah menjadi kepanikan massal saat artileri Prusia menggelar meriam di perbukitan Chlum untuk menghujani barisan yang melarikan diri. Hanya keberanian luar biasa dari kavaleri cadangan Austria—yang melancarkan serbuan heroik berkorban jiwa menghalau infanteri Prusia—serta keteguhan tembakan baterai artileri barisan belakang yang mencegah kehancuran total.\n\nPuluhan ribu prajurit Austria berjejal di jembatan sempit benteng Königgrätz, tempat pintu-pintu gerbang ditutup karena panik, menyebabkan ratusan prajurit tenggelam di Sungai Elbe. Korban di pihak Austria sungguh memilukan: 44.000 prajurit gugur, terluka, atau ditawan, bersama 187 pucuk meriam. Korban di pihak Prusia sekitar 9.000 orang. Di Berlin, lonceng-lonceng gereja berdentang menyambut kemenangan, dan oposisi politik terhadap Bismarck seketika lenyap."
+      },
+      "camera": {
+        "center": [
+          15.8,
+          50.25
+        ],
+        "zoom": 10.0,
+        "pitch": 35,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "koniggratz",
+        "austrian-northern-army",
+        "prussian-first-army",
+        "prussian-second-army"
+      ],
+      "sources": [
+        "craig-1964",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "ch-9-march-on-vienna",
+      "when": "1866-07-05/1866-07-25",
+      "dateLabel": {
+        "en": "5–25 July 1866",
+        "id": "5–25 Juli 1866"
+      },
+      "title": {
+        "en": "The Race to the Danube",
+        "id": "Perlombaan Menuju Donau"
+      },
+      "body": {
+        "en": "Following the triumph at Königgrätz, Moltke unleashed a relentless pursuit southward through Moravia. Prussian armies entered Brünn (Brno) on 12 July and pushed onward toward the Danube. In Vienna, panic gripped the imperial court; the Southern Army was recalled by train from Italy, and earthworks were thrown up outside the city gates.\n\nIn western Germany, General Vogel von Falckenstein's Army of the Main crushed the remaining Federal and Bavarian forces, capturing Frankfurt on 16 July and ending the Federal Diet. On 22 July, outside Pressburg (Bratislava) at Blumenau, the Prussian Army of the Elbe engaged Austrian forces in the final clash of the war, an artillery battle that was halted mid-action by horsemen bringing news of an agreed ceasefire.",
+        "id": "Menyusul kemenangan di Königgrätz, Moltke melancarkan pengejaran tanpa henti ke arah selatan melintasi Moravia. Pasukan Prusia memasuki Brünn (Brno) pada 12 Juli dan terus menekan ke arah Sungai Donau. Di Wina, kepanikan melanda istana kekaisaran; Tentara Selatan ditarik dengan kereta api dari Italia, dan kubu pertahanan darurat dibangun di luar gerbang kota.\n\nDi Jerman barat, Pasukan Main pimpinan Jenderal Vogel von Falckenstein melumat sisa-sisa pasukan Federal dan Bayern, merebut Frankfurt pada 16 Juli dan membubarkan Majelis Federal. Pada 22 Juli, di luar Pressburg (Bratislava) di Blumenau, Pasukan Elbe Prusia bertempur melawan pasukan Austria dalam bentrokan terakhir perang ini, pertempuran artileri yang dihentikan di tengah jalan oleh kurir berkuda yang membawa warta tercapainya gencatan senjata."
+      },
+      "camera": {
+        "center": [
+          16.5,
+          49.0
+        ],
+        "zoom": 7.5,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "capture-of-frankfurt",
+        "battle-of-blumenau",
+        "brunn",
+        "blumenau",
+        "kissingen",
+        "prussian-army-of-the-main"
+      ],
+      "sources": [
+        "hozier-1867",
+        "showalter-2004",
+        "wawro-1996"
+      ]
+    },
+    {
+      "id": "ch-10-peace-of-nikolsburg",
+      "when": "1866-07-26/1866-08-23",
+      "dateLabel": {
+        "en": "26 July – 23 August 1866",
+        "id": "26 Juli – 23 Agustus 1866"
+      },
+      "title": {
+        "en": "Bismarck's Restraint and the New Order",
+        "id": "Pengendalian Diri Bismarck dan Tatanan Baru"
+      },
+      "body": {
+        "en": "At the Château of Nikolsburg, Bismarck faced the greatest diplomatic crisis of his career. King Wilhelm I and the Prussian generals insisted on a triumphant march into Vienna and large territorial annexations from Austria. Bismarck recognized that humiliating Austria would drive the Habsburgs into a future alliance with France. Through emotional confrontations—weeping and threatening resignation—Bismarck persuaded the King to accept a moderate peace.\n\nSigned on 23 August 1866, the Treaty of Prague dissolved the German Confederation and permanently excluded Austria from German affairs. Prussia annexed Hanover, Hesse-Kassel, Nassau, Frankfurt, and Schleswig-Holstein, creating a contiguous territory spanning northern Germany. In place of the old Confederation, Bismarck founded the North German Confederation under Prussian leadership, laying the undisputed foundation for the unified German Empire five years later.",
+        "id": "Di Kastel Nikolsburg, Bismarck menghadapi krisis diplomatik terbesar dalam kariernya. Raja Wilhelm I dan para jenderal Prusia menuntut pawai kemenangan memasuki Wina serta pencaplokan wilayah luas dari Austria. Bismarck menyadari bahwa mempermalukan Austria akan mendorong Habsburg bersekutu dengan Prancis di masa depan. Melalui konfrontasi emosional—menangis dan mengancam akan mengundurkan diri—Bismarck berhasil membujuk sang Raja menerima perdamaian yang moderat.\n\nDitandatangani pada 23 Agustus 1866, Perjanjian Praha membubarkan Konfederasi Jerman dan mengeluarkan Austria secara permanen dari urusan Jerman. Prusia mencaplok Hannover, Hessen-Kassel, Nassau, Frankfurt, dan Schleswig-Holstein, membentuk wilayah utuh tak terputus yang membentang di Jerman utara. Menggantikan konfederasi lama, Bismarck mendirikan Konfederasi Jerman Utara di bawah kepemimpinan Prusia, meletakkan fondasi tak terbantahkan bagi Kekaisaran Jerman bersatu lima tahun kemudian."
+      },
+      "camera": {
+        "center": [
+          15.5,
+          49.5
+        ],
+        "zoom": 7.0,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "armistice-of-nikolsburg",
+        "treaty-of-prague",
+        "nikolsburg",
+        "prague",
+        "vienna",
+        "berlin"
+      ],
+      "sources": [
+        "clark-2006",
+        "wawro-1996"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "wawro-1996",
+      "type": "book",
+      "citation": "Wawro, Geoffrey. The Austro-Prussian War: Austria's War with Prussia and Italy in 1866. Cambridge: Cambridge University Press, 1996."
+    },
+    {
+      "id": "craig-1964",
+      "type": "book",
+      "citation": "Craig, Gordon A. The Battle of Königgrätz: Prussia's Victory over Austria, 1866. Philadelphia: J.B. Lippincott, 1964."
+    },
+    {
+      "id": "clark-2006",
+      "type": "book",
+      "citation": "Clark, Christopher. Iron Kingdom: The Rise and Downfall of Prussia, 1600–1947. Cambridge, MA: Harvard University Press, 2006."
+    },
+    {
+      "id": "moltke-1867",
+      "type": "book",
+      "citation": "Moltke, Helmuth von. The Campaign of 1866 in Germany. Translated by G.F. von Wright and H.M. Hozier. London: Harrison and Sons, 1872."
+    },
+    {
+      "id": "showalter-2004",
+      "type": "book",
+      "citation": "Showalter, Dennis. The Wars of German Unification. London: Arnold, 2004."
+    },
+    {
+      "id": "hozier-1867",
+      "type": "book",
+      "citation": "Hozier, H.M. The Seven Weeks' War: Its Antecedents and Its Incidents. London: Macmillan and Co., 1867."
+    },
+    {
+      "id": "wp-austro-prussian",
+      "type": "encyclopedia",
+      "citation": "\"Austro-Prussian War.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Austro-Prussian_War",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-koniggratz",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Königgrätz.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_K%C3%B6niggr%C3%A4tz",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-custoza",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Custoza (1866).\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Custoza_(1866)",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-langensalza",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Langensalza (1866).\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Langensalza_(1866)",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-gitschin",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Gitschin.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gitschin",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-trautenau",
+      "type": "encyclopedia",
+      "citation": "\"Battle of Trautenau.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Trautenau",
+      "accessed": "2026-10"
+    }
+  ],
+  "media": [
+    {
+      "id": "bleibtreu-koniggratz",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schlacht-bei-k%C3%B6niggr%C3%A4tz.jpg",
+      "alt": {
+        "en": "Battle of Königgrätz by Georg Bleibtreu (1869), depicting King Wilhelm I and his staff observing Prussian cavalry charges.",
+        "id": "Pertempuran Königgrätz karya Georg Bleibtreu (1869), menggambarkan Raja Wilhelm I dan stafnya menyaksikan serbuan kavaleri Prusia."
+      },
+      "caption": {
+        "en": "Battle of Königgrätz by Georg Bleibtreu (1869).",
+        "id": "Pertempuran Königgrätz karya Georg Bleibtreu (1869)."
+      },
+      "creator": "Georg Bleibtreu",
+      "date": "1869",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schlacht-bei-k%C3%B6niggr%C3%A4tz.jpg"
+    },
+    {
+      "id": "sell-koniggratz",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Christian_Sell_-_The_Battle_of_K%C3%B6niggr%C3%A4tz.jpg",
+      "alt": {
+        "en": "The Battle of Königgrätz on 3 July 1866 by Christian Sell, depicting Prussian troops advancing with Dreyse needle-guns.",
+        "id": "Pertempuran Königgrätz pada 3 Juli 1866 karya Christian Sell, menggambarkan pasukan Prusia bergerak maju dengan senapan jarum Dreyse."
+      },
+      "caption": {
+        "en": "The Battle of Königgrätz, July 3, 1866 by Christian Sell (1866).",
+        "id": "Pertempuran Königgrätz, 3 Juli 1866 karya Christian Sell (1866)."
+      },
+      "creator": "Christian Sell the Elder",
+      "date": "1866",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christian_Sell_-_The_Battle_of_K%C3%B6niggr%C3%A4tz.jpg"
+    },
+    {
+      "id": "moltke-portrait",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Helmuth_von_Moltke_(1800-1891).jpg",
+      "alt": {
+        "en": "Generalfeldmarschall Helmuth Karl Bernhard von Moltke, Chief of the Prussian General Staff.",
+        "id": "Generalfeldmarschall Helmuth Karl Bernhard von Moltke, Kepala Staf Umum Prusia."
+      },
+      "caption": {
+        "en": "Chief of the Prussian General Staff Helmuth von Moltke the Elder.",
+        "id": "Kepala Staf Umum Prusia Helmuth von Moltke the Elder."
+      },
+      "creator": "Unknown",
+      "date": "1870~",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helmuth_von_Moltke_(1800-1891).jpg"
+    },
+    {
+      "id": "benedek-portrait",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ludwig_von_Benedek_1859.JPG",
+      "alt": {
+        "en": "Feldzeugmeister Ludwig August Ritter von Benedek, Commander-in-Chief of the Austrian Northern Army.",
+        "id": "Feldzeugmeister Ludwig August Ritter von Benedek, Panglima Tertinggi Tentara Utara Austria."
+      },
+      "caption": {
+        "en": "Feldzeugmeister Ludwig von Benedek, commander of the Austrian Northern Army.",
+        "id": "Feldzeugmeister Ludwig von Benedek, panglima Tentara Utara Austria."
+      },
+      "creator": "August Strixner",
+      "date": "1859",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ludwig_von_Benedek_1859.JPG"
+    }
+  ]
+}
