@@ -1,4 +1,4 @@
-export { ChronoMapRenderer } from './renderer.js';
+export { HistamationRenderer } from './renderer.js';
 export type { RendererOptions } from './renderer.js';
 export { CameraController } from './camera.js';
 export type { CameraOptions } from './camera.js';

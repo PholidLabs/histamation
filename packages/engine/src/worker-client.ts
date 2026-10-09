@@ -14,7 +14,7 @@ interface QueuedQuery extends Settle<FrameState | null> { t: Ticks; bbox: Bbox |
  * promise resolves to `null` without ever reaching the worker. Fast scrubbing therefore never
  * builds a backlog, and every frame delivered is the newest the worker could have answered.
  */
-export class ChronoMapWorkerClient {
+export class HistamationWorkerClient {
   private seq = 0;
   private pending = new Map<number, Settle<WorkerResponse>>();
   private queryInFlight = false;
@@ -47,7 +47,7 @@ export class ChronoMapWorkerClient {
     this.worker.removeEventListener('message', this.onMessage);
     this.worker.removeEventListener('error', this.onError);
     this.worker.terminate();
-    this.failAll(new Error('ChronoMapWorkerClient disposed'));
+    this.failAll(new Error('HistamationWorkerClient disposed'));
   }
 
   private pump(): void {
@@ -62,7 +62,7 @@ export class ChronoMapWorkerClient {
   }
 
   private send(body: RequestBody): Promise<WorkerResponse> {
-    if (this.disposed) return Promise.reject(new Error('ChronoMapWorkerClient disposed'));
+    if (this.disposed) return Promise.reject(new Error('HistamationWorkerClient disposed'));
     const id = ++this.seq;
     return new Promise((resolve, reject) => {
       this.pending.set(id, { resolve, reject });

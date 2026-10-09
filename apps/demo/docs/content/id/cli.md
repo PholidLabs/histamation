@@ -1,17 +1,17 @@
 ---
-title: chronomap-check
+title: histamation-check
 description: CLI validasi — flag, kode keluar, dry-run --frames, keluaran --json, dan pemeriksaan JSON Schema (S001).
 group: api
 order: 3
 ---
 
-`chronomap-check` adalah validator kampanye: menjalankan [`loadCampaign`](engine.md#load-campaign-fn)
+`histamation-check` adalah validator kampanye: menjalankan [`loadCampaign`](engine.md#load-campaign-fn)
 terhadap satu atau lebih berkas, opsional memeriksanya terhadap JSON Schema, dan bisa dry-run
 pemutaran atau menulis [vektor konformansi](rust-wasm.md#parity). CLI ini adalah `bin` dari
-[`@pholidlabs/chronomap-engine`](engine.md), dibangun ke `packages/engine/dist/cli.js`.
+[`@pholidlabs/histamation-engine`](engine.md), dibangun ke `packages/engine/dist/cli.js`.
 
 ```bash
-npx chronomap-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]
+npx histamation-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]
 ```
 
 Di dalam repo ini, setelah `npm run build`, jalankan langsung:
@@ -41,7 +41,7 @@ boleh menjadi argumen terakhir di baris perintah.
 |---|---|
 | `0` | Semua berkas diperiksa; tidak ada diagnostik level `error`, dan tidak ada `warning` di bawah `--strict`. |
 | `1` | Setidaknya satu berkas menghasilkan diagnostik level `error`, atau (`--strict`) sebuah `warning`. |
-| `2` | Galat penggunaan: tidak ada berkas yang diberikan, flag `--` yang tidak dikenal, atau `--vectors` tanpa argumen direktori (hilang, atau justru flag lain). Tidak ada yang diperiksa; `usage: chronomap-check …` dicetak ke stderr lebih dulu. |
+| `2` | Galat penggunaan: tidak ada berkas yang diberikan, flag `--` yang tidak dikenal, atau `--vectors` tanpa argumen direktori (hilang, atau justru flag lain). Tidak ada yang diperiksa; `usage: histamation-check …` dicetak ke stderr lebih dulu. |
 
 ## Lapisan validasi {#validation-layers}
 
@@ -49,7 +49,7 @@ Dua lapisan berjalan, keduanya melaporkan [diagnostik](diagnostics.md) dengan `c
 dan `path` berupa JSON Pointer (kontrak [§8](contract.md#sec-8)):
 
 1. **Semantik** — [`loadCampaign`](engine.md#load-campaign-fn). Selalu berjalan; ini pemeriksaan
-   yang sama dengan yang dilakukan `ChronoMapEngine.load` dan inti Rust.
+   yang sama dengan yang dilakukan `HistamationEngine.load` dan inti Rust.
 2. **Struktural** — JSON Schema di `schema/campaign.schema.json`, dilaporkan sebagai kode
    `S001`. Hanya berjalan ketika `ajv` dan `ajv-formats` terpasang di samping CLI; jika tidak,
    CLI mencetak catatan ke stderr dan melewati pemeriksaan schema, tetapi pemeriksaan semantik
@@ -173,7 +173,7 @@ atau tanpa `--frames` — hanya daftar human-readable yang menyembunyikan `info`
 ## --vectors {#vectors}
 
 ```bash
-chronomap-check --vectors test-vectors data/campaigns/*.json data/campaigns/fixtures/*.json
+histamation-check --vectors test-vectors data/campaigns/*.json data/campaigns/fixtures/*.json
 ```
 
 Menulis `<dir>/time.json` sekali (setiap string `When` yang diketahui
@@ -186,7 +186,7 @@ seperempat langkah (`p = 0, .25, .5, .75, 1`) dengan polyline jejak penuh; kampa
 mendapat `p = 0, .5, 1` dengan hanya jumlah titik jejak, satu frame per baris sehingga
 perubahan semantik tampak sebagai diff yang bisa dibaca. Float dibulatkan ke `1e-6` di kedua
 bentuk — toleransi persis yang diperiksa
-[`crates/chronomap-core/tests/vectors.rs`](rust-wasm.md#parity).
+[`crates/histamation-core/tests/vectors.rs`](rust-wasm.md#parity).
 
 Inilah [vektor emas](rust-wasm.md#parity) yang menjadi acuan uji port Rust — jalankan ini
 setelah perubahan apa pun di `packages/engine/src/`, sebelum menyentuh port Rust agar cocok.

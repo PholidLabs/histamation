@@ -1,25 +1,29 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>ChronoMap — Peta sejarah dari satu berkas JSON</title>
-    <meta name="description" content="Mesin sumber terbuka untuk peta sejarah bergulir. Jelaskan sebuah kampanye dalam JSON; ChronoMap memainkannya, lengkap dengan sumber dan ketidakpastian." />
+    <title>Histamation — Historical maps from one JSON file</title>
+    <meta name="description" content="An open-source engine for scrollytelling historical maps. Describe a campaign in JSON; Histamation plays it, sources and uncertainty included." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#141210" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ChronoMap — Peta sejarah dari satu berkas JSON" />
-    <meta property="og:description" content="Mesin sumber terbuka untuk peta sejarah bergulir dari satu berkas JSON." />
-    <meta property="og:image" content="/og.png" />
+    <meta property="og:site_name" content="Histamation" />
+    <meta property="og:url" content="https://histamation.pholidlabs.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="id_ID" />
+    <meta property="og:title" content="Histamation — Historical maps from one JSON file" />
+    <meta property="og:description" content="An open-source engine for scrollytelling historical maps. Describe a campaign in JSON; Histamation plays it, sources and uncertainty included." />
+    <meta property="og:image" content="https://histamation.pholidlabs.com/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Theme before first paint, mirroring applyThemeMode() in src/prefs.ts (same key, same default). -->
     <script>
       (function () {
         var mode = 'dark';
-        try { mode = localStorage.getItem('cm-theme') || 'dark'; } catch (e) {}
+        try { mode = localStorage.getItem('hm-theme') || 'dark'; } catch (e) {}
         var root = document.documentElement;
         var dark = mode === 'dark' || (mode === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
         if (mode !== 'auto') root.dataset.theme = mode;
@@ -35,60 +39,60 @@
     <header class="lp-bar">
       <a class="lp-brand" href="/">
         <img src="/logo.jpeg" alt="" width="28" height="28" />
-        <span>ChronoMap</span>
+        <span>Histamation</span>
       </a>
       <nav class="lp-nav">
-        <a class="lp-link" href="/docs/" data-i18n="navDocs">Dokumentasi</a>
-        <a class="lp-link" href="https://github.com/PholidLabs/chronomaps" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="lp-link" href="/docs/" data-i18n="navDocs">Docs</a>
+        <a class="lp-link" href="https://github.com/PholidLabs/histamation" target="_blank" rel="noopener noreferrer">GitHub</a>
         <div class="seg" id="lang-seg"></div>
         <div class="seg" id="theme-seg"></div>
-        <a class="lp-btn primary" href="/app/" data-i18n="openMap">Buka peta</a>
+        <a class="lp-btn primary" href="/app/" data-i18n="openMap">Open the map</a>
       </nav>
     </header>
 
     <main>
       <section class="lp-hero">
         <div class="lp-hero-text">
-          <p class="lp-kicker" data-i18n="heroKicker">Mesin sumber terbuka untuk peta sejarah</p>
+          <p class="lp-kicker" data-i18n="heroKicker">Open-source engine for historical maps</p>
           <h1>
-            <span data-i18n="heroTitle">Tulis kampanyenya sekali.</span>
-            <em data-i18n="heroTitleAccent">Saksikan ia bergerak.</em>
+            <span data-i18n="heroTitle">Write the campaign once.</span>
+            <em data-i18n="heroTitleAccent">Watch it march.</em>
           </h1>
-          <p class="lp-lede" data-i18n="heroLede">Pasukan, rute, benteng, dan sumber dalam satu berkas JSON. ChronoMap mengubahnya menjadi peta yang Anda gulir, dengan setiap ketidakpastian digambar dan setiap klaim bersumber.</p>
+          <p class="lp-lede" data-i18n="heroLede">Armies, routes, forts and sources in one JSON file. Histamation turns it into a map you scroll through, with every uncertainty drawn and every claim cited.</p>
           <div class="lp-cta">
-            <a class="lp-btn primary lg" href="/app/"><span data-i18n="openMap">Buka peta</span> <span aria-hidden="true">→</span></a>
-            <a class="lp-btn ghost lg" href="/docs/" data-i18n="readDocs">Baca dokumentasi</a>
+            <a class="lp-btn primary lg" href="/app/"><span data-i18n="openMap">Open the map</span> <span aria-hidden="true">→</span></a>
+            <a class="lp-btn ghost lg" href="/docs/" data-i18n="readDocs">Read the docs</a>
           </div>
         </div>
 
         <figure class="lp-plate" id="plate" aria-busy="true">
           <div class="lp-plate-map">
             <svg id="plate-svg" viewBox="0 0 400 500" role="img" aria-labelledby="plate-title"><title id="plate-title">Waterloo, 1815</title></svg>
-            <p class="lp-plate-status" id="plate-status" data-i18n="plateLoading">Memuat kampanye…</p>
+            <p class="lp-plate-status" id="plate-status" data-i18n="plateLoading">Loading the campaign…</p>
           </div>
           <div class="lp-plate-bar">
-            <button class="lp-play" id="plate-play" type="button" aria-label="Putar"></button>
+            <button class="lp-play" id="plate-play" type="button" aria-label="Play"></button>
             <div class="lp-plate-readout">
               <time id="plate-date">—</time>
               <span id="plate-event"></span>
             </div>
           </div>
-          <input class="lp-scrub" id="plate-scrub" type="range" min="0" max="1000" value="0" step="1" aria-label="Waktu kampanye" />
+          <input class="lp-scrub" id="plate-scrub" type="range" min="0" max="1000" value="0" step="1" aria-label="Campaign time" />
           <figcaption>
             <ul class="lp-legend" id="plate-legend"></ul>
-            <a class="lp-link-arrow" href="/app/?campaign=waterloo"><span data-i18n="plateOpen">Buka di peta</span> <span aria-hidden="true">→</span></a>
+            <a class="lp-link-arrow" href="/app/?campaign=waterloo"><span data-i18n="plateOpen">Open in the map</span> <span aria-hidden="true">→</span></a>
           </figcaption>
-          <p class="lp-plate-note" data-i18n="plateCaption">Langsung, bukan video: mesin menghitung waterloo-1815.json di tab ini.</p>
+          <p class="lp-plate-note" data-i18n="plateCaption">Live, not a video: the engine resolving waterloo-1815.json in this tab.</p>
         </figure>
       </section>
 
       <section class="lp-how" aria-labelledby="how-title">
         <div class="lp-how-text">
-          <h2 id="how-title" data-i18n="howTitle">Satu berkas masuk, satu peta keluar</h2>
+          <h2 id="how-title" data-i18n="howTitle">One file in, one map out</h2>
           <ol class="lp-steps">
-            <li><h3 data-i18n="steps.0.title">Tulis</h3><p data-i18n="steps.0.body">Faksi, tempat, jejak pasukan, peristiwa, bab, dan sumber di baliknya.</p></li>
-            <li><h3 data-i18n="steps.1.title">Periksa</h3><p data-i18n="steps.1.body">Pemeriksa menangkap tanggal cacat, jejak yang tak berurutan, dan rujukan yang putus sebelum pembaca melihatnya.</p></li>
-            <li><h3 data-i18n="steps.2.title">Putar</h3><p data-i18n="steps.2.body">Gulir ceritanya bab demi bab, atau geser waktu dengan bebas.</p></li>
+            <li><h3 data-i18n="steps.0.title">Describe</h3><p data-i18n="steps.0.body">Factions, places, troop tracks, events, chapters and the sources behind them.</p></li>
+            <li><h3 data-i18n="steps.1.title">Check</h3><p data-i18n="steps.1.body">The checker catches malformed dates, out-of-order tracks and broken references before a reader does.</p></li>
+            <li><h3 data-i18n="steps.2.title">Play</h3><p data-i18n="steps.2.body">Scroll the story chapter by chapter, or scrub freely through time.</p></li>
           </ol>
         </div>
         <div class="lp-code">
@@ -105,26 +109,26 @@
   ],
   <span class="k">"sources"</span>: [<span class="s">"hofschroer-1999"</span>, <span class="s">"wp-wavre"</span>]
 }</code></pre>
-          <div class="lp-code-head term"><span>$ npx chronomap-check waterloo-1815.json</span></div>
+          <div class="lp-code-head term"><span>$ npx histamation-check waterloo-1815.json</span></div>
 <pre class="term"><code><span class="ok">0 error(s), 0 warning(s), 0 info</span>
 3 factions · 16 places · 7 entities · 16 events · 8 chapters</code></pre>
         </div>
       </section>
 
       <section class="lp-principles">
-        <div><h3 data-i18n="principles.0.title">Ketidakpastian digambar</h3><p data-i18n="principles.0.body">Posisi dugaan tampil sebagai lingkaran di tanah, bukan titik yang yakin.</p></div>
-        <div><h3 data-i18n="principles.1.title">Setiap klaim bersumber</h3><p data-i18n="principles.1.body">Jejak, peristiwa, dan bab menunjuk sumber di baliknya.</p></div>
-        <div><h3 data-i18n="principles.2.title">Banyak bahasa</h3><p data-i18n="principles.2.body">Setiap teks dapat memuat beberapa terjemahan; pembaca beralih di tempat.</p></div>
-        <div><h3 data-i18n="principles.3.title">Tanpa backend</h3><p data-i18n="principles.3.body">Hanya berkas statis: tanpa kode server, tanpa akun. Peta dasarnya dihosting sendiri.</p></div>
+        <div><h3 data-i18n="principles.0.title">Uncertainty is drawn</h3><p data-i18n="principles.0.body">A conjectural position is a circle on the ground, not a confident dot.</p></div>
+        <div><h3 data-i18n="principles.1.title">Every claim cites</h3><p data-i18n="principles.1.body">Tracks, events and chapters point to the sources behind them.</p></div>
+        <div><h3 data-i18n="principles.2.title">Many languages</h3><p data-i18n="principles.2.body">Any text can carry several translations; readers switch in place.</p></div>
+        <div><h3 data-i18n="principles.3.title">No backend</h3><p data-i18n="principles.3.body">Static files only: no server code, no account. The basemap is self-hosted.</p></div>
       </section>
     </main>
 
     <footer class="lp-foot">
-      <a class="lp-brand small" href="/"><img src="/logo.jpeg" alt="" width="20" height="20" /><span>ChronoMap</span></a>
-      <span data-i18n="footerLicence">Kode MIT · Data CC BY 4.0 · Peta dasar Natural Earth (domain publik)</span>
+      <a class="lp-brand small" href="/"><img src="/logo.jpeg" alt="" width="20" height="20" /><span>Histamation</span></a>
+      <span data-i18n="footerLicence">Code MIT · Data CC BY 4.0 · Basemap Natural Earth (public domain)</span>
       <nav>
-        <a href="/docs/" data-i18n="navDocs">Dokumentasi</a>
-        <a href="https://github.com/PholidLabs/chronomaps" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/docs/" data-i18n="navDocs">Docs</a>
+        <a href="https://github.com/PholidLabs/histamation" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </footer>
 

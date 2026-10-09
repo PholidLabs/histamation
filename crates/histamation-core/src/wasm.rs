@@ -6,7 +6,7 @@
 //! `handleRequest` for this core without the main thread noticing:
 //!
 //! ```js
-//! const core = new ChronoMapCore();
+//! const core = new HistamationCore();
 //! const loaded = core.load(1, campaignJsonText);   // { type:"loaded", id, ok, diagnostics, summary? }
 //! const frame  = core.query(2, tick, null, false); // { type:"frame",  id, frame }
 //! ```
@@ -57,21 +57,21 @@ fn to_js<T: Serialize>(value: &T) -> Result<JsValue, JsValue> {
 
 /// One loaded campaign, queried frame by frame.
 #[wasm_bindgen]
-pub struct ChronoMapCore {
+pub struct HistamationCore {
     campaign: Option<NormalizedCampaign>,
 }
 
-impl Default for ChronoMapCore {
+impl Default for HistamationCore {
     fn default() -> Self {
         Self::new()
     }
 }
 
 #[wasm_bindgen]
-impl ChronoMapCore {
+impl HistamationCore {
     #[wasm_bindgen(constructor)]
-    pub fn new() -> ChronoMapCore {
-        ChronoMapCore { campaign: None }
+    pub fn new() -> HistamationCore {
+        HistamationCore { campaign: None }
     }
 
     /// `{ type: "load", id, campaign }` → `{ type: "loaded", id, ok, diagnostics, summary? }`.

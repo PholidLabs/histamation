@@ -6,4 +6,4 @@ import { resolve } from 'node:path';
 
 const pkg = resolve(import.meta.dirname, '..');
 mkdirSync(resolve(pkg, 'dist'), { recursive: true });
-copyFileSync(resolve(pkg, 'src/chronomap.css'), resolve(pkg, 'dist/chronomap.css'));
+copyFileSync(resolve(pkg, 'src/histamation.css'), resolve(pkg, 'dist/histamation.css'));

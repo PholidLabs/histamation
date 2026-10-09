@@ -1,7 +1,7 @@
 /**
  * Golden vectors (contract §13): this reference implementation's output, frozen as JSON.
- * The Rust core replays them in crates/chronomap-core/tests/vectors.rs, so they are the
- * acceptance gate for the port. Written by `chronomap-check --vectors <dir>`.
+ * The Rust core replays them in crates/histamation-core/tests/vectors.rs, so they are the
+ * acceptance gate for the port. Written by `histamation-check --vectors <dir>`.
  */
 import { chapterTime, resolveFrame } from './resolve.js';
 import { parseWhen, ticksToIso } from './time.js';

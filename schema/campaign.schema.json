@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/pholidlabs/chronomap/schema/v1/campaign.schema.json",
-  "title": "ChronoMap Campaign v1",
-  "description": "A plug-and-play spatio-temporal dataset (a 'campaign') that the ChronoMap engine can play as a scrollytelling map. Structural rules only; referential and temporal rules are enforced by the semantic validator (see docs/DATA-CONTRACT.md §8).",
+  "$id": "https://github.com/pholidlabs/histamation/schema/v1/campaign.schema.json",
+  "title": "Histamation Campaign v1",
+  "description": "A plug-and-play spatio-temporal dataset (a 'campaign') that the Histamation engine can play as a scrollytelling map. Structural rules only; referential and temporal rules are enforced by the semantic validator (see docs/DATA-CONTRACT.md §8).",
   "type": "object",
-  "required": ["chronomap", "meta", "factions", "chapters"],
+  "required": ["histamation", "meta", "factions", "chapters"],
   "properties": {
     "$schema": { "type": "string" },
-    "chronomap": {
+    "histamation": {
       "description": "Contract version this file targets. Engines accept any 1.x and ignore unknown x- fields.",
       "type": "string",
       "pattern": "^1\\.[0-9]+$"

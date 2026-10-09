@@ -1,8 +1,8 @@
 [package]
-name = "chronomap-core"
+name = "histamation-core"
 version = "0.1.0"
 edition = "2021"
-description = "Rust port of the ChronoMap engine: EDTF-subset time, campaign validation/normalisation and frame resolution."
+description = "Rust port of the Histamation engine: EDTF-subset time, campaign validation/normalisation and frame resolution."
 license = "MIT"
 
 # Standalone crate: the repository root has no Cargo.toml, so declare an empty

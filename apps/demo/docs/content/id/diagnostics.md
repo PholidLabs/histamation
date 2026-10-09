@@ -35,10 +35,10 @@ Buka berkasnya, hitung dari nol, dan Anda langsung berada di field yang dimaksud
 
 ## Di mana diagnostik muncul {#where}
 
-- `chronomap-check` mencetak setiap diagnostik untuk tiap berkas yang Anda berikan. Lihat [CLI](cli.md) untuk daftar flag-nya.
+- `histamation-check` mencetak setiap diagnostik untuk tiap berkas yang Anda berikan. Lihat [CLI](cli.md) untuk daftar flag-nya.
 - Aplikasi peta di [`/app/`](/app/) menampilkan notifikasi yang bisa ditutup, berisi diagnostik bertingkat error, saat berkas yang dijatuhkan gagal dimuat. Berkas yang termuat dengan warning atau info tetap bisa diputar; panel "About"-nya mendaftar setiap diagnostik (level, code, path, message) beserta jumlah per tingkat.
 - [validator](validator.md) menampilkan semua tingkat sambil Anda mengedit, tanpa perlu menjatuhkan berkas ke aplikasi peta lebih dulu.
 
 ## `--strict` {#strict-mode}
 
-Secara default, `chronomap-check` keluar dengan kode bukan-nol hanya bila sebuah berkas punya error. Tambahkan `--strict` dan ia juga keluar dengan kode bukan-nol bila berkas punya warning apa pun — berguna begitu sebuah kampanye sudah bersih dari warning dan Anda ingin CI menjaganya tetap begitu. `--strict` tidak mengubah apa yang diterima loader: berkas yang hanya punya warning tetap termuat dan bisa diputar baik dengan maupun tanpa flag ini; flag itu hanya mengubah kode keluar perintahnya.
+Secara default, `histamation-check` keluar dengan kode bukan-nol hanya bila sebuah berkas punya error. Tambahkan `--strict` dan ia juga keluar dengan kode bukan-nol bila berkas punya warning apa pun — berguna begitu sebuah kampanye sudah bersih dari warning dan Anda ingin CI menjaganya tetap begitu. `--strict` tidak mengubah apa yang diterima loader: berkas yang hanya punya warning tetap termuat dan bisa diputar baik dengan maupun tanpa flag ini; flag itu hanya mengubah kode keluar perintahnya.

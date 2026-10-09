@@ -1,11 +1,11 @@
 ---
-title: chronomap-core (Rust / WASM)
-description: Port Rust — API native, fitur Cargo, indeks spasial, permukaan wasm-bindgen ChronoMapCore, dan paritas vektor.
+title: histamation-core (Rust / WASM)
+description: Port Rust — API native, fitur Cargo, indeks spasial, permukaan wasm-bindgen HistamationCore, dan paritas vektor.
 group: api
 order: 4
 ---
 
-`crates/chronomap-core` adalah port Rust dari [`@pholidlabs/chronomap-engine`](engine.md): parsing `When`
+`crates/histamation-core` adalah port Rust dari [`@pholidlabs/histamation-engine`](engine.md): parsing `When`
 subset-EDTF yang sama, validasi semantik yang sama, dan resolusi frame yang sama, sebagai crate
 native atau, dengan fitur `wasm`, sebagai permukaan `wasm-bindgen` yang bisa dimuat worker
 menggantikan engine JS.
@@ -22,13 +22,13 @@ menggantikan engine JS.
 # Cargo.toml — crate ini tidak dipublikasikan ke crates.io; depend padanya lewat path (atau git)
 # dari crate lain di workspace, atau bangun langsung (lihat di bawah).
 [dependencies]
-chronomap-core = { path = "../chronomap-core", features = ["spatial", "wasm"] }
+histamation-core = { path = "../histamation-core", features = ["spatial", "wasm"] }
 ```
 
 | Fitur | Menambahkan | Default |
 |---|---|---|
 | `spatial` | `pub mod spatial` — indeks [`rstar`](https://docs.rs/rstar) di atas tempat, entitas, dan peristiwa untuk query viewport. | off |
-| `wasm` | `pub mod wasm` — permukaan `wasm-bindgen` `ChronoMapCore` (butuh `wasm-bindgen`, `serde-wasm-bindgen`). | off |
+| `wasm` | `pub mod wasm` — permukaan `wasm-bindgen` `HistamationCore` (butuh `wasm-bindgen`, `serde-wasm-bindgen`). | off |
 
 Tidak ada fitur yang aktif secara default, jadi `cargo build`/`cargo test` tidak butuh toolchain
 tambahan; CI menjalankan `cargo test --all-features` sehingga keduanya dikompilasi dan diuji
@@ -38,7 +38,7 @@ pun dari dirinya sendiri).
 ## API native {#native-api}
 
 ```rust
-use chronomap_core::{load_campaign_str, resolve_frame, chapter_time, ResolveOptions};
+use histamation_core::{load_campaign_str, resolve_frame, chapter_time, ResolveOptions};
 
 let json = std::fs::read_to_string("campaign.json").unwrap();
 let result = load_campaign_str(&json);
@@ -189,7 +189,7 @@ pub struct SpatialItem {
 }
 ```
 
-## ChronoMapCore (wasm) {#chrono-map-core}
+## HistamationCore (wasm) {#chrono-map-core}
 
 Di balik fitur `wasm`: sebuah class `wasm-bindgen` yang mencerminkan protokol worker di
 [`worker.ts`](engine.md#worker-protocol) (kontrak [§7.1](contract.md#sec-7-1)) — kampanye
@@ -198,18 +198,18 @@ kecil. Bentuk pesannya adalah bentuk referensi, sehingga worker JS bisa menukar 
 dengan inti ini tanpa thread utama menyadarinya:
 
 ```js
-const core = new ChronoMapCore();
+const core = new HistamationCore();
 const loaded = core.load(1, campaignJsonText);   // { type:"loaded", id, ok, diagnostics, summary? }
 const frame  = core.query(2, tick, null, false); // { type:"frame",  id, frame }
 ```
 
 ```rust
 #[wasm_bindgen]
-pub struct ChronoMapCore { /* … */ }
+pub struct HistamationCore { /* … */ }
 
-impl ChronoMapCore {
+impl HistamationCore {
     #[wasm_bindgen(constructor)]
-    pub fn new() -> ChronoMapCore;
+    pub fn new() -> HistamationCore;
     pub fn load(&mut self, id: u32, campaign_json: &str) -> Result<JsValue, JsValue>;
     pub fn query(&self, id: u32, t: f64, bbox: Option<Box<[f64]>>, include_trail: Option<bool>) -> Result<JsValue, JsValue>;
     #[wasm_bindgen(getter)]
@@ -221,7 +221,7 @@ impl ChronoMapCore {
 
 ### new dan load {#core-load}
 
-`ChronoMapCore::new()` mulai tanpa kampanye. `load(id, campaign_json)` mem-parsing dan
+`HistamationCore::new()` mulai tanpa kampanye. `load(id, campaign_json)` mem-parsing dan
 memvalidasi teks JSON dan menggantikan apa pun yang termuat sebelumnya — berkas yang ditolak
 oleh diagnostik `error` mana pun juga menjatuhkan kampanye sebelumnya, sama seperti worker JS
 yang menetapkan `null` ke slot modul-levelnya. Fungsi ini mengembalikan `{ type: "loaded", id,
@@ -233,7 +233,7 @@ hanya saat `ok` bernilai `true`.
 `query(id, t, bbox, includeTrail)` me-resolve frame pada tick `t`. `t` melintasi batas JS/Rust
 sebagai `f64`; karena tick bersifat bilangan bulat menurut kontrak, ia **dibulatkan**, bukan
 dipotong (semantik `Math.round`, tanda termasuk) — pembulatan yang sama dengan
-[`ChronoMapEngine.setTime`](engine.md#engine-set-time) dan worker JS. `t` yang tidak finite
+[`HistamationEngine.setTime`](engine.md#engine-set-time) dan worker JS. `t` yang tidak finite
 (`NaN`, `±Infinity`) ditolak dengan galat, seperti yang dilakukan
 [`resolveFrame`](engine.md#resolve-frame-fn); memanggil `query` sebelum ada `load` juga ditolak,
 dengan pesan `"query before load"`. `bbox` adalah `[west, south, east, north]` atau `null`;
@@ -257,10 +257,10 @@ dibungkus `wasm-bindgen`. Bangun target `wasm` dengan
 [`wasm-pack`](https://rustwasm.github.io/wasm-pack/):
 
 ```bash
-wasm-pack build crates/chronomap-core --target web -- --features wasm
+wasm-pack build crates/histamation-core --target web -- --features wasm
 ```
 
-Itu menghasilkan direktori `pkg/` berisi binary `.wasm` dan binding JS `ChronoMapCore` yang
+Itu menghasilkan direktori `pkg/` berisi binary `.wasm` dan binding JS `HistamationCore` yang
 dihasilkan — bentuk yang sama seperti [di atas](#chrono-map-core) — siap dimuat dari sebuah
 Worker menggantikan `handleRequest` JS murni milik `packages/engine/src/worker.ts`. Aktifkan
 `spatial` bersama `wasm` jika worker juga butuh query viewport:
@@ -269,11 +269,11 @@ Worker menggantikan `handleRequest` JS murni milik `packages/engine/src/worker.t
 ## Paritas dengan vektor emas {#parity}
 
 ```text
-crates/chronomap-core/tests/vectors.rs
+crates/histamation-core/tests/vectors.rs
 ```
 
 memutar ulang `test-vectors/*.json` — dihasilkan dari referensi TypeScript oleh
-[`chronomap-check --vectors`](cli.md#vectors) — terhadap crate ini. `time.json` harus cocok
+[`histamation-check --vectors`](cli.md#vectors) — terhadap crate ini. `time.json` harus cocok
 persis (setiap input `When` yang dianggap menarik oleh referensi, termasuk yang seharusnya
 gagal di-parsing); setiap field `*.frames.json` harus cocok **dalam toleransi absolut `1e-6`**
 untuk float, dan persis untuk string serta diagnostik (`level`, `code`, `path`, berurutan —

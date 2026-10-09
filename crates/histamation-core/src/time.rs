@@ -1,4 +1,4 @@
-//! ChronoMap time model (contract §3) — a line-for-line port of
+//! Histamation time model (contract §3) — a line-for-line port of
 //! `packages/engine/src/time.ts`.
 //!
 //! A `When` is an EDTF (ISO 8601-2) subset:

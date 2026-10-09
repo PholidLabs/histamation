@@ -10,7 +10,7 @@ import { DOCS_COPY, DOC_LANGS, type DocLang } from './copy.js';
 
 const body = document.body;
 const pageLang = body.dataset.lang as DocLang | undefined;
-const lang: DocLang = pageLang ?? (DOC_LANGS.includes(savedLang('') as DocLang) ? (savedLang('') as DocLang) : (navigator.language?.toLowerCase().startsWith('id') ? 'id' : 'en'));
+const lang: DocLang = pageLang ?? (DOC_LANGS.includes(savedLang('') as DocLang) ? (savedLang('') as DocLang) : 'en');
 const copy = DOCS_COPY[lang];
 
 /* ---------------------------------------------------------------- /docs/ and /docs/<lang>/: go to the first page */

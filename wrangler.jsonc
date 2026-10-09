@@ -1,0 +1,14 @@
+// The demo site (landing, /app/, /docs/) as a static-assets Worker. `npm run deploy` builds
+// apps/demo/dist and uploads it; the custom domain gets its DNS record and certificate from
+// Cloudflare on first deploy.
+{
+  "name": "histamation",
+  "compatibility_date": "2026-10-08",
+  "assets": {
+    "directory": "apps/demo/dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "routes": [{ "pattern": "histamation.pholidlabs.com", "custom_domain": true }],
+  "workers_dev": false
+}

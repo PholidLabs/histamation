@@ -543,18 +543,18 @@ pub fn load_campaign(raw: &Value) -> LoadResult {
     };
 
     /* contract version */
-    let chronomap_display = match &file.chronomap {
+    let histamation_display = match &file.histamation {
         Some(v) => js_string(v),
         None => "undefined".to_string(),
     };
-    let version_text = file.chronomap.as_ref().map_or(String::new(), js_string);
+    let version_text = file.histamation.as_ref().map_or(String::new(), js_string);
     let major: Option<f64> = js_number(version_text.split('.').next().unwrap_or(""));
     if major != Some(CONTRACT_MAJOR as f64) {
         cx.err(
             "E013",
-            "/chronomap",
+            "/histamation",
             format!(
-                "Unsupported contract version \"{chronomap_display}\" (this engine reads {CONTRACT_MAJOR}.x)"
+                "Unsupported contract version \"{histamation_display}\" (this engine reads {CONTRACT_MAJOR}.x)"
             ),
         );
     }

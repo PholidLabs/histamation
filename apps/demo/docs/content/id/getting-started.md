@@ -1,11 +1,11 @@
 ---
 title: Memulai
-description: Pasang ChronoMap, jalankan demonya, dan validasi berkas kampanye pertama Anda dalam lima menit.
+description: Pasang Histamation, jalankan demonya, dan validasi berkas kampanye pertama Anda dalam lima menit.
 group: start
 order: 1
 ---
 
-ChronoMap memutar "kampanye" — satu berkas JSON yang menjelaskan tempat, pasukan dan peristiwa
+Histamation memutar "kampanye" — satu berkas JSON yang menjelaskan tempat, pasukan dan peristiwa
 di atas peta sejarah — sebagai cerita bergulir (scrollytelling) atau peta jelajah bebas. Halaman
 ini menjalankan engine secara lokal dan menuntun sebuah kampanye minimal dari kertas kosong,
 tervalidasi, hingga tampil di layar.
@@ -20,8 +20,8 @@ tervalidasi, hingga tampil di layar.
 ## Clone dan pasang {#install}
 
 ```bash
-git clone https://github.com/PholidLabs/chronomaps.git
-cd chronomaps
+git clone https://github.com/PholidLabs/histamation.git
+cd histamation
 npm install
 ```
 
@@ -54,13 +54,13 @@ terminal — secara default `http://localhost:5173/` — buka di peramban.
 
 Demo ini adalah situs dua halaman:
 
-- **`/`** — halaman landing: penjelasan tentang ChronoMap, dalam bahasa Inggris dan Indonesia.
+- **`/`** — halaman landing: penjelasan tentang Histamation, dalam bahasa Inggris dan Indonesia.
 - **`/app/`** — aplikasi peta itu sendiri: cerita bergulir, penggeser jelajah bebas, dan tempat
   Anda memuat berkas kampanye.
 
 ## Kampanye minimal {#minimal-campaign}
 
-Sebuah berkas kampanye butuh empat hal: `chronomap` (versi kontrak), `meta` (dengan `extent`
+Sebuah berkas kampanye butuh empat hal: `histamation` (versi kontrak), `meta` (dengan `extent`
 linimasa tertutup dan tampilan peta awal), minimal satu faksi, dan minimal satu bab
 ([`E018`](diagnostics.md#e018) — kampanye tanpa bab tidak punya titik mulai pemutaran).
 Selebihnya — `places`, `entities`, `events`, `sources`, `media` — bersifat opsional. Berikut
@@ -69,10 +69,10 @@ kampanye terkecil yang lolos validasi:
 ```json
 {
   "$schema": "../../schema/campaign.schema.json",
-  "chronomap": "1.0",
+  "histamation": "1.0",
   "meta": {
-    "id": "hello-chronomap",
-    "title": "Hello, ChronoMap",
+    "id": "hello-histamation",
+    "title": "Hello, Histamation",
     "description": "A five-minute example: one faction, one place, one chapter.",
     "languages": ["en"],
     "defaultLanguage": "en",
@@ -114,11 +114,11 @@ Beberapa hal yang perlu diperhatikan:
 
 ## Validasi {#validate}
 
-Simpan berkasnya di suatu tempat (misalnya `data/campaigns/hello-chronomap.json`, agar
+Simpan berkasnya di suatu tempat (misalnya `data/campaigns/hello-histamation.json`, agar
 `npm run check` otomatis memeriksanya), lalu jalankan lewat CLI engine:
 
 ```bash
-node packages/engine/dist/cli.js data/campaigns/hello-chronomap.json
+node packages/engine/dist/cli.js data/campaigns/hello-histamation.json
 ```
 
 Perintah ini melaporkan diagnostik struktural dan semantik terhadap berkas (lihat
@@ -126,7 +126,7 @@ Perintah ini melaporkan diagnostik struktural dan semantik terhadap berkas (liha
 apa yang ditemukan:
 
 ```text
-data/campaigns/hello-chronomap.json
+data/campaigns/hello-histamation.json
   0 error(s), 0 warning(s), 0 info
   1 factions · 1 places · 0 entities · 0 events · 1 chapters
 ```
@@ -136,7 +136,7 @@ Tambahkan `--frames` untuk uji-coba pemutaran (dry run) — posisi setiap bab pa
 tanpa perlu membuka peramban:
 
 ```bash
-node packages/engine/dist/cli.js data/campaigns/hello-chronomap.json --frames
+node packages/engine/dist/cli.js data/campaigns/hello-histamation.json --frames
 ```
 
 ```text

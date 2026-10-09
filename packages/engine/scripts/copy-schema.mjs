@@ -1,4 +1,4 @@
-// Copies the campaign JSON Schema into dist so chronomap-check finds it next to
+// Copies the campaign JSON Schema into dist so histamation-check finds it next to
 // itself, both in the repo and in the published package (schema/ lives outside it).
 // Paths resolve from this file, not the cwd, so the root scripts and the package's
 // own build script can both call it without duplicating the paths.

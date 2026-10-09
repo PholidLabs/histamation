@@ -14,7 +14,7 @@ in the JS reference engine and the Rust/WASM core with identical output.
 
 | Key | Required | Purpose |
 |---|---|---|
-| `chronomap` | yes | Contract version this file targets, e.g. `"1.0"`. |
+| `histamation` | yes | Contract version this file targets, e.g. `"1.0"`. |
 | `meta` | yes | ID, title, languages, timeline extent, initial map view. |
 | `factions` | yes, ≥1 | Sides, with colors. |
 | `parts` | no | Optional chapter grouping for a table of contents. |
@@ -73,7 +73,7 @@ Put a `$schema` pointer at the top of the file:
 ```jsonc
 {
   "$schema": "../../schema/campaign.schema.json",   // two levels up from data/campaigns/
-  "chronomap": "1.0"
+  "histamation": "1.0"
 }
 ```
 
@@ -101,7 +101,7 @@ way. Two rules keep this safe:
 - A custom `x-…` entity kind still needs exactly one of the four geometry shapes (`track`, `at`,
   `geometry` or `path`) — omitting it is [`E016`](diagnostics.md#e016).
 - Unknown `x-` fields, and `kind`/`status` values an older engine doesn't recognize, are ignored
-  rather than rejected. `chronomap: "1.N"` — minor versions only ever *add* optional fields and
+  rather than rejected. `histamation: "1.N"` — minor versions only ever *add* optional fields and
   enum values, so a 1.0 engine can still play a 1.3 file. Only an unsupported major version is
   refused ([`E013`](diagnostics.md#e013)). See [§9](contract.md#sec-9).
 

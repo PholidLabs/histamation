@@ -1,26 +1,26 @@
 ---
-title: "@pholidlabs/chronomap-maplibre"
-description: The MapLibre GL renderer — ChronoMapRenderer, CameraController, the parchment basemap, and themes.
+title: "@pholidlabs/histamation-maplibre"
+description: The MapLibre GL renderer — HistamationRenderer, CameraController, the parchment basemap, and themes.
 group: api
 order: 2
 ---
 
-`@pholidlabs/chronomap-maplibre` draws [`@pholidlabs/chronomap-engine`](engine.md) frames on a [MapLibre GL](https://maplibre.org/)
+`@pholidlabs/histamation-maplibre` draws [`@pholidlabs/histamation-engine`](engine.md) frames on a [MapLibre GL](https://maplibre.org/)
 map: a self-hosted parchment-style basemap, campaign layers driven by `FrameState`, and chapter
 cameras. It requires `maplibre-gl` **6** as a peer dependency.
 
 ```bash
-npm install @pholidlabs/chronomap-maplibre maplibre-gl
+npm install @pholidlabs/histamation-maplibre maplibre-gl
 ```
 
 ## Quick start {#quick-start}
 
 ```ts
 import { Map } from 'maplibre-gl';
-import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
-import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@pholidlabs/chronomap-maplibre';
+import { HistamationEngine } from '@pholidlabs/histamation-engine';
+import { createBasemapStyle, HistamationRenderer, CameraController, parchmentLight } from '@pholidlabs/histamation-maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '@pholidlabs/chronomap-maplibre/style.css';
+import '@pholidlabs/histamation-maplibre/style.css';
 
 const map = new Map({
   container: 'map',
@@ -28,10 +28,10 @@ const map = new Map({
   center: [110.3, -7.65],
   zoom: 7,
 });
-const renderer = new ChronoMapRenderer(map, { theme: parchmentLight, basemapPath: '/basemap', language: 'en' });
+const renderer = new HistamationRenderer(map, { theme: parchmentLight, basemapPath: '/basemap', language: 'en' });
 const camera = new CameraController(map);
 
-const engine = new ChronoMapEngine();
+const engine = new HistamationEngine();
 engine.on('frame', (frame) => renderer.setFrame(frame));
 await engine.load('/campaigns/java-war-1825.json');
 renderer.setCampaign(engine.campaign!);
@@ -40,10 +40,10 @@ renderer.setCampaign(engine.campaign!);
 Both the renderer and `CameraController` honour `prefers-reduced-motion`; pass `reduceMotion` to
 either one's options to override the media query.
 
-## ChronoMapRenderer {#chrono-map-renderer}
+## HistamationRenderer {#chrono-map-renderer}
 
 ```ts
-class ChronoMapRenderer {
+class HistamationRenderer {
   constructor(map: MapLibreMap, opts?: RendererOptions);
   setCampaign(campaign: NormalizedCampaign): void;
   setFrame(frame: FrameState, focus?: string[]): void;
@@ -59,7 +59,7 @@ interface RendererOptions {
   theme?: ChronoTheme;              // default parchmentLight
   language?: string;                // default 'en'
   maxStrengthBandMeters?: number;   // default 18000 — the widest a Minard-style strength band draws
-  avoidSelector?: string;           // default '[data-cm-avoid]' — hard obstacles for label declutter
+  avoidSelector?: string;           // default '[data-hm-avoid]' — hard obstacles for label declutter
   basemapPath?: string;             // default DEFAULT_BASEMAP_PATH, '/basemap'
   reduceMotion?: boolean;           // default false; otherwise follows prefers-reduced-motion
 }
@@ -75,7 +75,7 @@ declutter pass on zoom and move, with priority by kind (unit → event → fort 
 
 `map.setStyle()` can fire `'style.load'` *before it returns*, while `map.isStyleLoaded()` is
 still `false` because the new style's sources are still loading. Waiting on `'style.load'` after
-that point waits forever, so `ChronoMapRenderer`'s constructor checks `isStyleLoaded()` first and
+that point waits forever, so `HistamationRenderer`'s constructor checks `isStyleLoaded()` first and
 installs immediately if it is already true; otherwise it listens for **both** `'style.load'` and
 `'idle'`, since `'idle'` always follows and is the backstop. Construct the renderer right after
 the map, or right after a `map.setStyle()` call on a theme change — it does the waiting for you.
@@ -209,7 +209,7 @@ declares no glyphs or sprite — every label in this renderer is a DOM element, 
 layer, so the style needs no binary font or icon assets to load.
 
 ```ts
-import { createBasemapStyle, parchmentDark } from '@pholidlabs/chronomap-maplibre';
+import { createBasemapStyle, parchmentDark } from '@pholidlabs/histamation-maplibre';
 
 const style = createBasemapStyle({ theme: parchmentDark, basemapPath: '/basemap' });
 ```
@@ -220,7 +220,7 @@ const style = createBasemapStyle({ theme: parchmentDark, basemapPath: '/basemap'
 const DEFAULT_BASEMAP_PATH = '/basemap';
 ```
 
-The folder both `createBasemapStyle` and `ChronoMapRenderer` read basemap GeoJSON from unless
+The folder both `createBasemapStyle` and `HistamationRenderer` read basemap GeoJSON from unless
 told otherwise — they share this default so one `basemapPath` option covers both.
 
 ### Terrain {#terrain}
@@ -261,7 +261,7 @@ Builds the static degree-grid `FeatureCollection` for a campaign's bounds, gener
 screen during a fly). `bounds` is padded by `padFraction` of its size (default `0.75`, at least
 `minPadDeg` degrees, default `8`) so panning out never reveals the grid's edge, then the finest
 step from a fixed coarse-to-fine list is chosen that keeps the line count under `budget` (default
-`3000`). `ChronoMapRenderer` calls this itself from the campaign's extent; call it directly only
+`3000`). `HistamationRenderer` calls this itself from the campaign's extent; call it directly only
 to build a custom basemap style around the same grid.
 
 ## Themes {#themes}
@@ -311,7 +311,7 @@ dark ground; on a light theme the color passes through unchanged. `withAlpha` tu
 string into `rgba(…, a)` for halos, fills and faded "past" styling.
 
 ```ts
-import { factionColor, withAlpha, parchmentDark } from '@pholidlabs/chronomap-maplibre';
+import { factionColor, withAlpha, parchmentDark } from '@pholidlabs/histamation-maplibre';
 
 const color = factionColor(faction.color, parchmentDark); // e.g. 'rgb(198, 168, 122)'
 const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 122, 0.35)'
@@ -320,10 +320,10 @@ const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 1
 ## Stylesheet {#stylesheet}
 
 ```ts
-import '@pholidlabs/chronomap-maplibre/style.css';
+import '@pholidlabs/histamation-maplibre/style.css';
 ```
 
-CSS for the renderer's DOM markers and labels (`packages/maplibre/src/chronomap.css`, exported
+CSS for the renderer's DOM markers and labels (`packages/maplibre/src/histamation.css`, exported
 as `./style.css`). Import it once alongside `maplibre-gl/dist/maplibre-gl.css`; without it the
 DOM-based labels and pictorial markers render unstyled.
 

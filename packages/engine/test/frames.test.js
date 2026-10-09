@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { ChronoMapEngine, chapterTime, loadCampaign, resolveFrame } from '../dist/index.js';
+import { HistamationEngine, chapterTime, loadCampaign, resolveFrame } from '../dist/index.js';
 import { handleRequest } from '../dist/worker.js';
 
 const CASES = [
@@ -38,7 +38,7 @@ for (const [vectorPath, campaignPath, includeTrail] of CASES) {
 
 test('non-finite ticks are rejected instead of resolving a garbage frame', async () => {
   const raw = read(CASES[0][1]);
-  const engine = new ChronoMapEngine();
+  const engine = new HistamationEngine();
   await engine.load(raw);
   const { time, frame } = engine;
   handleRequest({ type: 'load', id: 1, campaign: raw });

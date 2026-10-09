@@ -7,8 +7,8 @@
       "id": "Pelanggaran skema"
     },
     "trigger": {
-      "en": "The file fails one or more rules in `campaign.schema.json` — a required property is missing, a value has the wrong type, an `enum` field holds a value it doesn't allow, or the object has a property the schema doesn't recognize. `chronomap-check` only runs this check when `ajv` is installed; without it, only the semantic checks (`E000`–`E018`, `W1xx`, `I201`) run.",
-      "id": "Berkas melanggar satu atau lebih aturan di `campaign.schema.json` — properti wajib tidak ada, nilai bertipe salah, sebuah field `enum` diisi nilai yang tidak diizinkan, atau objek memiliki properti yang tidak dikenali skema. `chronomap-check` hanya menjalankan pemeriksaan ini bila `ajv` terpasang; tanpanya, hanya pemeriksaan semantik (`E000`–`E018`, `W1xx`, `I201`) yang berjalan."
+      "en": "The file fails one or more rules in `campaign.schema.json` — a required property is missing, a value has the wrong type, an `enum` field holds a value it doesn't allow, or the object has a property the schema doesn't recognize. `histamation-check` only runs this check when `ajv` is installed; without it, only the semantic checks (`E000`–`E018`, `W1xx`, `I201`) run.",
+      "id": "Berkas melanggar satu atau lebih aturan di `campaign.schema.json` — properti wajib tidak ada, nilai bertipe salah, sebuah field `enum` diisi nilai yang tidak diizinkan, atau objek memiliki properti yang tidak dikenali skema. `histamation-check` hanya menjalankan pemeriksaan ini bila `ajv` terpasang; tanpanya, hanya pemeriksaan semantik (`E000`–`E018`, `W1xx`, `I201`) yang berjalan."
     },
     "fix": {
       "en": "Open the file at the reported JSON Pointer `path` and match the shape the schema expects: add the missing property, fix the value's type, pick an allowed `enum` value, or rename a custom field to start with `x-`. `npm install` (which pulls in the `ajv` devDependency) makes `S001` checks run locally the same way CI runs them.",
@@ -31,12 +31,12 @@
       "id": "Input yang diparsing sama sekali bukan objek — `null`, array, string, angka, atau (dari CLI) berkas yang bahkan bukan JSON valid. Ini satu-satunya diagnosis yang muncul sebelum pemeriksaan lain sempat berjalan, sehingga `path`-nya kosong (`\"\"`)."
     },
     "fix": {
-      "en": "Make sure the file's top level is a single JSON object with the fields described in [Campaign file](campaign-file.md) — `{ \"chronomap\": \"1.0\", \"meta\": { … }, … }` — not an array or a bare value, and that it parses as JSON at all.",
-      "id": "Pastikan level teratas berkas adalah satu objek JSON dengan field-field yang dijelaskan di [Berkas kampanye](campaign-file.md) — `{ \"chronomap\": \"1.0\", \"meta\": { … }, … }` — bukan array atau nilai polos, dan bahwa berkas itu memang berhasil diparsing sebagai JSON."
+      "en": "Make sure the file's top level is a single JSON object with the fields described in [Campaign file](campaign-file.md) — `{ \"histamation\": \"1.0\", \"meta\": { … }, … }` — not an array or a bare value, and that it parses as JSON at all.",
+      "id": "Pastikan level teratas berkas adalah satu objek JSON dengan field-field yang dijelaskan di [Berkas kampanye](campaign-file.md) — `{ \"histamation\": \"1.0\", \"meta\": { … }, … }` — bukan array atau nilai polos, dan bahwa berkas itu memang berhasil diparsing sebagai JSON."
     },
     "example": {
-      "bad": "[\n  { \"chronomap\": \"1.0\" }\n]",
-      "good": "{\n  \"chronomap\": \"1.0\",\n  \"meta\": { … },\n  …\n}"
+      "bad": "[\n  { \"histamation\": \"1.0\" }\n]",
+      "good": "{\n  \"histamation\": \"1.0\",\n  \"meta\": { … },\n  …\n}"
     }
   },
   {
@@ -287,16 +287,16 @@
       "id": "Versi contract tidak didukung"
     },
     "trigger": {
-      "en": "The top-level `chronomap` field's major version doesn't match the engine's ([§9](contract.md#sec-9)) — this build reads `1.x` only. A missing or unparsable `chronomap` field also lands here, since it can't be read as a number.",
-      "id": "Versi mayor pada field `chronomap` di level teratas tidak cocok dengan versi engine ([§9](contract.md#sec-9)) — build ini hanya membaca `1.x`. Field `chronomap` yang hilang atau tidak bisa diparsing juga masuk ke sini, karena tidak bisa dibaca sebagai angka."
+      "en": "The top-level `histamation` field's major version doesn't match the engine's ([§9](contract.md#sec-9)) — this build reads `1.x` only. A missing or unparsable `histamation` field also lands here, since it can't be read as a number.",
+      "id": "Versi mayor pada field `histamation` di level teratas tidak cocok dengan versi engine ([§9](contract.md#sec-9)) — build ini hanya membaca `1.x`. Field `histamation` yang hilang atau tidak bisa diparsing juga masuk ke sini, karena tidak bisa dibaca sebagai angka."
     },
     "fix": {
-      "en": "Set `\"chronomap\": \"1.0\"` (or another `1.x`), and if the file genuinely needs a newer major version, use an engine build that supports it.",
-      "id": "Set `\"chronomap\": \"1.0\"` (atau `1.x` lain), dan jika berkas itu memang butuh versi mayor yang lebih baru, gunakan build engine yang mendukungnya."
+      "en": "Set `\"histamation\": \"1.0\"` (or another `1.x`), and if the file genuinely needs a newer major version, use an engine build that supports it.",
+      "id": "Set `\"histamation\": \"1.0\"` (atau `1.x` lain), dan jika berkas itu memang butuh versi mayor yang lebih baru, gunakan build engine yang mendukungnya."
     },
     "example": {
-      "bad": "\"chronomap\": \"2.0\"",
-      "good": "\"chronomap\": \"1.0\""
+      "bad": "\"histamation\": \"2.0\"",
+      "good": "\"histamation\": \"1.0\""
     }
   },
   {

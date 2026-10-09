@@ -6,8 +6,8 @@ import { themeIcon, type ThemeMode } from './icons.js';
 
 export type { ThemeMode };
 
-const THEME_KEY = 'cm-theme';
-const LANG_KEY = 'cm-lang';
+const THEME_KEY = 'hm-theme';
+const LANG_KEY = 'hm-lang';
 
 export function savedThemeMode(): ThemeMode {
   try {

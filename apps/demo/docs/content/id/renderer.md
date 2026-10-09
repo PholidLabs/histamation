@@ -1,27 +1,27 @@
 ---
-title: "@pholidlabs/chronomap-maplibre"
-description: Renderer MapLibre GL — ChronoMapRenderer, CameraController, peta dasar parchment, dan tema.
+title: "@pholidlabs/histamation-maplibre"
+description: Renderer MapLibre GL — HistamationRenderer, CameraController, peta dasar parchment, dan tema.
 group: api
 order: 2
 ---
 
-`@pholidlabs/chronomap-maplibre` menggambar frame [`@pholidlabs/chronomap-engine`](engine.md) di atas peta
+`@pholidlabs/histamation-maplibre` menggambar frame [`@pholidlabs/histamation-engine`](engine.md) di atas peta
 [MapLibre GL](https://maplibre.org/): peta dasar bergaya parchment yang di-host sendiri, layer
 kampanye yang digerakkan oleh `FrameState`, dan kamera bab. Paket ini membutuhkan `maplibre-gl`
 **6** sebagai peer dependency.
 
 ```bash
-npm install @pholidlabs/chronomap-maplibre maplibre-gl
+npm install @pholidlabs/histamation-maplibre maplibre-gl
 ```
 
 ## Mulai cepat {#quick-start}
 
 ```ts
 import { Map } from 'maplibre-gl';
-import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
-import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@pholidlabs/chronomap-maplibre';
+import { HistamationEngine } from '@pholidlabs/histamation-engine';
+import { createBasemapStyle, HistamationRenderer, CameraController, parchmentLight } from '@pholidlabs/histamation-maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '@pholidlabs/chronomap-maplibre/style.css';
+import '@pholidlabs/histamation-maplibre/style.css';
 
 const map = new Map({
   container: 'map',
@@ -29,10 +29,10 @@ const map = new Map({
   center: [110.3, -7.65],
   zoom: 7,
 });
-const renderer = new ChronoMapRenderer(map, { theme: parchmentLight, basemapPath: '/basemap', language: 'en' });
+const renderer = new HistamationRenderer(map, { theme: parchmentLight, basemapPath: '/basemap', language: 'en' });
 const camera = new CameraController(map);
 
-const engine = new ChronoMapEngine();
+const engine = new HistamationEngine();
 engine.on('frame', (frame) => renderer.setFrame(frame));
 await engine.load('/campaigns/java-war-1825.json');
 renderer.setCampaign(engine.campaign!);
@@ -41,10 +41,10 @@ renderer.setCampaign(engine.campaign!);
 Baik renderer maupun `CameraController` menghormati `prefers-reduced-motion`; kirim
 `reduceMotion` pada opsi salah satunya untuk menimpa media query tersebut.
 
-## ChronoMapRenderer {#chrono-map-renderer}
+## HistamationRenderer {#chrono-map-renderer}
 
 ```ts
-class ChronoMapRenderer {
+class HistamationRenderer {
   constructor(map: MapLibreMap, opts?: RendererOptions);
   setCampaign(campaign: NormalizedCampaign): void;
   setFrame(frame: FrameState, focus?: string[]): void;
@@ -60,7 +60,7 @@ interface RendererOptions {
   theme?: ChronoTheme;              // default parchmentLight
   language?: string;                // default 'en'
   maxStrengthBandMeters?: number;   // default 18000 — lebar maksimum band kekuatan gaya Minard
-  avoidSelector?: string;           // default '[data-cm-avoid]' — obstacle keras untuk declutter label
+  avoidSelector?: string;           // default '[data-hm-avoid]' — obstacle keras untuk declutter label
   basemapPath?: string;             // default DEFAULT_BASEMAP_PATH, '/basemap'
   reduceMotion?: boolean;           // default false; selain itu mengikuti prefers-reduced-motion
 }
@@ -77,7 +77,7 @@ benteng → tempat) dan elemen `avoidSelector` ini sebagai obstacle keras.
 `map.setStyle()` bisa memicu `'style.load'` *sebelum ia return*, sementara
 `map.isStyleLoaded()` masih `false` karena source milik style baru masih dimuat. Menunggu
 `'style.load'` setelah titik itu akan menunggu selamanya, sehingga konstruktor
-`ChronoMapRenderer` memeriksa `isStyleLoaded()` lebih dulu dan langsung install jika sudah
+`HistamationRenderer` memeriksa `isStyleLoaded()` lebih dulu dan langsung install jika sudah
 `true`; jika belum, ia mendengarkan **kedua** `'style.load'` dan `'idle'`, karena `'idle'`
 selalu menyusul dan menjadi jaring pengaman. Bangun renderer tepat setelah peta, atau tepat
 setelah pemanggilan `map.setStyle()` saat berganti tema — ia yang menunggu untuk kamu.
@@ -215,7 +215,7 @@ elemen DOM, bukan layer simbol peta, sehingga style tidak perlu memuat aset font
 apa pun.
 
 ```ts
-import { createBasemapStyle, parchmentDark } from '@pholidlabs/chronomap-maplibre';
+import { createBasemapStyle, parchmentDark } from '@pholidlabs/histamation-maplibre';
 
 const style = createBasemapStyle({ theme: parchmentDark, basemapPath: '/basemap' });
 ```
@@ -226,7 +226,7 @@ const style = createBasemapStyle({ theme: parchmentDark, basemapPath: '/basemap'
 const DEFAULT_BASEMAP_PATH = '/basemap';
 ```
 
-Folder tempat `createBasemapStyle` dan `ChronoMapRenderer` sama-sama membaca GeoJSON peta dasar
+Folder tempat `createBasemapStyle` dan `HistamationRenderer` sama-sama membaca GeoJSON peta dasar
 kecuali diberi tahu sebaliknya — keduanya berbagi default ini sehingga satu opsi `basemapPath`
 mencakup keduanya.
 
@@ -269,7 +269,7 @@ meninggalkan sisa persegi grid basi di layar selama penerbangan kamera). `bounds
 padding sebesar `padFraction` dari ukurannya (default `0.75`, minimal `minPadDeg` derajat,
 default `8`) sehingga menjauh (pan out) tidak pernah menampakkan tepi grid, lalu step terhalus
 dari daftar kasar-ke-halus tetap dipilih selama jumlah garisnya di bawah `budget` (default
-`3000`). `ChronoMapRenderer` memanggil ini sendiri dari extent kampanye; panggil langsung hanya
+`3000`). `HistamationRenderer` memanggil ini sendiri dari extent kampanye; panggil langsung hanya
 untuk membangun style peta dasar kustom di sekitar grid yang sama.
 
 ## Tema {#themes}
@@ -320,7 +320,7 @@ tetap terbaca di atas dasar gelap; pada tema terang, warna diteruskan tanpa peru
 "past" yang memudar.
 
 ```ts
-import { factionColor, withAlpha, parchmentDark } from '@pholidlabs/chronomap-maplibre';
+import { factionColor, withAlpha, parchmentDark } from '@pholidlabs/histamation-maplibre';
 
 const color = factionColor(faction.color, parchmentDark); // mis. 'rgb(198, 168, 122)'
 const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 122, 0.35)'
@@ -329,10 +329,10 @@ const faded = withAlpha(color, 0.35);                       // 'rgba(198, 168, 1
 ## Stylesheet {#stylesheet}
 
 ```ts
-import '@pholidlabs/chronomap-maplibre/style.css';
+import '@pholidlabs/histamation-maplibre/style.css';
 ```
 
-CSS untuk marker dan label DOM milik renderer (`packages/maplibre/src/chronomap.css`, diekspor
+CSS untuk marker dan label DOM milik renderer (`packages/maplibre/src/histamation.css`, diekspor
 sebagai `./style.css`). Import sekali berdampingan dengan `maplibre-gl/dist/maplibre-gl.css`;
 tanpanya, label berbasis DOM dan marker piktorial dirender tanpa gaya.
 

@@ -1,9 +1,9 @@
-# ChronoMap Data Contract v1.0
+# Histamation Data Contract v1.0
 
-**Status:** draft for implementation · **Applies to:** `chronomap: "1.x"` campaign files
+**Status:** draft for implementation · **Applies to:** `histamation: "1.x"` campaign files
 **Normative artifacts:** [`schema/campaign.schema.json`](../schema/campaign.schema.json) (structure), [`packages/engine/src/`](../packages/engine/src) (semantics), [`test-vectors/`](../test-vectors) (expected outputs)
 
-This document defines how a campaign file (the plug-in data) is written, and how the ChronoMap engine loads it, checks it and plays it. Any file that passes validation must play in any conforming engine with no code changes. The Java War and Napoleon 1812 examples use exactly the same format.
+This document defines how a campaign file (the plug-in data) is written, and how the Histamation engine loads it, checks it and plays it. Any file that passes validation must play in any conforming engine with no code changes. The Java War and Napoleon 1812 examples use exactly the same format.
 
 ---
 
@@ -23,7 +23,7 @@ This document defines how a campaign file (the plug-in data) is written, and how
 ```jsonc
 {
   "$schema": "../schema/campaign.schema.json",   // editor autocomplete; ignored by engines
-  "chronomap": "1.0",                             // contract version (required)
+  "histamation": "1.0",                           // contract version (required)
   "meta":      { … },  // id, title, languages, timeline extent, initial map view
   "factions":  [ … ],  // sides, with colors (required, ≥1)
   "parts":     [ … ],  // optional chapter grouping for a table of contents
@@ -303,10 +303,10 @@ interface FrameState {
 }
 ```
 
-### 7.3 Engine API (TypeScript surface for `chronomap-js`)
+### 7.3 Engine API (TypeScript surface for `histamation-js`)
 
 ```ts
-interface ChronoMap {
+interface Histamation {
   load(source: string | URL | File | object, opts?: { language?: string }): Promise<LoadResult>;
   setLanguage(lang: string): void;
 
@@ -408,7 +408,7 @@ Validation has two layers, and both report **JSON Pointer paths**.
 
 ## 9. Versioning and extension
 
-- `chronomap: "1.N"`. **Minor** versions only add optional fields, enum values and `When` features. A 1.0 engine reading a 1.3 file ignores what it doesn't know. **Major** versions may break; engines refuse unknown majors (`E013`).
+- `histamation: "1.N"`. **Minor** versions only add optional fields, enum values and `When` features. A 1.0 engine reading a 1.3 file ignores what it doesn't know. **Major** versions may break; engines refuse unknown majors (`E013`).
 - **`x-` fields** are allowed on every object, including the top level (the Napoleon file carries Minard's temperature table as `x-minard`). Custom kinds are `x-…`.
 - **Candidates for 1.1:** `places[].when` (founding and renaming), `Y`-years for deep time, seasons, per-leg `when` on routes, `audio` media.
 
@@ -439,7 +439,7 @@ Validation has two layers, and both report **JSON Pointer paths**.
 | Coordinates repeated everywhere, altitude in data | `places` gazetteer + `certainty`; altitude optional (drape on DEM) | one fix corrects every reference; honest uncertainty |
 | No citations or media in schema (despite UI-03) | `sources[]`, `media[]` with alt, credit, license | an open-source history dataset lives or dies on provenance |
 | English only | language maps + `languages` / `defaultLanguage` | Indonesian audience for the flagship demo |
-| No version field | `chronomap: "1.0"` | plug-and-play needs forward compatibility |
+| No version field | `histamation: "1.0"` | plug-and-play needs forward compatibility |
 | Chapters: timestamp + camera only | `when` window scrubbed by scroll, `focus` auto-fit, `parts`, `dateLabel` | lets units move while reading; cameras optional |
 
 ---
@@ -454,7 +454,7 @@ These came up while designing the contract. They are worth deciding before Phase
 4. **Don't stream geometry every frame** (§7.2). The PRD's "WASM pushes lightweight vector geometries" per frame would force re-tiling. Send static geometry once and per-frame state as typed arrays.
 5. **Be honest about where WASM pays off.** The Java War file has 9 entities and 43 events, and `resolveFrame` in plain JS takes microseconds. The worker round-trip adds about one frame of latency. The Rust core earns its place at the NFR scale (50,000 features), in the R-tree, and as a reference architecture. Keep a same-thread JS path (the reference implementation already is one), and let a benchmark decide the default.
 6. **Runtime validation belongs in the core, not in `ajv`.** Measured with esbuild, `ajv` + `ajv-formats` + this schema come to about 48 KB gzipped (164 KB minified), half the 100 KB JS budget. The whole reference semantic validator plus resolver is about 7 KB gzipped. The Rust core already has to deserialize the file, and serde plus the semantic rules give the same guarantees. Keep the JSON Schema for editors and CI.
-7. **Crates.** The `edtf` crate hasn't had a release since 2021. The `When` subset is small, so hand-write the parser (mirror `packages/engine/src/time.ts`, as `crates/chronomap-core/src/time.rs` does) and test it against `test-vectors/time.json`. `rstar` 0.13 supports `AABB<[f64; 3]>` if you index time as a third axis. Scale ticks to a magnitude comparable to degrees, and use finite sentinels for open intervals.
+7. **Crates.** The `edtf` crate hasn't had a release since 2021. The `When` subset is small, so hand-write the parser (mirror `packages/engine/src/time.ts`, as `crates/histamation-core/src/time.rs` does) and test it against `test-vectors/time.json`. `rstar` 0.13 supports `AABB<[f64; 3]>` if you index time as a third axis. Scale ticks to a magnitude comparable to degrees, and use finite sentinels for open intervals.
 8. **Scroll progress needs more than IntersectionObserver.** Observers fire at thresholds, which is fine for chapter entry. Continuous `p` (§6.1) needs a `requestAnimationFrame` read of the step element's bounding box.
 
 ---
@@ -467,11 +467,11 @@ packages/engine/src/campaign.ts  semantic validation + normalization (diagnostic
 packages/engine/src/resolve.ts   resolveFrame(campaign, t), chapterTime(chapter, p)
 packages/engine/src/engine.ts    stateful playback façade (§7.3)
 packages/engine/src/worker.ts    worker protocol (§7.1) the Rust/WASM core plugs into
-packages/engine/src/cli.ts       chronomap-check: schema + semantic validation, --frames dry-run, --vectors
+packages/engine/src/cli.ts       histamation-check: schema + semantic validation, --frames dry-run, --vectors
 packages/engine/src/vectors.ts   builds the golden vectors written by `npm run vectors`
 packages/engine/src/format.ts    localized text and precision-aware date formatting for display
 
-crates/chronomap-core/          the Rust port, tested against the vectors below
+crates/histamation-core/        the Rust port, tested against the vectors below
 
 test-vectors/time.json                        When → ticks, including invalid inputs
 test-vectors/null-island.frames.json          synthetic fixture: every feature, BCE dates, p = 0, .25, .5, .75, 1
@@ -479,4 +479,4 @@ test-vectors/java-war-1825.frames.json        one frame per line, p = 0, .5, 1 p
 test-vectors/napoleon-russia-1812.frames.json
 ```
 
-A conforming core must reproduce `time.json` exactly, and every frame field within an absolute tolerance of 1e-6. When the contract changes, update `packages/engine/src/` first, regenerate the vectors with `npm run vectors`, then port to `crates/chronomap-core`.
+A conforming core must reproduce `time.json` exactly, and every frame field within an absolute tolerance of 1e-6. When the contract changes, update `packages/engine/src/` first, regenerate the vectors with `npm run vectors`, then port to `crates/histamation-core`.

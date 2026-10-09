@@ -1,6 +1,6 @@
 {
   "$schema": "../../schema/campaign.schema.json",
-  "chronomap": "1.0",
+  "histamation": "1.0",
   "meta": {
     "id": "null-island-fixture",
     "version": "1.0.0",
@@ -372,7 +372,7 @@
     {
       "id": "fixture-source",
       "type": "dataset",
-      "citation": "Synthetic fixture, ChronoMap contract test suite."
+      "citation": "Synthetic fixture, Histamation contract test suite."
     }
   ],
   "media": [

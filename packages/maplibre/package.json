@@ -1,17 +1,17 @@
 {
-  "name": "@pholidlabs/chronomap-maplibre",
+  "name": "@pholidlabs/histamation-maplibre",
   "version": "0.1.0",
-  "description": "MapLibre GL renderer for ChronoMap campaigns: parchment basemap, campaign layers, chapter cameras",
+  "description": "MapLibre GL renderer for Histamation campaigns: parchment basemap, campaign layers, chapter cameras",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PholidLabs/chronomaps.git",
+    "url": "git+https://github.com/PholidLabs/histamation.git",
     "directory": "packages/maplibre"
   },
-  "homepage": "https://github.com/PholidLabs/chronomaps/tree/main/packages/maplibre#readme",
-  "bugs": "https://github.com/PholidLabs/chronomaps/issues",
+  "homepage": "https://github.com/PholidLabs/histamation/tree/main/packages/maplibre#readme",
+  "bugs": "https://github.com/PholidLabs/histamation/issues",
   "keywords": [
-    "chronomap",
+    "histamation",
     "maplibre",
     "historical-maps",
     "timeline",
@@ -25,7 +25,7 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./style.css": "./dist/chronomap.css"
+    "./style.css": "./dist/histamation.css"
   },
   "files": [
     "dist",
@@ -43,7 +43,7 @@
     "maplibre-gl": "^6.0.0"
   },
   "dependencies": {
-    "@pholidlabs/chronomap-engine": "0.1.0"
+    "@pholidlabs/histamation-engine": "0.1.0"
   },
   "devDependencies": {
     "@types/geojson": "^7946.0.16",

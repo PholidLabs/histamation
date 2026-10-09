@@ -1,11 +1,11 @@
 ---
 title: Getting started
-description: Install ChronoMap, run the demo, and validate your first campaign file in five minutes.
+description: Install Histamation, run the demo, and validate your first campaign file in five minutes.
 group: start
 order: 1
 ---
 
-ChronoMap plays a "campaign" — a single JSON file describing places, forces and events on a
+Histamation plays a "campaign" — a single JSON file describing places, forces and events on a
 historical map — as a scrollytelling story or a free-explore map. This page gets the engine
 running locally and walks a minimal campaign file from blank page to validated to on screen.
 
@@ -18,8 +18,8 @@ running locally and walks a minimal campaign file from blank page to validated t
 ## Clone and install {#install}
 
 ```bash
-git clone https://github.com/PholidLabs/chronomaps.git
-cd chronomaps
+git clone https://github.com/PholidLabs/histamation.git
+cd histamation
 npm install
 ```
 
@@ -51,13 +51,13 @@ This starts Vite's dev server for `apps/demo`. It prints a local URL — by defa
 
 The demo is a two-page site:
 
-- **`/`** — the landing page: what ChronoMap is, in English and Indonesian.
+- **`/`** — the landing page: what Histamation is, in English and Indonesian.
 - **`/app/`** — the map app itself: the scrollytelling story, the free-explore scrubber, and
   where you load a campaign file.
 
 ## A minimal campaign {#minimal-campaign}
 
-A campaign file needs four things: `chronomap` (the contract version), `meta` (with a closed
+A campaign file needs four things: `histamation` (the contract version), `meta` (with a closed
 timeline `extent` and an initial map view), at least one faction, and at least one chapter
 ([`E018`](diagnostics.md#e018) — a campaign with no chapters has nowhere to start playback).
 Everything else — `places`, `entities`, `events`, `sources`, `media` — is optional. Here is the
@@ -66,10 +66,10 @@ smallest campaign that validates:
 ```json
 {
   "$schema": "../../schema/campaign.schema.json",
-  "chronomap": "1.0",
+  "histamation": "1.0",
   "meta": {
-    "id": "hello-chronomap",
-    "title": "Hello, ChronoMap",
+    "id": "hello-histamation",
+    "title": "Hello, Histamation",
     "description": "A five-minute example: one faction, one place, one chapter.",
     "languages": ["en"],
     "defaultLanguage": "en",
@@ -110,18 +110,18 @@ A few things to notice:
 
 ## Validate it {#validate}
 
-Save the file somewhere (for example `data/campaigns/hello-chronomap.json`, so `npm run check`
+Save the file somewhere (for example `data/campaigns/hello-histamation.json`, so `npm run check`
 picks it up automatically), then run it through the engine's CLI:
 
 ```bash
-node packages/engine/dist/cli.js data/campaigns/hello-chronomap.json
+node packages/engine/dist/cli.js data/campaigns/hello-histamation.json
 ```
 
 It reports structural and semantic diagnostics against the file (see
 [Diagnostics](diagnostics.md) for the full code list), then a one-line summary of what it found:
 
 ```text
-data/campaigns/hello-chronomap.json
+data/campaigns/hello-histamation.json
   0 error(s), 0 warning(s), 0 info
   1 factions · 1 places · 0 entities · 0 events · 1 chapters
 ```
@@ -131,7 +131,7 @@ Add `--frames` for a playback dry run — the position of every chapter at scrol
 a browser:
 
 ```bash
-node packages/engine/dist/cli.js data/campaigns/hello-chronomap.json --frames
+node packages/engine/dist/cli.js data/campaigns/hello-histamation.json --frames
 ```
 
 ```text

@@ -1,7 +1,7 @@
 import { el } from './dom.js';
 import type { UIStrings } from './i18n.js';
 
-const TOUR_SEEN_KEY = 'cm-tour-seen';
+const TOUR_SEEN_KEY = 'hm-tour-seen';
 
 export interface CoachmarkStep {
   target: string;
@@ -105,20 +105,20 @@ export class CoachmarkTour {
   private createElements(): void {
     if (this.backdropEl) return;
 
-    this.backdropEl = el('div', { class: 'cm-tour-backdrop' });
+    this.backdropEl = el('div', { class: 'hm-tour-backdrop' });
     this.backdropEl.addEventListener('click', () => this.stop());
 
-    this.spotlightEl = el('div', { class: 'cm-tour-spotlight' });
+    this.spotlightEl = el('div', { class: 'hm-tour-spotlight' });
 
     this.cardEl = el('div', {
-      class: 'cm-tour-card',
+      class: 'hm-tour-card',
       role: 'dialog',
       'aria-modal': 'true',
-      'aria-labelledby': 'cm-tour-title',
-      'aria-describedby': 'cm-tour-desc',
+      'aria-labelledby': 'hm-tour-title',
+      'aria-describedby': 'hm-tour-desc',
     });
 
-    this.arrowEl = el('div', { class: 'cm-tour-arrow' });
+    this.arrowEl = el('div', { class: 'hm-tour-arrow' });
     this.cardEl.append(this.arrowEl);
 
     document.body.append(this.backdropEl, this.spotlightEl, this.cardEl);
@@ -161,24 +161,24 @@ export class CoachmarkTour {
     const isLast = this.currentStep === total - 1;
 
     // Build card content
-    const content = el('div', { class: 'cm-tour-content' });
+    const content = el('div', { class: 'hm-tour-content' });
 
     // Header with roman numeral step index & close button
     const roman = ['I', 'II', 'III', 'IV'][this.currentStep] ?? String(this.currentStep + 1);
-    const header = el('div', { class: 'cm-tour-header' },
-      el('span', { class: 'cm-tour-step-badge', text: `${roman} / ${['I', 'II', 'III', 'IV'][total - 1] ?? total}` }),
+    const header = el('div', { class: 'hm-tour-header' },
+      el('span', { class: 'hm-tour-step-badge', text: `${roman} / ${['I', 'II', 'III', 'IV'][total - 1] ?? total}` }),
       el('button', {
-        class: 'cm-tour-close',
+        class: 'hm-tour-close',
         'aria-label': ui.dismiss,
         onclick: () => this.stop(),
       }, '×')
     );
 
-    const title = el('h3', { id: 'cm-tour-title', class: 'cm-tour-title', text: step.title(ui) });
+    const title = el('h3', { id: 'hm-tour-title', class: 'hm-tour-title', text: step.title(ui) });
 
     // Render description with bold formatting if any markdown bold is present
     const descText = step.desc(ui);
-    const desc = el('p', { id: 'cm-tour-desc', class: 'cm-tour-desc' });
+    const desc = el('p', { id: 'hm-tour-desc', class: 'hm-tour-desc' });
     const parts = descText.split(/(\*\*[^*]+\*\*)/g);
     for (const part of parts) {
       if (part.startsWith('**') && part.endsWith('**')) {
@@ -189,23 +189,23 @@ export class CoachmarkTour {
     }
 
     // Actions row
-    const footer = el('div', { class: 'cm-tour-footer' });
+    const footer = el('div', { class: 'hm-tour-footer' });
     const skipBtn = el('button', {
-      class: 'cm-tour-btn-text',
+      class: 'hm-tour-btn-text',
       onclick: () => this.stop(),
       text: ui.tourSkip,
     });
 
-    const btnGroup = el('div', { class: 'cm-tour-nav-group' });
+    const btnGroup = el('div', { class: 'hm-tour-nav-group' });
     if (this.currentStep > 0) {
       btnGroup.append(el('button', {
-        class: 'btn cm-tour-btn-prev',
+        class: 'btn hm-tour-btn-prev',
         onclick: () => this.prev(),
         text: ui.tourPrev,
       }));
     }
     btnGroup.append(el('button', {
-      class: 'btn cm-tour-btn-next',
+      class: 'btn hm-tour-btn-next',
       onclick: () => this.next(),
       text: isLast ? ui.tourDone : ui.tourNext,
     }));

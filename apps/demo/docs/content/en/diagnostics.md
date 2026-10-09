@@ -35,10 +35,10 @@ Open the file, count from zero, and you're at the exact field the message is abo
 
 ## Where diagnostics show up {#where}
 
-- `chronomap-check` prints every diagnostic for each file you pass it. See [CLI](cli.md) for the flags.
+- `histamation-check` prints every diagnostic for each file you pass it. See [CLI](cli.md) for the flags.
 - The map app at [`/app/`](/app/) shows a dismissible notice listing the error-level diagnostics when a dropped file fails to load. A file that loads with warnings or info still plays; its "About" panel lists every diagnostic (level, code, path, message) alongside a count per level.
 - The [validator](validator.md) surfaces every level while you edit, without needing to drop the file into the map app first.
 
 ## `--strict` {#strict-mode}
 
-By default, `chronomap-check` exits non-zero only when a file has an error. Add `--strict` and it also exits non-zero when a file has any warning — useful once a campaign is warning-clean and you want CI to hold the line. `--strict` doesn't change what the loader accepts: a file with only warnings still loads and plays either way; it only changes the command's exit code.
+By default, `histamation-check` exits non-zero only when a file has an error. Add `--strict` and it also exits non-zero when a file has any warning — useful once a campaign is warning-clean and you want CI to hold the line. `--strict` doesn't change what the loader accepts: a file with only warnings still loads and plays either way; it only changes the command's exit code.

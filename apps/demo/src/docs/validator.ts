@@ -1,9 +1,9 @@
 /**
- * In-browser campaign validator: the same checks chronomap-check runs — the JSON Schema (S001) and the
+ * In-browser campaign validator: the same checks histamation-check runs — the JSON Schema (S001) and the
  * engine's semantic loader — plus its --frames playback dry run. Campaign text is untrusted: every string
  * from the file reaches the page through textContent (el()), never innerHTML.
  */
-import { chapterTime, loadCampaign, pickText, resolveFrame, ticksToIso, type CampaignFile, type Diagnostic, type NormalizedCampaign } from '@pholidlabs/chronomap-engine';
+import { chapterTime, loadCampaign, pickText, resolveFrame, ticksToIso, type CampaignFile, type Diagnostic, type NormalizedCampaign } from '@pholidlabs/histamation-engine';
 import { el } from '../dom.js';
 import catalogue from '../../docs/diagnostics.json';
 import { DOCS_COPY, type DocLang } from './copy.js';

@@ -41,8 +41,8 @@ export interface WhenCopy {
 
 export const DOCS_COPY: Record<DocLang, DocsCopy> = {
   en: {
-    docs: 'Docs', siteTitle: 'ChronoMap documentation', skip: 'Skip to content', menu: 'Open navigation', closeMenu: 'Close navigation',
-    mapApp: 'Map app', home: 'ChronoMap home', language: 'Language', onThisPage: 'On this page', prev: 'Previous', next: 'Next',
+    docs: 'Docs', siteTitle: 'Histamation documentation', skip: 'Skip to content', menu: 'Open navigation', closeMenu: 'Close navigation',
+    mapApp: 'Map app', home: 'Histamation home', language: 'Language', onThisPage: 'On this page', prev: 'Previous', next: 'Next',
     edit: 'Edit this page on GitHub', sectionLink: 'Link to this section',
     groups: { start: 'Getting started', authoring: 'Writing a campaign', reference: 'Reference', api: 'API', tools: 'Tools' },
     contractTitle: 'Data contract',
@@ -66,7 +66,7 @@ export const DOCS_COPY: Record<DocLang, DocsCopy> = {
       contents: 'In this file', factions: 'factions', places: 'places', entities: 'entities', events: 'events', chapters: 'chapters',
       diagnostics: 'Diagnostics', none: 'No diagnostics.', path: 'Path', howToFix: 'How to fix',
       schemaSkipped: 'JSON Schema checks (S001) could not run in this browser; the semantic checks did.',
-      playback: 'Playback dry run', playbackNote: 'Where things are at the start, middle and end of each chapter — the same view as chronomap-check --frames.',
+      playback: 'Playback dry run', playbackNote: 'Where things are at the start, middle and end of each chapter — the same view as histamation-check --frames.',
       at: 'at', activeEvents: 'Happening', movingUnits: 'Moving', nothing: 'nothing',
     },
     when: {
@@ -79,8 +79,8 @@ export const DOCS_COPY: Record<DocLang, DocsCopy> = {
     },
   },
   id: {
-    docs: 'Dokumentasi', siteTitle: 'Dokumentasi ChronoMap', skip: 'Langsung ke isi', menu: 'Buka navigasi', closeMenu: 'Tutup navigasi',
-    mapApp: 'Aplikasi peta', home: 'Beranda ChronoMap', language: 'Bahasa', onThisPage: 'Di halaman ini', prev: 'Sebelumnya', next: 'Berikutnya',
+    docs: 'Dokumentasi', siteTitle: 'Dokumentasi Histamation', skip: 'Langsung ke isi', menu: 'Buka navigasi', closeMenu: 'Tutup navigasi',
+    mapApp: 'Aplikasi peta', home: 'Beranda Histamation', language: 'Bahasa', onThisPage: 'Di halaman ini', prev: 'Sebelumnya', next: 'Berikutnya',
     edit: 'Sunting halaman ini di GitHub', sectionLink: 'Tautan ke bagian ini',
     groups: { start: 'Mulai', authoring: 'Menulis kampanye', reference: 'Referensi', api: 'API', tools: 'Alat' },
     contractTitle: 'Kontrak data',
@@ -104,7 +104,7 @@ export const DOCS_COPY: Record<DocLang, DocsCopy> = {
       contents: 'Isi berkas', factions: 'faksi', places: 'tempat', entities: 'entitas', events: 'peristiwa', chapters: 'bab',
       diagnostics: 'Diagnostik', none: 'Tidak ada diagnostik.', path: 'Jalur', howToFix: 'Cara memperbaiki',
       schemaSkipped: 'Pemeriksaan JSON Schema (S001) tidak dapat berjalan di peramban ini; pemeriksaan semantik tetap berjalan.',
-      playback: 'Uji putar', playbackNote: 'Posisi setiap objek di awal, tengah, dan akhir tiap bab — sama seperti chronomap-check --frames.',
+      playback: 'Uji putar', playbackNote: 'Posisi setiap objek di awal, tengah, dan akhir tiap bab — sama seperti histamation-check --frames.',
       at: 'di', activeEvents: 'Sedang terjadi', movingUnits: 'Bergerak', nothing: 'tidak ada',
     },
     when: {

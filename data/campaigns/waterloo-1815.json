@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/campaign.schema.json",
-  "chronomap": "1.0",
+  "histamation": "1.0",
   "meta": {
     "id": "waterloo-1815",
     "version": "0.1.0",

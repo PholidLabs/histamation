@@ -1,13 +1,13 @@
 /**
  * Landing page: bilingual copy, theme and language switches shared with the app, and the
- * hero plate — a real campaign resolved by @pholidlabs/chronomap-engine every frame and drawn as SVG.
+ * hero plate — a real campaign resolved by @pholidlabs/histamation-engine every frame and drawn as SVG.
  * No map library here on purpose: the plate shows the engine on its own.
  */
 import './landing.css';
 import {
   DEFAULT_RADIUS, chapterAt, formatTicks, loadCampaign, pickText, resolveFrame,
   type CampaignFile, type FrameState, type NormalizedCampaign, type Ticks,
-} from '@pholidlabs/chronomap-engine';
+} from '@pholidlabs/histamation-engine';
 import { LANDING, type LandingStrings } from './landing-copy.js';
 import { UI } from './i18n.js';
 import { svgEl } from './dom.js';
@@ -18,8 +18,8 @@ import {
 } from './prefs.js';
 
 const LANGS = Object.keys(LANDING);
-const state = { lang: savedLang('id'), theme: savedThemeMode() };
-if (!LANGS.includes(state.lang)) state.lang = 'id';
+const state = { lang: savedLang('en'), theme: savedThemeMode() };
+if (!LANGS.includes(state.lang)) state.lang = 'en';
 applyThemeMode(state.theme);
 
 const copy = (): LandingStrings => LANDING[state.lang];
@@ -335,7 +335,7 @@ async function initPlate(): Promise<void> {
     figure.setAttribute('aria-busy', 'false');
     $('plate-status').dataset.i18n = 'plateFailed';
     $('plate-status').textContent = copy().plateFailed;
-    console.error('ChronoMap landing preview:', e);
+    console.error('Histamation landing preview:', e);
   }
 }
 

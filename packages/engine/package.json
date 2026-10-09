@@ -1,17 +1,17 @@
 {
-  "name": "@pholidlabs/chronomap-engine",
+  "name": "@pholidlabs/histamation-engine",
   "version": "0.1.0",
-  "description": "ChronoMap contract engine: parse, validate and resolve campaign files (reference implementation for the Rust/WASM core)",
+  "description": "Histamation contract engine: parse, validate and resolve campaign files (reference implementation for the Rust/WASM core)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PholidLabs/chronomaps.git",
+    "url": "git+https://github.com/PholidLabs/histamation.git",
     "directory": "packages/engine"
   },
-  "homepage": "https://github.com/PholidLabs/chronomaps/tree/main/packages/engine#readme",
-  "bugs": "https://github.com/PholidLabs/chronomaps/issues",
+  "homepage": "https://github.com/PholidLabs/histamation/tree/main/packages/engine#readme",
+  "bugs": "https://github.com/PholidLabs/histamation/issues",
   "keywords": [
-    "chronomap",
+    "histamation",
     "historical-maps",
     "timeline",
     "campaign",
@@ -34,7 +34,7 @@
     }
   },
   "bin": {
-    "chronomap-check": "dist/cli.js"
+    "histamation-check": "dist/cli.js"
   },
   "files": [
     "dist",

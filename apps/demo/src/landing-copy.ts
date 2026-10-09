@@ -31,15 +31,15 @@ export interface LandingStrings {
 
 export const LANDING: Record<string, LandingStrings> = {
   en: {
-    docTitle: 'ChronoMap — Historical maps from one JSON file',
-    docDesc: 'An open-source engine for scrollytelling historical maps. Describe a campaign in JSON; ChronoMap plays it, sources and uncertainty included.',
+    docTitle: 'Histamation — Historical maps from one JSON file',
+    docDesc: 'An open-source engine for scrollytelling historical maps. Describe a campaign in JSON; Histamation plays it, sources and uncertainty included.',
     navDocs: 'Docs',
     openMap: 'Open the map',
 
     heroKicker: 'Open-source engine for historical maps',
     heroTitle: 'Write the campaign once.',
     heroTitleAccent: 'Watch it march.',
-    heroLede: 'Armies, routes, forts and sources in one JSON file. ChronoMap turns it into a map you scroll through, with every uncertainty drawn and every claim cited.',
+    heroLede: 'Armies, routes, forts and sources in one JSON file. Histamation turns it into a map you scroll through, with every uncertainty drawn and every claim cited.',
     readDocs: 'Read the docs',
 
     plateCaption: 'Live, not a video: the engine resolving waterloo-1815.json in this tab.',
@@ -67,15 +67,15 @@ export const LANDING: Record<string, LandingStrings> = {
     footerLicence: 'Code MIT · Data CC BY 4.0 · Basemap Natural Earth (public domain)',
   },
   id: {
-    docTitle: 'ChronoMap — Peta sejarah dari satu berkas JSON',
-    docDesc: 'Mesin sumber terbuka untuk peta sejarah bergulir. Jelaskan sebuah kampanye dalam JSON; ChronoMap memainkannya, lengkap dengan sumber dan ketidakpastian.',
+    docTitle: 'Histamation — Peta sejarah interaktif dari satu berkas JSON',
+    docDesc: 'Mesin sumber terbuka untuk membuat peta sejarah interaktif. Tulis kampanye dalam satu berkas JSON, dan Histamation menampilkannya lengkap dengan sumber dan tingkat kepastiannya.',
     navDocs: 'Dokumentasi',
     openMap: 'Buka peta',
 
     heroKicker: 'Mesin sumber terbuka untuk peta sejarah',
     heroTitle: 'Tulis kampanyenya sekali.',
     heroTitleAccent: 'Saksikan ia bergerak.',
-    heroLede: 'Pasukan, rute, benteng, dan sumber dalam satu berkas JSON. ChronoMap mengubahnya menjadi peta yang Anda gulir, dengan setiap ketidakpastian digambar dan setiap klaim bersumber.',
+    heroLede: 'Pasukan, rute, benteng, dan sumber dalam satu berkas JSON. Histamation mengubahnya menjadi peta yang Anda gulir, dengan setiap ketidakpastian digambar dan setiap klaim bersumber.',
     readDocs: 'Baca dokumentasi',
 
     plateCaption: 'Langsung, bukan video: mesin menghitung waterloo-1815.json di tab ini.',

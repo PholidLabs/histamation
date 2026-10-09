@@ -1,7 +1,8 @@
 {
-  "name": "ChronoMap Engine",
-  "short_name": "ChronoMap",
-  "description": "Mesin lokal-dulu untuk peta sejarah bergulir dari satu berkas JSON.",
+  "name": "Histamation",
+  "short_name": "Histamation",
+  "description": "An open-source engine for scrollytelling historical maps from one JSON file.",
+  "lang": "en",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

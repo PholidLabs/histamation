@@ -7,8 +7,8 @@
  */
 import { Marker, Popup, type GeoJSONSource, type Map as MapLibreMap } from 'maplibre-gl';
 import type { Feature, FeatureCollection, Position } from 'geojson';
-import type { FrameState, NormEntity, NormEvent, NormalizedCampaign, Ticks } from '@pholidlabs/chronomap-engine';
-import { alongPath, pickText } from '@pholidlabs/chronomap-engine';
+import type { FrameState, NormEntity, NormEvent, NormalizedCampaign, Ticks } from '@pholidlabs/histamation-engine';
+import { alongPath, pickText } from '@pholidlabs/histamation-engine';
 import { factionColor, parchmentLight, withAlpha, type ChronoTheme } from './theme.js';
 import { DEFAULT_BASEMAP_PATH, graticuleFor } from './style.js';
 import { renderMountainSvg, renderForestSvg, renderFortressSvg, renderEmbellishmentSvg } from './pictorial.js';
@@ -74,7 +74,7 @@ function textEl(tag: string, className: string, text: unknown): HTMLElement {
   return node;
 }
 
-export class ChronoMapRenderer {
+export class HistamationRenderer {
   private campaign: NormalizedCampaign | null = null;
   /** Entities by id, built once per campaign: setFrame looks every frame entity up. */
   private entities = new Map<string, NormEntity>();
@@ -115,7 +115,7 @@ export class ChronoMapRenderer {
     this.language = opts.language ?? 'en';
     this.numberFormat = new Intl.NumberFormat(this.language);
     this.bandMeters = opts.maxStrengthBandMeters ?? 18000;
-    this.avoidSelector = opts.avoidSelector ?? '[data-cm-avoid]';
+    this.avoidSelector = opts.avoidSelector ?? '[data-hm-avoid]';
     this.basemapPath = opts.basemapPath ?? DEFAULT_BASEMAP_PATH;
     this.reduceMotion = opts.reduceMotion ?? false;
 
@@ -168,12 +168,12 @@ export class ChronoMapRenderer {
       if (!p || !p.id || f.geometry.type !== 'Point') continue;
       const coord = f.geometry.coordinates as [number, number];
       const el = document.createElement('div');
-      el.className = `cm-peak-marker rank-${p.rank ?? 2}`;
+      el.className = `hm-peak-marker rank-${p.rank ?? 2}`;
       // The art is generated SVG with no feature text in it; the caption is built as text.
-      el.innerHTML = `<div class="cm-peak-art">${renderMountainSvg(p)}</div>`;
-      const caption = textEl('div', 'cm-peak-caption', '');
-      caption.append(textEl('span', 'cm-peak-name', p.name));
-      if (p.elevation) caption.append(textEl('span', 'cm-peak-elev', `${p.elevation} m`));
+      el.innerHTML = `<div class="hm-peak-art">${renderMountainSvg(p)}</div>`;
+      const caption = textEl('div', 'hm-peak-caption', '');
+      caption.append(textEl('span', 'hm-peak-name', p.name));
+      if (p.elevation) caption.append(textEl('span', 'hm-peak-elev', `${p.elevation} m`));
       el.append(caption);
       this.bindPictorialPopup(el, coord, p.type === 'volcano' ? 'volcano' : p.type === 'range' ? 'range' : 'peak', p);
       const marker = new Marker({ element: el, anchor: 'bottom', offset: [0, 4] }).setLngLat(coord).addTo(this.map);
@@ -188,10 +188,10 @@ export class ChronoMapRenderer {
       if (!p || !p.id || f.geometry.type !== 'Point') continue;
       const coord = f.geometry.coordinates as [number, number];
       const el = document.createElement('div');
-      el.className = `cm-forest-marker rank-${p.rank ?? 2}`;
-      el.innerHTML = `<div class="cm-forest-art">${renderForestSvg(p)}</div>`;
-      const caption = textEl('div', 'cm-forest-caption', '');
-      caption.append(textEl('span', 'cm-forest-name', p.name));
+      el.className = `hm-forest-marker rank-${p.rank ?? 2}`;
+      el.innerHTML = `<div class="hm-forest-art">${renderForestSvg(p)}</div>`;
+      const caption = textEl('div', 'hm-forest-caption', '');
+      caption.append(textEl('span', 'hm-forest-name', p.name));
       el.append(caption);
       this.bindPictorialPopup(el, coord, 'forest', p);
       const marker = new Marker({ element: el, anchor: 'bottom', offset: [0, 2] }).setLngLat(coord).addTo(this.map);
@@ -206,7 +206,7 @@ export class ChronoMapRenderer {
       if (!p || !p.id || f.geometry.type !== 'Point') continue;
       const coord = f.geometry.coordinates as [number, number];
       const el = document.createElement('div');
-      el.className = `cm-embellishment-marker kind-${p.kind ?? 'cartouche'}`;
+      el.className = `hm-embellishment-marker kind-${p.kind ?? 'cartouche'}`;
       el.innerHTML = renderEmbellishmentSvg(p.kind ?? 'compass-rose');
       this.bindPictorialPopup(el, coord, 'ornament', p);
       const marker = new Marker({ element: el, anchor: 'center' }).setLngLat(coord).addTo(this.map);
@@ -220,7 +220,7 @@ export class ChronoMapRenderer {
     el.addEventListener('click', (ev) => {
       ev.stopPropagation(); // the map's click would close the popup as it opens
       const box = document.createElement('div');
-      box.className = 'cm-pictorial-popup';
+      box.className = 'hm-pictorial-popup';
       box.append(textEl('div', 'kind', (PICTORIAL_KIND[this.language] ?? PICTORIAL_KIND.en)[kind]), textEl('h4', '', p.name));
       if (p.elevation) box.append(textEl('div', 'muted', `${p.elevation} m`));
       if (p.note) box.append(textEl('div', 'note', p.note));
@@ -235,7 +235,7 @@ export class ChronoMapRenderer {
       if (!p || !p.id || f.geometry.type !== 'Point') continue;
       const coord = f.geometry.coordinates as [number, number];
       const el = document.createElement('div');
-      el.className = `cm-basemap-place-label rank-${p.rank ?? 3} kind-${p.kind ?? 'town'}`;
+      el.className = `hm-basemap-place-label rank-${p.rank ?? 3} kind-${p.kind ?? 'town'}`;
       el.textContent = p.label ?? p.name;
       const marker = new Marker({ element: el, anchor: 'left', offset: [7, 0] }).setLngLat(coord).addTo(this.map);
       this.basemapPlaceLabels.set(p.id, { marker, el });
@@ -249,18 +249,18 @@ export class ChronoMapRenderer {
     const add = (id: string, data: FeatureCollection = EMPTY) => {
       if (!m.getSource(id)) m.addSource(id, { type: 'geojson', data });
     };
-    for (const id of ['cm-halos', 'cm-territories', 'cm-routes', 'cm-trails', 'cm-active-march', 'cm-places', 'cm-events']) add(id);
+    for (const id of ['hm-halos', 'hm-territories', 'hm-routes', 'hm-trails', 'hm-active-march', 'hm-places', 'hm-events']) add(id);
 
     const addLayerSafe = (layer: Parameters<typeof m.addLayer>[0], before?: string) => {
       if (!m.getLayer(layer.id)) m.addLayer(layer, before);
     };
 
-    addLayerSafe({ id: 'cm-territory-fill', type: 'fill', source: 'cm-territories', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 0.14 } });
-    addLayerSafe({ id: 'cm-territory-line', type: 'line', source: 'cm-territories', paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.5, 'line-width': 1.2, 'line-dasharray': [4, 3] } });
-    addLayerSafe({ id: 'cm-route', type: 'line', source: 'cm-routes', paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.5, 'line-width': 1.6, 'line-dasharray': [3, 3] } });
-    addLayerSafe({ id: 'cm-halo-fill', type: 'fill', source: 'cm-halos', paint: { 'fill-color': t.ink, 'fill-opacity': ['case', ['get', 'focus'], 0.09, 0.04] } });
+    addLayerSafe({ id: 'hm-territory-fill', type: 'fill', source: 'hm-territories', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 0.14 } });
+    addLayerSafe({ id: 'hm-territory-line', type: 'line', source: 'hm-territories', paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.5, 'line-width': 1.2, 'line-dasharray': [4, 3] } });
+    addLayerSafe({ id: 'hm-route', type: 'line', source: 'hm-routes', paint: { 'line-color': ['get', 'color'], 'line-opacity': 0.5, 'line-width': 1.6, 'line-dasharray': [3, 3] } });
+    addLayerSafe({ id: 'hm-halo-fill', type: 'fill', source: 'hm-halos', paint: { 'fill-color': t.ink, 'fill-opacity': ['case', ['get', 'focus'], 0.09, 0.04] } });
     addLayerSafe({
-      id: 'cm-halo-line', type: 'line', source: 'cm-halos',
+      id: 'hm-halo-line', type: 'line', source: 'hm-halos',
       filter: ['==', ['get', 'certainty'], 'conjectural'],
       paint: { 'line-color': t.ink, 'line-opacity': ['case', ['get', 'focus'], 0.45, 0.18], 'line-width': 1, 'line-dasharray': [2, 3] },
     });
@@ -276,16 +276,16 @@ export class ChronoMapRenderer {
       strengthStops.push(z, ['max', 1.2, ['min', 64, ['*', ['get', 'w0'], 2 ** z]]]);
     }
     const strengthWidth: unknown = strengthStops;
-    addLayerSafe({ id: 'cm-trail-band', type: 'line', source: 'cm-trails', filter: ['all', ['==', ['get', 'dash'], 'none'], ['has', 'w0']],
+    addLayerSafe({ id: 'hm-trail-band', type: 'line', source: 'hm-trails', filter: ['all', ['==', ['get', 'dash'], 'none'], ['has', 'w0']],
       layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-width': strengthWidth as never } });
-    addLayerSafe({ id: 'cm-trail-solid', type: 'line', source: 'cm-trails', filter: ['all', ['==', ['get', 'dash'], 'none'], ['!', ['has', 'w0']]],
+    addLayerSafe({ id: 'hm-trail-solid', type: 'line', source: 'hm-trails', filter: ['all', ['==', ['get', 'dash'], 'none'], ['!', ['has', 'w0']]],
       layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-width': 2.6 } });
-    addLayerSafe({ id: 'cm-trail-conjectural', type: 'line', source: 'cm-trails', filter: ['==', ['get', 'dash'], 'conjectural'],
+    addLayerSafe({ id: 'hm-trail-conjectural', type: 'line', source: 'hm-trails', filter: ['==', ['get', 'dash'], 'conjectural'],
       layout: { 'line-cap': 'butt', 'line-join': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-width': 2.4, 'line-dasharray': [3, 2] } });
-    addLayerSafe({ id: 'cm-trail-sea', type: 'line', source: 'cm-trails', filter: ['==', ['get', 'dash'], 'sea'],
+    addLayerSafe({ id: 'hm-trail-sea', type: 'line', source: 'hm-trails', filter: ['==', ['get', 'dash'], 'sea'],
       layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': ['get', 'color'], 'line-width': 2.2, 'line-dasharray': [0.6, 2.4] } });
     addLayerSafe({
-      id: 'cm-march-flow', type: 'line', source: 'cm-active-march',
+      id: 'hm-march-flow', type: 'line', source: 'hm-active-march',
       layout: { 'line-cap': 'round', 'line-join': 'round' },
       paint: {
         'line-color': ['get', 'color'],
@@ -296,7 +296,7 @@ export class ChronoMapRenderer {
     });
 
     addLayerSafe({
-      id: 'cm-place-dot', type: 'circle', source: 'cm-places',
+      id: 'hm-place-dot', type: 'circle', source: 'hm-places',
       paint: {
         'circle-radius': ['case', ['get', 'focus'], 4, 2.6],
         'circle-color': ['case', ['get', 'focus'], t.ink, t.inkSoft],
@@ -304,7 +304,7 @@ export class ChronoMapRenderer {
       },
     });
     addLayerSafe({
-      id: 'cm-event-past', type: 'circle', source: 'cm-events', filter: ['==', ['get', 'phase'], 'past'],
+      id: 'hm-event-past', type: 'circle', source: 'hm-events', filter: ['==', ['get', 'phase'], 'past'],
       paint: {
         'circle-radius': ['interpolate', ['linear'], ['get', 'importance'], 1, 5, 5, 2.5],
         'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': t.eventPast,
@@ -312,7 +312,7 @@ export class ChronoMapRenderer {
       },
     });
     addLayerSafe({
-      id: 'cm-event-active', type: 'circle', source: 'cm-events', filter: ['==', ['get', 'phase'], 'active'],
+      id: 'hm-event-active', type: 'circle', source: 'hm-events', filter: ['==', ['get', 'phase'], 'active'],
       paint: {
         'circle-radius': ['interpolate', ['linear'], ['get', 'importance'], 1, 8, 5, 4],
         'circle-color': t.halo, 'circle-opacity': 0.85,
@@ -320,7 +320,7 @@ export class ChronoMapRenderer {
       },
     });
     addLayerSafe({
-      id: 'cm-event-pulse', type: 'circle', source: 'cm-events', filter: ['==', ['get', 'phase'], 'active'],
+      id: 'hm-event-pulse', type: 'circle', source: 'hm-events', filter: ['==', ['get', 'phase'], 'active'],
       paint: { 'circle-radius': 10, 'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': t.event, 'circle-stroke-width': 1.5, 'circle-stroke-opacity': 0.5 },
     });
   }
@@ -416,9 +416,9 @@ export class ChronoMapRenderer {
         geometry: { type: 'LineString', coordinates: e.path },
       });
     }
-    this.setSource('cm-places', { type: 'FeatureCollection', features: places });
-    this.setSource('cm-halos', { type: 'FeatureCollection', features: halos });
-    this.setSource('cm-routes', { type: 'FeatureCollection', features: routes });
+    this.setSource('hm-places', { type: 'FeatureCollection', features: places });
+    this.setSource('hm-halos', { type: 'FeatureCollection', features: halos });
+    this.setSource('hm-routes', { type: 'FeatureCollection', features: routes });
     this.applyLabelVisibility();
   }
 
@@ -459,9 +459,9 @@ export class ChronoMapRenderer {
     for (const [id, m] of this.fortMarkers) if (!liveForts.has(id)) { m.marker.remove(); this.fortMarkers.delete(id); }
 
     const territoryKey = territories.map((f) => `${f.properties!.id}:${f.properties!.color}`).join('|');
-    if (territoryKey !== this.lastTerritoryKey) { this.setSource('cm-territories', { type: 'FeatureCollection', features: territories }); this.lastTerritoryKey = territoryKey; }
-    this.setSource('cm-trails', { type: 'FeatureCollection', features: trails });
-    this.setSource('cm-active-march', { type: 'FeatureCollection', features: activeMarches });
+    if (territoryKey !== this.lastTerritoryKey) { this.setSource('hm-territories', { type: 'FeatureCollection', features: territories }); this.lastTerritoryKey = territoryKey; }
+    this.setSource('hm-trails', { type: 'FeatureCollection', features: trails });
+    this.setSource('hm-active-march', { type: 'FeatureCollection', features: activeMarches });
     this.hasActiveMarch = activeMarches.length > 0;
     if (this.hasActiveMarch && !this.animFrameId && !this.reduceMotion) {
       this.startMarchAnimation();
@@ -484,7 +484,7 @@ export class ChronoMapRenderer {
       }
     }
     for (const [id, m] of this.eventLabels) if (!liveEventLabels.has(id)) { m.marker.remove(); this.eventLabels.delete(id); }
-    this.setSource('cm-events', { type: 'FeatureCollection', features: events });
+    this.setSource('hm-events', { type: 'FeatureCollection', features: events });
 
     this.applyLabelVisibility();
   }
@@ -547,9 +547,9 @@ export class ChronoMapRenderer {
       if (now - this.lastAnimTime > 50) {
         this.lastAnimTime = now;
         this.dashPhase = (this.dashPhase + 0.3) % 3;
-        if (this.map.getLayer('cm-march-flow')) {
+        if (this.map.getLayer('hm-march-flow')) {
           const p = Number(this.dashPhase.toFixed(2));
-          this.map.setPaintProperty('cm-march-flow', 'line-dasharray', [0.1 + p, 1.4, 3 - p, 1.4]);
+          this.map.setPaintProperty('hm-march-flow', 'line-dasharray', [0.1 + p, 1.4, 3 - p, 1.4]);
         }
       }
       this.animFrameId = requestAnimationFrame(tick);
@@ -563,15 +563,15 @@ export class ChronoMapRenderer {
     let entry = this.unitMarkers.get(ne.id);
     if (!entry) {
       const el = document.createElement('div');
-      el.className = 'cm-unit';
+      el.className = 'hm-unit';
       const icon = document.createElement('span');
-      icon.className = 'cm-unit-icon';
+      icon.className = 'hm-unit-icon';
       const text = document.createElement('span');
-      text.className = 'cm-unit-text';
+      text.className = 'hm-unit-text';
       const nameEl = document.createElement('span');
-      nameEl.className = 'cm-unit-name';
+      nameEl.className = 'hm-unit-name';
       const strengthEl = document.createElement('span');
-      strengthEl.className = 'cm-unit-strength';
+      strengthEl.className = 'hm-unit-strength';
       text.append(nameEl, strengthEl);
       el.append(icon, text);
       // Anchored on the icon, not the row: hiding the name must not move the dot.
@@ -583,9 +583,9 @@ export class ChronoMapRenderer {
     }
     entry.marker.setLngLat(fe.position);
     const hollow = Boolean(HOLLOW_STATUSES[fe.status]);
-    entry.icon.style.setProperty('--cm-colour', color);
-    entry.icon.className = `cm-unit-icon${hollow ? ' is-hollow' : ''}${fe.moving ? ' is-moving' : ''}`;
-    entry.icon.style.setProperty('--cm-rotate', `${(fe.bearing ?? 0) - this.map.getBearing()}deg`);
+    entry.icon.style.setProperty('--hm-colour', color);
+    entry.icon.className = `hm-unit-icon${hollow ? ' is-hollow' : ''}${fe.moving ? ' is-moving' : ''}`;
+    entry.icon.style.setProperty('--hm-rotate', `${(fe.bearing ?? 0) - this.map.getBearing()}deg`);
     const raw = ne.raw;
     const wpLabel = fe.waypoint != null ? raw.track?.[fe.waypoint]?.label : null;
     const lang = this.language, fallback = this.campaign?.defaultLanguage;
@@ -599,18 +599,18 @@ export class ChronoMapRenderer {
     let entry = this.fortMarkers.get(ne.id);
     if (!entry) {
       const el = document.createElement('div');
-      el.className = 'cm-fort';
+      el.className = 'hm-fort';
       const art = document.createElement('span');
-      art.className = 'cm-fort-art';
+      art.className = 'hm-fort-art';
       art.innerHTML = renderFortressSvg(color);
       const label = document.createElement('span');
-      label.className = 'cm-fort-label';
+      label.className = 'hm-fort-label';
       label.textContent = pickText(ne.raw.name, this.language, this.campaign?.defaultLanguage);
       el.append(art, label);
       entry = { marker: new Marker({ element: el, anchor: 'center' }).setLngLat(ne.coord).addTo(this.map), el, art, label };
       this.fortMarkers.set(ne.id, entry);
     }
-    entry.el.style.setProperty('--cm-colour', color);
+    entry.el.style.setProperty('--hm-colour', color);
     entry.el.classList.toggle('is-besieged', fe.status === 'besieged');
     entry.el.classList.toggle('is-lost', fe.status === 'destroyed' || fe.status === 'abandoned');
     entry.el.classList.toggle('is-focus', this.focus.has(ne.id));
@@ -620,7 +620,7 @@ export class ChronoMapRenderer {
     let entry = this.placeLabels.get(id);
     if (!entry) {
       const el = document.createElement('div');
-      el.className = 'cm-place-label';
+      el.className = 'hm-place-label';
       entry = { marker: new Marker({ element: el, anchor: 'left', offset: [7, 0] }).setLngLat(coord).addTo(this.map), el };
       this.placeLabels.set(id, entry);
     }
@@ -630,7 +630,7 @@ export class ChronoMapRenderer {
     let entry = this.eventLabels.get(id);
     if (!entry) {
       const el = document.createElement('div');
-      el.className = 'cm-event-label';
+      el.className = 'hm-event-label';
       entry = { marker: new Marker({ element: el, anchor: 'bottom', offset: [0, -14] }).setLngLat(coord).addTo(this.map), el };
       this.eventLabels.set(id, entry);
     }

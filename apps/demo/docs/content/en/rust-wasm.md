@@ -1,11 +1,11 @@
 ---
-title: chronomap-core (Rust / WASM)
-description: The Rust port — native API, Cargo features, the spatial index, the ChronoMapCore wasm-bindgen surface, and vector parity.
+title: histamation-core (Rust / WASM)
+description: The Rust port — native API, Cargo features, the spatial index, the HistamationCore wasm-bindgen surface, and vector parity.
 group: api
 order: 4
 ---
 
-`crates/chronomap-core` is a Rust port of [`@pholidlabs/chronomap-engine`](engine.md): the same EDTF-subset
+`crates/histamation-core` is a Rust port of [`@pholidlabs/histamation-engine`](engine.md): the same EDTF-subset
 `When` parsing, semantic validation, and frame resolution, as a native crate or, with the `wasm`
 feature, a `wasm-bindgen` surface a worker can load instead of the JS engine.
 
@@ -21,13 +21,13 @@ feature, a `wasm-bindgen` surface a worker can load instead of the JS engine.
 # Cargo.toml — this crate is not published to crates.io; depend on it by path (or git)
 # from another crate in the workspace, or build it directly (see below).
 [dependencies]
-chronomap-core = { path = "../chronomap-core", features = ["spatial", "wasm"] }
+histamation-core = { path = "../histamation-core", features = ["spatial", "wasm"] }
 ```
 
 | Feature | Adds | Default |
 |---|---|---|
 | `spatial` | `pub mod spatial` — an [`rstar`](https://docs.rs/rstar) index over places, entities and events for viewport queries. | off |
-| `wasm` | `pub mod wasm` — the `ChronoMapCore` `wasm-bindgen` surface (needs `wasm-bindgen`, `serde-wasm-bindgen`). | off |
+| `wasm` | `pub mod wasm` — the `HistamationCore` `wasm-bindgen` surface (needs `wasm-bindgen`, `serde-wasm-bindgen`). | off |
 
 Neither feature is on by default, so `cargo build`/`cargo test` need no extra toolchain; CI runs
 `cargo test --all-features` so both compile and are exercised (the `wasm` module compiles for
@@ -36,7 +36,7 @@ the host target too — the wasm32 target needs no extra code of its own).
 ## The native API {#native-api}
 
 ```rust
-use chronomap_core::{load_campaign_str, resolve_frame, chapter_time, ResolveOptions};
+use histamation_core::{load_campaign_str, resolve_frame, chapter_time, ResolveOptions};
 
 let json = std::fs::read_to_string("campaign.json").unwrap();
 let result = load_campaign_str(&json);
@@ -182,7 +182,7 @@ pub struct SpatialItem {
 }
 ```
 
-## ChronoMapCore (wasm) {#chrono-map-core}
+## HistamationCore (wasm) {#chrono-map-core}
 
 Behind the `wasm` feature: a `wasm-bindgen` class mirroring the worker protocol in
 [`worker.ts`](engine.md#worker-protocol) (contract [§7.1](contract.md#sec-7-1)) — a campaign is
@@ -191,18 +191,18 @@ shapes are the reference ones, so a JS worker can swap `handleRequest` for this 
 main thread noticing:
 
 ```js
-const core = new ChronoMapCore();
+const core = new HistamationCore();
 const loaded = core.load(1, campaignJsonText);   // { type:"loaded", id, ok, diagnostics, summary? }
 const frame  = core.query(2, tick, null, false); // { type:"frame",  id, frame }
 ```
 
 ```rust
 #[wasm_bindgen]
-pub struct ChronoMapCore { /* … */ }
+pub struct HistamationCore { /* … */ }
 
-impl ChronoMapCore {
+impl HistamationCore {
     #[wasm_bindgen(constructor)]
-    pub fn new() -> ChronoMapCore;
+    pub fn new() -> HistamationCore;
     pub fn load(&mut self, id: u32, campaign_json: &str) -> Result<JsValue, JsValue>;
     pub fn query(&self, id: u32, t: f64, bbox: Option<Box<[f64]>>, include_trail: Option<bool>) -> Result<JsValue, JsValue>;
     #[wasm_bindgen(getter)]
@@ -214,7 +214,7 @@ impl ChronoMapCore {
 
 ### new and load {#core-load}
 
-`ChronoMapCore::new()` starts with no campaign. `load(id, campaign_json)` parses and validates
+`HistamationCore::new()` starts with no campaign. `load(id, campaign_json)` parses and validates
 the JSON text and replaces whatever was loaded before — a file rejected by any `error`
 diagnostic drops the previous campaign too, matching the JS worker assigning `null` to its
 module-level slot. It returns `{ type: "loaded", id, ok, diagnostics, summary? }`, where
@@ -224,7 +224,7 @@ module-level slot. It returns `{ type: "loaded", id, ok, diagnostics, summary? }
 
 `query(id, t, bbox, includeTrail)` resolves the frame at tick `t`. `t` crosses the JS/Rust
 boundary as an `f64`; since ticks are integral by contract, it is **rounded**, not truncated
-(`Math.round` semantics, sign included) — the same rounding [`ChronoMapEngine.setTime`](engine.md#engine-set-time)
+(`Math.round` semantics, sign included) — the same rounding [`HistamationEngine.setTime`](engine.md#engine-set-time)
 and the JS worker apply. A non-finite `t` (`NaN`, `±Infinity`) rejects with an error, as
 [`resolveFrame`](engine.md#resolve-frame-fn) does; calling `query` before any `load` also
 rejects, with the message `"query before load"`. `bbox` is `[west, south, east, north]` or
@@ -247,10 +247,10 @@ The crate declares `crate-type = ["cdylib", "rlib"]`, so it builds as a normal R
 `wasm` target with [`wasm-pack`](https://rustwasm.github.io/wasm-pack/):
 
 ```bash
-wasm-pack build crates/chronomap-core --target web -- --features wasm
+wasm-pack build crates/histamation-core --target web -- --features wasm
 ```
 
-That produces a `pkg/` directory with the `.wasm` binary and a generated `ChronoMapCore` JS
+That produces a `pkg/` directory with the `.wasm` binary and a generated `HistamationCore` JS
 binding — the same shape shown [above](#chrono-map-core) — ready to load from a Worker in place
 of `packages/engine/src/worker.ts`'s pure-JS `handleRequest`. Enable `spatial` alongside `wasm`
 if the worker also needs viewport queries: `-- --features wasm,spatial`.
@@ -258,11 +258,11 @@ if the worker also needs viewport queries: `-- --features wasm,spatial`.
 ## Parity with the golden vectors {#parity}
 
 ```text
-crates/chronomap-core/tests/vectors.rs
+crates/histamation-core/tests/vectors.rs
 ```
 
 replays `test-vectors/*.json` — generated from the TypeScript reference by
-[`chronomap-check --vectors`](cli.md#vectors) — against this crate. `time.json` must match
+[`histamation-check --vectors`](cli.md#vectors) — against this crate. `time.json` must match
 exactly (every `When` input the reference considers interesting, including the ones that must
 fail to parse); every `*.frames.json` field must match **within an absolute tolerance of
 `1e-6`** for floats, and exactly for strings and diagnostics (`level`, `code`, `path`, in

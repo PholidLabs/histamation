@@ -1,12 +1,14 @@
-# ChronoMap Engine
+# Histamation Engine
 
 <p align="center">
-  <img src="apps/demo/icons/logo.jpeg" alt="ChronoMap Engine Logo" width="160" />
+  <img src="apps/demo/icons/logo.jpeg" alt="Histamation Engine Logo" width="160" />
 </p>
 
 <p align="center">
   <strong>An open-source, local-first engine for interactive spatio-temporal maps and historical scrollytelling.</strong>
 </p>
+
+<p align="center"><em>Formerly ChronoMap (<code>@pholidlabs/chronomap-*</code> on npm, now deprecated).</em></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" />
@@ -69,8 +71,8 @@ Write a single declarative JSON file describing a historical campaign — places
 
 ```bash
 # 1. Clone and install dependencies
-git clone https://github.com/PholidLabs/chronomaps.git
-cd chronomaps
+git clone https://github.com/PholidLabs/histamation.git
+cd histamation
 npm install
 
 # 2. Build the TypeScript packages
@@ -118,7 +120,7 @@ CI (`.github/workflows/ci.yml`) runs all of the above plus the Rust suite on eve
 This repository is organized as an npm workspace with accompanying Rust crates:
 
 ```
-chronomaps/
+histamation/
 ├── packages/
 │   ├── engine/              # Headless TypeScript engine (pure logic, 0 DOM/map dependencies)
 │   │   ├── src/time.ts      # EDTF parser, civil calendars, Gregorian tick conversions
@@ -137,7 +139,7 @@ chronomaps/
 │       ├── app/index.html   # Full scrollytelling application (served at /app/)
 │       └── docs/            # Documentation site: Markdown content, rendered at build time (served at /docs/)
 ├── crates/
-│   └── chronomap-core/      # Port of the engine in pure Rust (compiled to WASM)
+│   └── histamation-core/    # Port of the engine in pure Rust (compiled to WASM)
 ├── data/
 │   ├── basemap/             # Simplified Natural Earth GeoJSON (land, lakes, rivers)
 │   └── campaigns/           # Sample historical campaign JSON files
@@ -145,7 +147,7 @@ chronomaps/
 │   └── campaign.schema.json # JSON Schema (Draft 2020-12) for validation and IDE autocomplete
 ├── test-vectors/            # Golden output vectors enforcing TS/Rust parity
 └── docs/
-    ├── DATA-CONTRACT.md     # Normative specification of the ChronoMap data contract
+    ├── DATA-CONTRACT.md     # Normative specification of the Histamation data contract
     └── id/DATA-CONTRACT.md  # Indonesian translation (informative)
 ```
 
@@ -160,7 +162,7 @@ A campaign file is a single JSON document. Every object shares a single flat keb
 ```jsonc
 {
   "$schema": "../schema/campaign.schema.json",
-  "chronomap": "1.0",
+  "histamation": "1.0",
   "meta": {
     "id": "java-war-1825",
     "title": { "en": "The Java War", "id": "Perang Diponegoro" },
@@ -221,8 +223,8 @@ Create `my-campaign.json` and reference the JSON Schema for instant autocomplete
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/PholidLabs/chronomaps/main/schema/campaign.schema.json",
-  "chronomap": "1.0",
+  "$schema": "https://raw.githubusercontent.com/PholidLabs/histamation/main/schema/campaign.schema.json",
+  "histamation": "1.0",
   "meta": {
     "id": "my-campaign",
     "title": "My Historical Campaign",
@@ -281,12 +283,12 @@ Start the development server (`npm run dev`) and navigate to `http://localhost:5
 
 ## 💻 Programmatic API
 
-You can embed `@pholidlabs/chronomap-engine` and `@pholidlabs/chronomap-maplibre` into your own web applications.
+You can embed `@pholidlabs/histamation-engine` and `@pholidlabs/histamation-maplibre` into your own web applications.
 
-### 1. Headless Engine (`@pholidlabs/chronomap-engine`)
+### 1. Headless Engine (`@pholidlabs/histamation-engine`)
 
 ```typescript
-import { loadCampaign, resolveFrame, ChronoMapEngine } from '@pholidlabs/chronomap-engine';
+import { loadCampaign, resolveFrame, HistamationEngine } from '@pholidlabs/histamation-engine';
 
 // Load and validate campaign data
 const rawData = await fetch('/campaigns/my-campaign.json').then(r => r.json());
@@ -304,7 +306,7 @@ console.log('Active units:', frame.entities);
 console.log('Active events:', frame.events);
 
 // Option B: stateful playback controller
-const engine = new ChronoMapEngine({ language: 'en' });
+const engine = new HistamationEngine({ language: 'en' });
 engine.on('frame', (f) => {
   console.log(`Current date: ${f.iso}, visible units: ${f.entities.length}`);
 });
@@ -315,12 +317,12 @@ engine.setStoryProgress('ch-01', 0.5); // 50% of the way through chapter ch-01
 engine.setTime(tick);
 ```
 
-### 2. MapLibre Renderer (`@pholidlabs/chronomap-maplibre`)
+### 2. MapLibre Renderer (`@pholidlabs/histamation-maplibre`)
 
 ```typescript
 import { Map } from 'maplibre-gl';
-import { createBasemapStyle, ChronoMapRenderer, CameraController, parchmentLight } from '@pholidlabs/chronomap-maplibre';
-import '@pholidlabs/chronomap-maplibre/style.css';
+import { createBasemapStyle, HistamationRenderer, CameraController, parchmentLight } from '@pholidlabs/histamation-maplibre';
+import '@pholidlabs/histamation-maplibre/style.css';
 
 const map = new Map({
   container: 'map-container',
@@ -330,7 +332,7 @@ const map = new Map({
 });
 
 map.on('load', () => {
-  const renderer = new ChronoMapRenderer(map, { theme: parchmentLight });
+  const renderer = new HistamationRenderer(map, { theme: parchmentLight });
   const camera = new CameraController(map);
 
   renderer.setCampaign(campaign);
@@ -346,7 +348,7 @@ map.on('load', () => {
 
 ## 🦀 The Rust & WASM Core
 
-The repository includes an exact Rust implementation of the engine logic in `crates/chronomap-core`.
+The repository includes an exact Rust implementation of the engine logic in `crates/histamation-core`.
 
 - **Strict Parity**: Every frame field and diagnostic code matches the TypeScript reference down to $10^{-6}$ float precision, enforced by golden test vectors in `test-vectors/`.
 - **WASM Support**: Compiles to WebAssembly via `wasm-bindgen`.
@@ -354,7 +356,7 @@ The repository includes an exact Rust implementation of the engine logic in `cra
 ### Rust Commands
 
 ```bash
-cd crates/chronomap-core
+cd crates/histamation-core
 
 # Run native test suite against golden vectors
 cargo test
@@ -396,6 +398,7 @@ node packages/engine/dist/cli.js <campaign.json>... [options]
 | `npm run build:engine` | Builds `packages/engine` only (used by `test` and `vectors`). |
 | `npm run build:demo` | Runs full package build and builds the production web app in `apps/demo/dist`. |
 | `npm run dev` | Launches the local Vite dev server with hot module reloading. |
+| `npm run deploy` | Builds the demo and deploys `apps/demo/dist` to https://histamation.pholidlabs.com as a Cloudflare static-assets Worker (`wrangler.jsonc`; needs `wrangler login`). |
 | `npm test` | Builds the engine and runs its tests, including the golden-vector checks and the docs invariants (every diagnostic documented, translation in step). |
 | `npm run check` | Validates all campaigns in `data/campaigns/` using the CLI. |
 | `npm run vectors` | Rebuilds the engine and regenerates `test-vectors/` from every campaign and fixture. |

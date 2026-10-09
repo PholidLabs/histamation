@@ -15,7 +15,7 @@ core Rust/WASM dengan keluaran yang identik.
 
 | Kunci | Wajib | Tujuan |
 |---|---|---|
-| `chronomap` | ya | Versi kontrak yang ditarget berkas ini, misalnya `"1.0"`. |
+| `histamation` | ya | Versi kontrak yang ditarget berkas ini, misalnya `"1.0"`. |
 | `meta` | ya | ID, judul, bahasa, extent linimasa, tampilan peta awal. |
 | `factions` | ya, ≥1 | Pihak-pihak, dengan warna. |
 | `parts` | tidak | Pengelompokan bab opsional untuk daftar isi. |
@@ -76,7 +76,7 @@ Letakkan penunjuk `$schema` di awal berkas:
 ```jsonc
 {
   "$schema": "../../schema/campaign.schema.json",   // dua tingkat di atas data/campaigns/
-  "chronomap": "1.0"
+  "histamation": "1.0"
 }
 ```
 
@@ -104,7 +104,7 @@ ini. Dua aturan menjaga ini tetap aman:
 - `kind` entitas kustom `x-…` tetap butuh tepat satu dari empat bentuk geometri (`track`, `at`,
   `geometry` atau `path`) — jika hilang, itu [`E016`](diagnostics.md#e016).
 - Bidang `x-` yang tidak dikenal, serta nilai `kind`/`status` yang tidak dikenali engine lama,
-  diabaikan alih-alih ditolak. `chronomap: "1.N"` — versi minor hanya pernah *menambah* bidang
+  diabaikan alih-alih ditolak. `histamation: "1.N"` — versi minor hanya pernah *menambah* bidang
   opsional dan nilai enum, sehingga engine 1.0 tetap bisa memutar berkas 1.3. Hanya versi major
   yang tidak didukung yang ditolak ([`E013`](diagnostics.md#e013)). Lihat [§9](contract.md#sec-9).
 

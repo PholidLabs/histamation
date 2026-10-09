@@ -1,6 +1,6 @@
-//! # chronomap-core
+//! # histamation-core
 //!
-//! A faithful Rust port of the ChronoMap reference engine (`packages/engine/src/*.ts`),
+//! A faithful Rust port of the Histamation reference engine (`packages/engine/src/*.ts`),
 //! the runtime behind plug-and-play spatio-temporal storytelling maps.
 //!
 //! The TypeScript reference is the executable spec: it generated `test-vectors/`, and
@@ -18,7 +18,7 @@
 //! [`model`] holds the serde shapes for both the file and the normalised form.
 //!
 //! ```no_run
-//! use chronomap_core::{load_campaign_str, resolve_frame, chapter_time, ResolveOptions};
+//! use histamation_core::{load_campaign_str, resolve_frame, chapter_time, ResolveOptions};
 //!
 //! let json = std::fs::read_to_string("campaign.json").unwrap();
 //! let result = load_campaign_str(&json);

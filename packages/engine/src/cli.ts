@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * chronomap-check — validate campaign files and dry-run playback.
- *   chronomap-check <campaign.json>... [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]
+ * histamation-check — validate campaign files and dry-run playback.
+ *   histamation-check <campaign.json>... [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]
  * Structural (JSON Schema) validation runs when ajv is installed; semantics always run.
  * --vectors writes <dir>/time.json and a <name>.frames.json golden vector per campaign;
  * campaigns under a `fixtures/` directory get the detailed form (see vectors.ts).
@@ -16,7 +16,7 @@ import { frameVectors, timeVectors } from './vectors.js';
 import type { CampaignFile, Diagnostic, NormalizedCampaign } from './types.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const USAGE = 'usage: chronomap-check <campaign.json>... [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]';
+const USAGE = 'usage: histamation-check <campaign.json>... [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]';
 const KNOWN_FLAGS: Record<string, true> = { '--frames': true, '--strict': true, '--quiet': true, '--json': true };
 const args = process.argv.slice(2);
 const vi = args.indexOf('--vectors');

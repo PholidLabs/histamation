@@ -1,11 +1,11 @@
-# ChronoMap Data Contract v1.0
+# Histamation Data Contract v1.0
 
 Ini adalah terjemahan yang bersifat informatif. Versi bahasa Inggris [`docs/DATA-CONTRACT.md`](../DATA-CONTRACT.md) adalah normatif.
 
-**Status:** draf untuk implementasi · **Berlaku untuk:** berkas kampanye `chronomap: "1.x"`
+**Status:** draf untuk implementasi · **Berlaku untuk:** berkas kampanye `histamation: "1.x"`
 **Artefak normatif:** [`schema/campaign.schema.json`](../../schema/campaign.schema.json) (struktur), [`packages/engine/src/`](../../packages/engine/src) (semantik), [`test-vectors/`](../../test-vectors) (keluaran yang diharapkan)
 
-Dokumen ini mendefinisikan bagaimana berkas kampanye (data plug-in) ditulis, dan bagaimana mesin ChronoMap memuatnya, memeriksanya, dan memutarnya. Berkas apa pun yang lolos validasi harus dapat diputar di mesin mana pun yang sesuai tanpa perubahan kode. Contoh Perang Jawa dan Napoleon 1812 memakai format yang persis sama.
+Dokumen ini mendefinisikan bagaimana berkas kampanye (data plug-in) ditulis, dan bagaimana mesin Histamation memuatnya, memeriksanya, dan memutarnya. Berkas apa pun yang lolos validasi harus dapat diputar di mesin mana pun yang sesuai tanpa perubahan kode. Contoh Perang Jawa dan Napoleon 1812 memakai format yang persis sama.
 
 ---
 
@@ -25,7 +25,7 @@ Dokumen ini mendefinisikan bagaimana berkas kampanye (data plug-in) ditulis, dan
 ```jsonc
 {
   "$schema": "../schema/campaign.schema.json",   // editor autocomplete; ignored by engines
-  "chronomap": "1.0",                             // contract version (required)
+  "histamation": "1.0",                           // contract version (required)
   "meta":      { … },  // id, title, languages, timeline extent, initial map view
   "factions":  [ … ],  // sides, with colors (required, ≥1)
   "parts":     [ … ],  // optional chapter grouping for a table of contents
@@ -305,10 +305,10 @@ interface FrameState {
 }
 ```
 
-### 7.3 API mesin (permukaan TypeScript untuk `chronomap-js`)
+### 7.3 API mesin (permukaan TypeScript untuk `histamation-js`)
 
 ```ts
-interface ChronoMap {
+interface Histamation {
   load(source: string | URL | File | object, opts?: { language?: string }): Promise<LoadResult>;
   setLanguage(lang: string): void;
 
@@ -410,7 +410,7 @@ Validasi memiliki dua lapis, dan keduanya melaporkan **JSON Pointer path**.
 
 ## 9. Versi dan ekstensi
 
-- `chronomap: "1.N"`. Versi **minor** hanya menambah kolom opsional, nilai enum, dan fitur `When`. Mesin 1.0 yang membaca berkas 1.3 mengabaikan apa yang tidak dikenalnya. Versi **mayor** boleh merusak; mesin menolak mayor yang tidak dikenal (`E013`).
+- `histamation: "1.N"`. Versi **minor** hanya menambah kolom opsional, nilai enum, dan fitur `When`. Mesin 1.0 yang membaca berkas 1.3 mengabaikan apa yang tidak dikenalnya. Versi **mayor** boleh merusak; mesin menolak mayor yang tidak dikenal (`E013`).
 - **Kolom `x-`** diperbolehkan pada setiap objek, termasuk level teratas (berkas Napoleon membawa tabel suhu Minard sebagai `x-minard`). Jenis kustom adalah `x-…`.
 - **Kandidat untuk 1.1:** `places[].when` (pendirian dan penggantian nama), tahun berawalan `Y` untuk deep time, musim, `when` per-leg pada route, media `audio`.
 
@@ -441,7 +441,7 @@ Validasi memiliki dua lapis, dan keduanya melaporkan **JSON Pointer path**.
 | Koordinat diulang di mana-mana, ketinggian dalam data | gazetteer `places` + `certainty`; ketinggian opsional (drape pada DEM) | satu perbaikan membetulkan setiap referensi; ketidakpastian yang jujur |
 | Tidak ada sitasi atau media dalam skema (meski ada UI-03) | `sources[]`, `media[]` dengan alt, credit, license | dataset sejarah open-source hidup atau mati karena provenansi |
 | Hanya bahasa Inggris | peta bahasa + `languages` / `defaultLanguage` | audiens Indonesia untuk demo andalan |
-| Tidak ada kolom versi | `chronomap: "1.0"` | plug-and-play butuh kompatibilitas maju |
+| Tidak ada kolom versi | `histamation: "1.0"` | plug-and-play butuh kompatibilitas maju |
 | Bab: hanya timestamp + camera | jendela `when` yang digulir, `focus` auto-fit, `parts`, `dateLabel` | memungkinkan unit bergerak saat dibaca; camera bersifat opsional |
 
 ---
@@ -456,7 +456,7 @@ Hal-hal berikut muncul selama perancangan kontrak. Layak diputuskan sebelum kode
 4. **Jangan streaming geometri setiap frame** (§7.2). "WASM mendorong geometri vektor ringan" milik PRD per frame akan memaksa re-tiling. Kirim geometri statis sekali dan state per frame sebagai array bertipe.
 5. **Jujurlah soal di mana WASM benar-benar berharga.** Berkas Perang Jawa punya 9 entitas dan 43 peristiwa, dan `resolveFrame` dalam JS biasa memakan waktu mikrodetik. Perjalanan bolak-balik worker menambah kira-kira satu frame latensi. Core Rust membuktikan nilainya pada skala NFR (50.000 fitur), di R-tree, dan sebagai arsitektur referensi. Pertahankan jalur JS same-thread (implementasi referensi memang sudah begitu), dan biarkan benchmark yang menentukan default.
 6. **Validasi runtime seharusnya ada di core, bukan di `ajv`.** Diukur dengan esbuild, `ajv` + `ajv-formats` + skema ini mencapai sekitar 48 KB gzip (164 KB minified), separuh dari anggaran JS 100 KB. Seluruh validator semantik referensi ditambah resolver hanya sekitar 7 KB gzip. Core Rust sudah harus men-deserialize berkas tersebut, dan serde plus aturan semantik memberikan jaminan yang sama. Pertahankan JSON Schema untuk editor dan CI.
-7. **Crate.** Crate `edtf` belum ada rilis sejak 2021. Subset `When` itu kecil, jadi tulis sendiri parsernya (cerminkan `packages/engine/src/time.ts`, sebagaimana `crates/chronomap-core/src/time.rs` melakukannya) dan uji terhadap `test-vectors/time.json`. `rstar` 0.13 mendukung `AABB<[f64; 3]>` jika waktu diindeks sebagai sumbu ketiga. Skalakan tick ke magnitudo yang sebanding dengan derajat, dan gunakan sentinel finite untuk interval terbuka.
+7. **Crate.** Crate `edtf` belum ada rilis sejak 2021. Subset `When` itu kecil, jadi tulis sendiri parsernya (cerminkan `packages/engine/src/time.ts`, sebagaimana `crates/histamation-core/src/time.rs` melakukannya) dan uji terhadap `test-vectors/time.json`. `rstar` 0.13 mendukung `AABB<[f64; 3]>` jika waktu diindeks sebagai sumbu ketiga. Skalakan tick ke magnitudo yang sebanding dengan derajat, dan gunakan sentinel finite untuk interval terbuka.
 8. **Progres gulir butuh lebih dari IntersectionObserver.** Observer memicu pada threshold, yang cukup untuk masuknya sebuah bab. `p` kontinu (§6.1) butuh pembacaan `requestAnimationFrame` atas bounding box elemen langkah.
 
 ---
@@ -469,11 +469,11 @@ packages/engine/src/campaign.ts  semantic validation + normalization (diagnostic
 packages/engine/src/resolve.ts   resolveFrame(campaign, t), chapterTime(chapter, p)
 packages/engine/src/engine.ts    stateful playback façade (§7.3)
 packages/engine/src/worker.ts    worker protocol (§7.1) the Rust/WASM core plugs into
-packages/engine/src/cli.ts       chronomap-check: schema + semantic validation, --frames dry-run, --vectors
+packages/engine/src/cli.ts       histamation-check: schema + semantic validation, --frames dry-run, --vectors
 packages/engine/src/vectors.ts   builds the golden vectors written by `npm run vectors`
 packages/engine/src/format.ts    localized text and precision-aware date formatting for display
 
-crates/chronomap-core/          the Rust port, tested against the vectors below
+crates/histamation-core/        the Rust port, tested against the vectors below
 
 test-vectors/time.json                        When → ticks, including invalid inputs
 test-vectors/null-island.frames.json          synthetic fixture: every feature, BCE dates, p = 0, .25, .5, .75, 1
@@ -481,4 +481,4 @@ test-vectors/java-war-1825.frames.json        one frame per line, p = 0, .5, 1 p
 test-vectors/napoleon-russia-1812.frames.json
 ```
 
-Sebuah core yang sesuai harus mereproduksi `time.json` persis, dan setiap kolom frame dalam toleransi absolut 1e-6. Ketika kontrak berubah, perbarui `packages/engine/src/` terlebih dahulu, regenerasi vektor dengan `npm run vectors`, lalu port ke `crates/chronomap-core`.
+Sebuah core yang sesuai harus mereproduksi `time.json` persis, dan setiap kolom frame dalam toleransi absolut 1e-6. Ketika kontrak berubah, perbarui `packages/engine/src/` terlebih dahulu, regenerasi vektor dengan `npm run vectors`, lalu port ke `crates/histamation-core`.

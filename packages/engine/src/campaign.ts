@@ -41,8 +41,8 @@ export function loadCampaign(raw: CampaignFile): LoadResult {
     return { campaign: null, diagnostics: diags };
   }
 
-  const major = Number(String(raw.chronomap ?? '').split('.')[0]);
-  if (major !== CONTRACT_MAJOR) err('E013', '/chronomap', `Unsupported contract version "${raw.chronomap}" (this engine reads ${CONTRACT_MAJOR}.x)`);
+  const major = Number(String(raw.histamation ?? '').split('.')[0]);
+  if (major !== CONTRACT_MAJOR) err('E013', '/histamation', `Unsupported contract version "${raw.histamation}" (this engine reads ${CONTRACT_MAJOR}.x)`);
 
   const meta = raw.meta ?? ({} as CampaignFile['meta']);
   const languages = meta.languages ?? [];

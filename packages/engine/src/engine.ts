@@ -15,7 +15,7 @@ type Handler<K extends keyof EngineEvents> = (payload: EngineEvents[K]) => void;
 
 export interface EngineOptions { language?: string; includeTrail?: boolean }
 
-export class ChronoMapEngine {
+export class HistamationEngine {
   campaign: NormalizedCampaign | null = null;
   diagnostics: Diagnostic[] = [];
   language: string;
@@ -89,4 +89,4 @@ export class ChronoMapEngine {
   dispose(): void { for (const set of Object.values(this.handlers)) (set as Set<unknown>).clear(); }
 }
 
-export const createEngine = (opts?: EngineOptions): ChronoMapEngine => new ChronoMapEngine(opts);
+export const createEngine = (opts?: EngineOptions): HistamationEngine => new HistamationEngine(opts);

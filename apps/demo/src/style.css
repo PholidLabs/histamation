@@ -1,4 +1,4 @@
-/* ChronoMap Player — prototype styles.
+/* Histamation Player — prototype styles.
    Palette: hand-coloured lithograph — paper, sea wash, iron-gall ink, campaign colours from the data. */
 @import './tokens.css';
 
@@ -278,22 +278,22 @@ summary::marker { color: var(--ink-3); }
 
 /* tokens the renderer package reads for marker text and halos */
 :root {
-  --cm-ink: var(--ink); --cm-ink-soft: var(--ink-2); --cm-ink-faint: var(--ink-3); --cm-land: var(--land);
-  --cm-font-body: var(--ff-body); --cm-font-display: var(--ff-display); --cm-font-sc: var(--ff-sc); --cm-font-mono: var(--ff-mono);
-  --cm-mountain-stroke: #221C16;
-  --cm-mountain-hatch: rgba(34, 28, 22, 0.65);
-  --cm-mountain-fill: #EADBBE;
-  --cm-tree-stroke: #2D3A2C;
-  --cm-tree-canopy: rgba(102, 128, 102, 0.35);
-  --cm-watermark: rgba(40, 55, 50, 0.22);
+  --hm-ink: var(--ink); --hm-ink-soft: var(--ink-2); --hm-ink-faint: var(--ink-3); --hm-land: var(--land);
+  --hm-font-body: var(--ff-body); --hm-font-display: var(--ff-display); --hm-font-sc: var(--ff-sc); --hm-font-mono: var(--ff-mono);
+  --hm-mountain-stroke: #221C16;
+  --hm-mountain-hatch: rgba(34, 28, 22, 0.65);
+  --hm-mountain-fill: #EADBBE;
+  --hm-tree-stroke: #2D3A2C;
+  --hm-tree-canopy: rgba(102, 128, 102, 0.35);
+  --hm-watermark: rgba(40, 55, 50, 0.22);
 }
 :root[data-theme="dark"], html.dark {
-  --cm-mountain-stroke: #C9A25A;
-  --cm-mountain-hatch: rgba(201, 162, 90, 0.55);
-  --cm-mountain-fill: #2E2822;
-  --cm-tree-stroke: #7A9A78;
-  --cm-tree-canopy: rgba(122, 154, 120, 0.28);
-  --cm-watermark: rgba(201, 162, 90, 0.18);
+  --hm-mountain-stroke: #C9A25A;
+  --hm-mountain-hatch: rgba(201, 162, 90, 0.55);
+  --hm-mountain-fill: #2E2822;
+  --hm-tree-stroke: #7A9A78;
+  --hm-tree-canopy: rgba(122, 154, 120, 0.28);
+  --hm-watermark: rgba(201, 162, 90, 0.18);
 }
 .maplibregl-popup-content { background: var(--ground); color: var(--ink); border: 1px solid var(--rule); border-radius: 16px; box-shadow: 0 6px 18px var(--shadow); font: 400 12.5px/1.45 var(--ff-body); padding: 10px 14px; max-width: 280px; }
 .maplibregl-popup-tip { border-top-color: var(--rule) !important; border-bottom-color: var(--rule) !important; }
@@ -323,7 +323,7 @@ summary::marker { color: var(--ink-3); }
 }
 
 /* ---------- coachmark tour ---------- */
-.cm-tour-backdrop {
+.hm-tour-backdrop {
   position: fixed;
   inset: 0;
   z-index: 90;
@@ -333,7 +333,7 @@ summary::marker { color: var(--ink-3); }
   transition: opacity 0.2s ease;
 }
 
-.cm-tour-spotlight {
+.hm-tour-spotlight {
   position: fixed;
   z-index: 91;
   pointer-events: none;
@@ -343,7 +343,7 @@ summary::marker { color: var(--ink-3); }
   transition: all 0.22s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.cm-tour-card {
+.hm-tour-card {
   position: fixed;
   z-index: 92;
   width: min(340px, calc(100vw - 32px));
@@ -357,7 +357,7 @@ summary::marker { color: var(--ink-3); }
   transition: top 0.22s cubic-bezier(0.2, 0, 0, 1), left 0.22s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.cm-tour-arrow {
+.hm-tour-arrow {
   position: absolute;
   width: 12px;
   height: 12px;
@@ -367,26 +367,26 @@ summary::marker { color: var(--ink-3); }
   z-index: -1;
 }
 
-.cm-tour-arrow.arrow-top {
+.hm-tour-arrow.arrow-top {
   top: -7px;
   border-bottom: none;
   border-right: none;
 }
 
-.cm-tour-arrow.arrow-bottom {
+.hm-tour-arrow.arrow-bottom {
   bottom: -7px;
   border-top: none;
   border-left: none;
 }
 
-.cm-tour-header {
+.hm-tour-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 6px;
 }
 
-.cm-tour-step-badge {
+.hm-tour-step-badge {
   font: 500 10.5px/1 var(--ff-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -397,7 +397,7 @@ summary::marker { color: var(--ink-3); }
   border: 1px solid var(--rule);
 }
 
-.cm-tour-close {
+.hm-tour-close {
   background: none;
   border: none;
   font-size: 18px;
@@ -408,28 +408,28 @@ summary::marker { color: var(--ink-3); }
   border-radius: 999px;
 }
 
-.cm-tour-close:hover {
+.hm-tour-close:hover {
   color: var(--ink);
 }
 
-.cm-tour-title {
+.hm-tour-title {
   margin: 2px 0 8px;
   font: 400 19px/1.2 var(--ff-display);
   color: var(--ink);
 }
 
-.cm-tour-desc {
+.hm-tour-desc {
   margin: 0 0 14px;
   font: 400 13.5px/1.55 var(--ff-body);
   color: var(--ink-2);
 }
 
-.cm-tour-desc strong {
+.hm-tour-desc strong {
   color: var(--ink);
   font-weight: 600;
 }
 
-.cm-tour-footer {
+.hm-tour-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -437,7 +437,7 @@ summary::marker { color: var(--ink-3); }
   border-top: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
 }
 
-.cm-tour-btn-text {
+.hm-tour-btn-text {
   background: none;
   border: none;
   font: 500 12px/1 var(--ff-mono);
@@ -447,24 +447,24 @@ summary::marker { color: var(--ink-3); }
   letter-spacing: 0.04em;
 }
 
-.cm-tour-btn-text:hover {
+.hm-tour-btn-text:hover {
   color: var(--ink);
   text-decoration: underline;
 }
 
-.cm-tour-nav-group {
+.hm-tour-nav-group {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.cm-tour-btn-prev {
+.hm-tour-btn-prev {
   font-size: 12px;
   padding: 6px 12px;
   border-radius: 999px;
 }
 
-.cm-tour-btn-next {
+.hm-tour-btn-next {
   font-size: 12px;
   padding: 6px 14px;
   background: var(--teal);
@@ -473,6 +473,6 @@ summary::marker { color: var(--ink-3); }
   border-radius: 999px;
 }
 
-.cm-tour-btn-next:hover {
+.hm-tour-btn-next:hover {
   filter: brightness(1.1);
 }

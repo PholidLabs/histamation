@@ -24,13 +24,15 @@ apps/*/.vite/
 crates/*/target/
 crates/*/pkg/
 **/*.rs.bk
-# Cargo.lock IS tracked: chronomap-core declares its own empty workspace and the
+# Cargo.lock IS tracked: histamation-core declares its own empty workspace and the
 # golden-vector tests are expected to run against pinned dependencies.
 
 # --- Local tooling state ---------------------------------------------------
 # oh-my-claudecode scratch state; project-memory.json embeds absolute paths.
 .omc/
 .claude/settings.local.json
+# Wrangler's deploy cache (`npm run deploy`).
+.wrangler/
 
 # --- Environment -----------------------------------------------------------
 .env
@@ -50,4 +52,4 @@ crates/*/pkg/
 Thumbs.db
 
 # test-vectors/ is deliberately NOT ignored: `npm run vectors` generates it, but
-# crates/chronomap-core/tests reads it as the golden fixture set.
+# crates/histamation-core/tests reads it as the golden fixture set.

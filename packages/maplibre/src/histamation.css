@@ -1,0 +1,189 @@
+/* Markers and labels for @pholidlabs/histamation-maplibre. Colours come from the host page's tokens. */
+:root {
+  --hm-mountain-stroke: #221C16;
+  --hm-mountain-hatch: rgba(34, 28, 22, 0.65);
+  --hm-mountain-fill: #EADBBE;
+  --hm-tree-stroke: #2D3A2C;
+  --hm-tree-canopy: rgba(102, 128, 102, 0.35);
+  --hm-watermark: rgba(40, 55, 50, 0.22);
+}
+:root[data-theme="dark"], html.dark {
+  --hm-mountain-stroke: #C9A25A;
+  --hm-mountain-hatch: rgba(201, 162, 90, 0.55);
+  --hm-mountain-fill: #2E2822;
+  --hm-tree-stroke: #7A9A78;
+  --hm-tree-canopy: rgba(122, 154, 120, 0.28);
+  --hm-watermark: rgba(201, 162, 90, 0.18);
+}
+
+.hm-unit { display: flex; align-items: center; gap: 6px; pointer-events: none; }
+.hm-unit-icon { width: 13px; height: 13px; border-radius: 50%; background: var(--hm-colour, #8B1E1E); box-shadow: 0 0 0 1.6px var(--hm-land, #ECE3CD); }
+.hm-unit-icon.is-hollow { background: var(--hm-land, #ECE3CD); box-shadow: 0 0 0 2.4px var(--hm-colour, #8B1E1E); }
+.hm-unit-icon.is-moving {
+  width: 0; height: 0; border-radius: 0; box-shadow: none;
+  border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 13px solid var(--hm-colour, #8B1E1E);
+  transform: rotate(var(--hm-rotate, 0deg)); filter: drop-shadow(0 0 1.4px var(--hm-land, #ECE3CD));
+}
+.hm-unit-text { display: flex; flex-direction: column; line-height: 1.15; }
+.hm-unit-name { font: 600 12px/1.15 var(--hm-font-body, Literata, Georgia, serif); color: var(--hm-ink, #28211A); text-shadow: 0 0 4px var(--hm-land, #ECE3CD), 0 0 8px var(--hm-land, #ECE3CD); }
+.hm-unit-strength { font: 500 11px/1.2 var(--hm-font-mono, "IBM Plex Mono", monospace); color: var(--hm-ink-soft, #5E5140); text-shadow: 0 0 4px var(--hm-land, #ECE3CD); }
+.hm-unit.is-focus .hm-unit-name { text-decoration: underline; text-underline-offset: 3px; }
+
+.hm-fort { display: flex; align-items: center; gap: 6px; pointer-events: none; }
+.hm-fort-art { display: flex; align-items: center; justify-content: center; }
+.hm-fort-art svg { overflow: visible; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2)); }
+.hm-fort polygon { fill: var(--hm-land, #ECE3CD); stroke: var(--hm-colour, #1F3A5F); }
+.hm-fort.is-lost polygon { opacity: 0.6; }
+.hm-fort.is-besieged .hm-fort-art { animation: hm-pulse 1.6s ease-in-out infinite; }
+.hm-fort-label { display: none; font: 600 11.5px/1.2 var(--hm-font-body, Literata, Georgia, serif); color: var(--hm-ink-soft, #5E5140); text-shadow: 0 0 4px var(--hm-land, #ECE3CD), 0 0 8px var(--hm-land, #ECE3CD); }
+.hm-fort.show-label .hm-fort-label { display: inline; }
+
+.hm-place-label { font: italic 12.5px/1.2 var(--hm-font-display, "IM Fell English", Georgia, serif); color: var(--hm-ink-soft, #5E5140); pointer-events: none; text-shadow: 0 0 4px var(--hm-land, #ECE3CD), 0 0 9px var(--hm-land, #ECE3CD); white-space: nowrap; }
+.hm-place-label.is-focus { color: var(--hm-ink, #28211A); font-size: 14px; }
+.hm-place-label.is-hidden { display: none; }
+.hm-event-label { font: 14px/1.2 var(--hm-font-sc, "IM Fell English SC", Georgia, serif); color: var(--hm-ink, #28211A); pointer-events: none; text-shadow: 0 0 4px var(--hm-land, #ECE3CD), 0 0 9px var(--hm-land, #ECE3CD); white-space: nowrap; }
+
+/* Mountain Peaks (Hand-drawn Tolkien/Renaissance style).
+   Pictorial markers open a popup on click, so unlike labels they set no pointer-events:
+   they inherit it, and are clickable exactly when the map container is. */
+.hm-peak-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.hm-peak-marker.is-hidden { display: none; }
+.hm-peak-marker.rank-2 .hm-peak-art svg {
+  transform: scale(0.85);
+  transform-origin: bottom center;
+}
+.hm-peak-art {
+  display: block;
+  line-height: 0;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.12));
+}
+.hm-peak-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin-top: 0px;
+  white-space: nowrap;
+}
+.hm-peak-name {
+  font: italic 10.5px/1.2 var(--hm-font-display, "IM Fell English", Georgia, serif);
+  color: var(--hm-ink-soft, #5E5140);
+  text-shadow: 0 0 3px var(--hm-land, #ECE3CD), 0 0 7px var(--hm-land, #ECE3CD);
+}
+.hm-peak-elev {
+  font: 400 8.5px/1.1 var(--hm-font-mono, "IBM Plex Mono", monospace);
+  color: var(--hm-ink-faint, #8C7D67);
+  opacity: 0.82;
+  text-shadow: 0 0 3px var(--hm-land, #ECE3CD);
+}
+
+/* Forest Groves (Hand-drawn pictorial trees) */
+.hm-forest-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.hm-forest-marker.is-hidden { display: none; }
+.hm-forest-art {
+  display: block;
+  line-height: 0;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+.hm-forest-caption {
+  margin-top: -1px;
+  white-space: nowrap;
+}
+.hm-forest-name {
+  font: italic 10.5px/1.2 var(--hm-font-display, "IM Fell English", Georgia, serif);
+  color: var(--hm-ink-soft, #5E5140);
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 3px var(--hm-land, #ECE3CD), 0 0 7px var(--hm-land, #ECE3CD);
+}
+
+/* Nautical Ocean Embellishments (Sea Monster, Ship, Compass Rose) */
+.hm-embellishment-marker {
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.88;
+  transition: opacity 0.3s ease;
+}
+.hm-embellishment-marker.is-hidden { display: none; }
+.hm-embellishment-marker svg {
+  display: block;
+  overflow: visible;
+}
+.hm-nautical-embellishment {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+}
+
+/* Basemap background settlements */
+.hm-basemap-place-label { font: 400 11px/1.2 var(--hm-font-body, Literata, Georgia, serif); color: var(--hm-ink-soft, #5E5140); pointer-events: none; text-shadow: 0 0 3px var(--hm-land, #ECE3CD), 0 0 7px var(--hm-land, #ECE3CD); white-space: nowrap; }
+.hm-basemap-place-label.rank-1 { font: 600 12.5px/1.2 var(--hm-font-sc, "IM Fell English SC", Georgia, serif); letter-spacing: 0.04em; color: var(--hm-ink, #28211A); }
+.hm-basemap-place-label.rank-2 { font: 500 11.5px/1.2 var(--hm-font-body, Literata, Georgia, serif); }
+.hm-basemap-place-label.is-hidden { display: none; }
+
+@keyframes hm-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+@keyframes hm-march-pulse {
+  0% { filter: drop-shadow(0 0 0px var(--hm-colour, #8B1E1E)); }
+  50% { filter: drop-shadow(0 0 4px var(--hm-colour, #8B1E1E)); }
+  100% { filter: drop-shadow(0 0 0px var(--hm-colour, #8B1E1E)); }
+}
+.hm-unit-icon.is-moving { animation: hm-march-pulse 1.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-fort-art, .hm-fort.is-besieged .hm-fort-art { animation: none; }
+  .hm-unit-icon.is-moving { animation: none; }
+}
+
+/* Declutter: a label the renderer could not fit is removed, symbols stay.
+   Written to out-specify .hm-fort.show-label .hm-fort-label. */
+.hm-unit .hm-unit-text.is-crowded,
+.hm-fort.show-label .hm-fort-label.is-crowded,
+.hm-fort-label.is-crowded,
+.hm-place-label.is-crowded,
+.hm-event-label.is-crowded,
+.hm-peak-caption.is-crowded,
+.hm-forest-caption.is-crowded,
+.hm-peak-label.is-crowded,
+.hm-basemap-place-label.is-crowded { display: none; }
+
+/* Popup styling for pictorial landscape markers */
+.maplibregl-popup-content:has(.hm-pictorial-popup) {
+  background: var(--hm-surface, #ECE3CD);
+  border: 1px solid var(--hm-ink-muted, #7E6E58);
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  padding: 8px 12px;
+}
+.hm-pictorial-popup {
+  font-family: var(--hm-font-body, Literata, Georgia, serif);
+  color: var(--hm-ink, #28211A);
+}
+.hm-pictorial-popup .kind {
+  font: 500 10px/1.2 var(--hm-font-mono, "IBM Plex Mono", monospace);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--hm-ink-muted, #7E6E58);
+}
+.hm-pictorial-popup h4 {
+  margin: 3px 0 2px;
+  font: 600 16px/1.2 var(--hm-font-display, "IM Fell English", Georgia, serif);
+  color: var(--hm-ink, #28211A);
+}
+.hm-pictorial-popup .muted {
+  font: 500 11px/1.3 var(--hm-font-mono, "IBM Plex Mono", monospace);
+  color: var(--hm-ink-soft, #5E5140);
+}
+.hm-pictorial-popup .note {
+  margin-top: 6px;
+  font: italic 12px/1.35 var(--hm-font-body, Literata, Georgia, serif);
+  color: var(--hm-ink-soft, #5E5140);
+}
+

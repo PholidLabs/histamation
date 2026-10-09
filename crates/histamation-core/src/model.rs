@@ -660,7 +660,7 @@ pub struct CampaignFile {
         deserialize_with = "some",
         skip_serializing_if = "Option::is_none"
     )]
-    pub chronomap: Option<Value>,
+    pub histamation: Option<Value>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub meta: Option<CampaignMeta>,
     #[serde(default)]

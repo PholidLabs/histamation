@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { ChronoMapWorkerClient } from '../dist/index.js';
+import { HistamationWorkerClient } from '../dist/index.js';
 
 const fixture = JSON.parse(readFileSync(new URL('../../../data/campaigns/fixtures/null-island.json', import.meta.url), 'utf8'));
 
@@ -25,7 +25,7 @@ async function fakeWorker() {
 
 test('queries coalesce: a replaced query resolves null and never reaches the worker', async () => {
   const worker = await fakeWorker();
-  const client = new ChronoMapWorkerClient(worker);
+  const client = new HistamationWorkerClient(worker);
   assert.equal((await client.load(fixture)).ok, true);
   const [t1, t2, t3] = [-62477654400, -62477000000, -62476000000];
   const [a, b, c] = await Promise.all([client.query(t1), client.query(t2), client.query(t3)]);
@@ -36,12 +36,12 @@ test('queries coalesce: a replaced query resolves null and never reaches the wor
 });
 
 test('worker errors reject instead of resolving', async () => {
-  const client = new ChronoMapWorkerClient(await fakeWorker());
+  const client = new HistamationWorkerClient(await fakeWorker());
   await assert.rejects(client.query(0), /query before load/);
 });
 
 test('dispose rejects everything still outstanding', async () => {
-  const client = new ChronoMapWorkerClient(await fakeWorker());
+  const client = new HistamationWorkerClient(await fakeWorker());
   const loading = client.load(fixture);
   client.dispose();
   await assert.rejects(loading, /disposed/);

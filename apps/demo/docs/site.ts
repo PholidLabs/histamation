@@ -21,7 +21,7 @@ export const REPO_ROOT = resolve(DOCS_DIR, '../../..');
 export const CONTENT_DIR = join(DOCS_DIR, 'content');
 export const DIAGNOSTICS_FILE = join(DOCS_DIR, 'diagnostics.json');
 export const CONTRACT_SOURCE: Record<DocLang, string> = { en: 'docs/DATA-CONTRACT.md', id: 'docs/id/DATA-CONTRACT.md' };
-export const REPO_URL = 'https://github.com/PholidLabs/chronomaps';
+export const REPO_URL = 'https://github.com/PholidLabs/histamation';
 const FENCE_LANGS: Record<string, true> = { json: true, jsonc: true, ts: true, js: true, bash: true, rust: true, text: true };
 const TOOLS: Record<string, true> = { validator: true, 'when-tester': true };
 const CALLOUTS: Record<string, 'note' | 'tip' | 'warning'> = { NOTE: 'note', TIP: 'tip', WARNING: 'warning' };
@@ -68,11 +68,11 @@ const codeTheme = (name: string, type: 'light' | 'dark', c: Record<string, strin
     { scope: ['punctuation', 'meta.brace', 'keyword.operator'], settings: { foreground: c.punct } },
   ],
 });
-const LIGHT = codeTheme('chronomap-light', 'light', {
+const LIGHT = codeTheme('histamation-light', 'light', {
   bg: '#EBE3D0', fg: '#211C15', comment: '#6E604A', string: '#2C625D', key: '#6E5119', number: '#8B3A2B',
   keyword: '#7A5A24', fn: '#5C3A1C', type: '#3E5F5A', punct: '#5C503E',
 });
-const DARK = codeTheme('chronomap-dark', 'dark', {
+const DARK = codeTheme('histamation-dark', 'dark', {
   bg: '#1C1815', fg: '#EDE4D8', comment: '#9A8E7F', string: '#A8C8B4', key: '#E3C68A', number: '#E09A7A',
   keyword: '#C9A25A', fn: '#EBC49A', type: '#9FC1BA', punct: '#B8AC9D',
 });
@@ -371,10 +371,10 @@ function topbar(lang: DocLang, slug: string | null): string {
   const langLinks = DOC_LANGS.map((l) => `<a href="${slug ? pageUrl(l, slug) : `/docs/${l}/`}" hreflang="${l}" lang="${l}" data-lang="${l}"${l === lang ? ' aria-current="true"' : ''}>${l.toUpperCase()}</a>`).join('');
   return `<header class="topbar">
   <button class="icon-btn menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="${esc(copy.menu)}" data-label-open="${esc(copy.menu)}" data-label-close="${esc(copy.closeMenu)}">${ICON_MENU}</button>
-  <a class="brand" href="/" aria-label="${esc(copy.home)}"><img src="/favicon.svg" alt="" width="26" height="26" /><span class="brand-name">ChronoMap</span></a>
+  <a class="brand" href="/" aria-label="${esc(copy.home)}"><img src="/favicon.svg" alt="" width="26" height="26" /><span class="brand-name">Histamation</span></a>
   <a class="brand-docs" href="/docs/${lang}/getting-started/">${esc(copy.docs)}</a>
   <button class="search-btn" type="button" data-search-open>${ICON_SEARCH}<span>${esc(copy.search)}</span><kbd data-kbd>Ctrl K</kbd></button>
-  <nav class="top-links" aria-label="ChronoMap"><a href="/app/">${esc(copy.mapApp)}</a><a href="${REPO_URL}" rel="noopener">GitHub</a></nav>
+  <nav class="top-links" aria-label="Histamation"><a href="/app/">${esc(copy.mapApp)}</a><a href="${REPO_URL}" rel="noopener">GitHub</a></nav>
   <div class="seg lang-seg" role="group" aria-label="${esc(copy.language)}">${langLinks}</div>
   <div class="seg theme-seg" id="theme-seg" role="group" aria-label="${esc(copy.theme)}"></div>
 </header>`;

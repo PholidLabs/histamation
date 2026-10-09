@@ -1,15 +1,15 @@
-# @pholidlabs/chronomap-engine
+# @pholidlabs/histamation-engine
 
-Headless engine for [ChronoMap](https://github.com/PholidLabs/chronomaps) campaign files: parse, validate and resolve historical campaigns into per-instant frames. No DOM, no map library, no dependencies.
+Headless engine for [Histamation](https://github.com/PholidLabs/histamation) campaign files: parse, validate and resolve historical campaigns into per-instant frames. No DOM, no map library, no dependencies.
 
-This package is the executable reference for the [data contract](https://github.com/PholidLabs/chronomaps/blob/main/docs/DATA-CONTRACT.md). The Rust core in `crates/chronomap-core` is a port of it and is tested against the golden vectors it produces.
+This package is the executable reference for the [data contract](https://github.com/PholidLabs/histamation/blob/main/docs/DATA-CONTRACT.md). The Rust core in `crates/histamation-core` is a port of it and is tested against the golden vectors it produces.
 
 ## Time
 
 Time is a **tick**: an integer count of seconds since 1970-01-01T00:00:00 in the proleptic Gregorian calendar, with no time zone. Every historical date is negative. Parse `When` strings with the engine's own helpers, never with `Date`:
 
 ```ts
-import { parseWhen, ticksToIso, formatTicks } from '@pholidlabs/chronomap-engine';
+import { parseWhen, ticksToIso, formatTicks } from '@pholidlabs/histamation-engine';
 
 const w = parseWhen('1825-07-20');   // { start, end, from, to, isInterval, … }; the day is [start, end)
 ticksToIso(w.start!);                // '1825-07-20T00:00:00'
@@ -19,7 +19,7 @@ formatTicks(w.start!, 'id');         // '20 Juli 1825'
 ## Load and resolve
 
 ```ts
-import { loadCampaign, resolveFrame, chapterTime } from '@pholidlabs/chronomap-engine';
+import { loadCampaign, resolveFrame, chapterTime } from '@pholidlabs/histamation-engine';
 
 const { campaign, diagnostics } = loadCampaign(json);
 if (!campaign) throw new Error(diagnostics.filter((d) => d.level === 'error').map((d) => d.message).join('\n'));
@@ -36,9 +36,9 @@ const frame = resolveFrame(campaign, t);    // { t, iso, entities, events }
 ## Stateful playback
 
 ```ts
-import { ChronoMapEngine } from '@pholidlabs/chronomap-engine';
+import { HistamationEngine } from '@pholidlabs/histamation-engine';
 
-const engine = new ChronoMapEngine({ language: 'en' });
+const engine = new HistamationEngine({ language: 'en' });
 engine.on('frame', (f) => render(f));
 engine.on('chapter', ({ id, previous }) => announce(id, previous));
 
@@ -51,26 +51,26 @@ engine.setTime(-4545036000);                          // free exploration
 
 ## Off the main thread
 
-`resolveFrame` takes microseconds for campaign-sized data, so the same-thread engine is the default. For large campaigns, run the worker entry and talk to it with `ChronoMapWorkerClient`:
+`resolveFrame` takes microseconds for campaign-sized data, so the same-thread engine is the default. For large campaigns, run the worker entry and talk to it with `HistamationWorkerClient`:
 
 ```ts
 // my-worker.ts
-import '@pholidlabs/chronomap-engine/worker';
+import '@pholidlabs/histamation-engine/worker';
 
 // main.ts
-import { ChronoMapWorkerClient } from '@pholidlabs/chronomap-engine';
+import { HistamationWorkerClient } from '@pholidlabs/histamation-engine';
 
-const client = new ChronoMapWorkerClient(new Worker(new URL('./my-worker.ts', import.meta.url), { type: 'module' }));
+const client = new HistamationWorkerClient(new Worker(new URL('./my-worker.ts', import.meta.url), { type: 'module' }));
 const { ok, diagnostics } = await client.load(json);
 const frame = await client.query(t);   // null if a newer query replaced this one before it was sent
 ```
 
-Queries are coalesced: at most one is in flight, and a newer query replaces a waiting one. The Rust/WASM core (`ChronoMapCore` in `crates/chronomap-core`, feature `wasm`) answers with the same message shapes, so a worker can swap it in.
+Queries are coalesced: at most one is in flight, and a newer query replaces a waiting one. The Rust/WASM core (`HistamationCore` in `crates/histamation-core`, feature `wasm`) answers with the same message shapes, so a worker can swap it in.
 
 ## CLI
 
 ```bash
-npx chronomap-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json]
+npx histamation-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json]
 ```
 
 | Flag | Effect |

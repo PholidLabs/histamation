@@ -7,7 +7,7 @@
 
 use std::path::{Path, PathBuf};
 
-use chronomap_core::{
+use histamation_core::{
     chapter_time, load_campaign, parse_when, resolve_frame, ticks_to_iso, DiagnosticLevel,
     ResolveOptions,
 };
@@ -323,15 +323,15 @@ fn load_never_panics_on_junk() {
         "\"a string\"",
         "42",
         "{}",
-        r#"{"chronomap":"1.0"}"#,
-        r#"{"chronomap":"2.0","meta":{"timeline":{"extent":"1825"}},"chapters":[]}"#,
-        r#"{"chronomap":"1.0","meta":{"timeline":{"extent":"../.."}}}"#,
-        r#"{"chronomap":"1.0","meta":{"timeline":{"extent":"1825/.."}}}"#,
-        r#"{"chronomap":"1.0","meta":{"timeline":{"extent":"1825"}},"places":[{"id":"p","coordinates":"nope"}]}"#,
-        r#"{"chronomap":"1.0","meta":{"timeline":{"extent":"1825"}},"entities":[{"id":"u","kind":"unit"}]}"#,
-        r#"{"chronomap":"1.0","meta":{"timeline":{"extent":"1825"}},"entities":[{"id":"x","kind":"x-thing"}]}"#,
+        r#"{"histamation":"1.0"}"#,
+        r#"{"histamation":"2.0","meta":{"timeline":{"extent":"1825"}},"chapters":[]}"#,
+        r#"{"histamation":"1.0","meta":{"timeline":{"extent":"../.."}}}"#,
+        r#"{"histamation":"1.0","meta":{"timeline":{"extent":"1825/.."}}}"#,
+        r#"{"histamation":"1.0","meta":{"timeline":{"extent":"1825"}},"places":[{"id":"p","coordinates":"nope"}]}"#,
+        r#"{"histamation":"1.0","meta":{"timeline":{"extent":"1825"}},"entities":[{"id":"u","kind":"unit"}]}"#,
+        r#"{"histamation":"1.0","meta":{"timeline":{"extent":"1825"}},"entities":[{"id":"x","kind":"x-thing"}]}"#,
     ] {
-        let result = chronomap_core::load_campaign_str(junk);
+        let result = histamation_core::load_campaign_str(junk);
         // Every rejection is reported, never thrown.
         assert!(
             result.campaign.is_none() || result.errors().count() == 0,

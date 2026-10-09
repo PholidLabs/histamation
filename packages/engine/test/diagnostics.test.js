@@ -23,7 +23,7 @@ test('the loader catches contract violations', () => {
   assert.ok(mutate((c) => { c.places[0].coordinates = [null, null]; }).includes('E011'), 'null is not a coordinate');
   assert.ok(mutate((c) => { c.meta.defaultLanguage = 'fr'; }).includes('E014'), 'default language not declared');
   assert.ok(mutate((c) => { c.events[0].participants[0].losses = { min: 9, max: 1 }; }).includes('E012'), 'min > max');
-  assert.ok(mutate((c) => { c.chronomap = '2.0'; }).includes('E013'), 'unsupported version');
+  assert.ok(mutate((c) => { c.histamation = '2.0'; }).includes('E013'), 'unsupported version');
   assert.ok(mutate((c) => { c.chapters[1].body.en = 'Click [here](javascript:alert(1))'; }).includes('E015'), 'unsafe url');
   assert.ok(mutate((c) => { c.chapters[1].body.en = '<img src=x onerror=alert(1)>'; }).includes('E017'), 'raw html');
   assert.ok(mutate((c) => { delete c.entities[4].at; }).includes('E016'), 'custom kind without geometry');

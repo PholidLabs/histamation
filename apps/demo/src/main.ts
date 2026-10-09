@@ -1,12 +1,12 @@
 import { Map as MapLibreMap, NavigationControl, Popup, ScaleControl } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import '@pholidlabs/chronomap-maplibre/style.css';
+import '@pholidlabs/histamation-maplibre/style.css';
 import './style.css';
 import {
-  ChronoMapEngine, chapterTime, civilFromDays, daysFromCivil, formatTicks, formatWhen, pickText, yearText,
+  HistamationEngine, chapterTime, civilFromDays, daysFromCivil, formatTicks, formatWhen, pickText, yearText,
   type CampaignFile, type Diagnostic, type FrameState, type NormChapter, type NormalizedCampaign, type Ticks,
-} from '@pholidlabs/chronomap-engine';
-import { CameraController, ChronoMapRenderer, createBasemapStyle, factionColor, parchmentDark, parchmentLight } from '@pholidlabs/chronomap-maplibre';
+} from '@pholidlabs/histamation-engine';
+import { CameraController, HistamationRenderer, createBasemapStyle, factionColor, parchmentDark, parchmentLight } from '@pholidlabs/histamation-maplibre';
 import { KINDS, ROLES, STATUS, UI, type UIStrings } from './i18n.js';
 import { el, renderBody } from './dom.js';
 import {
@@ -31,9 +31,9 @@ const CAMPAIGNS: Record<string, { url: string; label: string }> = {
 /** `/app/?campaign=waterloo` opens that campaign first; the landing page links there. */
 const requested = new URLSearchParams(location.search).get('campaign') ?? '';
 
-const engine = new ChronoMapEngine({ language: 'id', includeTrail: false });
+const engine = new HistamationEngine({ language: 'en', includeTrail: false });
 const state = {
-  lang: 'id',
+  lang: 'en',
   themeMode: savedThemeMode(),
   mode: 'story' as 'story' | 'explore',
   key: Object.hasOwn(CAMPAIGNS, requested) ? requested : 'java',
@@ -81,7 +81,7 @@ const map = new MapLibreMap({
 map.addControl(new NavigationControl({ visualizePitch: true }), 'bottom-right');
 map.addControl(new ScaleControl({ maxWidth: 120, unit: 'metric' }), 'bottom-right');
 const camera = new CameraController(map, { reduceMotion });
-let renderer = new ChronoMapRenderer(map, { theme: theme(), language: state.lang, basemapPath: '/basemap', reduceMotion });
+let renderer = new HistamationRenderer(map, { theme: theme(), language: state.lang, basemapPath: '/basemap', reduceMotion });
 const popup = new Popup({ closeButton: false, closeOnClick: true, maxWidth: '300px', offset: 12 });
 
 let appliedTheme = theme().name;
@@ -93,8 +93,8 @@ function rebuildRenderer(): void {
   renderer.destroy();
   map.setStyle(createBasemapStyle({ theme: theme(), basemapPath: '/basemap' }));
   // Built straight away: the renderer installs itself once the new style can take layers.
-  renderer = new ChronoMapRenderer(map, { theme: theme(), language: state.lang, basemapPath: '/basemap', reduceMotion });
-  if (window.chronomap) window.chronomap.renderer = renderer;
+  renderer = new HistamationRenderer(map, { theme: theme(), language: state.lang, basemapPath: '/basemap', reduceMotion });
+  if (window.histamation) window.histamation.renderer = renderer;
   if (engine.campaign) {
     renderer.setCampaign(engine.campaign);
     if (state.frame) renderer.setFrame(state.frame, focusIds());
@@ -118,7 +118,7 @@ function attachMapInteractions(): void {
   if (mapInteractionsAttached) return;
   mapInteractionsAttached = true;
   // Peaks, forests and sea ornaments are DOM markers; the renderer opens their popups.
-  const layers = ['cm-place-dot', 'cm-event-active', 'cm-event-past', 'basemap-places-dot', 'rivers'];
+  const layers = ['hm-place-dot', 'hm-event-active', 'hm-event-past', 'basemap-places-dot', 'rivers'];
   for (const layer of layers) {
     map.on('mouseenter', layer, () => { map.getCanvas().style.cursor = 'pointer'; });
     map.on('mouseleave', layer, () => { map.getCanvas().style.cursor = ''; });
@@ -127,8 +127,8 @@ function attachMapInteractions(): void {
       if (!f) return;
       const id = String(f.properties?.id ?? '');
       let html: HTMLElement | null = null;
-      if (layer === 'cm-place-dot') html = placePopup(id);
-      else if (layer === 'cm-event-active' || layer === 'cm-event-past') html = eventPopup(id);
+      if (layer === 'hm-place-dot') html = placePopup(id);
+      else if (layer === 'hm-event-active' || layer === 'hm-event-past') html = eventPopup(id);
       else if (layer === 'basemap-places-dot') html = basemapPlacePopup(f.properties ?? {});
       else if (layer === 'rivers') html = riverPopup(f.properties ?? {});
       if (html) popup.setLngLat(e.lngLat).setDOMContent(html).addTo(map);
@@ -860,14 +860,14 @@ function loop(now: number): void {
 }
 
 /* Handy for debugging and for anyone poking at the engine from the console. */
-declare global { interface Window { chronomap?: { map: MapLibreMap; engine: ChronoMapEngine; renderer: ChronoMapRenderer } } }
+declare global { interface Window { histamation?: { map: MapLibreMap; engine: HistamationEngine; renderer: HistamationRenderer } } }
 map.on('error', (e) => console.error('[maplibre]', (e as unknown as { error?: Error }).error?.message ?? e));
 
 /* ------------------------------------------------------------------ boot */
 state.lang = savedLang(state.lang);
 engine.setLanguage(state.lang);
 setupChrome();
-window.chronomap = { map, engine, renderer };
+window.histamation = { map, engine, renderer };
 map.on('load', () => {
   attachMapInteractions();
   if (state.terrain) setTerrainEnabled(true);

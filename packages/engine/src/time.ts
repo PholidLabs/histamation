@@ -1,5 +1,5 @@
 /**
- * ChronoMap time model (contract §3).
+ * Histamation time model (contract §3).
  *
  * A When is an EDTF (ISO 8601-2) subset:
  *   point     1825 | 1825-07 | 1825-07-20 | 1825-07-20T14:30[:05]

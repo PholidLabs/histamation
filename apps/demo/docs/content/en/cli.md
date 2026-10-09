@@ -1,17 +1,17 @@
 ---
-title: chronomap-check
+title: histamation-check
 description: The validation CLI — flags, exit codes, the --frames dry-run, --json output, and JSON Schema (S001) checks.
 group: api
 order: 3
 ---
 
-`chronomap-check` is the campaign validator: it runs [`loadCampaign`](engine.md#load-campaign-fn)
+`histamation-check` is the campaign validator: it runs [`loadCampaign`](engine.md#load-campaign-fn)
 against one or more files, optionally checks them against the JSON Schema, and can dry-run
 playback or write [conformance vectors](rust-wasm.md#parity). It ships as the `bin` of
-[`@pholidlabs/chronomap-engine`](engine.md), built to `packages/engine/dist/cli.js`.
+[`@pholidlabs/histamation-engine`](engine.md), built to `packages/engine/dist/cli.js`.
 
 ```bash
-npx chronomap-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]
+npx histamation-check campaign.json [...more.json] [--frames] [--strict] [--quiet] [--json] [--vectors <dir>]
 ```
 
 Inside this repository, after `npm run build`, run it directly:
@@ -41,7 +41,7 @@ argument on the line.
 |---|---|
 | `0` | Every file checked; no `error`-level diagnostic, and no `warning` under `--strict`. |
 | `1` | At least one file produced an `error`-level diagnostic, or (`--strict`) a `warning`. |
-| `2` | Usage error: no files given, an unrecognized `--` flag, or `--vectors` with no directory argument (missing, or itself another flag). Nothing is checked; `usage: chronomap-check …` prints to stderr first. |
+| `2` | Usage error: no files given, an unrecognized `--` flag, or `--vectors` with no directory argument (missing, or itself another flag). Nothing is checked; `usage: histamation-check …` prints to stderr first. |
 
 ## Validation layers {#validation-layers}
 
@@ -49,7 +49,7 @@ Two layers run, both reporting [diagnostics](diagnostics.md) with a stable `code
 Pointer `path` (contract [§8](contract.md#sec-8)):
 
 1. **Semantic** — [`loadCampaign`](engine.md#load-campaign-fn). Always runs; this is the same
-   check `ChronoMapEngine.load` and the Rust core perform.
+   check `HistamationEngine.load` and the Rust core perform.
 2. **Structural** — the JSON Schema at `schema/campaign.schema.json`, reported as code `S001`.
    Runs only when `ajv` and `ajv-formats` are installed next to the CLI; if they are not, the
    CLI prints a note to stderr and skips schema checking, but semantic checks still run:
@@ -169,7 +169,7 @@ type Report = Array<{
 ## --vectors {#vectors}
 
 ```bash
-chronomap-check --vectors test-vectors data/campaigns/*.json data/campaigns/fixtures/*.json
+histamation-check --vectors test-vectors data/campaigns/*.json data/campaigns/fixtures/*.json
 ```
 
 Writes `<dir>/time.json` once (every `When` string [`vectors.ts`](gh:packages/engine/src/vectors.ts)
@@ -180,7 +180,7 @@ loader's diagnostics. Campaigns under a `fixtures/` directory (like `null-island
 "detailed" form: quarter-step sampling (`p = 0, .25, .5, .75, 1`) with full trail polylines;
 other campaigns get `p = 0, .5, 1` with trail vertex counts only, one frame per line so a
 semantics change shows up as a readable diff. Floats round to `1e-6` in both forms — the exact
-tolerance [`crates/chronomap-core/tests/vectors.rs`](rust-wasm.md#parity) checks against.
+tolerance [`crates/histamation-core/tests/vectors.rs`](rust-wasm.md#parity) checks against.
 
 These are the [golden vectors](rust-wasm.md#parity) the Rust port is tested against — run this
 after any change to `packages/engine/src/`, before touching the Rust port to match.

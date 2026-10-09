@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: crates/chronomap-core
+        working-directory: crates/histamation-core
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
@@ -38,7 +38,7 @@ jobs:
           components: clippy, rustfmt
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: crates/chronomap-core
+          workspaces: crates/histamation-core
       - run: cargo fmt --check
       # --all-features: `spatial` and `wasm` are off by default and would otherwise never compile here.
       - run: cargo clippy --all-features --all-targets -- -D warnings

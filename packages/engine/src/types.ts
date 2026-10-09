@@ -1,5 +1,5 @@
 /**
- * ChronoMap campaign contract v1 — TypeScript shapes. See docs/DATA-CONTRACT.md.
+ * Histamation campaign contract v1 — TypeScript shapes. See docs/DATA-CONTRACT.md.
  * The file-shape interfaces (Faction … CampaignFile) mirror schema/campaign.schema.json one to one.
  */
 
@@ -77,7 +77,7 @@ export interface CampaignMeta {
   };
 }
 export interface CampaignFile {
-  chronomap: string; meta: CampaignMeta; factions: Faction[]; parts?: Part[]; places?: Place[];
+  histamation: string; meta: CampaignMeta; factions: Faction[]; parts?: Part[]; places?: Place[];
   entities?: Entity[]; events?: CampaignEvent[]; chapters: Chapter[]; sources?: Source[]; media?: Media[];
   [key: string]: unknown; // x- extensions
 }

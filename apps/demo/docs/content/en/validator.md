@@ -1,6 +1,6 @@
 ---
 title: Campaign validator
-description: Check a campaign file in the browser with the same schema and semantic checks as chronomap-check, and preview its playback.
+description: Check a campaign file in the browser with the same schema and semantic checks as histamation-check, and preview its playback.
 group: tools
 order: 1
 tool: validator

@@ -1,10 +1,10 @@
-# ChronoMap Engine — notes for Claude Code
+# Histamation Engine — notes for Claude Code
 
 ## Ground rules
 
 - `docs/DATA-CONTRACT.md` is normative. Where the PRD and the contract disagree about
   data, time or engine interaction, the contract wins (see its §11–12).
-- `packages/engine/src` is the executable spec. `crates/chronomap-core` is a port of it,
+- `packages/engine/src` is the executable spec. `crates/histamation-core` is a port of it,
   not a second opinion. If you change semantics, change the TypeScript first, regenerate
   the vectors (`npm run vectors` — it rebuilds the engine and rewrites every file in
   `test-vectors/`), then make Rust match. CI fails if the committed vectors are stale.
@@ -19,7 +19,7 @@
 npm run build && npm test          # engine tests, golden vectors, docs invariants included
 npm run check                      # every campaign: 0 errors
 npx tsc --noEmit -p apps/demo/tsconfig.json   # Vite strips types; nothing else checks the demo
-cd crates/chronomap-core && cargo test --all-features   # without the flag, wasm.rs and spatial.rs never compile
+cd crates/histamation-core && cargo test --all-features   # without the flag, wasm.rs and spatial.rs never compile
 ```
 
 `.github/workflows/ci.yml` runs this list plus `cargo fmt --check`, `cargo clippy -D warnings`,
@@ -32,10 +32,10 @@ fixture deliberately overlaps two chapters to exercise the check.
 
 ```
 packages/engine      time.ts · campaign.ts (loader + diagnostics) · resolve.ts · engine.ts (façade)
-                     cli.ts (chronomap-check) · vectors.ts (writes test-vectors/ for --vectors)
+                     cli.ts (histamation-check) · vectors.ts (writes test-vectors/ for --vectors)
                      worker.ts + worker-client.ts — the seam the Rust/WASM core slots into;
                      the client coalesces queries (a replaced one resolves null, never sent)
-packages/maplibre    style.ts (basemap) · camera.ts · renderer.ts · theme.ts · chronomap.css
+packages/maplibre    style.ts (basemap) · camera.ts · renderer.ts · theme.ts · histamation.css
 apps/demo            index.html (landing) + app/index.html (the map app, served at /app/)
                      + docs/index.html (template for the docs at /docs/<lang>/<slug>/)
                      icons/ — favicon.svg, apple-touch, PWA icons, og.png, manifest
@@ -44,10 +44,10 @@ apps/demo            index.html (landing) + app/index.html (the map app, served 
                      dom.ts (safe Markdown, popups, svgEl) · i18n.ts
                      docs/site.ts (Node: Markdown → HTML, link check) · docs/content/{en,id}/*.md
                      docs/diagnostics.json · src/docs/ (docs client, validator, date tester)
-crates/chronomap-core  time.rs · campaign.rs · resolve.rs · model.rs · wasm.rs · spatial.rs
+crates/histamation-core  time.rs · campaign.rs · resolve.rs · model.rs · wasm.rs · spatial.rs
 ```
 
-Vite aliases `@pholidlabs/chronomap-engine` and `@pholidlabs/chronomap-maplibre` to the packages' **source**, so
+Vite aliases `@pholidlabs/histamation-engine` and `@pholidlabs/histamation-maplibre` to the packages' **source**, so
 the demo picks up edits without a package rebuild. `npm run check` uses the built
 `packages/engine/dist`, so run `npm run build` after touching the engine.
 
@@ -67,7 +67,7 @@ the demo picks up edits without a package rebuild. `npm run check` uses the buil
 - **Labels are DOM, not glyphs**, so MapLibre's collision engine never sees them.
   `renderer.declutter()` does it: priority by kind (unit → event → fort → place), focus is
   only a tie-break *within* a kind, symbols displace place names only, and elements marked
-  `data-cm-avoid` (legend, cartouche, timeline) are hard obstacles.
+  `data-hm-avoid` (legend, cartouche, timeline) are hard obstacles.
 - **Site icons are not in publicDir.** publicDir is the repo's `data/` folder, so the
   favicon, apple-touch icon, manifest and social card live in `apps/demo/icons/` and are
   put at the site root by the `siteIcons()` plugin — a dev middleware plus `emitFile` on
@@ -99,7 +99,7 @@ the demo picks up edits without a package rebuild. `npm run check` uses the buil
   returns*, while `isStyleLoaded()` is still false because sources are loading. So
   `if (!map.isStyleLoaded()) map.once('style.load', …)` after a `setStyle` waits forever —
   that left the map empty after every theme toggle. Use `idle` as the backstop, as
-  `ChronoMapRenderer`'s constructor and `setTerrainEnabled` do. The renderer installs
+  `HistamationRenderer`'s constructor and `setTerrainEnabled` do. The renderer installs
   itself; the host just constructs it right after `setStyle`.
 - **Pictorial markers are clickable; labels are not.** Peaks, forests and sea ornaments
   are DOM markers that open their own popup (`bindPictorialPopup` in `renderer.ts`), so

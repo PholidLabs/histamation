@@ -1,6 +1,6 @@
 ---
 title: Pemeriksa kampanye
-description: Periksa berkas kampanye di peramban dengan pemeriksaan skema dan semantik yang sama seperti chronomap-check, lalu pratinjau pemutarannya.
+description: Periksa berkas kampanye di peramban dengan pemeriksaan skema dan semantik yang sama seperti histamation-check, lalu pratinjau pemutarannya.
 group: tools
 order: 1
 tool: validator

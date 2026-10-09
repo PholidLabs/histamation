@@ -1,19 +1,23 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>ChronoMap Engine — Java War 1825–1830</title>
-    <meta name="description" content="Scrollytelling historical maps from one plug-and-play JSON file. Demo: the Java War (Perang Diponegoro), 1825–1830." />
+    <title>Histamation — Historical campaign maps</title>
+    <meta name="description" content="Follow the Java War (1825–1830) or the Waterloo Campaign (1815) on one interactive map: troop movements, battles and the sources behind them." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#F2ECDF" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ChronoMap — Perang Jawa (Perang Diponegoro), 1825–1830" />
-    <meta property="og:description" content="Peta sejarah bergulir dari satu berkas JSON, lengkap dengan sumber dan ketidakpastian." />
-    <meta property="og:image" content="/og.png" />
+    <meta property="og:site_name" content="Histamation" />
+    <meta property="og:url" content="https://histamation.pholidlabs.com/app/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="id_ID" />
+    <meta property="og:title" content="Histamation — Historical campaign maps" />
+    <meta property="og:description" content="Follow the Java War (1825–1830) or the Waterloo Campaign (1815) on one interactive map: troop movements, battles and the sources behind them." />
+    <meta property="og:image" content="https://histamation.pholidlabs.com/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,21 +25,21 @@
   </head>
   <body>
     <header class="bar">
-      <div class="brand"><a class="wordmark" href="/" id="home-link">ChronoMap</a></div>
+      <div class="brand"><a class="wordmark" href="/" id="home-link">Histamation</a></div>
       <div class="ctl">
-        <label for="dataset" id="lbl-campaign">Kampanye</label>
+        <label for="dataset" id="lbl-campaign">Campaign</label>
         <select id="dataset"></select>
-        <button class="btn" id="load-btn">Muat JSON…</button>
+        <button class="btn" id="load-btn">Load JSON…</button>
         <input type="file" id="file" accept="application/json,.json" hidden />
       </div>
       <div class="ctl">
         <span class="seg" role="group" aria-label="Mode" id="seg-mode">
-          <button id="mode-story" aria-pressed="true">Cerita</button>
-          <button id="mode-explore" aria-pressed="false">Jelajah</button>
+          <button id="mode-story" aria-pressed="true">Story</button>
+          <button id="mode-explore" aria-pressed="false">Explore</button>
         </span>
-        <span class="seg" role="group" aria-label="Bahasa" id="seg-lang"></span>
-        <span class="seg" role="group" aria-label="Tema" id="seg-theme"></span>
-        <button class="btn icon-btn" id="help-btn" aria-label="Panduan & Bantuan" title="Panduan & Bantuan">?</button>
+        <span class="seg" role="group" aria-label="Language" id="seg-lang"></span>
+        <span class="seg" role="group" aria-label="Theme" id="seg-theme"></span>
+        <button class="btn icon-btn" id="help-btn" aria-label="Help &amp; Tour" title="Help &amp; Tour">?</button>
       </div>
     </header>
     <main class="layout">
@@ -45,14 +49,14 @@
       </section>
       <section class="stage" id="stage" aria-label="Campaign map">
         <div id="map"></div>
-        <div class="cartouche" data-cm-avoid><div class="now" id="now-date"></div><div class="now-sub" id="now-sub"></div></div>
-        <details class="legend" id="legend" data-cm-avoid open></details>
-        <div class="timeline" id="timeline" data-cm-avoid>
+        <div class="cartouche" data-hm-avoid><div class="now" id="now-date"></div><div class="now-sub" id="now-sub"></div></div>
+        <details class="legend" id="legend" data-hm-avoid open></details>
+        <div class="timeline" id="timeline" data-hm-avoid>
           <div class="tl-top" id="tl-top"></div>
           <div class="tl-controls">
-            <button class="tl-play-btn" id="tl-play" aria-label="Putar" title="Putar">
+            <button class="tl-play-btn" id="tl-play" aria-label="Play" title="Play">
               <span class="tl-play-icon" id="tl-play-icon"></span>
-              <span class="tl-play-label" id="tl-play-label">Putar</span>
+              <span class="tl-play-label" id="tl-play-label">Play</span>
             </button>
             <div class="tl-wrap">
               <div class="tl-axis" id="tl-axis"></div>

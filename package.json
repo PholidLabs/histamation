@@ -1,8 +1,8 @@
 {
-  "name": "chronomap",
+  "name": "histamation",
   "private": true,
   "version": "0.1.0",
-  "description": "ChronoMap Engine — plug-and-play spatio-temporal storytelling maps",
+  "description": "Histamation Engine — plug-and-play spatio-temporal storytelling maps",
   "license": "MIT",
   "type": "module",
   "workspaces": [
@@ -17,6 +17,7 @@
     "build:engine": "tsc -p packages/engine/tsconfig.json && node packages/engine/scripts/copy-schema.mjs",
     "build:demo": "npm run build && vite build apps/demo",
     "dev": "vite apps/demo",
+    "deploy": "npm run build:demo && npx wrangler deploy",
     "test": "npm run build:engine && node --test packages/engine/test/*.test.js apps/demo/test/*.test.js",
     "check": "node packages/engine/dist/cli.js data/campaigns/*.json data/campaigns/fixtures/*.json",
     "vectors": "npm run build:engine && node packages/engine/dist/cli.js --vectors test-vectors data/campaigns/*.json data/campaigns/fixtures/*.json"
