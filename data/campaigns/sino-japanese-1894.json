@@ -1,0 +1,1864 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "sino-japanese-1894",
+    "version": "0.1.0",
+    "title": {
+      "en": "The First Sino-Japanese War (1894–1895)",
+      "id": "Perang Tiongkok-Jepang Pertama (1894–1895)"
+    },
+    "subtitle": {
+      "en": "The clash of modernization and imperial order for mastery of East Asia",
+      "id": "Benturan modernisasi dan tatanan kekaisaran demi supremasi Asia Timur"
+    },
+    "description": {
+      "en": "The First Sino-Japanese War (1894–1895) was a transformational struggle fought between the Qing Empire of China and the Empire of Meiji Japan primarily over suzerainty in Joseon Korea. The war exposed the fatal administrative and logistical fractures of China's Self-Strengthening Movement while demonstrating the disciplined industrial and tactical prowess of modern Japan. Spanning land battles across Korea and Manchuria and colossal naval engagements in the Yellow Sea and Bohai Gulf, the campaign shattered centuries of Chinese regional primacy and ushered in modern East Asian geopolitics.",
+      "id": "Perang Tiongkok-Jepang Pertama (1894–1895) adalah pergolakan bersejarah antara Kekaisaran Qing dan Kekaisaran Meiji Jepang demi memperebutkan kendali atas Kerajaan Joseon di Korea. Perang ini menyingkap kelemahan koordinasi Gerakan Penguatan Diri Dinasti Qing sekaligus membuktikan kedigdayaan modernisasi militer dan industri Jepang pasca-Restorasi Meiji. Melintasi pertempuran darat di Korea dan Manchuria serta pertempuran laut dahsyat di Laut Kuning dan Teluk Bohai, kampanye ini mengakhiri hegemoni berabad-abad Tiongkok dan melahirkan tatanan geopolitik baru di Asia Timur."
+    },
+    "contentWarning": {
+      "en": "Depicts 19th-century mechanized and naval warfare, artillery bombardments, fortress sieges, and historical battlefield casualties.",
+      "id": "Menggambarkan peperangan artileri dan armada laut abad ke-19, pengeboman benteng, dan korban pertempuran sejarah."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "updated": "2026-10-13",
+    "timeline": {
+      "extent": "1894-06-01/1895-05-31",
+      "focus": "1894-07-25/1895-04-17"
+    },
+    "map": {
+      "center": [
+        124.5,
+        38.2
+      ],
+      "zoom": 6.3,
+      "pitch": 25,
+      "bearing": 0,
+      "bounds": [
+        116,
+        32,
+        134,
+        42.5
+      ],
+      "terrain": {
+        "exaggeration": 1.2
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "qing-empire",
+      "name": {
+        "en": "Qing Empire",
+        "id": "Kekaisaran Qing"
+      },
+      "shortName": {
+        "en": "Qing",
+        "id": "Qing"
+      },
+      "color": "#D48806",
+      "description": {
+        "en": "The Manchu-ruled imperial dynasty of China, defending its historic tributary suzerainty over Joseon Korea with the modernized Beiyang Fleet and Huai Army under Viceroy Li Hongzhang.",
+        "id": "Dinasti kekaisaran Tiongkok yang membela hak suzerenitas atas Joseon Korea, mengandalkan Armada Beiyang dan Tentara Huai di bawah Raja Muda Li Hongzhang."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "japan-empire",
+      "name": {
+        "en": "Empire of Japan",
+        "id": "Kekaisaran Jepang"
+      },
+      "shortName": {
+        "en": "Japan",
+        "id": "Jepang"
+      },
+      "color": "#BC002D",
+      "description": {
+        "en": "The modern Meiji state, fielding a unified, Prussian-trained Imperial Army and British-modeled Combined Fleet committed to breaking Chinese supremacy and securing continental buffer zones.",
+        "id": "Negara modern Meiji yang mengerahkan Angkatan Darat terlatih Prusia dan Armada Gabungan berkiblat ke Inggris untuk mematahkan supremasi Tiongkok dan mengamankan Semenanjung Korea."
+      },
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "joseon-kingdom",
+      "name": {
+        "en": "Kingdom of Joseon",
+        "id": "Kerajaan Joseon"
+      },
+      "shortName": {
+        "en": "Joseon",
+        "id": "Joseon"
+      },
+      "color": "#2B5B84",
+      "description": {
+        "en": "The sovereign Korean kingdom under King Gojong, destabilized by the Donghak Peasant Rebellion and caught in the imperial tug-of-war between Beijing and Tokyo.",
+        "id": "Kerajaan berdaulat Korea di bawah Raja Gojong, terguncang oleh Pemberontakan Petani Donghak dan terseret pusaran persaingan militer Beijing dan Tokyo."
+      },
+      "sources": [
+        "paine-2003",
+        "duus-1998"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "seoul",
+      "name": {
+        "en": "Hanseong (Seoul)",
+        "id": "Hanseong (Seoul)"
+      },
+      "modernName": {
+        "en": "Seoul, South Korea",
+        "id": "Seoul, Korea Selatan"
+      },
+      "kind": "palace",
+      "coordinates": [
+        126.978,
+        37.5665
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The Joseon capital and seat of Gyeongbokgung Palace, seized by Japanese troops on 23 July 1894 to install a pro-Japanese cabinet.",
+        "id": "Ibu kota Kerajaan Joseon dan lokasi Istana Gyeongbokgung, direbut tentara Jepang pada 23 Juli 1894 untuk mendirikan pemerintahan pro-Tokyo."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "incheon",
+      "name": {
+        "en": "Chemulpo (Incheon)",
+        "id": "Chemulpo (Incheon)"
+      },
+      "modernName": {
+        "en": "Incheon, South Korea",
+        "id": "Incheon, Korea Selatan"
+      },
+      "kind": "port",
+      "coordinates": [
+        126.6269,
+        37.4563
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Key treaty port and the primary disembarkation bridgehead for Japanese expeditionary forces landing in Korea.",
+        "id": "Pelabuhan perjanjian strategis dan pintu pendaratan utama bagi pasukan ekspedisi Kekaisaran Jepang di Korea."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "pungdo",
+      "name": {
+        "en": "Pungdo Island",
+        "id": "Pulau Pungdo"
+      },
+      "modernName": {
+        "en": "Pungdo, Ansan, Gyeonggi Province, South Korea",
+        "id": "Pungdo, Ansan, Gyeonggi, Korea Selatan"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        126.505,
+        37.112
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Islet in Asan Bay where Japanese cruisers ambushed Qing warships and sank the British-chartered transport Kowshing on 25 July 1894.",
+        "id": "Pulau kecil di Teluk Asan tempat kapal penjelajah Jepang menyergap armada Qing dan menenggelamkan kapal transport Kowshing pada 25 Juli 1894."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "asan",
+      "name": {
+        "en": "Asan",
+        "id": "Asan"
+      },
+      "modernName": {
+        "en": "Asan, South Chungcheong Province, South Korea",
+        "id": "Asan, Chungcheong Selatan, Korea Selatan"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        127.0042,
+        36.7898
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Southern anchorage and staging camp where General Ye Zhichao established Qing defensive positions in June 1894.",
+        "id": "Pangkalan pesisir selatan tempat Jenderal Ye Zhichao memusatkan pasukan pertahanan Qing pada Juni 1894."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "seonghwan",
+      "name": {
+        "en": "Seonghwan",
+        "id": "Seonghwan"
+      },
+      "modernName": {
+        "en": "Seonghwan-eup, Cheonan, South Korea",
+        "id": "Seonghwan-eup, Cheonan, Korea Selatan"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        127.1325,
+        36.9161
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Site of the first land engagement on 29 July 1894, where Japanese troops under Major General Oshima routed the Qing garrison.",
+        "id": "Lokasi pertempuran darat pertama pada 29 Juli 1894, saat pasukan Jepang pimpinan Mayor Jenderal Oshima mengalahkan garnisun Qing."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "pyongyang",
+      "name": {
+        "en": "Pyongyang",
+        "id": "Pyongyang"
+      },
+      "modernName": {
+        "en": "Pyongyang, North Korea",
+        "id": "Pyongyang, Korea Utara"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        125.7556,
+        39.0392
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Ancient walled northern capital heavily fortified by four Qing armies, besieged and stormed by the Japanese 1st Army on 15 September 1894.",
+        "id": "Kota benteng utara kuno tempat empat divisi tentara Qing bertahan, diserbu dan direbut Angkatan Darat ke-1 Jepang pada 15 September 1894."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "yalu-mouth",
+      "name": {
+        "en": "Yalu River Estuary",
+        "id": "Muara Sungai Yalu"
+      },
+      "modernName": {
+        "en": "Donggang / Dandong offshore waters, Liaoning, China",
+        "id": "Perairan Donggang / Dandong, Liaoning, Tiongkok"
+      },
+      "kind": "river",
+      "coordinates": [
+        123.98,
+        39.75
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Site of the Battle of the Yalu River (Yellow Sea) on 17 September 1894, the greatest fleet action between modern ironclads of the 19th century.",
+        "id": "Lokasi Pertempuran Sungai Yalu (Laut Kuning) pada 17 September 1894, pertempuran laut terbesar antar-kapal lapis baja abad ke-19."
+      },
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "jiuliancheng",
+      "name": {
+        "en": "Jiuliancheng",
+        "id": "Jiuliancheng"
+      },
+      "modernName": {
+        "en": "Jiuliancheng, Dandong, Liaoning, China",
+        "id": "Jiuliancheng, Dandong, Liaoning, Tiongkok"
+      },
+      "kind": "fort",
+      "coordinates": [
+        124.4833,
+        40.1667
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Fortified Manchurian frontier position across the Yalu River, abandoned by Qing defenders following Yamagata's night river crossing on 24–25 October 1894.",
+        "id": "Benteng tapal batas Manchuria di seberang Sungai Yalu, ditinggalkan pasukan Qing setelah penyeberangan malam sungai oleh tentara Yamagata pada 24–25 Oktober 1894."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "fenghuancheng",
+      "name": {
+        "en": "Fenghuancheng",
+        "id": "Fenghuancheng"
+      },
+      "modernName": {
+        "en": "Fengcheng, Dandong, Liaoning, China",
+        "id": "Fengcheng, Dandong, Liaoning, Tiongkok"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        124.0667,
+        40.45
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Key mountain gateway town defending the approaches toward Mukden (Shenyang), captured by the Japanese First Army in November 1894.",
+        "id": "Kota gerbang pegunungan menuju Mukden (Shenyang), direbut Angkatan Darat Pertama Jepang pada November 1894."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "huayuanhou",
+      "name": {
+        "en": "Huayuanhou",
+        "id": "Huayuanhou"
+      },
+      "modernName": {
+        "en": "Zhuanghe, Dalian, Liaoning, China",
+        "id": "Zhuanghe, Dalian, Liaoning, Tiongkok"
+      },
+      "kind": "port",
+      "coordinates": [
+        122.5,
+        39.4
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Landing beach on the Liaodong Peninsula where General Oyama's Second Army disembarked unopposed on 24 October 1894.",
+        "id": "Pantai pendaratan di Semenanjung Liaodong tempat Angkatan Darat Kedua pimpinan Jenderal Oyama mendarat tanpa perlawanan pada 24 Oktober 1894."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "jinzhou",
+      "name": {
+        "en": "Jinzhou",
+        "id": "Jinzhou"
+      },
+      "modernName": {
+        "en": "Jinzhou District, Dalian, Liaoning, China",
+        "id": "Distrik Jinzhou, Dalian, Liaoning, Tiongkok"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        121.7167,
+        39.1
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Walled city at the narrow isthmus of the Liaodong Peninsula, stormed by Japanese forces on 6 November 1894 to seal the approach to Port Arthur.",
+        "id": "Kota berbenteng di genting tanah Semenanjung Liaodong, diserbu pasukan Jepang pada 6 November 1894 untuk menutup akses darat ke Port Arthur."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "dalian",
+      "name": {
+        "en": "Talienwan (Dalian)",
+        "id": "Talienwan (Dalian)"
+      },
+      "modernName": {
+        "en": "Dalian, Liaoning, China",
+        "id": "Dalian, Liaoning, Tiongkok"
+      },
+      "kind": "port",
+      "coordinates": [
+        121.6147,
+        38.914
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Deep-water bay fortified with coastal batteries, abandoned by Qing defenders and converted into a major Japanese logistical depot.",
+        "id": "Teluk berair dalam yang dibentengi artileri pantai, ditinggalkan tentara Qing dan diubah menjadi pusat pasokan utama Jepang."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "port-arthur",
+      "name": {
+        "en": "Port Arthur (Lüshunkou)",
+        "id": "Port Arthur (Lüshunkou)"
+      },
+      "modernName": {
+        "en": "Lüshunkou District, Dalian, Liaoning, China",
+        "id": "Distrik Lüshunkou, Dalian, Liaoning, Tiongkok"
+      },
+      "kind": "fort",
+      "coordinates": [
+        121.2611,
+        38.8078
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Heavily fortified naval fortress equipped with German Krupp coastal batteries and modern dry docks, stormed and captured in a single day on 21 November 1894.",
+        "id": "Pangkalan armada laut termegah Tiongkok berpangkalan meriam Krupp dan dok kering modern, diserbu dan direbut Jepang dalam satu hari pada 21 November 1894."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "rongcheng",
+      "name": {
+        "en": "Rongcheng Bay",
+        "id": "Teluk Rongcheng"
+      },
+      "modernName": {
+        "en": "Rongcheng, Weihai, Shandong, China",
+        "id": "Rongcheng, Weihai, Shandong, Tiongkok"
+      },
+      "kind": "port",
+      "coordinates": [
+        122.4167,
+        37.1667
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Shandong beachhead where Japanese Second Army forces landed on 20 January 1895 to advance on Weihaiwei from the landward rear.",
+        "id": "Pesisir Shandong tempat Angkatan Darat Kedua Jepang mendarat pada 20 Januari 1895 untuk mengepung Weihaiwei dari arah darat."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "weihaiwei",
+      "name": {
+        "en": "Weihaiwei",
+        "id": "Weihaiwei"
+      },
+      "modernName": {
+        "en": "Weihai, Shandong, China",
+        "id": "Weihai, Shandong, Tiongkok"
+      },
+      "kind": "fort",
+      "coordinates": [
+        122.12,
+        37.51
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Primary anchorage and fortified redoubt of the Beiyang Fleet on the Shandong Peninsula, besieged from land and sea in January–February 1895.",
+        "id": "Pangkalan utama dan benteng pertahanan terakhir Armada Beiyang di Shandong, dikepung dari darat dan laut pada Januari–Februari 1895."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "liugong-island",
+      "name": {
+        "en": "Liugong Island",
+        "id": "Pulau Liugong"
+      },
+      "modernName": {
+        "en": "Liugong Island, Weihai, Shandong, China",
+        "id": "Pulau Liugong, Weihai, Shandong, Tiongkok"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        122.18,
+        37.505
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Island fortress protecting Weihaiwei harbor where Admiral Ding Ruchang maintained resistance until his suicide on 12 February 1895.",
+        "id": "Pulau berbenteng pelindung dermaga Weihaiwei tempat Laksamana Ding Ruchang memimpin perlawanan terakhir sebelum bunuh diri pada 12 Februari 1895."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "sasebo",
+      "name": {
+        "en": "Sasebo Naval District",
+        "id": "Pangkalan Angkatan Laut Sasebo"
+      },
+      "modernName": {
+        "en": "Sasebo, Nagasaki Prefecture, Japan",
+        "id": "Sasebo, Prefektur Nagasaki, Jepang"
+      },
+      "kind": "port",
+      "coordinates": [
+        129.715,
+        33.16
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Principal deployment port and maintenance base for the Imperial Japanese Navy Combined Fleet under Vice Admiral Ito Sukeyuki.",
+        "id": "Pelabuhan pemberangkatan dan pangkalan logistik utama Armada Gabungan Angkatan Laut Kekaisaran Jepang."
+      },
+      "sources": [
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "hiroshima",
+      "name": {
+        "en": "Hiroshima (Imperial GHQ)",
+        "id": "Hiroshima (Markas Besar Kekaisaran)"
+      },
+      "modernName": {
+        "en": "Hiroshima, Japan",
+        "id": "Hiroshima, Jepang"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        132.4553,
+        34.3853
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Wartime command center of the Meiji Emperor and Imperial General Headquarters from September 1894 to April 1895.",
+        "id": "Pusat komando masa perang Kaisar Meiji dan Markas Besar Angkatan Bersenjata Jepang sejak September 1894 hingga April 1895."
+      },
+      "sources": [
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "tianjin",
+      "name": {
+        "en": "Tianjin (Zhili Headquarters)",
+        "id": "Tianjin (Markas Zhili)"
+      },
+      "modernName": {
+        "en": "Tianjin, China",
+        "id": "Tianjin, Tiongkok"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        117.2008,
+        39.0842
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Official seat of Viceroy Li Hongzhang, nerve center of the Beiyang military and administrative modernization apparatus.",
+        "id": "Pusat pemerintahan Raja Muda Li Hongzhang, markas komando militer Beiyang dan proyek modernisasi pertahanan Tiongkok utara."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "shimonoseki",
+      "name": {
+        "en": "Shimonoseki (Shunpanro)",
+        "id": "Shimonoseki (Shunpanro)"
+      },
+      "modernName": {
+        "en": "Shimonoseki, Yamaguchi Prefecture, Japan",
+        "id": "Shimonoseki, Prefektur Yamaguchi, Jepang"
+      },
+      "kind": "port",
+      "coordinates": [
+        130.9333,
+        33.95
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Japanese port city where Li Hongzhang and Ito Hirobumi negotiated and signed the historic peace treaty on 17 April 1895.",
+        "id": "Kota pelabuhan Jepang tempat Li Hongzhang dan Ito Hirobumi merundingkan dan menandatangani perjanjian damai pada 17 April 1895."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "japan-first-army",
+      "kind": "unit",
+      "name": {
+        "en": "Japanese First Army",
+        "id": "Angkatan Darat Pertama Jepang"
+      },
+      "faction": "japan-empire",
+      "description": {
+        "en": "Field army commanded by General Yamagata Aritomo (later Nozu Michitsura), driving north from Seoul to Pyongyang and across the Yalu River into Manchuria.",
+        "id": "Korps tentara darat pimpinan Jenderal Yamagata Aritomo (kemudian Nozu Michitsura), bergerak dari Seoul ke Pyongyang lalu melintasi Sungai Yalu ke Manchuria."
+      },
+      "commanders": [
+        {
+          "en": "General Yamagata Aritomo",
+          "id": "Jenderal Yamagata Aritomo"
+        },
+        {
+          "en": "Lieutenant General Nozu Michitsura",
+          "id": "Letnan Jenderal Nozu Michitsura"
+        }
+      ],
+      "style": {
+        "color": "#BC002D",
+        "width": 3
+      },
+      "track": [
+        {
+          "when": "1894-06-12/1894-07-20",
+          "at": "incheon",
+          "strength": 12000,
+          "label": {
+            "en": "Disembarkation at Chemulpo",
+            "id": "Pendaratan di Chemulpo"
+          }
+        },
+        {
+          "when": "1894-07-29",
+          "at": "seonghwan",
+          "strength": 4000,
+          "label": {
+            "en": "Assault at Seonghwan",
+            "id": "Serangan di Seonghwan"
+          }
+        },
+        {
+          "when": "1894-08-05/1894-08-25",
+          "at": "seoul",
+          "strength": 16000,
+          "label": {
+            "en": "Muster at Hanseong",
+            "id": "Konsolidasi di Hanseong"
+          }
+        },
+        {
+          "when": "1894-09-15/1894-09-20",
+          "at": "pyongyang",
+          "strength": 16000,
+          "label": {
+            "en": "Storming Pyongyang",
+            "id": "Menyerbu Pyongyang"
+          }
+        },
+        {
+          "when": "1894-10-24/1894-10-30",
+          "at": "jiuliancheng",
+          "strength": 18000,
+          "label": {
+            "en": "Crossing the Yalu River",
+            "id": "Menyeberangi Sungai Yalu"
+          }
+        },
+        {
+          "when": "1894-11-15/1895-04-17",
+          "at": "fenghuancheng",
+          "strength": 20000,
+          "label": {
+            "en": "Manchurian Winter Line",
+            "id": "Garis Pertahanan Manchuria"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "japan-second-army",
+      "kind": "unit",
+      "name": {
+        "en": "Japanese Second Army",
+        "id": "Angkatan Darat Kedua Jepang"
+      },
+      "faction": "japan-empire",
+      "description": {
+        "en": "Amphibious strike army under General Oyama Iwao that captured Port Arthur on the Liaodong Peninsula before landing in Shandong to invest Weihaiwei.",
+        "id": "Pasukan pendarat amfibi pimpinan Jenderal Oyama Iwao yang merebut Port Arthur lalu mendarat di Shandong untuk mengepung Weihaiwei."
+      },
+      "commanders": [
+        {
+          "en": "General Oyama Iwao",
+          "id": "Jenderal Oyama Iwao"
+        }
+      ],
+      "style": {
+        "color": "#9B111E",
+        "width": 3
+      },
+      "track": [
+        {
+          "when": "1894-10-15/1894-10-19",
+          "at": "hiroshima",
+          "strength": 25000,
+          "label": {
+            "en": "Embarkation at Hiroshima",
+            "id": "Pemberangkatan di Hiroshima"
+          }
+        },
+        {
+          "when": "1894-10-24/1894-11-03",
+          "at": "huayuanhou",
+          "strength": 25000,
+          "mode": "sea",
+          "label": {
+            "en": "Landing at Huayuanhou",
+            "id": "Pendaratan di Huayuanhou"
+          }
+        },
+        {
+          "when": "1894-11-06",
+          "at": "jinzhou",
+          "strength": 24000,
+          "label": {
+            "en": "Capture of Jinzhou",
+            "id": "Perebutan Jinzhou"
+          }
+        },
+        {
+          "when": "1894-11-21/1895-01-10",
+          "at": "port-arthur",
+          "strength": 24000,
+          "label": {
+            "en": "Storming Port Arthur",
+            "id": "Penyerbuan Port Arthur"
+          }
+        },
+        {
+          "when": "1895-01-20",
+          "at": "rongcheng",
+          "strength": 25000,
+          "mode": "sea",
+          "label": {
+            "en": "Landing at Rongcheng Bay",
+            "id": "Pendaratan di Teluk Rongcheng"
+          }
+        },
+        {
+          "when": "1895-01-30/1895-04-17",
+          "at": "weihaiwei",
+          "strength": 25000,
+          "label": {
+            "en": "Investment of Weihaiwei",
+            "id": "Pengepungan Weihaiwei"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "japan-combined-fleet",
+      "kind": "unit",
+      "name": {
+        "en": "Imperial Japanese Combined Fleet",
+        "id": "Armada Gabungan Angkatan Laut Jepang"
+      },
+      "faction": "japan-empire",
+      "description": {
+        "en": "Modern naval fleet commanded by Vice Admiral Ito Sukeyuki, utilizing quick-firing artillery and high speed to defeat the Beiyang Fleet at the Yalu and Weihaiwei.",
+        "id": "Armada laut modern di bawah Laksamana Madya Ito Sukeyuki, mengandalkan artileri tembak-cepat dan kecepatan tinggi untuk mengalahkan Armada Beiyang."
+      },
+      "commanders": [
+        {
+          "en": "Vice Admiral Ito Sukeyuki",
+          "id": "Laksamana Madya Ito Sukeyuki"
+        },
+        {
+          "en": "Rear Admiral Tsuboi Kouzo",
+          "id": "Laksamana Muda Tsuboi Kouzo"
+        }
+      ],
+      "style": {
+        "color": "#E63946",
+        "width": 2.5
+      },
+      "track": [
+        {
+          "when": "1894-07-15/1894-07-23",
+          "at": "sasebo",
+          "strength": 12,
+          "label": {
+            "en": "Fleet Sortie from Sasebo",
+            "id": "Pemberangkatan dari Sasebo"
+          }
+        },
+        {
+          "when": "1894-07-25",
+          "at": "pungdo",
+          "strength": 3,
+          "mode": "sea",
+          "label": {
+            "en": "Ambush at Pungdo",
+            "id": "Pertempuran Pungdo"
+          }
+        },
+        {
+          "when": "1894-08-05/1894-09-10",
+          "at": "incheon",
+          "strength": 12,
+          "mode": "sea",
+          "label": {
+            "en": "Escorting Troop Transports",
+            "id": "Pengawalan Konvoi di Incheon"
+          }
+        },
+        {
+          "when": "1894-09-17",
+          "at": "yalu-mouth",
+          "strength": 12,
+          "mode": "sea",
+          "label": {
+            "en": "Battle of the Yalu River",
+            "id": "Pertempuran Sungai Yalu"
+          }
+        },
+        {
+          "when": "1894-10-20/1894-11-25",
+          "at": "port-arthur",
+          "strength": 12,
+          "mode": "sea",
+          "label": {
+            "en": "Naval Blockade of Port Arthur",
+            "id": "Blokade Laut Port Arthur"
+          }
+        },
+        {
+          "when": "1895-01-25/1895-04-17",
+          "at": "weihaiwei",
+          "strength": 25,
+          "mode": "sea",
+          "label": {
+            "en": "Blockade & Torpedo Raids at Weihaiwei",
+            "id": "Blokade dan Serangan Torpedo di Weihaiwei"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "beiyang-fleet",
+      "kind": "unit",
+      "name": {
+        "en": "Qing Beiyang Fleet",
+        "id": "Armada Beiyang Qing"
+      },
+      "faction": "qing-empire",
+      "description": {
+        "en": "China's premier modern navy centered on the German-built ironclad battleships Dingyuan and Zhenyuan, commanded by Admiral Ding Ruchang.",
+        "id": "Armada laut modern andalan Tiongkok berintikan kapal tempur lapis baja Dingyuan dan Zhenyuan, dipimpin Laksamana Ding Ruchang."
+      },
+      "commanders": [
+        {
+          "en": "Admiral Ding Ruchang",
+          "id": "Laksamana Ding Ruchang"
+        },
+        {
+          "en": "Commodore Liu Buchan",
+          "id": "Komodor Liu Buchan"
+        },
+        {
+          "en": "Captain Deng Shichang",
+          "id": "Kapten Deng Shichang"
+        }
+      ],
+      "style": {
+        "color": "#D48806",
+        "width": 2.5
+      },
+      "track": [
+        {
+          "when": "1894-07-01/1894-07-20",
+          "at": "weihaiwei",
+          "strength": 14,
+          "label": {
+            "en": "Concentration at Weihaiwei",
+            "id": "Konsentrasi di Weihaiwei"
+          }
+        },
+        {
+          "when": "1894-07-25",
+          "at": "pungdo",
+          "strength": 3,
+          "mode": "sea",
+          "label": {
+            "en": "Engagement at Pungdo",
+            "id": "Bentrokan di Pungdo"
+          }
+        },
+        {
+          "when": "1894-08-01/1894-09-12",
+          "at": "port-arthur",
+          "strength": 12,
+          "mode": "sea",
+          "label": {
+            "en": "Anchorage at Port Arthur",
+            "id": "Pangkalan di Port Arthur"
+          }
+        },
+        {
+          "when": "1894-09-17",
+          "at": "yalu-mouth",
+          "strength": 12,
+          "mode": "sea",
+          "label": {
+            "en": "Battle of the Yalu River",
+            "id": "Pertempuran Sungai Yalu"
+          }
+        },
+        {
+          "when": "1894-09-25/1894-11-10",
+          "at": "port-arthur",
+          "strength": 10,
+          "mode": "sea",
+          "label": {
+            "en": "Drydock Repairs at Port Arthur",
+            "id": "Perbaikan Dok di Port Arthur"
+          }
+        },
+        {
+          "when": "1894-11-15/1895-02-12",
+          "at": "weihaiwei",
+          "strength": 10,
+          "mode": "sea",
+          "label": {
+            "en": "Last Stand at Weihaiwei",
+            "id": "Pertahanan Terakhir di Weihaiwei"
+          }
+        }
+      ],
+      "states": [
+        {
+          "when": "1895-02-12",
+          "status": "surrendered",
+          "faction": "japan-empire",
+          "label": {
+            "en": "Capitulation of the Fleet",
+            "id": "Kapitulasi Armada Beiyang"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "beiyang-army",
+      "kind": "unit",
+      "name": {
+        "en": "Qing Beiyang & Huai Armies",
+        "id": "Tentara Beiyang dan Huai Qing"
+      },
+      "faction": "qing-empire",
+      "description": {
+        "en": "Qing imperial ground forces deployed to Korea and Manchuria under generals Ye Zhichao, Zuo Baogui, and Song Qing.",
+        "id": "Pasukan darat kekaisaran Qing yang dikerahkan ke Korea dan Manchuria di bawah jenderal Ye Zhichao, Zuo Baogui, dan Song Qing."
+      },
+      "commanders": [
+        {
+          "en": "General Ye Zhichao",
+          "id": "Jenderal Ye Zhichao"
+        },
+        {
+          "en": "General Zuo Baogui",
+          "id": "Jenderal Zuo Baogui"
+        },
+        {
+          "en": "General Song Qing",
+          "id": "Jenderal Song Qing"
+        }
+      ],
+      "style": {
+        "color": "#B8860B",
+        "width": 3
+      },
+      "track": [
+        {
+          "when": "1894-06-10/1894-07-25",
+          "at": "asan",
+          "strength": 3500,
+          "label": {
+            "en": "Camp at Asan",
+            "id": "Markas di Asan"
+          }
+        },
+        {
+          "when": "1894-07-29",
+          "at": "seonghwan",
+          "strength": 3000,
+          "label": {
+            "en": "Defense of Seonghwan",
+            "id": "Pertahanan di Seonghwan"
+          }
+        },
+        {
+          "when": "1894-08-10/1894-09-16",
+          "at": "pyongyang",
+          "strength": 14000,
+          "label": {
+            "en": "Fortified Redoubt at Pyongyang",
+            "id": "Kubu Pertahanan di Pyongyang"
+          }
+        },
+        {
+          "when": "1894-10-01/1894-10-25",
+          "at": "jiuliancheng",
+          "strength": 20000,
+          "label": {
+            "en": "Garrison at Jiuliancheng",
+            "id": "Garnisun di Jiuliancheng"
+          }
+        },
+        {
+          "when": "1894-11-05/1895-04-17",
+          "at": "tianjin",
+          "strength": 25000,
+          "label": {
+            "en": "Capital Defense Reserve at Tianjin",
+            "id": "Cadangan Pertahanan Ibu Kota di Tianjin"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "fort-port-arthur",
+      "kind": "fortification",
+      "name": {
+        "en": "Fortress of Port Arthur",
+        "id": "Benteng Port Arthur"
+      },
+      "faction": "qing-empire",
+      "at": "port-arthur",
+      "description": {
+        "en": "Qing coastal citadel comprising coastal batteries, naval drydocks, and inland hill redoubts designed to defend the approaches to Beijing.",
+        "id": "Kubu pertahanan pantai Qing dengan baterai meriam, dok kering, dan redoubt perbukitan untuk melindungi akses laut menuju Beijing."
+      },
+      "states": [
+        {
+          "when": "1894-11-21",
+          "status": "captured",
+          "faction": "japan-empire",
+          "label": {
+            "en": "Captured by Oyama's Second Army",
+            "id": "Direbut oleh Angkatan Darat Kedua Oyama"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "fort-weihaiwei",
+      "kind": "fortification",
+      "name": {
+        "en": "Fortress of Weihaiwei",
+        "id": "Benteng Weihaiwei"
+      },
+      "faction": "qing-empire",
+      "at": "weihaiwei",
+      "description": {
+        "en": "Major fortified naval station on the northern coast of Shandong Peninsula protecting the entrance to the Bohai Gulf.",
+        "id": "Pangkalan laut berbenteng utama di pesisir utara Semenanjung Shandong yang menjaga pintu masuk Teluk Bohai."
+      },
+      "states": [
+        {
+          "when": "1895-02-12",
+          "status": "captured",
+          "faction": "japan-empire",
+          "label": {
+            "en": "Captured following naval siege",
+            "id": "Direbut setelah pengepungan laut"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "skirmish-pungdo",
+      "kind": "skirmish",
+      "name": {
+        "en": "Battle of Pungdo",
+        "id": "Pertempuran Pungdo"
+      },
+      "when": "1894-07-25",
+      "at": "pungdo",
+      "certainty": "exact",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Rear Admiral Tsuboi Kouzo",
+              "id": "Laksamana Muda Tsuboi Kouzo"
+            }
+          ],
+          "strength": 3
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "Captain Fang Boqian",
+              "id": "Kapten Fang Boqian"
+            }
+          ],
+          "strength": 2,
+          "losses": 1
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Japanese cruisers disable the Qing warship Jiyuan and sink the British transport Kowshing carrying 1,200 Chinese reinforcements.",
+          "id": "Kapal penjelajah Jepang melumpuhkan kapal perang Qing Jiyuan dan menenggelamkan kapal transport Inggris Kowshing berpenumpang 1.200 tentara Tiongkok."
+        }
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "battle-seonghwan",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Seonghwan",
+        "id": "Pertempuran Seonghwan"
+      },
+      "when": "1894-07-29",
+      "at": "seonghwan",
+      "certainty": "exact",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Major General Oshima Yoshimasa",
+              "id": "Mayor Jenderal Oshima Yoshimasa"
+            }
+          ],
+          "strength": 4000,
+          "losses": 88
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "General Nie Shicheng",
+              "id": "Jenderal Nie Shicheng"
+            }
+          ],
+          "strength": 3500,
+          "losses": 500
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Japanese night assault dislodges the Qing defensive positions, forcing Chinese remnants to withdraw toward Pyongyang.",
+          "id": "Serangan malam tentara Jepang mendobrak pertahanan Qing, memaksa sisa-sisa pasukan Tiongkok mundur ke Pyongyang."
+        }
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "war-declaration-1894",
+      "kind": "proclamation",
+      "name": {
+        "en": "Formal Declarations of War",
+        "id": "Deklarasi Resmi Perang"
+      },
+      "when": "1894-08-01",
+      "importance": 3,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "belligerent"
+        },
+        {
+          "faction": "qing-empire",
+          "role": "belligerent"
+        }
+      ],
+      "summary": {
+        "en": "The Meiji Emperor of Japan and the Guangxu Emperor of Qing China issue mutual imperial declarations of war.",
+        "id": "Kaisar Meiji dari Jepang dan Kaisar Guangxu dari Qing Tiongkok menerbitkan maklumat resmi perang secara terbuka."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "battle-pyongyang-1894",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Pyongyang",
+        "id": "Pertempuran Pyongyang"
+      },
+      "when": "1894-09-15/1894-09-16",
+      "at": "pyongyang",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Lieutenant General Nozu Michitsura",
+              "id": "Letnan Jenderal Nozu Michitsura"
+            }
+          ],
+          "strength": 16000,
+          "losses": 700
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "General Zuo Baogui",
+              "id": "Jenderal Zuo Baogui"
+            },
+            {
+              "en": "General Ye Zhichao",
+              "id": "Jenderal Ye Zhichao"
+            }
+          ],
+          "strength": 14000,
+          "losses": 2000
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Decisive Japanese storming of Pyongyang; General Zuo Baogui dies heroically in defense of the walls, while Ye Zhichao flees north to the Yalu River.",
+          "id": "Kemenangan mutlak Jepang merebut Pyongyang; Jenderal Zuo Baogui gugur di atas tembok kota sementara Ye Zhichao melarikan diri ke Sungai Yalu."
+        }
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "battle-yalu-river-1894",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of the Yalu River",
+        "id": "Pertempuran Sungai Yalu"
+      },
+      "when": "1894-09-17",
+      "at": "yalu-mouth",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Vice Admiral Ito Sukeyuki",
+              "id": "Laksamana Madya Ito Sukeyuki"
+            }
+          ],
+          "strength": 12,
+          "losses": 0
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "Admiral Ding Ruchang",
+              "id": "Laksamana Ding Ruchang"
+            },
+            {
+              "en": "Major Philo McGiffin",
+              "id": "Mayor Philo McGiffin"
+            }
+          ],
+          "strength": 12,
+          "losses": 5
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Historic fleet engagement in the Yellow Sea; Japanese quick-firing guns set ablaze and sink five Qing warships including Zhiyuan and Jingyuan, establishing Japanese maritime mastery.",
+          "id": "Pertempuran laut akbar di Laut Kuning; tembakan meriam cepat Jepang membakar dan menenggelamkan lima kapal perang Qing, menegakkan dominasi laut Jepang."
+        }
+      },
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "crossing-yalu-1894",
+      "kind": "battle",
+      "name": {
+        "en": "Crossing of the Yalu River",
+        "id": "Penyeberangan Sungai Yalu"
+      },
+      "when": "1894-10-24/1894-10-25",
+      "at": "jiuliancheng",
+      "certainty": "exact",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "General Yamagata Aritomo",
+              "id": "Jenderal Yamagata Aritomo"
+            }
+          ],
+          "strength": 18000
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "General Song Qing",
+              "id": "Jenderal Song Qing"
+            }
+          ],
+          "strength": 20000
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Yamagata's First Army constructs pontoon bridges overnight and crosses the border into Manchuria, driving Qing defenders out of Jiuliancheng.",
+          "id": "Tentara Pertama Yamagata membangun jembatan ponton di malam hari dan menyeberang masuk ke Manchuria, mendesak pasukan Qing keluar dari Jiuliancheng."
+        }
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "fall-port-arthur-1894",
+      "kind": "capture",
+      "name": {
+        "en": "Fall of Port Arthur",
+        "id": "Jatuhnya Port Arthur"
+      },
+      "when": "1894-11-21",
+      "at": "port-arthur",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "General Oyama Iwao",
+              "id": "Jenderal Oyama Iwao"
+            }
+          ],
+          "strength": 24000
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "General Xu Bangdao",
+              "id": "Jenderal Xu Bangdao"
+            }
+          ],
+          "strength": 13000
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Japanese Second Army overruns Port Arthur's outer forts and coastal batteries in a single day, capturing immense ordnance stores and drydocks.",
+          "id": "Angkatan Darat Kedua Jepang menerobos kubu luar dan baterai pantai Port Arthur dalam satu hari, merebut gudang amunisi raksasa dan dok kapal."
+        }
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "siege-weihaiwei-1895",
+      "kind": "siege",
+      "name": {
+        "en": "Battle and Siege of Weihaiwei",
+        "id": "Pengepungan Weihaiwei"
+      },
+      "when": "1895-01-30/1895-02-12",
+      "at": "weihaiwei",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "General Oyama Iwao",
+              "id": "Jenderal Oyama Iwao"
+            },
+            {
+              "en": "Vice Admiral Ito Sukeyuki",
+              "id": "Laksamana Madya Ito Sukeyuki"
+            }
+          ],
+          "strength": 25000
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "Admiral Ding Ruchang",
+              "id": "Laksamana Ding Ruchang"
+            }
+          ],
+          "strength": 10000
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Coordinated land bombardment and nighttime torpedo boat infiltrations destroy the flagship Dingyuan and trap the surviving fleet in Weihaiwei harbor.",
+          "id": "Pengeboman darat terkoordinasi dan serbuan kapal torpedo malam menghancurkan kapal bendera Dingyuan dan mengurung sisa armada di dermaga Weihaiwei."
+        }
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "surrender-beiyang-1895",
+      "kind": "surrender",
+      "name": {
+        "en": "Surrender of the Beiyang Fleet",
+        "id": "Penyerahan Armada Beiyang"
+      },
+      "when": "1895-02-12",
+      "at": "liugong-island",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "qing-empire",
+          "role": "defender"
+        },
+        {
+          "faction": "japan-empire",
+          "role": "attacker"
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Admiral Ding Ruchang commits suicide by poison; Qing representatives surrender Liugong Island and hand over the surviving battleships to Admiral Ito.",
+          "id": "Laksamana Ding Ruchang bunuh diri dengan racun; perwakilan Qing menyerahkan Pulau Liugong dan kapal tempur Zhenyuan kepada Laksamana Ito."
+        }
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "treaty-shimonoseki-1895",
+      "kind": "treaty",
+      "name": {
+        "en": "Treaty of Shimonoseki",
+        "id": "Perjanjian Shimonoseki"
+      },
+      "when": "1895-04-17",
+      "at": "shimonoseki",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "qing-empire",
+          "role": "negotiator",
+          "commanders": [
+            {
+              "en": "Viceroy Li Hongzhang",
+              "id": "Raja Muda Li Hongzhang"
+            }
+          ]
+        },
+        {
+          "faction": "japan-empire",
+          "role": "negotiator",
+          "commanders": [
+            {
+              "en": "Prime Minister Ito Hirobumi",
+              "id": "Perdana Menteri Ito Hirobumi"
+            }
+          ]
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Peace treaty signed: China recognizes the total independence of Korea, cedes Taiwan and the Pescadores to Japan, and agrees to an indemnity of 200 million taels.",
+          "id": "Perjanjian damai ditandatangani: Tiongkok mengakui kemerdekaan penuh Korea, menyerahkan Taiwan dan Kepulauan Pescadores kepada Jepang, serta membayar ganti rugi 200 juta tael."
+        }
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-crisis-pungdo",
+      "title": {
+        "en": "Crisis in Korea: The Ambush at Pungdo",
+        "id": "Krisis di Korea: Penyergapan di Pungdo"
+      },
+      "when": "1894-07-20/1894-08-05",
+      "camera": {
+        "center": [
+          126.7,
+          37.2
+        ],
+        "zoom": 8,
+        "pitch": 25,
+        "bearing": 0
+      },
+      "focus": [
+        "pungdo",
+        "seonghwan",
+        "incheon",
+        "japan-combined-fleet",
+        "skirmish-pungdo"
+      ],
+      "body": {
+        "en": "In the summer of 1894, the peasant-led **Donghak Rebellion** threatened the Joseon court in Korea. King Gojong requested imperial military assistance from Beijing, prompting Viceroy Li Hongzhang to dispatch 3,000 soldiers of the Huai Army to Asan. Asserting the terms of the 1885 Tianjin Convention, the Empire of Japan deployed an expeditionary force under Major General Oshima Yoshimasa to Chemulpo (Incheon) and stormed Gyeongbokgung Palace in Seoul to install a pro-Japanese regency.\n\nOn 25 July 1894, before any formal declaration of war, three fast cruisers of the Japanese Flying Squadron intercepted Qing warships escorting troop transports off **Pungdo Island**. Captain Togo Heihachiro aboard the cruiser *Naniwa* intercepted the British-chartered steamship *Kowshing*, laden with over a thousand Qing reinforcements. When the Chinese troops refused to surrender, the *Naniwa* torpedoed and sank the vessel. Four days later at **Seonghwan**, Japanese infantry routed General Nie Shicheng's defensive entrenchments, throwing Chinese forces back toward Pyongyang.",
+        "id": "Pada musim panas 1894, letupan **Pemberontakan Petani Donghak** mengguncang takhta Dinasti Joseon di Korea. Raja Gojong memohon bantuan militer dari Beijing, mendorong Raja Muda Li Hongzhang mengirim 3.000 serdadu Tentara Huai ke Asan. Memanfaatkan celah Perjanjian Tianjin 1885, Kekaisaran Jepang segera mendaratkan korps ekspedisi di Chemulpo (Incheon) dan menguasai Istana Gyeongbokgung di Seoul demi mengangkat kabinet pro-Tokyo.\n\nPada 25 Juli 1894, sebelum genderang perang resmi ditabuh, tiga kapal penjelajah cepat Jepang menyergap armada Qing di lepas pantai **Pulau Pungdo**. Kapten Togo Heihachiro di atas kapal *Naniwa* mencegat kapal uap berbendera Inggris *Kowshing* yang mengangkut seribu prajurit bala bantuan Tiongkok. Karena tentara Qing menolak menyerah, *Naniwa* menenggelamkan kapal tersebut. Empat hari berselang di **Seonghwan**, serbuan bayonet Jepang mengobrak-abrik kubu pertahanan Jenderal Nie Shicheng dan memukul mundur garnisun Tiongkok ke utara."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "ch-2-fall-pyongyang",
+      "title": {
+        "en": "The Storming of Pyongyang",
+        "id": "Serbuan Menembus Benteng Pyongyang"
+      },
+      "when": "1894-08-15/1894-09-16",
+      "camera": {
+        "center": [
+          125.8,
+          39.1
+        ],
+        "zoom": 8.5,
+        "pitch": 30,
+        "bearing": 0
+      },
+      "focus": [
+        "pyongyang",
+        "japan-first-army",
+        "beiyang-army",
+        "battle-pyongyang-1894"
+      ],
+      "body": {
+        "en": "Following mutual declarations of war on 1 August, Chinese commanders concentrated approximately 14,000 soldiers from four regional armies inside the ancient stone walls of **Pyongyang**. Commanding modern Krupp field artillery and Gatling guns, the Qing garrison prepared for an extended siege under the nominal command of General Ye Zhichao.\n\nMarching rapidly north through driving monsoonal rains, General Yamagata Aritomo's **First Army** launched a multi-pronged assault on the fortress at dawn on 15 September 1894. While Japanese units attacked the southern gates as a diversion, main columns scaled the rugged northern redoubts at Moranbong Hill. In fierce hand-to-hand fighting, the Manchu commander **General Zuo Baogui** was killed personally directing artillery fire from the ramparts. Panic gripped the defenders; under cover of a violent midnight thunderstorm, Ye Zhichao abandoned the citadel and retreated across the Yalu River into Manchuria.",
+        "id": "Pasca-deklarasi perang resmi pada 1 Agustus, komando militer Tiongkok memusatkan sekitar 14.000 prajurit dari empat divisi tentara di balik tembok batu kuno **Pyongyang**. Dilengkapi artileri medan Krupp dan senapan mesin Gatling, garnisun Qing bersiap menghadapi pengepungan panjang di bawah komando Jenderal Ye Zhichao.\n\nBergerak cepat menerjang hujan monsun lebat, **Angkatan Darat Pertama** pimpinan Jenderal Yamagata Aritomo melancarkan serangan serentak dari berbagai penjuru pada fajar 15 September 1894. Sementara pasukan pengalih menggempur gerbang selatan, kolom utama Jepang mendaki bukit Moranbong di utara. Dalam pertempuran jarak dekat yang sengit, jenderal setia Manchu **Zuo Baogui** gugur saat memimpin tembakan meriam di atas benteng. Kepanikan melanda garnisun; di tengah badai petir malam buta, Ye Zhichao meninggalkan benteng dan kabur melintasi Sungai Yalu menuju Manchuria."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "ch-3-yalu-ironclads",
+      "title": {
+        "en": "Clash of Ironclads: Battle of the Yalu River",
+        "id": "Benturan Kapal Perang di Muara Yalu"
+      },
+      "when": "1894-09-17/1894-09-25",
+      "camera": {
+        "center": [
+          123.9,
+          39.8
+        ],
+        "zoom": 8,
+        "pitch": 25,
+        "bearing": 0
+      },
+      "focus": [
+        "yalu-mouth",
+        "japan-combined-fleet",
+        "beiyang-fleet",
+        "battle-yalu-river-1894"
+      ],
+      "body": {
+        "en": "On 17 September 1894, just two days after the fall of Pyongyang, the naval destinies of China and Japan collided off the mouth of the **Yalu River**. Having escorted troop transports landing army reinforcements at Dagushan, Admiral Ding Ruchang's **Beiyang Fleet** sighted Vice Admiral Ito Sukeyuki's Combined Fleet advancing from the south.\n\nThe Beiyang Fleet steamed in an inverted V-line formation led by its twin German-built ironclad behemoths, the *Dingyuan* and *Zhenyuan*. Ito countered with single-column line-ahead tactics, utilizing the exceptional speed and quick-firing guns of his Flying Squadron (*Yoshino*, *Takachiho*, *Akitsushima*, and *Naniwa*). The Japanese circled the slower Chinese flanks, smothering their unarmored cruisers in high-explosive lyddite shells. The Chinese cruiser *Zhiyuan*, commanded by the defiant Captain Deng Shichang, attempted to ram the *Yoshino* before exploding and sinking. By nightfall, five Chinese warships were sunk or burning, while the heavy armor of the *Dingyuan* and *Zhenyuan* survived hundreds of direct hits. The battle handed absolute mastery of the Yellow Sea to Japan.",
+        "id": "Pada 17 September 1894, hanya dua hari setelah jatuhnya Pyongyang, takdir maritim Tiongkok dan Jepang bertabrakan di perairan **Muara Sungai Yalu**. Usai mengawal kapal angkut yang menurunkan bala bantuan di Dagushan, **Armada Beiyang** pimpinan Laksamana Ding Ruchang melihat kepulan asap Armada Gabungan Laksamana Madya Ito Sukeyuki mendekat dari selatan.\n\nArmada Beiyang berlayar dalam formasi baji V terbalik yang dipimpin dua kapal tempur lapis baja raksasa buatan Jerman, *Dingyuan* dan *Zhenyuan*. Laksamana Ito membalas dengan formasi garis lurus memanjang, memanfaatkan kecepatan tinggi dan daya tembak meriam reaksi-cepat dari Skadron Terbang (*Yoshino*, *Takachiho*, *Akitsushima*, dan *Naniwa*). Manuver Jepang mengitari sayap kapal Tiongkok dan menghujani kapal penjelajah tanpa zirah dengan peluru berdaya ledak tinggi. Kapal penjelajah *Zhiyuan* di bawah Kapten Deng Shichang sempat mencoba menabrak *Yoshino* sebelum meledak dan karam. Menjelang senja, lima kapal perang Qing tenggelam atau terbakar; kendati *Dingyuan* dan *Zhenyuan* bertahan dari ratusan hantaman peluru, supremasi Laut Kuning jatuh sepenuhnya ke tangan Jepang."
+      },
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "ch-4-crossing-manchuria",
+      "title": {
+        "en": "Crossing the Yalu into Manchuria",
+        "id": "Menyeberangi Sungai Yalu Menuju Manchuria"
+      },
+      "when": "1894-10-15/1894-10-31",
+      "camera": {
+        "center": [
+          124.5,
+          40.2
+        ],
+        "zoom": 8.5,
+        "pitch": 30,
+        "bearing": 0
+      },
+      "focus": [
+        "jiuliancheng",
+        "fenghuancheng",
+        "japan-first-army",
+        "crossing-yalu-1894"
+      ],
+      "body": {
+        "en": "With Korea cleared of organized Chinese resistance, Field Marshal Yamagata pushed the **First Army** to the border river of Yalu. Facing them across the river at **Jiuliancheng** stood General Song Qing with 20,000 troops entrenched behind earthen redoubts and riverbank parapets.\n\nOn the night of 24 October 1894, Japanese military engineers silently anchored pontoon bridges across the swift waters of the Yalu upstream at Shuikou. Under cover of heavy artillery duels, Japanese infantry crossed into Chinese sovereign territory undetected. As morning mist lifted, Yamagata launched an envelopment that outflanked the defenses. Disheartened by the disaster at Pyongyang, the Qing defenders abandoned their magazines and fled inland to **Fenghuancheng**, opening the gates of Manchuria to the invading forces.",
+        "id": "Setelah Korea bersih dari kekuatan terorganisasi Tiongkok, Marsekal Yamagata mendorong **Angkatan Darat Pertama** ke tapal batas Sungai Yalu. Di seberang sungai di **Jiuliancheng**, Jenderal Song Qing menyiagakan 20.000 prajurit di balik benteng parit dan benteng tanah di tepian sungai.\n\nPada malam 24 Oktober 1894, korps zeni Jepang membentangkan jembatan ponton melintasi arus deras Sungai Yalu di hulu Shuikou tanpa suara. Dilindungi duel artileri berat, infantri Jepang menyeberang masuk ke wilayah kedaulatan Dinasti Qing. Begitu kabut pagi tersibak, Yamagata melancarkan manuver sayap yang mematikan. Terbayang kekalahan di Pyongyang, serdadu Qing meninggalkan gudang peluru dan melarikan diri ke pedalaman **Fenghuancheng**, membuka pintu gerbang Manchuria bagi serbuan Jepang."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "ch-5-storming-port-arthur",
+      "title": {
+        "en": "The Fall of Port Arthur",
+        "id": "Jatuhnya Benteng Port Arthur"
+      },
+      "when": "1894-11-05/1894-11-25",
+      "camera": {
+        "center": [
+          121.5,
+          38.9
+        ],
+        "zoom": 8.5,
+        "pitch": 30,
+        "bearing": 0
+      },
+      "focus": [
+        "port-arthur",
+        "jinzhou",
+        "dalian",
+        "fort-port-arthur",
+        "fall-port-arthur-1894"
+      ],
+      "body": {
+        "en": "While the First Army advanced in Manchuria, General Oyama Iwao's **Second Army** landed at Huayuanhou on 24 October to strike the tip of the Liaodong Peninsula. The objective was **Port Arthur (Lüshunkou)**, hailed as the 'Gibraltar of the East' and fortified with 22 coastal and hill bastions, state-of-the-art German Krupp artillery, and comprehensive naval dockyards.\n\nOyama captured the walled town of **Jinzhou** on 6 November, sealing the narrow peninsula isthmus, followed immediately by the bloodless occupation of the deep-water harbor at **Talienwan (Dalian)**. On 21 November 1894, Japanese siege columns launched a ferocious coordinated assault against Port Arthur's fortress perimeter. Despite furious defensive fire from the Table Mountain forts, Japanese mountain artillery silenced the batteries within hours. By sunset, Port Arthur was firmly in Japanese hands, along with vast stockpiles of ammunition, coal, and naval stores.",
+        "id": "Saat Tentara Pertama maju di Manchuria, **Angkatan Darat Kedua** pimpinan Jenderal Oyama Iwao mendarat di Huayuanhou pada 24 Oktober untuk menyerang ujung Semenanjung Liaodong. Target utama adalah **Port Arthur (Lüshunkou)**, yang dijuluki 'Gibraltar Asia Timur', diperkuat 22 baterai meriam Krupp Jerman dan dok kapal tercanggih di Tiongkok.\n\nOyama merebut kota berdinding **Jinzhou** pada 6 November untuk mengunci genting tanah semenanjung, disusul pendudukan pelabuhan dalam di **Talienwan (Dalian)** tanpa perlawanan. Pada 21 November 1894, kolom penyerbu Jepang melancarkan serangan serentak ke benteng Port Arthur. Meski dihujani tembakan dari benteng bukit Meishishan, artileri gunung Jepang melumpuhkan baterai meriam Qing dalam beberapa jam. Saat matahari terbenam, Port Arthur jatuh seutuhnya ke tangan Jepang bersama persediaan batu bara dan amunisi yang melimpah."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "ch-6-winter-liaodong",
+      "title": {
+        "en": "The Bitter Liaodong Winter",
+        "id": "Musim Dingin Berdarah di Liaodong"
+      },
+      "when": "1894-12-01/1895-01-15",
+      "camera": {
+        "center": [
+          123.5,
+          40
+        ],
+        "zoom": 7.5,
+        "pitch": 25,
+        "bearing": 0
+      },
+      "focus": [
+        "fenghuancheng",
+        "port-arthur",
+        "japan-first-army",
+        "japan-second-army"
+      ],
+      "body": {
+        "en": "As sub-zero winter descended over southern Manchuria and Liaodong, temperatures plunged to minus thirty degrees Celsius. Chinese forces regrouped under General Song Qing and Viceroy Liu Kunyi, launching repeated winter counterattacks against Haicheng to break the Japanese stranglehold on the Beijing corridor.\n\nDespite frostbite and logistical strain in mountainous terrain, Japanese forces held their perimeter and systematically repulsed four separate Chinese counter-offensives. Meanwhile, Imperial Headquarters in Hiroshima drew plans for the ultimate operation of the war: an amphibious assault on the Shandong Peninsula to destroy the remnants of the Beiyang Fleet sheltered at Weihaiwei.",
+        "id": "Saat musim dingin membekukan kawasan selatan Manchuria dan Semenanjung Liaodong, suhu merosot drastis hingga minus tiga puluh derajat Celsius. Pasukan kekaisaran Qing berhimpun kembali di bawah Jenderal Song Qing dan Raja Muda Liu Kunyi, melancarkan serangan balik bertubi-tubi di Haicheng untuk membebaskan jalur menuju Beijing.\n\nMeski didera radang dingin (frostbite) dan medan pegunungan bersalju, pertahanan Jepang kokoh mematahkan empat gelombang serangan balik Tiongkok. Sementara itu di Markas Besar Kekaisaran di Hiroshima, rencana operasi puncak perang dirampungkan: pendaratan amfibi ke Semenanjung Shandong untuk memusnahkan sisa-sisa Armada Beiyang yang berlindung di Weihaiwei."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "ch-7-siege-weihaiwei",
+      "title": {
+        "en": "The Annihilation at Weihaiwei",
+        "id": "Pengepungan dan Kehancuran di Weihaiwei"
+      },
+      "when": "1895-01-18/1895-02-15",
+      "camera": {
+        "center": [
+          122.2,
+          37.5
+        ],
+        "zoom": 8.5,
+        "pitch": 30,
+        "bearing": 0
+      },
+      "focus": [
+        "weihaiwei",
+        "liugong-island",
+        "fort-weihaiwei",
+        "beiyang-fleet",
+        "siege-weihaiwei-1895",
+        "surrender-beiyang-1895"
+      ],
+      "body": {
+        "en": "On 20 January 1895, Oyama's Second Army landed at **Rongcheng Bay** on the eastern tip of Shandong in heavy blizzards. Marching westward through deep snow, Japanese divisions attacked the landward forts of **Weihaiwei** from behind on 30 January. Within two days, all landward fortifications fell, and Japanese gunners turned the captured Krupp artillery against the harbor.\n\nTrapped inside the anchorage between the mainland and fortified **Liugong Island**, Admiral Ding Ruchang refused surrender offers delivered personally by his pre-war friend, Admiral Ito. On the nights of 4 and 5 February, daring Japanese torpedo boat flotillas penetrated the harbor boom defenses under freezing spray, torpedoing the flagship *Dingyuan*. Realizing the situation was hopeless and refusing dishonor, Admiral Ding took a lethal dose of opium on 12 February 1895. His subordinate commanders surrendered the surviving ironclad *Zhenyuan* and Liugong Island, ending the existence of the Beiyang Fleet.",
+        "id": "Pada 20 Januari 1895, Angkatan Darat Kedua Oyama mendarat di **Teluk Rongcheng** di ujung timur Shandong di tengah badai salju lebat. Berbaris ke barat menerobos salju tebal, divisi infantri Jepang menyerbu benteng darat **Weihaiwei** dari arah belakang pada 30 Januari. Dalam dua hari, seluruh benteng darat direbut, dan prajurit meriam Jepang membalikkan meriam Krupp rampasan untuk membombardir dermaga.\n\nTerjebak di perairan teluk antara daratan dan **Pulau Liugong**, Laksamana Ding Ruchang menolak tawaran menyerah yang disampaikan secara ksatria oleh sahabat lamanya sebelum perang, Laksamana Ito. Pada malam 4 dan 5 Februari, perahu-perahu torpedo Jepang menerobos rintangan rantai pelabuhan dan menembakkan torpedo yang menenggelamkan kapal bendera *Dingyuan*. Menyadari kekalahan tak terelakkan dan menolak dipermalukan, Laksamana Ding meminum racun opium pada 12 Februari 1895. Para perwira bawahannya menyerahkan kapal tempur *Zhenyuan* dan Pulau Liugong, mengakhiri riwayat Armada Beiyang selamanya."
+      },
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "ch-8-treaty-shimonoseki",
+      "title": {
+        "en": "The Peace of Shimonoseki",
+        "id": "Perjanjian Damai Shimonoseki"
+      },
+      "when": "1895-03-15/1895-04-20",
+      "camera": {
+        "center": [
+          126,
+          36.5
+        ],
+        "zoom": 6.2,
+        "pitch": 20,
+        "bearing": 0
+      },
+      "focus": [
+        "shimonoseki",
+        "tianjin",
+        "treaty-shimonoseki-1895"
+      ],
+      "body": {
+        "en": "With the Beiyang Fleet wiped out and Japanese armies poised across Manchuria and Shandong to march directly on Beijing, the Qing court had no alternative but to sue for peace. In March 1895, Viceroy Li Hongzhang traveled to the Japanese port city of **Shimonoseki** to negotiate directly with Prime Minister Ito Hirobumi and Foreign Minister Mutsu Munemitsu.\n\nSigned at the Shunpanro hall on **17 April 1895**, the **Treaty of Shimonoseki** dictated devastating terms: China formally recognized the complete independence and autonomy of Korea (ending centuries of Chinese tributary suzerainty), ceded **Taiwan**, the Pescadores Islands, and the Liaodong Peninsula to Japan in perpetuity, opened four treaty ports to Japanese trade, and agreed to pay a crushing war indemnity of 200 million silver Kuping taels.\n\nThough the subsequent **Triple Intervention** by Russia, Germany, and France forced Japan to retrocede Liaodong, the war permanently altered world history: Meiji Japan emerged as the foremost imperial power in Asia, while China's crushing defeat exposed the vulnerability of the Qing Dynasty, accelerating domestic reform, the Boxer Rebellion, and the eventual fall of the imperial order.",
+        "id": "Dengan hancurnya Armada Beiyang dan terbukanya akses jalan bagi pasukan Jepang menuju Beijing, istana Qing tak punya pilihan selain memohon perdamaian. Pada Maret 1895, Raja Muda Li Hongzhang bertolak ke kota pelabuhan **Shimonoseki** untuk berunding langsung dengan Perdana Menteri Ito Hirobumi dan Menteri Luar Negeri Mutsu Munemitsu.\n\nDitandatangani di gedung Shunpanro pada **17 April 1895**, **Perjanjian Shimonoseki** memuat pasal-pasal yang menentukan: Tiongkok secara resmi mengakui kemerdekaan penuh Korea (mengakhiri suzerenitas berabad-abad), menyerahkan **Taiwan**, Kepulauan Pescadores, dan Semenanjung Liaodong kepada Jepang, membuka empat pelabuhan dagang baru, serta membayar ganti rugi perang raksasa sebesar 200 juta tael perak Kuping.\n\nKendati **Intervensi Tiga Negara** (Rusia, Jerman, Prancis) memaksa Jepang mengembalikan Liaodong dengan imbalan perak tambahan, perang ini mengubah peta politik dunia: Meiji Jepang tampil sebagai kekuatan imperialis terkemuka di Asia, sementara kekalahan telak Dinasti Qing membuka jalan bagi pergolakan reformasi, Pemberontakan Boxer, dan runtuhnya tatanan kekaisaran Tiongkok pada awal abad ke-20."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "paine-2003",
+      "type": "book",
+      "citation": "Paine, S. C. M. (2003). The Sino-Japanese War of 1894–1895: Perceptions, Power, and Primacy. Cambridge: Cambridge University Press. ISBN 978-0-521-81714-1."
+    },
+    {
+      "id": "jowett-2013",
+      "type": "book",
+      "citation": "Jowett, Philip (2013). China's Wars: Rousing the Dragon 1894–1949. Oxford: Osprey Publishing. ISBN 978-1-78200-407-3."
+    },
+    {
+      "id": "mcgiffin-1895",
+      "type": "article",
+      "citation": "McGiffin, Philo N. (1895). 'The Battle of the Yalu: Personal Recollections by the Commander of the Chinese Ironclad Chen Yuen.' The Century Magazine, 50(4), pp. 585–604."
+    },
+    {
+      "id": "duus-1998",
+      "type": "book",
+      "citation": "Duus, Peter (1998). The Abacus and the Sword: The Japanese Penetration of Korea, 1895–1910. Berkeley: University of California Press. ISBN 978-0-520-21361-6."
+    },
+    {
+      "id": "jacar-archives",
+      "type": "archive",
+      "citation": "Japan Center for Asian Historical Records (JACAR), National Archives of Japan. Ref. C0606189400, 'Records of the First Sino-Japanese War (Meiji 27–28)'."
+    }
+  ]
+}

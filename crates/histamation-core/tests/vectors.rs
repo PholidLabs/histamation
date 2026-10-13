@@ -124,7 +124,7 @@ fn time_vectors() {
 /* *.frames.json                                                               */
 /* -------------------------------------------------------------------------- */
 
-const FRAME_VECTORS: [(&str, &str); 8] = [
+const FRAME_VECTORS: [(&str, &str); 10] = [
     (
         "test-vectors/austro-prussian-1866.frames.json",
         "data/campaigns/austro-prussian-1866.json",
@@ -148,6 +148,14 @@ const FRAME_VECTORS: [(&str, &str); 8] = [
     (
         "test-vectors/napoleon-russia-1812.frames.json",
         "data/campaigns/napoleon-russia-1812.json",
+    ),
+    (
+        "test-vectors/pungdo-1894.frames.json",
+        "data/campaigns/pungdo-1894.json",
+    ),
+    (
+        "test-vectors/sino-japanese-1894.frames.json",
+        "data/campaigns/sino-japanese-1894.json",
     ),
     (
         "test-vectors/waterloo-1815.frames.json",

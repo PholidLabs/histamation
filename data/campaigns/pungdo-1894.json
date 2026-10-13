@@ -1,0 +1,1372 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "pungdo-1894",
+    "version": "0.1.0",
+    "title": {
+      "en": "Crisis in Korea: The Ambush at Pungdo (1894)",
+      "id": "Krisis di Korea: Penyergapan di Pungdo (1894)"
+    },
+    "subtitle": {
+      "en": "The naval ambush and palace coup that ignited the First Sino-Japanese War",
+      "id": "Penyergapan laut dan kudeta istana yang menyulut Perang Tiongkok-Jepang Pertama"
+    },
+    "description": {
+      "en": "In July 1894, a violent diplomatic and military crisis erupted on the Korean peninsula. When the peasant-led Donghak Rebellion threatened King Gojong's throne, Qing China and Meiji Japan dispatched rival expeditionary forces to Korea under the terms of the 1885 Tianjin Convention. On 23 July, Japanese troops stormed Gyeongbokgung Palace in Seoul, capturing the monarch and deposing pro-Chinese ministers. Two days later off Pungdo Island in Namyang Bay, Japanese cruisers ambushed Qing warships and torpedoed the British-chartered troop transport Kowshing, drowning over a thousand Chinese reinforcements. The crisis culminated in the dawn infantry assault at Seonghwan on 29 July and formal declarations of war on 1 August 1894, transforming East Asian history forever.",
+      "id": "Pada Juli 1894, krisis diplomatik dan militer hebat meletus di Semenanjung Korea. Ketika Pemberontakan Petani Donghak mengancam takhta Raja Gojong, Kekaisaran Qing dan Meiji Jepang sama-sama mengirim pasukan ekspedisi berdasarkan Perjanjian Tianjin 1885. Pada 23 Juli, tentara Jepang menyerbu Istana Gyeongbokgung di Seoul, menawan raja dan menggulingkan menteri-menteri pro-Qing. Dua hari kemudian di lepas pantai Pulau Pungdo di Teluk Namyang, kapal penjelajah Jepang menyergap kapal perang Qing dan menenggelamkan kapal angkut sewaan Inggris Kowshing, menewaskan lebih dari seribu prajurit bala bantuan Tiongkok. Krisis ini memuncak dalam pertempuran fajar di Seonghwan pada 29 Juli dan deklarasi resmi perang pada 1 Agustus 1894, mengubah sejarah Asia Timur selamanya."
+    },
+    "contentWarning": {
+      "en": "Describes 19th-century naval combat, torpedo attacks, palace coups, and the drowning of soldiers aboard a sinking troop transport.",
+      "id": "Menggambarkan pertempuran laut abad ke-19, serangan torpedo, kudeta istana, dan tenggelamnya serdadu di kapal angkut militer."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "updated": "2026-10-13",
+    "timeline": {
+      "extent": "1894-06-01/1894-08-15",
+      "focus": "1894-07-20/1894-08-01"
+    },
+    "map": {
+      "center": [
+        126.8,
+        37.2
+      ],
+      "zoom": 8,
+      "pitch": 25,
+      "bearing": 0,
+      "bounds": [
+        121.5,
+        33,
+        130.5,
+        38.5
+      ],
+      "terrain": {
+        "exaggeration": 1.2
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "qing-empire",
+      "name": {
+        "en": "Qing Empire",
+        "id": "Kekaisaran Qing"
+      },
+      "shortName": {
+        "en": "Qing",
+        "id": "Qing"
+      },
+      "color": "#D48806",
+      "description": {
+        "en": "The Manchu imperial dynasty of China, committed to upholding its historic tributary suzerainty over Joseon Korea with General Ye Zhichao's Huai Army and Captain Fang Boqian's naval detachment.",
+        "id": "Dinasti kekaisaran Manchu Tiongkok yang mempertahankan suzerenitas atas Joseon Korea, mengerahkan Tentara Huai pimpinan Jenderal Ye Zhichao dan skadron laut pimpinan Kapten Fang Boqian."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "japan-empire",
+      "name": {
+        "en": "Empire of Japan",
+        "id": "Kekaisaran Jepang"
+      },
+      "shortName": {
+        "en": "Japan",
+        "id": "Jepang"
+      },
+      "color": "#BC002D",
+      "description": {
+        "en": "The modern Meiji state, fielding the Combined Brigade under Major General Oshima Yoshimasa and the Flying Squadron cruisers Yoshino, Naniwa, and Akitsushima under Rear Admiral Tsuboi Kouzo.",
+        "id": "Negara Meiji modern yang mengerahkan Brigade Gabungan pimpinan Mayor Jenderal Oshima Yoshimasa dan Skadron Terbang penjelajah Yoshino, Naniwa, dan Akitsushima di bawah Laksamana Muda Tsuboi Kouzo."
+      },
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "joseon-kingdom",
+      "name": {
+        "en": "Kingdom of Joseon",
+        "id": "Kerajaan Joseon"
+      },
+      "shortName": {
+        "en": "Joseon",
+        "id": "Joseon"
+      },
+      "color": "#2B5B84",
+      "description": {
+        "en": "The sovereign Korean kingdom ruled by King Gojong and Queen Min, caught in palace factionalism and overwhelmed by foreign military intervention.",
+        "id": "Kerajaan berdaulat Korea di bawah Raja Gojong dan Ratu Min, terbelah oleh intrik istana dan terkepung oleh intervensi militer asing."
+      },
+      "sources": [
+        "paine-2003",
+        "duus-1998"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "pungdo",
+      "name": {
+        "en": "Pungdo Island",
+        "id": "Pulau Pungdo"
+      },
+      "modernName": {
+        "en": "Pungdo, Ansan, Gyeonggi Province, South Korea",
+        "id": "Pungdo, Ansan, Gyeonggi, Korea Selatan"
+      },
+      "kind": "landmark",
+      "coordinates": [
+        126.505,
+        37.112
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Rocky islet at the entrance of Namyang Bay where the Japanese Flying Squadron ambushed the Qing escort ships on 25 July 1894.",
+        "id": "Pulau karang di pintu masuk Teluk Namyang tempat Skadron Terbang Jepang menyergap kapal pengawal Qing pada 25 Juli 1894."
+      },
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "asan-bay",
+      "name": {
+        "en": "Asan Bay (Namyang Gulf)",
+        "id": "Teluk Asan (Teluk Namyang)"
+      },
+      "modernName": {
+        "en": "Asan Bay, Gyeonggi / South Chungcheong, South Korea",
+        "id": "Teluk Asan, Gyeonggi / Chungcheong Selatan, Korea Selatan"
+      },
+      "kind": "river",
+      "coordinates": [
+        126.7,
+        36.98
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Strategic maritime inlet where Qing transports disembarked reinforcements and supplies for the Asan encampment.",
+        "id": "Perairan teluk strategis tempat kapal angkut Qing menurunkan pasukan bala bantuan dan amunisi untuk markas Asan."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "asan",
+      "name": {
+        "en": "Asan",
+        "id": "Asan"
+      },
+      "modernName": {
+        "en": "Asan, South Chungcheong Province, South Korea",
+        "id": "Asan, Chungcheong Selatan, Korea Selatan"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        127.0042,
+        36.7898
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Primary Qing military camp established by General Ye Zhichao in June 1894 with approximately 3,000 soldiers.",
+        "id": "Pangkalan militer utama tentara Qing yang didirikan oleh Jenderal Ye Zhichao pada Juni 1894 dengan sekitar 3.000 serdadu."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "seonghwan",
+      "name": {
+        "en": "Seonghwan",
+        "id": "Seonghwan"
+      },
+      "modernName": {
+        "en": "Seonghwan-eup, Cheonan, South Korea",
+        "id": "Seonghwan-eup, Cheonan, Korea Selatan"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        127.1325,
+        36.9161
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Fortified defensive bottleneck along the Ansong River where General Nie Shicheng made a stand on 29 July 1894.",
+        "id": "Titik pertahanan berbenteng di tepi Sungai Ansong tempat Jenderal Nie Shicheng bertahan pada 29 Juli 1894."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "chemulpo",
+      "name": {
+        "en": "Chemulpo (Incheon)",
+        "id": "Chemulpo (Incheon)"
+      },
+      "modernName": {
+        "en": "Incheon, South Korea",
+        "id": "Incheon, Korea Selatan"
+      },
+      "kind": "port",
+      "coordinates": [
+        126.6269,
+        37.4563
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Principal open treaty port where the Japanese Combined Brigade and foreign consular gunboats were stationed.",
+        "id": "Pelabuhan perjanjian utama tempat Brigade Gabungan Jepang mendarat dan kapal perang konsuler bersandar."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "gyeongbokgung",
+      "name": {
+        "en": "Gyeongbokgung Palace",
+        "id": "Istana Gyeongbokgung"
+      },
+      "modernName": {
+        "en": "Jongno-gu, Seoul, South Korea",
+        "id": "Jongno-gu, Seoul, Korea Selatan"
+      },
+      "kind": "palace",
+      "coordinates": [
+        126.977,
+        37.5796
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Royal Joseon palace stormed by Japanese infantry at 04:30 on 23 July 1894, seizing King Gojong and toppling the pro-Qing government.",
+        "id": "Istana kerajaan Joseon yang diserbu tentara Jepang pada pukul 04.30 tanggal 23 Juli 1894, menawan Raja Gojong dan menggulingkan pemerintahan pro-Qing."
+      },
+      "sources": [
+        "paine-2003",
+        "duus-1998"
+      ]
+    },
+    {
+      "id": "seoul",
+      "name": {
+        "en": "Hanseong (Seoul)",
+        "id": "Hanseong (Seoul)"
+      },
+      "modernName": {
+        "en": "Seoul, South Korea",
+        "id": "Seoul, Korea Selatan"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        126.978,
+        37.5665
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Walled royal capital of the Joseon Kingdom.",
+        "id": "Ibu kota berbenteng Kerajaan Joseon."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "suwon",
+      "name": {
+        "en": "Suwon",
+        "id": "Suwon"
+      },
+      "modernName": {
+        "en": "Suwon, Gyeonggi Province, South Korea",
+        "id": "Suwon, Gyeonggi, Korea Selatan"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        127.0286,
+        37.2636
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Fortified junction city south of Seoul through which Oshima's brigade marched toward Asan.",
+        "id": "Kota persimpangan berbenteng di selatan Seoul yang dilintasi brigade Oshima dalam perjalanan menuju Asan."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "pyeongtaek",
+      "name": {
+        "en": "Pyeongtaek",
+        "id": "Pyeongtaek"
+      },
+      "modernName": {
+        "en": "Pyeongtaek, Gyeonggi Province, South Korea",
+        "id": "Pyeongtaek, Gyeonggi, Korea Selatan"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        127.1129,
+        36.9921
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Northern approach to the Seonghwan river defenses where Japanese scouts made first contact with Qing pickets.",
+        "id": "Pintu masuk utara menuju pertahanan sungai Seonghwan tempat pengintai Jepang pertama kali kontak senjata dengan pos depan Qing."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "jeonju",
+      "name": {
+        "en": "Jeonju",
+        "id": "Jeonju"
+      },
+      "modernName": {
+        "en": "Jeonju, North Jeolla Province, South Korea",
+        "id": "Jeonju, Jeolla Utara, Korea Selatan"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        127.148,
+        35.8242
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Provincial capital captured by Donghak peasant rebels in May 1894, triggering King Gojong's urgent appeal to Beijing.",
+        "id": "Ibu kota provinsi yang direbut pemberontak petani Donghak pada Mei 1894, memicu permohonan darurat Raja Gojong ke Beijing."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "weihaiwei",
+      "name": {
+        "en": "Weihaiwei",
+        "id": "Weihaiwei"
+      },
+      "modernName": {
+        "en": "Weihai, Shandong Province, China",
+        "id": "Weihai, Shandong, Tiongkok"
+      },
+      "kind": "fort",
+      "coordinates": [
+        122.12,
+        37.51
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Naval base of the Qing Beiyang Fleet across the Yellow Sea.",
+        "id": "Pangkalan angkatan laut Armada Beiyang Qing di seberang Laut Kuning."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "sasebo",
+      "name": {
+        "en": "Sasebo",
+        "id": "Sasebo"
+      },
+      "modernName": {
+        "en": "Sasebo, Nagasaki Prefecture, Japan",
+        "id": "Sasebo, Prefektur Nagasaki, Jepang"
+      },
+      "kind": "port",
+      "coordinates": [
+        129.715,
+        33.16
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Staging port of the Imperial Japanese Navy Combined Fleet.",
+        "id": "Pelabuhan tolak Armada Gabungan Angkatan Laut Kekaisaran Jepang."
+      },
+      "sources": [
+        "jacar-archives"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "ijn-flying-squadron",
+      "kind": "unit",
+      "name": {
+        "en": "Japanese Flying Squadron (Yoshino & Akitsushima)",
+        "id": "Skadron Terbang Jepang (Yoshino & Akitsushima)"
+      },
+      "faction": "japan-empire",
+      "description": {
+        "en": "The fast cruiser vanguard of the Imperial Japanese Navy under Rear Admiral Tsuboi Kouzo, centered on the newly commissioned 23-knot protected cruiser Yoshino.",
+        "id": "Garis depan penjelajah cepat Angkatan Laut Jepang di bawah Laksamana Muda Tsuboi Kouzo, berintikan kapal penjelajah berkecepatan 23 knot Yoshino."
+      },
+      "commanders": [
+        {
+          "en": "Rear Admiral Tsuboi Kouzo",
+          "id": "Laksamana Muda Tsuboi Kouzo"
+        },
+        {
+          "en": "Captain Kawara Yoichi",
+          "id": "Kapten Kawara Yoichi"
+        }
+      ],
+      "style": {
+        "color": "#E63946",
+        "width": 3
+      },
+      "track": [
+        {
+          "when": "1894-07-18/1894-07-21",
+          "at": "sasebo",
+          "strength": 2,
+          "label": {
+            "en": "Sortie from Sasebo",
+            "id": "Berlayar dari Sasebo"
+          }
+        },
+        {
+          "when": "1894-07-23/1894-07-24T18:00",
+          "at": "chemulpo",
+          "strength": 2,
+          "mode": "sea",
+          "label": {
+            "en": "Patrol off Chemulpo",
+            "id": "Patroli di Chemulpo"
+          }
+        },
+        {
+          "when": "1894-07-25T06:00/1894-07-25T18:00",
+          "at": "pungdo",
+          "strength": 2,
+          "mode": "sea",
+          "label": {
+            "en": "Battle of Pungdo",
+            "id": "Pertempuran Pungdo"
+          }
+        },
+        {
+          "when": "1894-07-26T06:00/1894-08-05",
+          "at": "chemulpo",
+          "strength": 2,
+          "mode": "sea",
+          "label": {
+            "en": "Anchorage at Chemulpo",
+            "id": "Berlabuh di Chemulpo"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "cruiser-naniwa",
+      "kind": "unit",
+      "name": {
+        "en": "Protected Cruiser Naniwa",
+        "id": "Kapal Penjelajah Naniwa"
+      },
+      "faction": "japan-empire",
+      "description": {
+        "en": "British-built 3,700-ton protected cruiser commanded by Captain Togo Heihachiro, which intercepted and sank the troopship Kowshing off Pungdo.",
+        "id": "Kapal penjelajah 3.700 ton buatan Inggris di bawah komando Kapten Togo Heihachiro, yang mencegat dan menenggelamkan kapal transport Kowshing di Pungdo."
+      },
+      "commanders": [
+        {
+          "en": "Captain Togo Heihachiro",
+          "id": "Kapten Togo Heihachiro"
+        }
+      ],
+      "style": {
+        "color": "#BC002D",
+        "width": 2.5
+      },
+      "track": [
+        {
+          "when": "1894-07-18/1894-07-21",
+          "at": "sasebo",
+          "strength": 1,
+          "label": {
+            "en": "Deployment from Sasebo",
+            "id": "Pemberangkatan dari Sasebo"
+          }
+        },
+        {
+          "when": "1894-07-23/1894-07-24T18:00",
+          "at": "chemulpo",
+          "strength": 1,
+          "mode": "sea",
+          "label": {
+            "en": "Arrival at Chemulpo",
+            "id": "Tiba di Chemulpo"
+          }
+        },
+        {
+          "when": "1894-07-25T06:00/1894-07-25T18:00",
+          "at": "pungdo",
+          "strength": 1,
+          "mode": "sea",
+          "label": {
+            "en": "Interception & Sinking of Kowshing",
+            "id": "Penyergapan dan Penenggelaman Kowshing"
+          }
+        },
+        {
+          "when": "1894-07-26T06:00/1894-08-05",
+          "at": "chemulpo",
+          "strength": 1,
+          "mode": "sea",
+          "label": {
+            "en": "Rejoining Fleet at Chemulpo",
+            "id": "Bergabung kembali di Chemulpo"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jacar-archives"
+      ]
+    },
+    {
+      "id": "japan-combined-brigade",
+      "kind": "unit",
+      "name": {
+        "en": "Japanese Combined Brigade",
+        "id": "Brigade Gabungan Jepang"
+      },
+      "faction": "japan-empire",
+      "description": {
+        "en": "Elite 4,000-man expeditionary brigade drawn from the 5th Division under Major General Oshima Yoshimasa, responsible for seizing Seoul and storming Seonghwan.",
+        "id": "Brigade ekspedisi pilihan beranggotakan 4.000 serdadu dari Divisi ke-5 pimpinan Mayor Jenderal Oshima Yoshimasa, yang merebut Seoul dan menyerbu Seonghwan."
+      },
+      "commanders": [
+        {
+          "en": "Major General Oshima Yoshimasa",
+          "id": "Mayor Jenderal Oshima Yoshimasa"
+        }
+      ],
+      "style": {
+        "color": "#9B111E",
+        "width": 3
+      },
+      "track": [
+        {
+          "when": "1894-06-12/1894-06-16",
+          "at": "chemulpo",
+          "strength": 4000,
+          "label": {
+            "en": "Disembarkation at Chemulpo",
+            "id": "Pendaratan di Chemulpo"
+          }
+        },
+        {
+          "when": "1894-06-18/1894-07-22T20:00",
+          "at": "seoul",
+          "strength": 4000,
+          "label": {
+            "en": "Encampment around Hanseong",
+            "id": "Pangkalan di sekitar Hanseong"
+          }
+        },
+        {
+          "when": "1894-07-23T04:00/1894-07-24",
+          "at": "gyeongbokgung",
+          "strength": 3500,
+          "label": {
+            "en": "Assault on Gyeongbokgung Palace",
+            "id": "Penyerbuan Istana Gyeongbokgung"
+          }
+        },
+        {
+          "when": "1894-07-26/1894-07-27T12:00",
+          "at": "suwon",
+          "strength": 3200,
+          "label": {
+            "en": "March through Suwon",
+            "id": "Gerak maju melalui Suwon"
+          }
+        },
+        {
+          "when": "1894-07-28T06:00/1894-07-28T18:00",
+          "at": "pyeongtaek",
+          "strength": 3200,
+          "label": {
+            "en": "Approach to Pyeongtaek",
+            "id": "Mendekati Pyeongtaek"
+          }
+        },
+        {
+          "when": "1894-07-29T02:00/1894-07-29T14:00",
+          "at": "seonghwan",
+          "strength": 3200,
+          "label": {
+            "en": "Dawn Storming of Seonghwan",
+            "id": "Serbuan Fajar di Seonghwan"
+          }
+        },
+        {
+          "when": "1894-07-30/1894-08-10",
+          "at": "asan",
+          "strength": 3000,
+          "label": {
+            "en": "Occupation of Asan Encampment",
+            "id": "Pendudukan Markas Asan"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "qing-escort-squadron",
+      "kind": "unit",
+      "name": {
+        "en": "Qing Naval Detachment (Jiyuan, Guangyi & Caojiang)",
+        "id": "Detasemen Laut Qing (Jiyuan, Guangyi & Caojiang)"
+      },
+      "faction": "qing-empire",
+      "description": {
+        "en": "Three Qing warships sent to escort military transports to Asan, intercepted by the Japanese Flying Squadron off Pungdo on 25 July 1894.",
+        "id": "Tiga kapal perang Qing yang dikirim mengawal kapal angkut militer ke Asan, disergap oleh Skadron Terbang Jepang di Pungdo pada 25 Juli 1894."
+      },
+      "commanders": [
+        {
+          "en": "Captain Fang Boqian",
+          "id": "Kapten Fang Boqian"
+        }
+      ],
+      "style": {
+        "color": "#D48806",
+        "width": 2.5
+      },
+      "track": [
+        {
+          "when": "1894-07-18/1894-07-21",
+          "at": "weihaiwei",
+          "strength": 3,
+          "label": {
+            "en": "Sortie from Weihaiwei",
+            "id": "Berlayar dari Weihaiwei"
+          }
+        },
+        {
+          "when": "1894-07-23/1894-07-24T18:00",
+          "at": "asan-bay",
+          "strength": 3,
+          "mode": "sea",
+          "label": {
+            "en": "Escort into Asan Bay",
+            "id": "Pengawalan di Teluk Asan"
+          }
+        },
+        {
+          "when": "1894-07-25T06:00/1894-07-25T12:00",
+          "at": "pungdo",
+          "strength": 3,
+          "mode": "sea",
+          "label": {
+            "en": "Gun Duel at Pungdo",
+            "id": "Duel Meriam di Pungdo"
+          }
+        },
+        {
+          "when": "1894-07-26T12:00/1894-08-05",
+          "at": "weihaiwei",
+          "strength": 1,
+          "mode": "sea",
+          "label": {
+            "en": "Jiyuan Flees to Weihaiwei",
+            "id": "Jiyuan Melarikan Diri ke Weihaiwei"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "transport-kowshing",
+      "kind": "unit",
+      "name": {
+        "en": "Transport SS Kowshing",
+        "id": "Kapal Angkut SS Kowshing"
+      },
+      "faction": "qing-empire",
+      "description": {
+        "en": "British merchant steamship chartered by the Qing government carrying 1,200 Huai Army troops, 12 field guns, and German military advisor Constantin von Hanneken.",
+        "id": "Kapal uap dagang Inggris sewaan Dinasti Qing yang mengangkut 1.200 tentara Huai, 12 meriam medan, dan penasihat militer Jerman Constantin von Hanneken."
+      },
+      "commanders": [
+        {
+          "en": "Captain Thomas Ryder Galsworthy",
+          "id": "Kapten Thomas Ryder Galsworthy"
+        },
+        {
+          "en": "Major Constantin von Hanneken",
+          "id": "Mayor Constantin von Hanneken"
+        }
+      ],
+      "style": {
+        "color": "#B8860B",
+        "width": 2,
+        "dash": [
+          4,
+          4
+        ]
+      },
+      "track": [
+        {
+          "when": "1894-07-20/1894-07-23",
+          "at": "weihaiwei",
+          "strength": 1200,
+          "label": {
+            "en": "Departure from China",
+            "id": "Keberangkatan dari Tiongkok"
+          }
+        },
+        {
+          "when": "1894-07-25T08:00/1894-07-25T13:30",
+          "at": "pungdo",
+          "strength": 1200,
+          "mode": "sea",
+          "label": {
+            "en": "Intercepted & Sunk off Pungdo",
+            "id": "Dicegat dan Ditenggelamkan di Pungdo"
+          }
+        }
+      ],
+      "states": [
+        {
+          "when": "1894-07-25T13:30",
+          "status": "destroyed",
+          "label": {
+            "en": "Sunk by Naniwa torpedo and broadside",
+            "id": "Ditenggelamkan oleh torpedo dan tembakan Naniwa"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "qing-huai-army",
+      "kind": "unit",
+      "name": {
+        "en": "Qing Huai Army at Asan",
+        "id": "Tentara Huai Qing di Asan"
+      },
+      "faction": "qing-empire",
+      "description": {
+        "en": "Qing garrison in Korea commanded by General Ye Zhichao and General Nie Shicheng, entrenched along the Ansong River at Seonghwan.",
+        "id": "Garnisun Qing di Korea pimpinan Jenderal Ye Zhichao dan Jenderal Nie Shicheng, berkubu di sepanjang Sungai Ansong di Seonghwan."
+      },
+      "commanders": [
+        {
+          "en": "General Ye Zhichao",
+          "id": "Jenderal Ye Zhichao"
+        },
+        {
+          "en": "General Nie Shicheng",
+          "id": "Jenderal Nie Shicheng"
+        }
+      ],
+      "style": {
+        "color": "#D48806",
+        "width": 3
+      },
+      "track": [
+        {
+          "when": "1894-06-08/1894-07-25T18:00",
+          "at": "asan",
+          "strength": 3500,
+          "label": {
+            "en": "Base at Asan",
+            "id": "Markas di Asan"
+          }
+        },
+        {
+          "when": "1894-07-26T06:00/1894-07-29T12:00",
+          "at": "seonghwan",
+          "strength": 3000,
+          "label": {
+            "en": "Defense of Seonghwan",
+            "id": "Pertahanan Seonghwan"
+          }
+        },
+        {
+          "when": "1894-07-31/1894-08-10",
+          "at": "seoul",
+          "strength": 2500,
+          "label": {
+            "en": "Retreat Northward toward Pyongyang",
+            "id": "Mundur ke Utara menuju Pyongyang"
+          }
+        }
+      ],
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "donghak-crisis",
+      "kind": "uprising",
+      "name": {
+        "en": "Donghak Capture of Jeonju",
+        "id": "Jatuhnya Jeonju ke Petani Donghak"
+      },
+      "when": "1894-06-01",
+      "at": "jeonju",
+      "certainty": "exact",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "joseon-kingdom",
+          "role": "defender"
+        }
+      ],
+      "summary": {
+        "en": "Jeon Bong-jun's Donghak peasant army captures the provincial capital of Jeonju, prompting King Gojong to appeal urgently to Beijing for imperial military aid.",
+        "id": "Tentara petani Donghak pimpinan Jeon Bong-jun merebut ibu kota provinsi Jeonju, mendorong Raja Gojong memohon bantuan militer darurat ke Beijing."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "landing-chemulpo",
+      "kind": "other",
+      "name": {
+        "en": "Japanese Disembarkation at Chemulpo",
+        "id": "Pendaratan Jepang di Chemulpo"
+      },
+      "when": "1894-06-12",
+      "at": "chemulpo",
+      "certainty": "exact",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "party"
+        }
+      ],
+      "summary": {
+        "en": "Invoking the 1885 Tianjin Convention, Japanese transports land the 4,000-man Combined Brigade under General Oshima at Chemulpo to counter Chinese troop deployments.",
+        "id": "Memanfaatkan celah Perjanjian Tianjin 1885, kapal angkut Jepang mendaratkan 4.000 prajurit Brigade Gabungan di Chemulpo untuk mengimbangi pendaratan pasukan Tiongkok."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "storming-gyeongbokgung",
+      "kind": "battle",
+      "name": {
+        "en": "Storming of Gyeongbokgung Palace",
+        "id": "Penyerbuan Istana Gyeongbokgung"
+      },
+      "when": "1894-07-23",
+      "at": "gyeongbokgung",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Major General Oshima Yoshimasa",
+              "id": "Mayor Jenderal Oshima Yoshimasa"
+            }
+          ],
+          "strength": 2000
+        },
+        {
+          "faction": "joseon-kingdom",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "Hong Gye-hun",
+              "id": "Hong Gye-hun"
+            }
+          ],
+          "strength": 1000
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Japanese troops scale the palace walls at 04:30, disarm the royal bodyguards, place King Gojong under house arrest, and install a pro-Japanese reform administration.",
+          "id": "Pasukan Jepang memanjat tembok istana pada pukul 04.30, melucuti pengawal kerajaan, menahan Raja Gojong, dan mendirikan pemerintahan reformasi pro-Tokyo."
+        }
+      },
+      "sources": [
+        "paine-2003",
+        "duus-1998"
+      ]
+    },
+    {
+      "id": "battle-pungdo",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Pungdo",
+        "id": "Pertempuran Laut Pungdo"
+      },
+      "when": "1894-07-25",
+      "at": "pungdo",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Rear Admiral Tsuboi Kouzo",
+              "id": "Laksamana Muda Tsuboi Kouzo"
+            }
+          ],
+          "strength": 3
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "Captain Fang Boqian",
+              "id": "Kapten Fang Boqian"
+            }
+          ],
+          "strength": 3,
+          "losses": 2
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Japanese cruisers Yoshino, Akitsushima, and Naniwa engage Qing warships Jiyuan, Guangyi, and Caojiang. Guangyi is beached and destroyed; Caojiang is captured; Jiyuan flees damaged.",
+          "id": "Kapal penjelajah Jepang Yoshino, Akitsushima, dan Naniwa menggempur kapal perang Qing. Guangyi kandas dan meledak; Caojiang ditawan; Jiyuan melarikan diri dalam kondisi rusak parah."
+        }
+      },
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "sinking-kowshing",
+      "kind": "skirmish",
+      "name": {
+        "en": "Sinking of the Transport Kowshing",
+        "id": "Penenggelaman Kapal Transport Kowshing"
+      },
+      "when": "1894-07-25",
+      "at": "pungdo",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Captain Togo Heihachiro",
+              "id": "Kapten Togo Heihachiro"
+            }
+          ],
+          "strength": 1
+        },
+        {
+          "faction": "qing-empire",
+          "role": "victim",
+          "commanders": [
+            {
+              "en": "Captain Thomas Ryder Galsworthy",
+              "id": "Kapten Thomas Ryder Galsworthy"
+            },
+            {
+              "en": "Major Constantin von Hanneken",
+              "id": "Mayor Constantin von Hanneken"
+            }
+          ],
+          "strength": 1200,
+          "losses": 1100
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "After Chinese soldiers aboard refuse to surrender or allow the British officers to disembark, Captain Togo orders Naniwa to torpedo and shell the Kowshing, sinking her in Namyang Bay.",
+          "id": "Karena tentara Tiongkok di atas kapal menolak menyerah atau mengizinkan kapten Inggris turun, Kapten Togo memerintahkan Naniwa menembakkan torpedo dan meriam, menenggelamkan Kowshing di Teluk Namyang."
+        }
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "battle-seonghwan",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Seonghwan",
+        "id": "Pertempuran Seonghwan"
+      },
+      "when": "1894-07-29",
+      "at": "seonghwan",
+      "certainty": "exact",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "attacker",
+          "commanders": [
+            {
+              "en": "Major General Oshima Yoshimasa",
+              "id": "Mayor Jenderal Oshima Yoshimasa"
+            }
+          ],
+          "strength": 3200,
+          "losses": 88
+        },
+        {
+          "faction": "qing-empire",
+          "role": "defender",
+          "commanders": [
+            {
+              "en": "General Nie Shicheng",
+              "id": "Jenderal Nie Shicheng"
+            }
+          ],
+          "strength": 3000,
+          "losses": 500
+        }
+      ],
+      "outcome": {
+        "victor": "japan-empire",
+        "summary": {
+          "en": "Oshima's brigade storms the flooded Ansong River redoubts at 03:00, outflanking General Nie's fortified positions and forcing the Qing army to abandon Asan.",
+          "id": "Brigade Oshima menyerbu kubu pertahanan Sungai Ansong pada pukul 03.00 dini hari, mengepung posisi Jenderal Nie dan memaksa tentara Qing meninggalkan Asan."
+        }
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "war-declarations",
+      "kind": "proclamation",
+      "name": {
+        "en": "Imperial Declarations of War",
+        "id": "Maklumat Perang Kekaisaran"
+      },
+      "when": "1894-08-01",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "japan-empire",
+          "role": "belligerent"
+        },
+        {
+          "faction": "qing-empire",
+          "role": "belligerent"
+        }
+      ],
+      "summary": {
+        "en": "The Meiji Emperor and the Guangxu Emperor publish formal declarations of war, turning undeclared skirmishes into full-scale conflict.",
+        "id": "Kaisar Meiji dan Kaisar Guangxu secara resmi mengumumkan maklumat perang, mengubah bentrokan tanpa deklarasi menjadi perang terbuka."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-donghak-intervention",
+      "title": {
+        "en": "The Spark: Donghak Revolt & Intervention",
+        "id": "Pemicu: Pemberontakan Donghak dan Intervensi"
+      },
+      "when": "1894-06-01/1894-06-20",
+      "camera": {
+        "center": [
+          127,
+          36.5
+        ],
+        "zoom": 7.5,
+        "pitch": 25,
+        "bearing": 0
+      },
+      "focus": [
+        "jeonju",
+        "chemulpo",
+        "asan",
+        "donghak-crisis",
+        "landing-chemulpo"
+      ],
+      "body": {
+        "en": "In the spring of 1894, the Korean peninsula was shaken by the **Donghak Peasant Rebellion**. Driven by anti-feudal grievances and resistance against foreign encroachment, thousands of peasant fighters captured the provincial capital of **Jeonju** in late May. Desperate to safeguard the dynasty, the conservative Min faction in Seoul appealed to Beijing for military intervention.\n\nUnder the pretext of defending a tributary vassal, Viceroy Li Hongzhang dispatched 2,500 soldiers of the Huai Army under General Ye Zhichao to **Asan**. Tokyo reacted instantaneously: invoking the 1885 Tianjin Convention, the Meiji government dispatched the 4,000-strong **Combined Brigade** under Major General Oshima Yoshimasa, disembarking at **Chemulpo (Incheon)** on 12 June 1894. Though the Joseon court rapidly concluded a truce with the Donghak rebels at Jeonju to deprive both empires of a justification to stay, neither foreign army had any intention of withdrawing.",
+        "id": "Pada musim semi 1894, Semenanjung Korea diguncang oleh **Pemberontakan Petani Donghak**. Digerakkan oleh perlawanan terhadap feodalisme dan penetrasi asing, ribuan pemberontak merebut ibu kota provinsi **Jeonju** pada akhir Mei. Demi menyelamatkan takhta, faksi konservatif Ratu Min di Seoul memohon bantuan militer ke Beijing.\n\nDengan dalih melindungi negara vasal, Raja Muda Li Hongzhang mengirim 2.500 serdadu Tentara Huai di bawah Jenderal Ye Zhichao ke **Asan**. Tokyo bereaksi kilat: bersandar pada Perjanjian Tianjin 1885, pemerintah Meiji mengerahkan 4.000 prajurit **Brigade Gabungan** pimpinan Mayor Jenderal Oshima Yoshimasa yang mendarat di **Chemulpo (Incheon)** pada 12 Juni 1894. Kendati istana Joseon buru-buru menyepakati gencatan senjata dengan kaum Donghak di Jeonju agar pasukan asing pergi, tak satu pun dari kedua pihak bersedia angkat kaki."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "ch-2-palace-coup",
+      "title": {
+        "en": "The Storming of Gyeongbokgung Palace",
+        "id": "Penyerbuan Istana Gyeongbokgung"
+      },
+      "when": "1894-07-20/1894-07-24",
+      "camera": {
+        "center": [
+          126.98,
+          37.58
+        ],
+        "zoom": 12,
+        "pitch": 35,
+        "bearing": 0
+      },
+      "focus": [
+        "gyeongbokgung",
+        "seoul",
+        "japan-combined-brigade",
+        "storming-gyeongbokgung"
+      ],
+      "body": {
+        "en": "By mid-July, Japanese diplomatic minister Otori Keisuke presented the Joseon court with an ultimatum demanding immediate structural reforms and the repudiation of Chinese suzerainty. When Korean officials demurred, the Japanese military high command executed a pre-planned coup d'état.\n\nAt 04:30 on the morning of **23 July 1894**, elite infantry battalions of the Combined Brigade scaled the high outer masonry of **Gyeongbokgung Palace**. After a brief exchange of rifle fire with the royal guards under Hong Gye-hun, Japanese troops breached the inner gates, disarmed the garrison, and seized King Gojong. The Japanese restored the King's estranged father, the anti-Min Heungseon Daewongun, to head a puppet administration that promptly issued an official decree 'requesting' Japanese military forces to expel the Chinese garrison at Asan.",
+        "id": "Memasuki pertengahan Juli, duta diplomatik Jepang Otori Keisuke menyodorkan ultimatum kepada istana Joseon yang menuntut reformasi radikal dan pelepasan status vasal dari Dinasti Qing. Ketika para menteri menolak, komando militer Jepang melancarkan kudeta yang telah dirancang matang.\n\nPada pukul 04.30 fajar **23 Juli 1894**, batalion infantri pilihan Brigade Gabungan memanjat tembok batu **Istana Gyeongbokgung**. Usai baku tembak singkat dengan pengawal istana di bawah pimpinan Hong Gye-hun, tentara Jepang mendobrak gerbang dalam, melucuti garnisun, dan menawan Raja Gojong. Jepang mengangkat kembali ayah sang raja, Heungseon Daewongun yang anti-Qing, untuk memimpin kabinet boneka yang seketika menerbitkan titah 'memohon' bantuan militer Jepang guna mengusir garnisun Tiongkok dari Asan."
+      },
+      "sources": [
+        "paine-2003",
+        "duus-1998"
+      ]
+    },
+    {
+      "id": "ch-3-gunsmoke-pungdo",
+      "title": {
+        "en": "Gunsmoke off Pungdo Island",
+        "id": "Asap Mesiu di Perairan Pungdo"
+      },
+      "when": "1894-07-25T06:00/1894-07-25T11:30",
+      "camera": {
+        "center": [
+          126.55,
+          37.1
+        ],
+        "zoom": 9.5,
+        "pitch": 30,
+        "bearing": 0
+      },
+      "focus": [
+        "pungdo",
+        "asan-bay",
+        "ijn-flying-squadron",
+        "qing-escort-squadron",
+        "battle-pungdo"
+      ],
+      "body": {
+        "en": "At 07:00 on the morning of **25 July 1894**, three fast Japanese cruisers of the Flying Squadron—the *Yoshino*, *Akitsushima*, and *Naniwa* under Rear Admiral Tsuboi Kouzo—were patrolling the maritime approaches to Asan Bay when they sighted Qing warships emerging from the morning fog off **Pungdo Island**.\n\nThe Qing force, comprising the protected cruiser *Jiyuan* under Captain Fang Boqian and the torpedo gunboat *Guangyi*, was returning to China after escorting troop transports into Namyang Gulf. Without a declaration of war, the opposing flotillas cleared for action. The Japanese cruisers, boasting superior speed and modern quick-firing Armstrong artillery, opened a devastating fire. The *Guangyi* was severely battered and ran aground on the rocks of Pungdo, where her crew scuttled her with gunpowder. The *Jiyuan*, heavily struck in her conning tower and steering gear, hoisted white and Japanese flags in confusion before breaking away and fleeing toward Weihaiwei pursued by the *Yoshino*.",
+        "id": "Pada pukul 07.00 pagi **25 Juli 1894**, tiga kapal penjelajah cepat Skadron Terbang Jepang—*Yoshino*, *Akitsushima*, dan *Naniwa* di bawah Laksamana Muda Tsuboi Kouzo—sedang berpatroli di perairan Teluk Asan ketika mereka melihat siluet kapal perang Qing menembus kabut pagi di dekat **Pulau Pungdo**.\n\nDetasemen Qing, yang terdiri dari kapal penjelajah *Jiyuan* di bawah Kapten Fang Boqian dan kapal meriam torpedo *Guangyi*, sedang berlayar pulang ke Tiongkok usai mengawal konvoi bala bantuan ke Teluk Namyang. Tanpa ada deklarasi perang sebelumnya, kedua armada langsung bersiap tempur. Kapal-kapal penjelajah Jepang, bermodalkan kecepatan tinggi dan meriam reaksi-cepat Armstrong modern, melepaskan tembakan mematikan. *Guangyi* rusak parah dan kandas di karang Pulau Pungdo sebelum awaknya meledakkan kapal. Sementara itu, *Jiyuan* yang hancur menara komandonya sempat mengibarkan bendera putih dan bendera Jepang karena panik, sebelum berputar haluan melarikan diri ke Weihaiwei dikejar oleh *Yoshino*."
+      },
+      "sources": [
+        "paine-2003",
+        "mcgiffin-1895"
+      ]
+    },
+    {
+      "id": "ch-4-kowshing-tragedy",
+      "title": {
+        "en": "The Sinking of the Kowshing",
+        "id": "Tragedi Penenggelaman SS Kowshing"
+      },
+      "when": "1894-07-25T12:00/1894-07-26",
+      "camera": {
+        "center": [
+          126.5,
+          37.12
+        ],
+        "zoom": 10.5,
+        "pitch": 25,
+        "bearing": 0
+      },
+      "focus": [
+        "pungdo",
+        "cruiser-naniwa",
+        "transport-kowshing",
+        "sinking-kowshing"
+      ],
+      "body": {
+        "en": "While the *Yoshino* pursued the fleeing *Jiyuan*, Captain **Togo Heihachiro** aboard the *Naniwa* intercepted a two-masted merchant steamer flying the British Red Ensign: the **SS Kowshing**. Chartered by Viceroy Li Hongzhang, the vessel was transporting over 1,200 crack Huai Army infantrymen, 12 artillery pieces, and German military advisor Constantin von Hanneken to reinforce the garrison at Asan.\n\nTogo ordered the *Kowshing* to heave to and sent an inspection boarding party. Captain Thomas Galsworthy agreed to follow the *Naniwa*, but the Qing soldiers aboard mutinied, brandishing rifles and threatening to slaughter the European crew if the ship did not return to China. Over four tense hours of signaling, Togo repeatedly ordered the captain to abandon ship. At 13:00, with Chinese troops threatening to execute the British officers, Togo hoisted the red battle flag, turned broadside, and fired a torpedo followed by 260mm high-explosive shells. The *Kowshing* took water rapidly and sank beneath the waves. Major von Hanneken and Captain Galsworthy leaped overboard and survived, but over 1,000 Chinese soldiers drowned, triggering international legal uproar.",
+        "id": "Saat *Yoshino* mengejar *Jiyuan*, Kapten **Togo Heihachiro** di atas kapal penjelajah *Naniwa* mencegat kapal uap bertiang dua yang mengibarkan bendera sipil Inggris Red Ensign: **SS Kowshing**. Disewa oleh Raja Muda Li Hongzhang, kapal tersebut mengangkut 1.200 tentara pilihan Tentara Huai, 12 meriam artileri, dan penasihat militer Jerman Mayor Constantin von Hanneken untuk memperkuat garnisun Asan.\n\nTogo memerintahkan *Kowshing* mematikan mesin dan mengirim perwira perunding. Kapten kapal Thomas Galsworthy bersedia mematuhi instruksi *Naniwa*, namun para serdadu Qing di atas kapal memberontak, mengacungkan senapan dan mengancam membunuh seluruh awak Eropa jika kapal tidak segera kembali ke Tiongkok. Selama empat jam negosiasi tegang lewat sinyal bendera, Togo berulang kali memerintahkan awak kapal meninggalkan kapal. Pada pukul 13.00, melihat situasi tak terkendali, Togo mengibarkan bendera perang merah dan melepaskan satu torpedo disusul tembakan meriam kaliber 260mm. *Kowshing* karam dengan cepat. Mayor von Hanneken dan Kapten Galsworthy melompat ke laut dan selamat berenang ke pantai, namun lebih dari 1.000 serdadu Tiongkok tenggelam, memicu kontroversi hukum internasional yang luas."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    },
+    {
+      "id": "ch-5-march-to-seonghwan",
+      "title": {
+        "en": "The Midnight March South",
+        "id": "Barisan Tengah Malam Menuju Selatan"
+      },
+      "when": "1894-07-27/1894-07-28",
+      "camera": {
+        "center": [
+          127.05,
+          37.15
+        ],
+        "zoom": 9,
+        "pitch": 30,
+        "bearing": 0
+      },
+      "focus": [
+        "suwon",
+        "pyeongtaek",
+        "japan-combined-brigade",
+        "qing-huai-army"
+      ],
+      "body": {
+        "en": "Armed with the puppet Korean decree requesting Chinese expulsion, Major General **Oshima Yoshimasa** led 3,200 infantrymen of the Combined Brigade south out of Seoul on 25 July. Their objective was to crush the isolated Qing garrison at Asan before northern reinforcements could arrive from Manchuria.\n\nThe expedition marched through **Suwon** and advanced down the main southern highway under stifling midsummer humidity broken by violent torrential downpours. By 28 July, Japanese advance guards reached **Pyeongtaek**, driving in Qing cavalry outposts. Recognizing that the coastal camp at Asan was indefensible against combined naval and land attack, the capable Qing commander **General Nie Shicheng** had shifted his frontline east to **Seonghwan**, anchoring his right flank on the flooded marshes of the Ansong River and fortifying the stone village with interlocking earthen trenches, breastworks, and Krupp mountain guns.",
+        "id": "Berbekal surat mandat istana boneka yang meminta pengusiran tentara Tiongkok, Mayor Jenderal **Oshima Yoshimasa** memimpin 3.200 serdadu Brigade Gabungan berbaris ke selatan meninggalkan Seoul pada 25 Juli. Misi mereka adalah menghancurkan garnisun Qing yang terisolasi di Asan sebelum bala bantuan tiba dari Manchuria.\n\nPasukan berbaris melintasi **Suwon** dan menuruni jalan raya utama selatan di bawah terik lembap musim panas yang sesekali diterpa hujan lebat. Pada 28 Juli, garda depan Jepang tiba di **Pyeongtaek** dan memukul mundur pos pengintai kavaleri Qing. Menyadari markas pantai Asan rentan terhadap serangan laut dan darat gabungan, jenderal berbakat Qing **Nie Shicheng** menggeser garis pertahanan ke arah timur menuju **Seonghwan**, menambatkan sayap kanannya pada rawa-rawa Sungai Ansong serta memperkuat desa berbenteng dengan parit pertahanan dan meriam gunung Krupp."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "ch-6-dawn-at-seonghwan",
+      "title": {
+        "en": "The Dawn Assault at Seonghwan",
+        "id": "Serbuan Fajar di Seonghwan"
+      },
+      "when": "1894-07-29/1894-07-30",
+      "camera": {
+        "center": [
+          127.13,
+          36.92
+        ],
+        "zoom": 11,
+        "pitch": 35,
+        "bearing": 0
+      },
+      "focus": [
+        "seonghwan",
+        "asan",
+        "japan-combined-brigade",
+        "qing-huai-army",
+        "battle-seonghwan"
+      ],
+      "body": {
+        "en": "At 03:00 on the pitch-black morning of **29 July 1894**, Oshima deployed his brigade into two columns for a surprise pincer assault. The right wing waded through chest-deep mud and flooded rice paddies to cross the Ansong River, while the main body attacked the stone causeway head-on.\n\nAs dawn broke over Seonghwan, Qing defenders unleashed fierce volleys of Krupp shrapnel and Mauser rifle fire, pinning the central Japanese advance on the narrow bridge. However, the flanking Japanese column scaled the bluffs east of the village and outflanked the Chinese parapets with bayonet charges. By 07:30, after four hours of stubborn fighting that cost the Japanese 88 casualties and the Qing roughly 500 men, General Nie ordered a fighting withdrawal toward Gongju. General Ye Zhichao abandoned the main encampment at Asan without a fight, retreating around Seoul and fleeing northward to Pyongyang.",
+        "id": "Pada pukul 03.00 dini hari yang gelap gulita **29 Juli 1894**, Oshima membagi pasukannya ke dalam dua kolom untuk melancarkan serangan jepit mendadak. Sayap kanan Jepang merayap menerobos rawa-rawa dan sawah berlumpur setinggi dada untuk menyeberangi Sungai Ansong, sementara pasukan utama menyerbu jembatan batu secara langsung.\n\nFajar menyingsing di Seonghwan disambut hujan peluru pecahan artileri Krupp dan tembakan senapan Mauser pasukan Qing yang sempat menahan laju serbuan Jepang di jembatan sempit. Namun, kolom sayap Jepang berhasil memanjat tebing di timur desa dan melancarkan serbuan bayonet yang menghancurkan pertahanan samping Tiongkok. Pada pukul 07.30, usai empat jam pertempuran sengit yang menewaskan 88 prajurit Jepang dan sekitar 500 tentara Qing, Jenderal Nie memerintahkan gerak mundur teratur ke Gongju. Di markas belakang, Jenderal Ye Zhichao meninggalkan Asan tanpa perlawanan dan melarikan diri memutar ke utara menuju benteng Pyongyang."
+      },
+      "sources": [
+        "paine-2003",
+        "jowett-2013"
+      ]
+    },
+    {
+      "id": "ch-7-rescripts-of-war",
+      "title": {
+        "en": "The Imperial Rescripts of War",
+        "id": "Maklumat Perang Dua Kaisar"
+      },
+      "when": "1894-07-31/1894-08-05",
+      "camera": {
+        "center": [
+          126.8,
+          37.3
+        ],
+        "zoom": 7.8,
+        "pitch": 25,
+        "bearing": 0
+      },
+      "focus": [
+        "seoul",
+        "chemulpo",
+        "war-declarations"
+      ],
+      "body": {
+        "en": "With blood spilled on both land and sea, diplomatic pretense dissolved completely. On **1 August 1894**, the Meiji Emperor of Japan and the Guangxu Emperor of Qing China published mutual imperial rescripts declaring war.\n\nThe Japanese proclamation portrayed Tokyo as the defender of Korean sovereign independence against reactionary Chinese interference. The Qing edict denounced Japan as treacherous 'dwarf-pirates' (*Wokou*) who had attacked without warning and violated all tenets of international law.\n\nThe crisis in Korea had passed from an undeclared standoff to a total struggle for the mastery of East Asia. Japanese armies prepared to march north on Pyongyang, while the main bodies of the Combined Fleet and the Beiyang Fleet readied for the catastrophic clash of battleships in the Yellow Sea.",
+        "id": "Dengan tumpahnya darah di darat dan laut, dalih-dalih diplomasi runtuh sepenuhnya. Pada **1 Agustus 1894**, Kaisar Meiji dari Jepang dan Kaisar Guangxu dari Qing Tiongkok menerbitkan maklumat resmi perang secara terbuka.\n\nMaklumat kekaisaran Jepang menggambarkan Tokyo sebagai pembela kemerdekaan kedaulatan Korea dari campur tangan reaksioner Dinasti Qing. Sebaliknya, maklumat Qing mengecam Jepang sebagai 'bajak laut kerdil' (*Wokou*) pengkhianat yang menyerang tanpa peringatan dan melanggar hukum bangsa-bangsa.\n\nKrisis di Korea telah bertransformasi dari bentrokan terselubung menjadi perang total demi hegemoni tertinggi di Asia Timur. Tentara Jepang bersiap bergerak ke utara menuju Pyongyang, sementara kekuatan utama Armada Gabungan dan Armada Beiyang bersiap menuju benturan kapal perang lapis baja di Laut Kuning."
+      },
+      "sources": [
+        "paine-2003"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "paine-2003",
+      "type": "book",
+      "citation": "Paine, S. C. M. (2003). The Sino-Japanese War of 1894–1895: Perceptions, Power, and Primacy. Cambridge: Cambridge University Press. ISBN 978-0-521-81714-1."
+    },
+    {
+      "id": "jowett-2013",
+      "type": "book",
+      "citation": "Jowett, Philip (2013). China's Wars: Rousing the Dragon 1894–1949. Oxford: Osprey Publishing. ISBN 978-1-78200-407-3."
+    },
+    {
+      "id": "mcgiffin-1895",
+      "type": "article",
+      "citation": "McGiffin, Philo N. (1895). 'The Battle of the Yalu: Personal Recollections by the Commander of the Chinese Ironclad Chen Yuen.' The Century Magazine, 50(4), pp. 585–604."
+    },
+    {
+      "id": "duus-1998",
+      "type": "book",
+      "citation": "Duus, Peter (1998). The Abacus and the Sword: The Japanese Penetration of Korea, 1895–1910. Berkeley: University of California Press. ISBN 978-0-520-21361-6."
+    },
+    {
+      "id": "jacar-archives",
+      "type": "archive",
+      "citation": "Japan Center for Asian Historical Records (JACAR), National Archives of Japan. Ref. C0606189400, 'Records of the First Sino-Japanese War (Meiji 27–28)'."
+    }
+  ]
+}

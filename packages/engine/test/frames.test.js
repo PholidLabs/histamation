@@ -12,6 +12,8 @@ const CASES = [
   ['../../../test-vectors/giyanti-1755.frames.json', '../../../data/campaigns/giyanti-1755.json', false],
   ['../../../test-vectors/java-war-1825.frames.json', '../../../data/campaigns/java-war-1825.json', false],
   ['../../../test-vectors/napoleon-russia-1812.frames.json', '../../../data/campaigns/napoleon-russia-1812.json', false],
+  ['../../../test-vectors/pungdo-1894.frames.json', '../../../data/campaigns/pungdo-1894.json', false],
+  ['../../../test-vectors/sino-japanese-1894.frames.json', '../../../data/campaigns/sino-japanese-1894.json', false],
   ['../../../test-vectors/waterloo-1815.frames.json', '../../../data/campaigns/waterloo-1815.json', false],
 ];
 const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
