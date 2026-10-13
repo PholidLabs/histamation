@@ -1,0 +1,3458 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "american-revolution-1775",
+    "version": "0.1.0",
+    "title": {
+      "en": "The American Revolutionary War (1775–1783)",
+      "id": "Perang Revolusi Amerika (1775–1783)"
+    },
+    "subtitle": {
+      "en": "From the shot heard 'round the world to independence at Yorktown",
+      "id": "Dari tembakan yang mengguncang dunia hingga kemerdekaan di Yorktown"
+    },
+    "description": {
+      "en": "The epic eight-year conflict through which thirteen North American colonies threw off British imperial rule and established the United States of America. Spanning from the sudden militia clash on Lexington Green in April 1775, through the desperate winter crossings and tactical miracles of Trenton and Princeton, the decisive northern turning point at Saratoga, the brutal crucible of Valley Forge, the attritional war in the southern backcountry, to the climactic Franco-American siege of Yorktown in October 1781 and the final peace of 1783.",
+      "id": "Konflik bersejarah selama delapan tahun ketika tiga belas koloni Amerika Utara melepaskan diri dari kekuasaan Kekaisaran Britania dan mendirikan Amerika Serikat. Membentang dari bentrokan milisi di Lexington Green pada April 1775, penyeberangan sungai yang dingin dan keajaiban taktis di Trenton dan Princeton, titik balik utara di Saratoga, tempaan pedih di Valley Forge, perang gerilya berdarah di pedalaman selatan, hingga pengepungan gabungan Prancis-Amerika di Yorktown pada Oktober 1781 dan perjanjian damai tahun 1783."
+    },
+    "contentWarning": {
+      "en": "Describes 18th-century warfare, artillery bombardments, bayonet combat, naval engagements, and severe winter starvation.",
+      "id": "Memuat kisah peperangan abad ke-18, pengeboman artileri, pertempuran bayonet, duel armada laut, dan bencana kelaparan di musim dingin."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "updated": "2026-10-13",
+    "timeline": {
+      "extent": "1775-04-01/1783-12-31",
+      "focus": "1775-04-19/1781-10-19"
+    },
+    "map": {
+      "center": [
+        -76.5,
+        38.8
+      ],
+      "zoom": 5.8,
+      "pitch": 30,
+      "bearing": 0,
+      "bounds": [
+        -83.0,
+        31.5,
+        -70.0,
+        45.0
+      ],
+      "terrain": {
+        "exaggeration": 1.2
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "united-colonies",
+      "name": {
+        "en": "United Colonies / United States",
+        "id": "Koloni Bersatu / Amerika Serikat"
+      },
+      "shortName": {
+        "en": "Continentals",
+        "id": "Kontinental"
+      },
+      "color": "#1D3557",
+      "description": {
+        "en": "The Continental Army and provincial Patriot militias commanded by General George Washington, fighting for colonial liberties and national independence.",
+        "id": "Tentara Kontinental dan milisi Patriot provinsi pimpinan Jenderal George Washington, berjuang demi kebebasan koloni dan kemerdekaan nasional."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010",
+        "wp-rev-war"
+      ]
+    },
+    {
+      "id": "great-britain",
+      "name": {
+        "en": "Kingdom of Great Britain",
+        "id": "Kerajaan Britania Raya"
+      },
+      "shortName": {
+        "en": "British",
+        "id": "Britania"
+      },
+      "color": "#B22222",
+      "description": {
+        "en": "British Regular forces, German auxiliary contingents (Hessians), and American Loyalist provincial regiments fighting to restore Crown authority in North America.",
+        "id": "Pasukan reguler Britania, kontingen bantuan Jerman (Hessen), dan resimen Loyalis Amerika yang bertempur untuk menegakkan kembali otoritas Mahkota di Amerika Utara."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "kingdom-of-france",
+      "name": {
+        "en": "Kingdom of France",
+        "id": "Kerajaan Prancis"
+      },
+      "shortName": {
+        "en": "France",
+        "id": "Prancis"
+      },
+      "color": "#D4AF37",
+      "description": {
+        "en": "The French expeditionary corps under the Comte de Rochambeau and the Marine Royale fleet commanded by the Comte de Grasse, providing critical soldiers, siege artillery, and naval mastery.",
+        "id": "Korps ekspedisi Prancis di bawah pimpinan Comte de Rochambeau dan armada Marine Royale pimpinan Comte de Grasse, menyumbang prajurit terlatih, artileri kepung, dan keunggulan laut penentu."
+      },
+      "sources": [
+        "osprey-yorktown",
+        "ferling-2007"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "boston",
+      "name": {
+        "en": "Boston",
+        "id": "Boston"
+      },
+      "modernName": {
+        "en": "Boston, Massachusetts",
+        "id": "Boston, Massachusetts"
+      },
+      "kind": "port",
+      "coordinates": [
+        -71.0589,
+        42.3601
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The cradle of American resistance and primary British garrison in New England until its evacuation in March 1776.",
+        "id": "Pusat perlawanan Amerika dan pangkalan utama garnisun Britania di New England hingga dievakuasi pada Maret 1776."
+      },
+      "sources": [
+        "osprey-boston",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "lexington-green",
+      "name": {
+        "en": "Lexington Green",
+        "id": "Lexington Green"
+      },
+      "modernName": {
+        "en": "Lexington, Massachusetts",
+        "id": "Lexington, Massachusetts"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -71.2294,
+        42.4491
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Village common where colonial militia and British regulars traded the opening shots of the Revolutionary War on 19 April 1775.",
+        "id": "Alun-alun desa tempat milisi koloni dan tentara reguler Britania saling menembak pada awal Perang Revolusi, 19 April 1775."
+      },
+      "sources": [
+        "osprey-boston",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "concord-north-bridge",
+      "name": {
+        "en": "Concord North Bridge",
+        "id": "Jembatan Utara Concord"
+      },
+      "modernName": {
+        "en": "Concord, Massachusetts",
+        "id": "Concord, Massachusetts"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -71.3503,
+        42.4694
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Site where Minutemen returned fire against British regulars, immortalized by Ralph Waldo Emerson as the shot heard 'round the world.",
+        "id": "Lokasi ketika kaum Minutemen membalas tembakan tentara Britania, yang diabadikan oleh Ralph Waldo Emerson sebagai tembakan yang mengguncang dunia."
+      },
+      "sources": [
+        "osprey-boston"
+      ]
+    },
+    {
+      "id": "bunker-hill",
+      "name": {
+        "en": "Bunker Hill & Breed's Hill",
+        "id": "Bunker Hill & Breed's Hill"
+      },
+      "modernName": {
+        "en": "Charlestown, Boston, Massachusetts",
+        "id": "Charlestown, Boston, Massachusetts"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -71.0612,
+        42.3763
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Height overlooking Boston Harbor where colonial militia repulsed three frontal British assaults before yielding from ammunition exhaustion on 17 June 1775.",
+        "id": "Perbukitan yang menguasai Pelabuhan Boston tempat milisi memukul mundur tiga serbuan depan Britania sebelum kehabisan amunisi pada 17 Juni 1775."
+      },
+      "sources": [
+        "osprey-boston",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "cambridge",
+      "name": {
+        "en": "Cambridge",
+        "id": "Cambridge"
+      },
+      "modernName": {
+        "en": "Cambridge, Massachusetts",
+        "id": "Cambridge, Massachusetts"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        -71.1097,
+        42.3736
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Headquarters of the nascent Continental Army where George Washington formally assumed command on 3 July 1775.",
+        "id": "Markas komando Tentara Kontinental tempat George Washington secara resmi memangku kepemimpinan pada 3 Juli 1775."
+      },
+      "sources": [
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "dorchester-heights",
+      "name": {
+        "en": "Dorchester Heights",
+        "id": "Dorchester Heights"
+      },
+      "modernName": {
+        "en": "South Boston, Massachusetts",
+        "id": "South Boston, Massachusetts"
+      },
+      "kind": "fort",
+      "coordinates": [
+        -71.0475,
+        42.3367
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Strategic promontory fortified by Washington overnight with cannons dragged from Fort Ticonderoga, compelling the British evacuation of Boston.",
+        "id": "Bukit strategis yang dibentengi semalam suntuk oleh Washington dengan meriam dari Benteng Ticonderoga, memaksa Britania mengevakuasi Boston."
+      },
+      "sources": [
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "fort-ticonderoga",
+      "name": {
+        "en": "Fort Ticonderoga",
+        "id": "Benteng Ticonderoga"
+      },
+      "modernName": {
+        "en": "Ticonderoga, Essex County, New York",
+        "id": "Ticonderoga, Essex County, New York"
+      },
+      "kind": "fort",
+      "coordinates": [
+        -73.4048,
+        43.8418
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Star-shaped fortress on Lake Champlain; captured by Ethan Allen and Benedict Arnold in May 1775, providing the heavy siege train for Boston.",
+        "id": "Benteng berbentuk bintang di Danau Champlain; direbut oleh Ethan Allen dan Benedict Arnold pada Mei 1775, sumber meriam kepung ke Boston."
+      },
+      "sources": [
+        "osprey-saratoga",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "new-york-city",
+      "name": {
+        "en": "New York City",
+        "id": "New York City"
+      },
+      "modernName": {
+        "en": "Manhattan, New York",
+        "id": "Manhattan, New York"
+      },
+      "kind": "port",
+      "coordinates": [
+        -74.0134,
+        40.7042
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Major Atlantic port held by the British Army from September 1776 until Evacuation Day on 25 November 1783.",
+        "id": "Pelabuhan Atlantik utama yang dikuasai Britania sejak September 1776 hingga Hari Evakuasi pada 25 November 1783."
+      },
+      "sources": [
+        "mccullough-2005",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "brooklyn-heights",
+      "name": {
+        "en": "Brooklyn Heights",
+        "id": "Brooklyn Heights"
+      },
+      "modernName": {
+        "en": "Brooklyn, New York",
+        "id": "Brooklyn, New York"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -73.9969,
+        40.6958
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Fortified ridge on Long Island from which Washington conducted a miraculous nighttime boat evacuation of his army across the East River in August 1776.",
+        "id": "Punggung bukit di Long Island tempat Washington melancarkan evakuasi perahu malam hari yang ajaib melintasi Sungai East pada Agustus 1776."
+      },
+      "sources": [
+        "mccullough-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "white-plains",
+      "name": {
+        "en": "White Plains",
+        "id": "White Plains"
+      },
+      "modernName": {
+        "en": "White Plains, Westchester County, New York",
+        "id": "White Plains, Westchester County, New York"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -73.7629,
+        41.034
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Clash in Westchester County where Washington checked Howe's flanking advance before withdrawing into northern New Jersey.",
+        "id": "Bentrokan di Westchester County tempat Washington menahan laju sayap Howe sebelum mundur ke New Jersey utara."
+      },
+      "sources": [
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "fort-washington",
+      "name": {
+        "en": "Fort Washington",
+        "id": "Benteng Washington"
+      },
+      "modernName": {
+        "en": "Upper Manhattan, New York",
+        "id": "Upper Manhattan, New York"
+      },
+      "kind": "fort",
+      "coordinates": [
+        -73.9383,
+        40.8528
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Last Patriot citadel on Manhattan, captured with nearly 2,900 Continental defenders by British and Hessian assault on 16 November 1776.",
+        "id": "Benteng terakhir Patriot di Manhattan, direbut bersama hampir 2.900 prajurit Kontinental oleh serbuan Britania dan Hessen pada 16 November 1776."
+      },
+      "sources": [
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "trenton",
+      "name": {
+        "en": "Trenton",
+        "id": "Trenton"
+      },
+      "modernName": {
+        "en": "Trenton, Mercer County, New Jersey",
+        "id": "Trenton, Mercer County, New Jersey"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        -74.7699,
+        40.2206
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Site of Washington's surprise Christmas attack on the Hessian brigade under Colonel Johann Rall, reviving Patriot morale.",
+        "id": "Lokasi serangan kejutan Natal Washington terhadap brigade Hessen pimpinan Kolonel Johann Rall, yang membangkitkan semangat Patriot."
+      },
+      "sources": [
+        "osprey-trenton",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "princeton",
+      "name": {
+        "en": "Princeton",
+        "id": "Princeton"
+      },
+      "modernName": {
+        "en": "Princeton, Mercer County, New Jersey",
+        "id": "Princeton, Mercer County, New Jersey"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -74.6672,
+        40.344
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Field where Washington outmaneuvered Cornwallis via a daring night march and routed three British regiments on 3 January 1777.",
+        "id": "Medan pertempuran tempat Washington mengecoh Cornwallis melalui barisan malam dan memukul tiga resimen Britania pada 3 Januari 1777."
+      },
+      "sources": [
+        "osprey-trenton",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "morristown",
+      "name": {
+        "en": "Morristown",
+        "id": "Morristown"
+      },
+      "modernName": {
+        "en": "Morristown, Morris County, New Jersey",
+        "id": "Morristown, Morris County, New Jersey"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        -74.4815,
+        40.7968
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Defensible winter quarters in the Watchung Mountains from which Washington watched British lines in New York.",
+        "id": "Perkemahan musim dingin di Pegunungan Watchung tempat Washington memantau pertahanan Britania di New York."
+      },
+      "sources": [
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "bennington",
+      "name": {
+        "en": "Bennington (Walloomsac)",
+        "id": "Bennington (Walloomsac)"
+      },
+      "modernName": {
+        "en": "Walloomsac, Rensselaer County, New York",
+        "id": "Walloomsac, Rensselaer County, New York"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -73.3039,
+        42.9281
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Battleground where John Stark's New Hampshire militia crushed a foraging column of Brunswick dragoons and Loyalists under Lt. Col. Baum in August 1777.",
+        "id": "Medan tempur tempat milisi New Hampshire pimpinan John Stark menghancurkan detasemen dragoon Brunswick pimpinan Baum pada Agustus 1777."
+      },
+      "sources": [
+        "osprey-saratoga"
+      ]
+    },
+    {
+      "id": "saratoga",
+      "name": {
+        "en": "Saratoga (Bemis Heights)",
+        "id": "Saratoga (Bemis Heights)"
+      },
+      "modernName": {
+        "en": "Stillwater, Saratoga County, New York",
+        "id": "Stillwater, Saratoga County, New York"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -73.6339,
+        42.9989
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Heights above the Hudson River where Gates and Arnold defeated General Burgoyne, prompting the surrender of his entire British army and securing French entry into the war.",
+        "id": "Perbukitan di atas Sungai Hudson tempat Gates dan Arnold mengalahkan Jenderal Burgoyne, memicu penyerahan seluruh pasukannya dan masuknya Prancis ke dalam perang."
+      },
+      "sources": [
+        "osprey-saratoga",
+        "wp-saratoga"
+      ]
+    },
+    {
+      "id": "albany",
+      "name": {
+        "en": "Albany",
+        "id": "Albany"
+      },
+      "modernName": {
+        "en": "Albany, New York",
+        "id": "Albany, New York"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        -73.7562,
+        42.6526
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Strategic northern hub at the confluence of the Mohawk and Hudson rivers, target of Burgoyne's foiled invasion plan.",
+        "id": "Pusat strategis utara di pertemuan Sungai Mohawk dan Hudson, target utama invasi Burgoyne yang gagal tercapai."
+      },
+      "sources": [
+        "osprey-saratoga"
+      ]
+    },
+    {
+      "id": "head-of-elk",
+      "name": {
+        "en": "Head of Elk",
+        "id": "Head of Elk"
+      },
+      "modernName": {
+        "en": "Elkton, Cecil County, Maryland",
+        "id": "Elkton, Cecil County, Maryland"
+      },
+      "kind": "port",
+      "coordinates": [
+        -75.8336,
+        39.6068
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Upper Chesapeake port where Howe landed his Philadelphia invasion fleet in 1777, and where Washington and Rochambeau embarked for Yorktown in 1781.",
+        "id": "Pelabuhan utara Teluk Chesapeake tempat Howe mendaratkan armada invasi Philadelphia pada 1777, dan titik embarkasi Washington-Rochambeau menuju Yorktown pada 1781."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "osprey-yorktown"
+      ]
+    },
+    {
+      "id": "brandywine",
+      "name": {
+        "en": "Brandywine (Chadds Ford)",
+        "id": "Brandywine (Chadds Ford)"
+      },
+      "modernName": {
+        "en": "Chadds Ford, Pennsylvania",
+        "id": "Chadds Ford, Pennsylvania"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -75.5908,
+        39.8722
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Major engagement along Brandywine Creek where Howe outflanked Washington, opening the road to Philadelphia on 11 September 1777.",
+        "id": "Pertempuran besar di Sungai Brandywine saat Howe mengepung sayap Washington, membuka jalan menuju Philadelphia pada 11 September 1777."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "philadelphia",
+      "name": {
+        "en": "Philadelphia",
+        "id": "Philadelphia"
+      },
+      "modernName": {
+        "en": "Philadelphia, Pennsylvania",
+        "id": "Philadelphia, Pennsylvania"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        -75.1652,
+        39.9526
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Seat of the Continental Congress, birthplace of the Declaration of Independence, occupied by British forces from September 1777 to June 1778.",
+        "id": "Pusat Kongres Kontinental, tempat lahir Deklarasi Kemerdekaan, diduduki Britania dari September 1777 hingga Juni 1778."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "wood-1992"
+      ]
+    },
+    {
+      "id": "germantown",
+      "name": {
+        "en": "Germantown",
+        "id": "Germantown"
+      },
+      "modernName": {
+        "en": "Philadelphia, Pennsylvania",
+        "id": "Philadelphia, Pennsylvania"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -75.1818,
+        40.0337
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Four-pronged American dawn assault on Howe's camp that miscarried amidst dense morning fog and heavy fighting around the Chew House.",
+        "id": "Serangan fajar empat sayap pasukan Amerika terhadap perkemahan Howe yang gagal akibat kabut tebal dan pertempuran sengit di Rumah Chew."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "valley-forge",
+      "name": {
+        "en": "Valley Forge",
+        "id": "Valley Forge"
+      },
+      "modernName": {
+        "en": "Valley Forge, Chester County, Pennsylvania",
+        "id": "Valley Forge, Chester County, Pennsylvania"
+      },
+      "kind": "fort",
+      "coordinates": [
+        -75.4344,
+        40.1009
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Winter encampment of 1777–1778 where hardship, disease, and starvation forged an enduring army under the rigorous drill of Baron von Steuben.",
+        "id": "Perkemahan musim dingin 1777–1778 tempat penderitaan, wabah, dan kelaparan menempa pasukan profesional di bawah latihan Baron von Steuben."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "monmouth-court-house",
+      "name": {
+        "en": "Monmouth Court House",
+        "id": "Monmouth Court House"
+      },
+      "modernName": {
+        "en": "Freehold, Monmouth County, New Jersey",
+        "id": "Freehold, Monmouth County, New Jersey"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -74.2754,
+        40.2608
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Searing battle fought in 100-degree heat on 28 June 1778, proving the efficacy of Steuben's training against British regulars.",
+        "id": "Pertempuran dahsyat di tengah sengatan terik pada 28 Juni 1778, membuktikan keampuhan latihan Steuben menghadapi tentara reguler Britania."
+      },
+      "sources": [
+        "osprey-monmouth",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "newport",
+      "name": {
+        "en": "Newport",
+        "id": "Newport"
+      },
+      "modernName": {
+        "en": "Newport, Rhode Island",
+        "id": "Newport, Rhode Island"
+      },
+      "kind": "port",
+      "coordinates": [
+        -71.3128,
+        41.4901
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Rhode Island port where Rochambeau's French expeditionary army landed in July 1780 before joining Washington in 1781.",
+        "id": "Pelabuhan Rhode Island tempat mendaratnya pasukan ekspedisi Prancis pimpinan Rochambeau pada Juli 1780 sebelum bergabung dengan Washington."
+      },
+      "sources": [
+        "osprey-yorktown"
+      ]
+    },
+    {
+      "id": "charleston",
+      "name": {
+        "en": "Charleston",
+        "id": "Charleston"
+      },
+      "modernName": {
+        "en": "Charleston, South Carolina",
+        "id": "Charleston, South Carolina"
+      },
+      "kind": "port",
+      "coordinates": [
+        -79.9311,
+        32.7765
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Premier southern seaport; repulsed British fleet in 1776 at Fort Moultrie, but surrendered to Clinton in May 1780 in the worst American defeat of the war.",
+        "id": "Pelabuhan utama selatan; memukul mundur armada Britania pada 1776 di Fort Moultrie, namun menyerah kepada Clinton pada Mei 1780 dalam kekalahan terbesar Amerika."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "ferling-2007"
+      ]
+    },
+    {
+      "id": "camden",
+      "name": {
+        "en": "Camden",
+        "id": "Camden"
+      },
+      "modernName": {
+        "en": "Camden, Kershaw County, South Carolina",
+        "id": "Camden, Kershaw County, South Carolina"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -80.6073,
+        34.2465
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Battleground where Cornwallis crushed Horatio Gates's southern Continental army on 16 August 1780, leading to Greene's appointment.",
+        "id": "Medan tempur tempat Cornwallis menghancurkan tentara selatan Horatio Gates pada 16 Agustus 1780, yang mengantarkan pengangkatan Nathanael Greene."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "osprey-cowpens"
+      ]
+    },
+    {
+      "id": "kings-mountain",
+      "name": {
+        "en": "Kings Mountain",
+        "id": "Kings Mountain"
+      },
+      "modernName": {
+        "en": "Cherokee County, South Carolina",
+        "id": "Cherokee County, South Carolina"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -81.3831,
+        35.1394
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Backcountry ridge where frontier Overmountain Men surrounded and annihilated Major Patrick Ferguson's Loyalist army on 7 October 1780.",
+        "id": "Bukit pedalaman tempat milisi penjelajah pegunungan mengepung dan menghancurkan seluruh korps Loyalis pimpinan Patrick Ferguson pada 7 Oktober 1780."
+      },
+      "sources": [
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "cowpens",
+      "name": {
+        "en": "Cowpens",
+        "id": "Cowpens"
+      },
+      "modernName": {
+        "en": "Cherokee County, South Carolina",
+        "id": "Cherokee County, South Carolina"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -81.8172,
+        35.1353
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Pastureland where Daniel Morgan orchestrated a textbook double envelopment, destroying Banastre Tarleton's elite British Legion on 17 January 1781.",
+        "id": "Padang rumput tempat Daniel Morgan merancang kepungan ganda legendaris, memusnahkan British Legion pimpinan Banastre Tarleton pada 17 Januari 1781."
+      },
+      "sources": [
+        "osprey-cowpens",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "guilford-court-house",
+      "name": {
+        "en": "Guilford Court House",
+        "id": "Guilford Court House"
+      },
+      "modernName": {
+        "en": "Greensboro, Guilford County, North Carolina",
+        "id": "Greensboro, Guilford County, North Carolina"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -79.8458,
+        36.1322
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Pivotal clash where Cornwallis defeated Greene tactically but suffered ruinous 27 percent casualties, forcing his fateful withdrawal to Virginia.",
+        "id": "Bentrokan penentu saat Cornwallis menang secara taktis atas Greene namun menderita korban 27 persen yang melumpuhkan pasukannya, memaksanya mundur ke Virginia."
+      },
+      "sources": [
+        "osprey-cowpens",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "williamsburg",
+      "name": {
+        "en": "Williamsburg",
+        "id": "Williamsburg"
+      },
+      "modernName": {
+        "en": "Williamsburg, Virginia",
+        "id": "Williamsburg, Virginia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        -76.7075,
+        37.2707
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Colonial capital of Virginia and grand staging ground where American and French armies concentrated in September 1781 before besieging Yorktown.",
+        "id": "Ibu kota kolonial Virginia dan titik konsentrasi pasukan gabungan Amerika dan Prancis pada September 1781 sebelum mengepung Yorktown."
+      },
+      "sources": [
+        "osprey-yorktown"
+      ]
+    },
+    {
+      "id": "chesapeake-capes",
+      "name": {
+        "en": "Chesapeake Capes",
+        "id": "Tanjung Chesapeake"
+      },
+      "modernName": {
+        "en": "Cape Henry & Cape Charles, Virginia",
+        "id": "Tanjung Henry & Tanjung Charles, Virginia"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -75.9877,
+        36.9982
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Waters off the Chesapeake entrance where Admiral de Grasse fended off the British relief fleet under Admiral Graves, sealing Cornwallis's fate at Yorktown.",
+        "id": "Perairan muara Teluk Chesapeake tempat Laksamana de Grasse memukul mundur armada bantuan Britania, menyegel nasib Cornwallis di Yorktown."
+      },
+      "sources": [
+        "osprey-yorktown",
+        "wp-yorktown"
+      ]
+    },
+    {
+      "id": "yorktown",
+      "name": {
+        "en": "Yorktown",
+        "id": "Yorktown"
+      },
+      "modernName": {
+        "en": "Yorktown, York County, Virginia",
+        "id": "Yorktown, York County, Virginia"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        -76.511,
+        37.2388
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Tidewater port where Cornwallis surrendered his 7,000-man army to Washington and Rochambeau on 19 October 1781, breaking Britain's will to continue the war.",
+        "id": "Kota pelabuhan sungai tempat Cornwallis menyerahkan pasukannya yang berkekuatan 7.000 prajurit kepada Washington dan Rochambeau pada 19 Oktober 1781."
+      },
+      "sources": [
+        "osprey-yorktown",
+        "wp-yorktown",
+        "chernow-2010"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "washington-main",
+      "kind": "unit",
+      "name": {
+        "en": "Continental Main Army (George Washington)",
+        "id": "Tentara Utama Kontinental (George Washington)"
+      },
+      "faction": "united-colonies",
+      "commanders": [
+        "George Washington",
+        "Nathanael Greene",
+        "Henry Knox",
+        "Alexander Hamilton"
+      ],
+      "description": {
+        "en": "The core regular force of the Continental Army commanded directly by General George Washington, campaigning from Boston to New York, New Jersey, Pennsylvania, and Virginia.",
+        "id": "Pasukan reguler utama Tentara Kontinental yang dipimpin langsung oleh Jenderal George Washington, bertempur dari Boston ke New York, New Jersey, Pennsylvania, hingga Virginia."
+      },
+      "track": [
+        {
+          "when": "1775-04-19/1776-03-28",
+          "at": "cambridge",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Siege of Boston & Cambridge Encampment",
+            "id": "Pengepungan Boston & Markas Cambridge"
+          }
+        },
+        {
+          "when": "1776-04-13/1776-08-23",
+          "at": "new-york-city",
+          "strength": 19000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defending Manhattan and Long Island",
+            "id": "Mempertahankan Manhattan dan Long Island"
+          }
+        },
+        {
+          "when": "1776-08-25/1776-08-30",
+          "at": "brooklyn-heights",
+          "strength": 10000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Long Island & East River Boat Evacuation",
+            "id": "Pertempuran Long Island & Evakuasi Perahu Sungai East"
+          }
+        },
+        {
+          "when": "1776-10-21/1776-11-01",
+          "at": "white-plains",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of White Plains",
+            "id": "Pertempuran White Plains"
+          }
+        },
+        {
+          "when": "1776-12-25T18:00/1776-12-26T12:00",
+          "at": "trenton",
+          "strength": 2400,
+          "certainty": "exact",
+          "label": {
+            "en": "Crossing the Delaware & Surprise Assault on Trenton",
+            "id": "Menyeberangi Sungai Delaware & Serangan Kejutan di Trenton"
+          }
+        },
+        {
+          "when": "1777-01-03T07:00/1777-01-03T14:00",
+          "at": "princeton",
+          "strength": 4500,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of Princeton",
+            "id": "Pertempuran Princeton"
+          }
+        },
+        {
+          "when": "1777-01-06/1777-05-28",
+          "at": "morristown",
+          "strength": 7000,
+          "certainty": "exact",
+          "label": {
+            "en": "Winter Encampment at Morristown",
+            "id": "Perkemahan Musim Dingin di Morristown"
+          }
+        },
+        {
+          "when": "1777-09-09/1777-09-12",
+          "at": "brandywine",
+          "strength": 11000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defense of Brandywine Creek",
+            "id": "Pertahanan di Sungai Brandywine"
+          }
+        },
+        {
+          "when": "1777-10-03/1777-10-05",
+          "at": "germantown",
+          "strength": 11000,
+          "certainty": "exact",
+          "label": {
+            "en": "Dawn Counter-attack at Germantown",
+            "id": "Serangan Balik Fajar di Germantown"
+          }
+        },
+        {
+          "when": "1777-12-19/1778-06-18",
+          "at": "valley-forge",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Winter Crucible & Drill at Valley Forge",
+            "id": "Tempaan Musim Dingin & Latihan Disiplin di Valley Forge"
+          }
+        },
+        {
+          "when": "1778-06-27/1778-06-29",
+          "at": "monmouth-court-house",
+          "strength": 13500,
+          "certainty": "exact",
+          "label": {
+            "en": "Steuben-drilled Continentals Stand Firm at Monmouth",
+            "id": "Pasukan Terlatih Steuben Bertahan Teguh di Monmouth"
+          }
+        },
+        {
+          "when": "1781-09-06/1781-09-08",
+          "at": "head-of-elk",
+          "strength": 9000,
+          "certainty": "exact",
+          "label": {
+            "en": "The Grand March to the Chesapeake",
+            "id": "Gerak Baris Akbar Menuju Chesapeake"
+          }
+        },
+        {
+          "when": "1781-09-14/1781-09-27",
+          "at": "williamsburg",
+          "strength": 9000,
+          "certainty": "exact",
+          "label": {
+            "en": "Allied Concentration at Williamsburg",
+            "id": "Konsentrasi Sekutu di Williamsburg"
+          }
+        },
+        {
+          "when": "1781-09-29/1781-10-25",
+          "at": "yorktown",
+          "strength": 9000,
+          "certainty": "exact",
+          "label": {
+            "en": "Siege of Yorktown & Triumphant Victory",
+            "id": "Pengepungan Yorktown & Kemenangan Gemilang"
+          }
+        },
+        {
+          "when": "1783-11-25/1783-12-04",
+          "at": "new-york-city",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Triumphal Entry into New York & Farewell at Fraunces Tavern",
+            "id": "Pawai Kemenangan di New York & Perpisahan di Kedai Fraunces"
+          }
+        }
+      ],
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "howe-clinton-main",
+      "kind": "unit",
+      "name": {
+        "en": "British Main Army (Howe / Clinton)",
+        "id": "Tentara Utama Britania (Howe / Clinton)"
+      },
+      "faction": "great-britain",
+      "commanders": [
+        "William Howe",
+        "Sir Henry Clinton",
+        "Lord Cornwallis",
+        "Wilhelm von Knyphausen"
+      ],
+      "description": {
+        "en": "The primary British strategic army in North America, executing the amphibious operations against New York and Philadelphia, before holding Manhattan.",
+        "id": "Tentara strategis utama Britania di Amerika Utara, yang melancarkan operasi amfibi merebut New York dan Philadelphia sebelum bertahan di Manhattan."
+      },
+      "track": [
+        {
+          "when": "1775-04-19/1776-03-17",
+          "at": "boston",
+          "strength": 10000,
+          "certainty": "exact",
+          "label": {
+            "en": "Besieged in Boston",
+            "id": "Terkepung di Boston"
+          }
+        },
+        {
+          "when": "1776-07-02/1776-08-19",
+          "at": "new-york-city",
+          "strength": 32000,
+          "certainty": "exact",
+          "label": {
+            "en": "Massive Royal Fleet Lands on Staten Island",
+            "id": "Armada Akbar Kerajaan Mendarat di Staten Island"
+          }
+        },
+        {
+          "when": "1776-08-21/1776-09-14",
+          "at": "brooklyn-heights",
+          "strength": 22000,
+          "certainty": "exact",
+          "label": {
+            "en": "Flank Attack and Long Island Victory",
+            "id": "Serangan Sayap dan Kemenangan Long Island"
+          }
+        },
+        {
+          "when": "1776-10-22/1776-10-29",
+          "at": "white-plains",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of White Plains",
+            "id": "Pertempuran White Plains"
+          }
+        },
+        {
+          "when": "1776-11-15/1776-11-18",
+          "at": "fort-washington",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Storming Fort Washington",
+            "id": "Penyerbuan Benteng Washington"
+          }
+        },
+        {
+          "when": "1777-08-25/1777-09-02",
+          "at": "head-of-elk",
+          "strength": 18000,
+          "certainty": "exact",
+          "label": {
+            "en": "Disembarkation at Head of Elk",
+            "id": "Pendaratan Pasukan di Head of Elk"
+          }
+        },
+        {
+          "when": "1777-09-10/1777-09-12",
+          "at": "brandywine",
+          "strength": 18000,
+          "certainty": "exact",
+          "label": {
+            "en": "Flank March and Victory at Brandywine",
+            "id": "Manuver Sayap dan Kemenangan di Brandywine"
+          }
+        },
+        {
+          "when": "1777-09-26/1778-06-17",
+          "at": "philadelphia",
+          "strength": 15000,
+          "certainty": "exact",
+          "label": {
+            "en": "Occupation of Philadelphia",
+            "id": "Pendudukan Kota Philadelphia"
+          }
+        },
+        {
+          "when": "1778-06-27/1778-06-29",
+          "at": "monmouth-court-house",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Clinton's Rearguard Battle at Monmouth",
+            "id": "Pertempuran Barisan Belakang Clinton di Monmouth"
+          }
+        },
+        {
+          "when": "1778-07-05/1783-11-25",
+          "at": "new-york-city",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Fortified Base at Manhattan until Evacuation",
+            "id": "Pangkalan Pertahanan Manhattan hingga Evakuasi"
+          }
+        }
+      ],
+      "sources": [
+        "middlekauff-2005",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "burgoyne-corps",
+      "kind": "unit",
+      "name": {
+        "en": "British Northern Army (John Burgoyne)",
+        "id": "Tentara Utara Britania (John Burgoyne)"
+      },
+      "faction": "great-britain",
+      "commanders": [
+        "John Burgoyne",
+        "Simon Fraser",
+        "Friedrich Adolf Riedesel"
+      ],
+      "description": {
+        "en": "The invasion force advancing south from Canada via Lake Champlain to seize Albany and split New England from the middle colonies.",
+        "id": "Pasukan invasi yang bergerak dari Kanada melalui Danau Champlain untuk merebut Albany dan memisahkan New England dari koloni lainnya."
+      },
+      "track": [
+        {
+          "when": "1777-06-30/1777-07-06",
+          "at": "fort-ticonderoga",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Recapture of Fort Ticonderoga",
+            "id": "Direbutnya Kembali Benteng Ticonderoga"
+          }
+        },
+        {
+          "when": "1777-08-15/1777-08-17",
+          "at": "bennington",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Baum's Detachment Annihilated at Bennington",
+            "id": "Detasemen Baum Dihancurkan di Bennington"
+          }
+        },
+        {
+          "when": "1777-09-18/1777-10-17",
+          "at": "saratoga",
+          "strength": 5800,
+          "certainty": "exact",
+          "label": {
+            "en": "Battles of Saratoga & Surrender to Gates",
+            "id": "Pertempuran Saratoga & Menyerah kepada Gates"
+          }
+        }
+      ],
+      "states": [
+        {
+          "when": "1777-10-17",
+          "status": "surrendered",
+          "label": {
+            "en": "Convention of Saratoga: Surrender of Burgoyne's Army",
+            "id": "Konvensi Saratoga: Penyerahan Tentara Burgoyne"
+          }
+        }
+      ],
+      "sources": [
+        "osprey-saratoga",
+        "wp-saratoga"
+      ]
+    },
+    {
+      "id": "gates-arnold-northern",
+      "kind": "unit",
+      "name": {
+        "en": "Continental Northern Army (Gates & Arnold)",
+        "id": "Tentara Utara Kontinental (Gates & Arnold)"
+      },
+      "faction": "united-colonies",
+      "commanders": [
+        "Horatio Gates",
+        "Benedict Arnold",
+        "Daniel Morgan",
+        "Benjamin Lincoln"
+      ],
+      "description": {
+        "en": "The northern army defending the Hudson Valley, fortified on Bemis Heights and reinforced by militia and Daniel Morgan's sharpshooters.",
+        "id": "Tentara utara yang mempertahankan Lembah Hudson, dibentengi di Bemis Heights dan diperkuat milisi serta penembak jitu Daniel Morgan."
+      },
+      "track": [
+        {
+          "when": "1777-07-15/1777-08-18",
+          "at": "albany",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Mobilization and Defense of the Upper Hudson",
+            "id": "Mobilisasi dan Pertahanan Lembah Hudson Atas"
+          }
+        },
+        {
+          "when": "1777-09-12/1777-10-17",
+          "at": "saratoga",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Entrenched at Bemis Heights & Decisive Victory",
+            "id": "Pertahanan Bemis Heights & Kemenangan Penentu"
+          }
+        }
+      ],
+      "sources": [
+        "osprey-saratoga",
+        "wp-saratoga"
+      ]
+    },
+    {
+      "id": "cornwallis-southern",
+      "kind": "unit",
+      "name": {
+        "en": "British Southern Army (Lord Cornwallis)",
+        "id": "Tentara Selatan Britania (Lord Cornwallis)"
+      },
+      "faction": "great-britain",
+      "commanders": [
+        "Charles, Earl Cornwallis",
+        "Banastre Tarleton",
+        "Lord Rawdon",
+        "Patrick Ferguson"
+      ],
+      "description": {
+        "en": "The British southern expeditionary force that captured Charleston and swept inland through the Carolinas before being trapped on the Virginia Tidewater.",
+        "id": "Pasukan ekspedisi selatan Britania yang merebut Charleston dan merangsek ke pedalaman Carolina sebelum terkepung di muara sungai Virginia."
+      },
+      "track": [
+        {
+          "when": "1780-05-12/1780-06-05",
+          "at": "charleston",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Capture of Charleston",
+            "id": "Jatuhnya Kota Charleston"
+          }
+        },
+        {
+          "when": "1780-08-14/1780-08-18",
+          "at": "camden",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Victory over Gates at Camden",
+            "id": "Kemenangan atas Gates di Camden"
+          }
+        },
+        {
+          "when": "1780-10-06/1780-10-08",
+          "at": "kings-mountain",
+          "strength": 1100,
+          "certainty": "exact",
+          "label": {
+            "en": "Ferguson's Loyalist Flank Destroyed",
+            "id": "Sayap Loyalis Ferguson Dihancurkan"
+          }
+        },
+        {
+          "when": "1781-01-16/1781-01-18",
+          "at": "cowpens",
+          "strength": 1100,
+          "certainty": "exact",
+          "label": {
+            "en": "Tarleton's Legion Smashed at Cowpens",
+            "id": "Legiun Tarleton Dihancurkan di Cowpens"
+          }
+        },
+        {
+          "when": "1781-03-14/1781-03-16",
+          "at": "guilford-court-house",
+          "strength": 2100,
+          "certainty": "exact",
+          "label": {
+            "en": "Pyrrhic Victory at Guilford Court House",
+            "id": "Kemenangan Penuh Kerugian di Guilford Court House"
+          }
+        },
+        {
+          "when": "1781-06-25/1781-07-04",
+          "at": "williamsburg",
+          "strength": 7500,
+          "certainty": "exact",
+          "label": {
+            "en": "Invasion of Virginia",
+            "id": "Invasi ke Wilayah Virginia"
+          }
+        },
+        {
+          "when": "1781-08-02/1781-10-19",
+          "at": "yorktown",
+          "strength": 7200,
+          "certainty": "exact",
+          "label": {
+            "en": "Fortified at Yorktown & Besieged",
+            "id": "Bertahan di Yorktown & Terkepung"
+          }
+        }
+      ],
+      "states": [
+        {
+          "when": "1781-09-28/1781-10-19",
+          "status": "besieged",
+          "label": {
+            "en": "Besieged by Allied Franco-American Armies",
+            "id": "Dikepung Pasukan Sekutu Prancis-Amerika"
+          }
+        },
+        {
+          "when": "1781-10-19",
+          "status": "surrendered",
+          "label": {
+            "en": "Surrender of Cornwallis's Army",
+            "id": "Menyerahnya Pasukan Cornwallis"
+          }
+        }
+      ],
+      "sources": [
+        "osprey-yorktown",
+        "osprey-cowpens"
+      ]
+    },
+    {
+      "id": "greene-southern",
+      "kind": "unit",
+      "name": {
+        "en": "Continental Southern Army (Nathanael Greene)",
+        "id": "Tentara Selatan Kontinental (Nathanael Greene)"
+      },
+      "faction": "united-colonies",
+      "commanders": [
+        "Nathanael Greene",
+        "Daniel Morgan",
+        "Henry Lee",
+        "William Washington"
+      ],
+      "description": {
+        "en": "The mobile southern department that wore down British operational strength through strategic withdrawals, militia coordination, and tactical brilliance.",
+        "id": "Tentara departemen selatan yang menguras kekuatan operasi Britania melalui penarikan taktis, koordinasi milisi, dan manuver gemilang."
+      },
+      "track": [
+        {
+          "when": "1780-12-02/1780-12-16",
+          "at": "camden",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Greene Reorganizes Southern Forces",
+            "id": "Greene Menyusun Ulang Pasukan Selatan"
+          }
+        },
+        {
+          "when": "1781-01-16/1781-01-18",
+          "at": "cowpens",
+          "strength": 1900,
+          "certainty": "exact",
+          "label": {
+            "en": "Double Envelopment at Cowpens",
+            "id": "Kepungan Ganda di Cowpens"
+          }
+        },
+        {
+          "when": "1781-03-14/1781-03-16",
+          "at": "guilford-court-house",
+          "strength": 4400,
+          "certainty": "exact",
+          "label": {
+            "en": "Three-Line Defense at Guilford Court House",
+            "id": "Pertahanan Tiga Garis di Guilford Court House"
+          }
+        },
+        {
+          "when": "1781-09-08/1782-12-14",
+          "at": "charleston",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Liberation of the Carolinas Lowcountry",
+            "id": "Pembebasan Wilayah Pedalaman Carolina"
+          }
+        }
+      ],
+      "sources": [
+        "osprey-cowpens",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "rochambeau-expedition",
+      "kind": "unit",
+      "name": {
+        "en": "French Expeditionary Corps (Comte de Rochambeau)",
+        "id": "Korps Ekspedisi Prancis (Comte de Rochambeau)"
+      },
+      "faction": "kingdom-of-france",
+      "commanders": [
+        "Jean-Baptiste de Rochambeau",
+        "Marquis de Chastellux",
+        "Marquis de Lafayette"
+      ],
+      "description": {
+        "en": "The Expédition Particulière: veteran French infantry and heavy siege artillery dispatched by King Louis XVI to aid the American cause.",
+        "id": "Expédition Particulière: prajurit infanteri veteran dan artileri kepung berat Prancis kiriman Raja Louis XVI untuk membantu perjuangan Amerika."
+      },
+      "track": [
+        {
+          "when": "1780-07-11/1781-06-10",
+          "at": "newport",
+          "strength": 5500,
+          "certainty": "exact",
+          "label": {
+            "en": "Landing at Rhode Island",
+            "id": "Pendaratan di Rhode Island"
+          }
+        },
+        {
+          "when": "1781-07-06/1781-08-18",
+          "at": "white-plains",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Junction with Washington North of New York",
+            "id": "Bergabung dengan Washington di Utara New York"
+          }
+        },
+        {
+          "when": "1781-09-06/1781-09-09",
+          "at": "head-of-elk",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "March to the Head of Elk",
+            "id": "Barisan Menuju Head of Elk"
+          }
+        },
+        {
+          "when": "1781-09-14/1781-09-27",
+          "at": "williamsburg",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Allied Staging at Williamsburg",
+            "id": "Penyatuan Pasukan Sekutu di Williamsburg"
+          }
+        },
+        {
+          "when": "1781-09-29/1781-10-25",
+          "at": "yorktown",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "French Siege Operations & Storming of Redoubt 9",
+            "id": "Operasi Kepung Prancis & Penyerbuan Redoubt 9"
+          }
+        }
+      ],
+      "sources": [
+        "osprey-yorktown",
+        "ferling-2007"
+      ]
+    },
+    {
+      "id": "de-grasse-fleet",
+      "kind": "unit",
+      "name": {
+        "en": "French Fleet (Comte de Grasse)",
+        "id": "Armada Laut Prancis (Comte de Grasse)"
+      },
+      "faction": "kingdom-of-france",
+      "commanders": [
+        "François-Joseph Paul, Comte de Grasse",
+        "Louis-Antoine de Bougainville"
+      ],
+      "description": {
+        "en": "The French royal naval battle fleet from the West Indies that gained local naval supremacy at the Battle of the Capes, severing British communications.",
+        "id": "Armada kapal tempur Kerajaan Prancis dari Hindia Barat yang merebut kendali laut di Pertempuran Tanjung Chesapeake, memutus bala bantuan Britania."
+      },
+      "track": [
+        {
+          "when": "1781-08-30/1781-09-06",
+          "at": "chesapeake-capes",
+          "strength": 28,
+          "mode": "sea",
+          "certainty": "exact",
+          "label": {
+            "en": "Battle of the Chesapeake Capes",
+            "id": "Pertempuran Tanjung Chesapeake"
+          }
+        },
+        {
+          "when": "1781-09-08/1781-10-25",
+          "at": "yorktown",
+          "strength": 28,
+          "mode": "sea",
+          "certainty": "exact",
+          "label": {
+            "en": "Naval Blockade of the York River",
+            "id": "Blokade Laut di Sungai York"
+          }
+        }
+      ],
+      "sources": [
+        "osprey-yorktown",
+        "wp-yorktown"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "battle-of-lexington-concord",
+      "kind": "battle",
+      "name": {
+        "en": "Battles of Lexington and Concord",
+        "id": "Pertempuran Lexington dan Concord"
+      },
+      "when": "1775-04-19",
+      "at": "lexington-green",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "belligerent",
+          "commanders": [
+            "John Parker",
+            "James Barrett"
+          ],
+          "strength": 4000,
+          "losses": 93
+        },
+        {
+          "faction": "great-britain",
+          "role": "belligerent",
+          "commanders": [
+            "Francis Smith",
+            "John Pitcairn",
+            "Hugh Percy"
+          ],
+          "strength": 1800,
+          "losses": 273
+        }
+      ],
+      "summary": {
+        "en": "British regulars marched to seize colonial munitions at Concord; armed clash on Lexington Green ignited the American Revolution.",
+        "id": "Pasukan reguler Britania bergerak menyita amunisi milisi di Concord; bentrokan berdarah di Lexington Green menyulut Perang Revolusi Amerika."
+      },
+      "sources": [
+        "osprey-boston",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "battle-of-bunker-hill",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Bunker Hill",
+        "id": "Pertempuran Bunker Hill"
+      },
+      "when": "1775-06-17",
+      "at": "bunker-hill",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "William Prescott",
+            "Israel Putnam",
+            "Joseph Warren"
+          ],
+          "strength": 1500,
+          "losses": 450
+        },
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "William Howe",
+            "Robert Pigot",
+            "Henry Clinton"
+          ],
+          "strength": 2400,
+          "losses": 1054
+        }
+      ],
+      "summary": {
+        "en": "Colonial militia repelled two frontal British charges on Breed's Hill, inflicting over 1,000 casualties before yielding to bayonets when ammunition failed.",
+        "id": "Milisi koloni memukul dua serbuan depan Britania di Breed's Hill, menimbulkan lebih dari 1.000 korban sebelum mundur akibat kehabisan amunisi."
+      },
+      "sources": [
+        "osprey-boston",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "noble-train-artillery",
+      "kind": "other",
+      "name": {
+        "en": "Knox's Noble Train of Artillery",
+        "id": "Iringan Meriam Mulia Henry Knox"
+      },
+      "when": "1775-11-17/1776-01-25",
+      "at": "fort-ticonderoga",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "Henry Knox"
+          ],
+          "strength": 100
+        }
+      ],
+      "summary": {
+        "en": "Colonel Henry Knox hauled 59 captured cannons 300 miles over frozen mountains and lakes from Fort Ticonderoga to Boston.",
+        "id": "Kolonel Henry Knox menyeret 59 meriam rampasan sejauh 480 km melintasi danau beku dan pegunungan dari Benteng Ticonderoga ke Boston."
+      },
+      "sources": [
+        "mccullough-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "evacuation-of-boston",
+      "kind": "other",
+      "name": {
+        "en": "Evacuation of Boston",
+        "id": "Evakuasi Pasukan Britania dari Boston"
+      },
+      "when": "1776-03-17",
+      "at": "dorchester-heights",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "party",
+          "commanders": [
+            "William Howe"
+          ],
+          "strength": 9000
+        },
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "George Washington"
+          ],
+          "strength": 16000
+        }
+      ],
+      "summary": {
+        "en": "With Continental artillery entrenched on Dorchester Heights threatening the harbor, Howe's British garrison evacuated Boston for Halifax.",
+        "id": "Dengan meriam Kontinental terpasang di Dorchester Heights yang mengancam pelabuhan, garnisun Britania pimpinan Howe mengevakuasi Boston menuju Halifax."
+      },
+      "sources": [
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "declaration-of-independence",
+      "kind": "proclamation",
+      "name": {
+        "en": "Adoption of the Declaration of Independence",
+        "id": "Pengesahan Deklarasi Kemerdekaan"
+      },
+      "when": "1776-07-04",
+      "at": "philadelphia",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "John Hancock",
+            "Thomas Jefferson",
+            "Benjamin Franklin",
+            "John Adams"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "The Second Continental Congress unanimously adopted the Declaration of Independence, severing political ties with Great Britain.",
+        "id": "Kongres Kontinental Kedua secara bulat mengesahkan Deklarasi Kemerdekaan, memutus ikatan politik dengan Kerajaan Britania Raya."
+      },
+      "sources": [
+        "wood-1992",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "battle-of-long-island",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Long Island (Brooklyn)",
+        "id": "Pertempuran Long Island (Brooklyn)"
+      },
+      "when": "1776-08-27",
+      "at": "brooklyn-heights",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "William Howe",
+            "Henry Clinton",
+            "Charles Cornwallis"
+          ],
+          "strength": 20000,
+          "losses": 377
+        },
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "George Washington",
+            "Israel Putnam",
+            "Lord Stirling"
+          ],
+          "strength": 10000,
+          "losses": 2200
+        }
+      ],
+      "summary": {
+        "en": "Largest battle of the Revolutionary War; Howe outflanked the Continental line, but Washington saved his trapped army through a night boat evacuation.",
+        "id": "Pertempuran terbesar dalam Perang Revolusi; Howe mengepung sayap Kontinental, namun Washington menyelamatkan pasukannya lewat evakuasi malam hari."
+      },
+      "sources": [
+        "mccullough-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "fall-of-fort-washington",
+      "kind": "siege",
+      "name": {
+        "en": "Fall of Fort Washington",
+        "id": "Jatuhnya Benteng Washington"
+      },
+      "when": "1776-11-16",
+      "at": "fort-washington",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "William Howe",
+            "Wilhelm von Knyphausen"
+          ],
+          "strength": 8000,
+          "losses": 450
+        },
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "Robert Magaw"
+          ],
+          "strength": 2900,
+          "losses": 2900
+        }
+      ],
+      "summary": {
+        "en": "British and Hessian forces stormed Fort Washington in northern Manhattan, capturing nearly 2,900 Continental soldiers and immense military stores.",
+        "id": "Pasukan Britania dan Hessen menyerbu Benteng Washington di Manhattan utara, menawan hampir 2.900 prajurit Kontinental dan perbekalan melimpah."
+      },
+      "sources": [
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "crossing-of-the-delaware",
+      "kind": "other",
+      "name": {
+        "en": "Washington's Crossing of the Delaware River",
+        "id": "Penyeberangan Sungai Delaware oleh Washington"
+      },
+      "when": "1776-12-25",
+      "at": "trenton",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "George Washington",
+            "John Glover",
+            "Henry Knox"
+          ],
+          "strength": 2400
+        }
+      ],
+      "summary": {
+        "en": "On Christmas night amidst ice flows, sleet, and gale-force winds, Washington crossed the Delaware River with 2,400 men to launch a surprise attack.",
+        "id": "Pada malam Natal di tengah pecahan es dan badai salju, Washington menyeberangi Sungai Delaware bersama 2.400 prajurit untuk melancarkan serangan dadakan."
+      },
+      "sources": [
+        "osprey-trenton",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "battle-of-trenton",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Trenton",
+        "id": "Pertempuran Trenton"
+      },
+      "when": "1776-12-26",
+      "at": "trenton",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "attacker",
+          "commanders": [
+            "George Washington",
+            "Nathanael Greene",
+            "John Sullivan"
+          ],
+          "strength": 2400,
+          "losses": 5
+        },
+        {
+          "faction": "great-britain",
+          "role": "defender",
+          "commanders": [
+            "Johann Rall"
+          ],
+          "strength": 1500,
+          "losses": 1000
+        }
+      ],
+      "summary": {
+        "en": "Continental soldiers surprised and overwhelmed the Hessian garrison at Trenton at dawn, capturing nearly 1,000 prisoners with minimal losses.",
+        "id": "Prajurit Kontinental mengejutkan dan menundukkan garnisun Hessen di Trenton saat fajar, menawan hampir 1.000 musuh dengan korban sangat minim."
+      },
+      "sources": [
+        "osprey-trenton",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "battle-of-princeton",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Princeton",
+        "id": "Pertempuran Princeton"
+      },
+      "when": "1777-01-03",
+      "at": "princeton",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "attacker",
+          "commanders": [
+            "George Washington",
+            "Hugh Mercer",
+            "John Cadwalader"
+          ],
+          "strength": 4500,
+          "losses": 80
+        },
+        {
+          "faction": "great-britain",
+          "role": "defender",
+          "commanders": [
+            "Charles Mawhood"
+          ],
+          "strength": 1200,
+          "losses": 450
+        }
+      ],
+      "summary": {
+        "en": "Washington executed a stealth night flank march around Cornwallis and broke British regiments at Princeton, cementing the salvation of the revolution.",
+        "id": "Washington melancarkan barisan sayap malam mengecoh Cornwallis dan memukul resimen Britania di Princeton, memantapkan keselamatan revolusi."
+      },
+      "sources": [
+        "osprey-trenton",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "battle-of-bennington",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Bennington",
+        "id": "Pertempuran Bennington"
+      },
+      "when": "1777-08-16",
+      "at": "bennington",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "attacker",
+          "commanders": [
+            "John Stark",
+            "Seth Warner"
+          ],
+          "strength": 2000,
+          "losses": 70
+        },
+        {
+          "faction": "great-britain",
+          "role": "defender",
+          "commanders": [
+            "Friedrich Baum",
+            "Heinrich von Breymann"
+          ],
+          "strength": 1250,
+          "losses": 900
+        }
+      ],
+      "summary": {
+        "en": "New England militia surrounded and smashed Burgoyne's German and Loyalist foraging expedition, depriving the British invasion of mounts and food.",
+        "id": "Milisi New Hampshire mengepung dan menghancurkan detasemen bantuan Burgoyne, melumpuhkan persediaan logistik dan kuda pasukan Britania."
+      },
+      "sources": [
+        "osprey-saratoga"
+      ]
+    },
+    {
+      "id": "battle-of-brandywine",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Brandywine",
+        "id": "Pertempuran Brandywine"
+      },
+      "when": "1777-09-11",
+      "at": "brandywine",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "William Howe",
+            "Charles Cornwallis",
+            "Wilhelm von Knyphausen"
+          ],
+          "strength": 18000,
+          "losses": 580
+        },
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "George Washington",
+            "Nathanael Greene",
+            "John Sullivan"
+          ],
+          "strength": 11000,
+          "losses": 1300
+        }
+      ],
+      "summary": {
+        "en": "Howe executed an extensive flank march around Washington's right flank at Chadds Ford, forcing an American retreat and opening the way to Philadelphia.",
+        "id": "Howe melancarkan manuver kepung sayap kanan Washington di Chadds Ford, memaksa Amerika mundur dan membuka pintu menuju Philadelphia."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "first-battle-of-saratoga",
+      "kind": "battle",
+      "name": {
+        "en": "First Battle of Saratoga (Freeman's Farm)",
+        "id": "Pertempuran Saratoga Pertama (Freeman's Farm)"
+      },
+      "when": "1777-09-19",
+      "at": "saratoga",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "John Burgoyne",
+            "Simon Fraser"
+          ],
+          "strength": 6000,
+          "losses": 600
+        },
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "Benedict Arnold",
+            "Daniel Morgan"
+          ],
+          "strength": 7000,
+          "losses": 300
+        }
+      ],
+      "summary": {
+        "en": "Deadly meeting engagement in clearing around Freeman's Farm; Morgan's riflemen and Arnold's aggressive counter-charges halted Burgoyne's advance.",
+        "id": "Pertempuran sengit di ladang Freeman's Farm; penembak jitu Morgan dan serangan balik berani Arnold menahan laju serbu Burgoyne."
+      },
+      "sources": [
+        "osprey-saratoga",
+        "wp-saratoga"
+      ]
+    },
+    {
+      "id": "battle-of-germantown",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Germantown",
+        "id": "Pertempuran Germantown"
+      },
+      "when": "1777-10-04",
+      "at": "germantown",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "attacker",
+          "commanders": [
+            "George Washington",
+            "John Sullivan",
+            "Nathanael Greene"
+          ],
+          "strength": 11000,
+          "losses": 1000
+        },
+        {
+          "faction": "great-britain",
+          "role": "defender",
+          "commanders": [
+            "William Howe",
+            "Charles Cornwallis"
+          ],
+          "strength": 9000,
+          "losses": 520
+        }
+      ],
+      "summary": {
+        "en": "Washington's coordinated four-column surprise attack on Howe's camp unraveled due to morning fog and a bloody delay at the stone Chew House.",
+        "id": "Serangan dadakan empat sayap pasukan Washington terhadap perkemahan Howe gagal akibat kabut tebal dan hambatan berdarah di Rumah Batu Chew."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "second-battle-of-saratoga",
+      "kind": "battle",
+      "name": {
+        "en": "Second Battle of Saratoga (Bemis Heights)",
+        "id": "Pertempuran Saratoga Kedua (Bemis Heights)"
+      },
+      "when": "1777-10-07",
+      "at": "saratoga",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "attacker",
+          "commanders": [
+            "Benedict Arnold",
+            "Daniel Morgan",
+            "Enoch Poor"
+          ],
+          "strength": 8000,
+          "losses": 150
+        },
+        {
+          "faction": "great-britain",
+          "role": "defender",
+          "commanders": [
+            "John Burgoyne",
+            "Simon Fraser",
+            "Heinrich von Breymann"
+          ],
+          "strength": 5000,
+          "losses": 900
+        }
+      ],
+      "summary": {
+        "en": "Benedict Arnold defied orders and led a furious assault that breached the German redoubts, mortally wounding General Simon Fraser and shattering Burgoyne's lines.",
+        "id": "Benedict Arnold memimpin serbuan membara yang menjebol benteng pertahanan Jerman, menewaskan Jenderal Fraser dan menghancurkan garis tempur Burgoyne."
+      },
+      "sources": [
+        "osprey-saratoga",
+        "wp-saratoga"
+      ]
+    },
+    {
+      "id": "surrender-at-saratoga",
+      "kind": "surrender",
+      "name": {
+        "en": "Surrender of Burgoyne's Army at Saratoga",
+        "id": "Penyerahan Tentara Burgoyne di Saratoga"
+      },
+      "when": "1777-10-17",
+      "at": "saratoga",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "party",
+          "commanders": [
+            "John Burgoyne"
+          ],
+          "strength": 5800
+        },
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "Horatio Gates"
+          ],
+          "strength": 13000
+        }
+      ],
+      "summary": {
+        "en": "General Burgoyne surrendered his entire army of 5,800 British and German soldiers; the watershed victory persuaded France to enter the war as an American ally.",
+        "id": "Jenderal Burgoyne menyerahkan seluruh pasukannya sebanyak 5.800 prajurit; kemenangan bersejarah ini meyakinkan Prancis untuk bergabung sebagai sekutu Amerika."
+      },
+      "sources": [
+        "osprey-saratoga",
+        "wp-saratoga",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "winter-at-valley-forge",
+      "kind": "other",
+      "name": {
+        "en": "Winter Encampment at Valley Forge",
+        "id": "Perkemahan Musim Dingin di Valley Forge"
+      },
+      "when": "1777-12-19/1778-05-18",
+      "at": "valley-forge",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "George Washington",
+            "Friedrich Wilhelm von Steuben",
+            "Nathanael Greene"
+          ],
+          "strength": 12000,
+          "losses": 2500
+        }
+      ],
+      "summary": {
+        "en": "Over 2,000 soldiers died of exposure, typhoid, and malnutrition; Baron von Steuben systematically drilled the survivors into an effective professional army.",
+        "id": "Lebih dari 2.000 prajurit tewas akibat kedinginan, tipus, dan kelaparan; Baron von Steuben melatih prajurit yang bertahan menjadi tentara profesional yang tangguh."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "treaty-of-alliance-france",
+      "kind": "treaty",
+      "name": {
+        "en": "Franco-American Treaty of Alliance",
+        "id": "Perjanjian Aliansi Prancis-Amerika"
+      },
+      "when": "1778-02-06",
+      "at": "philadelphia",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "negotiator",
+          "commanders": [
+            "Benjamin Franklin",
+            "Silas Deane",
+            "Arthur Lee"
+          ]
+        },
+        {
+          "faction": "kingdom-of-france",
+          "role": "negotiator",
+          "commanders": [
+            "Conrad Alexandre Gérard",
+            "Charles Gravier, Comte de Vergennes"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "France officially recognized the United States and formed a military alliance, pledging armies, fleets, and subsidies to secure American independence.",
+        "id": "Prancis secara resmi mengakui kemerdekaan Amerika Serikat dan membentuk aliansi militer, menjanjikan tentara, armada laut, dan dana perang."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "wood-1992"
+      ]
+    },
+    {
+      "id": "battle-of-monmouth",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Monmouth Court House",
+        "id": "Pertempuran Monmouth Court House"
+      },
+      "when": "1778-06-28",
+      "at": "monmouth-court-house",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "belligerent",
+          "commanders": [
+            "George Washington",
+            "Charles Lee",
+            "Marquis de Lafayette",
+            "Anthony Wayne"
+          ],
+          "strength": 13500,
+          "losses": 370
+        },
+        {
+          "faction": "great-britain",
+          "role": "belligerent",
+          "commanders": [
+            "Sir Henry Clinton",
+            "Charles Cornwallis",
+            "Wilhelm von Knyphausen"
+          ],
+          "strength": 14000,
+          "losses": 360
+        }
+      ],
+      "summary": {
+        "en": "Fought in oppressive heat; Washington rallied retreating vanguard and fought British regulars to a standstill in the largest pitched battle of the northern war.",
+        "id": "Pertempuran di tengah sengatan terik panas; Washington menyatukan barisan depan yang kacau dan menahan tentara Britania dalam duel terbesar di utara."
+      },
+      "sources": [
+        "osprey-monmouth",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "siege-of-charleston",
+      "kind": "siege",
+      "name": {
+        "en": "Siege of Charleston",
+        "id": "Pengepungan Charleston"
+      },
+      "when": "1780-03-29/1780-05-12",
+      "at": "charleston",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "Sir Henry Clinton",
+            "Mariot Arbuthnot",
+            "Charles Cornwallis"
+          ],
+          "strength": 12000,
+          "losses": 268
+        },
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "Benjamin Lincoln"
+          ],
+          "strength": 5500,
+          "losses": 5500
+        }
+      ],
+      "summary": {
+        "en": "Clinton invested and bombarded Charleston by land and sea, forcing General Lincoln to surrender over 5,000 Continental and militia soldiers.",
+        "id": "Clinton mengepung dan mengebom Charleston dari darat dan laut, memaksa Jenderal Lincoln menyerahkan lebih dari 5.000 prajurit Kontinental dan milisi."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "ferling-2007"
+      ]
+    },
+    {
+      "id": "battle-of-camden",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Camden",
+        "id": "Pertempuran Camden"
+      },
+      "when": "1780-08-16",
+      "at": "camden",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "Charles Cornwallis",
+            "Lord Rawdon",
+            "Banastre Tarleton"
+          ],
+          "strength": 2200,
+          "losses": 324
+        },
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "Horatio Gates",
+            "Baron de Kalb"
+          ],
+          "strength": 3700,
+          "losses": 1900
+        }
+      ],
+      "summary": {
+        "en": "Cornwallis routed Gates's southern Continental army; inexperienced Patriot militia fled at the initial bayonet charge, though Kalb fought heroically to his death.",
+        "id": "Cornwallis mencerai-beraikan tentara Kontinental pimpinan Gates; milisi Patriot melarikan diri saat serbuan bayonet pertama, meski Kalb gugur dengan gagah berani."
+      },
+      "sources": [
+        "middlekauff-2005",
+        "osprey-cowpens"
+      ]
+    },
+    {
+      "id": "battle-of-kings-mountain",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Kings Mountain",
+        "id": "Pertempuran Kings Mountain"
+      },
+      "when": "1780-10-07",
+      "at": "kings-mountain",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "attacker",
+          "commanders": [
+            "William Campbell",
+            "John Sevier",
+            "Isaac Shelby",
+            "Benjamin Cleveland"
+          ],
+          "strength": 900,
+          "losses": 90
+        },
+        {
+          "faction": "great-britain",
+          "role": "defender",
+          "commanders": [
+            "Patrick Ferguson"
+          ],
+          "strength": 1100,
+          "losses": 1100
+        }
+      ],
+      "summary": {
+        "en": "Frontier Patriot riflemen encircled and killed Major Patrick Ferguson, killing or capturing his entire Loyalist force on a rocky wooded crest.",
+        "id": "Penembak jitu milisi perbatasan mengepung dan menewaskan Mayor Patrick Ferguson, menawan seluruh pasukannya di puncak bukit berbatu."
+      },
+      "sources": [
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "battle-of-cowpens",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Cowpens",
+        "id": "Pertempuran Cowpens"
+      },
+      "when": "1781-01-17",
+      "at": "cowpens",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "Daniel Morgan",
+            "John Eager Howard",
+            "William Washington"
+          ],
+          "strength": 1900,
+          "losses": 149
+        },
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "Banastre Tarleton"
+          ],
+          "strength": 1150,
+          "losses": 910
+        }
+      ],
+      "summary": {
+        "en": "Brigadier General Daniel Morgan baited Tarleton into a masterly tactical trap, utilizing militia lines to draw the British into a devastating double envelopment.",
+        "id": "Brigadir Jenderal Daniel Morgan memancing Tarleton ke dalam jebakan taktis brilian, memanfaatkan garis milisi untuk melakukan kepungan ganda."
+      },
+      "sources": [
+        "osprey-cowpens",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "battle-of-guilford-court-house",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of Guilford Court House",
+        "id": "Pertempuran Guilford Court House"
+      },
+      "when": "1781-03-15",
+      "at": "guilford-court-house",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "attacker",
+          "commanders": [
+            "Charles Cornwallis",
+            "Alexander Leslie"
+          ],
+          "strength": 2100,
+          "losses": 550
+        },
+        {
+          "faction": "united-colonies",
+          "role": "defender",
+          "commanders": [
+            "Nathanael Greene"
+          ],
+          "strength": 4400,
+          "losses": 260
+        }
+      ],
+      "summary": {
+        "en": "Greene bled Cornwallis's army in a vicious battle through wooded ground; though Cornwallis held the field, his crippling casualties crippled the campaign.",
+        "id": "Greene menguras habis kekuatan Cornwallis dalam pertempuran sengit; meski menguasai medan, korban berat yang diderita melumpuhkan tentara Britania."
+      },
+      "sources": [
+        "osprey-cowpens",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "battle-of-the-capes",
+      "kind": "battle",
+      "name": {
+        "en": "Battle of the Chesapeake Capes",
+        "id": "Pertempuran Tanjung Chesapeake"
+      },
+      "when": "1781-09-05",
+      "at": "chesapeake-capes",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "kingdom-of-france",
+          "role": "belligerent",
+          "commanders": [
+            "François-Joseph Paul, Comte de Grasse",
+            "Louis-Antoine de Bougainville"
+          ],
+          "strength": 24,
+          "losses": 220
+        },
+        {
+          "faction": "great-britain",
+          "role": "belligerent",
+          "commanders": [
+            "Thomas Graves",
+            "Samuel Hood"
+          ],
+          "strength": 19,
+          "losses": 340
+        }
+      ],
+      "summary": {
+        "en": "Strategic naval victory by De Grasse off the Virginia Capes that drove off the Royal Navy, denying Cornwallis all hope of relief or sea extraction.",
+        "id": "Kemenangan laut strategis armada Prancis pimpinan De Grasse yang memukul mundur Royal Navy, memutus harapan bantuan bagi Cornwallis."
+      },
+      "sources": [
+        "osprey-yorktown",
+        "wp-yorktown"
+      ]
+    },
+    {
+      "id": "siege-of-yorktown",
+      "kind": "siege",
+      "name": {
+        "en": "Siege of Yorktown",
+        "id": "Pengepungan Yorktown"
+      },
+      "when": "1781-09-28/1781-10-19",
+      "at": "yorktown",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "attacker",
+          "commanders": [
+            "George Washington",
+            "Alexander Hamilton",
+            "Henry Knox"
+          ],
+          "strength": 9000,
+          "losses": 88
+        },
+        {
+          "faction": "kingdom-of-france",
+          "role": "attacker",
+          "commanders": [
+            "Jean-Baptiste de Rochambeau",
+            "François-Joseph Paul, Comte de Grasse",
+            "Marquis de Lafayette"
+          ],
+          "strength": 7800,
+          "losses": 186
+        },
+        {
+          "faction": "great-britain",
+          "role": "defender",
+          "commanders": [
+            "Charles Cornwallis",
+            "Charles O'Hara"
+          ],
+          "strength": 7500,
+          "losses": 500
+        }
+      ],
+      "summary": {
+        "en": "Combined Franco-American forces invested Cornwallis's redoubts with formal siege parallels; nighttime bayonet assaults took Redoubts 9 and 10.",
+        "id": "Pasukan gabungan Prancis-Amerika mengepung pertahanan Cornwallis dengan parit kepung; serbuan bayonet malam merebut Redoubt 9 dan 10."
+      },
+      "sources": [
+        "osprey-yorktown",
+        "wp-yorktown"
+      ]
+    },
+    {
+      "id": "surrender-at-yorktown",
+      "kind": "surrender",
+      "name": {
+        "en": "Surrender of Cornwallis at Yorktown",
+        "id": "Penyerahan Diri Cornwallis di Yorktown"
+      },
+      "when": "1781-10-19",
+      "at": "yorktown",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "party",
+          "commanders": [
+            "Charles O'Hara",
+            "Charles Cornwallis"
+          ],
+          "strength": 7000
+        },
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "George Washington",
+            "Benjamin Lincoln"
+          ],
+          "strength": 9000
+        },
+        {
+          "faction": "kingdom-of-france",
+          "role": "party",
+          "commanders": [
+            "Jean-Baptiste de Rochambeau"
+          ],
+          "strength": 7800
+        }
+      ],
+      "summary": {
+        "en": "General Cornwallis surrendered 7,000 British and German soldiers; as the defeated troops grounded arms, British fifers played 'The World Turned Upside Down.'",
+        "id": "Jenderal Cornwallis menyerahkan 7.000 tentara Britania dan Hessen; saat meletakkan senjata, korps musik Britania memainkan lagu 'The World Turned Upside Down.'"
+      },
+      "sources": [
+        "osprey-yorktown",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "treaty-of-paris-1783",
+      "kind": "treaty",
+      "name": {
+        "en": "Treaty of Paris (1783)",
+        "id": "Perjanjian Paris (1783)"
+      },
+      "when": "1783-09-03",
+      "at": "philadelphia",
+      "importance": 1,
+      "participants": [
+        {
+          "faction": "united-colonies",
+          "role": "negotiator",
+          "commanders": [
+            "John Adams",
+            "Benjamin Franklin",
+            "John Jay"
+          ]
+        },
+        {
+          "faction": "great-britain",
+          "role": "negotiator",
+          "commanders": [
+            "David Hartley",
+            "Richard Oswald"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Great Britain formally acknowledged the sovereign independence of the United States and recognized boundaries westward to the Mississippi River.",
+        "id": "Kerajaan Britania Raya secara resmi mengakui kedaulatan kemerdekaan Amerika Serikat dan menetapkan batas wilayah barat hingga Sungai Mississippi."
+      },
+      "sources": [
+        "wood-1992",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "evacuation-day-new-york",
+      "kind": "other",
+      "name": {
+        "en": "Evacuation Day in New York",
+        "id": "Hari Evakuasi di New York"
+      },
+      "when": "1783-11-25",
+      "at": "new-york-city",
+      "importance": 2,
+      "participants": [
+        {
+          "faction": "great-britain",
+          "role": "party",
+          "commanders": [
+            "Sir Guy Carleton"
+          ]
+        },
+        {
+          "faction": "united-colonies",
+          "role": "party",
+          "commanders": [
+            "George Washington",
+            "George Clinton"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "The final British troops sailed from Manhattan, ending seven years of occupation as Washington marched triumphantly into New York City.",
+        "id": "Prajurit terakhir Britania berlayar meninggalkan Manhattan, mengakhiri pendudukan tujuh tahun saat Washington berpawai masuk ke New York City."
+      },
+      "sources": [
+        "chernow-2010",
+        "middlekauff-2005"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-shot-heard-round-world",
+      "when": "1775-04-19/1775-06-17",
+      "dateLabel": {
+        "en": "19 April – 17 June 1775",
+        "id": "19 April – 17 Juni 1775"
+      },
+      "title": {
+        "en": "The Shot Heard 'Round the World",
+        "id": "Tembakan yang Mengguncang Dunia"
+      },
+      "body": {
+        "en": "At dawn on 19 April 1775, years of simmering political defiance erupted into open warfare on the green of Lexington, Massachusetts. British regulars under Lieutenant Colonel Francis Smith, marching inland from Boston to seize colonial powder and muskets at Concord, traded fire with a gathered militia of colonial Minutemen. At Concord's North Bridge, American fire turned the redcoat column back; as the British retreated twenty miles along the Battle Road to Boston, thousands of armed colonists converged from surrounding towns, inflicting severe casualties from behind stone walls and apple trees.\n\nTwo months later, the escalating Siege of Boston exploded into pitched battle at Charlestown. Overnight on 16 June, provincial troops fortified Breed's Hill overlooking Boston Harbor. The next day, General William Howe led three frontal bayonet assaults into devastating musket volleys before the Americans ran out of ammunition. Though the British held the ground, their victory cost more than 1,000 casualties, proving to King George III that the colonial rebellion would not be quelled by display of arms alone.",
+        "id": "Pada fajar 19 April 1775, ketegangan politik bertahun-tahun meledak menjadi perang terbuka di alun-alun desa Lexington, Massachusetts. Pasukan reguler Britania pimpinan Letnan Kolonel Francis Smith, yang bergerak dari Boston untuk menyita mesiu dan senjata milisi di Concord, terlibat baku tembak sengit dengan kaum Minutemen. Di Jembatan Utara Concord, tembakan balasan milisi memaksa barisan Britania mundur; sepanjang jalur penarikan pasukan menuju Boston, ribuan warga bersenjata mengepung dari balik pagar batu dan pepohonan.\n\nDua bulan kemudian, Pengepungan Boston yang kian membara berujung pada pertempuran berdarah di Charlestown. Malam 16 Juni, milisi koloni membentengi Breed's Hill yang menghadap ke Teluk Boston. Keesokan harinya, Jenderal William Howe melancarkan tiga serbuan bayonet langsung sebelum pejuang koloni kehabisan amunisi. Meski Britania menguasai bukit, korban lebih dari 1.000 prajurit membuktikan kepada Raja George III bahwa perlawanan Amerika tidak akan mudah dipatahkan."
+      },
+      "camera": {
+        "center": [
+          -71.18,
+          42.42
+        ],
+        "zoom": 10.5,
+        "pitch": 35,
+        "bearing": 15,
+        "durationMs": 3000
+      },
+      "focus": [
+        "lexington-green",
+        "concord-north-bridge",
+        "bunker-hill",
+        "battle-of-lexington-concord",
+        "battle-of-bunker-hill",
+        "washington-main",
+        "howe-clinton-main"
+      ],
+      "media": [
+        "bunker-hill-trumbull"
+      ],
+      "sources": [
+        "osprey-boston",
+        "mccullough-2005"
+      ]
+    },
+    {
+      "id": "ch-2-evacuation-of-boston",
+      "when": "1775-06-18/1776-03-17",
+      "dateLabel": {
+        "en": "June 1775 – March 1776",
+        "id": "Juni 1775 – Maret 1776"
+      },
+      "title": {
+        "en": "The Siege and Evacuation of Boston",
+        "id": "Pengepungan dan Evakuasi Boston"
+      },
+      "body": {
+        "en": "In July 1775, George Washington arrived under the elm on Cambridge Common to take command of the newly christened Continental Army: an undisciplined, unpaid collection of farmers and tradesmen lacking gunpowder, heavy guns, and standard uniform. For eight months, Washington held Howe's royal garrison trapped inside Boston while struggling to instill military discipline.\n\nThe strategic stalemate was broken by a young Boston bookseller, Colonel Henry Knox. Between November 1775 and January 1776, Knox hauled 59 captured British siege guns and mortars from Fort Ticonderoga on Lake Champlain across 300 miles of frozen rivers and snowbound mountain passes. On the foggy night of 4 March 1776, Washington secretly emplaced the heavy guns atop Dorchester Heights overlooking Boston Harbor. Waking to see cannon batteries dominating their fleet, General Howe realized his position was untenable. On 17 March 1776, over 100 British ships carrying 9,000 soldiers and 1,100 Loyalists sailed away for Halifax, liberating Massachusetts.",
+        "id": "Pada Juli 1775, George Washington tiba di Cambridge untuk mengambil alih komando Tentara Kontinental: sekumpulan petani dan pengrajin yang belum terlatih, belum digaji, serta serba kekurangan mesiu dan seragam. Selama delapan bulan, Washington mengurung garnisun Britania di dalam semenanjung Boston sembari menanamkan disiplin militer.\n\nKebuntuan strategi ini dipecahkan oleh mantan penjual buku asal Boston, Kolonel Henry Knox. Antara November 1775 dan Januari 1776, Knox menyeret 59 meriam berat rampasan dari Benteng Ticonderoga di Danau Champlain melintasi 480 kilometer pegunungan bersalju. Pada malam berkabut 4 Maret 1776, Washington memasang baterai meriam tersebut di puncak Dorchester Heights. Melihat meriam mengepung armada mereka, Jenderal Howe menyadari posisinya mustahil dipertahankan. Pada 17 Maret 1776, lebih dari 100 kapal Britania mengangkut 9.000 prajurit dan 1.100 Loyalis berlayar meninggalkan Boston menuju Halifax."
+      },
+      "camera": {
+        "center": [
+          -71.1,
+          42.36
+        ],
+        "zoom": 10.0,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "dorchester-heights",
+        "fort-ticonderoga",
+        "cambridge",
+        "noble-train-artillery",
+        "evacuation-of-boston",
+        "washington-main",
+        "howe-clinton-main"
+      ],
+      "sources": [
+        "mccullough-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "ch-3-disaster-in-new-york",
+      "when": "1776-03-18/1776-11-20",
+      "dateLabel": {
+        "en": "March – November 1776",
+        "id": "Maret – November 1776"
+      },
+      "title": {
+        "en": "The Disaster in New York",
+        "id": "Bencana di New York"
+      },
+      "body": {
+        "en": "On 4 July 1776, the Continental Congress adopted the Declaration of Independence in Philadelphia, boldly declaring thirteen colonies to be free and independent states. But exhilaration was soon crushed by the arrival of the largest expeditionary armada Great Britain had ever assembled: over 32,000 British regulars and German Hessian mercenaries commanded by General William Howe and his brother Admiral Lord Richard Howe.\n\nOn 27 August 1776 at the Battle of Long Island, Howe executed a night flanking march that collapsed the American outer lines, trapping Washington against the East River. Under cover of a providential morning fog, Colonel John Glover's Marblehead mariners ferried 9,000 soldiers across the water to Manhattan in complete silence. Successive defeats followed: the British landed at Kip's Bay, forced Washington north to White Plains, and on 16 November stormed Fort Washington, capturing nearly 2,900 Americans. Washington was forced to flee across the Hudson River and begin a desperate retreat through the rain and mud of New Jersey.",
+        "id": "Pada 4 Juli 1776, Kongres Kontinental mengesahkan Deklarasi Kemerdekaan di Philadelphia, menyatakan tiga belas koloni sebagai negara merdeka dan berdaulat. Namun sukacita itu segera dibayangi kehadiran armada ekspedisi terbesar Britania: lebih dari 32.000 prajurit reguler dan tentara sewaan Hessen Jerman di bawah pimpinan Jenderal William Howe dan Laksamana Richard Howe.\n\nPada 27 Agustus 1776 di Pertempuran Long Island, manuver kepung Howe melumpuhkan garis pertahanan Amerika, memojokkan Washington ke Sungai East. Di bawah lindungan kabut pagi, pelaut pimpinan Kolonel John Glover menyeberangkan 9.000 prajurit ke Manhattan dalam keheningan mutlak. Rentetan kekalahan berlanjut: Britania mendarat di Kip's Bay, memukul Washington ke White Plains, dan pada 16 November merebut Benteng Washington dengan menawan hampir 2.900 prajurit Amerika. Washington terpaksa mundur melintasi Sungai Hudson menuju New Jersey."
+      },
+      "camera": {
+        "center": [
+          -74.0,
+          40.75
+        ],
+        "zoom": 9.8,
+        "pitch": 35,
+        "bearing": -10,
+        "durationMs": 3500
+      },
+      "focus": [
+        "declaration-of-independence",
+        "battle-of-long-island",
+        "fall-of-fort-washington",
+        "brooklyn-heights",
+        "new-york-city",
+        "fort-washington",
+        "washington-main",
+        "howe-clinton-main"
+      ],
+      "media": [
+        "declaration-trumbull"
+      ],
+      "sources": [
+        "mccullough-2005",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "ch-4-the-ten-crucial-days",
+      "when": "1776-11-21/1777-01-06",
+      "dateLabel": {
+        "en": "November 1776 – January 1777",
+        "id": "November 1776 – Januari 1777"
+      },
+      "title": {
+        "en": "The Ten Crucial Days: Trenton and Princeton",
+        "id": "Sepuluh Hari Penentu: Trenton dan Princeton"
+      },
+      "body": {
+        "en": "By December 1776, the American Revolution stood on the precipice of annihilation. Washington's army had shrunk to barely 3,000 shivering men, their enlistments expiring on New Year's Eve. Writing by campfire, Thomas Paine published the immortal words: *These are the times that try men's souls.*\n\nWith nothing left to lose, Washington staked the entire revolution on an audacious gamble. On Christmas night 1776, in a howling blizzard of sleet and snow, he led 2,400 Continentals back across the ice-choked Delaware River. Striking Trenton at 8:00 AM on 26 December, American columns overwhelmed the Hessian brigade under Colonel Johann Rall, taking nearly 1,000 prisoners for the loss of just five American casualties. A week later, leaving his campfires burning to deceive Cornwallis, Washington marched silently around the British army at night and struck their rearguard at Princeton on 3 January 1777, before retiring securely into the hills of Morristown. In ten days, Washington transformed despair into defiance and saved the rebellion.",
+        "id": "Menjelang Desember 1776, Revolusi Amerika berada di ambang kehancuran. Pasukan Washington menyusut hingga tersisa 3.000 prajurit kedinginan yang masa baktinya berakhir pada malam Tahun Baru. Di samping api unggun, Thomas Paine menuliskan kata-kata abadi: *Inilah masa-masa yang menguji jiwa manusia.*\n\nTanpa ada pilihan lain, Washington mempertaruhkan seluruh nasib revolusi dalam satu langkah berani. Pada malam Natal 1776, di tengah amukan badai salju dan bongkahan es, ia memimpin 2.400 prajurit menyeberangi Sungai Delaware. Menyerbu Trenton pada pukul 8 pagi tanggal 26 Desember, pasukan Amerika melumpuhkan garnisun Hessen pimpinan Kolonel Johann Rall, menawan 1.000 musuh dengan hanya lima korban di pihak Amerika. Sepekan kemudian, dengan tipuan api unggun malam, Washington mengecoh Cornwallis dan menggulung barisan belakang Britania di Princeton pada 3 Januari 1777, sebelum berlindung di perbukitan Morristown."
+      },
+      "camera": {
+        "center": [
+          -74.75,
+          40.3
+        ],
+        "zoom": 9.8,
+        "pitch": 35,
+        "bearing": 10,
+        "durationMs": 3500
+      },
+      "focus": [
+        "crossing-of-the-delaware",
+        "battle-of-trenton",
+        "battle-of-princeton",
+        "trenton",
+        "princeton",
+        "morristown",
+        "washington-main",
+        "howe-clinton-main"
+      ],
+      "media": [
+        "washington-crossing-delaware-leutze"
+      ],
+      "sources": [
+        "osprey-trenton",
+        "mccullough-2005",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "ch-5-turning-point-saratoga",
+      "when": "1777-01-07/1777-10-17",
+      "dateLabel": {
+        "en": "January – October 1777",
+        "id": "Januari – Oktober 1777"
+      },
+      "title": {
+        "en": "The Turning Point: Saratoga",
+        "id": "Titik Balik: Saratoga"
+      },
+      "body": {
+        "en": "In summer 1777, the British Ministry launched a master plan to slice New England from the rest of the continent. General John Burgoyne advanced south from Canada with 8,000 British regulars, Brunswick auxiliaries, and Native allies along Lake Champlain, recapturing Fort Ticonderoga in July. But as Burgoyne plunged into the dense northern forests, his supply lines stretched to the breaking point. At Bennington in August, John Stark's New Hampshire militia annihilated an 800-man German foraging detachment.\n\nAlong the Hudson River near Stillwater, the Continental Northern Army under General Horatio Gates dug extensive earthworks at Bemis Heights, laid out by Polish engineer Tadeusz Kościuszko. In two vicious clashes—Freeman's Farm on 19 September and Bemis Heights on 7 October, where Benedict Arnold led a fearless assault that broke the enemy redoubts—Burgoyne's army was decimated. Encircled and starving, Burgoyne surrendered his entire army of 5,800 men on 17 October 1777. The victory shocked Europe and persuaded King Louis XVI of France to formally enter the war as an American ally.",
+        "id": "Pada musim panas 1777, Kementerian Britania melancarkan rencana induk untuk memotong New England dari wilayah koloni lainnya. Jenderal John Burgoyne bergerak ke selatan dari Kanada bersama 8.000 prajurit reguler, bantuan Jerman, dan sekutu pribumi melintasi Danau Champlain, merebut kembali Benteng Ticonderoga pada bulan Juli. Namun saat memasuki hutan lebat, jalur logistik Burgoyne terancam putus. Di Bennington pada Agustus, milisi John Stark memusnahkan detasemen perbekalan Jerman.\n\nDi sepanjang Sungai Hudson dekat Stillwater, Tentara Utara Kontinental pimpinan Horatio Gates mendirikan benteng tanah di Bemis Heights, dirancang oleh insinyur Polandia Tadeusz Kościuszko. Dalam dua pertempuran sengit—Freeman's Farm pada 19 September dan Bemis Heights pada 7 Oktober saat Benedict Arnold menyerbu benteng lawan—tentara Burgoyne hancur. Terkepung dan kelaparan, Burgoyne menyerahkan 5.800 prajuritnya pada 17 Oktober 1777. Kemenangan ini meyakinkan Raja Louis XVI dari Prancis untuk resmi masuk ke dalam perang."
+      },
+      "camera": {
+        "center": [
+          -73.55,
+          43.1
+        ],
+        "zoom": 9.0,
+        "pitch": 35,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-bennington",
+        "first-battle-of-saratoga",
+        "second-battle-of-saratoga",
+        "surrender-at-saratoga",
+        "saratoga",
+        "fort-ticonderoga",
+        "burgoyne-corps",
+        "gates-arnold-northern"
+      ],
+      "media": [
+        "surrender-burgoyne-trumbull"
+      ],
+      "sources": [
+        "osprey-saratoga",
+        "wp-saratoga",
+        "middlekauff-2005"
+      ]
+    },
+    {
+      "id": "ch-6-valley-forge-and-philadelphia",
+      "when": "1777-10-18/1778-05-30",
+      "dateLabel": {
+        "en": "October 1777 – May 1778",
+        "id": "Oktober 1777 – Mei 1778"
+      },
+      "title": {
+        "en": "Philadelphia Lost, an Army Forged",
+        "id": "Philadelphia Jatuh, Pasukan Ditempa"
+      },
+      "body": {
+        "en": "While Burgoyne marched to ruin in the northern wilderness, General Howe bypassed the Hudson to strike the Patriot capital of Philadelphia. Moving his army by sea to Head of Elk, Howe defeated Washington at Brandywine Creek on 11 September 1777 and entered Philadelphia unopposed. Washington's bold four-pronged counter-attack at Germantown on 4 October foundered in heavy morning fog, leaving Congress in exile.\n\nIn December 1777, Washington marched his exhausted 12,000 men into winter encampment at Valley Forge, Pennsylvania. Through five brutal winter months, disease, malnutrition, and exposure claimed over 2,000 lives in makeshift log huts. Yet out of this crucible arose an army transformed. In February 1778, former Prussian staff officer Baron Friedrich Wilhelm von Steuben arrived, drafting the army's first drill manual and drilling soldiers in open-field bayonet maneuvers and marching discipline. That same month in Paris, Benjamin Franklin finalized the Franco-American Treaty of Alliance. When spring arrived, the Continental Army marched forth a professional force.",
+        "id": "Sementara Burgoyne menemui kehancuran di utara, Jenderal Howe berlayar menuju Head of Elk untuk merebut ibu kota Patriot, Philadelphia. Howe mengalahkan Washington di Sungai Brandywine pada 11 September 1777 dan menduduki Philadelphia. Serangan balik empat penjuru Washington di Germantown pada 4 Oktober gagal di tengah kabut tebal, memaksa Kongres mengungsi.\n\nPada Desember 1777, Washington membawa 12.000 prajuritnya mendirikan perkemahan musim dingin di Valley Forge, Pennsylvania. Selama lima bulan yang menyiksa, wabah penyakit dan kelaparan merenggut lebih dari 2.000 nyawa. Namun di tengah penderitaan ini, lahirlah pasukan baru. Pada Februari 1778, mantan perwira staf Prusia Baron Friedrich Wilhelm von Steuben tiba dan melatih prajurit dengan disiplin bayonet serta baris-berbaris standar Eropa. Di Paris, Benjamin Franklin merampungkan Perjanjian Aliansi Prancis-Amerika. Menjelang musim semi, Tentara Kontinental bangkit sebagai pasukan profesional."
+      },
+      "camera": {
+        "center": [
+          -75.35,
+          40.05
+        ],
+        "zoom": 9.6,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-brandywine",
+        "battle-of-germantown",
+        "winter-at-valley-forge",
+        "treaty-of-alliance-france",
+        "valley-forge",
+        "philadelphia",
+        "washington-main",
+        "howe-clinton-main"
+      ],
+      "media": [
+        "steuben-valley-forge-abbey"
+      ],
+      "sources": [
+        "middlekauff-2005",
+        "chernow-2010",
+        "wood-1992"
+      ]
+    },
+    {
+      "id": "ch-7-battle-of-monmouth",
+      "when": "1778-05-31/1778-07-15",
+      "dateLabel": {
+        "en": "June – July 1778",
+        "id": "Juni – Juli 1778"
+      },
+      "title": {
+        "en": "Fire in the Swelter: Monmouth",
+        "id": "Bara di Bawah Terik: Monmouth"
+      },
+      "body": {
+        "en": "Threatened by the approach of the French fleet under the Comte d'Estaing, the new British commander Sir Henry Clinton evacuated Philadelphia on 18 June 1778, marching his 15,000-man army overland across New Jersey to the naval haven of New York. Washington pursued aggressively, seeking to strike the British column on the move.\n\nOn 28 June 1778, in brutal 100-degree Fahrenheit heat, the armies collided around Monmouth Court House. After General Charles Lee botches the initial American advance and orders an unauthorized retreat, an enraged Washington rides onto the field, relieves Lee, and personally rallies the men along a hedgerow. In hours of intense artillery duels and bayonet charges—immortalized in folklore by Mary Ludwig Hays ('Molly Pitcher') hauling water and firing her fallen husband's cannon—Steuben's drilled Continentals stood toe-to-toe with the cream of the British army until sunset. Under cover of darkness, Clinton slipped his troops away to New York. The northern theater settled into a fortified stalemate.",
+        "id": "Terancam oleh kedatangan armada Prancis pimpinan Comte d'Estaing, komandan baru Britania Sir Henry Clinton mengevakuasi Philadelphia pada 18 Juni 1778, membawa 15.000 prajuritnya melintasi New Jersey menuju New York. Washington mengejar untuk menyerang barisan musuh yang sedang bergerak.\n\nPada 28 Juni 1778, di tengah suhu panas menyengat mendekati 38 derajat Celsius, kedua kubu bentrok di Monmouth Court House. Ketika Jenderal Charles Lee mengacaukan serangan pembuka dan memerintahkan mundur, Washington yang murka terjun langsung ke medan tempur dan memulihkan garis pertahanan. Dalam duel artileri sengit dan serbuan bayonet—yang melahirkan legenda Mary Ludwig Hays ('Molly Pitcher') yang mengoperasikan meriam suaminya yang terluka—pasukan terlatih Steuben berhasil menahan gempuran Britania hingga matahari terbenam. Malamnya, Clinton meloloskan pasukannya ke New York, mengunci palagan utara dalam kebuntuan benteng."
+      },
+      "camera": {
+        "center": [
+          -74.35,
+          40.35
+        ],
+        "zoom": 9.6,
+        "pitch": 30,
+        "bearing": 15,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-monmouth",
+        "monmouth-court-house",
+        "new-york-city",
+        "washington-main",
+        "howe-clinton-main"
+      ],
+      "media": [
+        "molly-pitcher-monmouth"
+      ],
+      "sources": [
+        "osprey-monmouth",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "ch-8-southern-theater-carolinas",
+      "when": "1778-07-16/1781-04-30",
+      "dateLabel": {
+        "en": "July 1778 – April 1781",
+        "id": "Juli 1778 – April 1781"
+      },
+      "title": {
+        "en": "War in the South: Cowpens and Guilford",
+        "id": "Perang di Selatan: Cowpens dan Guilford"
+      },
+      "body": {
+        "en": "Deadlocked in the north, the British turned to their 'Southern Strategy,' hoping to rally Loyalist populations in the Carolinas and Georgia. In May 1780, Clinton captured Charleston, capturing over 5,000 Continentals. In August at Camden, Cornwallis routed Horatio Gates's army, leaving the South apparently defenceless.\n\nYet British control unraveled in the backcountry. In October 1780 at Kings Mountain, frontier Patriot riflemen annihilated Patrick Ferguson's Loyalist force. Major General Nathanael Greene took command of the southern Continental army, dividing his force to wage a fluid war of maneuver. On 17 January 1781 at Cowpens, Brigadier General Daniel Morgan orchestrated a brilliant double envelopment, destroying Banastre Tarleton's British Legion. Greene then led Cornwallis on a punishing 200-mile pursuit known as the 'Race to the Dan.' At Guilford Court House on 15 March 1781, Cornwallis held the field, but suffered crippling casualties of over 25 percent. Ruined by his victory, Cornwallis abandoned the Carolinas and marched into Virginia.",
+        "id": "Buntu di front utara, Britania beralih ke 'Strategi Selatan' untuk menggalang kaum Loyalis di Carolina dan Georgia. Pada Mei 1780, Clinton merebut Charleston dan menawan lebih dari 5.000 tentara Kontinental. Pada Agustus di Camden, Cornwallis menghancurkan pasukan Horatio Gates, membuka jalan penguasaan selatan.\n\nNamun kendali Britania runtuh di pedalaman. Pada Oktober 1780 di Kings Mountain, milisi penjelajah pegunungan memusnahkan korps Loyalis Patrick Ferguson. Mayor Jenderal Nathanael Greene mengambil alih komando selatan dan membagi pasukannya dalam perang manuver. Pada 17 Januari 1781 di Cowpens, Brigadir Jenderal Daniel Morgan merancang kepungan ganda gemilang yang menghancurkan British Legion pimpinan Tarleton. Greene kemudian memancing Cornwallis dalam pengejaran melelahkan ke Sungai Dan. Di Guilford Court House pada 15 Maret 1781, Cornwallis menang di medan tempur namun kehilangan lebih dari seperempat pasukannya. Terpukul oleh kemenangannya sendiri, Cornwallis meninggalkan Carolina menuju Virginia."
+      },
+      "camera": {
+        "center": [
+          -80.8,
+          34.8
+        ],
+        "zoom": 7.2,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "siege-of-charleston",
+        "battle-of-camden",
+        "battle-of-kings-mountain",
+        "battle-of-cowpens",
+        "battle-of-guilford-court-house",
+        "charleston",
+        "cowpens",
+        "guilford-court-house",
+        "cornwallis-southern",
+        "greene-southern"
+      ],
+      "sources": [
+        "osprey-cowpens",
+        "middlekauff-2005",
+        "ferling-2007"
+      ]
+    },
+    {
+      "id": "ch-9-siege-of-yorktown",
+      "when": "1781-05-01/1781-10-19",
+      "dateLabel": {
+        "en": "May – October 1781",
+        "id": "Mei – Oktober 1781"
+      },
+      "title": {
+        "en": "The World Turned Upside Down: Yorktown",
+        "id": "Dunia Terbalik: Yorktown"
+      },
+      "body": {
+        "en": "In summer 1781, Cornwallis established a naval base at Yorktown on the Virginia Tidewater, confident of Royal Navy control. Seeing an unprecedented opportunity, Washington and the Comte de Rochambeau executed a brilliant strategic deception: feigning an assault on Manhattan, they marched their combined 12,000-man army 400 miles south to the Chesapeake.\n\nThe trap was sealed by sea. On 5 September 1781, Admiral de Grasse's French fleet repulsed the British relief fleet under Admiral Graves at the Battle of the Chesapeake Capes, leaving Cornwallis cut off. Allied siege trenches closed around Yorktown under relentless French and American artillery fire. On the night of 14 October, American light infantry under Alexander Hamilton stormed Redoubt No. 10 while French grenadiers took Redoubt No. 9 at the point of the bayonet. Out of ammunition and pounded by over 100 heavy siege guns, Cornwallis surrendered on 19 October 1781. As 7,000 British and German soldiers laid down their arms, their band played 'The World Turned Upside Down.'",
+        "id": "Pada musim panas 1781, Cornwallis mendirikan pangkalan laut di Yorktown di pesisir Virginia, meyakini keunggulan Royal Navy. Melihat peluang emas, Washington dan Comte de Rochambeau melancarkan tipuan strategis: berpura-pura menyerbu Manhattan, lalu menggerakkan 12.000 prajurit gabungan sejauh 640 kilometer ke selatan menuju Chesapeake.\n\nPerangkap terkunci rapat dari laut. Pada 5 September 1781, armada Prancis pimpinan Laksamana de Grasse memukul mundur armada bantuan Britania di Pertempuran Tanjung Chesapeake, mengisolasi Cornwallis total. Parit kepung sekutu kian menyempit di bawah dentuman artileri bertubi-tubi. Malam 14 Oktober, infanteri Amerika pimpinan Alexander Hamilton merebut Redoubt 10 sementara grenadier Prancis menguasai Redoubt 9 dengan serbuan bayonet. Kehabisan amunisi dan dibombardir meriam kepung, Cornwallis menyerah pada 19 Oktober 1781. Saat 7.000 prajurit Britania meletakkan senjata, korps musik memainkan lagu 'The World Turned Upside Down.'"
+      },
+      "camera": {
+        "center": [
+          -76.45,
+          37.2
+        ],
+        "zoom": 9.8,
+        "pitch": 35,
+        "bearing": 20,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-the-capes",
+        "siege-of-yorktown",
+        "surrender-at-yorktown",
+        "yorktown",
+        "chesapeake-capes",
+        "williamsburg",
+        "washington-main",
+        "cornwallis-southern",
+        "rochambeau-expedition",
+        "de-grasse-fleet"
+      ],
+      "media": [
+        "surrender-cornwallis-trumbull"
+      ],
+      "sources": [
+        "osprey-yorktown",
+        "wp-yorktown",
+        "chernow-2010"
+      ]
+    },
+    {
+      "id": "ch-10-peace-of-paris",
+      "when": "1781-10-20/1783-12-04",
+      "dateLabel": {
+        "en": "October 1781 – December 1783",
+        "id": "Oktober 1781 – Desember 1783"
+      },
+      "title": {
+        "en": "Independence Recognized: The Peace of Paris",
+        "id": "Kemerdekaan Diakui: Perjanjian Paris"
+      },
+      "body": {
+        "en": "The catastrophe at Yorktown shattered the British government's political will to maintain the war. Upon hearing the news, Prime Minister Lord North threw up his arms and cried: *Oh God! It is all over!* In March 1782, Parliament voted to cease offensive operations in North America, and British garrisons began withdrawing from Savannah and Charleston.\n\nIn Paris, American commissioners John Adams, Benjamin Franklin, and John Jay outmaneuvered European diplomats to secure extraordinarily favorable terms. Signed on 3 September 1783, the definitive Treaty of Paris formally recognized the United States as an independent sovereign nation, granting vast borders stretching from the Atlantic Ocean west to the Mississippi River, and from Canada south to Spanish Florida. On 25 November 1783, the last British redcoats evacuated Manhattan. Nine days later, George Washington bade a tearful farewell to his officers at Fraunces Tavern before resigning his military commission to Congress in Annapolis, returning home as a private citizen to Mount Vernon.",
+        "id": "Kehancuran di Yorktown mematahkan kemauan politik pemerintah Britania untuk melanjutkan perang. Mendengar kabar tersebut, Perdana Menteri Lord North berseru pasrah: *Ya Tuhan! Semuanya telah usai!* Pada Maret 1782, Parlemen memutuskan menghentikan operasi ofensif di Amerika Utara, dan garnisun Britania mulai mengevakuasi Savannah dan Charleston.\n\nDi Paris, utusan Amerika John Adams, Benjamin Franklin, dan John Jay berhasil merundingkan kesepakatan damai yang sangat menguntungkan. Ditandatangani pada 3 September 1783, Perjanjian Paris secara resmi mengakui Amerika Serikat sebagai negara berdaulat merdeka dengan batas wilayah membentang dari Samudra Atlantik hingga Sungai Mississippi, dan dari Kanada hingga Florida. Pada 25 November 1783, prajurit Britania terakhir meninggalkan Manhattan. Sembilan hari kemudian di Kedai Fraunces, George Washington mengucapkan perpisahan mengharukan kepada para perwiranya sebelum menyerahkan kembali mandat militer kepada Kongres sebagai warga sipil biasa."
+      },
+      "camera": {
+        "center": [
+          -75.5,
+          40.0
+        ],
+        "zoom": 6.5,
+        "pitch": 20,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "treaty-of-paris-1783",
+        "evacuation-day-new-york",
+        "philadelphia",
+        "new-york-city",
+        "washington-main",
+        "howe-clinton-main"
+      ],
+      "media": [
+        "treaty-of-paris-west"
+      ],
+      "sources": [
+        "wood-1992",
+        "middlekauff-2005",
+        "chernow-2010"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "middlekauff-2005",
+      "type": "book",
+      "citation": "Middlekauff, Robert. The Glorious Cause: The American Revolution, 1763–1789. Revised Edition. Oxford History of the United States. New York: Oxford University Press, 2005."
+    },
+    {
+      "id": "mccullough-2005",
+      "type": "book",
+      "citation": "McCullough, David. 1776. New York: Simon & Schuster, 2005."
+    },
+    {
+      "id": "ferling-2007",
+      "type": "book",
+      "citation": "Ferling, John. Almost a Miracle: The American Victory in the War of Independence. New York: Oxford University Press, 2007."
+    },
+    {
+      "id": "chernow-2010",
+      "type": "book",
+      "citation": "Chernow, Ron. Washington: A Life. New York: Penguin Press, 2010."
+    },
+    {
+      "id": "wood-1992",
+      "type": "book",
+      "citation": "Wood, Gordon S. The Radicalism of the American Revolution. New York: Alfred A. Knopf, 1992."
+    },
+    {
+      "id": "osprey-boston",
+      "type": "book",
+      "citation": "Morrissey, Brendan. Boston 1775: The Shot Heard Around the World. Osprey Campaign Series 37. London: Osprey Publishing, 1995."
+    },
+    {
+      "id": "osprey-trenton",
+      "type": "book",
+      "citation": "Bonk, David. Trenton and Princeton 1776–77: Washington Crosses the Delaware. Osprey Campaign Series 213. Oxford: Osprey Publishing, 2009."
+    },
+    {
+      "id": "osprey-saratoga",
+      "type": "book",
+      "citation": "Morrissey, Brendan. Saratoga 1777: Turning Point of a Revolution. Osprey Campaign Series 67. Oxford: Osprey Publishing, 2000."
+    },
+    {
+      "id": "osprey-monmouth",
+      "type": "book",
+      "citation": "Morrissey, Brendan. Monmouth Courthouse 1778: The Last Great Battle in the North. Osprey Campaign Series 135. Oxford: Osprey Publishing, 2004."
+    },
+    {
+      "id": "osprey-cowpens",
+      "type": "book",
+      "citation": "Konstam, Angus. Guilford Courthouse 1781: Lord Cornwallis's Ruinous Victory. Osprey Campaign Series 109. Oxford: Osprey Publishing, 2002."
+    },
+    {
+      "id": "osprey-yorktown",
+      "type": "book",
+      "citation": "Morrissey, Brendan. Yorktown 1781: The World Turned Upside Down. Osprey Campaign Series 47. London: Osprey Publishing, 1997."
+    },
+    {
+      "id": "wp-rev-war",
+      "type": "encyclopedia",
+      "citation": "\"American Revolutionary War.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-saratoga",
+      "type": "encyclopedia",
+      "citation": "\"Saratoga campaign.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Saratoga_campaign",
+      "accessed": "2026-10"
+    },
+    {
+      "id": "wp-yorktown",
+      "type": "encyclopedia",
+      "citation": "\"Siege of Yorktown.\" Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Yorktown",
+      "accessed": "2026-10"
+    }
+  ],
+  "media": [
+    {
+      "id": "bunker-hill-trumbull",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Death_of_General_Warren_at_the_Battle_of_Bunker%27s_Hill,_June_17,_1775.jpg",
+      "alt": {
+        "en": "The Death of General Warren at the Battle of Bunker's Hill, painting by John Trumbull.",
+        "id": "Gugurnya Jenderal Warren di Pertempuran Bunker's Hill, lukisan karya John Trumbull."
+      },
+      "caption": {
+        "en": "The Death of General Warren at the Battle of Bunker's Hill by John Trumbull (1786).",
+        "id": "Gugurnya Jenderal Warren di Pertempuran Bunker's Hill karya John Trumbull (1786)."
+      },
+      "creator": "John Trumbull",
+      "date": "1786",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Death_of_General_Warren_at_the_Battle_of_Bunker%27s_Hill,_June_17,_1775.jpg"
+    },
+    {
+      "id": "declaration-trumbull",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_Independence_(1819),_by_John_Trumbull.jpg",
+      "alt": {
+        "en": "The Committee of Five presenting the Declaration of Independence to the Continental Congress, painting by John Trumbull.",
+        "id": "Komite Lima mempersembahkan rancangan Deklarasi Kemerdekaan kepada Kongres Kontinental, lukisan karya John Trumbull."
+      },
+      "caption": {
+        "en": "Declaration of Independence by John Trumbull (1819).",
+        "id": "Deklarasi Kemerdekaan karya John Trumbull (1819)."
+      },
+      "creator": "John Trumbull",
+      "date": "1819",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg"
+    },
+    {
+      "id": "washington-crossing-delaware-leutze",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Washington_Crossing_the_Delaware_by_Emanuel_Leutze,_MMA-NYC,_1851.jpg",
+      "alt": {
+        "en": "George Washington standing in a rowboat crossing the icy Delaware River on Christmas night 1776, painting by Emanuel Leutze.",
+        "id": "George Washington berdiri di perahu menyeberangi Sungai Delaware yang beku pada malam Natal 1776, lukisan karya Emanuel Leutze."
+      },
+      "caption": {
+        "en": "Washington Crossing the Delaware by Emanuel Leutze (1851).",
+        "id": "Washington Menyeberangi Delaware karya Emanuel Leutze (1851)."
+      },
+      "creator": "Emanuel Leutze",
+      "date": "1851",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Washington_Crossing_the_Delaware_by_Emanuel_Leutze,_MMA-NYC,_1851.jpg"
+    },
+    {
+      "id": "surrender-burgoyne-trumbull",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Surrender_of_General_Burgoyne.jpg",
+      "alt": {
+        "en": "General John Burgoyne surrenders his sword to General Horatio Gates at Saratoga, painting by John Trumbull.",
+        "id": "Jenderal John Burgoyne menyerahkan pedangnya kepada Jenderal Horatio Gates di Saratoga, lukisan karya John Trumbull."
+      },
+      "caption": {
+        "en": "Surrender of General Burgoyne by John Trumbull (1821).",
+        "id": "Penyerahan Jenderal Burgoyne karya John Trumbull (1821)."
+      },
+      "creator": "John Trumbull",
+      "date": "1821",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Surrender_of_General_Burgoyne.jpg"
+    },
+    {
+      "id": "steuben-valley-forge-abbey",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baron_von_Steuben_at_Valley_Forge.jpg",
+      "alt": {
+        "en": "Baron von Steuben drilling ragged American soldiers in the snow at Valley Forge, painting by Edwin Austin Abbey.",
+        "id": "Baron von Steuben melatih prajurit Amerika di tengah salju Valley Forge, lukisan karya Edwin Austin Abbey."
+      },
+      "caption": {
+        "en": "Baron von Steuben Drilling Troops at Valley Forge by Edwin Austin Abbey.",
+        "id": "Baron von Steuben Melatih Pasukan di Valley Forge karya Edwin Austin Abbey."
+      },
+      "creator": "Edwin Austin Abbey",
+      "date": "1911",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baron_von_Steuben_at_Valley_Forge.jpg"
+    },
+    {
+      "id": "molly-pitcher-monmouth",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Molly_Pitcher_by_Dennis_Malone_Carter.jpg",
+      "alt": {
+        "en": "Molly Pitcher firing a cannon at the Battle of Monmouth, painting by Dennis Malone Carter.",
+        "id": "Molly Pitcher menembakkan meriam di Pertempuran Monmouth, lukisan karya Dennis Malone Carter."
+      },
+      "caption": {
+        "en": "Molly Pitcher at the Battle of Monmouth by Dennis Malone Carter (1854).",
+        "id": "Molly Pitcher di Pertempuran Monmouth karya Dennis Malone Carter (1854)."
+      },
+      "creator": "Dennis Malone Carter",
+      "date": "1854",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Molly_Pitcher_by_Dennis_Malone_Carter.jpg"
+    },
+    {
+      "id": "surrender-cornwallis-trumbull",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Surrender_of_Lord_Cornwallis.jpg",
+      "alt": {
+        "en": "Surrender of the British army under Lord Cornwallis to American and French forces at Yorktown, painting by John Trumbull.",
+        "id": "Penyerahan tentara Britania di bawah Lord Cornwallis kepada pasukan gabungan Amerika dan Prancis di Yorktown, lukisan karya John Trumbull."
+      },
+      "caption": {
+        "en": "Surrender of Lord Cornwallis by John Trumbull (1820).",
+        "id": "Penyerahan Lord Cornwallis karya John Trumbull (1820)."
+      },
+      "creator": "John Trumbull",
+      "date": "1820",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Surrender_of_Lord_Cornwallis.jpg"
+    },
+    {
+      "id": "treaty-of-paris-west",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Treaty_of_Paris_by_Benjamin_West_1783.jpg",
+      "alt": {
+        "en": "American peace commissioners John Jay, John Adams, Benjamin Franklin, Henry Laurens, and William Temple Franklin, unfinished painting by Benjamin West.",
+        "id": "Delegasi perdamaian Amerika John Jay, John Adams, Benjamin Franklin, Henry Laurens, dan William Temple Franklin, lukisan belum selesai karya Benjamin West."
+      },
+      "caption": {
+        "en": "Treaty of Paris by Benjamin West (1783).",
+        "id": "Perjanjian Paris karya Benjamin West (1783)."
+      },
+      "creator": "Benjamin West",
+      "date": "1783",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Paris_by_Benjamin_West_1783.jpg"
+    }
+  ]
+}
