@@ -34,6 +34,7 @@ const CAMPAIGNS: Record<string, { url: string; label: string }> = {
   sinoJapanese: { url: '/campaigns/sino-japanese-1894.json', label: 'First Sino-Japanese War (1894–1895)' },
   pungdo: { url: '/campaigns/pungdo-1894.json', label: 'Crisis in Korea: Ambush at Pungdo (1894)' },
   americanRevolution: { url: '/campaigns/american-revolution-1775.json', label: 'The American Revolutionary War (1775–1783)' },
+  mongolJava: { url: '/campaigns/mongol-invasion-java-1293.json', label: 'The Mongol Invasion of Java (1293)' },
 };
 /** `/app/?campaign=waterloo` opens that campaign first; the landing page links there. */
 const requested = new URLSearchParams(location.search).get('campaign') ?? '';

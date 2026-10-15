@@ -1,0 +1,2091 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "mongol-invasion-java-1293",
+    "version": "0.1.0",
+    "title": {
+      "en": "The Mongol Invasion of Java (1293)",
+      "id": "Invasi Mongol ke Jawa (1293)"
+    },
+    "subtitle": {
+      "en": "Kublai Khan's punitive armada and the founding of the Majapahit Empire",
+      "id": "Armada penghukuman Kubilai Khan dan lahirnya Kemaharajaan Majapahit"
+    },
+    "description": {
+      "en": "In 1289, King Kertanegara of Singhasari branded and mutilated the face of Kublai Khan's imperial envoy Meng Qi. Enraged, the Great Khan of the Mongol Empire and Yuan Dynasty dispatched an armada of 1,000 ships and nearly 30,000 warriors under Shi-bi, Gao Xing, and Ike Mese in late 1292 to subjugate Java. Upon arrival in early 1293, the Mongols discovered that Kertanegara had already been slain by King Jayakatwang of Kediri. Kertanegara's son-in-law, Prince Raden Wijaya, cleverly allied with the Mongol invaders to crush Jayakatwang at the capital of Daha. Once Kediri fell, Raden Wijaya turned upon the celebrating Mongols, ambushed their forces across the Brantas River basin, and drove the remnants of the Great Khan's army back to their ships—founding the glorious Majapahit Empire.",
+      "id": "Pada 1289, Raja Kertanegara dari Singhasari melukai dan mencoreng wajah utusan kaisar Kubilai Khan, Meng Qi. Murka atas penghinaan itu, Khan Agung Kekaisaran Mongol dan Dinasti Yuan mengerahkan armada 1.000 kapal dan hampir 30.000 prajurit di bawah pimpinan Shi-bi, Gao Xing, dan Ike Mese pada akhir 1292 untuk menundukkan Pulau Jawa. Setibanya di Jawa awal 1293, bangsa Mongol mendapati bahwa Kertanegara telah gugur akibat pemberontakan Jayakatwang dari Kediri. Menantu Kertanegara, Raden Wijaya, memanfaatkan kedatangan armada Tartar dengan berpura-pura tunduk dan mengajak mereka menggempur Daha demi menghancurkan Kediri. Setelah Jayakatwang tumbang, Raden Wijaya berbalik menyerang, menjebak dan membantai garnisun Mongol di sepanjang Sungai Brantas, serta memaksa sisa-sisa pasukan Khan Agung melarikan diri ke laut—menandai berdirinya Kemaharajaan Majapahit."
+    },
+    "license": "CC-BY-4.0",
+    "authors": [
+      {
+        "name": "PholidLabs"
+      }
+    ],
+    "defaultLanguage": "en",
+    "languages": [
+      "en",
+      "id"
+    ],
+    "timeline": {
+      "extent": "1289-01-01/1293-11-30",
+      "focus": "1293-02-15/1293-05-01"
+    },
+    "map": {
+      "center": [
+        112.4,
+        -7.45
+      ],
+      "zoom": 8.2,
+      "pitch": 25,
+      "bearing": 0,
+      "bounds": [
+        111,
+        -8.6,
+        114.2,
+        -6.5
+      ],
+      "terrain": {
+        "exaggeration": 1.5
+      },
+      "theme": "parchment-sepia"
+    },
+    "updated": "2026-10-14"
+  },
+  "factions": [
+    {
+      "id": "yuan-dynasty",
+      "name": {
+        "en": "Yuan Dynasty (Great Mongol State)",
+        "id": "Dinasti Yuan (Kekaisaran Mongol)"
+      },
+      "shortName": {
+        "en": "Yuan Mongols",
+        "id": "Mongol Yuan"
+      },
+      "color": "#C0392B",
+      "description": {
+        "en": "The imperial expeditionary army of the Yuan Dynasty dispatched by Kublai Khan from Quanzhou, comprising 20,000 to 30,000 Mongol, Han Chinese, Jurchen, and Korean troops with hundreds of warships under commanders Shi-bi, Gao Xing, and Ike Mese.",
+        "id": "Tentara ekspedisi kekaisaran Dinasti Yuan yang dikirim oleh Kubilai Khan dari Quanzhou, berkekuatan 20.000 hingga 30.000 prajurit Mongol, Han Tiongkok, Jurchen, dan Korea dengan ratusan kapal perang di bawah pimpinan panglima Shi-bi, Gao Xing, dan Ike Mese."
+      },
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162",
+        "groeneveldt-1876",
+        "weatherford-2004"
+      ]
+    },
+    {
+      "id": "majapahit-wijaya",
+      "name": {
+        "en": "Majapahit (Raden Wijaya)",
+        "id": "Majapahit (Raden Wijaya)"
+      },
+      "shortName": {
+        "en": "Majapahit",
+        "id": "Majapahit"
+      },
+      "color": "#D4AF37",
+      "description": {
+        "en": "The nascent kingdom founded in the Tarik forest by Raden Wijaya, son-in-law of Kertanegara, supported by Arya Wiraraja of Sumenep, Madurese auxiliaries, and loyalist remnants of Singhasari.",
+        "id": "Kerajaan baru yang didirikan di Hutan Tarik oleh Raden Wijaya, menantu mendiang Kertanegara, didukung oleh Adipati Arya Wiraraja dari Sumenep, laskar Madura, dan sisa-sisa pengikut setia Singhasari."
+      },
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "kediri-kingdom",
+      "name": {
+        "en": "Kingdom of Kediri (Daha)",
+        "id": "Kerajaan Kediri (Daha)"
+      },
+      "shortName": {
+        "en": "Kediri",
+        "id": "Kediri"
+      },
+      "color": "#2C3E50",
+      "description": {
+        "en": "The revived kingdom of Kediri ruled by King Jayakatwang from his capital at Daha, having overthrown the Singhasari monarchy in 1292 with an army of over 30,000 warriors.",
+        "id": "Kerajaan Kediri yang dibangkitkan kembali oleh Raja Jayakatwang dari ibu kotanya di Daha, setelah menggulingkan takhta Singhasari pada 1292 dengan kekuatan lebih dari 30.000 prajurit."
+      },
+      "sources": [
+        "pararaton",
+        "slamet-muljana-2005",
+        "coedes-1968"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "tuban",
+      "name": {
+        "en": "Tuban",
+        "id": "Tuban"
+      },
+      "modernName": {
+        "en": "Tuban, East Java, Indonesia",
+        "id": "Tuban, Jawa Timur, Indonesia"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.064,
+        -6.897
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Major medieval maritime port on Java's northern coast where the Yuan expeditionary armada dropped anchor and disembarked half its army in February 1293.",
+        "id": "Pelabuhan maritim kuno di pesisir utara Jawa tempat armada ekspedisi Yuan membuang sauh dan mendaratkan separuh pasukannya pada Februari 1293."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "sidayu",
+      "name": {
+        "en": "Sidayu (Sedayu)",
+        "id": "Sidayu (Sedayu)"
+      },
+      "modernName": {
+        "en": "Sidayu, Gresik Regency, East Java",
+        "id": "Sidayu, Kabupaten Gresik, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.562,
+        -6.985
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Coastal town near the mouth of the Bengawan Solo where Shi-bi's overland column marched east toward the Madura Strait.",
+        "id": "Kota pesisir dekat muara Bengawan Solo tempat barisan darat Shi-bi berbaris ke timur menuju Selat Madura."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "gresik",
+      "name": {
+        "en": "Gresik (Po-tsieh)",
+        "id": "Gresik (Po-tsieh)"
+      },
+      "modernName": {
+        "en": "Gresik, East Java",
+        "id": "Gresik, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.655,
+        -7.159
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Flourishing trading harbor on the Madura Strait, recorded as Po-tsieh in Chinese records, anchoring the maritime approach to Surabaya.",
+        "id": "Pelabuhan dagang di Selat Madura yang dicatat sebagai Po-tsieh dalam naskah Tiongkok, mengawal jalan masuk laut menuju Surabaya."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "ujung-galuh",
+      "name": {
+        "en": "Ujung Galuh (Surabaya Estuary)",
+        "id": "Ujung Galuh (Muara Surabaya)"
+      },
+      "modernName": {
+        "en": "Surabaya, East Java",
+        "id": "Surabaya, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.748,
+        -7.215
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Ancient port settlement at the mouth of the Kali Mas (Brantas distributary). Site of the Yuan naval victory over Kediri boats and the final embarkation point for fleeing Mongol forces.",
+        "id": "Permukiman pelabuhan kuno di muara Kali Mas (cabang Sungai Brantas). Tempat kemenangan armada Yuan atas perahu Kediri dan titik embarkasi terakhir mundurnya tentara Mongol."
+      },
+      "sources": [
+        "yuanshi-210",
+        "pararaton",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "madura-strait",
+      "name": {
+        "en": "Madura Strait",
+        "id": "Selat Madura"
+      },
+      "modernName": {
+        "en": "Madura Strait, East Java",
+        "id": "Selat Madura, Jawa Timur"
+      },
+      "kind": "port",
+      "coordinates": [
+        112.85,
+        -7.18
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Sheltered waterway separating Java and Madura island, where Ike Mese's war junks anchored to dominate East Java's maritime lifelines.",
+        "id": "Perairan terlindung yang memisahkan Jawa dan Pulau Madura, tempat kapal-kapal perang Ike Mese berlabuh menguasai jalur laut Jawa Timur."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "canggu",
+      "name": {
+        "en": "Canggu River Port",
+        "id": "Pelabuhan Sungai Canggu"
+      },
+      "modernName": {
+        "en": "Canggu, Jetis, Mojokerto Regency",
+        "id": "Canggu, Jetis, Kabupaten Mojokerto"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.451,
+        -7.453
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Premier river port on the Kali Brantas, strategic transfer hub where goods moved between sea barges and inland roads to Majapahit and Kediri.",
+        "id": "Pelabuhan sungai utama di Kali Brantas, simpul transfer strategis tempat barang-barang berpindah dari perahu sungai ke jalan darat menuju Majapahit dan Kediri."
+      },
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "tarik",
+      "name": {
+        "en": "Tarik Forest (Hutan Tarik)",
+        "id": "Hutan Tarik"
+      },
+      "modernName": {
+        "en": "Tarik, Sidoarjo Regency, East Java",
+        "id": "Tarik, Kabupaten Sidoarjo, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.518,
+        -7.462
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Dense wilderness on the banks of the Brantas granted to Raden Wijaya by Jayakatwang, where the bitter maja fruit gave the nascent capital its name.",
+        "id": "Hutan lebat di tepi Sungai Brantas yang dihadiahkan Jayakatwang kepada Raden Wijaya, tempat buah maja yang pahit memberi nama bagi ibu kota baru."
+      },
+      "sources": [
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "majapahit",
+      "name": {
+        "en": "Majapahit (Trowulan)",
+        "id": "Majapahit (Trowulan)"
+      },
+      "modernName": {
+        "en": "Trowulan, Mojokerto Regency, East Java",
+        "id": "Trowulan, Kabupaten Mojokerto, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.38,
+        -7.552
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The newly founded settlement and royal city of Raden Wijaya, site of the ambush of the Mongol escort that triggered the liberation of Java.",
+        "id": "Permukiman baru dan kota kerajaan Raden Wijaya, tempat penyergapan pengawal Mongol yang memicu pembebasan Jawa."
+      },
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "daha",
+      "name": {
+        "en": "Daha (Kediri)",
+        "id": "Daha (Kediri)"
+      },
+      "modernName": {
+        "en": "Kota Kediri, East Java",
+        "id": "Kota Kediri, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.011,
+        -7.818
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Ancient royal capital of the Kediri Kingdom situated on the upper Brantas, where King Jayakatwang made his stand against the joint Yuan-Majapahit assault.",
+        "id": "Ibu kota kuno Kerajaan Kediri di hulu Sungai Brantas, tempat Raja Jayakatwang bertahan menghadapi serbuan gabungan Yuan dan Majapahit."
+      },
+      "sources": [
+        "yuanshi-210",
+        "pararaton",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "singhasari",
+      "name": {
+        "en": "Singhasari (Tumapel)",
+        "id": "Singhasari (Tumapel)"
+      },
+      "modernName": {
+        "en": "Singosari, Malang Regency, East Java",
+        "id": "Singosari, Kabupaten Malang, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.658,
+        -7.893
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Capital of the Singhasari kingdom where King Kertanegara was slain during Jayakatwang's surprise assault in May 1292.",
+        "id": "Ibu kota kerajaan Singhasari tempat Raja Kertanegara tewas dalam serangan mendadak Jayakatwang pada Mei 1292."
+      },
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "coedes-1968"
+      ]
+    },
+    {
+      "id": "sumenep",
+      "name": {
+        "en": "Sumenep (Madura)",
+        "id": "Sumenep (Madura)"
+      },
+      "modernName": {
+        "en": "Sumenep, Madura Island, East Java",
+        "id": "Sumenep, Pulau Madura, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        113.864,
+        -7.012
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Seat of Adipati Arya Wiraraja on eastern Madura, who sheltered the fugitive Prince Raden Wijaya and conceived the grand strategy to exploit both Kediri and the Mongols.",
+        "id": "Pusat kedudukan Adipati Arya Wiraraja di Madura timur, yang melindungi Pangeran Raden Wijaya dan merancang siasat agung memanfaatkan Kediri serta tentara Mongol."
+      },
+      "sources": [
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "gelang-gelang",
+      "name": {
+        "en": "Gelang-gelang",
+        "id": "Gelang-gelang"
+      },
+      "modernName": {
+        "en": "Madiun Valley, East Java",
+        "id": "Lembah Madiun, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        111.523,
+        -7.629
+      ],
+      "certainty": "approximate",
+      "rank": 3,
+      "notes": {
+        "en": "Ancestral principality of Duke Jayakatwang from which he launched his sudden rebellion against Singhasari in 1292.",
+        "id": "Kadipaten leluhur Adipati Jayakatwang, titik awal pemberontakan mendadaknya terhadap Singhasari pada 1292."
+      },
+      "sources": [
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "krian",
+      "name": {
+        "en": "Krian",
+        "id": "Krian"
+      },
+      "modernName": {
+        "en": "Krian, Sidoarjo Regency, East Java",
+        "id": "Krian, Kabupaten Sidoarjo, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.585,
+        -7.404
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Strategic river crossing between Canggu and Ujung Galuh where Javanese guerillas harassed the retreating Mongol columns.",
+        "id": "Penyeberangan sungai strategis antara Canggu dan Ujung Galuh tempat laskar gerilya Jawa mencegat barisan mundur Mongol."
+      },
+      "sources": [
+        "yuanshi-210",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "jombang",
+      "name": {
+        "en": "Jombang Plains",
+        "id": "Dataran Jombang"
+      },
+      "modernName": {
+        "en": "Jombang, East Java",
+        "id": "Jombang, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.233,
+        -7.546
+      ],
+      "certainty": "approximate",
+      "rank": 3,
+      "notes": {
+        "en": "Open riverine plains along the central Brantas where the joint Yuan-Majapahit columns marched south to engage the Kediri royal army.",
+        "id": "Dataran lembah di sepanjang Sungai Brantas tengah tempat pasukan gabungan Yuan-Majapahit berbaris ke selatan menghadapi tentara kerajaan Kediri."
+      },
+      "sources": [
+        "yuanshi-210",
+        "pararaton"
+      ]
+    },
+    {
+      "id": "papar",
+      "name": {
+        "en": "Papar",
+        "id": "Papar"
+      },
+      "modernName": {
+        "en": "Papar, Kediri Regency, East Java",
+        "id": "Papar, Kabupaten Kediri, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.085,
+        -7.685
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Strategic river choke point north of Daha where Kediri's northern army clashed with Gao Xing's advance guard on 19 March 1293.",
+        "id": "Titik pertahanan sungai di utara Daha tempat pasukan utara Kediri bertempur melawan garda depan Gao Xing pada 19 Maret 1293."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "porong",
+      "name": {
+        "en": "Porong River Mouth",
+        "id": "Muara Sungai Porong"
+      },
+      "modernName": {
+        "en": "Porong, Sidoarjo Regency, East Java",
+        "id": "Porong, Kabupaten Sidoarjo, Jawa Timur"
+      },
+      "kind": "river",
+      "coordinates": [
+        112.685,
+        -7.54
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "Southern distributary channel of the Brantas delta, patrolled by allied prahus to cut off maritime escape routes from Kediri.",
+        "id": "Cabang muara selatan delta Brantas yang dipatroli perahu sekutu untuk menutup jalur pelarian Kediri ke laut."
+      },
+      "sources": [
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "brantas-junction",
+      "name": {
+        "en": "Brantas River Confluence",
+        "id": "Percabangan Sungai Brantas"
+      },
+      "modernName": {
+        "en": "Wringinanom / Mojokerto border, East Java",
+        "id": "Perbatasan Wringinanom / Mojokerto, Jawa Timur"
+      },
+      "kind": "river",
+      "coordinates": [
+        112.502,
+        -7.435
+      ],
+      "certainty": "exact",
+      "rank": 3,
+      "notes": {
+        "en": "The critical apex of the Brantas delta where the river bifurcates into the Kali Mas (flowing north to Surabaya) and Kali Porong (flowing east).",
+        "id": "Hulu delta Brantas tempat aliran sungai terbelah dua menjadi Kali Mas (mengalir ke Surabaya) dan Kali Porong (mengalir ke timur)."
+      },
+      "sources": [
+        "slamet-muljana-2005"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "shibi-overland",
+      "kind": "unit",
+      "name": {
+        "en": "Yuan Land Army (Shi-bi & Gao Xing)",
+        "id": "Tentara Darat Yuan (Shi-bi & Gao Xing)"
+      },
+      "faction": "yuan-dynasty",
+      "commanders": [
+        "Shi-bi",
+        "Gao Xing"
+      ],
+      "description": {
+        "en": "The main land contingent of the Yuan expeditionary force, composed of Mongol cavalry, Jurchen footmen, and Han infantry disembarked at Tuban to march across the plains to Daha.",
+        "id": "Pasukan darat utama ekspedisi Yuan yang terdiri atas kavaleri Mongol, infanteri Jurchen, dan prajurit Han yang didaratkan di Tuban untuk berbaris melintasi pedalaman menuju Daha."
+      },
+      "track": [
+        {
+          "when": "1293-02-15",
+          "at": "tuban",
+          "strength": 15000,
+          "certainty": "exact",
+          "label": {
+            "en": "Landings at Tuban harbor",
+            "id": "Pendaratan di pelabuhan Tuban"
+          }
+        },
+        {
+          "when": "1293-02-28",
+          "at": "sidayu",
+          "strength": 14800,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-08",
+          "at": "ujung-galuh",
+          "strength": 14500,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-15",
+          "at": "canggu",
+          "strength": 14000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-19",
+          "at": "papar",
+          "strength": 13500,
+          "certainty": "exact",
+          "label": {
+            "en": "Vanguard skirmish at Papar",
+            "id": "Benturan garda depan di Papar"
+          }
+        },
+        {
+          "when": "1293-03-22",
+          "at": "daha",
+          "strength": 13000,
+          "certainty": "exact",
+          "label": {
+            "en": "Storming and siege of Daha",
+            "id": "Penyerbuan dan pengepungan Daha"
+          }
+        },
+        {
+          "when": "1293-04-18",
+          "at": "daha",
+          "strength": 12500,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-04-20",
+          "at": "jombang",
+          "strength": 11000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Fighting retreat through Jombang",
+            "id": "Gerak mundur bertempur melewati Jombang"
+          }
+        },
+        {
+          "when": "1293-04-22",
+          "at": "canggu",
+          "strength": 9500,
+          "certainty": "exact",
+          "label": {
+            "en": "Desperate rearguard at Canggu",
+            "id": "Pertahanan barisan belakang di Canggu"
+          }
+        },
+        {
+          "when": "1293-04-23",
+          "at": "brantas-junction",
+          "strength": 8800,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-04-24",
+          "at": "ujung-galuh",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Embarkation at Surabaya estuary",
+            "id": "Penaikan pasukan di muara Surabaya"
+          }
+        },
+        {
+          "when": "1293-04-30",
+          "at": "madura-strait",
+          "strength": 7800,
+          "certainty": "exact"
+        }
+      ],
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "ikemese-fleet",
+      "kind": "unit",
+      "name": {
+        "en": "Yuan Armada & Naval Force (Ike Mese)",
+        "id": "Armada Laut Yuan (Ike Mese)"
+      },
+      "faction": "yuan-dynasty",
+      "commanders": [
+        "Ike Mese"
+      ],
+      "description": {
+        "en": "The naval arm of the expedition under Uyghur commander Ike Mese, consisting of hundreds of ocean-going junks and river assault craft controlling the Madura Strait and the Kali Mas waterway.",
+        "id": "Sayap angkatan laut ekspedisi di bawah panglima Uyghur Ike Mese, berkekuatan ratusan kapal jung samudra dan perahu serbu sungai yang menguasai Selat Madura serta perairan Kali Mas."
+      },
+      "track": [
+        {
+          "when": "1293-02-15",
+          "at": "tuban",
+          "strength": 15000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-02-26",
+          "at": "sidayu",
+          "strength": 14900,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-02-27",
+          "at": "gresik",
+          "strength": 14850,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-01",
+          "at": "madura-strait",
+          "strength": 14800,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-05",
+          "at": "ujung-galuh",
+          "strength": 14500,
+          "certainty": "exact",
+          "label": {
+            "en": "Naval victory at Surabaya mouth",
+            "id": "Kemenangan laut di muara Surabaya"
+          }
+        },
+        {
+          "when": "1293-03-12",
+          "at": "canggu",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Flotilla anchors at Canggu harbor",
+            "id": "Armada sungai berlabuh di pelabuhan Canggu"
+          }
+        },
+        {
+          "when": "1293-03-22",
+          "at": "daha",
+          "strength": 13500,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-04-10",
+          "at": "canggu",
+          "strength": 13000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-04-20",
+          "at": "krian",
+          "strength": 12000,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1293-04-24",
+          "at": "ujung-galuh",
+          "strength": 10500,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-04-30",
+          "at": "madura-strait",
+          "strength": 10200,
+          "certainty": "exact",
+          "label": {
+            "en": "Armada sails away for China",
+            "id": "Armada berlayar pulang ke Tiongkok"
+          }
+        }
+      ],
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "raden-wijaya-army",
+      "kind": "unit",
+      "name": {
+        "en": "Majapahit Army (Raden Wijaya)",
+        "id": "Pasukan Majapahit (Raden Wijaya)"
+      },
+      "faction": "majapahit-wijaya",
+      "commanders": [
+        "Raden Wijaya",
+        "Nambi",
+        "Ranggalawe",
+        "Sora",
+        "Kebo Anabrang"
+      ],
+      "description": {
+        "en": "The forces of Prince Raden Wijaya, combining elite Singhasari palace guards, Madurese auxiliaries, and volunteers from the new settlement of Majapahit, who executed the masterstroke of expelling the Mongols.",
+        "id": "Laskar Pangeran Raden Wijaya, memadukan pengawal istana Singhasari, pejuang Madura, dan sukarelawan permukiman baru Majapahit, yang berhasil menjalankan siasat gemilang mengusir tentara Mongol."
+      },
+      "track": [
+        {
+          "when": "1292-06-01",
+          "at": "singhasari",
+          "strength": 1000,
+          "certainty": "exact",
+          "label": {
+            "en": "Escape from fallen Singhasari",
+            "id": "Meloloskan diri dari runtuhnya Singhasari"
+          }
+        },
+        {
+          "when": "1292-06-15",
+          "at": "sumenep",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Sanctuary with Arya Wiraraja",
+            "id": "Suaka bersama Arya Wiraraja di Madura"
+          }
+        },
+        {
+          "when": "1292-09-01",
+          "at": "tarik",
+          "strength": 2000,
+          "certainty": "exact",
+          "label": {
+            "en": "Clearing the Tarik forest",
+            "id": "Membabat Hutan Tarik"
+          }
+        },
+        {
+          "when": "1292-11-01",
+          "at": "majapahit",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Settlement of Majapahit established",
+            "id": "Permukiman Majapahit didirikan"
+          }
+        },
+        {
+          "when": "1293-03-05",
+          "at": "majapahit",
+          "strength": 4000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-15",
+          "at": "canggu",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Alliance pact with Yuan commanders",
+            "id": "Pakta persekutuan dengan panglima Yuan"
+          }
+        },
+        {
+          "when": "1293-03-22",
+          "at": "daha",
+          "strength": 5500,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-04-05",
+          "at": "majapahit",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Return to Majapahit under pretext",
+            "id": "Kembali ke Majapahit dengan dalih upeti"
+          }
+        },
+        {
+          "when": "1293-04-19",
+          "at": "majapahit",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Ambush of the Mongol escort",
+            "id": "Penyergapan pengawal Mongol"
+          }
+        },
+        {
+          "when": "1293-04-22",
+          "at": "canggu",
+          "strength": 15000,
+          "certainty": "exact",
+          "label": {
+            "en": "Annihilation of Mongol rearguard",
+            "id": "Penghancuran barisan belakang Mongol"
+          }
+        },
+        {
+          "when": "1293-04-24",
+          "at": "ujung-galuh",
+          "strength": 16000,
+          "certainty": "exact",
+          "label": {
+            "en": "Expulsion of the invaders to the sea",
+            "id": "Pengusiran penyerbu ke laut"
+          }
+        },
+        {
+          "when": "1293-11-10",
+          "at": "majapahit",
+          "strength": 20000,
+          "certainty": "exact",
+          "label": {
+            "en": "Coronation of Kertarajasa Jayawardhana",
+            "id": "Penobatan Kertarajasa Jayawardhana"
+          }
+        }
+      ],
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "jayakatwang-kediri",
+      "kind": "unit",
+      "name": {
+        "en": "Kediri Royal Army (Jayakatwang)",
+        "id": "Tentara Kerajaan Kediri (Jayakatwang)"
+      },
+      "faction": "kediri-kingdom",
+      "commanders": [
+        "Jayakatwang",
+        "Ardharaja",
+        "Kebo Mundarang"
+      ],
+      "description": {
+        "en": "The army of King Jayakatwang, comprising the Gelang-gelang rebel divisions that overthrew Singhasari and the royal household troops of Daha.",
+        "id": "Tentara Raja Jayakatwang, terdiri atas divisi pemberontak Gelang-gelang yang meruntuhkan Singhasari dan pasukan pengawal keraton Daha."
+      },
+      "track": [
+        {
+          "when": "1292-05-15",
+          "at": "gelang-gelang",
+          "strength": 25000,
+          "certainty": "exact",
+          "label": {
+            "en": "Insurrection from Gelang-gelang",
+            "id": "Pemberontakan dari Gelang-gelang"
+          }
+        },
+        {
+          "when": "1292-06-01",
+          "at": "singhasari",
+          "strength": 26000,
+          "certainty": "exact",
+          "label": {
+            "en": "Sack of Singhasari palace",
+            "id": "Penjarahan istana Singhasari"
+          }
+        },
+        {
+          "when": "1292-07-01",
+          "at": "daha",
+          "strength": 30000,
+          "certainty": "exact",
+          "label": {
+            "en": "Reign established at Daha",
+            "id": "Bertahta di ibu kota Daha"
+          }
+        },
+        {
+          "when": "1293-03-01",
+          "at": "ujung-galuh",
+          "strength": 5000,
+          "certainty": "approximate"
+        },
+        {
+          "when": "1293-03-18",
+          "at": "papar",
+          "strength": 15000,
+          "certainty": "exact",
+          "label": {
+            "en": "River defense line at Papar",
+            "id": "Garis pertahanan sungai di Papar"
+          }
+        },
+        {
+          "when": "1293-03-22",
+          "at": "daha",
+          "strength": 25000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defeat and surrender of Jayakatwang",
+            "id": "Kekalahan dan menyerahnya Jayakatwang"
+          }
+        },
+        {
+          "when": "1293-04-19",
+          "at": "daha",
+          "strength": 500,
+          "certainty": "conjectural",
+          "label": {
+            "en": "Execution of Jayakatwang in captivity",
+            "id": "Kematian Jayakatwang dalam tawanan"
+          }
+        }
+      ],
+      "sources": [
+        "pararaton",
+        "yuanshi-210",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "arya-wiraraja-madura",
+      "kind": "unit",
+      "name": {
+        "en": "Madurese Force (Arya Wiraraja)",
+        "id": "Laskar Madura (Arya Wiraraja)"
+      },
+      "faction": "majapahit-wijaya",
+      "commanders": [
+        "Arya Wiraraja",
+        "Ranggalawe"
+      ],
+      "description": {
+        "en": "The Madurese warriors and river boatmen mobilized by the Adipati of Sumenep, Arya Wiraraja, who played a pivotal role in clearing Tarik and cutting off the Mongol retreat.",
+        "id": "Laskar pejuang dan pendayung Madura yang dikerahkan oleh Adipati Sumenep, Arya Wiraraja, yang berperan kunci membabat Hutan Tarik serta memutus jalur mundur pasukan Mongol."
+      },
+      "track": [
+        {
+          "when": "1292-06-15",
+          "at": "sumenep",
+          "strength": 5000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1292-09-01",
+          "at": "tarik",
+          "strength": 2000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-01",
+          "at": "sumenep",
+          "strength": 6000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-12",
+          "at": "canggu",
+          "strength": 4000,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-03-22",
+          "at": "daha",
+          "strength": 4500,
+          "certainty": "exact"
+        },
+        {
+          "when": "1293-04-22",
+          "at": "krian",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Blocking the river at Krian",
+            "id": "Memblokade sungai di Krian"
+          }
+        },
+        {
+          "when": "1293-04-25",
+          "at": "ujung-galuh",
+          "strength": 5500,
+          "certainty": "exact"
+        }
+      ],
+      "sources": [
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "mutilation-of-meng-qi",
+      "kind": "other",
+      "when": "1289",
+      "at": "singhasari",
+      "importance": 1,
+      "name": {
+        "en": "Humiliation of Envoy Meng Qi",
+        "id": "Penghinaan Utusan Meng Qi"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "attacker",
+          "commanders": [
+            "Kertanegara"
+          ]
+        },
+        {
+          "faction": "yuan-dynasty",
+          "role": "defender",
+          "commanders": [
+            "Meng Qi"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "King Kertanegara of Singhasari rejected Kublai Khan's imperial summons to pay tribute, severing or branding the face of the Mongol envoy Meng Qi and sending him back in humiliation.",
+        "id": "Raja Kertanegara dari Singhasari menolak tuntutan tunduk dari Kubilai Khan, mencoreng dan melukai wajah utusan Mongol Meng Qi sebelum mengusirnya kembali ke Tiongkok dengan terhina."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876",
+        "coedes-1968"
+      ]
+    },
+    {
+      "id": "fall-of-singhasari",
+      "kind": "siege",
+      "when": "1292-06-01",
+      "at": "singhasari",
+      "importance": 1,
+      "name": {
+        "en": "Fall of Singhasari",
+        "id": "Runtuhnya Kerajaan Singhasari"
+      },
+      "participants": [
+        {
+          "faction": "kediri-kingdom",
+          "role": "attacker",
+          "commanders": [
+            "Jayakatwang"
+          ],
+          "strength": 26000
+        },
+        {
+          "faction": "majapahit-wijaya",
+          "role": "defender",
+          "commanders": [
+            "Kertanegara",
+            "Raden Wijaya"
+          ],
+          "strength": 5000,
+          "losses": 4000
+        }
+      ],
+      "summary": {
+        "en": "Jayakatwang of Gelang-gelang launched a surprise two-pronged offensive against Singhasari while its main army was campaigning in Sumatra. The royal palace was sacked and King Kertanegara was slain.",
+        "id": "Jayakatwang dari Gelang-gelang melancarkan serbuan mendadak dua arah ke Singhasari saat pasukan utama sedang bertempur di Sumatra (Ekspedisi Pamalayu). Keraton dijarah dan Kertanegara gugur."
+      },
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "coedes-1968"
+      ]
+    },
+    {
+      "id": "flight-to-madura",
+      "kind": "other",
+      "when": "1292-06-15",
+      "at": "sumenep",
+      "importance": 2,
+      "name": {
+        "en": "Raden Wijaya's Flight to Madura",
+        "id": "Pelarian Raden Wijaya ke Madura"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "defender",
+          "commanders": [
+            "Raden Wijaya",
+            "Arya Wiraraja"
+          ],
+          "strength": 1200
+        }
+      ],
+      "summary": {
+        "en": "Escaping the burning ruins of Singhasari, Prince Raden Wijaya crossed to Madura to seek the protection of Adipati Arya Wiraraja, who counseled patience and advised feigned submission to Jayakatwang.",
+        "id": "Meloloskan diri dari reruntuhan Singhasari, Pangeran Raden Wijaya menyeberang ke Madura memohon perlindungan Adipati Arya Wiraraja, yang menasihatinya bersabar dan pura-pura tunduk pada Jayakatwang."
+      },
+      "sources": [
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "founding-of-majapahit",
+      "kind": "other",
+      "when": "1292-11-10",
+      "at": "majapahit",
+      "importance": 1,
+      "name": {
+        "en": "Founding of the Settlement of Majapahit",
+        "id": "Pendirian Permukiman Majapahit di Hutan Tarik"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "belligerent",
+          "commanders": [
+            "Raden Wijaya"
+          ],
+          "strength": 3000
+        }
+      ],
+      "summary": {
+        "en": "Having gained Jayakatwang's pardon, Raden Wijaya was granted the wilderness of Tarik forest on the Brantas River. His followers cleared the jungle to build a fortified town, naming it Majapahit after the bitter maja fruit.",
+        "id": "Setelah memperoleh pengampunan Jayakatwang, Raden Wijaya dihadiahi belantara Hutan Tarik di tepi Kali Brantas. Pengikutnya membuka hutan mendirikan kota benteng, menamakannya Majapahit dari rasa pahit buah maja."
+      },
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "yuan-landing-tuban",
+      "kind": "other",
+      "when": "1293-02-15",
+      "at": "tuban",
+      "importance": 1,
+      "name": {
+        "en": "Yuan Armada Lands at Tuban",
+        "id": "Pendaratan Armada Yuan di Tuban"
+      },
+      "participants": [
+        {
+          "faction": "yuan-dynasty",
+          "role": "attacker",
+          "commanders": [
+            "Shi-bi",
+            "Gao Xing",
+            "Ike Mese"
+          ],
+          "strength": 30000
+        }
+      ],
+      "summary": {
+        "en": "The Great Yuan armada of 1,000 vessels under Shi-bi, Gao Xing, and Ike Mese anchored at Tuban. Half the army disembarked to march overland while the fleet sailed eastward along the Madura Strait.",
+        "id": "Armada akbar Yuan berkekuatan 1.000 kapal di bawah Shi-bi, Gao Xing, dan Ike Mese membuang sauh di Tuban. Separuh prajurit mendarat untuk gerak darat, sementara armada laut berlayar ke timur menyusuri Selat Madura."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "battle-of-ujung-galuh",
+      "kind": "battle",
+      "when": "1293-03-05",
+      "at": "ujung-galuh",
+      "importance": 1,
+      "name": {
+        "en": "Battle of Ujung Galuh Estuary",
+        "id": "Pertempuran Muara Ujung Galuh"
+      },
+      "participants": [
+        {
+          "faction": "yuan-dynasty",
+          "role": "attacker",
+          "commanders": [
+            "Ike Mese"
+          ],
+          "strength": 14500,
+          "losses": 200
+        },
+        {
+          "faction": "kediri-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Ardharaja"
+          ],
+          "strength": 5000,
+          "losses": 1500
+        }
+      ],
+      "summary": {
+        "en": "Kediri war boats attempted to block the entrance of the Kali Mas at Ujung Galuh. Ike Mese's war junks routed the defenders, capturing over 100 river craft and establishing a firm forward base.",
+        "id": "Armada perahu Kediri berusaha menghadang jalan masuk Kali Mas di Ujung Galuh. Kapal perang Ike Mese menghancurkan barisan bertahan, merebut lebih dari 100 perahu sungai dan mengamankan pangkalan depan."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "alliance-at-canggu",
+      "kind": "treaty",
+      "when": "1293-03-12",
+      "at": "canggu",
+      "importance": 1,
+      "name": {
+        "en": "The Canggu Alliance",
+        "id": "Persekutuan Strategis di Canggu"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "belligerent",
+          "commanders": [
+            "Raden Wijaya"
+          ],
+          "strength": 5000
+        },
+        {
+          "faction": "yuan-dynasty",
+          "role": "belligerent",
+          "commanders": [
+            "Shi-bi",
+            "Ike Mese"
+          ],
+          "strength": 28000
+        }
+      ],
+      "summary": {
+        "en": "Raden Wijaya met the Mongol commanders at Canggu, offering nominal submission and royal tribute to Kublai Khan in return for Yuan military assistance to annihilate Jayakatwang of Kediri.",
+        "id": "Raden Wijaya menemui para panglima Mongol di Canggu, menyatakan ketundukan dan menjanjikan upeti bagi Kubilai Khan dengan imbalan bantuan militer Yuan untuk melumat Jayakatwang dari Kediri."
+      },
+      "sources": [
+        "yuanshi-210",
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "clash-at-papar",
+      "kind": "skirmish",
+      "when": "1293-03-18",
+      "at": "papar",
+      "importance": 2,
+      "name": {
+        "en": "Battle of Papar River Crossing",
+        "id": "Pertempuran Penyeberangan Papar"
+      },
+      "participants": [
+        {
+          "faction": "yuan-dynasty",
+          "role": "attacker",
+          "commanders": [
+            "Gao Xing"
+          ],
+          "strength": 13500,
+          "losses": 300
+        },
+        {
+          "faction": "kediri-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Kebo Mundarang"
+          ],
+          "strength": 15000,
+          "losses": 2000
+        }
+      ],
+      "summary": {
+        "en": "Gao Xing led the advance guard across the Brantas River at Papar, smashing Kediri's northern screening army and opening the direct approach road to the walls of Daha.",
+        "id": "Gao Xing memimpin garda depan menyeberangi Sungai Brantas di Papar, menghantam pasukan pertahanan utara Kediri dan membuka jalan lurus menuju tembok kota Daha."
+      },
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162"
+      ]
+    },
+    {
+      "id": "battle-and-siege-of-daha",
+      "kind": "siege",
+      "when": "1293-03-22",
+      "at": "daha",
+      "importance": 1,
+      "name": {
+        "en": "Assault and Fall of Daha",
+        "id": "Serbuan dan Jatuhnya Kota Daha"
+      },
+      "participants": [
+        {
+          "faction": "yuan-dynasty",
+          "role": "attacker",
+          "commanders": [
+            "Shi-bi",
+            "Gao Xing",
+            "Ike Mese"
+          ],
+          "strength": 26500,
+          "losses": 1200
+        },
+        {
+          "faction": "majapahit-wijaya",
+          "role": "attacker",
+          "commanders": [
+            "Raden Wijaya"
+          ],
+          "strength": 5500,
+          "losses": 400
+        },
+        {
+          "faction": "kediri-kingdom",
+          "role": "defender",
+          "commanders": [
+            "Jayakatwang"
+          ],
+          "strength": 25000,
+          "losses": 5000
+        }
+      ],
+      "summary": {
+        "en": "The allied armies attacked Daha from three directions on 22 March 1293. Jayakatwang's forces collapsed with thousands killed or drowned in the Brantas. Jayakatwang surrendered to Shi-bi from his inner fortress.",
+        "id": "Pasukan sekutu menggempur Daha dari tiga arah pada 22 Maret 1293. Pertahanan Jayakatwang runtuh dengan ribuan prajurit tewas atau tenggelam di Sungai Brantas. Jayakatwang menyerah kepada Shi-bi di benteng dalam."
+      },
+      "sources": [
+        "yuanshi-210",
+        "pararaton",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "porong-delta-blockade",
+      "kind": "other",
+      "when": "1293-03-25",
+      "at": "porong",
+      "importance": 2,
+      "name": {
+        "en": "Blockade of the Porong Delta",
+        "id": "Blokade Muara Porong"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "belligerent",
+          "commanders": [
+            "Kebo Anabrang"
+          ],
+          "strength": 2000
+        }
+      ],
+      "summary": {
+        "en": "Allied river craft established a cordon at the Porong river mouth, cutting off maritime escape routes and securing the southern waterways of the delta.",
+        "id": "Perahu sungai sekutu membentuk barisan pengawasan di muara Porong, menutup jalan pelarian ke laut dan mengamankan jalur air selatan delta."
+      },
+      "sources": [
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "the-majapahit-ruse",
+      "kind": "other",
+      "when": "1293-04-05",
+      "at": "daha",
+      "importance": 2,
+      "name": {
+        "en": "The Majapahit Ruse",
+        "id": "Siasat Penarikan Diri Raden Wijaya"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "belligerent",
+          "commanders": [
+            "Raden Wijaya"
+          ]
+        },
+        {
+          "faction": "yuan-dynasty",
+          "role": "belligerent",
+          "commanders": [
+            "Shi-bi",
+            "Ike Mese"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Raden Wijaya requested leave from the Mongol commanders to return to Majapahit, claiming he needed to prepare imperial tribute, tax registers, and princesses. Over Gao Xing's objections, Shi-bi sent an escort of 200 troops.",
+        "id": "Raden Wijaya meminta izin para panglima Mongol untuk pulang ke Majapahit, beralasan hendak menyiapkan upeti kaisar, daftar perbendaharaan, dan putri-putri keraton. Mengabaikan firasat Gao Xing, Shi-bi mengirim 200 pengawal Mongol."
+      },
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162",
+        "pararaton"
+      ]
+    },
+    {
+      "id": "massacre-of-the-mongol-escort",
+      "kind": "massacre",
+      "when": "1293-04-19",
+      "at": "majapahit",
+      "importance": 1,
+      "name": {
+        "en": "Massacre of the Mongol Escort",
+        "id": "Pembantaian Pengawal Mongol di Majapahit"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "attacker",
+          "commanders": [
+            "Raden Wijaya",
+            "Sora",
+            "Ranggalawe"
+          ],
+          "strength": 12000,
+          "losses": 50
+        },
+        {
+          "faction": "yuan-dynasty",
+          "role": "defender",
+          "strength": 200,
+          "losses": 200
+        }
+      ],
+      "summary": {
+        "en": "Upon reaching Majapahit, Raden Wijaya sprung his trap. His warriors surrounded and annihilated the 200-man Mongol escort to the last man, raising the standard of revolt across all of East Java.",
+        "id": "Setibanya di Majapahit, Raden Wijaya membuka jebakan. Pasukannya mengepung dan membantai habis 200 prajurit pengawal Mongol tanpa sisa, lalu mengibarkan panji perlawanan total di seantero Jawa Timur."
+      },
+      "sources": [
+        "yuanshi-210",
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "the-300-li-retreat",
+      "kind": "battle",
+      "when": "1293-04-22",
+      "at": "canggu",
+      "importance": 1,
+      "name": {
+        "en": "The 300-Li Fighting Retreat",
+        "id": "Gerak Mundur 300 Li di Sepanjang Brantas"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "attacker",
+          "commanders": [
+            "Raden Wijaya",
+            "Nambi",
+            "Kebo Anabrang"
+          ],
+          "strength": 15000,
+          "losses": 800
+        },
+        {
+          "faction": "yuan-dynasty",
+          "role": "defender",
+          "commanders": [
+            "Shi-bi",
+            "Gao Xing"
+          ],
+          "strength": 11000,
+          "losses": 3000
+        }
+      ],
+      "summary": {
+        "en": "Attacked from all sides by Javanese warriors along the Brantas River, Shi-bi and Gao Xing fought a grueling 300-li (120 km) retreat through dense riverine ambushes, suffering over 3,000 casualties.",
+        "id": "Diserang dari segala penjuru oleh pejuang Jawa di sepanjang Sungai Brantas, Shi-bi dan Gao Xing mundur bertempur sejauh 300 li (120 km) di tengah sergapan mematikan, menderita kerugian lebih dari 3.000 korban jiwa."
+      },
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "rearguard-at-ujung-galuh",
+      "kind": "battle",
+      "when": "1293-04-24",
+      "at": "ujung-galuh",
+      "importance": 1,
+      "name": {
+        "en": "Rearguard Battle at Ujung Galuh",
+        "id": "Pertempuran Barisan Belakang di Ujung Galuh"
+      },
+      "participants": [
+        {
+          "faction": "yuan-dynasty",
+          "role": "defender",
+          "commanders": [
+            "Gao Xing",
+            "Ike Mese"
+          ],
+          "strength": 8000,
+          "losses": 500
+        },
+        {
+          "faction": "majapahit-wijaya",
+          "role": "attacker",
+          "commanders": [
+            "Raden Wijaya"
+          ],
+          "strength": 16000,
+          "losses": 400
+        }
+      ],
+      "summary": {
+        "en": "General Gao Xing mounted a desperate defensive stand at the mouth of the Surabaya estuary, holding back waves of Javanese assaults until the exhausted Mongol survivors could scramble aboard their ships.",
+        "id": "Jenderal Gao Xing memimpin barisan pertahanan terakhir di muara Surabaya, menahan gelombang serbuan prajurit Jawa hingga sisa-sisa tentara Mongol yang kelelahan berhasil naik ke kapal."
+      },
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162"
+      ]
+    },
+    {
+      "id": "yuan-expedition-flees",
+      "kind": "other",
+      "when": "1293-04-30",
+      "at": "madura-strait",
+      "importance": 1,
+      "name": {
+        "en": "The Yuan Fleet Flees Java",
+        "id": "Armada Yuan Angkat Sauh Tinggalkan Jawa"
+      },
+      "participants": [
+        {
+          "faction": "yuan-dynasty",
+          "role": "defender",
+          "commanders": [
+            "Shi-bi",
+            "Gao Xing",
+            "Ike Mese"
+          ],
+          "strength": 18000
+        }
+      ],
+      "summary": {
+        "en": "Having lost thousands of elite troops, horses, and imperial prestige, the battered Yuan expedition weighed anchor and sailed north for China, carrying captive Kediri royals and looted maps.",
+        "id": "Setelah kehilangan ribuan prajurit pilihan, kuda perang, dan martabat kekaisaran, armada Yuan yang babak belur mengangkat sauh berlayar ke utara menuju Tiongkok membawa tawanan bangsawan Kediri."
+      },
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876",
+        "sen-2006"
+      ]
+    },
+    {
+      "id": "coronation-of-kertarajasa",
+      "kind": "proclamation",
+      "when": "1293-11-10",
+      "at": "majapahit",
+      "importance": 1,
+      "name": {
+        "en": "Coronation of King Kertarajasa Jayawardhana",
+        "id": "Penobatan Sri Kertarajasa Jayawardhana"
+      },
+      "participants": [
+        {
+          "faction": "majapahit-wijaya",
+          "role": "belligerent",
+          "commanders": [
+            "Raden Wijaya"
+          ],
+          "strength": 20000
+        }
+      ],
+      "summary": {
+        "en": "On 15 Kartika Saka 1215 (10 November 1293), Prince Raden Wijaya ascended the throne as Kertarajasa Jayawardhana, founding the Majapahit Empire that would unite the Indonesian archipelago.",
+        "id": "Pada 15 Kartika Saka 1215 (10 November 1293), Pangeran Raden Wijaya naik takhta bergelar Kertarajasa Jayawardhana, menandai lahirnya Kemaharajaan Majapahit yang kelak mempersatukan Nusantara."
+      },
+      "sources": [
+        "pararaton",
+        "nagarakretagama",
+        "slamet-muljana-2005"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-provocation-and-fall",
+      "when": "1292-05-01/1292-06-30",
+      "dateLabel": {
+        "en": "May – June 1292",
+        "id": "Mei – Juni 1292"
+      },
+      "title": {
+        "en": "The Wrath of the Khan and the Fall of Singhasari",
+        "id": "Kemurkaan Khan Agung dan Runtuhnya Singhasari"
+      },
+      "body": {
+        "en": "In 1289, King Kertanegara of Singhasari committed an unimaginable act of defiance against the Mongol Empire: he branded the face of Kublai Khan's imperial envoy Meng Qi and expelled him from Java. Enraged by the insult, the Great Khan ordered an imperial expedition to punish Java.\n\nYet before the Mongol armada could arrive, tragedy struck Singhasari from within. In May 1292, Duke Jayakatwang of Gelang-gelang rebelled while Singhasari's royal armies were far away on the Pamalayu expedition in Sumatra. Jayakatwang's forces sacked the palace at Singhasari, killing King Kertanegara in his shrine.\n\nKertanegara's son-in-law, Prince Raden Wijaya, fought bravely with a handful of followers but was driven into flight, crossing the narrow straits to Madura to seek refuge with Adipati Arya Wiraraja.",
+        "id": "Pada tahun 1289, Raja Kertanegara dari Singhasari melakukan pembangkangan luar biasa terhadap Kekaisaran Mongol: ia mencoreng dan melukai wajah utusan kaisar Kubilai Khan, Meng Qi, lalu mengusirnya dari Pulau Jawa. Murka atas penghinaan itu, Khan Agung memerintahkan ekspedisi kekaisaran untuk menghukum Jawa.\n\nNamun sebelum armada Mongol tiba, malapetaka telah menimpa Singhasari dari dalam negeri. Pada Mei 1292, Adipati Jayakatwang dari Gelang-gelang memberontak saat tentara utama Singhasari sedang berada jauh di Sumatra dalam Ekspedisi Pamalayu. Pasukan Jayakatwang menjarah keraton Singhasari dan menewaskan Kertanegara di tempat persemayamannya.\n\nMenantu Kertanegara, Pangeran Raden Wijaya, bertarung gagah berani bersama segelintir pengikut setia namun terpaksa melarikan diri, menyeberangi selat sempit ke Madura memohon suaka kepada Adipati Arya Wiraraja."
+      },
+      "camera": {
+        "center": [
+          112.35,
+          -7.75
+        ],
+        "zoom": 8.5,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "fall-of-singhasari",
+        "flight-to-madura",
+        "jayakatwang-kediri",
+        "raden-wijaya-army"
+      ],
+      "sources": [
+        "pararaton",
+        "coedes-1968"
+      ]
+    },
+    {
+      "id": "ch-2-wilderness-of-tarik",
+      "when": "1292-07-01/1292-12-31",
+      "dateLabel": {
+        "en": "July – December 1292",
+        "id": "Juli – Desember 1292"
+      },
+      "title": {
+        "en": "The Bitter Fruit: The Settlement of Majapahit",
+        "id": "Buah yang Pahit: Berdirinya Majapahit di Hutan Tarik"
+      },
+      "body": {
+        "en": "In Madura, the shrewd statesman Adipati Arya Wiraraja counseled Raden Wijaya to play a long and cunning game: submit feigned loyalty to King Jayakatwang at Daha, demonstrate obedience, and request permission to open a settlement in the uninhabited wilderness of Tarik forest along the Brantas River.\n\nJayakatwang, suspecting nothing from the humble young prince, granted the request. With Madurese woodsmen provided by Wiraraja and surviving Singhasari loyalists, Wijaya began clearing the dense jungle near the river bend.\n\nLegend recounts that a hungry laborer picked a wild fruit from a *maja* tree (*Aegle marmelos*) and bit into it, crying out at its intense bitterness. Raden Wijaya seized upon the omen, naming the settlement **Majapahit** ('Bitter Maja'). Behind its wooden palisades, the prince quietly gathered weapons, warriors, and supplies.",
+        "id": "Di Madura, negarawan cerdik Adipati Arya Wiraraja menasihati Raden Wijaya untuk memainkan siasat panjang: menyatakan ketundukan semu kepada Raja Jayakatwang di Daha, menunjukkan kesetiaan, dan memohon izin membuka permukiman di belantara Hutan Tarik di tepi Kali Brantas.\n\nJayakatwang yang tidak menaruh curiga mengabulkan permohonan pangeran muda tersebut. Bersama para penebang kayu Madura kiriman Wiraraja dan pengikut setia Singhasari, Wijaya mulai membabat hutan lebat di dekat kelokan sungai.\n\nLegenda mengisahkan seorang pekerja memetik buah liar dari pohon maja (*Aegle marmelos*) dan memakannya, lalu berseru karena rasanya yang luar biasa pahit. Raden Wijaya menangkap pertanda tersebut dan menamai permukiman barunya **Majapahit** ('Maja Pahit'). Di balik benteng kayu permukiman itu, sang pangeran diam-diam menghimpun senjata, prajurit, dan perbekalan."
+      },
+      "camera": {
+        "center": [
+          112.5,
+          -7.45
+        ],
+        "zoom": 8.8,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "founding-of-majapahit",
+        "raden-wijaya-army",
+        "arya-wiraraja-madura"
+      ],
+      "sources": [
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "ch-3-armada-at-tuban",
+      "when": "1293-01-01/1293-02-28",
+      "dateLabel": {
+        "en": "January – February 1293",
+        "id": "Januari – Februari 1293"
+      },
+      "title": {
+        "en": "The Great Armada Lands at Tuban",
+        "id": "Armada Akbar Yuan Mendarat di Tuban"
+      },
+      "body": {
+        "en": "In late 1292, an armada of nearly 1,000 warships and transports set sail from the southern Chinese port of Quanzhou under imperial orders from Kublai Khan. Commanding the punitive host were three seasoned generals: Shi-bi, a Mongol veteran; Gao Xing, a master of riverine and siege warfare; and Ike Mese, an Uyghur sailor who had navigated the southern seas.\n\nCarrying nearly 30,000 warriors, crossbowmen, catapults, and provisions for a year, the fleet touched Champa, repaired ships at Pulau Gelam, and sighted the north coast of East Java in February 1293, dropping anchor at the ancient maritime harbor of Tuban.\n\nGeneral Shi-bi and Gao Xing landed half the expedition to march overland across the coastal plains through Sidayu, while Ike Mese led the armada east into the Madura Strait to secure the naval approaches to Surabaya.",
+        "id": "Pada akhir 1292, armada berkekuatan hampir 1.000 kapal perang dan pengangkut berlayar dari pelabuhan Quanzhou di Tiongkok selatan atas titah kaisar Kubilai Khan. Memimpin bala tentara penghukum ini adalah tiga panglima berpengalaman: Shi-bi, perwira veteran Mongol; Gao Xing, pakar perang sungai dan pengepungan; serta Ike Mese, pelaut Uyghur yang kenyang pengalaman di lautan selatan.\n\nMembawa hampir 30.000 prajurit berkuda, pemanah busur silang, ketapel perang, serta perbekalan untuk satu tahun, armada singgah di Campa, memperbaiki kapal di Pulau Gelam, dan mencapai pesisir utara Jawa Timur pada Februari 1293, lalu membuang sauh di pelabuhan kuno Tuban.\n\nJenderal Shi-bi dan Gao Xing mendaratkan separuh pasukan untuk berbaris melalui jalan darat melintasi Sidayu, sementara Ike Mese memimpin armada berlayar ke timur memasuki Selat Madura untuk mengamankan pintu laut Surabaya."
+      },
+      "camera": {
+        "center": [
+          112.25,
+          -6.95
+        ],
+        "zoom": 8.5,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "yuan-landing-tuban",
+        "shibi-overland",
+        "ikemese-fleet"
+      ],
+      "media": [
+        "kublai-khan-portrait"
+      ],
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "ch-4-the-canggu-pact",
+      "when": "1293-03-01/1293-03-15",
+      "dateLabel": {
+        "en": "Early March 1293",
+        "id": "Awal Maret 1293"
+      },
+      "title": {
+        "en": "River Battles and the Alliance of Convenience",
+        "id": "Pertempuran Sungai dan Persekutuan di Canggu"
+      },
+      "body": {
+        "en": "As Ike Mese's war junks entered the Surabaya estuary at Ujung Galuh, Jayakatwang's Kediri war boats attempted to block the river mouth. The Yuan navy smashed the barrier, capturing over a hundred river vessels and seizing control of the Kali Mas.\n\nSeeing his moment, Prince Raden Wijaya sent trusted envoys to the Mongol camp at the river mouth. He informed Shi-bi and Ike Mese that King Kertanegara was already dead and that the usurper Jayakatwang now ruled Java from Daha. Wijaya offered his full allegiance, royal maps, and tax registers to the Great Khan if the Yuan army would help him destroy Kediri.\n\nThe Mongol generals eagerly accepted. Moving upriver to the strategic inland port of Canggu, the Yuan land forces and river fleet linked up with Raden Wijaya's Majapahit warriors, forming a formidable joint offensive force.",
+        "id": "Ketika kapal perang Ike Mese memasuki muara Surabaya di Ujung Galuh, armada perahu Kediri kiriman Jayakatwang berupaya memblokade muara sungai. Angkatan laut Yuan menghancurkan barisan perahu tersebut, merampas lebih dari seratus perahu sungai dan menguasai aliran Kali Mas.\n\nMelihat peluang emas, Pangeran Raden Wijaya mengirim utusan ke perkemahan Mongol di muara sungai. Ia mengabarkan kepada Shi-bi dan Ike Mese bahwa Raja Kertanegara telah tewas dan Jayakatwang kini bertahta di Daha sebagai perampas kekuasaan. Wijaya menyatakan sumpah setia dan menjanjikan peta serta upeti bagi Khan Agung bila tentara Yuan bersedia membantunya melumat Kediri.\n\nPara panglima Mongol menyambut gembira tawaran tersebut. Bergerak menyusuri sungai ke pelabuhan pedalaman Canggu, tentara darat dan armada sungai Yuan bergabung dengan barisan pejuang Majapahit pimpinan Raden Wijaya, membentuk kekuatan gabungan penyerang yang dahsyat."
+      },
+      "camera": {
+        "center": [
+          112.55,
+          -7.35
+        ],
+        "zoom": 8.8,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-ujung-galuh",
+        "alliance-at-canggu",
+        "raden-wijaya-army",
+        "ikemese-fleet"
+      ],
+      "media": [
+        "mongol-ship-scroll"
+      ],
+      "sources": [
+        "yuanshi-210",
+        "pararaton"
+      ]
+    },
+    {
+      "id": "ch-5-the-fall-of-daha",
+      "when": "1293-03-16/1293-03-31",
+      "dateLabel": {
+        "en": "Mid – Late March 1293",
+        "id": "Pertengahan – Akhir Maret 1293"
+      },
+      "title": {
+        "en": "The Storming and Fall of Daha",
+        "id": "Serbuan Akbar dan Jatuhnya Kota Daha"
+      },
+      "body": {
+        "en": "In mid-March 1293, the allied army advanced south along the Brantas River valley toward Kediri. Jayakatwang dispatched a screening army of 15,000 men to hold the river crossing at Papar, but General Gao Xing crushed them with disciplined crossbow volleys and mounted charges, driving the survivors back to the capital.\n\nOn 22 March, the final assault on Daha commenced from three directions. Shi-bi attacked from the east, Gao Xing struck from the north, and Raden Wijaya and Ike Mese closed from the river approaches. Kediri's defenders broke in terror: over 5,000 were slain or drowned in the churning waters of the Brantas.\n\nTrapped inside his inner citadel, King Jayakatwang realized all was lost and formally surrendered to Shi-bi. The Mongol commanders seized the palace treasures, state registers, and royal princesses, jubilant in what appeared to be a total victory.",
+        "id": "Pada pertengahan Maret 1293, pasukan sekutu bergerak ke selatan menyusuri lembah Kali Brantas menuju Kediri. Jayakatwang mengirim 15.000 prajurit untuk membentengi penyeberangan sungai di Papar, namun Jenderal Gao Xing melumat mereka dengan tembakan panah beruntun dan serbuan infanteri disiplin, memukul mundur sisa pasukan ke ibu kota.\n\nPada 22 Maret, serbuan puncak ke Daha dilancarkan dari tiga arah. Shi-bi menyerang dari timur, Gao Xing menghantam dari utara, sementara Raden Wijaya dan Ike Mese mengepung dari arah sungai. Barisan bertahan Kediri kocar-kacir: lebih dari 5.000 prajurit tewas atau tenggelam di derasnya Kali Brantas.\n\nTerperangkap di benteng keraton, Raja Jayakatwang menyadari perlawanannya telah berakhir dan menyerah tanpa syarat kepada Shi-bi. Para panglima Mongol merampas harta karun istana, peta kerajaan, dan putri-putri keraton, merayakan apa yang mereka sangka sebagai kemenangan mutlak."
+      },
+      "camera": {
+        "center": [
+          112.05,
+          -7.8
+        ],
+        "zoom": 9.2,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "clash-at-papar",
+        "battle-and-siege-of-daha",
+        "jayakatwang-kediri",
+        "shibi-overland"
+      ],
+      "sources": [
+        "yuanshi-210",
+        "groeneveldt-1876"
+      ]
+    },
+    {
+      "id": "ch-6-the-ruse-of-majapahit",
+      "when": "1293-04-01/1293-04-19",
+      "dateLabel": {
+        "en": "Early – Mid April 1293",
+        "id": "Awal – Pertengahan April 1293"
+      },
+      "title": {
+        "en": "The Prince's Stratagem: The Trap is Sprung",
+        "id": "Siasat Sang Pangeran: Perangkap Terbuka"
+      },
+      "body": {
+        "en": "With Kediri crushed, the Yuan commanders were intoxicated by victory and lavish feasts. Raden Wijaya approached Shi-bi and Ike Mese with a deferential request: he wished to return to Majapahit to gather the promised gold tribute, legal documents, and the beautiful royal princesses of Singhasari to present to the Emperor.\n\nThe experienced general Gao Xing smelled treachery and urged Shi-bi to hold Wijaya as a hostage. However, Shi-bi and Ike Mese dismissed his warnings and granted Wijaya leave, sending an escort of 200 Mongol officers and elite soldiers to accompany him.\n\nIt was a fatal miscalculation. Upon reaching Majapahit on 19 April, Raden Wijaya gave the signal. Javanese warriors ambushed the unsuspecting Mongol escort, slaughtering all two hundred men. Wijaya immediately sent messengers across East Java, ordering every local chieftain to rise up and exterminate the foreign invaders.",
+        "id": "Dengan hancurnya Kediri, para panglima Yuan terbuai oleh kemenangan dan pesta pora. Raden Wijaya menghadap Shi-bi dan Ike Mese dengan permohonan santun: ia meminta izin pulang ke Majapahit untuk menghimpun emas upeti, piagam kerajaan, serta putri-putri jelita Singhasari guna dipersembahkan kepada Kaisar Kubilai Khan.\n\nJenderal berpengalaman Gao Xing mencium gelagat jebakan dan mendesak Shi-bi menahan Wijaya sebagai sandera. Namun Shi-bi dan Ike Mese mengabaikan peringatan itu dan mengizinkan Wijaya pergi, bahkan menyertakan 200 perwira dan prajurit pilihan Mongol sebagai pengawal kehormatan.\n\nItu adalah kekeliruan fatal. Setibanya di Majapahit pada 19 April, Raden Wijaya memberi aba-aba. Ribuan pejuang Jawa mengepung dan membantai habis 200 prajurit pengawal Mongol tanpa sisa. Wijaya seketika menyebar kurir ke seluruh penjuru Jawa Timur, menyerukan perang semesta membasmi penjajah asing Tartar."
+      },
+      "camera": {
+        "center": [
+          112.38,
+          -7.55
+        ],
+        "zoom": 9.2,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "the-majapahit-ruse",
+        "massacre-of-the-mongol-escort",
+        "raden-wijaya-army"
+      ],
+      "media": [
+        "bajang-ratu-trowulan"
+      ],
+      "sources": [
+        "yuanshi-210",
+        "pararaton",
+        "slamet-muljana-2005"
+      ]
+    },
+    {
+      "id": "ch-7-the-300-li-retreat",
+      "when": "1293-04-20/1293-04-30",
+      "dateLabel": {
+        "en": "20 – 30 April 1293",
+        "id": "20 – 30 April 1293"
+      },
+      "title": {
+        "en": "The 300-Li Fighting Retreat: Expelling the Tartars",
+        "id": "Mundur Bertempur 300 Li: Mengusir Tentara Tartar"
+      },
+      "body": {
+        "en": "Panic swept the Mongol encampments at Daha when news arrived that the escort had been butchered and thousands of armed Javanese were closing in. Before abandoning Daha, the Mongols executed the captive King Jayakatwang. Shi-bi and Gao Xing then began a desperate fighting retreat down the Brantas River valley toward their ships at Surabaya.\n\nFor 300 *li* (approximately 120 kilometers), Raden Wijaya's forces, reinforced by Madurese warriors under Arya Wiraraja and Ranggalawe, relentlessly ambushed the retreating columns from jungle thickets and river bends. Over 3,000 Mongol soldiers were killed, and Shi-bi lost his mount, barely escaping on foot.\n\nAt Ujung Galuh on 24 April, General Gao Xing fought a fierce rearguard action to hold the beaches until the exhausted survivors scrambled aboard the junks. Battered and demoralized, the Yuan armada weighed anchor and fled Java forever.",
+        "id": "Kepanikan melanda perkemahan Mongol di Daha saat kabar pembantaian pengawal tersiar dan ribuan pejuang Jawa bersenjata lengkap mulai mengepung mereka. Sebelum meninggalkan Daha, tentara Mongol mengeksekusi tawanan Raja Jayakatwang. Shi-bi dan Gao Xing kemudian memulai gerak mundur bertempur yang mengerikan menyusuri lembah Kali Brantas menuju kapal-kapal mereka di Surabaya.\n\nSepanjang 300 *li* (sekitar 120 kilometer), laskar Raden Wijaya yang diperkuat pasukan Madura pimpinan Arya Wiraraja dan Ranggalawe tiada henti menyergap barisan mundur Mongol dari balik rimbunnya hutan dan kelokan sungai. Lebih dari 3.000 prajurit Mongol tewas, dan Shi-bi kehilangan kudanya hingga nyaris tertangkap hidup-hidup.\n\nDi Ujung Galuh pada 24 April, Jenderal Gao Xing bertempur mati-matian menahan gempuran di pesisir hingga sisa-sisa prajurit yang kelelahan berhasil naik ke kapal jung. Babak belur dan kehilangan martabat, armada Yuan mengangkat sauh meninggalkan Pulau Jawa untuk selamanya."
+      },
+      "camera": {
+        "center": [
+          112.5,
+          -7.35
+        ],
+        "zoom": 8.8,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "the-300-li-retreat",
+        "rearguard-at-ujung-galuh",
+        "yuan-expedition-flees",
+        "shibi-overland"
+      ],
+      "sources": [
+        "yuanshi-210",
+        "yuanshi-162"
+      ]
+    },
+    {
+      "id": "ch-8-birth-of-majapahit",
+      "when": "1293-05-01/1293-11-30",
+      "dateLabel": {
+        "en": "May – November 1293",
+        "id": "Mei – November 1293"
+      },
+      "title": {
+        "en": "The Coronation of Kertarajasa: Dawn of Majapahit",
+        "id": "Penobatan Kertarajasa: Fajar Kejayaan Majapahit"
+      },
+      "body": {
+        "en": "When the battered Mongol armada limped back to Quanzhou, Kublai Khan was incandescent with fury. He had Shi-bi flogged with seventy lashes and confiscated a third of his family estate; Ike Mese was stripped of honors, while Gao Xing was rewarded for skillfully preserving the surviving army from total annihilation.\n\nIn Java, Prince Raden Wijaya stood triumphant. Through supreme tactical cunning, he had used the world's most feared empire to destroy his domestic rivals in Kediri, and then driven that very same superpower into the sea.\n\nOn the 15th of Kartika, Saka 1215 (10 November 1293), Raden Wijaya was consecrated as monarch under the regnal title **Sri Kertarajasa Jayawardhana**. He took the four daughters of King Kertanegara as his royal consorts and rewarded Arya Wiraraja and his faithful captains with high offices—founding the **Majapahit Empire**, destined to become the greatest maritime golden age in Southeast Asian history.",
+        "id": "Ketika sisa-sisa armada Mongol tiba kembali di Quanzhou, Kaisar Kubilai Khan murka bukan kepalang. Ia menghukum dera Shi-bi sebanyak tujuh puluh cambukan dan menyita sepertiga harta kekayaannya; Ike Mese dicopot dari jabatannya, sementara Gao Xing dihadiahi penghargaan atas ketangkasannya menyelamatkan sisa tentara dari kemusnahan total.\n\nDi Tanah Jawa, Pangeran Raden Wijaya berdiri sebagai pemenang mutlak. Melalui kecerdasan taktik yang tiada tara, ia memanfaatkan kekuatan imperium paling ditakuti di dunia untuk menghancurkan musuh bebuyutannya di Kediri, lalu melemparkan adidaya tersebut kembali ke lautan.\n\nPada tanggal 15 Kartika tahun Saka 1215 (10 November 1293), Raden Wijaya dinobatkan sebagai raja agung bergelar **Sri Kertarajasa Jayawardhana**. Ia memperistri empat putri mendiang Kertanegara dan menganugerahi Arya Wiraraja serta perwira setianya kedudukan luhur—meresmikan lahirnya **Kemaharajaan Majapahit**, fajar zaman keemasan maritim terbesar dalam sejarah Nusantara."
+      },
+      "camera": {
+        "center": [
+          112.38,
+          -7.55
+        ],
+        "zoom": 9.5,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "coronation-of-kertarajasa",
+        "raden-wijaya-army"
+      ],
+      "media": [
+        "harihara-raden-wijaya"
+      ],
+      "sources": [
+        "nagarakretagama",
+        "slamet-muljana-2005"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuanshi-210",
+      "type": "book",
+      "citation": "Song Lian et al. History of Yuan (Yuanshi), Volume 210: Biography of Foreign Countries: Java (爪哇). Compiled 1370 under the Ming Dynasty."
+    },
+    {
+      "id": "yuanshi-162",
+      "type": "book",
+      "citation": "Song Lian et al. History of Yuan (Yuanshi), Volume 162: Biographies of Shi-bi, Gao Xing, and Ike Mese. Compiled 1370 under the Ming Dynasty."
+    },
+    {
+      "id": "pararaton",
+      "type": "book",
+      "citation": "Brandes, J.L.A., ed. Serat Pararaton (Ken Arok) of het Boek der Koningen van Toemapel en van Madjapahit. VBG 49. Batavia: Albrecht & Rusche, 1897."
+    },
+    {
+      "id": "nagarakretagama",
+      "type": "book",
+      "citation": "Prapanca, Mpu. Nagarakretagama (Desawarnana). Trans. Slamet Muljana. Jakarta: PT Bhuana Ilmu Populer, 2006."
+    },
+    {
+      "id": "groeneveldt-1876",
+      "type": "book",
+      "citation": "Groeneveldt, Willem Pieter. Notes on the Malay Archipelago and Malacca Compiled from Chinese Sources. VBG 39. Batavia: W. Bruining, 1876."
+    },
+    {
+      "id": "coedes-1968",
+      "type": "book",
+      "citation": "Coedès, George. The Indianized States of Southeast Asia. Ed. Walter F. Vella, trans. Susan Brown Cowing. Honolulu: East-West Center Press, 1968."
+    },
+    {
+      "id": "slamet-muljana-2005",
+      "type": "book",
+      "citation": "Slamet Muljana. Menuju Puncak Kemegahan: Sejarah Kerajaan Majapahit. Yogyakarta: LKiS, 2005."
+    },
+    {
+      "id": "sen-2006",
+      "type": "article",
+      "citation": "Sen, Tansen. 'The Yuan Khanate and Maritime Asia.' In The Silk Road: Trade, Travel, War and Faith, ed. Susan Whitfield, 2006."
+    },
+    {
+      "id": "weatherford-2004",
+      "type": "book",
+      "citation": "Weatherford, Jack. Genghis Khan and the Making of the Modern World. New York: Crown Publishing Group, 2004."
+    }
+  ],
+  "media": [
+    {
+      "id": "harihara-raden-wijaya",
+      "type": "image",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Harihara_statue_Raden_Wijaya.JPG",
+      "alt": {
+        "en": "Statue of Raden Wijaya deified as Harihara (Shiva-Vishnu), from Candi Simping, Blitar",
+        "id": "Arca Raden Wijaya sebagai Harihara (Siwa-Wisnu), berasal dari Candi Simping, Blitar"
+      },
+      "caption": {
+        "en": "Deified mortuary statue of King Kertarajasa Jayawardhana (Raden Wijaya) depicted as Harihara, combining attributes of Shiva and Vishnu (National Museum of Indonesia, Jakarta).",
+        "id": "Arca perwujudan anumerta Raja Kertarajasa Jayawardhana (Raden Wijaya) sebagai Harihara, memadukan atribut dewa Siwa dan Wisnu (Museum Nasional Indonesia, Jakarta)."
+      },
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harihara_statue_Raden_Wijaya.JPG",
+      "creator": "Unknown 14th-century Javanese Master Sculptor",
+      "date": "1309~"
+    },
+    {
+      "id": "kublai-khan-portrait",
+      "type": "image",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/YuanEmperorAlbumKhubilaiPortrait.jpg",
+      "alt": {
+        "en": "Portrait of Kublai Khan by Nepali artist Anige, 1294",
+        "id": "Lukisan potret Kubilai Khan karya seniman Nepal Anige, 1294"
+      },
+      "caption": {
+        "en": "Contemporary portrait of Emperor Shizu of Yuan (Kublai Khan) painted by Anige in 1294, shortly after the return of the Java expedition (National Palace Museum, Taipei).",
+        "id": "Potret sezaman Kaisar Shizu dari Yuan (Kubilai Khan) dilukis oleh Anige pada tahun 1294, tak lama setelah kepulangan ekspedisi Jawa (Museum Istana Nasional, Taipei)."
+      },
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:YuanEmperorAlbumKhubilaiPortrait.jpg",
+      "creator": "Anige (Araniko)",
+      "date": "1294"
+    },
+    {
+      "id": "mongol-ship-scroll",
+      "type": "image",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Moko_Shurai_Ekotoba_-_Mongol_Ship.jpg",
+      "alt": {
+        "en": "Yuan Mongol war junk from the Moko Shurai Ekotoba illustrated handscroll",
+        "id": "Kapal perang jung Mongol Yuan dari gulungan lukisan Moko Shurai Ekotoba"
+      },
+      "caption": {
+        "en": "Yuan dynasty warship depicted in contemporary 13th-century records, typical of the sea-going armada dispatched to Java.",
+        "id": "Kapal perang Dinasti Yuan yang digambarkan dalam catatan abad ke-13, menyerupai armada samudra yang dikerahkan ke Jawa."
+      },
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moko_Shurai_Ekotoba_-_Mongol_Ship.jpg",
+      "creator": "Anonymous Kamakura Artist",
+      "date": "1293~"
+    },
+    {
+      "id": "bajang-ratu-trowulan",
+      "type": "image",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Bajang_Ratu_Gate_Trowulan.JPG",
+      "alt": {
+        "en": "Gapura Bajang Ratu, monumental red-brick gateway at Trowulan (Majapahit capital)",
+        "id": "Gapura Bajang Ratu, gerbang bata merah monumental di Trowulan (ibu kota Majapahit)"
+      },
+      "caption": {
+        "en": "Gapura Bajang Ratu at Trowulan, Mojokerto, a 14th-century paduraksa gateway marking the sacred precincts of the Majapahit capital.",
+        "id": "Gapura Bajang Ratu di Trowulan, Mojokerto, gerbang paduraksa abad ke-14 yang menandai kompleks suci ibu kota Majapahit."
+      },
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bajang_Ratu_Gate_Trowulan.JPG",
+      "creator": "Majapahit Royal Architects",
+      "date": "1350~"
+    }
+  ]
+}
