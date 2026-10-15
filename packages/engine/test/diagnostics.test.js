@@ -56,7 +56,7 @@ test('the loader warns about suspicious data without rejecting it', () => {
 });
 
 test('the shipped campaigns load without errors', () => {
-  for (const p of ['american-revolution-1775.json', 'austro-prussian-1866.json', 'batavia-siege-1628.json', 'geger-pacinan-1740.json', 'giyanti-1755.json', 'java-war-1825.json', 'mongol-invasion-java-1293.json', 'napoleon-russia-1812.json', 'pungdo-1894.json', 'sino-japanese-1894.json', 'waterloo-1815.json']) {
+  for (const p of ['american-revolution-1775.json', 'austro-prussian-1866.json', 'batavia-siege-1628.json', 'british-invasion-java-1811.json', 'geger-pacinan-1740.json', 'giyanti-1755.json', 'java-war-1825.json', 'mongol-invasion-java-1293.json', 'napoleon-russia-1812.json', 'pungdo-1894.json', 'sino-japanese-1894.json', 'trunajaya-rebellion-1674.json', 'waterloo-1815.json']) {
     const raw = JSON.parse(readFileSync(new URL(`../../../data/campaigns/${p}`, import.meta.url), 'utf8'));
     const { campaign, diagnostics } = loadCampaign(raw);
     assert.ok(campaign, p);

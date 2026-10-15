@@ -1,0 +1,1687 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "trunajaya-rebellion-1674",
+    "version": "0.1.0",
+    "title": {
+      "en": "The Trunajaya Rebellion",
+      "id": "Pemberontakan Trunajaya"
+    },
+    "subtitle": {
+      "en": "The sack of Plered, the fall of Amangkurat I, and the Kediri expedition (1674–1680)",
+      "id": "Jatuhnya Keraton Plered, mangkatnya Amangkurat I, dan ekspedisi Kediri (1674–1680)"
+    },
+    "description": {
+      "en": "Between 1674 and 1680, the Mataram Sultanate was torn apart by the rebellion of Prince Trunajaya of Madura in alliance with displaced Makassarese sea-warriors under Kraeng Galesong. After annihilating the royal army at Gegodog in 1676, the rebels sacked the royal capital of Plered in 1677, driving Susuhunan Amangkurat I to his death in exile. In desperation, the young Amangkurat II allied with the Dutch East India Company (VOC) under Admiral Cornelis Speelman. In a brutal mountain campaign up the Brantas river commanded by Major Anthonio Hurdt, VOC and royal forces stormed Trunajaya's mountain capital at Kediri, recovering the sacred crown of Majapahit and executing Trunajaya with the royal heirloom dagger Keris Kyai Balabar.",
+      "id": "Antara tahun 1674 dan 1680, Kesultanan Mataram dilanda prahara dahsyat akibat pemberontakan Pangeran Trunajaya dari Madura yang bersekutu dengan para pelaut ulung Makassar pimpinan Kraeng Galesong. Usai membinasakan tentara kerajaan Mataram di Gegodog pada 1676, laskar pemberontak menyerbu dan menjarah ibu kota Plered pada 1677, memaksa Susuhunan Amangkurat I mengungsi hingga mangkat di Tegalwangi. Dalam keputusasaan, Amangkurat II menandatangani perjanjian dengan VOC di bawah Laksamana Cornelis Speelman. Lewat ekspedisi pedalaman nan berat menyusuri Sungai Brantas pimpinan Mayor Anthonio Hurdt, pasukan gabungan VOC dan Mataram merebut benteng Kediri, menyelamatkan mahkota Majapahit, dan mengakhiri perlawanan Trunajaya di ujung Keris Kyai Balabar."
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en",
+    "timeline": {
+      "extent": "1674-05-01/1680-02-28",
+      "focus": "1674-10-01/1680-01-31"
+    },
+    "map": {
+      "center": [
+        111.8,
+        -7.4
+      ],
+      "zoom": 7.4,
+      "pitch": 25,
+      "bearing": 0,
+      "bounds": [
+        105,
+        -8.8,
+        114.5,
+        -5.5
+      ],
+      "terrain": {
+        "exaggeration": 1.5
+      },
+      "theme": "parchment-sepia"
+    }
+  },
+  "factions": [
+    {
+      "id": "trunajaya-rebels",
+      "name": {
+        "en": "Madurese-Makassarese Coalition",
+        "id": "Koalisi Madura-Makassar (Trunajaya)"
+      },
+      "shortName": {
+        "en": "Trunajaya Rebels",
+        "id": "Pasukan Trunajaya"
+      },
+      "color": "#C0392B",
+      "description": {
+        "en": "Allied insurgent army led by Prince Trunajaya (Panembahan Maduretna) of Madura, Kraeng Galesong's veteran Makassarese fleet, and Raden Kajoran's anti-court Javanese factions.",
+        "id": "Pasukan gabungan pemberontak di bawah Pangeran Trunajaya (Panembahan Maduretna), armada laskar tempur Makassar pimpinan Kraeng Galesong, dan faksi kawula Mataram pimpinan Raden Kajoran."
+      },
+      "sources": [
+        "ricklefs-1993",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "mataram-sultanate",
+      "name": {
+        "en": "Mataram Sultanate",
+        "id": "Kesultanan Mataram"
+      },
+      "shortName": {
+        "en": "Mataram",
+        "id": "Mataram"
+      },
+      "color": "#D97706",
+      "description": {
+        "en": "The royal dynasty of Mataram under Susuhunan Amangkurat I (Tegalwangi) and his successor Susuhunan Amangkurat II, struggling to preserve the realm.",
+        "id": "Wangsa dinasti Mataram di bawah Susuhunan Amangkurat I (Tegalwangi) dan puteranya Susuhunan Amangkurat II yang berjuang menyelamatkan takhta kerajaan."
+      },
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "voc-company",
+      "name": {
+        "en": "Dutch East India Company (VOC)",
+        "id": "Kongsi Dagang Hindia Timur Belanda (VOC)"
+      },
+      "shortName": {
+        "en": "VOC",
+        "id": "VOC"
+      },
+      "color": "#1E3A8A",
+      "description": {
+        "en": "The military forces of the VOC under Admiral Cornelis Speelman, Major Anthonio Hurdt, Captain François Tack, and Captain Jonker of Ambon.",
+        "id": "Kekuatan militer VOC di bawah pimpinan Laksamana Cornelis Speelman, Mayor Anthonio Hurdt, Kapten François Tack, serta Kapten Jonker dari Ambon."
+      },
+      "sources": [
+        "de-graaf-1940",
+        "dagh-register-1678"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "madura-bangkalan",
+      "name": {
+        "en": "Bangkalan (Madura)",
+        "id": "Bangkalan (Madura)"
+      },
+      "modernName": {
+        "en": "Bangkalan, Madura, East Java",
+        "id": "Bangkalan, Madura, Jawa Timur"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        112.74,
+        -7.03
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Cradle of the rebellion where Trunajaya rallied the Madurese warriors against Mataram hegemony.",
+        "id": "Pusat letupan pemberontakan di mana Trunajaya menggalang para pendekar Madura menentang hegemoni Mataram."
+      },
+      "sources": [
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "demung-besuki",
+      "name": {
+        "en": "Demung (Besuki)",
+        "id": "Demung (Besuki)"
+      },
+      "modernName": {
+        "en": "Besuki, Situbondo Regency",
+        "id": "Besuki, Kabupaten Situbondo"
+      },
+      "kind": "port",
+      "coordinates": [
+        113.68,
+        -7.73
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Naval stronghold where Kraeng Galesong's displaced Makassarese fleet established their coastal redoubt.",
+        "id": "Pangkalan laut tempat armada pengungsi perang Makassar pimpinan Kraeng Galesong mendirikan benteng pesisir."
+      },
+      "sources": [
+        "ricklefs-1993",
+        "de-graaf-1935"
+      ]
+    },
+    {
+      "id": "surabaya",
+      "name": {
+        "en": "Surabaya",
+        "id": "Surabaya"
+      },
+      "modernName": {
+        "en": "Surabaya, East Java",
+        "id": "Kota Surabaya, Jawa Timur"
+      },
+      "kind": "port",
+      "coordinates": [
+        112.75,
+        -7.25
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Strategic port captured by Trunajaya in 1675 and later recaptured by Admiral Speelman's VOC fleet in May 1677.",
+        "id": "Pelabuhan strategis yang direbut Trunajaya pada 1675 dan direbut kembali oleh armada VOC pimpinan Speelman pada Mei 1677."
+      },
+      "sources": [
+        "dagh-register-1678",
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "gegodog-tuban",
+      "name": {
+        "en": "Gegodog Plains (Tuban)",
+        "id": "Padang Gegodog (Tuban)"
+      },
+      "modernName": {
+        "en": "Widang, Tuban Regency",
+        "id": "Widang, Kabupaten Tuban"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        112.06,
+        -6.9
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Site of the catastrophic battle in October 1676 where Trunajaya utterly destroyed the Mataram royal army under Pangeran Purbaya.",
+        "id": "Medan pertempuran dahsyat pada Oktober 1676 saat Trunajaya menghancurluluhkan tentara kerajaan Mataram di bawah Pangeran Purbaya."
+      },
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "jepara",
+      "name": {
+        "en": "Jepara",
+        "id": "Jepara"
+      },
+      "modernName": {
+        "en": "Jepara, Central Java",
+        "id": "Jepara, Jawa Tengah"
+      },
+      "kind": "port",
+      "coordinates": [
+        110.66,
+        -6.59
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Main VOC naval factory on the north coast where Amangkurat II signed the fateful treaty with Speelman in October 1677.",
+        "id": "Loji pangkalan laut utama VOC di pesisir utara tempat Amangkurat II meneken perjanjian penting bersama Speelman pada Oktober 1677."
+      },
+      "sources": [
+        "dagh-register-1678",
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "plered",
+      "name": {
+        "en": "Keraton Plered",
+        "id": "Keraton Plered"
+      },
+      "modernName": {
+        "en": "Pleret, Bantul, Yogyakarta",
+        "id": "Pleret, Kabupaten Bantul, DI Yogyakarta"
+      },
+      "kind": "palace",
+      "coordinates": [
+        110.42,
+        -7.87
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The red-brick royal capital of Mataram under Amangkurat I, breached, ransacked, and destroyed by rebel forces on 28 June 1677.",
+        "id": "Ibu kota bata merah megah Mataram di era Amangkurat I, dibobol, dijarah, dan dihancurkan oleh laskar pemberontak pada 28 Juni 1677."
+      },
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "tegalwangi",
+      "name": {
+        "en": "Tegalwangi (Tegal)",
+        "id": "Tegalwangi (Tegal)"
+      },
+      "modernName": {
+        "en": "Tegal, Central Java",
+        "id": "Kabupaten Tegal, Jawa Tengah"
+      },
+      "kind": "grave",
+      "coordinates": [
+        109.13,
+        -6.9
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Burial place of Susuhunan Amangkurat I, who died in flight on 13 July 1677.",
+        "id": "Makam Susuhunan Amangkurat I yang wafat dalam pelariannya pada 13 Juli 1677."
+      },
+      "sources": [
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "semarang",
+      "name": {
+        "en": "Semarang",
+        "id": "Semarang"
+      },
+      "modernName": {
+        "en": "Semarang, Central Java",
+        "id": "Kota Semarang, Jawa Tengah"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.42,
+        -6.96
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Coastal stronghold where VOC reinforcements landed and where Amangkurat II met Dutch commanders.",
+        "id": "Kota pelabuhan pesisir tempat pendaratan bala bantuan VOC dan pertemuan Amangkurat II dengan perwira Belanda."
+      },
+      "sources": [
+        "dagh-register-1678"
+      ]
+    },
+    {
+      "id": "canggu",
+      "name": {
+        "en": "Canggu (Brantas Ferry)",
+        "id": "Canggu (Penyeberangan Brantas)"
+      },
+      "modernName": {
+        "en": "Canggu, Mojokerto",
+        "id": "Canggu, Jetis, Mojokerto"
+      },
+      "kind": "river",
+      "coordinates": [
+        112.48,
+        -7.43
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Historic river crossing on the Brantas where Hurdt's expeditionary army crossed toward the interior.",
+        "id": "Penyeberangan sungai bersejarah di Sungai Brantas yang dilintasi ekspedisi Hurdt merangsek ke pedalaman."
+      },
+      "sources": [
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "kediri",
+      "name": {
+        "en": "Kediri (Daha Fortress)",
+        "id": "Kediri (Kubu Pertahanan Daha)"
+      },
+      "modernName": {
+        "en": "Kediri, East Java",
+        "id": "Kota Kediri, Jawa Timur"
+      },
+      "kind": "fort",
+      "coordinates": [
+        112.01,
+        -7.82
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Trunajaya's heavily fortified inland capital stormed by VOC and Mataram forces on 25 November 1678.",
+        "id": "Ibu kota berbenteng kuat Trunajaya di pedalaman yang diserbu dan direbut pasukan VOC dan Mataram pada 25 November 1678."
+      },
+      "sources": [
+        "de-graaf-1940",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "mount-kelud",
+      "name": {
+        "en": "Mount Kelud",
+        "id": "Gunung Kelud"
+      },
+      "modernName": {
+        "en": "Mount Kelud, East Java",
+        "id": "Gunung Kelud, Jawa Timur"
+      },
+      "kind": "mountain",
+      "coordinates": [
+        112.31,
+        -7.93
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Rugged volcanic highlands where Trunajaya retreated to wage desperate guerrilla defense throughout 1679.",
+        "id": "Kawasan perbukitan vulkanik terjal tempat Trunajaya menyingkir melancarkan perang gerilya sepanjang 1679."
+      },
+      "sources": [
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "mount-antang",
+      "name": {
+        "en": "Mount Antang",
+        "id": "Gunung Antang"
+      },
+      "modernName": {
+        "en": "Ngantang, Malang Regency",
+        "id": "Ngantang, Kabupaten Malang"
+      },
+      "kind": "mountain",
+      "coordinates": [
+        112.38,
+        -7.86
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Mountain heights where a starving Trunajaya finally surrendered to Captain Jonker on 26 December 1679.",
+        "id": "Puncak pegunungan tempat Trunajaya yang kelaparan akhirnya menyerah kepada Kapten Jonker pada 26 Desember 1679."
+      },
+      "sources": [
+        "de-graaf-1940",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "payak",
+      "name": {
+        "en": "Payak Encampment",
+        "id": "Pesanggrahan Payak"
+      },
+      "modernName": {
+        "en": "Piyungan, Bantul, Yogyakarta",
+        "id": "Piyungan, Kabupaten Bantul, DI Yogyakarta"
+      },
+      "kind": "residence",
+      "coordinates": [
+        110.45,
+        -7.85
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Royal camp near Plered where Susuhunan Amangkurat II executed the captive Trunajaya with Keris Kyai Balabar on 2 January 1680.",
+        "id": "Pesanggrahan raja dekat Plered tempat Susuhunan Amangkurat II menghabisi nyawa Trunajaya dengan Keris Kyai Balabar pada 2 Januari 1680."
+      },
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "trunajaya-forces",
+      "kind": "unit",
+      "name": {
+        "en": "Trunajaya's Rebel Army",
+        "id": "Laskar Pemberontak Trunajaya"
+      },
+      "faction": "trunajaya-rebels",
+      "commanders": [
+        "Panembahan Trunajaya (Maduretna)",
+        "Raden Kajoran (Panembahan Rama)"
+      ],
+      "description": {
+        "en": "Madurese warriors and allied Javanese insurgents who swept across eastern and central Java.",
+        "id": "Laskar pejuang Madura dan barisan kawula Jawa yang menyapu wilayah Jawa bagian timur dan tengah."
+      },
+      "track": [
+        {
+          "when": "1674-10-01",
+          "at": "madura-bangkalan",
+          "strength": 5000,
+          "certainty": "exact",
+          "label": {
+            "en": "Uprising in Madura",
+            "id": "Pemberontakan di Madura"
+          }
+        },
+        {
+          "when": "1675-06-01",
+          "at": "surabaya",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Capture of Surabaya",
+            "id": "Merebut Surabaya"
+          }
+        },
+        {
+          "when": "1676-10-15",
+          "at": "gegodog-tuban",
+          "strength": 16000,
+          "certainty": "exact",
+          "label": {
+            "en": "Triumph at Gegodog",
+            "id": "Kemenangan di Gegodog"
+          }
+        },
+        {
+          "when": "1677-01-10",
+          "at": "kediri",
+          "strength": 18000,
+          "certainty": "exact",
+          "label": {
+            "en": "Capital set at Kediri",
+            "id": "Mendirikan ibu kota di Kediri"
+          }
+        },
+        {
+          "when": "1677-06-28",
+          "at": "plered",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Sacking of Plered",
+            "id": "Menjarah Keraton Plered"
+          }
+        },
+        {
+          "when": "1677-07-25",
+          "at": "kediri",
+          "strength": 16000,
+          "certainty": "exact",
+          "label": {
+            "en": "Return to Kediri",
+            "id": "Kembali ke Kediri membawa pusaka"
+          }
+        },
+        {
+          "when": "1678-11-25",
+          "at": "kediri",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Fall of Kediri",
+            "id": "Benteng Kediri runtuh"
+          }
+        },
+        {
+          "when": "1678-12-10",
+          "at": "mount-kelud",
+          "strength": 3500,
+          "certainty": "approximate",
+          "label": {
+            "en": "Highland guerrilla",
+            "id": "Gerilya di lereng Kelud"
+          }
+        },
+        {
+          "when": "1679-12-26",
+          "at": "mount-antang",
+          "strength": 300,
+          "certainty": "exact",
+          "label": {
+            "en": "Surrender at Antang",
+            "id": "Menyerah di Gunung Antang"
+          }
+        },
+        {
+          "when": "1680-01-02",
+          "at": "payak",
+          "strength": 0,
+          "certainty": "exact",
+          "label": {
+            "en": "Death of Trunajaya",
+            "id": "Wafat di Pesanggrahan Payak"
+          }
+        }
+      ],
+      "sources": [
+        "ricklefs-1993",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "galesong-fleet",
+      "kind": "unit",
+      "name": {
+        "en": "Makassarese Fleet (Kraeng Galesong)",
+        "id": "Armada Perang Makassar (Kraeng Galesong)"
+      },
+      "faction": "trunajaya-rebels",
+      "commanders": [
+        "Kraeng Galesong",
+        "Kraeng Mamampang"
+      ],
+      "description": {
+        "en": "Fierce seafaring warriors from Gowa and Tallo displaced by the 1669 Makassar War, providing elite naval shock troops to Trunajaya.",
+        "id": "Laskar pelaut tangguh asal Gowa dan Tallo yang menyingkir usai Perang Makassar 1669, menjadi ujung tombak serbu Trunajaya di laut dan darat."
+      },
+      "track": [
+        {
+          "when": "1674-10-01",
+          "at": "demung-besuki",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Base at Demung",
+            "id": "Pangkalan di Demung"
+          }
+        },
+        {
+          "when": "1675-06-01",
+          "at": "surabaya",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Naval assault on Surabaya",
+            "id": "Serbuan laut ke Surabaya"
+          }
+        },
+        {
+          "when": "1676-10-15",
+          "at": "gegodog-tuban",
+          "strength": 4500,
+          "certainty": "exact",
+          "label": {
+            "en": "Shock assault at Gegodog",
+            "id": "Dobrakan maut di Gegodog"
+          }
+        },
+        {
+          "when": "1677-05-15",
+          "at": "surabaya",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Clash with Speelman",
+            "id": "Baku tembak lawan armada Speelman"
+          }
+        },
+        {
+          "when": "1678-10-01",
+          "at": "kediri",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Defending Kediri",
+            "id": "Memperkuat benteng Kediri"
+          }
+        },
+        {
+          "when": "1679-11-20",
+          "at": "mount-kelud",
+          "strength": 800,
+          "certainty": "exact",
+          "label": {
+            "en": "Death of Galesong",
+            "id": "Galesong wafat karena sakit"
+          }
+        }
+      ],
+      "sources": [
+        "de-graaf-1935",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "mataram-royal-corps",
+      "kind": "unit",
+      "name": {
+        "en": "Mataram Royal Army (Amangkurat)",
+        "id": "Tentara Kerajaan Mataram (Amangkurat)"
+      },
+      "faction": "mataram-sultanate",
+      "commanders": [
+        "Susuhunan Amangkurat I",
+        "Susuhunan Amangkurat II",
+        "Pangeran Purbaya"
+      ],
+      "description": {
+        "en": "The royal host of Mataram, crushed at Gegodog and driven into exile before reclaiming the realm in alliance with the VOC.",
+        "id": "Pasukan utama Kesultanan Mataram yang hancur di Gegodog dan terusir ke pengasingan sebelum merebut kembali takhta bersama VOC."
+      },
+      "track": [
+        {
+          "when": "1675-01-01",
+          "at": "plered",
+          "strength": 20000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Court army at Plered",
+            "id": "Pasukan keraton di Plered"
+          }
+        },
+        {
+          "when": "1676-10-15",
+          "at": "gegodog-tuban",
+          "strength": 18000,
+          "certainty": "exact",
+          "label": {
+            "en": "Disaster at Gegodog",
+            "id": "Malapetaka di Gegodog"
+          }
+        },
+        {
+          "when": "1677-06-28",
+          "at": "plered",
+          "strength": 4000,
+          "certainty": "exact",
+          "label": {
+            "en": "Flight from Plered",
+            "id": "Melarikan diri dari Plered"
+          }
+        },
+        {
+          "when": "1677-07-13",
+          "at": "tegalwangi",
+          "strength": 2000,
+          "certainty": "exact",
+          "label": {
+            "en": "Death of Amangkurat I",
+            "id": "Mangkatnya Amangkurat I"
+          }
+        },
+        {
+          "when": "1677-10-20",
+          "at": "jepara",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Jepara Treaty signed",
+            "id": "Penandatanganan Perjanjian Jepara"
+          }
+        },
+        {
+          "when": "1678-09-01",
+          "at": "surabaya",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Mobilizing with VOC",
+            "id": "Menghimpun kekuatan bersama VOC"
+          }
+        },
+        {
+          "when": "1678-11-25",
+          "at": "kediri",
+          "strength": 4500,
+          "certainty": "exact",
+          "label": {
+            "en": "Crowning at Kediri",
+            "id": "Penobatan bermahkota Majapahit"
+          }
+        },
+        {
+          "when": "1680-01-02",
+          "at": "payak",
+          "strength": 6000,
+          "certainty": "exact",
+          "label": {
+            "en": "Execution of Trunajaya",
+            "id": "Hukuman mati Trunajaya di Payak"
+          }
+        }
+      ],
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "voc-expeditionary-army",
+      "kind": "unit",
+      "name": {
+        "en": "VOC Expeditionary Force (Hurdt & Speelman)",
+        "id": "Pasukan Ekspedisi VOC (Hurdt & Speelman)"
+      },
+      "faction": "voc-company",
+      "commanders": [
+        "Admiral Cornelis Speelman",
+        "Major Anthonio Hurdt",
+        "Captain François Tack",
+        "Captain Jonker of Ambon"
+      ],
+      "description": {
+        "en": "Dutch regular troops, European sailors, and seasoned Ambonese and Bugis mercenaries equipped with flintlocks and field cannon.",
+        "id": "Prajurit reguler Belanda, serdadu laut Eropa, serta barisan serdadu Ambon dan Bugis bersenjata senapan sundut dan meriam lapangan."
+      },
+      "track": [
+        {
+          "when": "1676-11-01",
+          "at": "jepara",
+          "strength": 1500,
+          "certainty": "exact",
+          "label": {
+            "en": "Arrival at Jepara",
+            "id": "Mendarat di loji Jepara"
+          }
+        },
+        {
+          "when": "1677-05-15",
+          "at": "surabaya",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Speelman takes Surabaya",
+            "id": "Speelman merebut Surabaya"
+          }
+        },
+        {
+          "when": "1677-10-20",
+          "at": "jepara",
+          "strength": 2800,
+          "certainty": "exact",
+          "label": {
+            "en": "Jepara Compact",
+            "id": "Kesepakatan Jepara"
+          }
+        },
+        {
+          "when": "1678-09-01",
+          "at": "surabaya",
+          "strength": 3500,
+          "certainty": "exact",
+          "label": {
+            "en": "Hurdt inland muster",
+            "id": "Hurdt menghimpun pasukan darat"
+          }
+        },
+        {
+          "when": "1678-10-25",
+          "at": "canggu",
+          "strength": 3200,
+          "certainty": "exact",
+          "label": {
+            "en": "Brantas river crossing",
+            "id": "Menyeberangi Sungai Brantas"
+          }
+        },
+        {
+          "when": "1678-11-25",
+          "at": "kediri",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Storming of Kediri",
+            "id": "Penyerbuan benteng Kediri"
+          }
+        },
+        {
+          "when": "1679-12-26",
+          "at": "mount-antang",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Jonker secures surrender",
+            "id": "Jonker menerima penyerahan diri"
+          }
+        },
+        {
+          "when": "1680-01-02",
+          "at": "payak",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Handover at Payak",
+            "id": "Penyerahan tawanan di Payak"
+          }
+        }
+      ],
+      "sources": [
+        "de-graaf-1940",
+        "dagh-register-1678"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "bangkalan-uprising",
+      "kind": "uprising",
+      "when": "1674-10-01",
+      "at": "madura-bangkalan",
+      "importance": 1,
+      "name": {
+        "en": "Outbreak of the Madurese Rebellion",
+        "id": "Meletusnya Pemberontakan Madura"
+      },
+      "participants": [
+        {
+          "faction": "trunajaya-rebels",
+          "role": "attacker",
+          "strength": 5000
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "strength": 2000
+        }
+      ],
+      "summary": {
+        "en": "Raden Trunajaya raises the standard of revolt in Madura, expelling Mataram loyalists and declaring liberation from court oppression.",
+        "id": "Raden Trunajaya mengibarkan panji pemberontakan di Madura, mengusir pembesar Mataram dan memproklamasikan kebebasan dari tirani keraton."
+      },
+      "sources": [
+        "ricklefs-1993",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "makassar-alliance-demung",
+      "kind": "treaty",
+      "when": "1675-01-15",
+      "at": "demung-besuki",
+      "importance": 2,
+      "name": {
+        "en": "Alliance with Kraeng Galesong",
+        "id": "Pakta Aliansi Bersama Kraeng Galesong"
+      },
+      "participants": [
+        {
+          "faction": "trunajaya-rebels",
+          "role": "negotiator",
+          "commanders": [
+            "Panembahan Trunajaya",
+            "Kraeng Galesong"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Trunajaya formally allies with Kraeng Galesong at Demung, integrating Makassarese war prahus and veteran warriors into the insurgent force.",
+        "id": "Trunajaya mengikat persekutuan resmi dengan Kraeng Galesong di Demung, menyatukan perahu perang Makassar dan pasukan tempur berpengalaman ke dalam barisan pemberontak."
+      },
+      "sources": [
+        "ricklefs-1993",
+        "de-graaf-1935"
+      ]
+    },
+    {
+      "id": "fall-of-surabaya-1675",
+      "kind": "capture",
+      "when": "1675-06-01",
+      "at": "surabaya",
+      "importance": 1,
+      "name": {
+        "en": "Rebel Capture of Surabaya",
+        "id": "Jatuhnya Surabaya ke Tangan Pemberontak"
+      },
+      "participants": [
+        {
+          "faction": "trunajaya-rebels",
+          "role": "attacker",
+          "strength": 12000
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "strength": 4000
+        }
+      ],
+      "summary": {
+        "en": "Trunajaya and Galesong assault Surabaya from land and sea, seizing the port and closing eastern Java to royal authority.",
+        "id": "Pasukan Trunajaya dan Galesong menyerbu Surabaya lewat darat dan laut, merebut pelabuhan dan memutus kekuasaan Mataram di Jawa timur."
+      },
+      "sources": [
+        "dagh-register-1678",
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "battle-of-gegodog",
+      "kind": "battle",
+      "when": "1676-10-15",
+      "at": "gegodog-tuban",
+      "importance": 1,
+      "name": {
+        "en": "The Battle of Gegodog",
+        "id": "Pertempuran Dahsyat di Gegodog"
+      },
+      "participants": [
+        {
+          "faction": "trunajaya-rebels",
+          "role": "attacker",
+          "strength": 16000,
+          "losses": 800
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "strength": 18000,
+          "losses": 10000
+        }
+      ],
+      "summary": {
+        "en": "Trunajaya and Galesong utterly crush the Mataram royal army commanded by Pangeran Purbaya on the plains of Gegodog; royal resistance collapses across northern Java.",
+        "id": "Pasukan Trunajaya dan Galesong membinasakan tentara kerajaan Mataram di bawah Pangeran Purbaya di padang Gegodog; pertahanan kerajaan di pesisir utara runtuh seketika."
+      },
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "speelman-lands-jepara",
+      "kind": "other",
+      "when": "1676-11-01",
+      "at": "jepara",
+      "importance": 2,
+      "name": {
+        "en": "Admiral Speelman Arrives at Jepara",
+        "id": "Laksamana Speelman Tiba di Jepara"
+      },
+      "participants": [
+        {
+          "faction": "voc-company",
+          "role": "attacker",
+          "strength": 1500
+        }
+      ],
+      "summary": {
+        "en": "Alarmed by the fall of north coast ports, the VOC dispatches Admiral Cornelis Speelman with a fleet to secure Jepara.",
+        "id": "Terguncang oleh runtuhnya bandar pesisir utara, VOC mengutus Laksamana Cornelis Speelman membawa armada untuk mengamankan loji Jepara."
+      },
+      "sources": [
+        "dagh-register-1678",
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "speelman-takes-surabaya",
+      "kind": "battle",
+      "when": "1677-05-15",
+      "at": "surabaya",
+      "importance": 1,
+      "name": {
+        "en": "Speelman Recaptures Surabaya",
+        "id": "Speelman Merebut Kembali Surabaya"
+      },
+      "participants": [
+        {
+          "faction": "voc-company",
+          "role": "attacker",
+          "strength": 2500,
+          "losses": 120
+        },
+        {
+          "faction": "trunajaya-rebels",
+          "role": "defender",
+          "strength": 3500,
+          "losses": 600
+        }
+      ],
+      "summary": {
+        "en": "Speelman conducts a naval bombardment and amphibious landing, storming Surabaya and driving Galesong's fleet upriver toward Kediri.",
+        "id": "Speelman membombardir dari laut dan mendaratkan marinir, merebut kembali Surabaya dan mendesak armada Galesong mundur menyusuri sungai ke Kediri."
+      },
+      "sources": [
+        "dagh-register-1678",
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "sack-of-plered",
+      "kind": "siege",
+      "when": "1677-06-28",
+      "at": "plered",
+      "importance": 1,
+      "name": {
+        "en": "The Sacking of Keraton Plered",
+        "id": "Penyerbuan dan Penjarahan Keraton Plered"
+      },
+      "participants": [
+        {
+          "faction": "trunajaya-rebels",
+          "role": "attacker",
+          "strength": 14000
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "strength": 4000
+        }
+      ],
+      "summary": {
+        "en": "Rebel forces storm the royal palace at Plered, looting the treasury, capturing royal women, and seizing the ancient pusaka regalia of Mataram.",
+        "id": "Laskar pemberontak membobol keraton bata merah Plered, menjarah harta perbendaharaan raja, menawan putri-putri keraton, dan menyita pusaka leluhur Mataram."
+      },
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "death-of-amangkurat-i",
+      "kind": "death",
+      "when": "1677-07-13",
+      "at": "tegalwangi",
+      "importance": 1,
+      "name": {
+        "en": "Death of Susuhunan Amangkurat I in Flight",
+        "id": "Mangkatnya Susuhunan Amangkurat I dalam Pelarian"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "commanders": [
+            "Susuhunan Amangkurat I",
+            "Susuhunan Amangkurat II"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Fleeing toward Batavia, the aged Amangkurat I succumbs to illness at Wanayasa and is buried at Tegalwangi. His son assumes the title Amangkurat II.",
+        "id": "Dalam pelarian menuju Batavia mencari suaka, Amangkurat I mangkat di Wanayasa dan dimakamkan di Tegalwangi. Puteranya naik takhta bergelar Amangkurat II."
+      },
+      "sources": [
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "treaty-of-jepara",
+      "kind": "treaty",
+      "when": "1677-10-20",
+      "at": "jepara",
+      "importance": 1,
+      "name": {
+        "en": "The Treaty of Jepara",
+        "id": "Perjanjian Jepara"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "negotiator",
+          "commanders": [
+            "Susuhunan Amangkurat II"
+          ]
+        },
+        {
+          "faction": "voc-company",
+          "role": "negotiator",
+          "commanders": [
+            "Cornelis Speelman"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Amangkurat II signs a desperate treaty pledging north coast revenues and territorial concessions to the VOC in exchange for military intervention against Trunajaya.",
+        "id": "Amangkurat II menandatangani perjanjian yang menggadaikan pendapatan bandar pesisir utara dan konsesi wilayah kepada VOC demi bantuan militer menumpas Trunajaya."
+      },
+      "sources": [
+        "dagh-register-1678",
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "brantas-crossing-canggu",
+      "kind": "other",
+      "when": "1678-10-25",
+      "at": "canggu",
+      "importance": 2,
+      "name": {
+        "en": "The Brantas River Crossing at Canggu",
+        "id": "Penyeberangan Sungai Brantas di Canggu"
+      },
+      "participants": [
+        {
+          "faction": "voc-company",
+          "role": "attacker",
+          "strength": 3200
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "strength": 4000
+        }
+      ],
+      "summary": {
+        "en": "Major Hurdt's joint column crosses the Brantas River ferry at Canggu, pressing up the valley toward Trunajaya's mountain stronghold.",
+        "id": "Pasukan gabungan Mayor Hurdt menyeberangi Sungai Brantas di Canggu, merangsek menyusuri lembah menuju benteng pertahanan Trunajaya."
+      },
+      "sources": [
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "storming-of-kediri",
+      "kind": "siege",
+      "when": "1678-11-25",
+      "at": "kediri",
+      "importance": 1,
+      "name": {
+        "en": "The Storming and Fall of Kediri",
+        "id": "Penyerbuan dan Kejatuhan Benteng Kediri"
+      },
+      "participants": [
+        {
+          "faction": "voc-company",
+          "role": "attacker",
+          "strength": 3000,
+          "losses": 150
+        },
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "strength": 4500,
+          "losses": 300
+        },
+        {
+          "faction": "trunajaya-rebels",
+          "role": "defender",
+          "strength": 12000,
+          "losses": 2500
+        }
+      ],
+      "summary": {
+        "en": "In a savage dawn assault, Hurdt, Tack, and Captain Jonker breach Trunajaya's palisades at Kediri; the crown of Majapahit is recovered and Trunajaya flees into the mountains.",
+        "id": "Dalam serbuan subuh nan ganas, Hurdt, Tack, dan Kapten Jonker membobol benteng Kediri; mahkota Majapahit berhasil diselamatkan dan Trunajaya kabur ke pegunungan."
+      },
+      "sources": [
+        "de-graaf-1940",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "amangkurat-crowned-kediri",
+      "kind": "appointment",
+      "when": "1678-11-27",
+      "at": "kediri",
+      "importance": 1,
+      "name": {
+        "en": "Amangkurat II Crowned with the Crown of Majapahit",
+        "id": "Amangkurat II Dinobatkan Bermahkota Majapahit"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "defender",
+          "commanders": [
+            "Susuhunan Amangkurat II"
+          ]
+        },
+        {
+          "faction": "voc-company",
+          "role": "negotiator",
+          "commanders": [
+            "Anthonio Hurdt"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Major Hurdt places the recovered golden crown of Majapahit upon the head of Amangkurat II amidst the ruins of Kediri.",
+        "id": "Mayor Hurdt memakaikan mahkota emas Majapahit yang baru diselamatkan ke kepala Amangkurat II di tengah puing-puing Kediri."
+      },
+      "sources": [
+        "de-graaf-1940",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "hunt-in-kelud-highlands",
+      "kind": "skirmish",
+      "when": "1679-08-15",
+      "at": "mount-kelud",
+      "importance": 2,
+      "name": {
+        "en": "Highland Skirmishes on Mount Kelud",
+        "id": "Baku Tembak di Perbukitan Gunung Kelud"
+      },
+      "participants": [
+        {
+          "faction": "voc-company",
+          "role": "attacker",
+          "commanders": [
+            "Captain Jonker"
+          ]
+        },
+        {
+          "faction": "trunajaya-rebels",
+          "role": "defender",
+          "commanders": [
+            "Panembahan Trunajaya"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Captain Jonker and Ambonese auxiliaries relentlessly hunt rebel bands through volcanic ravines and rainforests.",
+        "id": "Kapten Jonker bersama prajurit Ambon memburu kelompok pemberontak menembus jurang lahar dan hutan lebat Gunung Kelud."
+      },
+      "sources": [
+        "de-graaf-1940"
+      ]
+    },
+    {
+      "id": "surrender-mount-antang",
+      "kind": "surrender",
+      "when": "1679-12-26",
+      "at": "mount-antang",
+      "importance": 1,
+      "name": {
+        "en": "Trunajaya Surrenders on Mount Antang",
+        "id": "Penyerahan Diri Trunajaya di Gunung Antang"
+      },
+      "participants": [
+        {
+          "faction": "trunajaya-rebels",
+          "role": "defender",
+          "commanders": [
+            "Panembahan Trunajaya"
+          ],
+          "strength": 300
+        },
+        {
+          "faction": "voc-company",
+          "role": "attacker",
+          "commanders": [
+            "Captain Jonker"
+          ],
+          "strength": 1200
+        }
+      ],
+      "summary": {
+        "en": "Emaciated, deserted by his men, and surrounded in a mountain cave, Trunajaya surrenders unconditionally to Captain Jonker.",
+        "id": "Kurang makan, ditinggalkan pengikutnya, dan terkepung di gua tebing, Trunajaya menyerah tanpa syarat kepada Kapten Jonker."
+      },
+      "sources": [
+        "de-graaf-1940",
+        "babad-tanah-jawi"
+      ]
+    },
+    {
+      "id": "execution-kyai-balabar",
+      "kind": "death",
+      "when": "1680-01-02",
+      "at": "payak",
+      "importance": 1,
+      "name": {
+        "en": "Execution of Trunajaya with Keris Kyai Balabar",
+        "id": "Eksekusi Trunajaya dengan Keris Kyai Balabar"
+      },
+      "participants": [
+        {
+          "faction": "mataram-sultanate",
+          "role": "attacker",
+          "commanders": [
+            "Susuhunan Amangkurat II"
+          ]
+        },
+        {
+          "faction": "trunajaya-rebels",
+          "role": "defender",
+          "commanders": [
+            "Panembahan Trunajaya"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "At the royal pavilion at Payak, Amangkurat II personally executes the kneeling Trunajaya with the royal dagger Keris Kyai Balabar, avenging the humiliation of Plered.",
+        "id": "Di pesanggrahan agung Payak, Susuhunan Amangkurat II sendiri yang menusuk dada Trunajaya dengan pusaka Keris Kyai Balabar, membalaskan kehancuran Plered."
+      },
+      "sources": [
+        "babad-tanah-jawi",
+        "ricklefs-1993"
+      ]
+    },
+    {
+      "id": "voc-secures-semarang",
+      "kind": "other",
+      "when": "1677-12-15",
+      "at": "semarang",
+      "importance": 2,
+      "name": {
+        "en": "VOC Secures Port of Semarang",
+        "id": "VOC Mengamankan Pelabuhan Semarang"
+      },
+      "participants": [
+        {
+          "faction": "voc-company",
+          "role": "attacker",
+          "strength": 1000
+        }
+      ],
+      "summary": {
+        "en": "Under the terms of the Treaty of Jepara, VOC garrisons secure the port of Semarang as an operational logistics hub.",
+        "id": "Sesuai klausul Perjanjian Jepara, garnisun VOC mengamankan pelabuhan Semarang sebagai pangkalan logistik operasi militer."
+      },
+      "sources": [
+        "dagh-register-1678"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-revolt-in-madura",
+      "when": "1674-10-01/1675-06-30",
+      "dateLabel": {
+        "en": "October 1674 – June 1675",
+        "id": "Oktober 1674 – Juni 1675"
+      },
+      "title": {
+        "en": "The Madurese Spark and Makassarese Armada",
+        "id": "Api Pemberontakan Madura dan Sekutu Makassar"
+      },
+      "body": {
+        "en": "In the autumn of 1674, the tyrannical rule of Susuhunan Amangkurat I ignited a catastrophic rebellion on the island of Madura. Raden Trunajaya, a proud prince of Bangkalan, raised the standard of revolt. Harboring deep grievances against the Mataram monarch—who had executed hundreds of Madurese and Javanese nobles—Trunajaya won the secret sympathy of Crown Prince Adipati Anom and holy ascetic Panembahan Rama (Raden Kajoran).\n\nTo turn his regional revolt into an empire-shattering revolution, Trunajaya forged an alliance with Kraeng Galesong, the leader of fierce Makassarese seafaring warriors who had fled south Sulawesi following the 1669 Makassar War. Operating from their base at Demung (Besuki), Galesong's war fleet joined Trunajaya's land army. In June 1675, their combined assault overwhelmed Surabaya, capturing the premier seaport of eastern Java.",
+        "id": "Pada musim gugur 1674, tirani Susuhunan Amangkurat I menyulut letupan pemberontakan dahsyat di Pulau Madura. Raden Trunajaya, pangeran muda berdarah ksatria dari Bangkalan, mengibarkan panji perlawanan. Menyimpan dendam membara terhadap sang raja Mataram—yang telah membantai ratusan bangsawan dan ulama Jawa-Madura—Trunajaya diam-diam mendapat sokongan Putera Mahkota Adipati Anom serta pertapa sakti Panembahan Rama (Raden Kajoran).\n\nDemi mengubah pemberontakan lokal menjadi revolusi penumbang takhta, Trunajaya bersekutu dengan Kraeng Galesong, pemimpin laskar pelaut tangguh Makassar yang terusir dari Sulawesi Selatan usai Perang Makassar 1669. Bergerak dari pangkalan pesisir Demung (Besuki), armada perahu perang Galesong berpadu dengan pasukan darat Trunajaya. Pada Juni 1675, serbuan gabungan ini merontokkan pertahanan Surabaya, menguasai bandar niaga terpenting di timur Jawa."
+      },
+      "camera": {
+        "center": [
+          113.2,
+          -7.3
+        ],
+        "zoom": 8,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "bangkalan-uprising",
+        "makassar-alliance-demung",
+        "fall-of-surabaya-1675"
+      ]
+    },
+    {
+      "id": "ch-2-slaughter-at-gegodog",
+      "when": "1675-07-01/1676-11-30",
+      "dateLabel": {
+        "en": "July 1675 – November 1676",
+        "id": "Juli 1675 – November 1676"
+      },
+      "title": {
+        "en": "The Catastrophe of Gegodog",
+        "id": "Malapetaka di Padang Gegodog"
+      },
+      "body": {
+        "en": "Shocked by the loss of East Java, Amangkurat I mobilized the full military might of the Mataram Empire. A royal army of nearly 20,000 men under the king's veteran uncle, Pangeran Purbaya, marched north toward the coastal plains of Tuban to crush the rebels once and for all.\n\nIn October 1676, on the dusty plain of Gegodog near Tuban, the two armies collided in one of the bloodiest engagements in Javanese history. Trunajaya's disciplined Madurese spearmen held the royal frontal assault, while Galesong's battle-hardened Makassarese slammed into Mataram's flanks with terrifying ferocity. The royal army broke into catastrophic rout: over 10,000 royal soldiers were cut down, and Pangeran Purbaya's force was wiped from the earth. The entire northern coast of Java lay completely open to the rebels.",
+        "id": "Terguncang oleh lepasnya wilayah timur, Amangkurat I mengerahkan seluruh kekuatan bala tentara Kesultanan Mataram. Hampir 20.000 prajurit di bawah pimpinan paman raja nan disegani, Pangeran Purbaya, berbaris ke utara menuju pesisir Tuban untuk menumpas pemberontak hingga ke akarnya.\n\nPada Oktober 1676, di padang berdebu Gegodog dekat Tuban, kedua kubu bertembung dalam salah satu pertempuran paling berdarah dalam sejarah Jawa. Barisan tombak Madura pimpinan Trunajaya menahan gempuran depan, sementara laskar Makassar pimpinan Galesong menghantam lambung Mataram dengan keganasan membabi-buta. Tentara kerajaan kocar-kacir dalam malapetaka maut: lebih dari 10.000 prajurit Mataram binasa, dan barisan Pangeran Purbaya musnah tanpa sisa. Seluruh pesisir utara Jawa kini terbentang tanpa perlindungan di hadapan kaum pemberontak."
+      },
+      "camera": {
+        "center": [
+          112.06,
+          -6.9
+        ],
+        "zoom": 10,
+        "pitch": 30,
+        "bearing": 10,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-gegodog",
+        "speelman-lands-jepara"
+      ]
+    },
+    {
+      "id": "ch-3-fall-of-plered",
+      "when": "1676-12-01/1677-07-31",
+      "dateLabel": {
+        "en": "December 1676 – July 1677",
+        "id": "Desember 1676 – Juli 1677"
+      },
+      "title": {
+        "en": "The Sacking of Plered and Death of the King",
+        "id": "Runtuhnya Keraton Plered dan Mangkatnya Sang Raja"
+      },
+      "body": {
+        "en": "Following the triumph at Gegodog, Trunajaya crowned himself Panembahan Maduretna and established his seat of empire at Kediri. In mid-1677, rebel columns under Raden Kajoran and Madurese commanders marched directly upon the royal capital of Plered.\n\nOn 28 June 1677, rebel vanguard forces breached the massive brick ramparts of Plered. The royal court was plundered: centuries of gold, treasures, court women, and the sacred royal pusaka (heirlooms) were seized and carted away to Kediri. Susuhunan Amangkurat I, old and gravely ill, escaped through a rear sally port with the Crown Prince, fleeing westward in a heavy downpour toward Batavia. Broken in spirit, the old king collapsed at Wanayasa and died on 13 July 1677. In accordance with his dying wish, he was buried in the fragrant earth of Tegalwangi.",
+        "id": "Menyusul kemenangan gilang-gemilang di Gegodog, Trunajaya menobatkan dirinya sebagai Panembahan Maduretna dan mendirikan pusat kerajaannya di Kediri. Pada pertengahan 1677, barisan laskar di bawah Raden Kajoran dan panglima Madura merangsek langsung menuju ibu kota agung Plered.\n\nPada 28 Juni 1677, pasukan terdepan pemberontak membobol dinding bata merah tebal Keraton Plered. Istana agung dijarah habis: timbunan emas pusaka berabad-abad, perbendaharaan raja, putri-putri keraton, serta senjata pusaka leluhur Mataram diangkut ke Kediri. Susuhunan Amangkurat I yang renta dan sakit parah meloloskan diri lewat pintu belakang bersama Putera Mahkota, mengungsi ke barat di tengah guyuran hujan lebat menuju Batavia. Patah arang dan remuk redam, sang raja tua menghembuskan napas terakhir di Wanayasa pada 13 Juli 1677. Sesuai wasiatnya, jenazahnya dimakamkan di tanah harum Tegalwangi."
+      },
+      "camera": {
+        "center": [
+          110,
+          -7.3
+        ],
+        "zoom": 8,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "sack-of-plered",
+        "death-of-amangkurat-i"
+      ]
+    },
+    {
+      "id": "ch-4-the-jepara-compact",
+      "when": "1677-08-01/1678-04-30",
+      "dateLabel": {
+        "en": "August 1677 – April 1678",
+        "id": "Agustus 1677 – April 1678"
+      },
+      "title": {
+        "en": "The Desperate Compact of Jepara",
+        "id": "Perjanjian Pahit di Loji Jepara"
+      },
+      "body": {
+        "en": "At Tegal, the Crown Prince was proclaimed Susuhunan Amangkurat II. But he was a monarch without a capital, without a treasury, and without an army. Surrounded by hostile populations and rebel detachments, his only salvation lay in the Dutch East India Company.\n\nTravelling to the VOC fortress-factory at Jepara, Amangkurat II met with Admiral Cornelis Speelman. In October 1677, the desperate king signed the Treaty of Jepara. In return for European soldiers, naval guns, and mercenaries to crush Trunajaya, Amangkurat II mortgaged his empire: Mataram promised to repay all VOC war expenses, pledged the customs revenue of every port along the north coast of Java, and ceded extensive territories in Priangan and Semarang.",
+        "id": "Di Tegal, sang Putera Mahkota dinobatkan sebagai Susuhunan Amangkurat II. Namun ia adalah raja tanpa istana, tanpa kas perbendaharaan, dan tanpa bala tentara. Terkepung oleh rakyat yang memberontak, satu-satunya asa penyelamat takhtanya bersandar pada Kongsi Dagang Hindia Timur Belanda (VOC).\n\nBertolak menuju loji benteng VOC di Jepara, Amangkurat II berunding dengan Laksamana Cornelis Speelman. Pada Oktober 1677, sang raja terpaksa menandatangani Perjanjian Jepara nan pahit. Demi memperoleh serdadu Eropa, meriam kapal, dan laskar sewaan untuk menumpas Trunajaya, Amangkurat II menggadaikan negerinya: Mataram berjanji menanggung seluruh biaya perang kompeni, menyerahkan pendapatan pabean seluruh bandar pesisir utara, serta menyerahkan konsesi wilayah Priangan dan Semarang."
+      },
+      "camera": {
+        "center": [
+          110.66,
+          -6.59
+        ],
+        "zoom": 10.5,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "treaty-of-jepara",
+        "voc-secures-semarang"
+      ],
+      "media": [
+        "speelman-portrait"
+      ]
+    },
+    {
+      "id": "ch-5-speelman-at-surabaya",
+      "when": "1678-05-01/1678-08-31",
+      "dateLabel": {
+        "en": "May – August 1678",
+        "id": "Mei – Agustus 1678"
+      },
+      "title": {
+        "en": "The Marine Counter-Offensive at Surabaya",
+        "id": "Serangan Balik Armada Laut di Surabaya"
+      },
+      "body": {
+        "en": "With the treaty signed, Admiral Speelman launched a vigorous maritime counter-offensive. Sailing eastward with an armada of Dutch warships and armed sloops, Speelman bombarded the insurgent fortifications defending Surabaya harbor.\n\nIn heavy coastal fighting, VOC landing parties supported by Captain Jonker's Ambonese marines stormed ashore, breaking Galesong's naval blockade and recapturing Surabaya. The port was rapidly transformed into a fortified staging base for the impending march into the interior, while rebel forces withdrew up the Brantas river valley toward Trunajaya's mountain redoubt at Kediri.",
+        "id": "Dengan ditekennya perjanjian persekutuan, Laksamana Speelman menggelar serangan balik amfibi nan gencar. Berlayar ke timur membawa armada kapal perang bertengger meriam, Speelman menghujani kubu pertahanan pemberontak di muara Surabaya.\n\nDalam pertempuran pesisir nan sengit, pasukan pendarat VOC dibantu marinir Ambon pimpinan Kapten Jonker merangsek ke darat, mematahkan blokade laut Galesong dan merebut kembali Surabaya. Pelabuhan ini seketika diubah menjadi pangkalan logistik utama untuk invasi ke pedalaman, sementara laskar pemberontak mundur menyusuri lembah Sungai Brantas menuju benteng Kediri."
+      },
+      "camera": {
+        "center": [
+          112.75,
+          -7.25
+        ],
+        "zoom": 10.8,
+        "pitch": 30,
+        "bearing": 10,
+        "durationMs": 3500
+      },
+      "focus": [
+        "speelman-takes-surabaya"
+      ]
+    },
+    {
+      "id": "ch-6-the-storming-of-kediri",
+      "when": "1678-09-01/1678-12-15",
+      "dateLabel": {
+        "en": "September – December 1678",
+        "id": "September – Desember 1678"
+      },
+      "title": {
+        "en": "The Storming and Fall of Kediri",
+        "id": "Penyerbuan dan Kejatuhan Benteng Kediri"
+      },
+      "body": {
+        "en": "In September 1678, the grand allied expedition marched up the Brantas river under Major Anthonio Hurdt, accompanied by Amangkurat II and Captain François Tack. Battling torrential tropical rains, swollen rivers, and disease, the army crossed the Brantas at Canggu and closed in on Kediri.\n\nKediri was defended by formidable timber palisades, trenches, and 12,000 fanatical warriors. At dawn on 25 November 1678, Hurdt launched a coordinated multi-pronged assault. Captain Jonker's Ambonese stormed the palisades while European musketeers laid down devastating volleys. The stronghold was overwhelmed in fierce hand-to-hand combat. Trunajaya escaped into the mountains, but his court was taken. In the ruins, Hurdt recovered the golden Mahkota Majapahit (Crown of Majapahit) and ceremoniously placed it on Amangkurat II's head.",
+        "id": "Pada September 1678, ekspedisi akbar gabungan merangsek ke pedalaman menyusuri Sungai Brantas di bawah pimpinan Mayor Anthonio Hurdt, didampingi Amangkurat II dan Kapten François Tack. Menembus hujan lebat tropis, banjir luapan sungai, dan wabah penyakit, pasukan menyeberangi Brantas di Canggu lalu mengepung Kediri.\n\nKediri dibentengi pagar kayu cerucuk berlapis, parit jebakan, serta 12.000 laskar militan. Saat fajar 25 November 1678, Hurdt melancarkan serbuan serempak dari berbagai penjuru. Prajurit Ambon pimpinan Kapten Jonker memanjat pagar kubu, disokong tembakan senapan serdadu Eropa. Benteng itu jebol dalam pertarungan jarak dekat nan berdarah. Trunajaya lolos ke pegunungan, namun keratonnya luluh lantak. Di tengah puing rampasan perang, Hurdt menemukan Mahkota Emas Majapahit dan secara khidmat memahkotai Amangkurat II."
+      },
+      "camera": {
+        "center": [
+          112.1,
+          -7.6
+        ],
+        "zoom": 9.5,
+        "pitch": 35,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "brantas-crossing-canggu",
+        "storming-of-kediri",
+        "amangkurat-crowned-kediri"
+      ]
+    },
+    {
+      "id": "ch-7-hunt-in-the-kelud-highlands",
+      "when": "1678-12-16/1679-12-25",
+      "dateLabel": {
+        "en": "December 1678 – December 1679",
+        "id": "Desember 1678 – Desember 1679"
+      },
+      "title": {
+        "en": "The Manhunt on Mount Kelud",
+        "id": "Perburuan Maut di Lereng Gunung Kelud"
+      },
+      "body": {
+        "en": "Though his capital had fallen, Trunajaya refused to surrender. With several thousand devoted followers, he retreated into the wild volcanic gorges and dense cloud forests of Mount Kelud and Mount Kawi. Kraeng Galesong, debilitated by hardship and fever, died in his mountain camp in late 1679, depriving Trunajaya of his greatest naval commander.\n\nThroughout 1679, Captain Jonker and Lieutenant Greving led relentless jungle patrols, cutting off mountain supply lines and burning rebel encampments. Deprived of food and salt, afflicted by starvation and disease, Trunajaya's followers deserted by the hundreds.",
+        "id": "Kendati ibu kotanya telah jatuh, Trunajaya pantang menyerah. Bersama ribuan pengikut setia, ia menyingkir ke jurang-jurang lahar terjal dan hutan lumut berkabut di lereng Gunung Kelud dan Gunung Kawi. Kraeng Galesong, yang remuk redam akibat keletihan dan demam, wafat di perkemahan gunung pada akhir 1679, melenyapkan panglima laut terhebat Trunajaya.\n\nSepanjang 1679, Kapten Jonker dan Letnan Greving memimpin patroli hutan tanpa kenal lelah, memutus pasokan makanan dan membumihanguskan perkemahan pemberontak. Kehabisan beras dan garam, dirundung lapar dan wabah penyakit, pengikut Trunajaya berguguran dan membelot dalam jumlah ratusan."
+      },
+      "camera": {
+        "center": [
+          112.31,
+          -7.93
+        ],
+        "zoom": 10.5,
+        "pitch": 40,
+        "bearing": 5,
+        "durationMs": 3500
+      },
+      "focus": [
+        "hunt-in-kelud-highlands"
+      ]
+    },
+    {
+      "id": "ch-8-surrender-and-kyai-balabar",
+      "when": "1679-12-26/1680-01-15",
+      "dateLabel": {
+        "en": "26 December 1679 – January 1680",
+        "id": "26 Desember 1679 – Januari 1680"
+      },
+      "title": {
+        "en": "Surrender and the Strike of Kyai Balabar",
+        "id": "Penyerahan Diri dan Tikaman Keris Kyai Balabar"
+      },
+      "body": {
+        "en": "On 26 December 1679, cornered in a steep ravine on Mount Antang with only a handful of starving retainers, Trunajaya formally surrendered to Captain Jonker, who promised him safety and fair treatment under VOC military custody.\n\nJonker escorted the captive prince to the royal encampment at Payak near Plered, where Amangkurat II held court. On 2 January 1680, Trunajaya was led into the royal pavilion in chains. As Trunajaya knelt before him, Amangkurat II drew his ancestral dagger, Keris Kyai Balabar, and drove it deep into Trunajaya's heart. Royal courtiers fell upon the dying prince with daggers. The great rebellion that had destroyed Plered was ended, but the Mataram realm emerged deeply indebted, forever subjugated to the rising power of the Dutch East India Company.",
+        "id": "Pada 26 Desember 1679, terpojok di tebing curam Gunung Antang hanya bersama segelintir pengiring yang kelaparan, Trunajaya akhirnya menyerahkan diri kepada Kapten Jonker yang berjanji akan memperlakukannya secara adil di bawah perlindungan militer VOC.\n\nJonker mengawal sang pangeran tawanan menuju pesanggrahan agung Payak dekat Plered, tempat Amangkurat II bertakhta. Pada 2 Januari 1680, Trunajaya dibawa masuk ke hadapan balairung dalam belenggu rantai. Saat Trunajaya bersimpuh menyembah, Amangkurat II mencabut keris pusaka leluhurnya, Keris Kyai Balabar, lalu menghunjamkannya tepat ke dada Trunajaya. Para punggawa keraton serentak menikamkan keris mereka ke tubuh sang pangeran yang meregang nyawa. Pemberontakan akbar yang memporak-porandakan Plered usai sudah, namun kerajaan Mataram kini terlilit utang maha-besar, terkekang di bawah cengkeraman hegemoni VOC yang kian kokoh."
+      },
+      "camera": {
+        "center": [
+          110.45,
+          -7.85
+        ],
+        "zoom": 12,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "surrender-mount-antang",
+        "execution-kyai-balabar"
+      ],
+      "media": [
+        "kris-keris-javanese"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "de-graaf-1940",
+      "type": "book",
+      "citation": "De Graaf, H.J. De Expeditie van Anthonio Hurdt, Raad van Indië, als Admiraal en Superintendent naar de Binnenlanden van Java, Sept.–Dec. 1678. 's-Gravenhage: Martinus Nijhoff (Linschoten-Vereeniging 44), 1940."
+    },
+    {
+      "id": "de-graaf-1935",
+      "type": "book",
+      "citation": "De Graaf, H.J. De Moord op Kapitein François Tack, 8 Febr. 1686. Amsterdam: H.J. Paris, 1935."
+    },
+    {
+      "id": "ricklefs-1993",
+      "type": "book",
+      "citation": "Ricklefs, M.C. War, Culture and Economy in Java, 1677–1726: Asian and European Imperialism in the Early Kartasura Period. Sydney: Allen & Unwin, 1993."
+    },
+    {
+      "id": "babad-tanah-jawi",
+      "type": "book",
+      "citation": "Babad Tanah Jawi: Javaansche Rijkskroniek. Ed. W.L. Olthof. 's-Gravenhage: M. Nijhoff, 1941."
+    },
+    {
+      "id": "dagh-register-1678",
+      "type": "book",
+      "citation": "Dagh-Register gehouden int Casteel Batavia vant passerende daer ter plaetse als over geheel Nederlandts-India, anno 1674–1680. Batavia: Landsdrukkerij / Martinus Nijhoff."
+    }
+  ],
+  "media": [
+    {
+      "id": "speelman-portrait",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cornelis_Janzoon_Speelman,_gouverneur-generaal_van_Nederlands-Indi%C3%AB_Rijksmuseum_SK-A-3778.jpeg",
+      "alt": {
+        "en": "Portrait of Admiral Cornelis Janzoon Speelman by Gerard de Lairesse, c. 1680",
+        "id": "Lukisan potret Laksamana Cornelis Janzoon Speelman karya Gerard de Lairesse, sekitar 1680"
+      },
+      "caption": {
+        "en": "Admiral Cornelis Janzoon Speelman (1628–1684), commander of the VOC fleet and signatory of the Treaty of Jepara.",
+        "id": "Laksamana Cornelis Janzoon Speelman (1628–1684), komandan armada VOC dan penandatangan Perjanjian Jepara."
+      },
+      "creator": "Gerard de Lairesse",
+      "date": "1680~",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cornelis_Janzoon_Speelman,_gouverneur-generaal_van_Nederlands-Indi%C3%AB_Rijksmuseum_SK-A-3778.jpeg"
+    },
+    {
+      "id": "kris-keris-javanese",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/COLLECTIE_TROPENMUSEUM_Kris_met_schede_TMnr_374-1.jpg",
+      "alt": {
+        "en": "Traditional Javanese keris with scabbard",
+        "id": "Keris pusaka tradisional Jawa beserta warangkanya"
+      },
+      "caption": {
+        "en": "Javanese royal heirloom keris dagger, symbolic of Keris Kyai Balabar with which Amangkurat II struck down Trunajaya at Payak.",
+        "id": "Keris pusaka kerajaan Jawa, perlambang Keris Kyai Balabar yang digunakan Amangkurat II mengeksekusi Trunajaya di Payak."
+      },
+      "creator": "Tropenmuseum Collection",
+      "date": "1850~",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:COLLECTIE_TROPENMUSEUM_Kris_met_schede_TMnr_374-1.jpg"
+    }
+  ]
+}

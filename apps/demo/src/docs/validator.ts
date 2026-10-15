@@ -22,6 +22,8 @@ const EXAMPLES: [string, string][] = [
   ['Ambush at Pungdo 1894', '/campaigns/pungdo-1894.json'],
   ['American Revolution 1775', '/campaigns/american-revolution-1775.json'],
   ['Mongol Invasion of Java 1293', '/campaigns/mongol-invasion-java-1293.json'],
+  ['British Invasion of Java 1811', '/campaigns/british-invasion-java-1811.json'],
+  ['Trunajaya Rebellion 1674', '/campaigns/trunajaya-rebellion-1674.json'],
   ['Null Island (fixture)', '/campaigns/fixtures/null-island.json'],
 ];
 const FIX: Record<string, Record<DocLang, string>> = Object.fromEntries(catalogue.map((d) => [d.code, d.fix]));

@@ -17,6 +17,8 @@ const CASES = [
   ['../../../test-vectors/waterloo-1815.frames.json', '../../../data/campaigns/waterloo-1815.json', false],
   ['../../../test-vectors/american-revolution-1775.frames.json', '../../../data/campaigns/american-revolution-1775.json', false],
   ['../../../test-vectors/mongol-invasion-java-1293.frames.json', '../../../data/campaigns/mongol-invasion-java-1293.json', false],
+  ['../../../test-vectors/british-invasion-java-1811.frames.json', '../../../data/campaigns/british-invasion-java-1811.json', false],
+  ['../../../test-vectors/trunajaya-rebellion-1674.frames.json', '../../../data/campaigns/trunajaya-rebellion-1674.json', false],
 ];
 const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
 const close = (a, b, path) => {

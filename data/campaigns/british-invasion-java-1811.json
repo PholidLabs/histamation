@@ -1,0 +1,1633 @@
+{
+  "$schema": "../schema/campaign.schema.json",
+  "histamation": "1.0",
+  "meta": {
+    "id": "british-invasion-java-1811",
+    "version": "0.1.0",
+    "title": {
+      "en": "The British Invasion of Java and Geger Sepehi",
+      "id": "Invasi Inggris ke Jawa dan Geger Sepehi"
+    },
+    "subtitle": {
+      "en": "The Napoleonic War in the East Indies and the storming of Yogyakarta (1811–1812)",
+      "id": "Perang era Napoleon di Hindia Timur dan penyerbuan Keraton Yogyakarta (1811–1812)"
+    },
+    "description": {
+      "en": "In August 1811, a formidable British armada of nearly 100 ships and 11,000 troops under Sir Samuel Auchmuty and Stamford Raffles invaded Java to eliminate Napoleon's last eastern empire under Franco-Dutch Governor-General Jan Willem Janssens. After fierce fighting at Weltevreden and the bloody storming of the Meester Cornelis redoubts, Janssens surrendered at Tuntang. Ten months later in June 1812, British forces under Colonel Rollo Gillespie stormed the heavily fortified Keraton of Yogyakarta in the event known as Geger Sepehi, deposing Sultan Hamengkubuwana II and permanently reshaping Javanese sovereignty.",
+      "id": "Pada Agustus 1811, armada ekspedisi Britania Raya beranggotakan hampir 100 kapal dan 11.000 prajurit di bawah pimpinan Sir Samuel Auchmuty dan Stamford Raffles menginvasi Jawa untuk merebut benteng terakhir kekuasaan Napoleon di belahan bumi timur dari tangan Gubernur Jenderal Belanda-Prancis Jan Willem Janssens. Usai pertempuran sengit di Weltevreden dan penyerbuan berdarah benteng Meester Cornelis, Janssens menyerah di Tuntang. Sepuluh bulan berselang pada Juni 1812, pasukan Inggris di bawah Kolonel Rollo Gillespie menyerbu Keraton Yogyakarta yang berbenteng kokoh dalam peristiwa Geger Sepehi, menggulingkan Sultan Hamengkubuwana II dan mengubah peta kedaulatan Jawa untuk selamanya."
+    },
+    "license": "CC-BY-4.0",
+    "timeline": {
+      "extent": "1811-06-01/1812-07-31",
+      "focus": "1811-08-01/1812-06-30"
+    },
+    "map": {
+      "center": [
+        108.5,
+        -6.8
+      ],
+      "zoom": 7.3,
+      "pitch": 25,
+      "bearing": 0,
+      "bounds": [
+        105,
+        -8.8,
+        114.5,
+        -5.5
+      ],
+      "terrain": {
+        "exaggeration": 1.5
+      },
+      "theme": "parchment-sepia"
+    },
+    "languages": [
+      "en",
+      "id"
+    ],
+    "defaultLanguage": "en"
+  },
+  "factions": [
+    {
+      "id": "british-empire",
+      "name": {
+        "en": "British Empire & East India Company",
+        "id": "Imperium Britania & Maskapai Hindia Timur (EIC)"
+      },
+      "shortName": {
+        "en": "British Forces",
+        "id": "Pasukan Inggris"
+      },
+      "color": "#C0392B",
+      "description": {
+        "en": "British expeditionary army commanded by Lieutenant-General Sir Samuel Auchmuty, Commodore Robert Stopford, and Colonel Robert Rollo Gillespie, comprising British line regiments, 78th Highlanders, and Madras Native Infantry.",
+        "id": "Pasukan ekspedisi militer Britania di bawah Letnan Jenderal Sir Samuel Auchmuty, Komodor Robert Stopford, dan Kolonel Robert Rollo Gillespie, berintikan resimen reguler Inggris, pasukan pegunungan 78th Highlanders, serta infanteri pribumi Madras (Sepoi)."
+      },
+      "sources": [
+        "thorn-1815",
+        "raffles-1817",
+        "carey-1992"
+      ]
+    },
+    {
+      "id": "franco-dutch",
+      "name": {
+        "en": "Franco-Dutch Kingdom of Holland",
+        "id": "Kerajaan Belanda-Prancis"
+      },
+      "shortName": {
+        "en": "Franco-Dutch",
+        "id": "Belanda-Prancis"
+      },
+      "color": "#1E3A8A",
+      "description": {
+        "en": "Colonial army of Java defending Napoleon's satellite state under Governor-General Jan Willem Janssens and General Jean-Marie Jumel, comprising European officers, French naval gunners, Dutch recruits, and indigenous Javanese and Madurese contingents.",
+        "id": "Tentara kolonial Jawa yang mempertahankan wilayah satelit Napoleon di bawah Gubernur Jenderal Jan Willem Janssens dan Jenderal Jean-Marie Jumel, terdiri atas perwira Eropa, artileri marinir Prancis, rekrutan Belanda, serta prajurit bumiputra Jawa dan Madura."
+      },
+      "sources": [
+        "thorn-1815",
+        "carey-2008"
+      ]
+    },
+    {
+      "id": "yogyakarta-sultanate",
+      "name": {
+        "en": "Sultanate of Yogyakarta",
+        "id": "Kesultanan Yogyakarta"
+      },
+      "shortName": {
+        "en": "Yogyakarta",
+        "id": "Yogyakarta"
+      },
+      "color": "#15803D",
+      "description": {
+        "en": "The royal military force and armed palace retinue of the Sultanate of Yogyakarta under Sultan Hamengkubuwana II (Sultan Sepuh), defending the royal citadel of the Keraton.",
+        "id": "Kekuatan militer keraton dan prajurit pengawal Kesultanan Ngayogyakarta Hadiningrat di bawah pimpinan Sri Sultan Hamengkubuwana II (Sultan Sepuh) yang mempertahankan benteng Keraton."
+      },
+      "sources": [
+        "carey-1992",
+        "babad-bedhah"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "karimunjawa",
+      "name": {
+        "en": "Karimunjawa Waters",
+        "id": "Perairan Karimunjawa"
+      },
+      "modernName": {
+        "en": "Karimunjawa, Central Java",
+        "id": "Kepulauan Karimunjawa, Jawa Tengah"
+      },
+      "kind": "port",
+      "coordinates": [
+        110.435,
+        -5.875
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Rendezvous point for the British invasion armada after crossing the Java Sea from Malacca.",
+        "id": "Titik kumpul armada invasi Inggris usai menyeberangi Laut Jawa dari Malaka."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "cilincing",
+      "name": {
+        "en": "Cilincing Beach",
+        "id": "Pantai Cilincing"
+      },
+      "modernName": {
+        "en": "Cilincing, North Jakarta",
+        "id": "Cilincing, Jakarta Utara"
+      },
+      "kind": "port",
+      "coordinates": [
+        106.945,
+        -6.115
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The undefended beach 12 miles east of Batavia where the British army landed on 4 August 1811.",
+        "id": "Pesisir tanpa penjagaan 19 km di timur Batavia lokasi pendaratan pasukan pendarat Inggris pada 4 Agustus 1811."
+      },
+      "sources": [
+        "thorn-1815",
+        "raffles-1817"
+      ]
+    },
+    {
+      "id": "batavia-city",
+      "name": {
+        "en": "Batavia (Old Town)",
+        "id": "Batavia (Kota Tua)"
+      },
+      "modernName": {
+        "en": "Kota Tua, Jakarta",
+        "id": "Kota Tua, Jakarta"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        106.813,
+        -6.135
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The historic VOC capital, abandoned without a fight by Janssens on 8 August 1811 to avoid deadly fever.",
+        "id": "Ibu kota lama VOC yang dikosongkan Janssens tanpa perlawanan pada 8 Agustus 1811 guna menghindari wabah malaria."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "weltevreden",
+      "name": {
+        "en": "Weltevreden",
+        "id": "Weltevreden"
+      },
+      "modernName": {
+        "en": "Lapangan Banteng / Gambir, Jakarta",
+        "id": "Lapangan Banteng / Gambir, Jakarta Pusat"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        106.836,
+        -6.172
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Site of the clash on 10 August 1811 where Gillespie routed Jumel's advance guard.",
+        "id": "Lokasi pertempuran 10 Agustus 1811 saat Gillespie memukul mundur barisan depan pimpinan Jumel."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "meester-cornelis",
+      "name": {
+        "en": "Meester Cornelis Redoubts",
+        "id": "Benteng Meester Cornelis"
+      },
+      "modernName": {
+        "en": "Jatinegara, East Jakarta",
+        "id": "Jatinegara, Jakarta Timur"
+      },
+      "kind": "fort",
+      "coordinates": [
+        106.865,
+        -6.215
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The formidable fortified camp anchored by 280 heavy guns, stormed by British bayonets on 26 August 1811.",
+        "id": "Kubu pertahanan berbenteng masif berkekuatan 280 meriam berat, diserbu bayonet Inggris pada 26 Agustus 1811."
+      },
+      "sources": [
+        "thorn-1815",
+        "stockdale-1811"
+      ]
+    },
+    {
+      "id": "buitenzorg",
+      "name": {
+        "en": "Buitenzorg",
+        "id": "Buitenzorg (Bogor)"
+      },
+      "modernName": {
+        "en": "Bogor, West Java",
+        "id": "Kota Bogor, Jawa Barat"
+      },
+      "kind": "palace",
+      "coordinates": [
+        106.797,
+        -6.598
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Governor-General's country palace where Janssens briefly took refuge before fleeing east.",
+        "id": "Istana peristirahatan Gubernur Jenderal tempat Janssens sempat berlindung sebelum melarikan diri ke timur."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "cirebon",
+      "name": {
+        "en": "Cirebon",
+        "id": "Cirebon"
+      },
+      "modernName": {
+        "en": "Cirebon, West Java",
+        "id": "Kota Cirebon, Jawa Barat"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        108.567,
+        -6.728
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Coastal stronghold along the Great Post Road occupied by British naval detachment.",
+        "id": "Kota pelabuhan pesisir di Jalan Raya Pos yang diamankan oleh armada laut Inggris."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "semarang",
+      "name": {
+        "en": "Semarang",
+        "id": "Semarang"
+      },
+      "modernName": {
+        "en": "Semarang, Central Java",
+        "id": "Kota Semarang, Jawa Tengah"
+      },
+      "kind": "port",
+      "coordinates": [
+        110.42,
+        -6.966
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Principal northern port of Central Java where Auchmuty landed on 10 September 1811 to pursue Janssens.",
+        "id": "Pelabuhan utama pesisir Jawa Tengah tempat Auchmuty mendarat pada 10 September 1811 memburu Janssens."
+      },
+      "sources": [
+        "thorn-1815",
+        "raffles-1817"
+      ]
+    },
+    {
+      "id": "ungaran",
+      "name": {
+        "en": "Ungaran (Oenarang)",
+        "id": "Ungaran"
+      },
+      "modernName": {
+        "en": "Ungaran, Semarang Regency",
+        "id": "Ungaran, Kabupaten Semarang"
+      },
+      "kind": "battlefield",
+      "coordinates": [
+        110.403,
+        -7.139
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Hillside battlefield on the slopes of Mount Ungaran where Janssens' final defensive line broke on 16 September 1811.",
+        "id": "Medan pertempuran di lereng Gunung Ungaran lokasi runtuhnya garis pertahanan terakhir Janssens pada 16 September 1811."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "tuntang",
+      "name": {
+        "en": "Tuntang",
+        "id": "Tuntang"
+      },
+      "modernName": {
+        "en": "Tuntang, Semarang Regency",
+        "id": "Tuntang, Kabupaten Semarang"
+      },
+      "kind": "settlement",
+      "coordinates": [
+        110.457,
+        -7.262
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "Site of the historic Capitulation of Tuntang on 18 September 1811, surrendering Java to the British crown.",
+        "id": "Lokasi bersejarah Kapitulasi Tuntang pada 18 September 1811, penyerahan kedaulatan Jawa kepada mahkota Inggris."
+      },
+      "sources": [
+        "thorn-1815",
+        "raffles-1817"
+      ]
+    },
+    {
+      "id": "salatiga",
+      "name": {
+        "en": "Salatiga (Fort De Eendracht)",
+        "id": "Salatiga"
+      },
+      "modernName": {
+        "en": "Salatiga, Central Java",
+        "id": "Kota Salatiga, Jawa Tengah"
+      },
+      "kind": "fort",
+      "coordinates": [
+        110.505,
+        -7.33
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Dutch fortification where Janssens spent his final night before signing the surrender.",
+        "id": "Benteng pertahanan Belanda tempat Janssens bermalam sebelum menandatangani surat penyerahan."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "surakarta",
+      "name": {
+        "en": "Surakarta (Kasunanan)",
+        "id": "Surakarta (Kasunanan)"
+      },
+      "modernName": {
+        "en": "Surakarta / Solo, Central Java",
+        "id": "Kota Surakarta, Jawa Tengah"
+      },
+      "kind": "palace",
+      "coordinates": [
+        110.828,
+        -7.568
+      ],
+      "certainty": "exact",
+      "rank": 2,
+      "notes": {
+        "en": "Court of Sunan Pakubuwana IV and base of Prince Prangwedana's Mangkunegaran Legion which joined the British column.",
+        "id": "Keraton Sunan Pakubuwana IV dan markas Legiun Mangkunegaran pimpinan Pangeran Prangwedana yang bergabung ke pihak Inggris."
+      },
+      "sources": [
+        "carey-1992",
+        "carey-2008"
+      ]
+    },
+    {
+      "id": "fort-vredenburg",
+      "name": {
+        "en": "Fort Vredenburg (Residency)",
+        "id": "Benteng Vredenburg (Karesidenan)"
+      },
+      "modernName": {
+        "en": "Benteng Vredenburg, Yogyakarta",
+        "id": "Benteng Vredenburg, Kota Yogyakarta"
+      },
+      "kind": "fort",
+      "coordinates": [
+        110.366,
+        -7.8
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "British residency and base of operations for Gillespie's assault force facing the Keraton in June 1812.",
+        "id": "Kantor keresidenan Inggris dan pangkalan serbu pasukan Gillespie menghadap Keraton pada Juni 1812."
+      },
+      "sources": [
+        "carey-1992",
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "keraton-yogyakarta",
+      "name": {
+        "en": "Keraton of Yogyakarta",
+        "id": "Keraton Ngayogyakarta Hadiningrat"
+      },
+      "modernName": {
+        "en": "Kraton, Yogyakarta",
+        "id": "Kraton, Kota Yogyakarta"
+      },
+      "kind": "palace",
+      "coordinates": [
+        110.364,
+        -7.805
+      ],
+      "certainty": "exact",
+      "rank": 1,
+      "notes": {
+        "en": "The heavily fortified royal palace compound of Sultan Hamengkubuwana II, breached and sacked during Geger Sepehi on 20 June 1812.",
+        "id": "Kompleks istana kerajaan berbenteng baluwarti kokoh milik Sri Sultan Hamengkubuwana II, dibobol dan dijarah dalam Geger Sepehi pada 20 Juni 1812."
+      },
+      "sources": [
+        "carey-1992",
+        "babad-bedhah"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "british-main-army",
+      "kind": "unit",
+      "name": {
+        "en": "British Expeditionary Army (Auchmuty)",
+        "id": "Pasukan Ekspedisi Britania (Auchmuty)"
+      },
+      "faction": "british-empire",
+      "commanders": [
+        "Lieutenant-General Sir Samuel Auchmuty",
+        "Colonel Robert Rollo Gillespie",
+        "Commodore Robert Stopford"
+      ],
+      "description": {
+        "en": "The main amphibious invasion force comprising the 14th, 59th, 69th, 78th Highlanders, 89th regiments, Madras Sepoys, and Royal Artillery.",
+        "id": "Kekuatan utama invasi amfibi berintikan resimen ke-14, 59, 69, 78 Highlanders, 89, prajurit Sepoi Madras, dan Artileri Kerajaan."
+      },
+      "track": [
+        {
+          "when": "1811-08-01",
+          "at": "karimunjawa",
+          "strength": 11000,
+          "certainty": "exact",
+          "label": {
+            "en": "Fleet enters Java Sea",
+            "id": "Armada memasuki Laut Jawa"
+          }
+        },
+        {
+          "when": "1811-08-04",
+          "at": "cilincing",
+          "strength": 10700,
+          "certainty": "exact",
+          "label": {
+            "en": "Landing at Cilincing",
+            "id": "Mendarat di Cilincing"
+          }
+        },
+        {
+          "when": "1811-08-08",
+          "at": "batavia-city",
+          "strength": 10500,
+          "certainty": "exact",
+          "label": {
+            "en": "Entry into Batavia",
+            "id": "Memasuki Batavia"
+          }
+        },
+        {
+          "when": "1811-08-10",
+          "at": "weltevreden",
+          "strength": 10000,
+          "certainty": "exact",
+          "label": {
+            "en": "Clash at Weltevreden",
+            "id": "Pertempuran Weltevreden"
+          }
+        },
+        {
+          "when": "1811-08-26",
+          "at": "meester-cornelis",
+          "strength": 9200,
+          "certainty": "exact",
+          "label": {
+            "en": "Storming of Meester Cornelis",
+            "id": "Penyerbuan Meester Cornelis"
+          }
+        },
+        {
+          "when": "1811-09-10",
+          "at": "semarang",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Landing at Semarang",
+            "id": "Pendaratan di Semarang"
+          }
+        },
+        {
+          "when": "1811-09-16",
+          "at": "ungaran",
+          "strength": 2800,
+          "certainty": "exact",
+          "label": {
+            "en": "Victory at Ungaran",
+            "id": "Kemenangan di Ungaran"
+          }
+        },
+        {
+          "when": "1811-09-18",
+          "at": "tuntang",
+          "strength": 2800,
+          "certainty": "exact",
+          "label": {
+            "en": "Capitulation of Tuntang",
+            "id": "Kapitulasi Tuntang"
+          }
+        }
+      ],
+      "sources": [
+        "thorn-1815",
+        "raffles-1817"
+      ]
+    },
+    {
+      "id": "franco-dutch-army",
+      "kind": "unit",
+      "name": {
+        "en": "Franco-Dutch Army of Java (Janssens)",
+        "id": "Pasukan Belanda-Prancis Jawa (Janssens)"
+      },
+      "faction": "franco-dutch",
+      "commanders": [
+        "Governor-General Jan Willem Janssens",
+        "Brigadier-General Jean-Marie Jumel",
+        "Colonel Carl von Lutzow"
+      ],
+      "description": {
+        "en": "The defending forces of the Franco-Dutch colonial state in Java, including European units, French artillerymen, and Javanese colonial battalions.",
+        "id": "Pasukan pertahanan kolonial Belanda-Prancis di Jawa, meliputi kesatuan Eropa, marinir artileri Prancis, dan batalion bumiputra Jawa."
+      },
+      "track": [
+        {
+          "when": "1811-08-04",
+          "at": "batavia-city",
+          "strength": 16000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Batavia garrison",
+            "id": "Garnisun Batavia"
+          }
+        },
+        {
+          "when": "1811-08-08",
+          "at": "weltevreden",
+          "strength": 14000,
+          "certainty": "exact",
+          "label": {
+            "en": "Withdrawal to Weltevreden",
+            "id": "Mundur ke Weltevreden"
+          }
+        },
+        {
+          "when": "1811-08-10",
+          "at": "meester-cornelis",
+          "strength": 12000,
+          "certainty": "exact",
+          "label": {
+            "en": "Entrenched at Cornelis",
+            "id": "Bertahan di Meester Cornelis"
+          }
+        },
+        {
+          "when": "1811-08-26",
+          "at": "buitenzorg",
+          "strength": 4000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Rout to Buitenzorg",
+            "id": "Kocar-kacir ke Buitenzorg"
+          }
+        },
+        {
+          "when": "1811-09-08",
+          "at": "cirebon",
+          "strength": 3500,
+          "certainty": "approximate",
+          "label": {
+            "en": "Retreat along Post Road",
+            "id": "Mundur lewat Jalan Raya Pos"
+          }
+        },
+        {
+          "when": "1811-09-12",
+          "at": "semarang",
+          "strength": 3200,
+          "certainty": "exact",
+          "label": {
+            "en": "Rally at Semarang",
+            "id": "Menghimpun pasukan di Semarang"
+          }
+        },
+        {
+          "when": "1811-09-16",
+          "at": "ungaran",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Defeat at Ungaran",
+            "id": "Runtuh di bukit Ungaran"
+          }
+        },
+        {
+          "when": "1811-09-18",
+          "at": "salatiga",
+          "strength": 2500,
+          "certainty": "exact",
+          "label": {
+            "en": "Surrender at Fort Salatiga",
+            "id": "Menyerah di Salatiga"
+          }
+        }
+      ],
+      "sources": [
+        "thorn-1815",
+        "stockdale-1811"
+      ]
+    },
+    {
+      "id": "gillespie-yogyakarta-column",
+      "kind": "unit",
+      "name": {
+        "en": "British Assault Column (Gillespie)",
+        "id": "Kolom Serbu Inggris (Gillespie)"
+      },
+      "faction": "british-empire",
+      "commanders": [
+        "Colonel Robert Rollo Gillespie",
+        "Lieutenant-Governor Thomas Stamford Raffles",
+        "Prince Prangwedana (Mangkunegara II)"
+      ],
+      "description": {
+        "en": "The elite punitive force dispatched to Yogyakarta comprising the 14th Foot, 78th Highlanders, Bengal Sepoys, and 800 cavalry of the Mangkunegaran Legion.",
+        "id": "Pasukan penindak khusus yang dikirim ke Yogyakarta berintikan Resimen ke-14, 78 Highlanders, Sepoi Benggala, serta 800 kavaleri Legiun Mangkunegaran."
+      },
+      "track": [
+        {
+          "when": "1812-06-05",
+          "at": "semarang",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Column mobilizes",
+            "id": "Pasukan bergerak dari Semarang"
+          }
+        },
+        {
+          "when": "1812-06-12",
+          "at": "surakarta",
+          "strength": 2000,
+          "certainty": "exact",
+          "label": {
+            "en": "Joined by Mangkunegaran",
+            "id": "Bergabung Legiun Mangkunegaran"
+          }
+        },
+        {
+          "when": "1812-06-17",
+          "at": "fort-vredenburg",
+          "strength": 2000,
+          "certainty": "exact",
+          "label": {
+            "en": "Deployed at Vredenburg",
+            "id": "Siaga di Benteng Vredenburg"
+          }
+        },
+        {
+          "when": "1812-06-20",
+          "at": "keraton-yogyakarta",
+          "strength": 1900,
+          "certainty": "exact",
+          "label": {
+            "en": "Storming of the Keraton",
+            "id": "Menyerbu masuk Keraton"
+          }
+        },
+        {
+          "when": "1812-07-15",
+          "at": "fort-vredenburg",
+          "strength": 1200,
+          "certainty": "exact",
+          "label": {
+            "en": "Garrisoning Yogyakarta",
+            "id": "Garnisun tetap Yogyakarta"
+          }
+        }
+      ],
+      "sources": [
+        "carey-1992",
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "yogyakarta-royal-guard",
+      "kind": "unit",
+      "name": {
+        "en": "Yogyakarta Royal Guards & Court Army",
+        "id": "Prajurit Pengawal Keraton Yogyakarta"
+      },
+      "faction": "yogyakarta-sultanate",
+      "commanders": [
+        "Sultan Hamengkubuwana II (Sultan Sepuh)",
+        "Pangeran Dipokusumo",
+        "Tumenggung Sumodiningrat"
+      ],
+      "description": {
+        "en": "Royal defensive force of the Keraton comprising traditional palace regimental regiments (Ketanggung, Bugis, Daeng, Nyutra) and armed court levies.",
+        "id": "Prajurit pertahanan Keraton Yogyakarta mencakup kesatuan prajurit keraton (Ketanggung, Bugis, Daeng, Nyutra) dan laskar kawula dalem."
+      },
+      "track": [
+        {
+          "when": "1811-10-01",
+          "at": "keraton-yogyakarta",
+          "strength": 10000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Keraton mobilization",
+            "id": "Mobilisasi pertahanan Keraton"
+          }
+        },
+        {
+          "when": "1812-05-15",
+          "at": "keraton-yogyakarta",
+          "strength": 11000,
+          "certainty": "approximate",
+          "label": {
+            "en": "Bastions reinforced",
+            "id": "Memperkuat baluwarti benteng"
+          }
+        },
+        {
+          "when": "1812-06-20",
+          "at": "keraton-yogyakarta",
+          "strength": 8000,
+          "certainty": "exact",
+          "label": {
+            "en": "Keraton falls",
+            "id": "Keraton jatuh diserbu"
+          }
+        },
+        {
+          "when": "1812-07-15",
+          "at": "keraton-yogyakarta",
+          "strength": 3000,
+          "certainty": "exact",
+          "label": {
+            "en": "Court reorganized",
+            "id": "Restrukturisasi prajurit keraton"
+          }
+        }
+      ],
+      "sources": [
+        "carey-1992",
+        "babad-bedhah"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "armada-arrival-karimunjawa",
+      "kind": "other",
+      "when": "1811-08-01",
+      "at": "karimunjawa",
+      "importance": 1,
+      "name": {
+        "en": "British Armada Assembles in Java Waters",
+        "id": "Armada Britania Berkumpul di Perairan Jawa"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 11000
+        }
+      ],
+      "summary": {
+        "en": "A massive British expeditionary fleet of nearly 100 ships and 11,000 men under Auchmuty and Stopford assembles off Karimunjawa.",
+        "id": "Armada ekspedisi raksasa Inggris berkekuatan hampir 100 kapal dan 11.000 prajurit di bawah Auchmuty dan Stopford berkumpul di perairan Karimunjawa."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "cilincing-landing",
+      "kind": "battle",
+      "when": "1811-08-04",
+      "at": "cilincing",
+      "importance": 1,
+      "name": {
+        "en": "Amphibious Landing at Cilincing",
+        "id": "Pendaratan Pasukan di Cilincing"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 10700
+        },
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "strength": 16000
+        }
+      ],
+      "summary": {
+        "en": "British vanguard under Gillespie lands unopposed on the muddy shores of Cilincing east of Batavia.",
+        "id": "Pasukan garis depan Inggris di bawah pimpinan Gillespie mendarat tanpa perlawanan di pesisir Cilincing, timur Batavia."
+      },
+      "sources": [
+        "thorn-1815",
+        "raffles-1817"
+      ]
+    },
+    {
+      "id": "batavia-occupation",
+      "kind": "capture",
+      "when": "1811-08-08",
+      "at": "batavia-city",
+      "importance": 1,
+      "name": {
+        "en": "British Troops Enter Batavia",
+        "id": "Pasukan Inggris Memasuki Kota Batavia"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 10500
+        },
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "strength": 0
+        }
+      ],
+      "summary": {
+        "en": "Janssens abandons the old walled city of Batavia to avoid fever; British forces march in without a shot fired.",
+        "id": "Janssens mengosongkan Kota Batavia guna menghindari demam rawa; pasukan Inggris melenggang masuk tanpa letusan peluru."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "battle-of-weltevreden",
+      "kind": "battle",
+      "when": "1811-08-10",
+      "at": "weltevreden",
+      "importance": 1,
+      "name": {
+        "en": "Battle of Weltevreden",
+        "id": "Pertempuran Weltevreden"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 5000,
+          "losses": 90
+        },
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "strength": 3000,
+          "losses": 500
+        }
+      ],
+      "summary": {
+        "en": "Gillespie's column strikes Jumel's advance guard at Weltevreden, driving the defenders into the fortified redoubts of Meester Cornelis.",
+        "id": "Kolom pimpinan Gillespie menghantam garis depan Jumel di Weltevreden, mendesak mundur pasukan bertahan ke benteng Meester Cornelis."
+      },
+      "sources": [
+        "thorn-1815",
+        "stockdale-1811"
+      ]
+    },
+    {
+      "id": "storming-meester-cornelis",
+      "kind": "siege",
+      "when": "1811-08-26",
+      "at": "meester-cornelis",
+      "importance": 1,
+      "name": {
+        "en": "Storming of the Meester Cornelis Redoubts",
+        "id": "Penyerbuan Benteng Meester Cornelis"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 9000,
+          "losses": 630
+        },
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "strength": 12000,
+          "losses": 7000
+        }
+      ],
+      "summary": {
+        "en": "In a dawn bayonet charge led by Gillespie, British soldiers breach the entrenched redoubts; 2,000 Franco-Dutch dead and 5,000 captured. Janssens flees to Buitenzorg.",
+        "id": "Dalam serbuan bayonet fajar pimpinan Gillespie, tentara Inggris membobol kubu redoubt; 2.000 tentara Belanda-Prancis gugur dan 5.000 tertawan. Janssens kabur ke Buitenzorg."
+      },
+      "sources": [
+        "thorn-1815",
+        "carey-2008"
+      ]
+    },
+    {
+      "id": "buitenzorg-abandoned",
+      "kind": "other",
+      "when": "1811-08-28",
+      "at": "buitenzorg",
+      "importance": 2,
+      "name": {
+        "en": "Janssens Flees Buitenzorg for Central Java",
+        "id": "Janssens Melarikan Diri dari Buitenzorg ke Jawa Tengah"
+      },
+      "participants": [
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "strength": 4000
+        }
+      ],
+      "summary": {
+        "en": "Janssens flees east along the Great Post Road toward Cirebon and Semarang to make a desperate stand.",
+        "id": "Janssens bergegas ke timur menyusuri Jalan Raya Pos menuju Cirebon dan Semarang demi menghimpun sisa kekuatan."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "semarang-landing",
+      "kind": "other",
+      "when": "1811-09-10",
+      "at": "semarang",
+      "importance": 2,
+      "name": {
+        "en": "British Seaborne Landing at Semarang",
+        "id": "Pendaratan Laut Pasukan Inggris di Semarang"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 3000
+        },
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "strength": 3200
+        }
+      ],
+      "summary": {
+        "en": "Auchmuty lands troops at Semarang to cut off Janssens' retreat into the interior.",
+        "id": "Auchmuty mendaratkan pasukan di pelabuhan Semarang untuk memutus jalur pelarian Janssens ke pedalaman."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "battle-of-ungaran",
+      "kind": "battle",
+      "when": "1811-09-16",
+      "at": "ungaran",
+      "importance": 1,
+      "name": {
+        "en": "Battle of Ungaran (Gunung Jati)",
+        "id": "Pertempuran Bukit Ungaran (Gunung Jati)"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 2800,
+          "losses": 50
+        },
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "strength": 3000,
+          "losses": 600
+        }
+      ],
+      "summary": {
+        "en": "British columns assault Janssens' entrenched hilltop positions at Ungaran; the Franco-Dutch line shatters and disbands.",
+        "id": "Kolom serbu Inggris mendaki dan menyerang posisi pertahanan Janssens di perbukitan Ungaran; barisan Belanda-Prancis kocar-kacir dan tercerai-berai."
+      },
+      "sources": [
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "capitulation-of-tuntang",
+      "kind": "treaty",
+      "when": "1811-09-18",
+      "at": "tuntang",
+      "importance": 1,
+      "name": {
+        "en": "The Capitulation of Tuntang",
+        "id": "Kapitulasi Tuntang"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "commanders": [
+            "Sir Samuel Auchmuty"
+          ]
+        },
+        {
+          "faction": "franco-dutch",
+          "role": "defender",
+          "commanders": [
+            "Jan Willem Janssens"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Governor-General Janssens surrenders Java and all Dutch East Indies dependencies to Sir Samuel Auchmuty; British military administration established.",
+        "id": "Gubernur Jenderal Janssens menyerahkan Pulau Jawa dan seluruh wilayah jajahan Hindia Belanda kepada Sir Samuel Auchmuty; pemerintahan kolonial Inggris resmi dimulai."
+      },
+      "sources": [
+        "thorn-1815",
+        "raffles-1817"
+      ]
+    },
+    {
+      "id": "raffles-sworn-in",
+      "kind": "appointment",
+      "when": "1811-09-28",
+      "at": "batavia-city",
+      "importance": 2,
+      "name": {
+        "en": "Raffles Appointed Lieutenant-Governor of Java",
+        "id": "Raffles Dilantik sebagai Letnan Gubernur Jawa"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "negotiator",
+          "commanders": [
+            "Thomas Stamford Raffles",
+            "Lord Minto"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Lord Minto officially proclaims Thomas Stamford Raffles as Lieutenant-Governor of Java and its dependencies.",
+        "id": "Lord Minto meresmikan pengangkatan Thomas Stamford Raffles sebagai Letnan Gubernur Jawa dan daerah taklukannya."
+      },
+      "sources": [
+        "raffles-1817",
+        "carey-2008"
+      ]
+    },
+    {
+      "id": "yogyakarta-fortification",
+      "kind": "political",
+      "when": "1812-05-15",
+      "at": "keraton-yogyakarta",
+      "importance": 2,
+      "name": {
+        "en": "Sultan Sepuh Refuses British Ultimatum",
+        "id": "Sultan Sepuh Menolak Ultimatum Inggris"
+      },
+      "participants": [
+        {
+          "faction": "yogyakarta-sultanate",
+          "role": "defender",
+          "commanders": [
+            "Sultan Hamengkubuwana II"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Sultan Hamengkubuwana II reinforces the fortified ramparts (*baluwarti*) of the Keraton, refusing to submit to Raffles' demands.",
+        "id": "Sultan Hamengkubuwana II memperkuat baluwarti benteng Keraton dan memobilisasi prajurit, menolak tuntutan kepatuhan dari Raffles."
+      },
+      "sources": [
+        "carey-1992",
+        "babad-bedhah"
+      ]
+    },
+    {
+      "id": "gillespie-marches-inland",
+      "kind": "other",
+      "when": "1812-06-12",
+      "at": "surakarta",
+      "importance": 2,
+      "name": {
+        "en": "British Force Reaches Surakarta",
+        "id": "Pasukan Inggris Tiba di Surakarta"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "commanders": [
+            "Robert Rollo Gillespie"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Gillespie's column arrives in Surakarta, securing the alliance of Prince Prangwedana and 800 Mangkunegaran troops before advancing on Yogyakarta.",
+        "id": "Kolom pimpinan Gillespie tiba di Surakarta, menggalang dukungan Pangeran Prangwedana dan 800 prajurit Mangkunegaran sebelum merangsek ke Yogyakarta."
+      },
+      "sources": [
+        "carey-1992",
+        "thorn-1815"
+      ]
+    },
+    {
+      "id": "siege-vredenburg-encirclement",
+      "kind": "skirmish",
+      "when": "1812-06-18",
+      "at": "fort-vredenburg",
+      "importance": 2,
+      "name": {
+        "en": "Skirmishes around Fort Vredenburg",
+        "id": "Kontak Senjata di Sekitar Benteng Vredenburg"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 2000
+        },
+        {
+          "faction": "yogyakarta-sultanate",
+          "role": "defender",
+          "strength": 10000
+        }
+      ],
+      "summary": {
+        "en": "Sniping and cannon duels break out between the Keraton's ramparts and British forces concentrated at Fort Vredenburg.",
+        "id": "Baku tembak meriam dan senapan meletus antara baluwarti Keraton dengan pasukan Inggris yang bersiaga di Benteng Vredenburg."
+      },
+      "sources": [
+        "carey-1992",
+        "babad-bedhah"
+      ]
+    },
+    {
+      "id": "geger-sepehi-assault",
+      "kind": "siege",
+      "when": "1812-06-20",
+      "at": "keraton-yogyakarta",
+      "importance": 1,
+      "name": {
+        "en": "Geger Sepehi: Storming of the Keraton",
+        "id": "Geger Sepehi: Serbuan ke Keraton Yogyakarta"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "strength": 2000,
+          "losses": 100
+        },
+        {
+          "faction": "yogyakarta-sultanate",
+          "role": "defender",
+          "strength": 10000,
+          "losses": 1200
+        }
+      ],
+      "summary": {
+        "en": "At dawn, British and Sepoy troops scale the north-east bastion (*celepuk*) and blast open the gates; after bloody fighting in the courtyards, the Keraton falls.",
+        "id": "Saat fajar, pasukan Inggris dan prajurit Sepoi memanjat sudut timur laut baluwarti (*celepuk*) dan meledakkan gerbang; usai laga sengit di pelataran istana, Keraton takluk."
+      },
+      "sources": [
+        "carey-1992",
+        "thorn-1815",
+        "babad-bedhah"
+      ]
+    },
+    {
+      "id": "exile-hamengkubuwana-ii",
+      "kind": "exile",
+      "when": "1812-07-03",
+      "at": "keraton-yogyakarta",
+      "importance": 1,
+      "name": {
+        "en": "Sultan Hamengkubuwana II Deposed and Exiled",
+        "id": "Sultan Hamengkubuwana II Digulingkan dan Diasingkan"
+      },
+      "participants": [
+        {
+          "faction": "british-empire",
+          "role": "attacker",
+          "commanders": [
+            "Thomas Stamford Raffles"
+          ]
+        },
+        {
+          "faction": "yogyakarta-sultanate",
+          "role": "defender",
+          "commanders": [
+            "Sultan Hamengkubuwana II"
+          ]
+        }
+      ],
+      "summary": {
+        "en": "Raffles deposes Sultan Hamengkubuwana II, exiling him to Penang. Crown Prince Hamengkubuwana III is enthroned and Prince Natakusuma becomes Paku Alam I.",
+        "id": "Raffles mencopot Sultan Hamengkubuwana II dan membuangnya ke Penang. Putera Mahkota dilantik sebagai Hamengkubuwana III dan Pangeran Natakusuma dinobatkan sebagai Paku Alam I."
+      },
+      "sources": [
+        "carey-1992",
+        "carey-2008"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch-1-armada-cilincing",
+      "when": "1811-08-01/1811-08-05",
+      "dateLabel": {
+        "en": "1–5 August 1811",
+        "id": "1–5 Agustus 1811"
+      },
+      "title": {
+        "en": "The Great Armada at Cilincing",
+        "id": "Armada Raksasa di Cilincing"
+      },
+      "body": {
+        "en": "In the summer of 1811, the Napoleonic Wars reached the tropical waters of the East Indies. Following Napoleon's annexation of Holland, Java became the last eastern territory flying the tricolor flag. Lord Minto, Governor-General of India, determined to eliminate this French threat, assembled an armada of nearly 100 ships and 11,000 soldiers at Malacca under Lieutenant-General Sir Samuel Auchmuty and young Thomas Stamford Raffles.\n\nCrossing the Java Sea via the Karimata Strait, the fleet rendezvoused off Karimunjawa and anchored off Cilincing, twelve miles east of Batavia, on 4 August 1811. Franco-Dutch Governor-General Jan Willem Janssens had anticipated a landing west of the city and left the eastern beaches completely unguarded. Within hours, Colonel Robert Rollo Gillespie's vanguard secured the beachhead without losing a single man.",
+        "id": "Pada musim panas 1811, kobaran Perang Napoleon merembet ke perairan tropis Hindia Timur. Menyusul aneksasi Kerajaan Belanda oleh Napoleon, Pulau Jawa menjadi pos terdepan terakhir Prancis di belahan timur. Lord Minto, Gubernur Jenderal India Britania, bertekad memusnahkan ancaman ini dengan menghimpun armada perkasa berkekuatan hampir 100 kapal dan 11.000 prajurit di Malaka di bawah pimpinan Letnan Jenderal Sir Samuel Auchmuty dan pemuda visioner Thomas Stamford Raffles.\n\nMenyeberangi Laut Jawa lewat Selat Karimata, armada berkumpul di perairan Karimunjawa dan berlabuh di Pantai Cilincing, 19 kilometer di timur Batavia, pada 4 Agustus 1811. Gubernur Jenderal Belanda-Prancis Jan Willem Janssens menduga pendaratan musuh akan terjadi di barat kota, sehingga membiarkan pesisir timur tanpa penjagaan. Dalam hitungan jam, pasukan garis depan pimpinan Kolonel Robert Rollo Gillespie berhasil mengamankan pangkalan pendaratan tanpa kehilangan satu prajurit pun."
+      },
+      "camera": {
+        "center": [
+          107.5,
+          -6
+        ],
+        "zoom": 8,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3000
+      },
+      "focus": [
+        "cilincing-landing",
+        "armada-arrival-karimunjawa"
+      ]
+    },
+    {
+      "id": "ch-2-fall-of-batavia",
+      "when": "1811-08-06/1811-08-15",
+      "dateLabel": {
+        "en": "6–15 August 1811",
+        "id": "6–15 Agustus 1811"
+      },
+      "title": {
+        "en": "Batavia Abandoned and the Clash at Weltevreden",
+        "id": "Pengosongan Batavia dan Bentrok Weltevreden"
+      },
+      "body": {
+        "en": "Rather than defending the historic walled city of Batavia—notorious for its pestilential canals and lethal malaria—General Janssens withdrew his main army southward into the fortified military cantonment of Weltevreden and the entrenched camp of Meester Cornelis. On 8 August, Gillespie's British vanguard marched into the deserted streets of Batavia without firing a single musket.\n\nTwo days later on 10 August, Gillespie pressed aggressively southward toward Weltevreden. There, near Waterloo-plein, Franco-Dutch Brigadier-General Jean-Marie Jumel had deployed 3,000 men behind pepper vines and ditches with heavy artillery. In a ferocious bayonet charge through dense undergrowth, Gillespie broke Jumel's lines, capturing over thirty guns and driving the defenders behind the earthen ramparts of Meester Cornelis.",
+        "id": "Alih-alih mempertahankan kota tua berbenteng Batavia—yang tersohor maut akibat kanal berawa berpenyakit malaria—Jenderal Janssens memilih menarik mundur pasukan utamanya ke arah selatan, ke tangsi militer Weltevreden dan kubu pertahanan Meester Cornelis. Pada 8 Agustus, barisan depan Inggris pimpinan Gillespie memasuki jalanan sunyi Batavia tanpa melepaskan sebutir peluru pun.\n\nDua hari berselang pada 10 Agustus, Gillespie terus merangsek agresif ke selatan menuju Weltevreden. Di sana, di sekitar kawasan Lapangan Banteng, Brigadir Jenderal Belanda-Prancis Jean-Marie Jumel menyiagakan 3.000 prajurit di balik parit dan rimbun lada dengan sokongan artileri berat. Lewat serbuan bayonet nan sengit menembus semak belukar, pasukan Gillespie membobol pertahanan Jumel, menyita lebih dari tiga puluh meriam, dan memukul mundur musuh ke balik benteng tanah Meester Cornelis."
+      },
+      "camera": {
+        "center": [
+          106.84,
+          -6.16
+        ],
+        "zoom": 11.2,
+        "pitch": 30,
+        "bearing": 10,
+        "durationMs": 3500
+      },
+      "focus": [
+        "batavia-occupation",
+        "battle-of-weltevreden"
+      ]
+    },
+    {
+      "id": "ch-3-meester-cornelis",
+      "when": "1811-08-16/1811-08-31",
+      "dateLabel": {
+        "en": "16–31 August 1811",
+        "id": "16–31 Agustus 1811"
+      },
+      "title": {
+        "en": "The Storming of Meester Cornelis",
+        "id": "Penyerbuan Berdarah Meester Cornelis"
+      },
+      "body": {
+        "en": "The fortified camp of Meester Cornelis (modern Jatinegara) was the Gibraltar of Java: an entrenched perimeter of deep canals, bastions, and redoubts bristling with 280 heavy cannons and defended by 12,000 Franco-Dutch soldiers. Frontal assault meant certain suicide. Auchmuty opened heavy siege batteries while local intelligence revealed a vulnerable bamboo bridge across the Slokan canal.\n\nAt midnight on 26 August, Gillespie led a daring assault column in total silence. Creeping through the ravines, the British redcoats charged across the bridge with fixed bayonets just as dawn broke. Redoubt No. 3 was stormed, hand-to-hand combat raged, and a powder magazine detonated with catastrophic fury. By noon, the Franco-Dutch army was annihilated: over 2,000 defenders lay dead and 5,000 were captured. General Janssens fled on horseback to Buitenzorg.",
+        "id": "Benteng pertahanan Meester Cornelis (kini Jatinegara) laksana Gibraltar di tanah Jawa: perimeter berparit terjal, kubu baluwarti, dan redoubt yang diperkuat 280 meriam berat serta dijaga 12.000 prajurit Belanda-Prancis. Serangan terbuka dari depan sama saja bunuh diri. Auchmuty mulai menggelar baterai artileri kepung sembari menggali informasi lokal yang menyingkap adanya jembatan bambu rapuh di atas kanal Slokan.\n\nTepat tengah malam 26 Agustus, Gillespie memimpin kolom serbu dadakan dalam hening gulita. Merayap lewat celah jurang, prajurit bertopi merah Inggris menerobos jembatan dengan bayonet terhunus tepat saat fajar merekah. Redoubt No. 3 dibobol, pertarungan jarak dekat membuncah liar, dan sebuah gudang mesiu meledak dahsyat meluluhlantakkan sekeliling. Menjelang siang, tentara Belanda-Prancis binasa: lebih dari 2.000 prajurit pertahanan tewas dan 5.000 ditawan. Jenderal Janssens meloloskan diri berkuda menuju Buitenzorg."
+      },
+      "camera": {
+        "center": [
+          106.865,
+          -6.215
+        ],
+        "zoom": 12,
+        "pitch": 40,
+        "bearing": 15,
+        "durationMs": 3500
+      },
+      "focus": [
+        "storming-meester-cornelis",
+        "buitenzorg-abandoned"
+      ],
+      "media": [
+        "meester-cornelis-engraving"
+      ]
+    },
+    {
+      "id": "ch-4-pursuit-to-semarang",
+      "when": "1811-09-01/1811-09-12",
+      "dateLabel": {
+        "en": "1–12 September 1811",
+        "id": "1–12 September 1811"
+      },
+      "title": {
+        "en": "The Race Along the Great Post Road",
+        "id": "Perlombaan di Jalan Raya Pos Menuju Semarang"
+      },
+      "body": {
+        "en": "With West Java firmly in British hands, General Janssens raced eastward along Daendels' famed Great Post Road (Jalan Raya Pos) through Cirebon, seeking refuge in the Javanese principalities where he hoped the Sunan of Surakarta and Sultan of Yogyakarta would come to his rescue with tens of thousands of warriors.\n\nRecognizing the danger of an inland insurgency, Auchmuty did not march his exhausted soldiers across land. Instead, he embarked his crack regiments aboard Royal Navy transports and sailed swiftly for Semarang. On 10 September 1811, British naval guns anchored off Semarang harbor, landing troops just as Janssens was attempting to gather his scattered remnants in the town.",
+        "id": "Dengan Jawa bagian barat telah jatuh ke genggaman Inggris, Jenderal Janssens berpacu ke timur menyusuri Jalan Raya Pos Daendels lewat Cirebon, mengungsi menuju wilayah kerajaan pedalaman Jawa di mana ia berharap Sunan Surakarta dan Sultan Yogyakarta akan mengerahkan puluhan ribu prajurit untuk menolongnya.\n\nMenyadari bahaya perang gerilya di pedalaman, Auchmuty tidak memaksakan pasukannya yang kelelahan berbaris lewat darat. Ia menaikkan resimen pilihan ke kapal-kapal Angkatan Laut Kerajaan dan berlayar cepat menuju Semarang. Pada 10 September 1811, meriam armada Inggris bersiaga di muara Semarang, mendaratkan pasukan tepat ketika Janssens tengah berusaha mengumpulkan serpihan tentaranya di kota tersebut."
+      },
+      "camera": {
+        "center": [
+          109.5,
+          -6.8
+        ],
+        "zoom": 7.8,
+        "pitch": 30,
+        "bearing": 5,
+        "durationMs": 3500
+      },
+      "focus": [
+        "semarang-landing"
+      ]
+    },
+    {
+      "id": "ch-5-battle-of-ungaran",
+      "when": "1811-09-13/1811-09-17",
+      "dateLabel": {
+        "en": "13–17 September 1811",
+        "id": "13–17 September 1811"
+      },
+      "title": {
+        "en": "The Last Stand on Mount Ungaran",
+        "id": "Pertahanan Terakhir di Perbukitan Ungaran"
+      },
+      "body": {
+        "en": "Evacuating Semarang, Janssens retreated six miles south into the foothills of Mount Ungaran at Oenarang. There, on a formidable ridge overlooking the road to the principalities, he dug in behind thirty field guns with 3,000 men, including auxiliary cavalry sent from Surakarta.\n\nAt dawn on 16 September, Auchmuty launched his assault columns straight up the terraced hills. The 14th and 78th regiments crested the ridge under artillery fire. When the Highlanders opened a disciplined volley and charged with cold steel, the demoralized colonial recruits broke and scattered into the jungle. Janssens fled with only a handful of officers to Fort De Eendracht in Salatiga.",
+        "id": "Meninggalkan Semarang, Janssens mundur sejauh sepuluh kilometer ke selatan memasuki kaki Gunung Ungaran. Di sana, di atas punggung bukit terjal yang menguasai jalan utama menuju kerajaan pedalaman, ia berkubu di balik tiga puluh meriam bersama 3.000 prajurit, termasuk kontingen kavaleri bantuan dari Surakarta.\n\nSaat fajar 16 September, Auchmuty memerintahkan kolom serbunya mendaki perbukitan berteras. Resimen ke-14 dan 78 Highlanders merangsek naik di bawah desingan peluru meriam. Ketika barisan prajurit Skotlandia melancarkan tembakan serempak dan menerjang dengan bayonet terhunus, prajurit kolonial yang patah arang kocar-kacir melarikan diri ke hutan lebat. Janssens melarikan diri hanya bersama segelintir perwira menuju Benteng De Eendracht di Salatiga."
+      },
+      "camera": {
+        "center": [
+          110.41,
+          -7.15
+        ],
+        "zoom": 10.5,
+        "pitch": 35,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "battle-of-ungaran"
+      ]
+    },
+    {
+      "id": "ch-6-capitulation-tuntang",
+      "when": "1811-09-18/1811-10-31",
+      "dateLabel": {
+        "en": "18 September – October 1811",
+        "id": "18 September – Oktober 1811"
+      },
+      "title": {
+        "en": "The Capitulation of Tuntang",
+        "id": "Kapitulasi Tuntang dan Awal Kuasa Raffles"
+      },
+      "body": {
+        "en": "Realizing that resistance was futile and his native allies had abandoned him, Governor-General Janssens sent emissaries to ask for terms. On 18 September 1811, in a roadside inn near the village of Tuntang, Janssens affixed his signature to the Capitulation of Tuntang, formally surrendering Java and all Dutch possessions in the archipelago to Great Britain.\n\nLord Minto immediately appointed thirty-year-old Thomas Stamford Raffles as Lieutenant-Governor. Raffles envisioned transforming Java into the jewel of the British commercial empire, introducing a direct land tax, abolishing forced deliveries, and initiating the first scholarly archaeological surveys of Prambanan and Borobudur. But the proud rulers of Central Java viewed the new British administration with deep suspicion.",
+        "id": "Sadar bahwa perlawanan telah sia-sia dan sekutu bumiputranya telah berpaling, Gubernur Jenderal Janssens mengirim utusan meminta perundingan. Pada 18 September 1811, di sebuah penginapan tepi jalan dekat desa Tuntang, Janssens membubuhkan tanda tangan pada piagam Kapitulasi Tuntang, menyerahkan Pulau Jawa dan segenap kekuasaan Belanda di Nusantara kepada Britania Raya.\n\nLord Minto segera mengangkat pemuda tiga puluh tahun Thomas Stamford Raffles sebagai Letnan Gubernur. Raffles bertekad menyulap Jawa menjadi mutiara imperium dagang Inggris, menerapkan sistem pajak tanah (*land rent*), menghapus sistem tanam paksa VOC, serta memulai ekskavasi ilmiah pertama candi Prambanan dan Borobudur. Namun para penguasa keraton pedalaman Jawa memandang penguasa baru Inggris dengan kecurigaan mendalam."
+      },
+      "camera": {
+        "center": [
+          110.457,
+          -7.262
+        ],
+        "zoom": 9.5,
+        "pitch": 25,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "capitulation-of-tuntang",
+        "raffles-sworn-in"
+      ],
+      "media": [
+        "raffles-portrait"
+      ]
+    },
+    {
+      "id": "ch-7-defiance-of-yogyakarta",
+      "when": "1811-11-01/1812-06-15",
+      "dateLabel": {
+        "en": "November 1811 – June 1812",
+        "id": "November 1811 – Juni 1812"
+      },
+      "title": {
+        "en": "The Defiance of Sultan Hamengkubuwana II",
+        "id": "Pembangkangan Sultan Hamengkubuwana II"
+      },
+      "body": {
+        "en": "In Yogyakarta, the proud and martial Sultan Hamengkubuwana II (known as Sultan Sepuh) refused to accept British paramountcy. He had already defied Daendels and saw no reason to bow before the young Raffles. When Raffles visited Yogyakarta in December 1811, the Sultan surrounded the British envoy with thousands of armed retainers carrying drawn kris daggers, forcing Raffles to sit on an equal chair rather than in the position of colonial supremacy.\n\nOver the following months, the Sultan mobilized his realm, doubling his royal guard to 11,000 men, strengthening the great whitewashed stone ramparts (*baluwarti*) of the Keraton, and manufacturing gunpowder. When intercepted letters revealed secret correspondence between Yogyakarta and Surakarta seeking a united anti-European uprising, Raffles resolved to strike a decisive blow.",
+        "id": "Di Yogyakarta, penguasa berwatak keras Sri Sultan Hamengkubuwana II (Sultan Sepuh) menolak tunduk pada hegemoni Inggris. Ia sebelumnya telah berani menentang Daendels dan tak sudi bertekuk lutut di hadapan pemuda seperti Raffles. Tatkala Raffles melawat ke Yogyakarta pada Desember 1811, Sultan mengelilingi utusan Inggris itu dengan ribuan prajurit bersenjata keris terhunus, memaksa Raffles duduk sejajar alih-alih di posisi superioritas kolonial.\n\nPada bulan-bulan berikutnya, Sultan memobilisasi negerinya: melipatgandakan prajurit keraton hingga 11.000 jiwa, memperkokoh tembok baluwarti batu kapur Keraton, dan memproduksi mesiu. Ketika mata-mata Inggris menyadap surat rahasia antara Yogyakarta dan Surakarta untuk melancarkan pemberontakan serentak mengusir bangsa Eropa, Raffles memutuskan untuk bertindak tegas."
+      },
+      "camera": {
+        "center": [
+          110.364,
+          -7.805
+        ],
+        "zoom": 12,
+        "pitch": 30,
+        "bearing": 0,
+        "durationMs": 3500
+      },
+      "focus": [
+        "yogyakarta-fortification",
+        "gillespie-marches-inland"
+      ]
+    },
+    {
+      "id": "ch-8-geger-sepehi",
+      "when": "1812-06-16/1812-07-31",
+      "dateLabel": {
+        "en": "16 June – July 1812",
+        "id": "16 Juni – Juli 1812"
+      },
+      "title": {
+        "en": "Geger Sepehi: The Storming of the Keraton",
+        "id": "Geger Sepehi: Runtuhnya Benteng Keraton"
+      },
+      "body": {
+        "en": "In June 1812, Colonel Rollo Gillespie marched into Yogyakarta at the head of 1,200 British regulars and Indian Sepoys, reinforced by 800 cavalry of Prince Prangwedana's Mangkunegaran Legion. Deploying at Fort Vredenburg just opposite the northern palace square, Gillespie endured days of sniping and cannon fire from the Keraton bastions.\n\nBefore dawn on 20 June 1812, Gillespie executed his masterstroke: while a diversionary force drew fire at the main northern gate, a storming party scaled the north-east corner bastion (*celepuk*) with bamboo ladders. Dropping inside, the Sepoys shot down the gunners and blew open the Tarunasura gate. Redcoats poured through the breach into the royal courtyards. After fierce, bloody combat, the palace fell. Sultan Hamengkubuwana II was captured and sent into exile to Penang; the royal treasury of 500,000 Spanish dollars and priceless royal manuscripts were seized as prize money. The Crown Prince was installed as Hamengkubuwana III, and Prince Natakusuma was elevated as Paku Alam I, permanently dividing the sultanate.",
+        "id": "Pada Juni 1812, Kolonel Rollo Gillespie memimpin 1.200 tentara reguler Inggris dan prajurit Sepoi India memasuki Yogyakarta, diperkuat oleh 800 kavaleri Legiun Mangkunegaran pimpinan Pangeran Prangwedana. Berpangkalan di Benteng Vredenburg tepat di seberang Alun-Alun Utara, pasukan Gillespie menghadapi gempuran senapan dan meriam dari baluwarti Keraton.\n\nMenjelang subuh 20 Juni 1812, Gillespie melancarkan manuver mematikan: saat satu peleton memancing tembakan di gerbang utara, regu serbu memanjat sudut timur laut baluwarti (*celepuk*) dengan tangga bambu. Menerobos masuk, prajurit Sepoi menembak para juru meriam dan meledakkan gerbang Tarunasura dari dalam. Tentara Inggris merangsek masuk ke pelataran istana. Usai pertarungan jarak dekat nan berdarah, Keraton takluk. Sultan Hamengkubuwana II ditawan lalu dibuang ke Pulau Penang; harta perbendaharaan keraton senilai 500.000 dolar Spanyol dan manuskrip pustaka tak ternilai dijarah sebagai pampasan perang. Putera Mahkota dilantik sebagai Hamengkubuwana III dan Pangeran Natakusuma diangkat sebagai Paku Alam I, membelah Yogyakarta untuk selamanya."
+      },
+      "camera": {
+        "center": [
+          110.365,
+          -7.803
+        ],
+        "zoom": 13.5,
+        "pitch": 40,
+        "bearing": 10,
+        "durationMs": 3500
+      },
+      "focus": [
+        "siege-vredenburg-encirclement",
+        "geger-sepehi-assault",
+        "exile-hamengkubuwana-ii"
+      ],
+      "media": [
+        "gillespie-portrait",
+        "alun-alun-yogyakarta"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "thorn-1815",
+      "type": "book",
+      "citation": "Thorn, William. Memoir of the Conquest of Java; with the Subsequent Operations of the British Forces in the Oriental Archipelago. London: T. Egerton, 1815."
+    },
+    {
+      "id": "raffles-1817",
+      "type": "book",
+      "citation": "Raffles, Thomas Stamford. The History of Java. 2 vols. London: Black, Parbury, and Allen, 1817."
+    },
+    {
+      "id": "carey-1992",
+      "type": "book",
+      "citation": "Carey, Peter. The British in Java, 1811–1816: A Javanese Account (Babad Bedhah ing Ngayogyakarta). Oxford: Oxford University Press for The British Academy, 1992."
+    },
+    {
+      "id": "carey-2008",
+      "type": "book",
+      "citation": "Carey, Peter. The Power of Prophecy: Prince Diponegoro and the End of an Old Order in Java, 1785–1855. Leiden: KITLV Press, 2008."
+    },
+    {
+      "id": "stockdale-1811",
+      "type": "book",
+      "citation": "Stockdale, John Joseph. Sketches, Civil and Military, of the Island of Java and Its Immediate Dependencies. London: J.J. Stockdale, 1811."
+    },
+    {
+      "id": "babad-bedhah",
+      "type": "book",
+      "citation": "Babad Bedhah ing Ngayogyakarta (The Fall of Yogyakarta). Javanese court chronicle of the 1812 British assault, trans. and ed. by Peter Carey. Oxford University Press, 1992."
+    }
+  ],
+  "media": [
+    {
+      "id": "meester-cornelis-engraving",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Storming_of_the_Entrenched_Camp_of_Meester_Cornelis_1811.jpg",
+      "alt": {
+        "en": "Contemporary engraving depicting the British assault on the entrenched camp of Meester Cornelis on 26 August 1811",
+        "id": "Ukiran kontemporer menggambarkan serbuan pasukan Inggris ke benteng pertahanan Meester Cornelis pada 26 Agustus 1811"
+      },
+      "caption": {
+        "en": "The storming of the redoubts at Meester Cornelis by Colonel Gillespie's brigade, from William Thorn's Memoir of the Conquest of Java (1815).",
+        "id": "Penyerbuan kubu pertahanan Meester Cornelis oleh brigade pimpinan Kolonel Gillespie, dari buku Memoir of the Conquest of Java karya William Thorn (1815)."
+      },
+      "creator": "Major William Thorn",
+      "date": "1815",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Storming_of_the_Entrenched_Camp_of_Meester_Cornelis_1811.jpg"
+    },
+    {
+      "id": "raffles-portrait",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas_Stamford_Raffles.jpg",
+      "alt": {
+        "en": "Portrait of Sir Thomas Stamford Raffles by George Francis Joseph, 1817",
+        "id": "Lukisan potret Sir Thomas Stamford Raffles karya George Francis Joseph, 1817"
+      },
+      "caption": {
+        "en": "Thomas Stamford Raffles (1781–1826), appointed Lieutenant-Governor of Java following the British conquest in 1811.",
+        "id": "Thomas Stamford Raffles (1781–1826), diangkat sebagai Letnan Gubernur Jawa setelah penaklukan Inggris pada 1811."
+      },
+      "creator": "George Francis Joseph",
+      "date": "1817",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Stamford_Raffles.jpg"
+    },
+    {
+      "id": "gillespie-portrait",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir_Robert_Rollo_Gillespie.jpg",
+      "alt": {
+        "en": "Portrait of Major-General Sir Robert Rollo Gillespie",
+        "id": "Lukisan potret Mayor Jenderal Sir Robert Rollo Gillespie"
+      },
+      "caption": {
+        "en": "Colonel Robert Rollo Gillespie, commander of the British assault columns at Meester Cornelis and the Keraton of Yogyakarta.",
+        "id": "Kolonel Robert Rollo Gillespie, komandan kolom serbu Inggris di Meester Cornelis dan Keraton Yogyakarta."
+      },
+      "creator": "William Say",
+      "date": "1814",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_Robert_Rollo_Gillespie.jpg"
+    },
+    {
+      "id": "alun-alun-yogyakarta",
+      "type": "image",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/COLLECTIE_TROPENMUSEUM_De_noorder_alun-alun_met_de_waringin_koeroeng_voor_de_Kraton_van_de_Sultan_te_Jogjakarta_TMnr_10015525.jpg",
+      "alt": {
+        "en": "The northern Alun-Alun with sacred banyan trees in front of the Keraton of Yogyakarta",
+        "id": "Alun-Alun Utara dengan pohon beringin kurung di depan Keraton Yogyakarta"
+      },
+      "caption": {
+        "en": "The northern palace square (Alun-Alun Utara) in Yogyakarta fronting the royal Keraton stormed during Geger Sepehi.",
+        "id": "Alun-Alun Utara Yogyakarta di depan kompleks Keraton yang diserbu dalam peristiwa Geger Sepehi."
+      },
+      "creator": "Tropenmuseum Collection",
+      "date": "1890~",
+      "license": "public-domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:COLLECTIE_TROPENMUSEUM_De_noorder_alun-alun_met_de_waringin_koeroeng_voor_de_Kraton_van_de_Sultan_te_Jogjakarta_TMnr_10015525.jpg"
+    }
+  ]
+}
