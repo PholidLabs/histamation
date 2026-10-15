@@ -67,7 +67,7 @@
 
         <figure class="lp-plate" id="plate" aria-busy="true">
           <div class="lp-plate-map">
-            <svg id="plate-svg" viewBox="0 0 400 500" role="img" aria-labelledby="plate-title"><title id="plate-title">Waterloo, 1815</title></svg>
+            <svg id="plate-svg" viewBox="0 0 400 500" role="img" aria-labelledby="plate-title"><title id="plate-title">The Java War (Diponegoro), 1825–1830</title></svg>
             <p class="lp-plate-status" id="plate-status" data-i18n="plateLoading">Loading the campaign…</p>
           </div>
           <div class="lp-plate-bar">
@@ -80,9 +80,9 @@
           <input class="lp-scrub" id="plate-scrub" type="range" min="0" max="1000" value="0" step="1" aria-label="Campaign time" />
           <figcaption>
             <ul class="lp-legend" id="plate-legend"></ul>
-            <a class="lp-link-arrow" href="/app/?campaign=waterloo"><span data-i18n="plateOpen">Open in the map</span> <span aria-hidden="true">→</span></a>
+            <a class="lp-link-arrow" href="/app/?campaign=java"><span data-i18n="plateOpen">Open in the map</span> <span aria-hidden="true">→</span></a>
           </figcaption>
-          <p class="lp-plate-note" data-i18n="plateCaption">Live, not a video: the engine resolving waterloo-1815.json in this tab.</p>
+          <p class="lp-plate-note" data-i18n="plateCaption">Live, not a video: the engine resolving java-war-1825.json in this tab.</p>
         </figure>
       </section>
 
@@ -96,22 +96,24 @@
           </ol>
         </div>
         <div class="lp-code">
-          <div class="lp-code-head"><span>data/campaigns/waterloo-1815.json</span></div>
+          <div class="lp-code-head"><span>data/campaigns/java-war-1825.json</span></div>
 <pre><code>{
-  <span class="k">"id"</span>: <span class="s">"prussian-thielmann"</span>,
+  <span class="k">"id"</span>: <span class="s">"diponegoro-hq"</span>,
   <span class="k">"kind"</span>: <span class="s">"unit"</span>,
-  <span class="k">"faction"</span>: <span class="s">"prussian-army"</span>,
+  <span class="k">"faction"</span>: <span class="s">"diponegoro"</span>,
   <span class="k">"track"</span>: [
-    { <span class="k">"when"</span>: <span class="s">"1815-06-16"</span>, <span class="k">"at"</span>: <span class="s">"sombreffe"</span>,
-      <span class="k">"strength"</span>: <span class="n">24000</span>, <span class="k">"certainty"</span>: <span class="s">"approximate"</span> },
-    { <span class="k">"when"</span>: <span class="s">"1815-06-17/1815-06-19T12:00"</span>, <span class="k">"at"</span>: <span class="s">"wavre"</span>,
-      <span class="k">"strength"</span>: <span class="n">20000</span> }
+    { <span class="k">"when"</span>: <span class="s">"1825-07-20"</span>, <span class="k">"at"</span>: <span class="s">"tegalrejo"</span>,
+      <span class="k">"label"</span>: { <span class="k">"en"</span>: <span class="s">"Tegalrejo attacked"</span>, <span class="k">"id"</span>: <span class="s">"Tegalrejo diserbu"</span> } },
+    { <span class="k">"when"</span>: <span class="s">"1825-07-21/1825-09~"</span>, <span class="k">"at"</span>: <span class="s">"goa-selarong"</span>,
+      <span class="k">"label"</span>: { <span class="k">"en"</span>: <span class="s">"Headquarters at Selarong"</span>, <span class="k">"id"</span>: <span class="s">"Markas di Selarong"</span> } },
+    { <span class="k">"when"</span>: <span class="s">"1826-08-09"</span>, <span class="k">"at"</span>: <span class="s">"kejiwan"</span>,
+      <span class="k">"certainty"</span>: <span class="s">"conjectural"</span> }
   ],
-  <span class="k">"sources"</span>: [<span class="s">"hofschroer-1999"</span>, <span class="s">"wp-wavre"</span>]
+  <span class="k">"sources"</span>: [<span class="s">"carey-2008"</span>, <span class="s">"babad-diponegoro"</span>]
 }</code></pre>
-          <div class="lp-code-head term"><span>$ npx histamation-check waterloo-1815.json</span></div>
-<pre class="term"><code><span class="ok">0 error(s), 0 warning(s), 0 info</span>
-3 factions · 16 places · 7 entities · 16 events · 8 chapters</code></pre>
+          <div class="lp-code-head term"><span>$ npx histamation-check java-war-1825.json</span></div>
+<pre class="term"><code><span class="ok">0 error(s), 0 warning(s), 9 info</span>
+5 factions · 34 places · 9 entities · 43 events · 38 chapters</code></pre>
         </div>
       </section>
 

@@ -62,9 +62,9 @@ function applyCopy(): void {
 const W = 400, H = 500, PAD = 30;
 const DAY = 86400;
 /** Campaign seconds per wall-clock second: brisk between battles, slow while a same-day battle is on. */
-const SLOW_RATE = 45 * 60;
-const LOOP_SECONDS = 18;
-const HOLD_MS = 2200;
+const SLOW_RATE = 20 * DAY;
+const LOOP_SECONDS = 22;
+const HOLD_MS = 2400;
 const HEX = /^#[0-9a-f]{3,8}$/i;
 
 interface UnitNodes { g: SVGGElement; trail: SVGPolylineElement; ring: SVGCircleElement; dot: SVGCircleElement; label: SVGTextElement }
@@ -101,8 +101,12 @@ class Plate {
     this.fast = (this.end - this.start) / LOOP_SECONDS;
     this.rate = this.fast;
 
-    // Fit every place and every route into the plate, keeping ground distances true at mid-latitude.
-    const pts: [number, number][] = [...[...c.places.values()].map((p) => p.coord), ...c.entities.flatMap((e) => routeOf(e.track) ?? (e.coord ? [e.coord] : []))];
+    // Fit every place and route into the plate. For campaigns spanning far overseas exiles (e.g. Java War),
+    // focus the plate bounds on the primary theater so the tactical operations aren't squashed into a dot.
+    let pts: [number, number][] = [...[...c.places.values()].map((p) => p.coord), ...c.entities.flatMap((e) => routeOf(e.track) ?? (e.coord ? [e.coord] : []))];
+    if (c.meta.id === 'java-war-1825') {
+      pts = pts.filter(([lon, lat]) => lon >= 108.8 && lon <= 112.5 && lat >= -8.3 && lat <= -6.8);
+    }
     const lons = pts.map((p) => p[0]), lats = pts.map((p) => p[1]);
     const [w, e, s, n] = [Math.min(...lons), Math.max(...lons), Math.min(...lats), Math.max(...lats)];
     this.kx = Math.cos((((s + n) / 2) * Math.PI) / 180);
@@ -117,6 +121,7 @@ class Plate {
     for (const p of c.places.values()) {
       if (p.raw.kind === 'fort') continue; // forts are drawn by their fortification entities
       const [x, y] = this.xy(p.coord);
+      if (x < -20 || x > W + 20 || y < -20 || y > H + 20) continue;
       places.append(svgEl('circle', { class: 'pl-place', cx: x, cy: y, r: p.raw.rank === 1 ? 2.2 : 1.6 }));
     }
     this.labels = svgEl('g') as SVGGElement;
@@ -148,7 +153,7 @@ class Plate {
     this.svg.append(routes, places, trails, this.labels, this.events, markers);
 
     // Reduced motion: no autoplay; open on the last same-day battle, when the armies have met.
-    const climax = c.events.filter((ev) => ev.importance === 1 && ev.end - ev.start < DAY && ev.start >= this.start && ev.start < this.end).at(-1);
+    const climax = c.events.filter((ev) => ev.importance === 1 && ev.end - ev.start < 2 * DAY && ev.start >= this.start && ev.start < this.end).at(-1);
     this.playing = !matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.t = this.playing || !climax ? this.start : climax.start;
 
@@ -176,7 +181,8 @@ class Plate {
     const g = svgEl('g') as SVGGElement;
     const lon = (x: number) => (x - this.ox) / (this.kx * this.scale);
     const lat = (y: number) => (this.oy - y) / this.scale;
-    const step = 0.1;
+    const dLon = lon(W) - lon(0);
+    const step = dLon > 4 ? 1 : dLon > 1.2 ? 0.5 : 0.1;
     for (let v = Math.ceil(lon(0) / step) * step; v < lon(W); v += step) {
       const x = this.xy([v, 0])[0];
       g.append(svgEl('line', { class: 'pl-grat', x1: x, x2: x, y1: 0, y2: H }));
@@ -185,7 +191,8 @@ class Plate {
     for (let v = Math.ceil(lat(H) / step) * step; v < lat(0); v += step) {
       const y = this.xy([0, v])[1];
       g.append(svgEl('line', { class: 'pl-grat', x1: 0, x2: W, y1: y, y2: y }));
-      g.append(svgEl('text', { class: 'pl-grat-label', x: 6, y: y - 3 }, document.createTextNode(`${v.toFixed(1)}°N`)));
+      const hemi = v < 0 ? '°S' : '°N';
+      g.append(svgEl('text', { class: 'pl-grat-label', x: 6, y: y - 3 }, document.createTextNode(`${Math.abs(v).toFixed(1)}${hemi}`)));
     }
     return g;
   }
@@ -196,6 +203,14 @@ class Plate {
     this.labels.replaceChildren();
     // Regional anchor towns with an explicit anchor side so they don't fight unit labels.
     const SIDES: Record<string, 'start' | 'end'> = {
+      'kraton-yogyakarta': 'start',
+      'kraton-surakarta': 'start',
+      'magelang-residency': 'end',
+      semarang: 'start',
+      'goa-selarong': 'end',
+      dekso: 'end',
+      ngawi: 'start',
+      banyumas: 'start',
       brussels: 'start', waterloo: 'end', wavre: 'end',
       'quatre-bras': 'start', ligny: 'start', charleroi: 'start',
     };
@@ -204,6 +219,7 @@ class Plate {
       const name = pickText(p.raw.name, lang, fallback);
       const side = SIDES[p.id];
       const [x, y] = this.xy(p.coord);
+      if (x < 0 || x > W || y < 0 || y > H) continue;
       const bx = side === 'start' ? x + 6 : x - 6;
       this.labels.append(svgEl('text', { class: 'pl-place-label major', x: bx, y: y + 4, 'text-anchor': side }, document.createTextNode(name)));
     }
@@ -238,7 +254,7 @@ class Plate {
     this.last = now;
     if (this.playing && this.visible && now >= this.holdUntil) {
       if (this.holdUntil) { this.holdUntil = 0; this.t = this.start; }
-      const battle = this.c.events.some((ev) => ev.importance === 1 && ev.end - ev.start < DAY && this.t >= ev.start && this.t < ev.end);
+      const battle = this.c.events.some((ev) => ev.importance === 1 && ev.end - ev.start < 65 * DAY && this.t >= ev.start && this.t < ev.end);
       const target = battle ? SLOW_RATE : this.fast;
       this.rate += (target - this.rate) * Math.min(1, dt * 3);
       this.t += this.rate * dt;
@@ -263,8 +279,10 @@ class Plate {
       const fort = this.forts.get(fe.id);
       if (fort) { fort.style.setProperty('--c', colorOf(this.c, fe.faction)); continue; }
       const u = this.units.get(fe.id);
-      if (!u || !fe.position) continue;
+      if (!u || fe.status !== 'active' || !fe.position) continue;
       const [x, y] = this.xy(fe.position);
+      if (x < -30 || x > W + 30 || y < -30 || y > H + 30) continue;
+      seen.add(fe.id);
       u.g.style.display = '';
       u.trail.style.display = '';
       u.trail.setAttribute('points', this.points(fe.trail ?? [fe.position]));
@@ -291,6 +309,7 @@ class Plate {
     for (const fev of frame.events) {
       if (fev.phase !== 'active' || !fev.position || fev.importance > 2) continue;
       const [x, y] = this.xy(fev.position);
+      if (x < -20 || x > W + 20 || y < -20 || y > H + 20) continue;
       this.events.append(svgEl('circle', { class: 'pl-event', cx: x, cy: y, r: 14 }), svgEl('circle', { class: 'pl-event-dot', cx: x, cy: y, r: 2.5 }));
       const ev = this.c.events.find((e) => e.id === fev.id)!;
       if (!headline || fev.importance < headline.importance) headline = { importance: fev.importance, name: pickText(ev.raw.name, lang, fallback) };
@@ -316,7 +335,12 @@ function colorOf(c: NormalizedCampaign, faction: string): string {
 }
 /** "Anglo-Allied Army (Wellington)" → "Wellington": the commander reads better at plate scale. */
 function shortName(name: string): string {
-  return /\(([^)]+)\)\s*$/.exec(name)?.[1] ?? name;
+  if (name.includes('Diponegoro')) return 'Diponegoro';
+  const paren = /\(([^)]+)\)\s*$/.exec(name)?.[1];
+  if (paren) return paren;
+  return name
+    .replace(/\s+(and his headquarters|dan markasnya|mobile-column base|fort|stronghold|post|garrison)$/i, '')
+    .replace(/^(Pangkalan kolone mobil|Garnisun|Benteng|Pos)\s+/i, '');
 }
 
 let plate: Plate | null = null;
@@ -324,7 +348,7 @@ let plate: Plate | null = null;
 async function initPlate(): Promise<void> {
   const figure = $('plate');
   try {
-    const res = await fetch('/campaigns/waterloo-1815.json');
+    const res = await fetch('/campaigns/java-war-1825.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const { campaign } = loadCampaign((await res.json()) as CampaignFile);
     if (!campaign) throw new Error('campaign failed to load');

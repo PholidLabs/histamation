@@ -42,7 +42,7 @@ export const LANDING: Record<string, LandingStrings> = {
     heroLede: 'Armies, routes, forts and sources in one JSON file. Histamation turns it into a map you scroll through, with every uncertainty drawn and every claim cited.',
     readDocs: 'Read the docs',
 
-    plateCaption: 'Live, not a video: the engine resolving waterloo-1815.json in this tab.',
+    plateCaption: 'Live, not a video: the engine resolving java-war-1825.json in this tab.',
     plateOpen: 'Open in the map',
     plateLoading: 'Loading the campaign…',
     plateFailed: 'The preview could not be loaded.',
@@ -78,7 +78,7 @@ export const LANDING: Record<string, LandingStrings> = {
     heroLede: 'Pasukan, rute, benteng, dan sumber dalam satu berkas JSON. Histamation mengubahnya menjadi peta yang Anda gulir, dengan setiap ketidakpastian digambar dan setiap klaim bersumber.',
     readDocs: 'Baca dokumentasi',
 
-    plateCaption: 'Langsung, bukan video: mesin menghitung waterloo-1815.json di tab ini.',
+    plateCaption: 'Langsung, bukan video: mesin menghitung java-war-1825.json di tab ini.',
     plateOpen: 'Buka di peta',
     plateLoading: 'Memuat kampanye…',
     plateFailed: 'Pratinjau gagal dimuat.',
